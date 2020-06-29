@@ -1,0 +1,40 @@
+<!--********************************************************************************
+ * Copyright (C) 2017-2020 German Aerospace Center (DLR). 
+ * Eclipse ADORe, Automated Driving Open Research https://eclipse.org/adore
+ *
+ * This program and the accompanying materials are made available under the 
+ * terms of the Eclipse Public License 2.0 which is available at
+ * http://www.eclipse.org/legal/epl-2.0.
+ *
+ * SPDX-License-Identifier: EPL-2.0 
+ *
+ * Contributors: 
+ *   Jan Lauermann - initial API and implementation
+ ********************************************************************************-->
+<launch>
+  <group ns="trajectory_tracking">
+    <param name="key" value="0.05" type="double" />  
+    <param name="kepsi" value="0.4" type="double" />  
+    <param name="keomega" value="0.05" type="double" />  
+    <param name="kIx" value="0.1" type="double" />  
+    <param name="k0x" value="0.9" type="double" />  
+    <param name="k1x" value="1.6" type="double" />  
+    <param name="muCtrlMax" value="1.0" type="double" />  
+    <param name="axMax" value="2.0" type="double" />  
+    <param name="axMin" value="-3.0" type="double" />  
+    <param name="exStatic" value="0.0" type="double" />  
+    <param name="eyStatic" value="0.0" type="double" />  
+    <param name="deltaMax" value="1.0" type="double" />  
+    <param name="deltaMin" value="-1.0" type="double" />  
+    <param name="dDeltaMax" value="0.8" type="double" />  
+    <param name="brakingTorqueGain" value="0.0" type="double" />  
+    <param name="dBrakingTorqueMax" value="0.0" type="double" />
+    <param name="kPev_r" value="0.0" type="double" />
+    <param name="kIev_r" value="0.0" type="double" />  
+    <param name="kPex_r" value="0.0" type="double" />  
+    <param name="kIex_r" value="0.0" type="double" />  
+    <param name="kPey_r" value="0.0" type="double" />  
+    <param name="kPepsi_r" value="0.0" type="double" />  
+    <param name="kIepsi_r" value="0.0" type="double" />
+  </group>
+</launch>

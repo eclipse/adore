@@ -1,0 +1,2 @@
+BorderProgress borderProgress
+int16 state

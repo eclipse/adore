@@ -1,0 +1,2 @@
+BorderID borderId
+float64 cost

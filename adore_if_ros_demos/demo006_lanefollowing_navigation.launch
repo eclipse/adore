@@ -1,0 +1,36 @@
+<!--********************************************************************************
+ * Copyright (C) 2017-2020 German Aerospace Center (DLR). 
+ * Eclipse ADORe, Automated Driving Open Research https://eclipse.org/adore
+ *
+ * This program and the accompanying materials are made available under the 
+ * terms of the Eclipse Public License 2.0 which is available at
+ * http://www.eclipse.org/legal/epl-2.0.
+ *
+ * SPDX-License-Identifier: EPL-2.0 
+ *
+ * Contributors: 
+ *   Robert Markowski - initial API and implementation
+ ********************************************************************************-->
+<launch>
+  <node name="timer" pkg="adore_if_ros" type="adore_timer_node" output="screen" launch-prefix="xterm -e" args="paused"/>
+  <group ns="vehicle0">
+    <include ns="PARAMS" file="parameters/default.launch"/>
+    <param name="PARAMS/track" value="$(dirname)/tracks/basic_test_track.xodr" type="str" />
+    <param name="PARAMS/local_road_map/navigation_active" value="true" type="bool" />
+    <param name="PARAMS/navigation/active_plotting_global" value="false" type="bool" />  
+    <param name="PARAMS/tactical_planner/global_speed_limit" value="30" type="double" />  
+    <param name="simulationID" value="0" type="int" />  
+    <node name="vmodel" pkg="adore_if_ros" type="adore_vehiclemodel_node"/>
+    <node name="smodel" pkg="adore_if_ros" type="adore_objectdetectionmodel_node"/>
+    <node name="plotter" pkg="adore_if_ros" type="adore_borderbird_node"/>
+    <node name="lmap" pkg="adore_if_ros" type="adore_mapprovider_node" cwd="ROS_HOME"/><!-- ROS_HOME is ~/.ros by default-->
+    <node name="tracker" pkg="adore_if_ros" type="adore_feedbackcontroller_node" output="screen"/>
+    <node name="planner" pkg="adore_if_ros" type="adore_lfbehavior_node" output="screen"/>
+    <node name="lnav" pkg="adore_if_ros" type="adore_navigation_node" cwd="ROS_HOME"/>
+    <!-- set the start position -->
+    <node pkg="rostopic" type="rostopic" name="posereset" args="pub /vehicle0/SIM/ResetVehiclePose geometry_msgs/Pose '{position: {x: 150, y: 162, z: 0},orientation: { w: 1}}'"/>
+    <!-- set the goal position -->
+    <node pkg="rostopic" type="rostopic" name="navgoal" args="pub /vehicle0/ENV/NavigationGoal adore_if_ros_msg/NavigationGoal '{target: {x: 1570, y: 400, z: 0}}'"/>
+    <!-- <node pkg="rostopic" type="rostopic" name="navgoal" args="pub /vehicle0/ENV/NavigationGoal adore_if_ros_msg/NavigationGoal '{target: {x: 360, y: 162, z: 0}}'"/> -->
+  </group>
+</launch>

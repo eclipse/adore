@@ -1,0 +1,39 @@
+<!--********************************************************************************
+ * Copyright (C) 2017-2020 German Aerospace Center (DLR). 
+ * Eclipse ADORe, Automated Driving Open Research https://eclipse.org/adore
+ *
+ * This program and the accompanying materials are made available under the 
+ * terms of the Eclipse Public License 2.0 which is available at
+ * http://www.eclipse.org/legal/epl-2.0.
+ *
+ * SPDX-License-Identifier: EPL-2.0 
+ *
+ * Contributors: 
+ *   Daniel Heß - initial API and implementation
+ ********************************************************************************-->
+  <!--check whether sumo exists/is built, before launching-->
+  <!--  go to: ~/catkin_ws/src -->
+  <!--  execute: catkin build sumo_if_ros-->
+  <!--check the environment variable SUMO_HOME is set before launching-->
+  <!--otherwise enter command: export SUMO_HOME="~/catkin_ws/src/adore/sumo"-->
+<launch>
+  <node name="timer" pkg="adore_if_ros" type="adore_timer_node" launch-prefix="xterm -e " args="paused"/>
+  <node name="sumotraffic2ros_node" pkg="sumo_if_ros" type="sumotraffic2ros_node" launch-prefix="xterm -e "/> <!-- output="screen"/>-->
+  <group ns="vehicle0">
+    <include ns="PARAMS" file="parameters/default.launch"/>
+    <param name="PARAMS/track" value="$(dirname)/tracks/circle50m.xodr" type="str" />
+    <param name="simulationID" value="0" type="int" />  
+    <node name="vmodel" pkg="adore_if_ros" type="adore_vehiclemodel_node"/>
+    <node name="senmodel" pkg="adore_if_ros" type="adore_objectdetectionmodel_node"/>
+    <node name="plotter" pkg="adore_if_ros" type="adore_borderbird_node"/>
+    <node name="lmap" pkg="adore_if_ros" type="adore_mapprovider_node" cwd="ROS_HOME" output="screen"/>
+    <node name="tracker" pkg="adore_if_ros" type="adore_feedbackcontroller_node"/>
+    <node name="planner" pkg="adore_if_ros" type="adore_lfbehavior_node"/> 
+    <node pkg="rostopic" type="rostopic" name="posereset" args="pub /vehicle0/SIM/ResetVehiclePose geometry_msgs/Pose '{position: {x: 0, y: -52, z: 0},orientation: { w: 1}}'"/>
+  </group>
+  <arg name="sumocfg" value="../adore_if_ros_demos/demo005.sumocfg"/>
+  <arg name="sumohome" value="$(env SUMO_HOME)"/>
+  <arg name="traciport" value="1337"/>
+  <arg name="sumostep" value="0.05"/>
+  <node name="sumo" pkg="sumo_if_ros" type="start_sumo.sh" output="screen" launch-prefix="xterm -e " args="$(arg sumohome) $(arg sumocfg) $(arg traciport) $(arg sumostep)"/>
+</launch>

@@ -1,0 +1,41 @@
+<?xml version="1.0"?>
+<!--********************************************************************************
+ * Copyright (C) 2017-2020 German Aerospace Center (DLR). 
+ * Eclipse ADORe, Automated Driving Open Research https://eclipse.org/adore
+ *
+ * This program and the accompanying materials are made available under the 
+ * terms of the Eclipse Public License 2.0 which is available at
+ * http://www.eclipse.org/legal/epl-2.0.
+ *
+ * SPDX-License-Identifier: EPL-2.0 
+ *
+ * Contributors: 
+ *   Daniel Heß - initial API and implementation
+ ********************************************************************************-->
+<package format="2">
+  <name>sumo_if_ros</name>
+  <version>0.0.1</version>
+  <description>A SUMO to ROS bridge</description>
+  <maintainer email="Daniel.Hess@DLR.de">fascar</maintainer>
+  <license>EPL-2.0</license>
+  <!-- <url type="website">http://wiki.ros.org/sumo_if_ros</url> -->
+  <buildtool_depend>catkin</buildtool_depend>
+  <build_depend>roscpp</build_depend>
+  <build_depend>rospy</build_depend>
+  <build_depend>std_msgs</build_depend>
+  <depend>adore_if_ros_msg</depend>
+  <depend>v2x_if_ros</depend>
+  <build_export_depend>roscpp</build_export_depend>
+  <build_export_depend>rospy</build_export_depend>
+  <build_export_depend>std_msgs</build_export_depend>
+  <exec_depend>roscpp</exec_depend>
+  <exec_depend>rospy</exec_depend>
+  <exec_depend>std_msgs</exec_depend>
+
+
+  <!-- The export tag contains other, unspecified, tags -->
+  <export>
+    <!-- Other tools can request additional information be placed here -->
+
+  </export>
+</package>

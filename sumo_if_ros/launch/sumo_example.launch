@@ -1,0 +1,5 @@
+<launch>
+  <node name="timer" pkg="adore_if_ros" type="adore_timer_node" output="screen" launch-prefix="gnome-terminal --command"/>
+  <node name="sumotraffic2ros_node" pkg="sumo_if_ros" type="sumotraffic2ros_node" output="screen"/>
+  <node name="sumo" pkg="sumo_if_ros" type="sumo_example.sh" output="screen" launch-prefix="gnome-terminal --command"/>
+</launch>

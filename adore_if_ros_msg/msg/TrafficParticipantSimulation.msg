@@ -1,0 +1,2 @@
+TrafficParticipant data
+int32 simulationID

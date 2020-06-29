@@ -1,0 +1,163 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<OpenDRIVE><header date="2020-02-26" east="0" maxJunc="0" maxPrg="0" maxRoad="0" name="" north="0" originLat="0" originLong="0" revMajor="1" revMinor="4" south="0" version="1.00" west="0" />
+<road id="1" junction="-1" length="314.159265" name="">
+    <link />
+    <planView>
+        <geometry hdg="0" length="1000" s="0" x="0" y="0">
+            <line />
+        </geometry>
+    </planView>
+    <lanes>
+        <laneSection s="0">
+            <center>
+                <lane id="0" level="false" type="border">
+                    <link />
+                </lane>
+            </center>
+            <left />
+            <right>
+                <lane id="-1" level="false" type="driving">
+                    <link />
+                    <width a="5.0" b="0" c="0" d="0" sOffset="0" />
+                    <roadMark color="standard" sOffset="0" type="broken" weight="standard" width="1.3e-01" />
+                </lane>
+            </right>
+        </laneSection>
+        <laneSection s="200">
+            <center>
+                <lane id="0" level="false" type="border">
+                    <link />
+                </lane>
+            </center>
+            <left />
+            <right>
+                <lane id="-1" level="false" type="driving">
+                    <link />
+                    <width a="5.0" b="-0.25" c="0" d="0" sOffset="0" />
+                    <roadMark color="standard" sOffset="0" type="broken" weight="standard" width="1.3e-01" />
+                </lane>
+            </right>
+        </laneSection>
+        <laneSection s="210">
+            <center>
+                <lane id="0" level="false" type="border">
+                    <link />
+                </lane>
+            </center>
+            <left />
+            <right>
+                <lane id="-1" level="false" type="driving">
+                    <link />
+                    <width a="2.5" b="0" c="0" d="0" sOffset="0" />
+                    <roadMark color="standard" sOffset="0" type="broken" weight="standard" width="1.3e-01" />
+                </lane>
+            </right>
+        </laneSection>
+        <laneSection s="250">
+            <center>
+                <lane id="0" level="false" type="border">
+                    <link />
+                </lane>
+            </center>
+            <left />
+            <right>
+                <lane id="-1" level="false" type="driving">
+                    <link />
+                    <width a="2.5" b="0.13" c="0" d="0" sOffset="0" />
+                    <roadMark color="standard" sOffset="0" type="broken" weight="standard" width="1.3e-01" />
+                </lane>
+            </right>
+        </laneSection>
+        <laneSection s="260">
+            <center>
+                <lane id="0" level="false" type="border">
+                    <link />
+                </lane>
+            </center>
+            <left />
+            <right>
+                <lane id="-1" level="false" type="driving">
+                    <link />
+                    <width a="3.8" b="0" c="0" d="0" sOffset="0" />
+                    <roadMark color="standard" sOffset="0" type="broken" weight="standard" width="1.3e-01" />
+                </lane>
+            </right>
+        </laneSection>
+        <laneSection s="300">
+            <center>
+                <lane id="0" level="false" type="border">
+                    <link />
+                </lane>
+            </center>
+            <left />
+            <right>
+                <lane id="-1" level="false" type="driving">
+                    <link />
+                    <width a="3.8" b="-0.18" c="0" d="0" sOffset="0" />
+                    <roadMark color="standard" sOffset="0" type="broken" weight="standard" width="1.3e-01" />
+                </lane>
+            </right>
+        </laneSection>
+        <laneSection s="310">
+            <center>
+                <lane id="0" level="false" type="border">
+                    <link />
+                </lane>
+            </center>
+            <left />
+            <right>
+                <lane id="-1" level="false" type="driving">
+                    <link />
+                    <width a="2.0" b="0.0" c="0" d="0" sOffset="0" />
+                    <roadMark color="standard" sOffset="0" type="broken" weight="standard" width="1.3e-01" />
+                </lane>
+            </right>
+        </laneSection>
+        <laneSection s="320">
+            <center>
+                <lane id="0" level="false" type="border">
+                    <link />
+                </lane>
+            </center>
+            <left />
+            <right>
+                <lane id="-1" level="false" type="driving">
+                    <link />
+                    <width a="2.0" b="0.15" c="0" d="0" sOffset="0" />
+                    <roadMark color="standard" sOffset="0" type="broken" weight="standard" width="1.3e-01" />
+                </lane>
+            </right>
+        </laneSection>
+        <laneSection s="340">
+            <center>
+                <lane id="0" level="false" type="border">
+                    <link />
+                </lane>
+            </center>
+            <left />
+            <right>
+                <lane id="-1" level="false" type="driving">
+                    <link />
+                    <width a="5.0" b="0" c="0" d="0" sOffset="0" />
+                    <roadMark color="standard" sOffset="0" type="broken" weight="standard" width="1.3e-01" />
+                </lane>
+            </right>
+        </laneSection>
+        <laneSection s="500">
+            <center>
+                <lane id="0" level="false" type="border">
+                    <link />
+                </lane>
+            </center>
+            <left />
+            <right>
+                <lane id="-1" level="false" type="driving">
+                    <link />
+                    <width a="5.0" b="0" c="0" d="0" sOffset="0" />
+                    <roadMark color="standard" sOffset="0" type="broken" weight="standard" width="1.3e-01" />
+                </lane>
+            </right>
+        </laneSection>
+    </lanes>
+</road>
+</OpenDRIVE>

@@ -1,0 +1,24 @@
+<!--********************************************************************************
+ * Copyright (C) 2017-2020 German Aerospace Center (DLR). 
+ * Eclipse ADORe, Automated Driving Open Research https://eclipse.org/adore
+ *
+ * This program and the accompanying materials are made available under the 
+ * terms of the Eclipse Public License 2.0 which is available at
+ * http://www.eclipse.org/legal/epl-2.0.
+ *
+ * SPDX-License-Identifier: EPL-2.0 
+ *
+ * Contributors: 
+ *   Jan Lauermann - initial API and implementation
+ ********************************************************************************-->
+<launch>
+  <group ns="cooperation">
+    <param name="cooperation_mode" value="1" type="int" />  
+    <param name="assumed_chase_acceleration" value="-1.5" type="double" />  
+    <param name="negotiation_time" value="0.5" type="double" />
+    <param name="abs_time_uncertainly_for_lc" value="1.0" type="double" />  
+    <param name="abs_position_uncertainty" value="4.0" type="double" />  
+    <param name="abs_velocity_uncertainty" value="2.5" type="double" />
+    <param name="send_repetitive_messages" value="0" type="int" />
+  </group>
+</launch>
