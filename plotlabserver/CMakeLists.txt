@@ -15,7 +15,7 @@ cmake_minimum_required(VERSION 3.13)
 
 project(plotlabserver VERSION 0.0.1
              DESCRIPTION "Plotting server as part of the CSA framework"
-             HOMEPAGE_URL "https://gitlab.dlr.de/csa/plotlabserver"
+             HOMEPAGE_URL "https://github.com/eclipse/adore/plotlabserver"
 )
 
 set(CMAKE_MODULE_PATH

@@ -12,16 +12,6 @@
 #*   Thomas Lobig
 #********************************************************************************
 
-include (FetchContent)
-set(FETCHCONTENT_QUIET off)
-FetchContent_Declare(plotlablib
-    GIT_REPOSITORY https://gitlab.dlr.de/csa/plotlablib.git
-) # add GIT_TAG, if needed
 
-FetchContent_GetProperties(plotlablib)
-if(NOT plotlablib_POPULATED)
-    FetchContent_Populate(plotlablib)
-    # could add further cmake configuration items here
-    add_subdirectory(${plotlablib_SOURCE_DIR} ${plotlablib_BINARY_DIR})
-endif()
-
+set(plotlablib_sources_dir ${CMAKE_CURRENT_SOURCE_DIR}/../../../plotlabserver/plotlablib)
+add_subdirectory("${plotlablib_sources_dir}" "${CMAKE_CURRENT_BINARY_DIR}/../plotlablib")

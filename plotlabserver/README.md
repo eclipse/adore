@@ -28,8 +28,8 @@ sudo apt-get install libzmq3-dev freeglut3-dev libcurl4-openssl-dev
 ~~~
 Download, build and start Plotlabserver:
 ~~~bash
-git clone https://gitlab.dlr.de/csa/plotlabserver.git
-cd plotlabserver
+git clone https://github.com/eclipse/adore.git
+cd adore/plotlabserver
 ./build.sh
 ./start.sh
 ~~~

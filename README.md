@@ -47,12 +47,12 @@ Out of scope, not considered:
 - [Executable ROS demos/examples](adore_if_ros_demos)
 
 ## Overview
-- [libadore](https://gitlab.dlr.de/csa/libadore): System-independent library for automated driving functionality.
+- [libadore](libadore): System-independent library for automated driving functionality.
 - [adore_if_ros](adore_if_ros): ROS interface package for ADORe. Uses ROS nodes to run and interconnect applications defined in libadore.
 - [adore_if_ros_msg](adore_if_ros_msg): ROS message definitions for data exchange inside an automated vehicle as well as between different automated vehicles in a simulation setup.
 - [adore_if_ros_demos](adore_if_ros_demos): ROS launch files for simulation examples.
 - [sumo_if_ros](sumo_if_ros): ROS interface package for SUMO. Allows to combine ADORe automated vehicles and [SUMO](http://eclipse.org/sumo) traffic in a ROS-based simulation.
-- [plotlabserver](https://gitlab.dlr.de/csa/plotlabserver): System-independent plotting.
+- [plotlabserver](plotlabserver): System-independent plotting.
 
 ## Further information
 - The current current development state is documented [here](changelog.md)

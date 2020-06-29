@@ -21,7 +21,7 @@ One important design principle we strive to uphold, is to avoid direct dependenc
 Another important principle is to avoid depending on specific communication or middleware frameworks.
 The APPS package defines several "proto" processes, which interconnect model data akquisition, abstraction/refinement and planning and control modules, without referencing concrete middleware services. 
 Communication services are decoupled using an [abstract factory pattern](https://en.wikipedia.org/wiki/Factory_method_pattern). Several packages (ENV, FUN, SIM) define abstract factories to standardize their data exchange.
-A separate project [adore](gitlab.dlr.de/csa/adore) implements middleware-dependent concrete factory and concrete product implementations.
+A separate project [adore](../..) implements middleware-dependent concrete factory and concrete product implementations.
 
 Currently, adore_LIBS does not contain packages for sensor data fusion or interfacing with physical sensors. 
 Assuming a typical "sense-plan-act" architecture, all vehicle automation modules downstream of "sense" are in the scope of this project.

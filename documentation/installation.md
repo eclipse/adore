@@ -87,7 +87,7 @@ Execute these lines in a shell to create a workspace and clone the repository:
 ~~~bash
 mkdir -p ~/catkin_ws/src/adore
 cd ~/catkin_ws/src
-git clone https://gitlab.dlr.de/csa/adore.git adore
+git clone https://github.com/eclipse//adore.git adore
 ~~~
 
 ### (Optional) Setup ccache
