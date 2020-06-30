@@ -31,7 +31,7 @@
     <node name="planner" pkg="adore_if_ros" type="adore_lfbehavior_node"/> 
     <node pkg="rostopic" type="rostopic" name="posereset" args="pub /vehicle0/SIM/ResetVehiclePose geometry_msgs/Pose '{position: {x: 0, y: -52, z: 0},orientation: { w: 1}}'"/>
   </group>
-  <arg name="sumocfg" value="../adore_if_ros_demos/demo005.sumocfg"/>
+  <arg name="sumocfg" value="$(dirname)/demo005.sumocfg"/>
   <arg name="sumohome" value="$(env SUMO_HOME)"/>
   <arg name="traciport" value="1337"/>
   <arg name="sumostep" value="0.05"/>
