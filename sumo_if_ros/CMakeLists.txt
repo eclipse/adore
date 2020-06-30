@@ -57,7 +57,6 @@ find_package(catkin REQUIRED COMPONENTS
   std_msgs
   tf
   adore_if_ros_msg
-  v2x_if_ros
 )
 
 ## System dependencies are found with CMake's conventions
@@ -152,7 +151,7 @@ catkin_package(
 #  LIBRARIES sumo_if_ros
 #  CATKIN_DEPENDS roscpp rospy std_msgs
 #  DEPENDS system_lib
-  CATKIN_DEPENDS adore_if_ros_msg v2x_if_ros
+  CATKIN_DEPENDS adore_if_ros_msg
 )
 
 ###########
