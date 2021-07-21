@@ -1,17 +1,16 @@
 /********************************************************************************
- * Copyright (C) 2017-2020 German Aerospace Center (DLR). 
+ * Copyright (C) 2017-2020 German Aerospace Center (DLR).
  * Eclipse ADORe, Automated Driving Open Research https://eclipse.org/adore
  *
- * This program and the accompanying materials are made available under the 
+ * This program and the accompanying materials are made available under the
  * terms of the Eclipse Public License 2.0 which is available at
  * http://www.eclipse.org/legal/epl-2.0.
  *
- * SPDX-License-Identifier: EPL-2.0 
+ * SPDX-License-Identifier: EPL-2.0
  *
- * Contributors: 
+ * Contributors:
  *   Daniel Heß - initial API and implementation
  ********************************************************************************/
-
 
 #pragma once
 #include <adore/env/borderbased/borderset.h>
@@ -23,6 +22,7 @@
 #include <adore/mad/com_patterns.h>
 #include <adore/env/ego/vehiclemotionstate9d.h>
 #include <adore/env/map/precedence.h>
+#include <adore/env/tcd/controlledconnection.h>
 
 namespace adore
 {
@@ -38,7 +38,8 @@ namespace adore
 			{
 			private:
 				BorderSet borderSet_; /**< set of borders */
-				adore::env::PrecedenceSet precedenceSet_;
+				adore::env::PrecedenceSet precedenceSet_;/**< rule set for un-controlled connections*/
+				adore::env::ControlledConnectionSet connectionSet_;/**< current rule set for controlled connections*/
 				AFactory::TBorderFeed* borderFeed_; /**< border feed */
 				AFactory::TNavigationDataFeed* navigationDataFeed_; /**< border cost feed */
 				VehicleMotionState9d egoState_; /**< state of ego vehicle */
@@ -52,6 +53,9 @@ namespace adore
 				adore::params::APLocalRoadMap* apLocalRoadMap_; /**< Parameters for local road map */
 				adore::params::APVehicle* apVehicle_; /**< Parameters for vehicle */
 
+
+
+
 				/**
 				 * @brief update the data of local road map
 				 * 
@@ -61,7 +65,6 @@ namespace adore
 					while (borderFeed_->hasNext())
 					{
 						Border* b = new Border();
-						BorderID oldID;
 						borderFeed_->getNext(*b);
 						Border* result = borderSet_.getBorder(b->m_id);
 						if (result!=nullptr)//object exists => delete and create new
@@ -97,15 +100,21 @@ namespace adore
 			 * @param envfactory environment factory
 			 * @param paramsfactory parameter factory 
 			 */
-				LocalRoadMap(adore::env::AFactory* envfactory,adore::params::AFactory* paramsfactory)
-					:lms_continuation_(&borderSet_),lms_navigation_(&borderSet_,&borderCostMap_),precedenceSet_(envfactory->getPrecedenceRuleFeed())
-				{
-					borderFeed_ = envfactory->getBorderFeed();
-					navigationDataFeed_ = envfactory->getNavigationDataFeed();
-					vehicleReader_ = envfactory->getVehicleMotionStateReader();
-					apLocalRoadMap_ = paramsfactory->getLocalRoadMap();
-					apVehicle_ = paramsfactory->getVehicle();
+              LocalRoadMap(adore::env::AFactory* envfactory = adore::env::EnvFactoryInstance::get(),
+							adore::params::AFactory* paramsfactory = adore::params::ParamsFactoryInstance::get())
+                : precedenceSet_(envfactory->getPrecedenceRuleFeed())
+                , connectionSet_(envfactory->getControlledConnectionFeed())
+                , lms_continuation_(&borderSet_)
+                , lms_navigation_(&borderSet_, &borderCostMap_)
+              {
+                  borderFeed_ = envfactory->getBorderFeed();
+                  navigationDataFeed_ = envfactory->getNavigationDataFeed();
+                  vehicleReader_ = envfactory->getVehicleMotionStateReader();
+                  apLocalRoadMap_ = paramsfactory->getLocalRoadMap();
+                  apVehicle_ = paramsfactory->getVehicle();
 				}
+
+				VehicleMotionState9d getEgoState(){return egoState_;}
 				/**
 				 * @brief Get the BorderSet object
 				 * 
@@ -133,6 +142,10 @@ namespace adore
 				{
 					return &egoState_;
 				}
+				adore::params::APVehicle* getVehicleParameters()
+				{
+					return apVehicle_;
+				}  
 				/**
 				 * @brief Get the BorderTrace
 				 * 
@@ -169,6 +182,7 @@ namespace adore
 				{
 					return apLocalRoadMap_->isNavigationActive();
 				}
+				
 
 				/**
 				 * @brief Get the navigation cost for border on a certain point
@@ -224,11 +238,22 @@ namespace adore
 					}
 					return min_cost;
 				}
+
+
+				/**
+				 * @brief update only the ego state
+				 */
+				void updateEgoState()
+				{
+					vehicleReader_->getData(egoState_);
+				}
+
+
 				/**
 				 * @brief update the local road map
 				 * 
 				 */
-				void update()
+				void update(Border* matched_lane_proposal = nullptr)
 				{
 					updateData();
 					double radius = apLocalRoadMap_->getDiscardRadius();
@@ -244,25 +269,40 @@ namespace adore
 						apVehicle_->get_bodyWidth(),
 						lanesNearVehicle_	
 					);
-					if( lanesNearVehicle_.size()>0 )
+					if(matched_lane_proposal!=nullptr)
 					{
-						if(apLocalRoadMap_->isNavigationActive())
-						{
-							matchedLane_ = lms_navigation_.getBestMatch(&lanesNearVehicle_,&egoState_);
-						}
-						else
-						{
-							matchedLane_ = lms_continuation_.getBestMatch(&lanesNearVehicle_,&egoState_);
-						}
-						borderTrace_.setDistanceLimit(apLocalRoadMap_->getBorderTraceLength());
-						borderTrace_.insert(*matchedLane_);
+						matchedLane_ = matched_lane_proposal;
 					}
 					else
 					{
-						matchedLane_ = nullptr;
+						if( lanesNearVehicle_.size()>0 )
+						{
+							if(apLocalRoadMap_->isNavigationActive())
+							{
+								matchedLane_ = lms_navigation_.getBestMatch(&lanesNearVehicle_,&egoState_);
+							}
+							else
+							{
+								matchedLane_ = lms_continuation_.getBestMatch(&lanesNearVehicle_,&egoState_);
+							}
+						}
+						else
+						{
+							matchedLane_ = nullptr;
+						}
+					}
+					if(matchedLane_!=nullptr)
+					{
+						borderTrace_.setDistanceLimit(apLocalRoadMap_->getBorderTraceLength());
+						borderTrace_.insert(*matchedLane_);
 					}
 					precedenceSet_.update(radius,egoState_.getX(),egoState_.getY());
+					connectionSet_.update(radius,egoState_.getX(),egoState_.getY());
 				}
+				adore::env::ControlledConnectionSet* getControlledConnectionSet()
+				{
+					return &connectionSet_;
+				} 
 			};
 		}
 	}

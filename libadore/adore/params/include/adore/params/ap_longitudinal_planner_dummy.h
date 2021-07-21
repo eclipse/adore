@@ -98,6 +98,19 @@ namespace adore
         return 2.0;
       }
 
+
+      ///getAccLB returns longitudinal acceleration lower bound
+      virtual double getComfortAccLB() const override
+      {
+        return -1.0;
+      }
+      
+      ///getAccUB returns longitudinal acceleration upper bound
+      virtual double getComfortAccUB() const override
+      {
+        return 1.0;
+      }
+
       ///getJerkLB returns longitudinal jerk lower bound
       virtual double getJerkLB() const
       {

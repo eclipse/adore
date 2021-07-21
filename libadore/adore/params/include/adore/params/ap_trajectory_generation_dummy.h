@@ -46,6 +46,11 @@ namespace adore
 			{
 				return 100;
 			}
+			///time after which emergency maneuver kicks in
+			virtual double getEmergencyManeuverDelay()const override
+			{
+				return 0.5;
+			}
 		};
 	}
 }

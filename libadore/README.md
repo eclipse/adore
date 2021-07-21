@@ -25,6 +25,7 @@ libadore is a collection of libraries for education and research on Cooperative 
 * [**adore/params**](adore/params) - abstract parameter descriptions for AV
 * [**adore/sim**](adore/sim) - simulation tools
 * [**adore/if_xodr**](adore/if_xodr) - conversion of OpenDrive tracks into internal representation
+* [**adore/if_r2s**](adore/if_r2s) - conversion of Road2Simulation tracks into internal representation
 
 
 ## License

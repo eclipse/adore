@@ -1,6 +1,16 @@
-# SPDX-FileCopyrightText: 2019 German Aerospace Center (DLR)
-#
-# SPDX-License-Identifier: EPL-2.0
+# ********************************************************************************
+# * Copyright (C) 2017-2020 German Aerospace Center (DLR). 
+# * Eclipse ADORe, Automated Driving Open Research https://eclipse.org/adore
+# *
+# * This program and the accompanying materials are made available under the 
+# * terms of the Eclipse Public License 2.0 which is available at
+# * http://www.eclipse.org/legal/epl-2.0.
+# *
+# * SPDX-License-Identifier: EPL-2.0 
+# *
+# * Contributors: 
+# *   Thomas Lobig
+# ********************************************************************************
 
 cmake_minimum_required(VERSION 2.8.3)
 project(adore_if_ros_msg)
@@ -57,19 +67,40 @@ find_package(catkin REQUIRED COMPONENTS
 ## Generate messages in the 'msg' folder
  add_message_files(
    FILES
+   Action.msg
+   AreaOfEffect.msg
    Border.msg
    BorderID.msg
    BorderProgress.msg
    Connection.msg
+   CostPair.msg
+   LaneChangeGeometry.msg
+   LaneFollowingGeometry.msg
+   LaneGeometry.msg
+   LinearPiecewiseFunction1d.msg
+   LinearPiecewiseFunction2d.msg
+   LinearPiecewiseFunction3d.msg
+   MissionState.msg
    NavigationData.msg
    NavigationGoal.msg
+   OccupancyCylinder.msg
+   OccupancyCylinderPrediction.msg
+   OccupancyCylinderPredictionSet.msg
    ParkingSpot.msg
+   PlanningResult.msg
+   PlanningRequest.msg
+   PlanningResultSet.msg
+   PlotStart.msg
+   PointArray.msg
    Precedence.msg
    Proposition.msg
    SchedulerNotification.msg
    SetPoint.msg
    SetPointRequest.msg
+   StdState.msg
    StopLine.msg
+   TCDConnectionState.msg
+   TCDConnectionStateTrace.msg
    TerminalRequest.msg
    TrafficClassification.msg
    TrafficControlDevice.msg

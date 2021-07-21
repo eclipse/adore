@@ -29,7 +29,7 @@ namespace adore
       {
         Baseapp::init(argc, argv, rate, nodename);
         Baseapp::initSim();
-        lf_ = new adore::apps::LaneFollowingBehavior(this->getFactory<ENV_Factory>(),this->getFactory<FUN_Factory>(),this->getParamsFactory(""));
+        lf_ = new adore::apps::LaneFollowingBehavior();
 
         // timer callbacks
         std::function<void()> run_fcn(std::bind(&adore::apps::LaneFollowingBehavior::run,lf_));

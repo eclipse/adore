@@ -35,9 +35,7 @@ target_include_directories(
 
 include(../../external/xodr.cmake)
 
-target_compile_options(adore_if_xodr PUBLIC -w )
-
-target_link_libraries(adore_if_xodr #INTERFACE adore_params dlib::dlib Boost::headers)
+target_link_libraries(adore_if_xodr
   PUBLIC    
     adore::mad
     adore::env
@@ -48,3 +46,17 @@ target_compile_features(adore_if_xodr PUBLIC cxx_std_17)
 if(BUILD_adore_TESTING) 
 add_subdirectory(test)
 endif()
+
+install(TARGETS ${PROJECT_NAME} EXPORT ${PROJECT_NAME}Targets
+)
+
+install(EXPORT ${PROJECT_NAME}Targets
+    FILE ${PROJECT_NAME}Targets.cmake
+    NAMESPACE adore::
+    DESTINATION ../cmake/${PROJECT_NAME}
+)
+
+export(EXPORT ${PROJECT_NAME}Targets
+       FILE "${CMAKE_BINARY_DIR}/../cmake/${PROJECT_NAME}Targets.cmake"
+       NAMESPACE adore::
+)

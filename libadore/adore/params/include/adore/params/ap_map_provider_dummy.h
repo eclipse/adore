@@ -40,6 +40,10 @@ namespace adore
                 {
                     return false;
                 }
+                virtual int getXODRLoaderPointsPerBorder()const override
+                {
+                    return 128;
+                }
             };
     }
 }

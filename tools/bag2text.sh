@@ -1,3 +1,4 @@
+#!/bin/bash
 #********************************************************************************
 #* Copyright (C) 2017-2020 German Aerospace Center (DLR). 
 #* Eclipse ADORe, Automated Driving Open Research https://eclipse.org/adore
@@ -11,7 +12,6 @@
 #* Contributors: 
 #*   Daniel Heß
 #********************************************************************************
-#!/bin/bash
 # parameter $1: filename(s) of bag files
 # parameter $2: option for rostopic echo format: e.g. -p for csv output
 dirname="${1%% **}_txt" 

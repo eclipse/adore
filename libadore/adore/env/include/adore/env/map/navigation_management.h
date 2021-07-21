@@ -31,6 +31,7 @@ namespace adore
 			MapBorderManagement m_map;
 			double m_maxCost;
 			bool m_goalChanged;
+			double m_laneChangePenalty;
 			
 			BorderBased::Coordinate m_destination;
 			BorderBased::BorderGraph::BorderCostMap m_borderCosts;
@@ -125,6 +126,12 @@ namespace adore
 				m_borderCosts = BorderBased::BorderGraph::BorderCostMap();
 				m_maxCost = -1;
 				m_goalChanged = true;
+				m_laneChangePenalty = 100.0;
+			}
+
+			void setLaneChangePenalty(double value)
+			{
+				m_laneChangePenalty = value;
 			}
 
 			void addFeed(adore::mad::AFeed<adore::env::BorderBased::Border> * feed)
@@ -212,7 +219,7 @@ namespace adore
 				
 				/* prepare graph usage */
 				BorderBased::BorderGraphCostWithLaneChanges * cost_function = new BorderBased::BorderGraphCostWithLaneChanges();
-				cost_function->setLaneChangePenalty(100);
+				cost_function->setLaneChangePenalty(m_laneChangePenalty);
 				auto targetBorder = getBorderFromCurrentTarget();
 				if(targetBorder!=nullptr)
 				{

@@ -13,12 +13,15 @@
  ********************************************************************************/
 
 #pragma once
-#include <adore/view/alanefollowingview.h>
+#include <adore/view/alimitlineenroute.h>
+#include <adore/view/anavigationgoalview.h>
+#include <adore/view/alane.h>
 #include <adore/fun/tac/anominalplanner.h>
 #include <adore/params/ap_longitudinal_planner.h>
 #include <adore/params/ap_lateral_planner.h>
 #include <adore/params/ap_tactical_planner.h>
 #include <adore/mad/adoremath.h>
+#include <set>
 
 namespace adore
 {
@@ -31,18 +34,17 @@ namespace adore
     class CurvatureSpeedLimit:public ANominalConstraint
     {
       private:
-        adore::view::ALaneFollowingView* lfv_;
+        adore::view::ALane* lfv_;
         adore::params::APLongitudinalPlanner* plon_;
         double lon_ayub_;
         double vmin_ay_;
       public:
-        CurvatureSpeedLimit(adore::view::ALaneFollowingView* lfv,
+        CurvatureSpeedLimit(adore::view::ALane* lfv,
                             adore::params::APLongitudinalPlanner* plon)
                             :lfv_(lfv),plon_(plon){}
 
         virtual double getValue(double t,double s,double ds)const override
         {
-          s = adore::mad::bound(0.0,s,lfv_->getViewingDistance());
           double kappa = (std::abs)(lfv_->getCurvature(s,0));
           if(kappa<1e-6)return 10000.0;
           return (std::max)((std::sqrt)(lon_ayub_ / kappa),vmin_ay_);
@@ -51,6 +53,111 @@ namespace adore
         {
           lon_ayub_ = plon_->getAccLatUB();
           vmin_ay_ = plon_->getAccLatUB_minVelocity();
+        }
+        virtual ConstraintDirection getDirection() override
+        {
+          return UB;
+        }
+        virtual int getDimension() override
+        {
+          return 0;
+        }
+        virtual int getDerivative() override
+        {
+          return 1;
+        }
+    };
+    /**
+     * CurvatureSpeedLimitSmooth - applies some averaging to CurvatureSpeedLimit
+     */
+    class CurvatureSpeedLimitSmooth:public ANominalConstraint
+    {
+      private:
+        CurvatureSpeedLimit csl_;
+        double dt;
+        int km;
+        int kp;
+      public:
+        CurvatureSpeedLimitSmooth(adore::view::ALane* lfv,
+                            adore::params::APLongitudinalPlanner* plon)
+                            :csl_(lfv,plon)
+        {
+          dt = 0.5;
+          km = 5;
+          kp = 15;
+        }
+
+        virtual double getValue(double t,double s,double ds)const override
+        {
+          ds = std::max(0.0,ds);
+          double value = csl_.getValue(t,s,ds);
+          for(int i=1;i<=kp;i++)value+=csl_.getValue(t,s+ds*dt*i,ds);
+          for(int i=1;i<=km;i++)value+=csl_.getValue(t,s-ds*dt*i,ds);
+          value = value / (double)(kp+km+1);
+          return value;
+        }
+        virtual void update(double t0,double s0,double ds0) override
+        {
+          csl_.update(t0,s0,ds0);
+        }
+        virtual ConstraintDirection getDirection() override
+        {
+          return UB;
+        }
+        virtual int getDimension() override
+        {
+          return 0;
+        }
+        virtual int getDerivative() override
+        {
+          return 1;
+        }
+    };
+    /**
+     * CurvatureSpeedLimitPredict - applies comfort deceleration curve predictively
+     */
+    class CurvatureSpeedLimitPredict:public ANominalConstraint
+    {
+      private:
+        CurvatureSpeedLimit csl_;
+        double sstep_;
+        double smax_;
+        double s_curvature_lookahead_;
+        double a;
+        adore::params::APLongitudinalPlanner* plon_;
+
+      public:
+        CurvatureSpeedLimitPredict(adore::view::ALane* lfv,
+                                  adore::params::APLongitudinalPlanner* plon)
+                            :csl_(lfv,plon),plon_(plon)
+        {
+          sstep_ = 1.0;
+          smax_ = 200.0;
+          s_curvature_lookahead_ = 10.0;
+        }
+
+        virtual double getValue(double t,double s,double ds)const override
+        {
+          ds = std::max(0.0,ds);
+          const double t_lah = ds/a;
+          const double s_lah = (std::min)(smax_,0.5*a*t_lah*t_lah);//breaking distance at current speed
+          double vmin = csl_.getValue(t,s,ds);//init with current limit
+          for(double si = s+sstep_;si<=s+s_lah;si+=sstep_)
+          {
+            double v1 = csl_.getValue(t,si,ds);
+            for(double sj = si + sstep_;sj<=si+s_curvature_lookahead_;sj+=sstep_)
+            {
+              v1 = (std::min)(v1,csl_.getValue(t,sj,ds));
+            }
+            const double v0 = std::sqrt(v1*v1+2.0*(si-s)*a);//initial velocity of breaking curve arriving at si with v1
+            vmin = (std::min)(vmin,v0);
+          }
+          return std::max(0.0,vmin);
+        }
+        virtual void update(double t0,double s0,double ds0) override
+        {
+          a = -plon_->getComfortAccLB();
+          csl_.update(t0,s0,ds0);
         }
         virtual ConstraintDirection getDirection() override
         {
@@ -96,7 +203,7 @@ namespace adore
     class LaneWidthSpeedLimitLFV:public ANominalConstraint
     {
       private:
-        adore::view::ALaneFollowingView* lfv_;
+        adore::view::ALane* lfv_;
         const adore::params::APLongitudinalPlanner* plon_;
         double min_width_stop_;
         double min_width_slow_;
@@ -104,13 +211,12 @@ namespace adore
         double min_width_fast_;
         double min_width_fast_speed_;
       public:
-        LaneWidthSpeedLimitLFV(adore::view::ALaneFollowingView* lfv,
+        LaneWidthSpeedLimitLFV(adore::view::ALane* lfv,
                                const adore::params::APLongitudinalPlanner* plon)
                             :lfv_(lfv),plon_(plon){}
 
         virtual double getValue(double t,double s,double ds)const override
         {
-          s = adore::mad::bound(0.0,s,lfv_->getViewingDistance());
           double d = lfv_->getOffsetOfLeftBorder(s)-lfv_->getOffsetOfRightBorder(s);
           if(d>min_width_fast_)
           {
@@ -158,7 +264,7 @@ namespace adore
     class StopAtBottleneckLFV:public ANominalConstraint
     {
       private:
-        adore::view::ALaneFollowingView* lfv_;
+        adore::view::ALane* lfv_;
         const adore::params::APLongitudinalPlanner* plon_;
         const adore::params::APVehicle* pv_;
         const adore::params::APTrajectoryGeneration* pgen_;
@@ -166,7 +272,7 @@ namespace adore
         double distance_;
         double ds_sample_;
       public:
-        StopAtBottleneckLFV(adore::view::ALaneFollowingView* lfv, 
+        StopAtBottleneckLFV(adore::view::ALane* lfv, 
                             const adore::params::APLongitudinalPlanner* plon,
                             const adore::params::APVehicle* pv,
                             const adore::params::APTrajectoryGeneration* pgen,
@@ -181,11 +287,11 @@ namespace adore
         }
         virtual void update(double t0,double s0,double ds0) override 
         {
-          distance_ = lfv_->getViewingDistance()
+          distance_ = lfv_->getSMax()
                             - pv_->get_a()-pv_->get_b()-pv_->get_c()
                             + pgen_->get_rho();
           double dmin = plon_->getMinWidthStop();
-          for(double s = s0;s<lfv_->getViewingDistance();s+=ds_sample_)
+          for(double s = s0;s<lfv_->getSMax();s+=ds_sample_)
           {
             double d = lfv_->getOffsetOfLeftBorder(s)-lfv_->getOffsetOfRightBorder(s);
             if(d<=dmin)
@@ -217,17 +323,20 @@ namespace adore
     class BreakAtHorizon:public ANominalConstraint
     {
       private:
-        adore::view::ALaneFollowingView* lfv_;
+        adore::view::ALane* lfv_;
+        adore::params::APVehicle* pvehicle_;
+        adore::params::APTrajectoryGeneration* pgen_;
         double distance_;
       public:
-        BreakAtHorizon(adore::view::ALaneFollowingView* lfv):lfv_(lfv){}
+        BreakAtHorizon(adore::view::ALane* lfv,adore::params::APVehicle* pvehicle,adore::params::APTrajectoryGeneration* pgen):
+          lfv_(lfv),pvehicle_(pvehicle),pgen_(pgen){}
         virtual double getValue(double t,double s,double ds)const override
         {
           return distance_;
         }
         virtual void update(double t0,double s0,double ds0) override 
         {
-          distance_ = lfv_->getViewingDistance();
+          distance_ = lfv_->getSMax()-(pvehicle_->get_a()+pvehicle_->get_b()+pvehicle_->get_c()-pgen_->get_rho());
         }
         virtual ConstraintDirection getDirection() override
         {
@@ -252,7 +361,7 @@ namespace adore
     class LateralAccelerationConstraint:public ANominalConstraint
     {
       private:
-        adore::view::ALaneFollowingView* lfv_;
+        adore::view::ALane* lfv_;
         adore::params::APLateralPlanner* p_;
         double ay_ub_;
         double ay_lb_;
@@ -260,14 +369,13 @@ namespace adore
         double curvature_lb_;
         ConstraintDirection d_;
       public:
-        LateralAccelerationConstraint(adore::view::ALaneFollowingView* lfv,
+        LateralAccelerationConstraint(adore::view::ALane* lfv,
                                       adore::params::APLateralPlanner* p,
                                       ConstraintDirection d)
                             :lfv_(lfv),p_(p),d_(d){}
 
         virtual double getValue(double t,double s,double ds)const override
         {
-          s = adore::mad::bound(0.0,s,lfv_->getViewingDistance());
           double kappa = lfv_->getCurvature(s,0);
           ds = (std::max)(0.0,ds);
           double ayset = -kappa*ds*ds; 
@@ -312,6 +420,7 @@ namespace adore
 
         virtual double getValue(double t,double s,double ds)const override
         {
+          ds = std::max(0.1,ds);
           return ds * (std::tan)(d_==LB?heading_lb_:heading_ub_);
         }
         virtual void update(double t0,double s0,double ds0) override
@@ -339,18 +448,17 @@ namespace adore
     class LFVSpeedLimit:public ANominalConstraint
     {
       private:
-        adore::view::ALaneFollowingView* lfv_;
+        adore::view::ALane* lfv_;
         adore::params::APTacticalPlanner* p_;
         double globalSpeedLimit_;
       public:
-        LFVSpeedLimit(adore::view::ALaneFollowingView* lfv,adore::params::APTacticalPlanner* p):lfv_(lfv),p_(p)
+        LFVSpeedLimit(adore::view::ALane* lfv,adore::params::APTacticalPlanner* p):lfv_(lfv),p_(p)
         {
           globalSpeedLimit_ = 5.0;
         }
 
         virtual double getValue(double t,double s,double ds)const override
         {
-          s = adore::mad::bound(0.0,s,lfv_->getViewingDistance());
           return std::min(lfv_->getSpeedLimit(s),globalSpeedLimit_);
         }
         virtual void update(double t0,double s0,double ds0) override
@@ -377,13 +485,13 @@ namespace adore
     class LateralAccelerationReference:public ANominalReference
     {
       private:
-        adore::view::ALaneFollowingView* lfv_;
+        adore::view::ALane* lfv_;
       public:
-        LateralAccelerationReference(adore::view::ALaneFollowingView* lfv):lfv_(lfv){}
+        LateralAccelerationReference(adore::view::ALane* lfv):lfv_(lfv){}
       public:
         virtual bool getValueIfAvailable(double t, double s, double ds,double & ref)const override
         {
-          s = adore::mad::bound(0.0,s,lfv_->getViewingDistance());
+          ds = std::max(0.0,ds);
           double kappa = lfv_->getCurvature(s,0);
           ref = -kappa*ds*ds;            
           return true;
@@ -405,13 +513,13 @@ namespace adore
     class LateralJerkReference:public ANominalReference
     {
       private:
-        adore::view::ALaneFollowingView* lfv_;
+        adore::view::ALane* lfv_;
       public:
-        LateralJerkReference(adore::view::ALaneFollowingView* lfv):lfv_(lfv){}
+        LateralJerkReference(adore::view::ALane* lfv):lfv_(lfv){}
       public:
         virtual bool getValueIfAvailable(double t, double s, double ds,double & ref)const override
         {
-          s = adore::mad::bound(0.0,s,lfv_->getViewingDistance());
+          ds = std::max(0.0,ds);
           double dkappads = lfv_->getCurvature(s,1);
           ref = -dkappads*ds*ds*ds;
           return true;
@@ -433,15 +541,15 @@ namespace adore
     class NominalReferenceSpeed:public ANominalReference
     {
       private:
-        adore::view::ALaneFollowingView* lfv_;
+        adore::view::ALane* lfv_;
         LFVSpeedLimit lFVSpeedLimit_;
         CurvatureSpeedLimit curvatureSpeedLimit_;
         adore::params::APLongitudinalPlanner* plon_;
         double constraintClearance_;
         double speed_scale_;/**< speed_scale_ allows to drive (cautiosly) at a certain percentage of the maximum speed*/
       public:
-        NominalReferenceSpeed(adore::view::ALaneFollowingView* lfv,adore::params::APLongitudinalPlanner* plon,adore::params::APTacticalPlanner* ptac)
-              :lfv_(lfv),plon_(plon),lFVSpeedLimit_(lfv,ptac),curvatureSpeedLimit_(lfv,plon)
+        NominalReferenceSpeed(adore::view::ALane* lfv,adore::params::APLongitudinalPlanner* plon,adore::params::APTacticalPlanner* ptac)
+              :lfv_(lfv),lFVSpeedLimit_(lfv,ptac),curvatureSpeedLimit_(lfv,plon),plon_(plon)
               {
                 speed_scale_ = 1.0;
               }
@@ -479,10 +587,16 @@ namespace adore
      */
     class FollowCenterlineReference:public ANominalReference
     {
+      private:
+        adore::view::ALane* lfv_;
       public:
+        FollowCenterlineReference(adore::view::ALane* lfv):lfv_(lfv){}
         virtual bool getValueIfAvailable(double t, double s, double ds,double & ref)const override
         {
-          ref = 0.0;
+          const double dl = lfv_->getOffsetOfLeftBorder(s);
+          const double dr = lfv_->getOffsetOfRightBorder(s);
+          const double dc = (dl+dr)*0.5;
+          ref = dc;
           return true;
         }
         virtual void update(double t0,double s0,double ds0)override{}
@@ -502,32 +616,54 @@ namespace adore
     class LateralOffsetConstraintLF:public ANominalConstraint
     {
       private:
-        adore::view::ALaneFollowingView* lfv_;
+        adore::view::ALane* lfv_;
         adore::params::APVehicle* pv_;
         adore::params::APLateralPlanner* plat_;
         double width_;
         double hard_safety_distance_;
         double soft_safety_distance_;
         double min_control_space_;
+        double delay_s_;
+        double delay_n_;
+        double s0_;
         ConstraintDirection d_;
       public:
-        LateralOffsetConstraintLF(adore::view::ALaneFollowingView* lfv,
+        LateralOffsetConstraintLF(adore::view::ALane* lfv,
                                   adore::params::APVehicle* pv,
                                   adore::params::APLateralPlanner* plat,
-                                  ConstraintDirection d):lfv_(lfv),pv_(pv),d_(d),plat_(plat){}
-
-        virtual double getValue(double t,double s,double ds)const override
+                                  ConstraintDirection d):lfv_(lfv),pv_(pv),plat_(plat),d_(d)
         {
-          s = adore::mad::bound(0.0,s,lfv_->getViewingDistance());
-          const double dl = lfv_->getOffsetOfLeftBorder(s);
-          const double dr = lfv_->getOffsetOfRightBorder(s);
-          const double dc = (dl+dr)*0.5;
-          const double d = dl-dr;
+        }
+
+
+        double getValue(double t,double s,double ds)const override
+        {
+          double dl = lfv_->getOffsetOfLeftBorder(s);
+          double dr = lfv_->getOffsetOfRightBorder(s);
+          double dc = (dl+dr)*0.5;
+          if(s-s0_<delay_s_)
+          {
+            dl += delay_n_;
+            dr -= delay_n_;
+          }
+          double d = dl-dr;
+
+          //TODO: next section was added for debugging
+          {
+            if(d_==LB)
+            {
+              return dr + hard_safety_distance_ + width_*0.5;
+            }
+            else
+            {
+              return dl - hard_safety_distance_ - width_*0.5;
+            }
+          }
 
           //not enough room to enforce hard safety distance->singular solution
           if(d < 2.0*hard_safety_distance_ + width_)
           {
-            return dc;
+            return dc+((d_==LB)?-0.01:+0.01);
           }
           //not enough room to enforce min_control_space and hard_safety_distance -> enforce hard_safety_distance
           else if(d < 2.0*soft_safety_distance_ + width_ + min_control_space_)
@@ -560,7 +696,9 @@ namespace adore
           hard_safety_distance_ = plat_->getHardSafetyDistanceToLaneBoundary();
           soft_safety_distance_ = plat_->getSoftSafetyDistanceToLaneBoundary();
           min_control_space_ = plat_->getMinimumLateralControlSpace();
-          
+          delay_s_ = plat_->getMergeConstraintDelay() * (std::max)(ds0,3.0);
+          delay_n_ = width_;
+          s0_ = s0;
         }
         virtual ConstraintDirection getDirection() override
         {
@@ -673,6 +811,177 @@ namespace adore
         }
     };
 
+    /**
+     * A constraint, which upper bounds the position of the ego vehicle according to the nearest preceding vehicle
+     */
+    class FollowPrecedingVehicle_BreakingCurve:public ANominalConstraint
+    {
+      private:
+        adore::view::ALane* lane_;
+        const adore::params::APTacticalPlanner* ptac_;
+        const adore::params::APVehicle* pveh_;
+        const adore::params::APTrajectoryGeneration* pgen_;
+        //@TODO: prediction strategy
+        double s_front_t0_;/**< constraint position at t0*/
+        double v_front_t0_;/**< constraint velocity at t0*/
+        double t0_;/**< observation time*/
+        double amin_;/**< minimum assumed acceleration for preceding vehicle*/
+      public:
+        FollowPrecedingVehicle_BreakingCurve(adore::view::ALane* lane,
+                                const adore::params::APVehicle* pveh,
+                                const adore::params::APTacticalPlanner* ptac,
+                                const adore::params::APTrajectoryGeneration* pgen)
+                      :lane_(lane),ptac_(ptac),pveh_(pveh),pgen_(pgen),amin_(-1.0){}
+        virtual double getValue(double t,double s,double ds)const override
+        {
+          double t_standstill = std::max(v_front_t0_,0.0) / -amin_ + t0_;
+          t = std::min(t,t_standstill);//predict no further then until standstill
+          return s_front_t0_ + v_front_t0_ * (t-t0_) + 0.5*amin_*(t-t0_)*(t-t0_);
+        }
+        virtual void update(double t0,double s0,double ds0) override 
+        {
+          amin_ = ptac_->getAssumedNominalAccelerationMinimum();
+          double to_front = pveh_->get_a() + pveh_->get_b() + pveh_->get_c() - pgen_->get_rho();
+          const adore::view::TrafficQueue& q = lane_->getOnLaneTraffic();
+          s_front_t0_ = 1.0e6;//initialize unbounded
+          v_front_t0_ = 0.0;
+          t0_ = t0;
+          for(auto& object:q)
+          {
+            double object_v0 = object.getCurrentSpeed();
+            double delay = t0_ - object.getObservationTime();
+            double object_s0 = object.getCurrentProgress() - object.getLength()*0.5 - to_front + delay * object_v0;
+            if(object_s0>s0)
+            {
+              //in contrast to other constraint variant, the time gap is removed here, as the breaking curve is directly considered
+              double buffer = ptac_->getFrontSGap();
+              s_front_t0_ = object_s0 - buffer ;
+              v_front_t0_ = object_v0;
+              break;
+            }
+          }
+        }
+        virtual ConstraintDirection getDirection() override
+        {
+          return UB;
+        }
+        virtual int getDimension() override
+        {
+          return 0;
+        }
+        virtual int getDerivative() override
+        {
+          return 0;
+        }
+    };
+
+    /**
+     * A constraint, which upper bounds the position of the ego vehicle according to the next limit line
+     */
+    class AdhereToNextLimitLine:public ANominalConstraint
+    {
+      private:
+         adore::view::ALimitLineEnRoute* nextLL_;
+        const adore::params::APTacticalPlanner* ptac_;
+        const adore::params::APVehicle* pveh_;
+        const adore::params::APTrajectoryGeneration* pgen_;
+        double s_max_;
+        std::set<adore::view::LimitLine::EState> drivable_states_;
+      public:
+        AdhereToNextLimitLine( adore::view::ALimitLineEnRoute* nextLL,
+                                const adore::params::APVehicle* pveh,
+                                const adore::params::APTacticalPlanner* ptac,
+                                const adore::params::APTrajectoryGeneration* pgen)
+                      :nextLL_(nextLL),ptac_(ptac),pveh_(pveh),pgen_(pgen)
+        {
+          drivable_states_.insert(adore::view::LimitLine::GO);//green, spatem state 5  
+          drivable_states_.insert(adore::view::LimitLine::CONFLICT);//green with conflicting traffic, spatem state 6
+        }
+        virtual double getValue(double t,double s,double ds)const override
+        {
+          return s_max_;
+        }
+        virtual void update(double t0,double s0,double ds0) override 
+        {
+          s_max_ = 1.0e6;//initialize unconstrained
+          if(nextLL_!=nullptr && nextLL_->hasLimitLine(s0))
+          {
+            auto ll = nextLL_->getLimitLine(t0,s0);
+            double front_length = pveh_->get_a() + pveh_->get_b() + pveh_->get_c() - pgen_->get_rho();
+            double s_stop = ll.getProgress()-front_length;
+            double distance = s_stop -s0;
+            double v = ds0>1.0?ds0:0.0;
+            bool braking_possible = true;
+            //prevent braking, if impossible acceleration required
+            if(v>0.1)
+            {
+              double a_stop = 0.5 * v*v / std::max(distance,0.0);
+              braking_possible = a_stop<2.5;//@TODO: define parameter
+            }
+            //if the current state is drivable
+            if(drivable_states_.find(ll.getCurrentState())!=drivable_states_.end())
+            {
+              return;//leave smax at maximum value
+            }
+            if(ll.getCurrentState()==adore::view::LimitLine::CLEAR
+               && !braking_possible)
+            {
+              return;//leave smax at maximum value
+            }
+            s_max_ = s_stop;
+          }
+        }
+        virtual ConstraintDirection getDirection() override
+        {
+          return UB;
+        }
+        virtual int getDimension() override
+        {
+          return 0;
+        }
+        virtual int getDerivative() override
+        {
+          return 0;
+        }
+    };
+    /**
+     * A constraint, which upper bounds the position of the ego vehicle according to the next goalpoint
+     */
+    class StopAtNextGoalPoint:public ANominalConstraint
+    {
+      private:
+        const adore::view::ANavigationGoalView* next_;
+        double s_max_;
+      public:
+        StopAtNextGoalPoint(const adore::view::ANavigationGoalView* next)
+                      :next_(next){}
+        virtual double getValue(double t,double s,double ds)const override
+        {
+          return s_max_;
+        }
+        virtual void update(double t0,double s0,double ds0) override 
+        {
+          s_max_ = 1.0e6;//initialize unconstrained
+          if(next_!=nullptr
+          && next_->isNextGoalPointFinal()
+          && next_->isNextGoalPointInView())
+          {
+            s_max_ = next_->getProgress();
+          }
+        }
+        virtual ConstraintDirection getDirection() override
+        {
+          return UB;
+        }
+        virtual int getDimension() override
+        {
+          return 0;
+        }
+        virtual int getDerivative() override
+        {
+          return 0;
+        }
+    };
 
   }
 }

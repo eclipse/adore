@@ -61,6 +61,7 @@ namespace adore
 
 			typedef std::unordered_map<adore::env::BorderBased::Border*,std::string> Border2RoadID;
 
+		public:
 			/**
 			 * @brief sampling configuration object
 			 * 
@@ -1333,7 +1334,8 @@ namespace adore
 							adore::env::BorderBased::ParkingSpotSet* parkingSpotSet,
 							BorderIDTranslation* idTranslation,
 							double* x0, double* y0,
-							bool relative_coordinates)
+							bool relative_coordinates,
+							double x_r, double y_r, double angle)
 			{
 				std::unique_ptr<OpenDRIVE> op = OpenDRIVE_(filename, xml_schema::flags::keep_dom | xml_schema::flags::dont_validate);
 				if(relative_coordinates && op->header().south().present() && op->header().west().present())
@@ -1383,7 +1385,7 @@ namespace adore
 				 * translates the map by a specified offset.
 				 * idTranslation is computed inside, because BorderIDs change with translation.
 				 */
-				translate_map(m_x0,m_y0,0.0,
+				translate_and_rotate_map(m_x0,m_y0,0.0, x_r, y_r, angle,
 										&tmpBorderSet,&tmpTCDSet,&tmpStoplineSet,&tmpParkingSpotSet,
                                         targetSet,tcdSet,stoplineSet,parkingSpotSet,&border2RoadID,idTranslation);
 
@@ -1405,7 +1407,7 @@ namespace adore
 			 * @param targetStoplineSet 
 			 * @param targetParkingSpotSet 
 			 */
-			void translate_map(double dx,double dy,	double dz,
+			void translate_and_rotate_map(double dx,double dy,	double dz, double x_r, double y_r, double angle,
 													adore::env::BorderBased::BorderSet* sourceBorderSet, 
 													adore::env::TCDSet* sourceTcdSet, 
 													adore::env::BorderBased::LanePositionedObjectSet* sourceStoplineSet,
@@ -1423,6 +1425,7 @@ namespace adore
 					{
 						adore::env::BorderBased::Border* sourceBorder = it.first->second;
 						adore::env::BorderBased::Border* newBorder = new adore::env::BorderBased::Border(*sourceBorder);
+						// newBorder->rotateXY(angle, x_r, y_r);
 						newBorder->translate(dx,dy,dz);
 						targetBorderSet->insert_border(newBorder);
 						idTranslation->insert(newBorder->m_id,(*border2RoadID)[sourceBorder]);
@@ -1435,6 +1438,7 @@ namespace adore
 					{
 						adore::env::TrafficControlDevice* sourceTCD = it.first->second;
 						adore::env::TrafficControlDevice* newTCD = new adore::env::TrafficControlDevice(*sourceTCD);
+						// newTCD->rotate(angle, x_r, y_r);
 						newTCD->translate(dx,dy,dz);
 						targetTcdSet->insertTCD(newTCD);
 						if(sourceTCD->getType()==adore::env::TrafficControlDevice::TRAFFIC_LIGHT)
@@ -1452,6 +1456,7 @@ namespace adore
 					{
 						adore::env::BorderBased::StopLine* sourceSL = (adore::env::BorderBased::StopLine*)(it.first->second);
 						adore::env::BorderBased::StopLine* newSL = new adore::env::BorderBased::StopLine(*sourceSL);
+						// newSL->rotate(angle, x_r, y_r);
 						newSL->translate(dx,dy,dz);
 						targetStoplineSet->insert_object(newSL);
 					}
@@ -1465,6 +1470,7 @@ namespace adore
 						auto y = ps->first.get<1>();
 						auto z = ps->first.get<2>();
 						adore::env::BorderBased::Coordinate c(x,y,z);
+						// c.rotate(angle, x_r, y_r);
 						c.translate(dx,dy,dz);
 						targetParkingSpotSet->insertParkingSpot(adore::env::BorderBased::ParkingSpot(c,ps->second));
 					}

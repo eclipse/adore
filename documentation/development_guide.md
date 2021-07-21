@@ -134,4 +134,36 @@ gprof executablename gmon.out > analysis.txt
 ~~~
 Search for "Call graph" section in the file as a good starting point.
 
+## Test libadore
 
+The libadore library can be built and tested seperately:
+
+~~~bash
+cd ~/catkin_ws/src/adore/libadore
+mkdir build
+cd build
+cmake .. -DBUILD_adore_TESTING=true
+make
+make test
+~~~
+
+To automatically build and run tests as part of the catkin build process the catkin workspace can be configured as follows:
+
+~~~bash
+cd ~/catkin_ws
+catkin config --install --make-args install all test --catkin-make-args run_tests --cmake-args -DBUILD_adore_TESTING=ON
+catkin build adore_if_ros
+~~~
+
+If using ROS Noetic and catkin is installed in catkin_ws/src: Create a file "CATKIN_IGNORE" in ~/catkin_ws/src/catkin
+~~~bash
+cd ~/catkin_ws/src/catkin
+touch CATKIN_IGNORE
+~~~
+
+During normal build only failed tests are reported. To manually trigger the tests run:
+
+~~~bash
+cd ~/catkin_ws/build/adore_if_ros
+ctest
+~~~

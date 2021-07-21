@@ -166,6 +166,10 @@ namespace adore
             {   
                 publisher_.publish(CONVERTER()(value));
             }
+            virtual uint32_t getNumberOfSubscribers() const override
+            {   
+                return publisher_.getNumSubscribers();
+            }
         };
 
         /**
@@ -176,7 +180,7 @@ namespace adore
             protected:
                 std::string prefix_;
                 ros::NodeHandle n_;
-                ROSParam(ros::NodeHandle n, std::string prefix):n_(n),prefix_(prefix){}
+                ROSParam(ros::NodeHandle n, std::string prefix):prefix_(prefix),n_(n){}
             public:
                 template<typename T>
                 void get(const std::string & name,T& result)const

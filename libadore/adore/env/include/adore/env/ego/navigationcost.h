@@ -27,6 +27,18 @@ namespace adore
       private:
       double distanceToGoal_; /**< distance to goal */
       public:
+      static double maximum_cost()
+      {
+        return 1.0e99;
+      }
+      bool operator<(const NavigationCost& other) const
+      {
+        return this->distanceToGoal_<other.distanceToGoal_;
+      }
+      bool operator==(const NavigationCost& other) const
+      {
+        return this->distanceToGoal_==other.distanceToGoal_;
+      }
       /**
        * @brief Construct a new NavigationCost object
        * 

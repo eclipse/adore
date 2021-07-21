@@ -55,6 +55,14 @@ namespace adore
             get(name,value);
             return value;
           }
+          //returns I control gain for lateral direction
+          virtual double getKIy()const override
+          {
+            double value = 0.0;
+            static const std::string name = prefix_ + "kIy";
+            get(name,value);
+            return value;
+          }
           //returns I control gain for longitudinal direction
           virtual double getKIx()const override
           {
@@ -212,6 +220,14 @@ namespace adore
           {
             double value = 0.0;
             static const std::string name = prefix_ + "kIepsi_r";
+            get(name,value);
+            return value;
+          }
+          //gain for steering rate limiter
+          virtual double getSteeringRateLimiterGain()const override
+          {
+            double value = 1.3;
+            static const std::string name = prefix_ + "steeringRateLimiterGain";
             get(name,value);
             return value;
           }

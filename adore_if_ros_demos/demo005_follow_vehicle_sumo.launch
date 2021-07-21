@@ -18,19 +18,16 @@
   <!--otherwise enter command: export SUMO_HOME="~/catkin_ws/src/adore/sumo"-->
 <launch>
   <node name="timer" pkg="adore_if_ros" type="adore_timer_node" launch-prefix="xterm -e " args="paused"/>
-  <node name="sumotraffic2ros_node" pkg="sumo_if_ros" type="sumotraffic2ros_node" launch-prefix="xterm -e "/> <!-- output="screen"/>-->
   <group ns="vehicle0">
-    <include ns="PARAMS" file="parameters/default.launch"/>
+    <include file="demo_vehicle_cfg01.launch"/>
+    <include file="demo_plotters.launch"/>
     <param name="PARAMS/track" value="$(dirname)/tracks/circle50m.xodr" type="str" />
     <param name="simulationID" value="0" type="int" />  
-    <node name="vmodel" pkg="adore_if_ros" type="adore_vehiclemodel_node"/>
-    <node name="senmodel" pkg="adore_if_ros" type="adore_objectdetectionmodel_node"/>
-    <node name="plotter" pkg="adore_if_ros" type="adore_borderbird_node"/>
-    <node name="lmap" pkg="adore_if_ros" type="adore_mapprovider_node" cwd="ROS_HOME" output="screen"/>
-    <node name="tracker" pkg="adore_if_ros" type="adore_feedbackcontroller_node"/>
-    <node name="planner" pkg="adore_if_ros" type="adore_lfbehavior_node"/> 
+    <param name="debugTrafficIDs" value="true" type="bool" />
+    <param name="plotoptions/followMode" value="false" type="bool" />
     <node pkg="rostopic" type="rostopic" name="posereset" args="pub /vehicle0/SIM/ResetVehiclePose geometry_msgs/Pose '{position: {x: 0, y: -52, z: 0},orientation: { w: 1}}'"/>
   </group>
+  <node name="sumotraffic2ros_node" pkg="sumo_if_ros" type="sumotraffic2ros_node"/>
   <arg name="sumocfg" value="$(dirname)/demo005.sumocfg"/>
   <arg name="sumohome" value="$(env SUMO_HOME)"/>
   <arg name="traciport" value="1337"/>

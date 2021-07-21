@@ -34,8 +34,20 @@ namespace adore
                 bool indicatorLeftOn_;
                 bool indicatorRightOn_;
                 bool automaticControlAccelerationOn_;
-                bool automaticControlSteeringOn_; 
+                bool automaticControlAccelerationActive_;
+                bool automaticControlSteeringOn_;
+                bool checkpointClearance_; 
             public:
+                VehicleExtendedState()
+                {
+                    gearState_ = Drive;
+                    indicatorLeftOn_=false;
+                    indicatorRightOn_=false;
+                    automaticControlAccelerationOn_ = false;
+                    automaticControlSteeringOn_= false ;
+                    automaticControlAccelerationActive_ = false;
+                    checkpointClearance_ = false;
+                }
                 GearState getGearState() const {
                 	return this->gearState_;
                 }
@@ -68,11 +80,31 @@ namespace adore
                 }
 
 
+                bool getAutomaticControlAccelerationActive() const {
+                	return this->automaticControlAccelerationActive_;
+                }
+                void setAutomaticControlAccelerationActive(bool automaticControlAccelerationActive) {
+                	this->automaticControlAccelerationActive_ = automaticControlAccelerationActive;
+                }
+
+
                 bool getAutomaticControlSteeringOn()  const{
                 	return this->automaticControlSteeringOn_;
                 }
                 void setAutomaticControlSteeringOn(bool automaticControlSteeringOn) {
                 	this->automaticControlSteeringOn_ = automaticControlSteeringOn;
+                }
+
+                bool getAutomaticControlOn() const
+                {
+                    return getAutomaticControlSteeringOn() && getAutomaticControlAccelerationOn();
+                }
+
+                bool getCheckpointClearance()  const{
+                	return this->checkpointClearance_;
+                }
+                void setCheckpointClearance(bool checkpointClearance) {
+                	this->checkpointClearance_ = checkpointClearance;
                 }
 
         };

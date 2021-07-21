@@ -18,6 +18,7 @@
 #include <string>
 #include <boost/geometry.hpp>
 #include <boost/geometry/geometries/point.hpp>
+#include <adore/mad/csvlog.h>
 
 namespace adore
 {
@@ -88,6 +89,20 @@ namespace adore
 					m_X += dx;
 					m_Y += dy;
 					m_Z += dz;
+				}
+				/**
+				 * @brief rotate around x0,y0
+				 * 
+				 * @param angle 
+				 * @param x0 
+				 * @param y0 
+				 */
+				void rotate(double angle, double x0=0.0, double y0=0.0)
+				{
+					double x = m_X;
+					double y = m_Y;
+					m_X =  (x-x0)*std::cos(angle) - (y-y0)*std::sin(angle) + x0;
+					m_Y =  (x-x0)*std::sin(angle) + (y-y0)*std::cos(angle) + y0;
 				}
 				/**
 				 * @brief Discretize the coordinate object

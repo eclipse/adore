@@ -80,6 +80,13 @@ namespace adore
           get(name,value);
           return value;
         }
+        virtual int getUTMZone()const override
+        {
+          int value = 32;
+          static const std::string name = prefix_ + "utm_zone";
+          get(name,value);
+          return value;
+        }
       };
     }
   }

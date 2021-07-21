@@ -127,6 +127,25 @@ namespace adore
           get(name,value);
           return value;
         }
+
+        ///getAccLB returns longitudinal acceleration lower bound
+        virtual double getComfortAccLB() const override
+        {
+          double value = -1.0;
+          static const std::string name = prefix_ + "comf_acc_lb";
+          get(name,value);
+          return value;
+        }
+
+        ///getAccUB returns longitudinal acceleration upper bound
+        virtual double getComfortAccUB() const override
+        {
+          double value = 1.0;
+          static const std::string name = prefix_ + "comf_acc_ub";
+          get(name,value);
+          return value;          
+        }
+
         //getJerkLB returns longitudinal jerk lower bound
         virtual double getJerkLB() const override
         {

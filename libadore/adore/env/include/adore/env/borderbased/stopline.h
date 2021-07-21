@@ -116,6 +116,10 @@ namespace adore
 				{
 					m_position.translate(dx,dy,dz);
 				}
+				void rotate(double angle, double x0=0, double y0=0)
+				{
+					m_position.rotate(angle, x0, y0);
+				}
 				/**
 				 * @brief Get the switching time
 				 * 

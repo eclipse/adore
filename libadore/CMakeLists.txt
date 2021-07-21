@@ -20,16 +20,18 @@ project("adore_libs" VERSION 0.0.1.0
              HOMEPAGE_URL "${adore_REPOSITORY_URL}/libadore"
 )
 
-set_directory_properties(PROPERTIES EXCLUDE_FROM_ALL YES)
+set_directory_properties(PROPERTIES EXCLUDE_FROM_ALL NO)
 
 include(GNUInstallDirs)
 include(CTest)
 
+set(FETCHCONTENT_BASE_DIR ${CMAKE_BINARY_DIR}/../_deps)
+
 #option() does nothing if option already defined
-option(BUILD_adore_TESTING OFF)
+option(BUILD_adore_TESTING ON)
 
 if(BUILD_adore_TESTING)
-  message(NOTICE "Option BUILD_adore_TESTING is set, will build adore tests.")
+  message(STATUS "Option BUILD_adore_TESTING is set, will build adore tests.")
   option(CATCH_BUILD_TESTING ON)
   add_subdirectory(external/catch2)
   set (CMAKE_MODULE_PATH
@@ -38,4 +40,10 @@ if(BUILD_adore_TESTING)
   )
 endif()
 
+#option() does nothing if option already defined
+option(BUILD_adore_DEBUG_BUILD_PROCESS OFF)
+
+if(BUILD_adore_DEBUG_BUILD_PROCESS)
+  add_compile_options(-save-temps=obj)
+endif()
 add_subdirectory(adore "${CMAKE_CURRENT_BINARY_DIR}/adore")

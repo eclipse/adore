@@ -75,11 +75,11 @@ namespace adore
 			*/
 			std::map<float,float> distanceSpeedTuples;
 
-			TrafficLightStatus(TrafficLightColor currentcolor = TrafficLightColor::UNDEFINED_COLOR, long validUntilTimestamp = 0)
-			{
-				m_currentColor = currentcolor;
-				m_validUntilTimestamp = validUntilTimestamp;
-			}
+            TrafficLightStatus(TrafficLightColor currentcolor = TrafficLightColor::UNDEFINED_COLOR,
+                               long validUntilTimestamp = 0)
+              : m_currentColor(currentcolor), m_validUntilTimestamp(validUntilTimestamp)
+            {
+            }
 		
 			TrafficLightColor getCurrentColor() const
 			{
@@ -136,23 +136,27 @@ namespace adore
 				switch(state.getCurrentColor())
 				{
 				case adore::env::TrafficLightColor::GREEN:
-					{
-						state.distanceSpeedTuples[speedLimit * timeToOther * 0.5] = minimumSpeed;
-						state.distanceSpeedTuples[speedLimit * timeToOther * 0.6] = speedLimit * 0.7;
-						state.distanceSpeedTuples[speedLimit * timeToOther * 0.7] = speedLimit * 0.8;
-						state.distanceSpeedTuples[speedLimit * timeToOther * 0.95] = speedLimit;
-						state.distanceSpeedTuples[speedLimit * timeToOther * 5] = 50.0f;
-						break;
-					}
+					state.distanceSpeedTuples[speedLimit * timeToOther * 0.5] = minimumSpeed;
+					state.distanceSpeedTuples[speedLimit * timeToOther * 0.6] = speedLimit * 0.7;
+					state.distanceSpeedTuples[speedLimit * timeToOther * 0.7] = speedLimit * 0.8;
+					state.distanceSpeedTuples[speedLimit * timeToOther * 0.95] = speedLimit;
+					state.distanceSpeedTuples[speedLimit * timeToOther * 5] = 50.0f;
+					break;
+				case adore::env::TrafficLightColor::YELLOW:
+					break;
 				case adore::env::TrafficLightColor::RED:
-					{
-						state.distanceSpeedTuples[minimumSpeed * timeToOther] = 50.0f;
-						state.distanceSpeedTuples[speedLimit * 0.7 * timeToOther] = speedLimit * 0.7;
-						state.distanceSpeedTuples[speedLimit * 0.8 * timeToOther] = speedLimit * 0.8;
-						state.distanceSpeedTuples[speedLimit * 0.9 * timeToOther] = speedLimit * 0.9;
-						state.distanceSpeedTuples[speedLimit * 1.5 * timeToOther] = speedLimit;
-						break;
-					}
+					state.distanceSpeedTuples[minimumSpeed * timeToOther] = 50.0f;
+					state.distanceSpeedTuples[speedLimit * 0.7 * timeToOther] = speedLimit * 0.7;
+					state.distanceSpeedTuples[speedLimit * 0.8 * timeToOther] = speedLimit * 0.8;
+					state.distanceSpeedTuples[speedLimit * 0.9 * timeToOther] = speedLimit * 0.9;
+					state.distanceSpeedTuples[speedLimit * 1.5 * timeToOther] = speedLimit;
+					break;
+				case adore::env::TrafficLightColor::RED_YELLOW:
+					break;
+				case adore::env::TrafficLightColor::YELLOW_FLASHING:
+					break;
+				case adore::env::TrafficLightColor::UNDEFINED_COLOR:
+					break;
 				}
 			}
 		};
@@ -188,6 +192,11 @@ namespace adore
 				return &status_;
 			}
 
+			virtual TrafficLightStatus const * getStatus() const
+			{
+				return &status_;
+			}
+
 			bool operator==(const TrafficLight& other) {
 
 				if(getCoordinate() == other.getCoordinate()
@@ -209,6 +218,7 @@ namespace adore
 		class SimTrafficLight : public TrafficLight
 		{
 			public:
+			SimTrafficLight() : TrafficLight() {};
 				
 			// all durations are specified in ms 	
 			int red_duration_;

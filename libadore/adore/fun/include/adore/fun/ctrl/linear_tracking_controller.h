@@ -45,6 +45,7 @@ namespace adore
 			double m_Ix;///integrator in longitudinal direction
 			double m_Iy;///integrator in lateral direction
 			bool m_use_integrator;
+			bool m_reset_integrator;
 		public:
 			/**
 			 * Constructor.
@@ -57,6 +58,7 @@ namespace adore
 				m_ex=0.0;m_ey=0.0;
 				m_Ix=0.0;m_Iy=0.0;
 				m_use_integrator=false;
+				m_reset_integrator=false;
 			}
 			///returns the longitudinal tracking error
 			double get_ex(){return m_ex;}
@@ -64,6 +66,8 @@ namespace adore
 			double get_ey(){return m_ey;}
 
 			void setUseIntegrator(bool value){m_use_integrator=value;}
+
+			void resetIntegrator(bool value){m_reset_integrator=value;}
 
 			/**
 			 * Compute the controller.
@@ -80,13 +84,12 @@ namespace adore
 				const double kepsi = m_pCtrlParameters->getKepsi();
 				const double keomega = m_pCtrlParameters->getKeomega();
 				const double kIx = m_pCtrlParameters->getKIx();
-				const double kIy = m_pCtrlParameters->getKIepsi_r();
+				const double kIy = m_pCtrlParameters->getKIy();
 
 				const double ex_static = m_pCtrlParameters->getExStatic();
 				const double ey_static = m_pCtrlParameters->getEyStatic();
 				
 				const double b = m_pVehParameters->get_b();//rear axle to cog
-				const double steeringRatio = m_pVehParameters->get_steeringRatio();
 
 				// extract variables
 				const double psi = x.getPSI();
@@ -133,9 +136,17 @@ namespace adore
 						m_Iy += m_ey*0.01;
 					}
 
+					if(vx<0.05 || m_reset_integrator)
+					{
+						m_Ix = 0.0;
+						m_Iy = 0.0;
+					}
+
 					//ouput resulting control:
-					u.setAcceleration( adore::mad::bound(m_pCtrlParameters->getAxMin(),axs-kIx*m_Ix-k0x*m_ex-k1x*ev,m_pCtrlParameters->getAxMax()) );
-					u.setSteeringAngle(adore::mad::bound(m_pCtrlParameters->getDeltaMin(),deltas -kIy*m_Iy-key*m_ey -kepsi*epsi -keomega*eomega,m_pCtrlParameters->getDeltaMax()));
+					double a_out = axs-kIx*m_Ix-k0x*m_ex-k1x*ev;
+					double delta_out = deltas -kIy*m_Iy-key*m_ey -kepsi*epsi -keomega*eomega;
+					u.setAcceleration( adore::mad::bound(m_pCtrlParameters->getAxMin(),a_out,m_pCtrlParameters->getAxMax()) );
+					u.setSteeringAngle(adore::mad::bound(m_pCtrlParameters->getDeltaMin(),delta_out,m_pCtrlParameters->getDeltaMax()));
 				}
 			}
 		};

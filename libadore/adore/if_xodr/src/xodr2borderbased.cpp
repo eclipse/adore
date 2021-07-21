@@ -35,9 +35,9 @@ namespace adore
 			do_convert(filename,target_set, tcdSet, stoplineSet, 
 				parkingSpotSet, 
 				idTranslation,
-				x0, y0, transform);	
+				x0, y0, transform, 0, 0, 0);	
 		}
-		
+
 		void XODR2BorderBasedConverter::convert(
 			const char* filename,adore::env::BorderBased::BorderSet* target_set,
 			adore::env::TCDSet* tcdSet, adore::env::BorderBased::LanePositionedObjectSet* stoplineSet,

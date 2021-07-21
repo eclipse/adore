@@ -29,6 +29,7 @@ namespace adore
 			virtual bool getActivatePlotting()const =0;
 			virtual bool getPlotCompleteMapInLocalView()const =0;
 			virtual bool useScenarioManagerMap()const =0;
+			virtual int getXODRLoaderPointsPerBorder()const=0;
 		};
 	}
 }

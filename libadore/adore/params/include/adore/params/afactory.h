@@ -29,7 +29,11 @@
 #include <adore/params/ap_longitudinal_planner.h>
 #include <adore/params/ap_lateral_planner.h>
 #include <adore/params/ap_traffic_light_sim.h>
-
+#include <adore/params/ap_sensor_model.h>
+#include <adore/params/ap_checkpoints.h>
+#include <adore/params/ap_mission_control.h>
+#include <adore/params/ap_prediction.h>
+#include <iostream>
 
 namespace adore
 {
@@ -63,7 +67,67 @@ namespace adore
 			virtual APLocalRoadMap* getLocalRoadMap() const =0;
 			virtual APLongitudinalPlanner* getLongitudinalPlanner() const =0;
 			virtual APLateralPlanner* getLateralPlanner() const =0;
+			virtual APSensorModel* getSensorModel() const =0;
+      virtual APCheckpoints* getCheckpoints() const =0;
+      virtual APMissionControl* getMissionControl() const =0;
+      virtual APPrediction* getPrediction() const=0;
 
 		};
+
+		/**
+         * @brief Utility class to simplify factory access
+         *
+         * init() function should be used once per process to set factories
+         */
+        class ParamsFactoryInstance final
+        {
+          private:
+            adore::params::AFactory* paramsFactory_ = 0;
+ 
+            /**
+             * @brief Function to access singleton instance of the AllFactory using magic static
+             *
+             * @return AllFactory& reference on the threadsafe singleton instance
+             */
+            static ParamsFactoryInstance& getInstance()
+            {
+                static ParamsFactoryInstance instance;
+                return instance;
+            }
+
+          public:
+            static adore::params::AFactory* get()
+            {
+              if (getInstance().paramsFactory_ == 0)
+              {
+                std::cerr << " WARNING Accessing singleton paramsFactory instance without ever running init()" 
+                      << std::endl;
+              }
+              return getInstance().paramsFactory_;
+            }
+
+            /**
+             * @brief Initialize private members of AllFactory
+             *
+             * This function should ideally run only once per process before the singleton instance is used
+             * Makes no guarantees on thread-safety
+             *
+			       * @param paramsFactory
+             */
+            static void init(adore::params::AFactory* paramsFactory)
+            {
+                auto& instance = getInstance();
+                instance.paramsFactory_ = paramsFactory;	
+            }
+
+          private:
+            ParamsFactoryInstance() = default;
+            ~ParamsFactoryInstance() = default;
+
+            ParamsFactoryInstance(const ParamsFactoryInstance&) = delete;
+            ParamsFactoryInstance& operator=(const ParamsFactoryInstance&) = delete;
+            ParamsFactoryInstance(ParamsFactoryInstance&&) = delete;
+            ParamsFactoryInstance& operator=(ParamsFactoryInstance&&) = delete;
+        };
 	}
 }

@@ -153,12 +153,12 @@ namespace adore
 				return y;
 			}
 
-			virtual T limitHi() override
+			virtual T limitHi() const override
 			{
 				return m_linear_data->limitHi();
 			}
 
-			virtual T limitLo() override
+			virtual T limitLo() const override
 			{
 				return m_linear_data->limitLo();
 			}

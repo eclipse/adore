@@ -14,16 +14,12 @@
 <launch>
   <node name="timer" pkg="adore_if_ros" type="adore_timer_node" output="screen" launch-prefix="xterm -e"/>
   <group ns="vehicle0">
-    <include ns="PARAMS" file="parameters/default.launch"/>
     <param name="PARAMS/track" value="$(dirname)/tracks/basic_test_track.xodr" type="str" />
     <param name="simulationID" value="0" type="int" />  
-    <node name="vmodel" pkg="adore_if_ros" type="adore_vehiclemodel_node"/>
-    <node name="plotter" pkg="adore_if_ros" type="adore_borderbird_node"/>
-    <node name="lmap" pkg="adore_if_ros" type="adore_mapprovider_node" cwd="ROS_HOME"/><!-- ROS_HOME is ~/.ros by default-->
-    <node name="tracker" pkg="adore_if_ros" type="adore_feedbackcontroller_node" output="screen"/>
-    <node name="planner" pkg="adore_if_ros" type="adore_lfbehavior_node" output="screen"/>
+    <include file="demo_vehicle_cfg01.launch"/>
+    <include file="demo_plotters.launch"/>
     <node pkg="rostopic" type="rostopic" name="posereset" args="pub /vehicle0/SIM/ResetVehiclePose geometry_msgs/Pose '{position: {x: 150, y: 162, z: 0},orientation: { w: 1}}'"/>
-    <!-- inccrease speed of this vehicle -->
+    <!-- set max speed of this vehicle -->
     <param name="PARAMS/tactical_planner/global_speed_limit" value="30" type="double" />  
   </group>
 </launch>

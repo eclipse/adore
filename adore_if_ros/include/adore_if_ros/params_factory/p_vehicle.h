@@ -31,6 +31,14 @@ namespace adore
           :ROSParam(n,prefix + "Vehicle/")
           {
           }
+          //ID of current vehicle
+          virtual std::string get_vehicle_id()const override
+          {
+            std::string value = "default vehicle";
+            static const std::string name = prefix_ + "VehicleID";
+            get(name,value);
+            return value;
+          }
           //front axle to cog
           virtual double get_a()const override
           {

@@ -23,11 +23,36 @@ include(GNUInstallDirs)
 
 add_library(${PROJECT_NAME} INTERFACE)
 
+#  TODO this is currenty only needed in lanefollowing geometry, but lands in all targets
+#  since this is undesireable, maybe more specific build targets are needed
+include(../../external/csaps-cpp.cmake)
+
 target_include_directories(
   ${PROJECT_NAME}
   INTERFACE $<BUILD_INTERFACE:${${PROJECT_NAME}_SOURCE_DIR}/include>
             $<INSTALL_INTERFACE:${CMAKE_INSTALL_INCLUDEDIR}>)
 
-target_link_libraries(adore_env INTERFACE adore_mad adore_view adore_fun)
+target_link_libraries(adore_env INTERFACE adore_mad adore_view adore_fun csaps)
 
 target_compile_features(${PROJECT_NAME} INTERFACE cxx_std_17)
+
+# target_compile_options(${PROJECT_NAME}  BEFORE INTERFACE -pg)
+# target_link_options(${PROJECT_NAME}  BEFORE INTERFACE -pg)
+
+if(BUILD_adore_TESTING) 
+add_subdirectory(test)
+endif()
+
+install(TARGETS ${PROJECT_NAME} EXPORT ${PROJECT_NAME}Targets
+)
+
+install(EXPORT ${PROJECT_NAME}Targets
+    FILE ${PROJECT_NAME}Targets.cmake
+    NAMESPACE adore::
+    DESTINATION ../cmake/${PROJECT_NAME}
+)
+
+export(EXPORT ${PROJECT_NAME}Targets
+       FILE "${CMAKE_BINARY_DIR}/../cmake/${PROJECT_NAME}Targets.cmake"
+       NAMESPACE adore::
+)

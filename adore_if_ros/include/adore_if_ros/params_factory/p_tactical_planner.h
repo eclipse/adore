@@ -129,6 +129,21 @@ namespace adore
           get(name,value);
           return value;
         }
+        virtual double getAssumedNominalAccelerationMinimum()const override
+        {
+          double value = -1.0;
+          static const std::string name = prefix_ + "assumed_nominal_acceleration_minimum";
+          get(name,value);
+          return value;
+        }
+        virtual double getMaxNavcostLoss()const override
+        {
+          double value = 0.0;
+          static const std::string name = prefix_ + "max_navcost_loss";
+          get(name,value);
+          return value;
+        }
+
       };
     }
   }

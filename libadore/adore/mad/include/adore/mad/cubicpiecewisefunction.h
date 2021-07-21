@@ -9,7 +9,7 @@
  * SPDX-License-Identifier: EPL-2.0 
  *
  * Contributors: 
- *   Reza Deriani - initial API and implementation
+ *   Reza Dariani - initial API and implementation
  ********************************************************************************/
 
 #pragma once
@@ -35,7 +35,13 @@ namespace adore
 		class CubicPiecewiseFunction
 		{
 		private:
-			static inline void PreProcess(double *output_x, double *output_y, double *output_weight,int *outputLength,double *input_x, double *input_y, double *input_weight,int inputLength);	
+			static inline void repeatedValueInterpolation(double *output_x, double *output_y, double *output_weight,int *outputLength,double *input_x, double *input_y, double *input_weight,int inputLength);	
+
+			struct LocalCoordination
+			{
+				std::vector<double> lc_breaks;
+				std::vector<int> lc_index;
+			};			
 		
 		public:
 			/***
@@ -84,7 +90,24 @@ namespace adore
 			   * @param inputLength is the input size
 			   * @param smoothingFactor is the smoothing factor [0 , 1]
 			   */
-			static void Fit(PieceweisePolynomial* pp, double* input_x, double* input_y, double* input_w, int inputLength,double smoothingFactor);
+			static void smoothingSpline(PieceweisePolynomial* pp, double* input_x, double* input_y, double* input_w, int inputLength,double smoothingFactor);
+			  /**
+			   * generates smoothend cubinc piecewise polynomial of a data 
+			   * @param pp is the structure containing the piecewise polynomial (breaks, coef_1, coef_2, coef_3, coef_4)
+			   * @param input_x is data vector (x_axis)
+			   * @param input_y is data vector (y_axis)
+			   * @param input_w is the weight of data [0, 1]
+			   * @param inputLength is the input size
+			   * @param smoothingFactor is the smoothing factor [0 , 1]
+			   */
+			static void fit(PieceweisePolynomial* pp, double* input_x, double* input_y, double* input_w, int inputLength,double smoothingFactor);
+			  /**
+			   * matches the given breaks to the polynomial breaks
+			   * @param Userbreaks is the given breaks
+			   * @param UserbreaksLength is the size of Userbreaks
+			   * @param pp is the structure containing the piecewise polynomial (breaks, coef_1, coef_2, coef_3, coef_4)
+			   */			
+			static LocalCoordination localCoordination(double *Userbreaks, int UserbreaksLength, PieceweisePolynomial &pp);
 			  /**
 			   * evaluates the cubic piecewise polynomial and its first, second and third derivative for a given breaks
 			   * @param interpolatedSpline is the interpolation result
@@ -133,7 +156,7 @@ namespace adore
 			   * @param input_coef4 is the given coef_4
 			   * @param inputLength is the size of the inputs
 			   */			
-			static void mkpp(PieceweisePolynomial* pp,double *input_breaks,double *input_coef1,double *input_coef2,double *input_coef3,double *input_coef4,int inputLength);	
+			static void toPolynomialFrom(PieceweisePolynomial* pp,double *input_breaks,double *input_coef1,double *input_coef2,double *input_coef3,double *input_coef4,int inputLength);	
 				/**
 			   * returns the index of a point witin breaks of a cubic peicewise polynomial
 			   * @param point is the given point

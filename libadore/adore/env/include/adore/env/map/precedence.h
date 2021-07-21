@@ -246,6 +246,10 @@ namespace adore
                 }
                 while(std::getline(file,line))
                 {
+                    if (line.empty() || line.at(0) == '#')
+                    {
+                        continue;
+                    }
                     auto rule = parseRule(line);//@TODO: parse coordinate format from file
                     std::cout<<precedenceRT_.size()<<": ";
                     std::cout<<
@@ -338,7 +342,7 @@ namespace adore
             /**
              * @brief returns a subset of rules in a region
              */
-            itRegion2PrecedenceRT getRulesInRegion(double x0,double y0,double x1,double y1)
+            itRegion2PrecedenceRT getRulesInRegion(double x0,double y0,double x1,double y1) const
             {
                 static const double guard = 1.0e99;
                 auto it = precedenceRT_.qbegin(boost::geometry::index::intersects(
@@ -349,6 +353,21 @@ namespace adore
                                         ));
                 return itRegion2PrecedenceRT(it,precedenceRT_.qend());
             }
+            /**
+             * @brief returns all rules
+             */
+            itRegion2PrecedenceRT getAllRulesIt() const
+            {
+                static const double guard = 1.0e99;
+                auto it = precedenceRT_.qbegin(boost::geometry::index::intersects(
+                                            PriorityRoute::boost_box(	
+                                                PriorityRoute::boost_point(-guard,-guard,-guard),
+                                                PriorityRoute::boost_point(+guard,+guard,+guard) 
+                                            )
+                                        ));
+                return itRegion2PrecedenceRT(it,precedenceRT_.qend());
+            }
+            
              /**
              * @brief returns all rules
              */

@@ -112,6 +112,13 @@ namespace adore
             {
                 return std::string(typeid(T).name());
             }
+            /**
+             * return the number number of subscribers/readers
+             */
+            virtual uint32_t getNumberOfSubscribers() const
+            {
+                return 0;
+            }
         };
         
         /**

@@ -63,6 +63,15 @@ namespace adore
           get(name,value);
           return value;
         }
+        ///time after which emergency maneuver kicks in
+        virtual double getEmergencyManeuverDelay()const override
+        {
+          double value = 0.5;
+          static const std::string name = prefix_ + "emergency_maneuver_delay";
+          get(name,value);
+          return value;
+        }
+
       };
     }
   }

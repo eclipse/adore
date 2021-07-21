@@ -106,8 +106,8 @@ namespace adore
 			private:
 				bool m_lastMatch_initialized;
 				BorderID m_lastMatch;
-				BorderSet* m_borderSet;
 				LMSNearest m_nearestLaneStragey;//use nearest lane as a tie braking strategy
+				BorderSet* m_borderSet;				
 				bool m_delayedSwitching;
 				double m_a,m_b,m_c,m_d,m_w;//
 			public:
@@ -157,6 +157,10 @@ namespace adore
 						p1Y = p0Y + cpsi*1.1;
 						p2X = p0X + spsi*1.1;
 						p2Y = p0Y - cpsi*1.1;
+						p3X = 0.0; // initialized to silence -Wmaybe-uninitialized warning
+						p3Y = 0.0; // initialized to silence -Wmaybe-uninitialized warning
+						p4X = 0.0; // initialized to silence -Wmaybe-uninitialized warning
+						p4Y = 0.0; // initialized to silence -Wmaybe-uninitialized warning
 					}
 
 					if(bordersInRegion->size()==0)
@@ -350,10 +354,6 @@ namespace adore
 				double s;//local coordinates of reference point, relative to right border: best fit parameter of right border function
 				double soff;//local coordinates of reference point, relative to right border: tangential offset
 				double noff;//local coordinates of reference point, relative to right border: normal offset
-				BorderPositioning(const BorderPositioning<N>& other)
-				{
-					std::memcpy(this,&other,sizeof(BorderPositioning<N>));
-				}
 				BorderPositioning():s(0.0),soff(0.0),noff(0.0){adore::mad::set(m_isPointInside,false,N);}
 				BorderPositioning(Border* bright, Border* bleft,double Xref,double Yref,double* X,double* Y)
 				{

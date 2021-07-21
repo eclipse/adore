@@ -15,7 +15,7 @@
 #pragma once
 #include "decoupled_lflc_planner.h"
 #include "basicconstraintsandreferences.h"
-#include <adore/view/alanefollowingview.h>
+#include <adore/view/alane.h>
 #include <adore/params/ap_longitudinal_planner.h>
 #include <adore/params/ap_lateral_planner.h>
 #include <adore/params/ap_tactical_planner.h>
@@ -28,7 +28,7 @@ namespace adore
 
     /**
      * Plans lane change maneuvers.
-     * Specialization of DecoupledLFLCPlanner for lane change maneuver planning.
+     * Specialization of DecoupledLFLCPlanner for lane following maneuver planning.
      * K number of control points for planning.
      * P interpolation points per planning step.
      */
@@ -38,14 +38,18 @@ namespace adore
       private:
         NominalReferenceSpeed nominalReferenceSpeed_;/**< reference for vehicle speed*/
         BreakAtHorizon breakAtHorizon_;/**< plan to reduce speed to standstill inside visible range*/
-        CurvatureSpeedLimit curvatureSpeedLimit_;/**< do not exceed lateral acceleration constraints in curve */
+        CurvatureSpeedLimitPredict curvatureSpeedLimit_;/**< do not exceed lateral acceleration constraints in curve */
         LFVSpeedLimit lfvSpeedLimit_;/**< speed limit*/
         DontDriveBackwards dontDriveBackwards_;/**< limit maneuver to movement in prescribed lane direction*/
         LongitudinalAccelerationConstraint longitudinalAccelerationConstraintUB_;/**< constraint for ax*/
         LongitudinalAccelerationConstraint longitudinalAccelerationConstraintLB_;/**< constraint for ax*/
-        FollowPrecedingVehicle followPrecedingVehicle_;
+        // FollowPrecedingVehicle followPrecedingVehicle_; /**< uses time gap*/
+        FollowPrecedingVehicle_BreakingCurve followPrecedingVehicle_;/**< uses breaking curve*/
         LaneWidthSpeedLimitLFV laneWidthSpeedLimitLFV_;/**< constraint enforcing slow movement through narrow gaps */
         StopAtBottleneckLFV stopAtBottleneckLFV_;/**< constraint enforcing vehicle to stop, if road is too narrow */
+        StopAtNextGoalPoint stopAtNextGoalPoint_;/**< constraint enforcing vehicle to stop, if goal point is reached */
+        AdhereToNextLimitLine stopAtRedLight_;/**< constraint enforcing vehicle to stop at next controlled connection, if it is switched to red*/
+        AdhereToNextLimitLine stopAtCheckPoint_;/**< constraint enforcing vehicle to stop at next checkpoint*/
 
         FollowCenterlineReference followCenterlineReference_;/**< reference for lateral position: follow the middle of the lane*/
         LateralAccelerationReference lateralAccelerationReference_;/**< curvature compensation*/
@@ -60,13 +64,19 @@ namespace adore
         /**
          * Constructor.
          * Initializes references and constraints by linking them to required data abstraction views and parameters.
-         * @param lfv view for lane following
+         * @param lfv view for lane following: must be valid pointer
+         * @param goalview set to nullptr to ignore. Set to valid ANavigationGoalView in order to stop vehicle at goal
+         * @param controlledConnection limit line for red-light on lane, set to nullptr to deactivate
+         * @param checkpoint checkpoint on lane, set to nullptr to deactivate
          * @param plon longitudinal planning paramters
          * @param plat lateral planning parameters
          * @param pveh vehicle parameters
          * @param ptrajectory trajectory generation parameters
          */
-        BasicLaneFollowingPlanner(adore::view::ALaneFollowingView* lfv,
+        BasicLaneFollowingPlanner(adore::view::ALane* lfv,
+                                  adore::view::ANavigationGoalView* goalview,
+                                  adore::view::ALimitLineEnRoute* controlledConnection,
+                                  adore::view::ALimitLineEnRoute* checkpoint,
                                   adore::params::APLongitudinalPlanner* plon,
                                   adore::params::APLateralPlanner* plat,
                                   adore::params::APTacticalPlanner* ptac,
@@ -74,7 +84,7 @@ namespace adore
                                   adore::params::APTrajectoryGeneration* ptrajectory)
               : DecoupledLFLCPlanner<K,P>(lfv,plon,plat,pveh,ptrajectory),
                 nominalReferenceSpeed_(lfv,plon,ptac),
-                breakAtHorizon_(lfv),
+                breakAtHorizon_(lfv,pveh,ptrajectory),
                 curvatureSpeedLimit_(lfv,plon),
                 lfvSpeedLimit_(lfv,ptac),
                 dontDriveBackwards_(),
@@ -83,7 +93,10 @@ namespace adore
                 followPrecedingVehicle_(lfv,pveh,ptac,ptrajectory),
                 laneWidthSpeedLimitLFV_(lfv,plon),
                 stopAtBottleneckLFV_(lfv,plon,pveh,ptrajectory,ptac),
-                followCenterlineReference_(),
+                stopAtNextGoalPoint_(goalview),
+                stopAtRedLight_(controlledConnection,pveh,ptac,ptrajectory),
+                stopAtCheckPoint_(checkpoint,pveh,ptac,ptrajectory),
+                followCenterlineReference_(lfv),
                 lateralAccelerationReference_(lfv),
                 lateralJerkReference_(lfv),
                 lateralOffsetConstraintLFUB_(lfv,pveh,plat,ANominalConstraint::UB),
@@ -101,8 +114,9 @@ namespace adore
           this->info_.add(&longitudinalAccelerationConstraintUB_);
           this->info_.add(&longitudinalAccelerationConstraintLB_);
           this->info_.add(&followPrecedingVehicle_);
-          this->info_.add(&laneWidthSpeedLimitLFV_);
-          this->info_.add(&stopAtBottleneckLFV_);
+          this->info_.add(&stopAtNextGoalPoint_);
+          this->info_.add(&stopAtRedLight_);
+          this->info_.add(&stopAtCheckPoint_);          
           this->info_.add(&followCenterlineReference_);
           this->info_.add(&lateralAccelerationReference_);
           this->info_.add(&lateralJerkReference_);
@@ -114,6 +128,15 @@ namespace adore
           this->info_.add(&lateralAccelerationConstraintLB_);
         }
 
+        void addConstraint(ANominalConstraint* constraint)
+        {
+          this->info_.add(constraint);
+        }
+
+        void addReference(ANominalReference* reference)
+        {
+          this->info_.add(reference);
+        }
         /**
          *  setSpeedScale - define reference speed to be a certain percentage of the 
          */ 

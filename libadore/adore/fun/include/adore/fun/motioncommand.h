@@ -29,6 +29,11 @@ namespace adore
 			double acceleration_;
 		public:
 
+			MotionCommand()
+			{
+				steeringAngle_ = 0.0;
+				acceleration_ = 0.0;
+			}
 			double getSteeringAngle() const
 			{
 				return this->steeringAngle_;

@@ -15,6 +15,7 @@
 #pragma once
 #include <adore/sim/afactory.h>
 #include <adore/params/afactory.h>
+#include <adore/env/afactory.h>
 #include <unordered_map>
 
 namespace adore
@@ -28,13 +29,13 @@ namespace adore
         {
             private:
                 int simulationID_;
-                double sensor_range_;/** < range at which traffic is detected */
-                double discard_age_;/** < time after which observations are discarded */
                 adoreMatrix<double,3,1> ego_location_;/** < ego location for range filtering */
                 adore::sim::AFactory::TParticipantFeed* participant_feed_;/** < retrieve state updates from all vehicles*/
                 adore::sim::AFactory::TParticipantSetWriter* participant_set_writer_;/** < publishes list of traffic participant detections*/             
                 std::unordered_map<int,adore::env::traffic::Participant> latest_data_;/** < map contains latest updates on traffic participants, tracking id mapping to participant*/
                 adore::mad::AReader<double>* timer_;/** < timer is used for discarding old updates */
+                adore::params::APSensorModel* psensor_model_;
+                adore::mad::AReader<adore::env::VehicleMotionState9d>* motion_state_reader_;
 
             public:
                 /**
@@ -47,11 +48,11 @@ namespace adore
                 ObjectDetectionModel(sim::AFactory* sim_factory,params::AFactory* paramfactory,int simulationID)
                 {
                     simulationID_ = simulationID;
-                    sensor_range_ = 1000.0;
-                    discard_age_ = 1.0;
                     participant_feed_ = sim_factory->getParticipantFeed();
                     participant_set_writer_ = sim_factory->getParticipantSetWriter();
                     timer_ = sim_factory->getSimulationTimeReader();
+                    psensor_model_ = paramfactory->getSensorModel();
+                    motion_state_reader_ = adore::env::EnvFactoryInstance::get()->getVehicleMotionStateReader();
                 }
                 /**
                  * @brief publish updates on the detection of traffic participants
@@ -63,35 +64,47 @@ namespace adore
                     double t_now;
                     timer_->getData(t_now);
 
+                    //update parameters
+                    double sensor_range;/** < range at which traffic is detected */
+                    double discard_age;/** < time after which observations are discarded */
+                    sensor_range = psensor_model_->get_objectDetectionRange();
+                    discard_age = psensor_model_->get_objectDiscardAge();
+
+                    adore::env::VehicleMotionState9d motion_state;
+                    motion_state_reader_->getData(motion_state);
+                    adoreMatrix<double, 3, 1> position;
+                    // update ego position
+                    position(0, 0) = motion_state.getX();
+                    position(1, 0) = motion_state.getY();
+                    position(2, 0) = 0.0;
+                    ego_location_ = position;
+
                     //retrieve state updates
                     while( participant_feed_->hasNext() )
                     {
                         adore::env::traffic::Participant p;
                         participant_feed_->getNext(p);
-                        if( p.getTrackingID() == simulationID_ )
+                        if( p.getTrackingID() != simulationID_ )
                         {
-                            //update ego position
-                            ego_location_ = p.getCenter();
-                        }
-                        else
-                        {
-                            //remember state update
-                            if( adore::mad::norm2((adoreMatrix<double,3,1>)(p.getCenter()-ego_location_)) < sensor_range_ )
+                            if( adore::mad::norm2((adoreMatrix<double,3,1>)(p.getCenter()-ego_location_)) < sensor_range )
                             {
                                 latest_data_.emplace(p.getTrackingID(), p).first->second = p;
                             }
                         }
                         
                     }
+
                     //collect latest known state updates
                     adore::env::traffic::TParticipantSet pset;
                     for( auto& pair: latest_data_ )
                     {
                         auto& p = pair.second;
-                        if( t_now - p.getObservationTime() < discard_age_ )
+                        
+                        if( t_now - p.getObservationTime() < discard_age )
                         {
+                            p.existance_certainty_ = 100.0;
                             pset.push_back(p);
-                            // std::cout<<"traffic id="<<p.getTrackingID()<<", x="<<p.getCenter()(0)<<", y="<<p.getCenter()(1)<<"\n";
+                            //std::cout<<"traffic id="<<p.getTrackingID()<<", x="<<p.getCenter()(0)<<", y="<<p.getCenter()(1)<<"\n";
                         }
                         else
                         {

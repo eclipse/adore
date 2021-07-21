@@ -27,8 +27,10 @@ namespace adore
         {
         public:
             typedef int TTrackingID;
+            typedef long long int TV2XStationID;
         private:
                 TTrackingID trackingID_;        /**< An id assigned by sensor data fusion, with a high likelihood of stable association of object over time*/
+                TV2XStationID v2xStationID_;    /**< etsi vehicle to x id */
                 double observationTime_;        /**< Point of time at which observation was made and to which position information in this representation corresponds*/
                 double currentProgress_;        /**< Progress of TrafficObject along ALane or ConflictZone*/
                 double currentSpeed_;           /**< Current speed of object*/
@@ -46,6 +48,13 @@ namespace adore
             TTrackingID getTrackingID()const 
             {
                 return trackingID_;
+            }
+            /**
+             *  getV2XStationID - returns the etsi vehicle to x station id
+             */
+            TV2XStationID getV2XStationID()const 
+            {
+                return v2xStationID_;
             }
             /**
              * getCurrentProgress - returns current progress of a traffic object along a lane or towards a conflict zone
@@ -121,6 +130,10 @@ namespace adore
             void setTrackingID(TTrackingID value) 
             {
                 trackingID_ = value;
+            }
+            void setV2XStationID(TV2XStationID value) 
+            {
+                v2xStationID_ = value;
             }
             void setCurrentProgress(double value) 
             {

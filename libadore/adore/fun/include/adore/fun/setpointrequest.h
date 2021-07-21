@@ -96,6 +96,12 @@ namespace adore
 				}
 			}
 
+			double getDuration()const
+			{
+				if(setPoints.size()==0)return 0.0;
+				else return setPoints.rbegin()->tEnd-setPoints.begin()->tStart;
+			}
+
 			/**
 			 * Retrieve the reference vehicle state for an exact time t.
 			 * In the general case t is located between discrete time steps.
@@ -106,20 +112,43 @@ namespace adore
 			PlanarVehicleState10d interpolateReference(double t,adore::params::APVehicle* p) const
 			{
 				PlanarVehicleState10d vehiclestate;
+				vehiclestate.data = setPoints[setPoints.size()-1].x0ref.data;
 				adore::mad::OdeRK4<double> rk4;
 				adore::fun::VLB_OpenLoop model(p);
-				for (size_t i = 0; i < setPoints.size(); i++)
+				static const bool use_rk = false;
+				for (size_t i = 0; i < setPoints.size()-1; i++)
 				{
-					if (t >= setPoints[i].tStart && t < setPoints[i].tEnd)
+					if (t >= setPoints[i].tStart && t < setPoints[i+1].tStart )
 					{
-						//integrate the reference trajectory to acquire current xref
-						auto T = adore::mad::sequence<double>(0, 0.01, t - setPoints[i].tStart);
-						auto result = rk4.solve(&model, T, setPoints[i].x0ref.data);
-						vehiclestate.data = colm(result, result.nc() - 1);
+						if(use_rk)
+						{
+							//integrate the reference trajectory to acquire current xref
+							auto T = adore::mad::sequence<double>(0, 0.01, t - setPoints[i].tStart);
+							auto result = rk4.solve(&model, T, setPoints[i].x0ref.data);
+							vehiclestate.data = colm(result, result.nc() - 1);
+						}
+						else
+						{
+							//linearly interpolate
+							const double ti = setPoints[i].tStart;
+							const double tj = setPoints[i+1].tStart;
+							const auto xi = setPoints[i].x0ref.data;
+							const auto xj = setPoints[i+1].x0ref.data;
+							vehiclestate.data = xi + (xj-xi) * (t-ti) / (tj-ti);
+						}
+						
 						break;
 					}
 				}
 				return vehiclestate;
+			}
+			SetPoint interpolateSetPoint(double t,adore::params::APVehicle* p) const
+			{
+				SetPoint s;
+				s.tStart = t;
+				s.tEnd = t;
+				s.x0ref = interpolateReference(t,p);
+				return s;
 			}
 
 			/**
@@ -146,6 +175,18 @@ namespace adore
 					it->x0ref.setX(c*x-s*y+delta_x2);
 					it->x0ref.setY(s*x+c*y+delta_y2);
 					it->x0ref.setPSI(it->x0ref.getPSI() + delta_psi);
+				}
+			}
+
+			/**
+			 * Remove entries after a certain point of time
+			 * @param t maximum time to be contained
+			 */
+			void removeAfter(double t)
+			{
+				while(setPoints.size()>0 && setPoints.back().tStart>t)
+				{
+					setPoints.pop_back();
 				}
 			}
 
@@ -238,7 +279,8 @@ namespace adore
 			{
 				for(auto it = setPoints.begin();it!=setPoints.end();it++)
 				{
-					if( t0 <= it->tStart && it->tStart < t1 || it->tStart <= t0 && t0 < it->tEnd ) //interval overlap
+					if  ((t0 <= it->tStart && it->tStart < t1) 
+					  || (it->tStart <= t0 && t0 < it->tEnd )) //interval overlap
 					{
 						destination.setPoints.push_back(*it);
 						destination.setPoints.back().maneuverID = maneuverID;
@@ -325,7 +367,7 @@ namespace adore
 			adore::mad::LLinearPiecewiseFunctionM<double,4> getTrajectory()
 			{
 				adore::mad::LLinearPiecewiseFunctionM<double,4> tau(setPoints.size(),0.0);
-				for(int i=0;i<setPoints.size();i++)
+				for(unsigned int i=0;i<setPoints.size();i++) // fix -Wsign-compare
 				{
 					tau.getData()(0,i) = setPoints[i].tStart;
 					tau.getData()(1,i) = setPoints[i].x0ref.getX();
@@ -334,6 +376,30 @@ namespace adore
 					tau.getData()(4,i) = setPoints[i].x0ref.getvx();
 				}
 				return tau;
+			}
+
+			/**
+			 * @brief remove SetPoints after first stop
+			 * Method looks for first downward zero crossing of vx and removes all SetPoints at zero crossing and after.
+			 * @param vxslow terminal speed, defining the zero line for which zero crossing is detected
+			 */
+			void cropAfterFirstStop(double vxslow)
+			{
+				if(setPoints.size()==0)return;
+				int crossdown = -1;
+				double vxi = setPoints[0].x0ref.getvx();
+				for(int j=1;j<setPoints.size();j++)
+				{
+					double vxj = setPoints[j].x0ref.getvx();
+					if(crossdown==-1 && vxi>vxslow && vxj<=vxslow)
+					{
+						crossdown = j;
+					}
+				}
+				if(crossdown!=-1)
+				{
+					while(setPoints.size()>crossdown)setPoints.pop_back();
+				}
 			}
 		};
 

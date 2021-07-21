@@ -14,10 +14,10 @@
 
 #pragma once
 
+#include <adore/view/alane.h>
 #include <adore/fun/ctrl/vlb_openloop.h>
 #include <adore/fun/planarvehiclestate10d.h>
 #include <adore/fun/vehiclemotionstate9d.h>
-#include <adore/view/alanefollowingview.h>
 #include <adore/params/ap_vehicle.h>
 #include <adore/params/ap_trajectory_generation.h>
 #include <adore/mad/fun_essentials.h>
@@ -36,6 +36,7 @@ namespace adore
       public:
       double s0,s1,s2,s3;///longitudinal coordinate derivative 0 to 3
       double n0,n1,n2,n3;///lateral coordiante derivative 0 to 3
+      bool valid;/**< if false, road coordinates may be out of bounds*/
     };
 
     /**
@@ -44,7 +45,7 @@ namespace adore
     class RoadCoordinateConverter
     {
       private:
-      adore::view::ALaneFollowingView* lfg_;
+      adore::view::ALane* lfg_;
       VLB_OpenLoop model_;
       adoreMatrix<double,0,1> dx_;
       double a_;
@@ -119,7 +120,7 @@ namespace adore
        * @param p vehicle parameters
        * @param tp trajectory generation parameters
        */
-      RoadCoordinateConverter(adore::view::ALaneFollowingView* lfg,adore::params::APVehicle* p,adore::params::APTrajectoryGeneration* tp)
+      RoadCoordinateConverter(adore::view::ALane* lfg,adore::params::APVehicle* p,adore::params::APTrajectoryGeneration* tp)
         :lfg_(lfg),model_(p)
       {
         updateParameters(p,tp);
@@ -152,7 +153,7 @@ namespace adore
        *  @param x vehicle state in Euclidean coordinates
        *  @return state in road-relative coordinates 
        */
-      RoadCoordinates toRoadCoordinates(const PlanarVehicleState10d& x)
+      RoadCoordinates toRoadCoordinates(const PlanarVehicleState10d& x, bool log=false)
       {
         const double rho = rho_;
         RoadCoordinates r;
@@ -163,6 +164,11 @@ namespace adore
         const double vyp = x.getvy() + x.getOmega() * rho;
         const double ax = x.getAx();
         const double ay = dx_(4,0) + dx_(5,0) * rho + x.getvx() * x.getOmega();
+        if(log)
+        {
+        std::cout<<"toRoadCoordinates: ay_q="<<ay<<std::endl;
+        std::cout<<"toRoadCoordinates: ay_cg="<<ay+dx_(5,0)*(b_-rho)<<std::endl;
+        }
         const double px0 = x.getX() + cpsi * rho;
         const double py0 = x.getY() + spsi * rho;
         const double px1 = cpsi * vxp - spsi * vyp;
@@ -170,6 +176,7 @@ namespace adore
         const double px2 = cpsi * ax - spsi * ay;
         const double py2 = spsi * ax + cpsi * ay;
         lfg_->toRelativeCoordinates(px0, py0, r.s0, r.n0);
+        r.valid = lfg_->getSMin()<r.s0 && r.s0<lfg_->getSMax();
         const double theta = lfg_->getHeading(r.s0);
         const double ctheta = std::cos(theta);
         const double stheta = std::sin(theta);
@@ -192,7 +199,7 @@ namespace adore
        *  @param omega the yaw rate of the vehicle, when arriving at r
        *  @param x the resulting full vehicle state with position in Euclidean cordinates. Returned by function.
        */
-      void toVehicleState(const RoadCoordinates& r,double psi, double omega,PlanarVehicleState10d& x)
+      void toVehicleState(const RoadCoordinates& r,double psi, double omega,PlanarVehicleState10d& x, bool log=false)
       {
         double px0,py0,pz0;
         lfg_->toEucledianCoordinates(r.s0,r.n0,px0,py0,pz0);
@@ -224,10 +231,13 @@ namespace adore
           //linear tire force model
           const double k0 = -mu_*g_*cf_*b_/L_;
           const double k1 = -mu_*g_*cr_*a_/L_;
-          const double k2 = +(a_ / Iz_m_) * k0;
-          const double k3 = -(b_ / Iz_m_) * k1;
-          const double fb = k0 * x.getvy()/x.getvx();
-          const double fa = (ayq-(1.0+(rho_-b_)*k3/k1)*fb) / (1.0+(rho_-b_)*k2/k0);
+          const double fb = k1 * x.getvy()/x.getvx();
+          const double fa = (ayq-(1.0-(rho_-b_)*b_/Iz_m_)*fb) / (1.0+(rho_-b_)*a_/Iz_m_);
+          if(log)
+          {
+          std::cout<<"toVehicleState: ay_q="<<ayq<<std::endl;
+          std::cout<<"toVehicleState: ay_cg="<<fa+fb<<std::endl;
+          }
           const double delta = (x.getvy()+L_*omega)/x.getvx()-fa/k0;
           x.setDelta(delta);
         }

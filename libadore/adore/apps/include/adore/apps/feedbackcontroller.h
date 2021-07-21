@@ -35,6 +35,7 @@ namespace adore
 			adore::mad::AReader<adore::fun::VehicleExtendedState>* x_state_reader_;
 			adore::mad::AWriter<adore::fun::MotionCommand>* cmd_writer_;
 			adore::fun::SetPointRequest spr_;
+			adore::fun::SetPointRequest spr_tmp_;
 			adore::fun::TerminalRequest trm_;
 			adore::fun::VehicleMotionState9d state_;
 			adore::fun::VehicleExtendedState x_state_;
@@ -43,6 +44,8 @@ namespace adore
 			adore::params::APTrajectoryTracking* ap_tracking_;
 			adore::params::APEmergencyOperation* ap_emergency_;
 			double last_steering_angle_;
+			double last_t_;
+			double last_ddelta_;
 
 		public:
 			FeedbackController(adore::fun::AFactory* fun_factory,
@@ -59,6 +62,8 @@ namespace adore
 				x_state_reader_ = fun_factory->getVehicleExtendedStateReader();
 				cmd_writer_ = fun_factory->getMotionCommandWriter();
 				last_steering_angle_ = 0.0;
+				last_t_ = -1.0;
+				last_ddelta_ = 0.0;
 			}
 			virtual ~FeedbackController()
 			{
@@ -72,11 +77,22 @@ namespace adore
 			{
 				if( spr_reader_!=0 && spr_reader_->hasData() && state_reader_!=0 && state_reader_->hasData() )
 				{
-					spr_reader_->getData(spr_);
-					if(trm_reader_!=0 && trm_reader_->hasData())trm_reader_->getData(trm_);
 					state_reader_->getData(state_);
-					if(x_state_reader_!=0 && x_state_reader_->hasData())x_state_reader_->getData(x_state_);
 					const double t = state_.getTime();
+					if(t!=last_t_)
+					{
+						last_t_ = t;
+					}
+					else
+					{
+						return;
+					}
+					
+					spr_reader_->getData(spr_tmp_);
+					if(spr_tmp_.isActive(t))spr_ = spr_tmp_;
+					
+					if(trm_reader_!=0 && trm_reader_->hasData())trm_reader_->getData(trm_);
+					if(x_state_reader_!=0 && x_state_reader_->hasData())x_state_reader_->getData(x_state_);
 					if(spr_.isActive(t) && !trm_.isActive(t))
 					{
 						//trajectory tracking operation
@@ -86,6 +102,14 @@ namespace adore
 							case adore::fun::VehicleExtendedState::Drive:
 								{
 									linear_tracking_controller_.setUseIntegrator(true);
+									if(!x_state_.getAutomaticControlAccelerationActive())
+									{
+										linear_tracking_controller_.resetIntegrator(true);
+									}
+									else
+									{
+										linear_tracking_controller_.resetIntegrator(false);
+									}
 									linear_tracking_controller_.compute_control_input(state_,ref_state,cmd_);
 								}
 								break;
@@ -97,6 +121,14 @@ namespace adore
 							default:
 								{
 									linear_tracking_controller_.setUseIntegrator(true);
+									if(!x_state_.getAutomaticControlAccelerationActive())
+									{
+										linear_tracking_controller_.resetIntegrator(true);
+									}
+									else
+									{
+										linear_tracking_controller_.resetIntegrator(false);
+									}
 									linear_tracking_controller_.compute_control_input(state_,ref_state,cmd_);//@TODO: remove this line
 									// @TODO: implement extendedstatereader, then use next two lines in case of unknown gear state, remove line above
 									// cmd_.setAcceleration(0.5*aptracking_->getAxMin());
@@ -127,16 +159,65 @@ namespace adore
 					}
 				}
 
-				//steering rate limiter: 
-				double ddelta_max_default = ap_tracking_->getDDeltaMax();
-				double v_full_ddelta = 0.5;
-				double ddelta_max_slow = ddelta_max_default * v_full_ddelta / adore::mad::bound(0.0,state_.getvx(),v_full_ddelta);//ramp from ddelta_max_slow=0 at v=0 to ddelta_max_slow=ddelta_max_default at v=v_full_ddelta
-				double measured_delta = state_.getDelta();
-				double delta_max = last_steering_angle_ + ddelta_max_slow;
-				double delta_min = last_steering_angle_ - ddelta_max_slow;
-				cmd_.setSteeringAngle(adore::mad::bound(delta_min,cmd_.getSteeringAngle(),delta_max));
+				//apply steering ratio
+				cmd_.setSteeringAngle(cmd_.getSteeringAngle() * ap_vehicle_->get_steeringRatio());
 				
-				if(x_state_.getAutomaticControlSteeringOn())//automation system is steering
+				//steering rate limiter
+			
+				double measured_delta = state_.getDelta() * ap_vehicle_->get_steeringRatio();
+				double ddelta_max_default = ap_tracking_->getDDeltaMax();
+				double coeffA = 0.001;
+				double coeffB = ap_tracking_->getSteeringRateLimiterGain();
+				double v_full_ddelta = 2;
+				double v_abs = std::sqrt(state_.getvx()*state_.getvx()+state_.getvy()*state_.getvy());
+
+				//this achieves a gradual acceleration of the steering wheel after hand-over
+				if( x_state_.getAutomaticControlAccelerationActive() )
+				{
+					//gradual acceleration up to max rate, if the user is not steering
+					//high(er) speed handling
+					if(v_abs > v_full_ddelta)
+					{
+						last_ddelta_ = std::min(ddelta_max_default,last_ddelta_ + coeffA + coeffB*last_ddelta_);
+					}
+					//low speed handling
+					else
+					{
+						//ramp from last_ddelta_=0 at v=0 to last_ddelta_=ddelta_max_default at v=v_full_ddelta
+						last_ddelta_ = ddelta_max_default * adore::mad::bound(0.0,v_abs,v_full_ddelta) / v_full_ddelta ;
+					}	
+				}
+				else
+				{
+					//set the steering rate to zero, if the user controls
+					last_ddelta_ = 0.0;
+				}
+
+				double ddelta_max = last_ddelta_;
+				//bound steering rate using last commanded delta
+				cmd_.setSteeringAngle(adore::mad::bound(last_steering_angle_-ddelta_max,cmd_.getSteeringAngle(),last_steering_angle_+ddelta_max));
+
+				//fullstop mechanism
+				//(prevent vehicle from restarting due to minor gps drift)
+				if(v_abs<0.1 && cmd_.getAcceleration()<0.5 && x_state_.getGearState()==adore::fun::VehicleExtendedState::Drive)
+				{
+					cmd_.setAcceleration(-2.0);
+					last_ddelta_ = 0.0;
+				}
+
+				//deactivate output, if manual control
+				if(!x_state_.getAutomaticControlAccelerationOn())//automation system is not accelerating
+				{
+					cmd_.setAcceleration(0.0);
+				}
+
+				if(!x_state_.getAutomaticControlSteeringOn())//automation system is not steering
+				{
+					cmd_.setSteeringAngle(measured_delta);
+				}
+				
+				//track the last steering angle for rate limitation
+				if(x_state_.getAutomaticControlAccelerationActive())//automation system is active
 				{
 					last_steering_angle_ = cmd_.getSteeringAngle();
 				}

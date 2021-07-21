@@ -150,11 +150,11 @@ namespace adore
 			{
 				return evaluate_poly<T, 1, M>(m_data, x)(0);
 			}
-			virtual DT limitHi()override
+			virtual DT limitHi() const override
 			{
 				return m_xmax;
 			}
-			virtual DT limitLo()override
+			virtual DT limitLo() const override
 			{
 				return m_xmin;
 			}
@@ -221,12 +221,12 @@ namespace adore
 			{
 				return evaluate_poly<T, N, M>(m_data, x);
 			}
-			virtual DT limitHi() override
+			virtual DT limitHi() const override
 			{
 				return m_xmax;
 			}
 
-			virtual DT limitLo() override
+			virtual DT limitLo() const override
 			{
 				return m_xmin;
 			}
@@ -273,9 +273,9 @@ namespace adore
 				OneDimension() {}
 				OneDimension(LPolynomialM* parent, int row) :m_parent(parent), m_row(row) {}
 				virtual T f(DT x)override { return m_parent->fi(x, m_row); }
-				virtual DT limitHi()override { return m_parent->limitHi(); }
-				virtual DT limitLo()override { return m_parent->limitLo(); }
-				virtual void setLimits(DT lo, DT hi)override { throw new FunctionNotImplemented(); }
+				virtual DT limitHi() const override { return m_parent->limitHi(); }
+				virtual DT limitLo() const override { return m_parent->limitLo(); }
+				virtual void setLimits(DT lo, DT hi)override { throw FunctionNotImplemented(); }
 				virtual ALFunction<DT, T>* clone()override { return new LPolynomialS<T, M>(dlib::rowm(m_parent->m_data, m_row), m_parent->m_xmin, m_parent->m_xmax); }
 				virtual ALFunction<DT, T>* create_derivative()override
 				{

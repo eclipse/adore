@@ -84,11 +84,11 @@ namespace adore
 			/**
 			 * query upper limit of the domain
 			 */
-			virtual DT limitHi() = 0;
+			virtual DT limitHi() const = 0;
 			/**
 			 * lower limit of the domain
 			 */
-			virtual DT limitLo() = 0;
+			virtual DT limitLo() const = 0;
 			/**
 			 * function evaluation returns y of codomain type CT for a value x of domain type DT
 			 */
@@ -289,8 +289,8 @@ namespace adore
 			DT m_xlo,m_xhi;
 			LConstFun( const CT& value, DT xlo,  DT xhi) :m_value(value) ,m_xlo(xlo),m_xhi(xhi){}
 			virtual CT f(DT x) override { return m_value; }
-			virtual DT limitHi()override { return m_xhi; }
-			virtual DT limitLo()override { return m_xlo; }
+			virtual DT limitHi()const override { return m_xhi; }
+			virtual DT limitLo()const override { return m_xlo; }
 			virtual void invertDirection() {}
 			virtual void setLimits(DT lo, DT hi) {m_xlo = lo;m_xhi = hi;}
 			virtual ALFunction<DT, CT>* clone()override { return new LConstFun<DT, CT>(m_value,m_xlo,m_xhi); }
@@ -335,11 +335,11 @@ namespace adore
 			{
 				return m_y0 + m_dydx*(x - m_x0);
 			}
-			virtual DT limitHi() override
+			virtual DT limitHi() const override
 			{
 				return m_xHi;
 			}
-			virtual DT limitLo() override
+			virtual DT limitLo() const override
 			{
 				return m_xLo;
 			}
@@ -387,8 +387,8 @@ namespace adore
 				delete b;
 			}
 			virtual CT f(DT x)override { return a->f(x) + b->f(x); }
-			virtual DT limitHi()override { return (std::min)(a->limitHi(), b->limitHi()); }
-			virtual DT limitLo()override { return (std::max)(a->limitLo(), b->limitLo()); }
+			virtual DT limitHi() const override { return (std::min)(a->limitHi(), b->limitHi()); }
+			virtual DT limitLo() const override { return (std::max)(a->limitLo(), b->limitLo()); }
 			virtual void setLimits(DT lo, DT hi)override { a->setLimits(lo, hi); b->setLimits(lo, hi); }
 			virtual ALFunction<DT, CT>* clone()override { return new FunctionCombination_Addition(a->clone(), b->clone()); }
 			virtual ALFunction<DT, CT>* create_derivative()override { return new FunctionCombination_Addition(a->create_derivative(), b->create_derivative()); }
@@ -423,8 +423,8 @@ namespace adore
 				delete b;
 			}
 			virtual CT f(DT x)override { return a->f(x)*b->f(x); }
-			virtual DT limitHi()override { return (std::min)(a->limitHi(), b->limitHi()); }
-			virtual DT limitLo()override { return (std::max)(a->limitLo(), b->limitLo()); }
+			virtual DT limitHi() const override { return (std::min)(a->limitHi(), b->limitHi()); }
+			virtual DT limitLo() const override { return (std::max)(a->limitLo(), b->limitLo()); }
 			virtual void setLimits(DT lo, DT hi)override { a->setLimits(lo, hi); b->setLimits(lo, hi); }
 			virtual ALFunction<DT, CT>* clone()override { return new FunctionCombination_Multiplication<DT, CT, CTa, CTb>(a->clone(), b->clone()); }
 			virtual ALFunction<DT, CT>* create_derivative()override
@@ -481,8 +481,8 @@ namespace adore
 				delete b;
 			}
 			virtual CT f(DT x)override { return a->f(x)*b->f(x); }
-			virtual DT limitHi()override { return (std::min)(a->limitHi(), b->limitHi()); }
-			virtual DT limitLo()override { return (std::max)(a->limitLo(), b->limitLo()); }
+			virtual DT limitHi() const override { return (std::min)(a->limitHi(), b->limitHi()); }
+			virtual DT limitLo() const override { return (std::max)(a->limitLo(), b->limitLo()); }
 			virtual void setLimits(DT lo, DT hi)override { a->setLimits(lo, hi); b->setLimits(lo, hi); }
 			virtual ALFunction<DT, CT>* clone()override { return new FunctionCombination_Multiplication_Matrix<T,N,M,K>(a->clone(), b->clone()); }
 			virtual ALFunction<DT, CT>* create_derivative()override
@@ -534,8 +534,8 @@ namespace adore
 				delete b;
 			}
 			virtual CT f(DT x)override { return a*b->f(x); }
-			virtual DT limitHi()override { return b->limitHi(); }
-			virtual DT limitLo()override { return b->limitLo(); }
+			virtual DT limitHi() const override { return b->limitHi(); }
+			virtual DT limitLo() const override { return b->limitLo(); }
 			virtual void setLimits(DT lo, DT hi)override { b->setLimits(lo, hi); }
 			virtual ALFunction<DT, CT>* clone()override { return new FunctionCombination_MultiplicationConst<DT, CT, CTa, CTb>(a, b->clone()); }
 			virtual ALFunction<DT, CT>* create_derivative()override
@@ -578,8 +578,8 @@ namespace adore
 				delete b;
 			}
 			virtual CTa f(DTb x)override { return a->f(b->f(x)); }
-			virtual DTb limitHi()override { return b->limitHi(); }
-			virtual DTb limitLo()override { return b->limitLo(); }
+			virtual DTb limitHi() const override { return b->limitHi(); }
+			virtual DTb limitLo() const override { return b->limitLo(); }
 			virtual void setLimits(DT lo, DT hi)override { b->setLimits(lo, hi); }
 			virtual ALFunction<DT, CT>* clone()override { return new FunctionCombination_Chain(a->clone(), b->clone()); }
 			virtual ALFunction<DT, CT>* create_derivative()override
@@ -628,8 +628,8 @@ namespace adore
 				set_rowm(y, dlib::range(Na, Na + Nb - 1)) = b->f(x);
 				return y;
 			}
-			virtual DT limitHi()override { return (std::min)(a->limitHi(), b->limitHi()); }
-			virtual DT limitLo()override { return (std::max)(a->limitLo(), b->limitLo()); }
+			virtual DT limitHi() const override { return (std::min)(a->limitHi(), b->limitHi()); }
+			virtual DT limitLo() const override { return (std::max)(a->limitLo(), b->limitLo()); }
 			virtual void setLimits(DT lo, DT hi)override { a->setLimits(lo, hi); b->setLimits(lo, hi); }
 			virtual ALFunction<DT, CT>* clone()override
 			{
@@ -685,8 +685,8 @@ namespace adore
 				y(1) = b->f(x);
 				return y;
 			}
-			virtual DT limitHi()override { return (std::min)(a->limitHi(), b->limitHi()); }
-			virtual DT limitLo()override { return (std::max)(a->limitLo(), b->limitLo()); }
+			virtual DT limitHi() const override { return (std::min)(a->limitHi(), b->limitHi()); }
+			virtual DT limitLo() const override { return (std::max)(a->limitLo(), b->limitLo()); }
 			virtual void setLimits(DT lo, DT hi)override { a->setLimits(hi, lo); b->setLimits(hi, lo); }
 			virtual ALFunction<DT, CT>* clone()override
 			{
@@ -707,11 +707,11 @@ namespace adore
 			}
 			virtual void multiply(adoreMatrix<T, 0, 0> A, int rowi, int rowj)
 			{
-				throw new FunctionNotImplemented();
+				throw FunctionNotImplemented();
 			}
 			virtual void add(adoreMatrix<T, 0, 1> c, int rowi, int rowj)
 			{
-				throw new FunctionNotImplemented();
+				throw FunctionNotImplemented();
 			}
 			virtual ALFunction<DT, CT>* create_derivative()override
 			{
@@ -823,8 +823,8 @@ namespace adore
 			ALFunction<T, T>* m_divisor;
 			FunctionModification_ReciprocalScalar(ALFunction<T, T>* divisor) :m_divisor(divisor) {}
 			virtual void setLimits(DT lo, DT hi)override { m_divisor->setLimits(lo, hi); }
-			virtual DT limitHi()override { return m_divisor->limitHi(); }
-			virtual DT limitLo()override { return m_divisor->limitLo(); }
+			virtual DT limitHi() const override { return m_divisor->limitHi(); }
+			virtual DT limitLo() const override { return m_divisor->limitLo(); }
 			virtual CT f(DT x)override { return ((T)1) / m_divisor->f(x); }
 			virtual ALFunction<DT, CT>* clone() { return new FunctionModification_ReciprocalScalar(m_divisor->clone()); }
 			virtual ALFunction<DT, CT>* create_derivative()
@@ -845,7 +845,7 @@ namespace adore
 				m_divisor->bound(xmin, xmax, ymin_divisor, ymax_divisor);
 				if (ymin_divisor < 0 && 0 < ymax_divisor)
 				{
-					throw new FunctionUnboundedException();
+					throw FunctionUnboundedException();
 				}
 				else
 				{

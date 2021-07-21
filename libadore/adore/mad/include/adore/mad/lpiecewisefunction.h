@@ -51,7 +51,7 @@ namespace adore
 			{
 				if (x > limitHi() || x < limitLo())
 				{
-					throw new FunctionOutOfBoundsException();
+					throw FunctionOutOfBoundsException();
 				}
 				unsigned int lower = 0;
 				unsigned int upper = m_data.size() - 1;
@@ -59,12 +59,12 @@ namespace adore
 				ALFunction<DT, CT>* current = m_data.at(m_searchIndex);
 				while (current->limitHi() < x || current->limitLo() > x)
 				{
-					if (lower == upper)throw new FunctionIndexingError();
+					if (lower == upper)throw FunctionIndexingError();
 					if (current->limitHi() < x)//search higher
 					{
 						lower = m_searchIndex;
 						unsigned int new_index = (std::ceil)((float)(m_searchIndex + upper) / 2.0f);
-						if (new_index == m_searchIndex)throw new FunctionIndexingError();
+						if (new_index == m_searchIndex)throw FunctionIndexingError();
 						m_searchIndex = new_index;
 						current = m_data.at(m_searchIndex);
 					}
@@ -72,7 +72,7 @@ namespace adore
 					{
 						upper = m_searchIndex;
 						unsigned int new_index = (std::floor)((float)(m_searchIndex + lower) / 2.0f);
-						if (new_index == m_searchIndex)throw new FunctionIndexingError();
+						if (new_index == m_searchIndex)throw FunctionIndexingError();
 						m_searchIndex = new_index;
 						current = m_data.at(m_searchIndex);
 					}
@@ -108,23 +108,23 @@ namespace adore
 			//function evaluation returns y of codomain type CT for a value x of domain type DT
 			virtual CT f(DT x) override
 			{
-				if (m_data.size() == 0)throw new FunctionNotInitialized();
+				if (m_data.size() == 0)throw FunctionNotInitialized();
 				return m_data.at(findIndex(x))->f(x);
 			}
-			virtual DT limitHi() override
+			virtual DT limitHi() const override
 			{
-				if (m_data.size() == 0)throw new FunctionNotInitialized();
+				if (m_data.size() == 0)throw FunctionNotInitialized();
 				return m_data.at(m_data.size() - 1)->limitHi();
 			}
-			virtual DT limitLo() override
+			virtual DT limitLo() const override
 			{
-				if (m_data.size() == 0)throw new FunctionNotInitialized();
+				if (m_data.size() == 0)throw FunctionNotInitialized();
 				return m_data.at(0)->limitLo();
 			}
 			//reduce or increase the limit of the function
 			virtual void setLimits(DT lo, DT hi) override
 			{
-				if (m_data.size() == 0)throw new FunctionNotInitialized();
+				if (m_data.size() == 0)throw FunctionNotInitialized();
 				
 				// increase limits
 				if(limitLo() > lo)

@@ -65,9 +65,10 @@ namespace adore
                 msg_simtl.tl.junctionId = value.intersection_id_;
                 msg_simtl.tl.movementId = value.movement_id_;
 
-                adore::env::TrafficLightStatus * status = ((adore::env::TrafficLight)value).getStatus();
+                // auto 
+                const auto status = value.getStatus();
 
-                msg_simtl.tl.tlstate = (int) status->getCurrentColor();
+                msg_simtl.tl.tlstate = (int) (status->getCurrentColor());
 
                 msg_simtl.tl.tcd.pose.position.x = value.getCoordinate().m_X;
                 msg_simtl.tl.tcd.pose.position.y = value.getCoordinate().m_Y;

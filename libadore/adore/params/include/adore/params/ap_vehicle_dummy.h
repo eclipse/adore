@@ -24,6 +24,10 @@ namespace adore
              */
             class APVehicleDummy:public adore::params::APVehicle //@TODO create encapsulation for parameter server
             {
+                        virtual std::string get_vehicle_id()const override
+                        {
+                        return "Dummy Vehicle";
+                        }//ID of current vehicle
                         virtual double get_a() const override
                         {
                         return 1.014;

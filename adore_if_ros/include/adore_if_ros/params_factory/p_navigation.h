@@ -52,6 +52,13 @@ namespace adore
           get(name,value);
           return value;
         }
+        virtual double getLaneChangePenalty() const override
+        {
+          double value = 100.0;
+          static const std::string name = prefix_ + "lane_change_penalty";
+          get(name,value);
+          return value;
+        }
       };
     }
   }

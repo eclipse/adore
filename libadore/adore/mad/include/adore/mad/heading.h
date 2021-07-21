@@ -38,11 +38,11 @@ namespace adore
 			{
 				m_df->setLimits(lo, hi);
 			}
-			virtual DT limitHi()override
+			virtual DT limitHi() const override
 			{
 				return m_df->limitHi();
 			}
-			virtual DT limitLo()override
+			virtual DT limitLo() const override
 			{
 				return m_df->limitLo();
 			}

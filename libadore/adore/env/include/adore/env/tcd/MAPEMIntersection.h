@@ -36,13 +36,13 @@ namespace adore
 				 * latitude of the reference coordinate of the intersection 
 				 * often centroid of the traffic light positions on an intersection
 				 */ 
-				float ref_latitude_;				
+				double ref_latitude_;				
 
 				/**
 				 * longitude of the reference coordinate of the intersection 
 				 * often centroid of the traffic light positions on an intersection
 				 */ 
-				float ref_longitude_;
+				double ref_longitude_;
 
 				/**
 				 * lanes of the intersection and their relation to each other

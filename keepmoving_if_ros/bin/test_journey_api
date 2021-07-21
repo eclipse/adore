@@ -1,0 +1,83 @@
+#! /usr/bin/env python
+# *******************************************************************************
+# * Copyright (C) 2017-2020 German Aerospace Center (DLR). 
+# * Eclipse ADORe, Automated Driving Open Research https://eclipse.org/adore
+# *
+# * This program and the accompanying materials are made available under the 
+# * terms of the Eclipse Public License 2.0 which is available at
+# * http://www.eclipse.org/legal/epl-2.0.
+# *
+# * SPDX-License-Identifier: EPL-2.0 
+# *
+# * Contributors: 
+# *  Eric Neidhardt
+# ********************************************************************************
+#test_journey_api loads a journey.json reply file and sends destination of 
+#current journey's current leg to the vehicle automation system via ros message.
+#this script only works with python3. Launch via ros only from noetic onward.
+import rospy
+from adore_if_ros_msg.msg import NavigationGoal
+import json
+import sys
+from datetime import datetime,date,time
+from dateutil import parser
+import time
+import calendar
+from pyproj import Proj
+
+def read_journey_from_file(filename):
+    try:
+        with open(filename) as jsonfile:
+            data = jsonfile.read()
+            jsonobject = json.loads(data)
+            return jsonobject
+    except:
+        print("unable to open file ",filename)
+        return []
+
+
+if __name__ == '__main__':
+    filename = sys.argv[1]
+    time_string = sys.argv[2]
+    targets_in_utm = sys.argv[3]=="UTM"
+    t_in = datetime.timestamp(parser.parse(time_string))   #python3
+    t_now = datetime.timestamp(datetime.now())             #python3
+    t_offset = t_in-t_now
+    
+    # usually, the journey data is retrieved by http request, here, a file is used as an example/test
+    # the request should specify vehiclefleetid and a time interval [from,to]. If from=to=now(), only the currently acitve journey is returned 
+    # each journey entry always contains all of its legs
+    # each leg specifies a time interval, during which it is active
+    # the legs' active intervals may be interceded by gaps: these gaps symbolize waiting times at a bus stop
+    journeyset = read_journey_from_file(filename)
+
+    pub = rospy.Publisher('ENV/NavigationGoal', NavigationGoal, queue_size=10)
+    rospy.init_node('test_journey_api', anonymous=True)
+    rate = rospy.Rate(1) # 1hz
+    while not rospy.is_shutdown():
+        t_now = datetime.timestamp(datetime.now()) +t_offset
+        for journey in journeyset:
+            for leg in journey["legs"]:
+                leg_t0 = datetime.timestamp(parser.parse(leg["startTime"]))
+                leg_t1 = datetime.timestamp(parser.parse(leg["endTime"]))
+                if leg_t0 <= t_now and t_now < leg_t1:
+                    if targets_in_utm:
+                         UTMx = leg["endLocationPosition"]["coordinates"][0]
+                         UTMy = leg["endLocationPosition"]["coordinates"][1]
+                    else:
+                         lat = leg["endLocationPosition"]["coordinates"][0]
+                         lon = leg["endLocationPosition"]["coordinates"][1]
+                         ZoneNo = "32" #Manually input, or calcuated from Lat Lon
+                         myProj = Proj("+proj=utm +zone="+ZoneNo+",\
+                         +north +ellps=WGS84 +datum=WGS84 +units=m +no_defs") #north for north hemisphere
+                         UTMx, UTMy = myProj(lon, lat)
+                    #print navigation goal
+                    print(datetime.now(), ": Going to ", leg["endLocationName"], ", (", lat, ";", lon, ")")
+                    #send a ros message with the navigation goal
+                    msg = NavigationGoal()
+                    msg.target.x = UTMx
+                    msg.target.y = UTMy
+                    msg.target.z = 0
+                    pub.publish(msg)
+        rate.sleep()
+

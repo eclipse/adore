@@ -45,6 +45,13 @@ namespace adore
           get(name,value);
           return value;
         }
+        virtual double getMaximumNavCostLoss() const override
+        {
+          double value = 1000.0;
+          static const std::string name = prefix_ + "maximum_navcost_loss";
+          get(name,value);
+          return value;
+        }
       };
     }
   }

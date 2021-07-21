@@ -21,10 +21,23 @@ namespace adore
     {
         /**
          * ALaneChangeView - A model / data abstraction required for changing to a target lane.
+         * ALaneChangeView couples two ALanes, between which a lane change is possible at a certain longitudinal interval (gate).
          */
-        class ALaneChangeView:public ALane
+        class ALaneChangeView
         {
             public:
+            /**
+             * getSourceLane - return ALane pointer for the source lane of the lane change
+             */
+            virtual ALane* getSourceLane()=0; 
+            /**
+             * getSourceLane - return ALane pointer for the target lane of the lane change
+             */
+            virtual ALane* getTargetLane()=0; 
+
+            /**
+             * lane change direction enum
+             */
             enum direction
             {
                 LEFT,RIGHT
@@ -42,17 +55,9 @@ namespace adore
              */
             virtual double getProgressOfGateClosed()const =0;
             /**
-             * getProgressOfWidthOpen - return progress s, where target lane is wide enough to contain AV for the first time
-             */
-            virtual double getProgressOfWidthOpen()const =0;
-            /**
-             * getProgressOfWidthClosed - return progress s, where target lane is no longer wide enough to contain AV
-             */
-            virtual double getProgressOfWidthClosed()const =0;
-            /**
              * getOffsetOfStartOuterBorder - return lateral offset n of the outer border of the AV's current lane
              */
-            virtual double getOffsetOfStartOuterBorder(double s)const =0;
+            virtual double getOffsetOfStartOuterBorder(double s) =0;
             /**
              * getOffsetOfSeparatingBorder - return lateral offset n of the separating border between start and target lane
              */
@@ -61,6 +66,10 @@ namespace adore
              * getOffsetOfDestinationOuterBorder - return lateral offset n of the outer border of target lane
              */
             virtual double getOffsetOfDestinationOuterBorder(double s) =0;
+            /**
+             * @return the difference in navigation cost between two lanes: g_target-g_source; if the return value is below 0, the target lane has lower navigation cost 
+             */
+            virtual double getNavigationCostDifference()=0;
         };
     }
 }

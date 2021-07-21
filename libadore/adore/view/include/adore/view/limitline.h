@@ -34,7 +34,8 @@ namespace adore
                 WAIT = 1,               /**< traffic light is red or train crossing is closed, car has to wait*/
                 STOP = 2,               /**< stop first, then yield, e.g. stop sign*/
                 CONFLICT = 3,           /**< yield and respect higher priority traffic, traffic light is green or flashing yellow or non existant*/
-                GO = 4                  /**< safe to drive, no higher priority traffic*/
+                GO = 4 ,                /**< safe to drive, no higher priority traffic*/
+                CLEAR = 5               /**< allowed to clear junction, but do not enter*/
             };
             private:
             EState current_state_;      /**< the current accessibility of the critical area*/

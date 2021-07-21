@@ -60,6 +60,13 @@ namespace adore
           get(name,value);
           return value;
         }
+        virtual int getXODRLoaderPointsPerBorder()const override
+        {
+          int value = 128;
+          static const std::string name = prefix_ + "XODRLoaderPointsPerBorder";
+          get(name,value);
+          return value;
+        }
       };
     }
   }

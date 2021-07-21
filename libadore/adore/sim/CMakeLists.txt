@@ -21,21 +21,29 @@ project(adore_sim VERSION 0.0.1
 include(GNUInstallDirs)
 
 # add_library(adore_sim STATIC)
-add_library(adore_sim STATIC)
-
-target_sources(adore_sim PRIVATE 
-  src/mapemgenerator.cpp
-  src/tlstateparser.cpp
-  src/tlstatemanager.cpp)
+add_library(adore_sim INTERFACE)
 
 include(../../external/xercesc.cmake)
 
 target_include_directories(
   ${PROJECT_NAME}
-  PUBLIC $<BUILD_INTERFACE:${${PROJECT_NAME}_SOURCE_DIR}/include>
-            $<INSTALL_INTERFACE:${CMAKE_INSTALL_INCLUDEDIR}>
-            ${xercesc_include})
+  INTERFACE $<BUILD_INTERFACE:${${PROJECT_NAME}_SOURCE_DIR}/include>
+            $<INSTALL_INTERFACE:${CMAKE_INSTALL_INCLUDEDIR}>)
 
-target_link_libraries(adore_sim PUBLIC adore_mad adore_fun adore_env xerces-c)
+target_link_libraries(adore_sim INTERFACE adore_mad adore_fun adore_env xerces-c)
 
 target_compile_features(${PROJECT_NAME} INTERFACE cxx_std_17)
+
+install(TARGETS ${PROJECT_NAME} EXPORT ${PROJECT_NAME}Targets
+)
+
+install(EXPORT ${PROJECT_NAME}Targets
+    FILE ${PROJECT_NAME}Targets.cmake
+    NAMESPACE adore::
+    DESTINATION ../cmake/${PROJECT_NAME}
+)
+
+export(EXPORT ${PROJECT_NAME}Targets
+       FILE "${CMAKE_BINARY_DIR}/../cmake/${PROJECT_NAME}Targets.cmake"
+       NAMESPACE adore::
+)

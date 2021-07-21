@@ -16,23 +16,24 @@
 
 namespace adore
 {
-	namespace params
-	{
-		/**
-		 * @brief abstract class containing cooperative behaviour parameters
-		 * 
-		 */
-		class APCooperation
-		{
+namespace params
+{
+/**
+ * @brief abstract class containing cooperative behaviour parameters
+ * 
+ */
+class APCooperation
+{
 
-		public:
-			virtual int getCooperationMode()const =0;
-			virtual double getAssumedChaseAcceleration()const =0;
-			virtual double getNegotiationTime()const =0;
-			virtual double getAbsTimeUncertaintyForLC()const =0;
-			virtual double getAbsPositionUncertainty()const =0;
-			virtual double getAbsVelocityUncertainty()const =0;
-			virtual int getSendRepetitiveMessages()const =0;
-		};
-	}
-}
+public:
+	virtual int getCooperationMode() const = 0;
+	virtual double getAssumedChaseAcceleration() const = 0;
+	virtual double getNegotiationTime() const = 0;
+	virtual double getAbsTimeUncertaintyForLC() const = 0;
+	virtual double getAbsPositionUncertainty() const = 0;
+	virtual double getAbsVelocityUncertainty() const = 0;
+	virtual int getSendRepetitiveMessages() const = 0;
+	virtual int getUTMZone() const = 0;
+};
+} // namespace params
+} // namespace adore

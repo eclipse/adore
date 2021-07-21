@@ -61,6 +61,12 @@ namespace adore
       ///getAccUB returns longitudinal acceleration upper bound
       virtual double getAccUB() const=0;
 
+      ///getAccLB returns longitudinal acceleration lower bound
+      virtual double getComfortAccLB() const=0;
+      
+      ///getAccUB returns longitudinal acceleration upper bound
+      virtual double getComfortAccUB() const=0;
+
       ///getJerkLB returns longitudinal jerk lower bound
       virtual double getJerkLB() const=0;
 

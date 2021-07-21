@@ -16,8 +16,12 @@
 #include <adore/params/afactory.h>
 #include <adore/env/map/navigation_management.h>
 #include <adore/env/afactory.h>
+#include <adore/if_xodr/xodr2borderbased.h>
+#include <adore/if_r2s/r2s2borderbased.h>
+#include <adore/mad/csvlog.h>
 
-#include "if_plotlab/plot.h"
+#include "if_plotlab/plot_shape.h"
+#include "if_plotlab/plot_border.h"
 // #include <iostream>
 
 namespace adore
@@ -26,6 +30,21 @@ namespace adore
     {
         class Navigation
         {
+            public:
+                struct Config
+                {
+                    double trans_x_, trans_y_, trans_z_, rot_x_, rot_y_, rot_z_, rot_psi_;
+                    Config()
+                    {
+                        trans_x_ = 0;
+                        trans_y_ = 0;
+                        trans_z_ = 0;
+                        rot_x_   = 0;
+                        rot_y_   = 0;
+                        rot_psi_ = 0;                    
+                    }
+                };
+                Config config_;
             private:
                 params::APMapProvider* map_params_;
                 params::APNavigation* nav_params_;
@@ -59,21 +78,126 @@ namespace adore
                             l = global_map->getBorder(*(b->m_left));
                         }
                         PLOT::plotBorderNavigation(b,l,normedCost,figure_);
+                        
                     }
+                }
+                void parseTrackConfigs(std::string trackConfigs, env::BorderBased::BorderSet& targetSet)
+                {
+                    std::string trackConfig = "";
+                    std::stringstream trackstream(trackConfigs);
+                    while(std::getline(trackstream,trackConfig,';'))
+                    {
+                        /* reading of single track configuration, comma separated */
+                        std::stringstream trackConfigStream(trackConfig);
+                        bool transform = false;
+                        std::string xodrFilename = "";
+                        std::string r2sReflineFilename = "";
+                        std::string r2sLaneFilename = "";
+                        std::string token = "";
+                        while(std::getline(trackConfigStream,token,','))
+                        {
+                            if(token.size()<=5)
+                            {
+                                LOG_W("Unrecognizable token: %s", token.c_str());
+                                continue;
+                            }
+                            if(token.compare("transform")==0)
+                            {
+                                transform = true;
+                            }
+                            else if(token.substr(token.size()-5,5).compare(".xodr")==0)
+                            {
+                                xodrFilename = token;
+                            }
+                            else
+                            {
+                                if(token.substr(token.size()-5,5).compare(".r2sr")==0)
+                                {
+                                    r2sReflineFilename = token;
+                                }
+                                else if(token.substr(token.size()-5,5).compare(".r2sl")==0)
+                                {
+                                    r2sLaneFilename = token;
+                                }
+                                else
+                                {
+                                    LOG_W("Unrecognizable token: %s", token.c_str());
+                                    continue;
+                                }
+                            }
+                            
+                        }
+                        /* process current file */
+                        adore::env::BorderBased::BorderSet partialSet;
+                        if(!xodrFilename.empty())
+                        {
+                            adore::if_xodr::XODR2BorderBasedConverter converter;
+                            converter.sampling.numberOfPointsPerBorder = map_params_->getXODRLoaderPointsPerBorder();
+                            try
+                            {
+                                LOG_I("Processing file %s ...", xodrFilename.c_str());
+                                converter.convert(xodrFilename.c_str(),&partialSet,transform);
+                                LOG_I("Done.");
+                            }
+                            catch(...)
+                            {
+                                LOG_E("Could not parse file %s", xodrFilename.c_str());
+                            }
+                            /* add partial map to global map */
+                            auto its = partialSet.getAllBorders();
+                            for(;its.first!=its.second;its.first++)
+                            {
+                                targetSet.insert_border(its.first->second);
+                            }
+                            /* global map has responsibility for object/pointers */
+                            partialSet.setIsOwner(false);
+                        }
+                        else if(!(r2sReflineFilename.empty() || r2sLaneFilename.empty()))
+                        {
+                            try
+                            {
+                                LOG_I("Processing files %s and %s ...", r2sReflineFilename.c_str(), r2sLaneFilename.c_str());
+                                if_r2s::R2S2BorderBasedConverter converter;
+                                converter.convert(r2sReflineFilename,r2sLaneFilename, partialSet);
+                                LOG_I("Done.");
+                            }
+                            catch(...)
+                            {
+                                LOG_E("Could not parse R2S files %s and %s", r2sReflineFilename.c_str(), r2sLaneFilename.c_str());
+                            }
+                            
+                            /* add partial map to global map */
+                            auto its = partialSet.getAllBorders();
+                            for(;its.first!=its.second;its.first++)
+                            {
+                                targetSet.insert_border(its.first->second);
+                            }
+                            partialSet.setIsOwner(false);
+                        }
+                        else
+                        {
+                            LOG_E("Could not parse configuration: %s", trackConfig.c_str());
+                        }
+                    }                    
                 }
 
             public:
-                Navigation(env::AFactory* env_factory,adore::params::AFactory* params_factory, adore::env::BorderBased::BorderSet * set)
+                Navigation(env::AFactory* env_factory,adore::params::AFactory* params_factory, std::string trackConfigs, Config config)
                 {
+                    config_ = config;
+                    env::BorderBased::BorderSet set;
+                    map_params_ = params_factory->getMapProvider();
+                    nav_params_ = params_factory->getNavigation();
+                    parseTrackConfigs(trackConfigs, set);
+                    set.rotate(config_.rot_psi_, config_.rot_x_, config_.rot_y_);
+                    set.translate(config_.trans_x_, config_.trans_y_, config_.trans_z_);
                     figure_factory_ = new DLR_TS::PlotLab::FigureStubFactory();
                     figure_ = (DLR_TS::PlotLab::FigureStubZMQ*) figure_factory_->createFigureStub(1);
 
-                    map_params_ = params_factory->getMapProvider();
-                    nav_params_ = params_factory->getNavigation();
                     nav_goal_reader_ = env_factory->getNavigationGoalReader(); // add to nav_management_?
                     motion_state_reader_ = env_factory->getVehicleMotionStateReader();
                     nav_management_.addFeed(env_factory->getBorderFeed());
-                    nav_management_.init(set); 
+                    nav_management_.init(&set); 
                     nav_writer_ = env_factory->getNavigationDataWriter();
                 }
                 virtual void run()
@@ -87,6 +211,7 @@ namespace adore
                   nav_goal_reader_->getData(goal);
                   
                   // update goal
+                  nav_management_.setLaneChangePenalty(nav_params_->getLaneChangePenalty());
                   nav_management_.update(adore::env::BorderBased::Coordinate(goal.target_.x_,goal.target_.y_,goal.target_.z_),true);
 
                   // determine which borders require updates

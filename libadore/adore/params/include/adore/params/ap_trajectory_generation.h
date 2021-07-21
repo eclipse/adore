@@ -38,6 +38,9 @@ namespace adore
 			
 			///number of set points in set-point request
 			virtual int getSetPointCount()const =0;
+
+			///time after which emergency maneuver kicks in
+			virtual double getEmergencyManeuverDelay()const =0;
 		};
 	}
 }

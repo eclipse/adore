@@ -26,6 +26,7 @@ namespace adore
 		public:
 			virtual double getLookAhead()const =0;
 			virtual double getLookBehind()const =0;
+			virtual double getMaximumNavCostLoss() const=0;//determines how much the navigation cost may increase on lane change 
 		};
 	}
 }

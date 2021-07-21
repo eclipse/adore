@@ -13,7 +13,7 @@
 #*   Stephan Lapoehn
 #*   Thomas Lobig
 #********************************************************************************
-cmake_minimum_required(VERSION 2.8.3)
+cmake_minimum_required(VERSION 3.13)
 project(sumo_if_ros)
 
 
@@ -23,15 +23,13 @@ set(CMAKE_MODULE_PATH
    CACHE INTERNAL "" FORCE
 )
 
-include(../cmake/libadore.config)#download libadore
-
 set(sumo_dir ${CMAKE_CURRENT_SOURCE_DIR}/../sumo)
 set(sumo_src_dir ${sumo_dir}/src)
 if(NOT EXISTS ${sumo_dir})
   message(NOTICE "sumo must be downloaded")
   find_package(Git REQUIRED)
   execute_process(
-      COMMAND ${GIT_EXECUTABLE} clone --recursive https://github.com/eclipse/sumo ${sumo_dir}
+      COMMAND ${GIT_EXECUTABLE} clone -b v1_8_0 https://github.com/eclipse/sumo --depth=1 --single-branch ${sumo_dir}
   )
 endif()
 if(NOT EXISTS "${sumo_dir}/build/cmake-build")
@@ -43,6 +41,9 @@ endif()
 if(NOT EXISTS "${sumo_dir}/build/cmake-build")
   message(NOTICE "If you intend to run sumo, please follow the sumo build instructions manually.")
 endif()
+
+# adding dependency to libadore: TODO: the dependency sumo_if_ros->libadore is somewhat inconvenient, could it be removed?
+add_subdirectory(../libadore ${CMAKE_BINARY_DIR}/../libadore)
 
 
 ## Compile as C++11, supported in ROS Kinetic and newer
@@ -57,6 +58,7 @@ find_package(catkin REQUIRED COMPONENTS
   std_msgs
   tf
   adore_if_ros_msg
+  v2xsim
 )
 
 ## System dependencies are found with CMake's conventions
@@ -151,7 +153,7 @@ catkin_package(
 #  LIBRARIES sumo_if_ros
 #  CATKIN_DEPENDS roscpp rospy std_msgs
 #  DEPENDS system_lib
-  CATKIN_DEPENDS adore_if_ros_msg
+  CATKIN_DEPENDS adore_if_ros_msg v2xsim
 )
 
 ###########
@@ -186,6 +188,7 @@ add_executable(sumotraffic2ros_node)
 target_sources(
   sumotraffic2ros_node PRIVATE 
   src/sumotraffic2ros.cpp
+  src/sumotls2ros.cpp
   ${sumo_src_dir}/utils/traci/TraCIAPI.cpp 
   ${sumo_src_dir}/foreign/tcpip/socket.cpp
   ${sumo_src_dir}/foreign/tcpip/storage.cpp
