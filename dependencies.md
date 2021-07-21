@@ -17,7 +17,7 @@
 - [qpOASES](https://projects.coin-or.org/qpOASES), license: [LGPL v2.1](http://www.gnu.org/licenses/lgpl-2.1.html)
 - [xodr](https://github.com/dlr-ts/xodr), license: Apache 2.0, depends on xsd
 - [xsd](https://www.codesynthesis.com/products/xsd/), license: [GPL v2 with FLOSS exception](https://www.codesynthesis.com/products/xsd/license.xhtml)
-- [ZeroMQ, libzmq](https://github.com/zeromq/libzmq)
+- [ZeroMQ, libzmq](https://github.com/zeromq/libzmq), license: [LGPL v3](https://www.gnu.de/documents/lgpl-3.0.de.html)
 - [stb_image](https://github.com/nothings/stb/blob/master/stb_image.h), license: MIT
 - [csaps](https://github.com/espdev/csaps), forked to [csaps-fork](https://github.com/tlobig/csaps-cpp), license: MIT
 # The following libraries have to be provided by the operating system (see install instructions)
