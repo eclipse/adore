@@ -20,6 +20,7 @@
 - [ZeroMQ, libzmq](https://github.com/zeromq/libzmq), license: [LGPL v3](https://www.gnu.de/documents/lgpl-3.0.de.html)
 - [stb_image](https://github.com/nothings/stb/blob/master/stb_image.h), license: MIT
 - [csaps](https://github.com/espdev/csaps), forked to [csaps-fork](https://github.com/tlobig/csaps-cpp), license: MIT
+- [sumo](https://github.com/eclipse/sumo), license: [EPL-2.0](https://www.eclipse.org/legal/epl-2.0/)
 # The following libraries have to be provided by the operating system (see install instructions)
 Licenses of the following libraries may depend on the implementation installed on your system
 - [ROS](http://wiki.ros.org/melodic/)
