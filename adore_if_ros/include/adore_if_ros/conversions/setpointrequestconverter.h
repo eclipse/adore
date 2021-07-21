@@ -40,11 +40,12 @@ namespace adore
             /**
              *  convert a SetPointRequest ROS message into a SetPointRequest c++ object
              */
-            void operator()(adore_if_ros_msg::SetPointRequestConstPtr msg, adore::fun::SetPointRequest* spr)
+            template<typename Tmsg>//adore_if_ros_msg::SetPointRequestConstPtr 
+            void operator()(Tmsg msg, adore::fun::SetPointRequest* spr)
             {
-                spr->setPointRequestID = msg.get()->requestId;
+                spr->setPointRequestID = msg->requestId;
                 spr->setPoints.clear();
-                for(auto& it : msg.get()->setPoints)
+                for(auto& it : msg->setPoints)
                 {   
                     adore::fun::SetPoint sp;
                     sp.maneuverID = it.maneuverId;
@@ -66,21 +67,22 @@ namespace adore
             /**
              * convert a single SetPoint ROS->c++
              */
-            void operator()(adore_if_ros_msg::SetPointConstPtr msg,adore::fun::SetPoint* sp)
+            template<typename Tmsg>//adore_if_ros_msg::SetPointRequestConstPtr 
+            void operator()(Tmsg msg,adore::fun::SetPoint* sp)
             {
-                sp->maneuverID = msg.get()->maneuverId;
-                sp->tStart = msg.get()->tStart;
-                sp->tEnd = msg.get()->tEnd;
-                sp->x0ref.setX(msg.get()->X);
-                sp->x0ref.setY(msg.get()->Y);
-                sp->x0ref.setPSI(msg.get()->PSI);
-                sp->x0ref.setvx(msg.get()->vx);
-                sp->x0ref.setvy(msg.get()->vy);
-                sp->x0ref.setOmega(msg.get()->omega);
-                sp->x0ref.setAx(msg.get()->ax);
-                sp->x0ref.setDelta(msg.get()->delta);
-                sp->x0ref.setDAx(msg.get()->dax);
-                sp->x0ref.setDDelta(msg.get()->ddelta);
+                sp->maneuverID = msg->maneuverId;
+                sp->tStart = msg->tStart;
+                sp->tEnd = msg->tEnd;
+                sp->x0ref.setX(msg->X);
+                sp->x0ref.setY(msg->Y);
+                sp->x0ref.setPSI(msg->PSI);
+                sp->x0ref.setvx(msg->vx);
+                sp->x0ref.setvy(msg->vy);
+                sp->x0ref.setOmega(msg->omega);
+                sp->x0ref.setAx(msg->ax);
+                sp->x0ref.setDelta(msg->delta);
+                sp->x0ref.setDAx(msg->dax);
+                sp->x0ref.setDDelta(msg->ddelta);
             }
             /**
              * convert a single SetPoint c++->ROS

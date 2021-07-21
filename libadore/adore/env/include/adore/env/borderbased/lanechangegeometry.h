@@ -12,14 +12,18 @@
  *   Daniel Heß - initial API and implementation
  * 	 Robert Markowski
  *   Matthias Nichting
+ *   Thomas Lobig - refactoring
  ********************************************************************************/
 
 #pragma once
+// TODO refactor alangechangeview to have LEFT RIGHT enum in a seperate FILE!
+#include <adore/view/alanechangeview.h>
 #include <adore/mad/adoremath.h>
 #include <adore/mad/fun_essentials.h>
 #include <unordered_set>
 #include <adore/env/borderbased/bordergraph.h>
 #include <adore/env/ego/vehiclemotionstate9d.h>
+#include <adore/mad/linearfunctiontypedefs.h>
 namespace adore
 {
 namespace env
@@ -32,9 +36,12 @@ namespace BorderBased
        */
 class LaneChangeGeometry
 {
+
 public:
-  typedef adore::mad::LLinearPiecewiseFunctionM<double, 3> function_type_xyz;
-  typedef adore::mad::LLinearPiecewiseFunctionM<double, 1> function_type_scalar;
+  using function_type_xyz = adore::mad::function_type_xyz;
+  using function_type2d = adore::mad::function_type2d;
+  using function_type_scalar = adore::mad::function_type_scalar;
+  using velocity_profile = function_type_scalar;
   typedef std::unordered_set<BorderBased::Node *, BorderBased::NodeHasher> TBorderSubSet;
   function_type_xyz m_leftBorder_fct;   /**< function: s-coordinate -> euclidian coordinates for left borders */
   function_type_xyz m_rightBorder_fct;  /**< function: s-coordinate -> euclidian coordinates for right borders */
@@ -121,7 +128,7 @@ public:
 
     bool open = false;
     Border *neighbor;
-    double s;
+    double s = 0.0; // initialized to silence -Wmaybe-uninitialized warning
     int i = 0;
     for (auto it = lfg->begin(); it != lfg->end(); it++, i++)
     {
@@ -325,20 +332,21 @@ public:
       leftBA.defineFunction(m_leftBorder_fct);
       rightBA.defineFunction(m_rightBorder_fct);
       centerBorderBA.defineFunction(m_centerBorder_fct);
+      double max_lane_change_distance = 10.0;
 
       adore::mad::defineDistanceMap2d(&m_leftBorderDistance_fct, 1, lfg->getCenterline(), lfg->getCenterlineNormal(),
-                                      &m_leftBorder_fct, 1000.0, lfg->getOffsetOfLeftBorderFct());
+                                      &m_leftBorder_fct, max_lane_change_distance, lfg->getOffsetOfLeftBorderFct());
       adore::mad::defineDistanceMap2d(&m_rightBorderDistance_fct, 1, lfg->getCenterline(), lfg->getCenterlineNormal(),
-                                      &m_rightBorder_fct, 1000.0, lfg->getOffsetOfRightBorderFct());
+                                      &m_rightBorder_fct, max_lane_change_distance, lfg->getOffsetOfRightBorderFct());
       if (direction == adore::view::ALaneChangeView::LEFT)
       {
         adore::mad::defineDistanceMap2d(&m_centerBorderDistance_fct, 1, lfg->getCenterline(), lfg->getCenterlineNormal(),
-                                        &m_centerBorder_fct, 1000.0, lfg->getOffsetOfRightBorderFct());
+                                        &m_centerBorder_fct, max_lane_change_distance, lfg->getOffsetOfRightBorderFct());
       }
       else
       {
         adore::mad::defineDistanceMap2d(&m_centerBorderDistance_fct, 1, lfg->getCenterline(), lfg->getCenterlineNormal(),
-                                        &m_centerBorder_fct, 1000.0, lfg->getOffsetOfLeftBorderFct());
+                                        &m_centerBorder_fct, max_lane_change_distance, lfg->getOffsetOfLeftBorderFct());
       }
 
       bool width_open = false;
@@ -382,7 +390,7 @@ public:
     return &m_innerBorderSequence;
   }
   /**
-  * @brief Get the sequence of inner Borders
+  * @brief Get the sequence of outer Borders
   * 
   * @return BAContainer* 
   */

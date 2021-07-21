@@ -35,6 +35,9 @@ namespace adore
 			///lateral control gain for yaw rate error eomega
 			virtual double getKeomega()const =0;
 
+			///returns I control gain for lateral direction
+			virtual double getKIy()const =0;
+
 			///returns I control gain for longitudinal direction
 			virtual double getKIx()const =0;
 
@@ -94,6 +97,9 @@ namespace adore
 			
 			///reverse controller: control gain for integrated psi error (I)
 			virtual double getKIepsi_r()const =0;
+
+			///gain for steering rate limiter
+			virtual double getSteeringRateLimiterGain()const =0;
 		};
 	}
 }

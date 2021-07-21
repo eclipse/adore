@@ -16,6 +16,7 @@
 #include <vector>
 #include <adore/view/conflictset.h>
 #include <adore/env/borderbased/border.h>
+#include <adore/env/borderbased/lanefollowinggeometry.h>
 
 namespace adore
 {
@@ -131,6 +132,14 @@ public:
     acz.assign(cz_.begin(), cz_.end());
     return acz;
   }
+  void destroy()
+  {
+    for (auto p: cz_)
+    {
+      delete p;
+    }
+    cz_.clear();
+  }
   void addConflictZone(ConflictZone *cz)
   {
     cz_.push_back(cz);
@@ -217,6 +226,11 @@ public:
     valid_ = false;
     double evaluation_distance_from_intersection_point = 100.0;
     // reset the ConflictSet
+    for (auto p : ca_)
+    {
+      p->destroy();
+      delete p;
+    }
     ca_.clear();
     // get borders that overlap with the ego lane
     overlapping_borders.clear();
@@ -226,8 +240,9 @@ public:
     /*
      * Iterate through BorderOverlaps. Determine path of potentially conflicting vehicles
      */
-    double s_max_all = std::numeric_limits<double>::min();
-    double s_min_all = std::numeric_limits<double>::max();
+    // TODO investigate if not using those variables is a bug or if they can be fully removed
+    // double s_max_all = std::numeric_limits<double>::min(); // -Wunused-variable
+    // double s_min_all = std::numeric_limits<double>::max(); // -Wunused-variable
     corner_points_vec.clear();
     right_borders_of_conf_lanes.clear();
     overlap_sets.clear();
@@ -538,8 +553,8 @@ public:
                 }
               }
             }
-            pr->low_.to_;
-            //todo check to_-Point of priority route with successors of first border in cz->getPathOfCrossTraffic_
+            // pr->low_.to_; // TODO commented out to fix -Wunused-value, bring back in when needed
+            //TODO check to_-Point of priority route with successors of first border in cz->getPathOfCrossTraffic_
           }
         }
         conflictzones.insert(std::make_pair(s_min, cz));
@@ -610,8 +625,10 @@ public:
               // with traffic flow or should be rated as cross traffic. Also determine potential exit time
               // if participant is changing lanes, enter a prediction of exit time
               // check neighboring lanes for entering vehicles
-              auto &center = par.center_;
-              double s, n;
+
+              // TODO investigate if the following unused variables are a bug
+              // auto &center = par.center_;
+              // double s, n; // -Wunused-variable 
               adore::view::TrafficObject object;
               object.setCurrentProgress(length - progress);
               // note: vehicle length is not considered for entrance and exit progress

@@ -1,6 +1,17 @@
-// SPDX-FileCopyrightText: 2019 German Aerospace Center (DLR)
-//
-// SPDX-License-Identifier: EPL-2.0
+// *******************************************************************************
+// * Copyright (C) 2017-2020 German Aerospace Center (DLR). 
+// * Eclipse ADORe, Automated Driving Open Research https://eclipse.org/adore
+// *
+// * This program and the accompanying materials are made available under the 
+// * terms of the Eclipse Public License 2.0 which is available at
+// * http://www.eclipse.org/legal/epl-2.0.
+// *
+// * SPDX-License-Identifier: EPL-2.0 
+// *
+// * Contributors: 
+// *  Jonas Rieck
+// ********************************************************************************
+
 
 #include <adore/fun/vehiclebasemeasurement.h>
 #include <adore_if_ros/ros_com_patterns.h>
@@ -72,15 +83,15 @@ public:
     wheel_speed_pub_.publish(wheel_msg);
 
     std_msgs::Float32 yaw_msg;
-    yaw_msg.data = value.getSteeringAngle();
+    yaw_msg.data = value.getYawRate();
     yawrate_esp_pub_.publish(yaw_msg);
 
     std_msgs::Float32 ax_msg;
-    ax_msg.data = value.getSteeringAngle();
+    ax_msg.data = value.getEspAx();
     ax_esp_pub_.publish(ax_msg);
 
     std_msgs::Float32 ay_msg;
-    ay_msg.data = value.getSteeringAngle();
+    ay_msg.data = value.getEspAy();
     ay_esp_pub_.publish(ay_msg);
   }
 };

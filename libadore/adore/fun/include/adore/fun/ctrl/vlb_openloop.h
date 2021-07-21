@@ -109,7 +109,8 @@ namespace adore
                 const double PSI = x_in(2);
                 const double vx = x_in(3);
                 const double vyr = x_in(4)-lambda_*x_in(5);
-                const double vyf = vyr+L_*x_in(5);
+                // TODO investigate if the following is a bug or if the variable can be fully removed
+                // const double vyf = vyr+L_*x_in(5); // fix -Wunused-variable
                 const double vy = x_in(4);
                 const double omega = x_in(5);
                 double ax = x_in(6);
@@ -133,7 +134,8 @@ namespace adore
                         }
                         break;
                     case VehicleExtendedState::Neutral:
-                        if(vx>0.0 && ax>0.0 || vx<0.0 && ax<0.0)
+                        if  ((vx>0.0 && ax>0.0)
+                          || ( vx<0.0 && ax<0.0))
                         {
                             ax = -0.05 * vx;
                         }
@@ -151,8 +153,9 @@ namespace adore
                 if (vx > 1.0)
                 {
                     //slipangles
-                    double alpha_f = atan(vyf / vx) - delta;
-                    double alpha_r = atan(vyr / vx);
+                    // TODO investigate the following variables are no longer used, usage commented out few lines below, can they be fully removed?
+                    // double alpha_f = atan(vyf / vx) - delta; // -Wunused-variable
+                    // double alpha_r = atan(vyr / vx);  // -Wunused-variable
                     //forces
                     double Fyf_Fzf, Fyr_Fzr;
                     //Fyf_Fzf = -cos(delta)*mu_*(b_/L_*g_ - h_/L_*0.0)*cf_*alpha_f;

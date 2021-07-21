@@ -10,7 +10,7 @@
  *
  * Contributors: 
  *   Daniel Heß - initial API and implementation
- *   Matthias Nichting - initial API and implementation
+ *   Matthias Nichting
  ********************************************************************************/
 
 
@@ -18,12 +18,13 @@
 #include <adore/mad/adoremath.h>
 #include <adore/mad/fun_essentials.h>
 #include <adore/mad/centerline.h>
-#include <adore/mad/cubicpiecewisefunction.h>
-#include <adore/mad/cubicpiecewisefunctionstatic.h>
 #include <adore/env/borderbased/borderaccumulator.h>
 #include <adore/env/borderbased/bordertrace.h>
 #include <adore/env/ego/vehiclemotionstate9d.h>
 #include <adore/env/borderbased/bordercostmap.h>
+#include <adore/mad/linearfunctiontypedefs.h>
+
+#include "csaps.h"
 
 namespace adore
 {
@@ -38,12 +39,12 @@ namespace adore
        */
       class LaneFollowingGeometry
       {
+
       public:
-        // typedefs
-        typedef adore::mad::LLinearPiecewiseFunctionM<double, 1> velocity_profile;
-        typedef adore::mad::LLinearPiecewiseFunctionM<double, 3> function_type_xyz;
-        typedef adore::mad::LLinearPiecewiseFunctionM<double, 2> function_type2d;
-        typedef adore::mad::LLinearPiecewiseFunctionM<double, 1> function_type_scalar;
+        using function_type_xyz = adore::mad::function_type_xyz;
+        using function_type2d = adore::mad::function_type2d;
+        using function_type_scalar = adore::mad::function_type_scalar;
+        using velocity_profile = function_type_scalar;
         velocity_profile m_velocity_fct;
         function_type_xyz m_leftBorder_fct; /**< function: s-coordinate -> euclidian coordinates for left borders*/
         function_type_xyz m_rightBorder_fct; /**< function: s-coordinate -> euclidian coordinates for right borders*/
@@ -57,6 +58,7 @@ namespace adore
         function_type_scalar m_centerSmoothedCurvatureDerivative_fct;
         function_type_scalar m_leftDistance_fct; /**< function: s-coordinate -> distance to left border */
         function_type_scalar m_rightDistance_fct; /**< function: s-coordinate -> distance to right border */
+        function_type_scalar m_navigationCost_fct; /**< function: s-coordinate -> distance to goal */
         double m_planning_time;
         double m_s_min;                         /**< s-coordinate of viewing horizon start */
         double m_s_max;                         /**< s-coordinate of viewing horizon end */
@@ -67,8 +69,9 @@ namespace adore
         int m_startIndexInRightBorders;
         Border* m_start;
         int m_egoBorderIndex;
-        adore::mad::CubicPiecewiseFunctionStatic<PolyFitPoints> m_cp_fit_X;
-        adore::mad::CubicPiecewiseFunctionStatic<PolyFitPoints> m_cp_fit_Y;
+        double m_s_lane_width_open;
+        double m_s_lane_width_closed;
+        double m_vehicle_width;                              /**< ego vehicle width */
 
         double Sbuf[PolyEvaluatePoints];
         double Xbuf[PolyEvaluatePoints];
@@ -81,7 +84,6 @@ namespace adore
         double ddYbuf[PolyEvaluatePoints];
         double dddXbuf[PolyEvaluatePoints];
         double dddYbuf[PolyEvaluatePoints];
-        double Wbuf[PolyEvaluatePoints];
 
       public:
       /**
@@ -101,6 +103,7 @@ namespace adore
           m_centerSmoothedCurvatureDerivative_fct.setData(dlib::zeros_matrix<double>(2, PolyEvaluatePoints));
           m_leftDistance_fct.setData(dlib::zeros_matrix<double>(2, PolyEvaluatePoints));
           m_rightDistance_fct.setData(dlib::zeros_matrix<double>(2, PolyEvaluatePoints));
+          m_vehicle_width = 1.8;
           m_view_valid = false;
         }
         /**
@@ -113,6 +116,7 @@ namespace adore
          * @param start start/matched border
          * @param ego ego state
          * @param lookahead_distance how far to look in driving direction
+         * @param lookbehind_distance how far to look behind. Note: this parameter requires a borderTrace length of at least equal value
          * @param smoothness smoothing value for polynom fit
          * @param activate_navigation flag whether navigation is activated (default: false) 
          */
@@ -122,6 +126,7 @@ namespace adore
                     Border* start,
                     adore::env::VehicleMotionState9d* ego,
                     double lookahead_distance,
+                    double lookbehind_distance,
                     double smoothness = 0.05,
                     bool activate_navigation = false
                     )
@@ -129,6 +134,9 @@ namespace adore
           m_view_valid = false;  // set to true at end
           m_start = start;
           if(start==nullptr) return; //if the start node is not available, then the view is not valid
+
+          const double excess_distance_border = 10.0;
+          borderTrace->setDistanceLimit(lookbehind_distance + excess_distance_border);
 
           /* go back n steps in view */
           double s0_border =
@@ -155,12 +163,12 @@ namespace adore
 
 					if(activate_navigation)
 					{
-						BorderBased::BASFollowNavigation bas(start,borderSet,borderCost,lookahead_distance+s0_border);
+						BorderBased::BASFollowNavigation bas(start,borderSet,borderCost,lookahead_distance+s0_border + excess_distance_border);
             m_rightBorders.append(&bas);
 					}
 					else
 					{
-            BASFollowStraight bas(start, borderSet, lookahead_distance + s0_border);
+            BASFollowStraight bas(start, borderSet, lookahead_distance + s0_border + excess_distance_border);
             m_rightBorders.append(&bas);
 					}
           
@@ -180,14 +188,12 @@ namespace adore
 
           /* create s grid for smoothing of centerline */
           double s0_raw = m_centerRaw_fct.getClosestParameter(ego->getX(), ego->getY(), 1, 2);
-          //180919NiM double preview_speed = hasSpeedLimit(s0_raw) ? getSpeedLimit(s0_raw) : 50.0 / 3.6;
-          double preview_speed = 50.0/3.6;
-          double review_distance = (std::min)(walkback_distance, preview_speed * m_planning_time / 3.0);
-          double preview_distance = preview_speed * m_planning_time;
-          m_s_min = (std::max)(s0_raw - review_distance, (std::min)(s0_raw, m_centerRaw_fct.limitLo() + 5.0));
-          m_s_max = (std::min)(s0_raw + preview_distance, m_centerRaw_fct.limitHi() - 5.0);
+          double review_distance = std::min(walkback_distance, lookbehind_distance);
+          double preview_distance = lookahead_distance;
+          m_s_min = (std::max)(s0_raw - review_distance, (std::min)(s0_raw, m_centerRaw_fct.limitLo() + 0.1));
+          m_s_max = (std::min)(s0_raw + preview_distance, m_centerRaw_fct.limitHi() - 0.1);
           if (m_s_max - m_s_min < m_min_view_distance)
-            return;
+            return;  // TODO is this not an error that should be handled?
 
           /* sample the raw centerline at grid points */
           adore::mad::linspace(m_s_min, m_s_max, Sbuf, PolyFitPoints);
@@ -195,17 +201,57 @@ namespace adore
           {
             Xbuf[i] = m_centerRaw_fct.fi(Sbuf[i], 0);
             Ybuf[i] = m_centerRaw_fct.fi(Sbuf[i], 1);
-            Wbuf[i] = 1.0;
           }
+        
 
           /* smooth centerline - compute piecewise poly regression */
-          m_cp_fit_X.fit(Sbuf, Xbuf, Wbuf, smoothness);
-          m_cp_fit_Y.fit(Sbuf, Ybuf, Wbuf, smoothness);
+
+          csaps::DoubleArray sdata(PolyFitPoints);
+          csaps::DoubleArray xdata(PolyFitPoints);
+          csaps::DoubleArray ydata(PolyFitPoints);
+
+          
+          // TODO this should be an intermediate solution
+          // it is still way faster than the previous hand rolled
+          // cubic spline implementation, but alternatives
+          // need to be considered for refactoring (e.g. gsl)
+          for (int i = 0; i < PolyFitPoints; ++i)
+          {
+            sdata(i) = Sbuf[i];
+            xdata(i) = Xbuf[i];
+            ydata(i) = Ybuf[i];
+          }
+
+          csaps::UnivariateCubicSmoothingSpline splineX(sdata, xdata, smoothness);
+          csaps::UnivariateCubicSmoothingSpline splineY(sdata, ydata, smoothness);
 
           /* sample smoothed centerline and evaluate its curvature and curv-derivative at grid points*/
           adore::mad::linspace(m_s_min, m_s_max, Sbuf, PolyEvaluatePoints);
-          m_cp_fit_X.evaluate_ordered(PolyEvaluatePoints, Sbuf, Xbuf, dXbuf, ddXbuf, dddXbuf);
-          m_cp_fit_Y.evaluate_ordered(PolyEvaluatePoints, Sbuf, Ybuf, dYbuf, ddYbuf, dddYbuf);
+          csaps::DoubleArray xidata;
+          csaps::DoubleArray dxidata;
+          csaps::DoubleArray ddxidata;
+          csaps::DoubleArray dddxidata;
+          csaps::DoubleArray yidata;
+          csaps::DoubleArray dyidata;
+          csaps::DoubleArray ddyidata;
+          csaps::DoubleArray dddyidata;
+          
+          std::tie(xidata,dxidata,ddxidata,dddxidata) = splineX(PolyEvaluatePoints, sdata);
+          std::tie(yidata,dyidata,ddyidata,dddyidata) = splineY(PolyEvaluatePoints, sdata);
+
+
+          for (int i = 0; i < PolyEvaluatePoints; ++i)
+          {
+            Xbuf[i] = xidata(i);
+            dXbuf[i] = dxidata(i);
+            ddXbuf[i] = ddxidata(i);
+            dddXbuf[i] = dddxidata(i);
+            Ybuf[i] = yidata(i);
+            dYbuf[i] = dyidata(i);
+            ddYbuf[i] = ddyidata(i);
+            dddYbuf[i] = dddyidata(i);
+          }
+          
           double si = Sbuf[0];  // integral: path length
           double Li = 0.0;      // length of path segment
           double dLi = 1.0;     // integral: path length -> derivative ratio
@@ -269,31 +315,159 @@ namespace adore
           /* compute distance from smoothed centerline to borders*/
           double s_intersect;
           double distance;
-          double max_intersect_distance = 10.0;
+          double max_intersect_distance = 5.0;//maximum distance from smooth baseline to border
           bool extend_fringes = false;  // true - extend fringes of border in order to guarantee 
                                         //        intersection with smoothed centerline normals
-
+          m_view_valid = true;          // set view valid to false, if lane boundary cannot be found inside max_intersect_distance
           // left
           s_intersect = m_leftBorder_fct.limitLo();     // initialize at border's beginning
+          // s_intersect = m_s_min;//initialize at baseline start
           for (int i = 0; i < PolyEvaluatePoints; i++)  // step through smoothed centerline points and compute distance
           {
-            m_leftBorder_fct.getNextIntersectionWithVector2d(s_intersect, Xbuf[i], Ybuf[i], nXbuf[i], nYbuf[i], s_intersect,
+            bool rv = m_leftBorder_fct.getNextIntersectionWithVector2d(s_intersect, Xbuf[i], Ybuf[i], nXbuf[i], nYbuf[i], s_intersect,
                                                             distance, max_intersect_distance, extend_fringes);
+            // m_view_valid = m_view_valid && rv;
             m_leftDistance_fct.getData()(0, i) = Sbuf[i];
             m_leftDistance_fct.getData()(1, i) = distance;
           }
           // right
           s_intersect = m_rightBorder_fct.limitLo();    // initialize at border's beginning
+          // s_intersect = m_s_min;//initialize at baseline start
           for (int i = 0; i < PolyEvaluatePoints; i++)  // step through smoothed centerline points and compute distance
           {
-            m_rightBorder_fct.getNextIntersectionWithVector2d(s_intersect, Xbuf[i], Ybuf[i], -nXbuf[i], -nYbuf[i],
+            bool rv = m_rightBorder_fct.getNextIntersectionWithVector2d(s_intersect, Xbuf[i], Ybuf[i], -nXbuf[i], -nYbuf[i],
                                                               s_intersect, distance, max_intersect_distance, extend_fringes);
+            // m_view_valid = m_view_valid && rv;
             m_rightDistance_fct.getData()(0, i) = Sbuf[i];
             m_rightDistance_fct.getData()(1, i) = -distance;
           }
+          bool width_open = false;
+          m_s_lane_width_open = 0.0;
+          m_s_lane_width_closed = 10000.0;
+          auto left = m_leftDistance_fct.getData();
+          for (int i = 0; i < left.nc(); i++)
+          {
+              double d = (std::abs)(left(1, i)) + (std::abs)(m_rightDistance_fct.fi(left(0, i), 0)) - m_vehicle_width;
+              if (width_open)
+              {
+                  if (d < 0)
+                  {
+                      m_s_lane_width_closed = left(0, i);
+                      break;
+                  }
+              }
+              else
+              {
+                  if (d > 0)
+                  {
+                      m_s_lane_width_open = left(0, i);
+                      width_open = true;
+                  }
+              }
+          }
 
-          m_view_valid = true;
+          m_view_valid =  computeNavigationCost(activate_navigation,borderCost);
+
         }
+
+
+        bool computeNavigationCost(bool activate_navigation,BorderCostMap* borderCostMap)
+        {
+          if(activate_navigation)
+          {
+            std::vector<adoreMatrix<double,3,1>> navcost_vector;
+            for(Border* rb:(*m_rightBorders.getBorders()))
+            {
+                auto c = borderCostMap->find(rb->m_id);
+                if(c==borderCostMap->end())return false;
+                adoreMatrix<double,3,1> value;
+                value(0) = c->second.getDistanceToGoal();
+                value(1) = rb->m_id.m_first.m_X;
+                value(2) = rb->m_id.m_first.m_Y;
+                navcost_vector.push_back(value);
+            }
+            {
+                Border* rb = *m_rightBorders.getBorders()->rbegin();
+                auto c = borderCostMap->find(rb->m_id);
+                if(c==borderCostMap->end())return false;
+                adoreMatrix<double,3,1> value;
+                value(0) = std::max(0.0,c->second.getDistanceToGoal()-rb->getLength());
+                value(1) = rb->m_id.m_last.m_X;
+                value(2) = rb->m_id.m_last.m_Y;
+                navcost_vector.push_back(value);
+            }
+            //project navigation cost points to baseline
+            std::vector<double> svalues;
+            std::vector<double> cvalues;
+            auto xstart = m_centerSmoothed_fct(m_centerSmoothed_fct.limitLo());
+            auto xend = m_centerSmoothed_fct(m_centerSmoothed_fct.limitHi());
+            for(auto& value:navcost_vector)
+            {
+                double tmp=0;//not required
+                double s = m_centerSmoothed_fct.getClosestParameter(value(1),value(2),1,2,tmp);
+                double c;//cost
+                if(s==m_centerSmoothed_fct.limitLo())//potentially located before interval start
+                {
+                    double dx = value(1)-xstart(0);
+                    double dy = value(2)-xstart(1);
+                    double d = std::sqrt(dx*dx+dy*dy);
+                    c = std::max(0.0,value(0) - d);
+                }
+                else if(s==m_centerSmoothed_fct.limitHi())//potentially located after interval end
+                {
+                    double dx = value(1)-xend(0);
+                    double dy = value(2)-xend(1);
+                    double d = std::sqrt(dx*dx+dy*dy);
+                    c = std::max(0.0,value(0) + d);
+                }
+                else
+                {  
+                    c = value(0); 
+                }
+                if( svalues.size()>0 && s<svalues[svalues.size()-1])continue;
+                else if( svalues.size()>0 && s==svalues[svalues.size()-1])
+                {
+                  if(c<cvalues[cvalues.size()-1])
+                  {
+                    svalues[svalues.size()-1] = s;
+                    cvalues[svalues.size()-1] = c;
+                  }
+                }
+                else
+                {
+                    svalues.push_back(s);
+                    cvalues.push_back(c);
+                }        
+            }
+            if(svalues.size()>0)
+            {
+                m_navigationCost_fct.setData(dlib::zeros_matrix<double>(2, svalues.size()));
+                for(int i=0;i<svalues.size();i++)
+                {
+                    m_navigationCost_fct.getData()(0,i) = svalues[i];
+                    m_navigationCost_fct.getData()(1,i) = cvalues[i];
+                }            
+            }
+            else
+            {
+                m_navigationCost_fct.setData(dlib::zeros_matrix<double>(2, 2));
+                m_navigationCost_fct.getData()(0,0) = m_centerSmoothed_fct.limitLo();
+                m_navigationCost_fct.getData()(0,1) = m_centerSmoothed_fct.limitHi();
+                m_navigationCost_fct.getData()(1,0) = 1e10;
+                m_navigationCost_fct.getData()(1,1) = 1e10;
+            }
+          }
+          else
+          {
+            m_navigationCost_fct.setData(dlib::zeros_matrix<double>(2, 2));
+            m_navigationCost_fct.getData()(0,0) = m_centerSmoothed_fct.limitLo();
+            m_navigationCost_fct.getData()(0,1) = m_centerSmoothed_fct.limitHi();
+            m_navigationCost_fct.getData()(1,0) = 1.0e10;
+            m_navigationCost_fct.getData()(1,1) = 1.0e10;
+          }
+          return true;
+        }
+
         /**
          * @brief Modify a lane boundary to exclude a given point.
          * 
@@ -358,6 +532,47 @@ namespace adore
           return &m_leftBorders;
         }
         /**
+         * @brief Get the best matching border for a given ego position
+         * @param max_deviation if a point located max_deviation from X,Y is inside lfg, a match can be found
+         * @return nullptr if no match can be found, otherwise border pointer
+         */
+        Border* getBestMatchingBorder(double X,double Y,double max_deviation)
+        {
+          double s,n;
+          toRelativeCoordinates(X,Y,s,n);
+          if( s<=0.0 || s>=getViewingDistance() )return nullptr;
+          double nmin = - max_deviation + (std::min)(getOffsetOfLeftBorder(s),getOffsetOfRightBorder(s));
+          double nmax = + max_deviation + (std::max)(getOffsetOfLeftBorder(s),getOffsetOfRightBorder(s));
+          if(n<nmin||nmax<n)
+          {
+            return nullptr;
+          }
+
+          double Xc,Yc,Zc;
+          toEucledianCoordinates(s,0,Xc,Yc,Zc);
+
+          auto it_left = m_leftBorders.getBorders()->begin();
+          auto it_right = m_rightBorders.getBorders()->begin();
+          
+          while (it_left!=m_leftBorders.getBorders()->end()
+             &&  it_right!=m_rightBorders.getBorders()->end())
+          {
+              if((*it_right)->isPointInsideLane(*it_left,Xc,Yc))
+              {
+                return *it_right;
+              }
+              else
+              {
+                it_left ++;
+                it_right ++;
+              }
+              
+          }
+          return nullptr;
+        }
+
+
+        /**
          * @brief Check whether the LaneFollowingGeometry is valid
          * 
          * @return true if the LaneFollowingGeometry is valid
@@ -375,6 +590,32 @@ namespace adore
         double getViewingDistance()  const
         {
           return m_s_max - m_s_min;
+        }
+        double getSMax()const
+        {
+          return m_s_max;
+        }
+        double getSMin()const
+        {
+          return m_s_min;
+        }
+        /**
+         * @brief Get the s-coordinate where the lane reaches the required width
+         *
+         * @return double s-coordinate of the position where the lane starts to have at least the required width
+         */
+        double getProgressOfWidthOpen() const
+        {
+            return m_s_lane_width_open;
+        }
+        /**
+         * @brief Get the s-coordinate where the lane stops to have the required width
+         *
+         * @return double s-coordinate of the position where the lane ends to have at least the required width
+         */
+        double getProgressOfWidthClosed() const
+        {
+            return m_s_lane_width_closed;
         }
         /**
          * @brief Get the centerline of the lane
@@ -503,7 +744,11 @@ namespace adore
          */
         void toRelativeCoordinates(double Xg, double Yg, double& s, double& n) 
         {
-          s = m_centerSmoothed_fct.getClosestParameter(Xg, Yg, 1, 2, n) - m_s_min;  // compute parameter and lateral deviation
+          if(!adore::mad::toRelativeWithNormalExtrapolation(Xg,Yg,&m_centerSmoothed_fct,&m_centerNormal_fct,s,n))
+          {
+              s = m_centerSmoothed_fct.getClosestParameter(Xg, Yg, 1, 2, n);
+          }
+          s-=m_s_min;
         }
         /**
          * @brief Transform from relative to euclidian coordinates
@@ -517,14 +762,8 @@ namespace adore
         void toEucledianCoordinates(double s, double n, double& Xg, double& Yg, double& Zg) 
         {
           s=adore::mad::bound(m_s_min,s+m_s_min,m_s_max);
-          auto c = getCenterline()->f(adore::mad::bound(getCenterline()->limitLo(), s , getCenterline()->limitHi()));
-          auto offset = getCenterlineNormal()->f(
-                              adore::mad::bound(getCenterlineNormal()->limitLo(), 
-                                              s , 
-                                              getCenterlineNormal()->limitHi())) * n;
-          Xg = c(0) + offset(0);
-          Yg = c(1) + offset(1);
-          Zg = 0.0;
+          adore::mad::fromRelative(s,n,&m_centerSmoothed_fct,&m_centerNormal_fct,Xg,Yg,Zg);
+          Zg=0.0;
         }
       };
     }  // namespace BorderBased

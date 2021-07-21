@@ -15,11 +15,14 @@
 #pragma once
 
 #include <adore/mad/adoremath.h>
+#include <type_traits>
 
 namespace adore
 {
     namespace fun
     {
+		struct PlanarVehicleState10d;
+		class SetPoint;
         /**
 		Structure which contains vehicle motion states and time, used as observed state, input to planning and control modules.
          * [
@@ -33,10 +36,15 @@ namespace adore
          *   ax,
          *   delta,
          * ]
-         */
-        struct VehicleMotionState9d
+         */	
+		class VehicleMotionState9d
         {
 		public:
+			VehicleMotionState9d()
+			{
+				time_ = 0.0;
+				for(int i=0;i<9;i++)data_(i)=0.0;
+			}
 
 			double time_;
 			adoreMatrix<double, 9, 1> data_;
@@ -130,6 +138,32 @@ namespace adore
 			   *@param value is Delta
 			   */
 			void setDelta(double value) {  data_(8, 0) = value; }
+
+			/**
+			 * @brief Offers the possibility to copy relevant fields from a PlanarVehicleState10d to VehicleMotionState9d
+			 * 
+			 * this construct is used to circumvent issues that arise from the mainly header-only nature of the framework
+			 * while a copy constructor for the reverse copy order already existed, this new function was not possible to
+			 * implement in the same way due to issues with cyclic header dependencies
+			 * 
+			 * @tparam T 
+			 * @tparam std::enable_if_t< std::is_same<T,PlanarVehicleState10d>::value> 
+			 * @param other a PlanarVehicleState10d object
+			 */
+			template<class T, 
+				typename = std::enable_if_t< std::is_same<T,PlanarVehicleState10d>::value> >
+			void copyFromPlanar(const T& other)
+			{		
+				this->setX(other.getX());
+				this->setY(other.getY());
+				// this->setZ(0.0);
+				this->setPSI(other.getPSI());
+				this->setvx(other.getvx());
+				this->setvy(other.getvy());
+				this->setOmega(other.getOmega());
+				this->setAx(other.getAx());
+				this->setDelta(other.getDelta());
+			}
 		};
     }
 }

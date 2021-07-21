@@ -27,7 +27,7 @@ cd ../adore_if_ros_demos
 After compilation is successful, a demo is started by executig "roslaunch _demo_file_name_".
 
  
-## How to load Open Drive tracks
+# Load Open Drive tracks
 - file: [demo001_loadmap.launch](demo001_loadmap.launch) 
 - The ROS node "adore_mapprovider_node" is responsible for loading tracks, aka. roadmaps.
 - Track files are specified by the local ROS parameter "PARAM/track". ("local" as in "can be defined separately for each vehicle/agent in their respective namespace")
@@ -48,7 +48,7 @@ After compilation is successful, a demo is started by executig "roslaunch _demo_
 Overview plot of tracks loaded by demo001:
 ![Overview plot of tracks loaded by demo001](readme_pics/demo001.png)
 
-## Computation of a navigation function
+# Computation of a navigation function
 - file: [demo002_navigatemap.launch](demo002_navigatemap.launch)
 - The ROS node "adore_navigation_node" helps an ADORe automated vehicle to navigate to its destination.
 - A destination for the automated vehicle may be set, by sending a "NavigationGoal" message on the topic "ENV/NavigationGoal"
@@ -60,7 +60,7 @@ Overview plot of tracks loaded by demo001:
 Color-coded navigation function plotted by demo002:
 ![Color-coded navigation function plotted by demo002](readme_pics/demo002.png)
 
-## Simulation of Automated Lane Following
+# Simulation of Automated Lane Following
 - file: [demo003_lanefollowing.launch](demo003_lanefollowing.launch)
 - Demo 003 shows how to simulated an automated vehicle with a minimal set of components. Several nodes are introduced in addition to the "adore_mapprovider_node" described above.
 - To create a dynamic simulation, the ROS node "adore_timer_node" publishes a globally synchronous time signal on the topic "/SIM/utc". The process is started in a shell, in order to accept user input: By pressing enter, the simulation can be paused and resumed.
@@ -78,7 +78,7 @@ Color-coded navigation function plotted by demo002:
 Local scene for lane following automation in demo003:
 ![Local scene for lane following automation in demo003](readme_pics/demo003.png)
 
-## Lane following with three automated vehicles
+# Lane following with three automated vehicles
 - file: [demo004_follow_vehicle_mult.launch](demo004_follow_vehicle_mult.launch)
 - In order to simulate multiple vehicles, multiple instances of "adore_vehiclemodel_node", "adore_mapprovider_node",  "adore_feedbackcontroller_node" and "adore_lfbehavior_node" have to be started.
     - Note: Each set of nodes is started in a separate namespace, e.g. "/vehicle0", "/vehicle1" and "/vehicle2"
@@ -93,7 +93,7 @@ Local scene for lane following automation in demo003:
 Two fast vehicles following a slow vehicle in demo004:
 ![Two fast vehicles following a slow vehicle in demo004](readme_pics/demo004.png)
 
-## Lane following with ADORe automated vehicle and multiple SUMO vehicles
+# Lane following with ADORe automated vehicle and multiple SUMO vehicles
 - file: [demo005_follow_vehicle_sumo.launch](demo005_follow_vehicle_sumo.launch) 
 - [SUMO](http://eclipse.org/sumo)  is a free and open traffic simulation toolsuite. It is used in this example to represent manually driven vehicles in the vicinity of the ADORe automated vehicle.
 - SUMO has to be downloaded and installed. These steps will be executed by the cmake script of the SUMO-ROS interface "sumo_if_ros".  So before launching the demonstration, make sure to execute:
@@ -113,7 +113,7 @@ export SUMO_HOME=~/catkin_ws/src/adore/sumo
 Several SUMO vehicles and one ADORe automated vehicle in demo005:
 ![Several SUMO vehicles and one ADORe automated vehicle in demo005](readme_pics/demo005.png)
 
-## Lane following and navigation to a goal location
+# Lane following and navigation to a goal location
 - file: [demo006_lanefollowing_navigation.launch](demo006_lanefollowing_navigation.launch)
 - Demo006 showcases a vehicle automatically driving to a given goal position. The setup is similar to demo003, yet a "adore_navigation_node" is additionally started.
 - The launch file sets an initial NavigationGoal. During simulation, the goal point can be changed by publishing a ROS message. For example with the following shell command:
@@ -126,3 +126,108 @@ rostopic pub /vehicle0/ENV/NavigationGoal adore_if_ros_msg/NavigationGoal '{targ
 
 Vehicle turning at intersection and stopping at goal in demo006:
 ![Turning](readme_pics/demo006_1.png)![Stopping](readme_pics/demo006_2.png)
+
+# Prediction
+- file: [demo007b_precedence_no_rules.launch](demo007b_precedence_no_rules.launch)
+- In demo007b two ADORe automated vehicles approach an unsignalized intersection and avoid a collision by predicting possible paths of the vehicle.
+- Vehicle0 approaches from west and turns north, vehicle1 crosses the intersection straight from south to north.
+- The [adore_prediction_provider](../adore_if_ros/src/adore_prediction_provider.cpp) node is executed by each vehicle and computes for each detected traffic participant a set of locations that might be covered by the given traffic participant in the future.
+- Predictions are published on the topic "ENV/Prediction"
+- A collision detection module (for example in adore_lfbehavior_node) receives the predictions and intersects possible plans of the ego vehicle with possible positions of other traffic participants 
+- In case of a conflict, a planned trajectory may not be executed and thus the vehicle decelerates
+- In the given demonstration scenario, the vehicles initially both react to each other and decelerate
+- As vehicle0 is approaching a turn, it is initially slower and reaches standstill before vehicle1
+- As soon as vehicle0 is stopped, vehicle1's path is clear and it may continue across the intersection
+- Obviously, such a coordination at an intersection is suboptimal and therefore the next section outlines improved behavior through prediction in combination with static precedence rules
+![vehicle0 and vehicle1 predict each other's path](readme_pics/demo007b.png)
+
+# Prediction and precedence rules
+- file: [demo007a_precedence_right.launch](demo007a_precedence_right.launch)
+- In demo007a two ADORe automated vehicles approach an unsignalized intersection and solve the impeding conflict according to a static set of precedence rules
+- The setup is similar to demo007b, with the addition of static precedence rules defined for the intersection
+- The static precedence rule set is loaded from a [file](tracks/basic_test_track_precedence_v2.txt) by adore_mapprovider_node 
+- The file path is given by the parameter "PARAMS/precedence"
+- adore_mapprovider_node disseminates all static precedence rules near the vehicle via the topic "ENV/Precedence"
+- A precedence file specifies a list of connection pairs (four coordinates) "X0,Y0,Z0;X1,Y1,Z1 > X2,Y2,Z2;X3,Y3,Z3"
+- A connection pair "Ca > Cb", Ca="c0;c1"="X0,Y0,Z0;X1,Y1,Z1", Cb="c2;c3"="X2,Y2,Z2;X3,Y3,Z3" defines that a connection passing along c0 and c1 has precedence over a connection passing along c2 and c3.
+- The [adore_prediction_filter](../adore_if_ros/src/adore_prediction_filter.cpp) node receives the static precedence rules as well as the predictions of adore_prediction_provider
+- The prediction filter selects the high priority connections in the path of the ego vehicle and removes all branches from the prediction tree, which lie on corresponding low priority connections
+- The modified prediciton set is published again and allows to apply only those predictions to collision detection, which do not violate the precedence of the ego vehicle
+- In demo007a vehicle1 has precedence over vehicle0 and by considering the filtered predictions of vehicle0 may cross the intersection unhindered.
+
+![vehicle1 predicts vehicle0 to yield at the intersection](readme_pics/demo007a.png)
+
+- file: [demo007c_precedence_left.launch](demo007c_precedence_left.launch)
+- Demo007c is similar to demo007a, but the precedence [file](tracks/basic_test_track_precedence_v3.txt) is modified to give precedence to the connection leading from west to north
+- Accordingly, vehicle0 crossses the intersection before vehicle1.
+
+![vehicle0 predicts vehicle1 to yield at the intersection](readme_pics/demo007c.png)
+
+# Straight-line Predictions
+- file: [demo007d_sl45_right_turn_pedestrian.launch](demo007d_sl45_right_turn_pedestrian.launch)
+- In demo007d an ADORe vehicle approaches a right turn at an intersection. A stationary object (pedestrian) is detected. As the vehicle starts to enter the turn, the pedestrian starts crossing the road.
+- As the pedestrian is not using a known crosswalk, the prediction module uses only the pedestrian's linear motion vector to extrapolate future positions.
+- In the current version only the two prediction modes 'along lane' (demo007a-c) and 'straight' are available (demo007d). The successfule lane matching of objects determines, which mode is used.
+- Demo007d gives an example for triggering events in a simulation: Using the transform node of the topic_tools ROS package, the velocity of the pedestrian is set according to the position of vehicle0:
+```bash
+rosrun topic_tools transform /vehicle0/odom /pedestrian0/SIM/ResetVehicleTwist geometry_msgs/Twist 'geometry_msgs.msg.Twist(linear=geometry_msgs.msg.Vector3(x=2 if m.pose.pose.position.x>662 else 0, y=0.0, z=0.0), angular=geometry_msgs.msg.Vector3( x= 0.0, y= 0.0, z= 0.0))' --import geometry_msgs std_msgs
+``` 
+![vehicle0 approaching intersection](readme_pics/demo007d01.png)
+![pedestrian starts walking](readme_pics/demo007d02.png)
+![vehicle0 stopping for pedestrian](readme_pics/demo007d03.png)
+![vehicle0 continuing after pedestrian](readme_pics/demo007d04.png)
+
+# Traffic Lights
+- file: [demo008_sumo_trafficlights.launch](demo008_sumo_trafficlights.launch)
+- Demo008 showcases traffic lights detected via MAPEM and SPATEM V2X radio messages
+- MAPEM messages are sent by roadside units at intersections to inform about the intersection geometry and topology.
+- SPATEM messages are sent by roadside units at intersections to inform about current (and optionally future) traffic light signal phases.
+- A co-simulation with SUMO is run. The SUMO scenario does not specify any traffic, so SUMO manages only the traffic lights in the given scenario.
+- Besides publishing to the topic /SIM/traffic, the node sumo_if_ros/sumotraffic2ros_node publishes to the topics /SIM/v2x/MAPEM and /SIM/v2x/SPATEM.
+- The messages published to /SIM/v2x are wrappers, which contain ROS message equivalents of ETSI ITSG5 messages as payload, as well as simulation meta information, such as sending position and signal strength. 
+- A node of type v2xsim/channel_sim_node is run for vehicle0. The channel_sim_node decides based on ego position, sender position and signal strength, whether a message on the topic /SIM/v2x is received. Received messages are copied from the simulation topic /SIM/v2x to the vehicle specific topic /vehicle0/v2x/incoming. 
+- The package adore_if_v2x is the interface to ITSG5 ROS message equivalents. The node adore_if_v2x/v2x_trafficlights_node receives MAPEM and SPATEM messages from /vehicle0/v2x/incoming and converts these into ADORe internal data formats published on /vehicle0/ENV/tcd.
+- In case of a different sensor type identifying signal phases (most likely camera-based), the information would also be published to /vehicle0/ENV/tcd.
+- The topic /vehicle0/ENV/tcd transmits signal states for all known connections, agnostic to their relevance to the ego vehicle. Trajectory planning processes, such as adore_lfbehavior_node match the data to lane-following and lane-change views to determine where to stop the ego vehicle, while the adore_prediction_filter applies the signal phases to the prediction of other traffic participants near ego.
+- As shown in the image below, current traffic light phases are visualized as icons as well as connection vectors crossing the intersection.
+![vehicle0 approaching a redlight](readme_pics/demo008.png)
+
+# Lane Changes
+- file: [demo009_lanechange_tostmannplatz.launch](demo009_lanechange_tostmannplatz.launch)
+- In demo009 a vehicle has to navigate through a complex intersection. To reach the goal point in the north-west intersection arm from the starting position in the south, multiple lane changes are required.
+- The extended vehicle [configuration](demo_vehicle_cfg03.launch) for this scenario starts a decision making module "adore_tactical_planner_node", a "adore_trajectory_planner_lf_node" for lane following as well as two instances each of "adore_trajectory_planner_lc_node" and "adore_trajectory_planner_lm_node" for planning lane changes to the left and to the right. 
+- The lane change planner "adore_trajectory_planner_lc_node" computes trajectories for preparation and initiation of lane changes, while the lane merge planner "adore_trajectory_planner_lm_node" plans trajectories for the final part of the lane change, merging into the target lane.
+- The decision making module sends PlanningRequest messages and receives PlanningResult messages from active trajectory planners. It selects "the best" trajectory and sends it to the trajectory tracking controller to be executed. In order to allow comparison of trajectories, each planner provides a set of different objective values for a valid trajectory. The "adore_tactical_planner_node" compares trajectories purely on their validity and the objective value of "MinimumNavigationCostOnLane".
+- Indicators are currently not visualized, but their activation can be examined on the topic /vehicle0/FUN/IndicatorCommand. Each PlanningResult specifies which indicator has to be activated. The activation command is generated by the tactical planner node based on the selected trajectory.
+![vehicle0 changing lanes](readme_pics/demo009.png)
+
+# Background satellite images
+- file: [demo010_sat_images.launch](demo010_sat_images.launch)
+- Using satellite images as a background for the lane geometry can help to check for mapping errors.
+- Demo010 loads satellite images from a publicly available [geo-server](https://www.wms.nrw.de/).
+- A lane model for a small section of the city of Duesseldorf, Germany [(51.21564822166936, 6.775329829362242)](https://www.openstreetmap.org/search?query=d%C3%BCsseldorf%2C%20herzogstr#map=19/51.21506/6.77778) is shown on top of the satellite images.
+- The ROS node adore_if_ros/plot_satimages_node requests plotlabserver to plot url-based images near the position of the ego vehicle.
+- The plotlabserver will download and cache the images. (Plotting may stall when images are displayed for the first time.)
+- Parameters "plotoptions/tiles/base_url" and "plotoptions/tiles/width_meters" control geo-server url, image resolution and image size in m:
+```xml
+    <param name="plotoptions/tiles/base_url" value="https://www.wms.nrw.de/geobasis/wms_nw_dop?language=ger&#038;SERVICE=WMS&#038;REQUEST=GetMap&#038;VERSION=1.3.0&#038;layers=nw_dop_rgb&#038;styles=&#038;width=400&#038;height=400&#038;CRS=EPSG:25832&#038;FORMAT=image/jpeg&#038;bbox=" type="str" /> 
+    <param name="plotoptions/tiles/width_meters" value="100" type="double" /> 
+```
+![duesseldorf scenario satellite images](readme_pics/demo010.2.png)
+![duesseldorf scenario satellite images, zoom](readme_pics/demo010.png)
+
+# Faster (slower) then real-time and background simulation
+- file: [demo011_scheduler.launch](demo011_scheduler.launch)
+- The scenario of this example is equivalent to [demo006_lanefollowing_navigation.launch](demo006_lanefollowing_navigation.launch)
+- The approach to simulating the scenario has been adapted for "headless" applications, such as batch simulations for validation and machine learning. 
+- The previously used simple timer (which allowed to pause and unpause simulation) has been replaced with a scheduler: The adore_scheduler_node communicates with all time-critical processes and waits for the finalization of a given time slice, before advancing the simulated time. The scheduler allows the simulation to run faster than real-time, in case sufficient computational ressources are available. (This should typically be the case for the given scenario.) In case the scenario is complicated and the computational resources are limited, the scheduler allows to simulate slower than real-time, with all time-critical processes executing as if sufficient resources permitted finalization of computations in time.
+- The demo's run time on an Intel Core i7 notebook is about 17s (computation time) versus 120s of simulated time. (Disclaimer: Of course the demo case is very simplified and the runtime factor for a simulation with other traffic participants and multiple trajectory planners for ego might be considerably worse. The presented setup merely serves to showcase that a runtime factor differing from 1 can be achieved.)
+- The simulation automatically terminates, if the vehicle is near the goal location or if 130s of simulation time have been surpassed. 
+- The adore_monitor0_node publishes a proposition on the topic "/vehicle0/ENV/propositions" with term="NEAR_GOAL" and value true or false.
+- A topic_tools "transform" node has been added to the launch file, which filters the propositions topic for NEAR_GOAL=true and publishes to /SIM/terminate.
+- The adore_ci_terminator_node listens on /SIM/utc and /SIM/terminate topics and will shut down the simulation accoordingly (the flag required="true" has been added to the node tag and the node self-terminates to shutdown simulation)
+- An argument has been added to the demo launch file, which allows to run the simulation with or without graphical output:
+```bash
+roslaunch demo011_scheduler.launch headless:=true
+```
+![headless simulation](readme_pics/demo011xterm.png)

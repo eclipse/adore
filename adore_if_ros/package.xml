@@ -16,15 +16,16 @@
 -->
 <package format="2">
   <name>adore_if_ros</name>
-  <version>0.1.0</version>
+  <version>0.2.0</version>
   <description>Package for automated driving in ROS, using libadore</description>
-  <maintainer email="Daniel.Hess@DLR.de">Daniel Hess</maintainer>
+  <maintainer email="adore-dev@eclipse.org">Daniel Hess</maintainer>
   <license>EPL-2.0</license>
-  <!-- <url type="website">http://wiki.ros.org/adore_if_ros</url> -->
   <depend>roscpp</depend>  
   <depend>message_runtime</depend>
   <depend>adore_if_ros_msg</depend>
+  <depend>tf</depend>
   <buildtool_depend>catkin</buildtool_depend>
+  <exec_depend>rospy</exec_depend>
 
 
   <!-- The export tag contains other, unspecified, tags -->

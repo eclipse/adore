@@ -132,6 +132,17 @@ namespace adore
 					i_center ++;
 				}
 			}
+			if(i_center<2)
+			{
+				//centerline computation is degenerate: at least 2 points should be returned
+				La =  dlib::subm(left,rxyz,dlib::range(0,0));
+				Lb =  dlib::subm(left,rxyz,dlib::range(N-1,N-1));
+				Ra =  dlib::subm(right,rxyz,dlib::range(0,0));
+				Rb =  dlib::subm(right,rxyz,dlib::range(M-1,M-1));
+				dlib::set_subm(center,rxyz,dlib::range(0,0)) = (La+Ra)*0.5;
+				dlib::set_subm(center,rxyz,dlib::range(1,1)) = (Lb+Rb)*0.5;
+				i_center = 2;
+			}
 			return i_center;
 		}
 

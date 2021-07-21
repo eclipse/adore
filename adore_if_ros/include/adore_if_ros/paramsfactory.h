@@ -31,6 +31,10 @@
 #include <adore_if_ros/params_factory/p_navigation.h>
 #include <adore_if_ros/params_factory/p_cooperation.h>
 #include <adore_if_ros/params_factory/p_traffic_light_sim.h>
+#include <adore_if_ros/params_factory/p_sensor_model.h>
+#include <adore_if_ros/params_factory/p_checkpoints.h>
+#include <adore_if_ros/params_factory/p_mission_control.h>
+#include <adore_if_ros/params_factory/p_prediction.h>
 
 namespace adore
 {
@@ -110,6 +114,22 @@ namespace adore
         {
           return new adore::if_ROS::params::PTrafficLightSim(n_,prefix_);          
         } 
+        virtual adore::params::APSensorModel* getSensorModel() const override
+        {
+          return new adore::if_ROS::params::PSensorModel(n_,prefix_);
+        }
+        virtual adore::params::APCheckpoints* getCheckpoints() const override
+        {
+          return new adore::if_ROS::params::PCheckpoints(n_,prefix_);
+        }
+        virtual adore::params::APMissionControl* getMissionControl() const override
+        {
+          return new adore::if_ROS::params::PMissionControl(n_,prefix_);
+        }
+        virtual adore::params::APPrediction* getPrediction() const override
+        {
+          return new adore::if_ROS::params::PPrediction(n_,prefix_);
+        }
     };
   }
 }

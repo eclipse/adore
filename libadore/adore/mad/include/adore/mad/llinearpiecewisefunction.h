@@ -15,6 +15,7 @@
 #pragma once
 #include <adore/mad/alfunction.h>
 #include <adore/mad/adoremath.h>
+#include <adore/mad/csvlog.h>
 #include <vector>
 #include <algorithm>
 #include <iostream>
@@ -53,26 +54,26 @@ namespace adore
 			{
 				if (x > limitHi() || x < limitLo())
 				{
-					throw new FunctionOutOfBoundsException();
+					throw FunctionOutOfBoundsException();
 				}
 				unsigned int lower = 0;
 				unsigned int upper = m_data.nc() - 2;
 				m_searchIndex = (std::min)(m_searchIndex, upper);
 				while (m_data(0, m_searchIndex + 1) < x || m_data(0, m_searchIndex) > x)
 				{
-					if (lower == upper)throw new FunctionIndexingError();
+					if (lower == upper)throw FunctionIndexingError();
 					if (m_data(0, m_searchIndex + 1) < x)//upperLimit<x --> search higher
 					{
 						lower = m_searchIndex;
 						unsigned int new_index = (std::ceil)((float)(m_searchIndex + upper) / 2.0f);
-						if (new_index == m_searchIndex)throw new FunctionIndexingError();
+						if (new_index == m_searchIndex)throw FunctionIndexingError();
 						m_searchIndex = new_index;
 					}
 					else//lowerLimit>x --> search lower
 					{
 						upper = m_searchIndex;
 						unsigned int new_index = (std::floor)((float)(m_searchIndex + lower) / 2.0f);
-						if (new_index == m_searchIndex)throw new FunctionIndexingError();
+						if (new_index == m_searchIndex)throw FunctionIndexingError();
 						m_searchIndex = new_index;
 					}
 				}
@@ -81,23 +82,23 @@ namespace adore
 
 			virtual CT f(DT x) override
 			{
-				if (m_data.nc() == 0)throw new FunctionNotInitialized();
+				if (m_data.nc() == 0)throw FunctionNotInitialized();
 				int i = findIndex(x);
 				CT y0 = m_data(1, i);
 				CT y1 = m_data(1, i + 1);
 				return y0 + (y1 - y0)*((x - m_data(0, i)) / (m_data(0, i + 1) - m_data(0, i)));
 			}
-			virtual DT limitHi() override
+			virtual DT limitHi() const override
 			{
 				return m_data(0, m_data.nc() - 1);
 			}
-			virtual DT limitLo() override
+			virtual DT limitLo() const override
 			{
 				return m_data(0, 0);
 			}
 			virtual void setLimits(DT lo, DT hi)
 			{
-				throw new FunctionNotImplemented();
+				throw FunctionNotImplemented();
 			}
 			virtual ALFunction<DT, CT>* clone()
 			{
@@ -105,7 +106,7 @@ namespace adore
 			}
 			virtual ALFunction<DT, CT>* create_derivative()override
 			{
-				throw new FunctionNotImplemented();
+				throw FunctionNotImplemented();
 			}
 			virtual void bound(const DT& xmin, const DT& xmax, CT& ymin, CT& ymax) override
 			{
@@ -158,16 +159,15 @@ namespace adore
 			{
 				if (x > limitHi() || x < limitLo())
 				{
-					std::cerr<<"LLinearPiecewiseFunctionM out of bounds: findIndex("<<x<<") called, while limitLo()="<<limitLo()<<"and limtiHi()="<<limitHi()<<std::endl;
 					if(x > limitHi())
 					{
 						if(std::abs(x-limitHi())>precision)
 						{
-							throw new FunctionOutOfBoundsException();
+							std::cerr<<"LLinearPiecewiseFunctionM out of bounds: findIndex("<<x<<") called, while limitLo()="<<limitLo()<<"and limtiHi()="<<limitHi()<<std::endl;
+							throw FunctionOutOfBoundsException();
 						}
 						else
 						{
-							std::cerr<<"Set index to limitHi() due to difference below precision "<<precision<<std::endl;
 							x = limitHi();
 						}
 					}
@@ -175,12 +175,12 @@ namespace adore
 					{
 						if(std::abs(x-limitLo())>precision)
 						{
-							throw new FunctionOutOfBoundsException();
+							std::cerr<<"LLinearPiecewiseFunctionM out of bounds: findIndex("<<x<<") called, while limitLo()="<<limitLo()<<"and limtiHi()="<<limitHi()<<std::endl;
+							throw FunctionOutOfBoundsException();
 						}
 						else
 						{
 							x = limitLo();
-							std::cerr<<"Set index to limitLo() due to difference below precision "<<precision<<std::endl;
 						}
 					}
 				}
@@ -228,19 +228,19 @@ namespace adore
 				//binary search
 				while (m_data(0, m_searchIndex + 1) < x || m_data(0, m_searchIndex) > x)
 				{
-					if (lower == upper)throw new FunctionIndexingError();
+					if (lower == upper)throw FunctionIndexingError();
 					if (m_data(0, m_searchIndex + 1) < x)//upperLimit<x --> search higher
 					{
 						lower = m_searchIndex;
 						unsigned int new_index = (std::ceil)((float)(m_searchIndex + upper) / 2.0f);
-						if (new_index == m_searchIndex)throw new FunctionIndexingError();
+						if (new_index == m_searchIndex)throw FunctionIndexingError();
 						m_searchIndex = new_index;
 					}
 					else//lowerLimit>x --> search lower
 					{
 						upper = m_searchIndex;
 						unsigned int new_index = (std::floor)((float)(m_searchIndex + lower) / 2.0f);
-						if (new_index == m_searchIndex)throw new FunctionIndexingError();
+						if (new_index == m_searchIndex)throw FunctionIndexingError();
 						m_searchIndex = new_index;
 					}
 				}
@@ -250,30 +250,30 @@ namespace adore
 			//function evaluation returns y of codomain type CT for a value x of domain type DT
 			virtual CT f(DT x) override
 			{
-				if (m_data.nc() == 0)throw new FunctionNotInitialized();
+				if (m_data.nc() == 0)throw FunctionNotInitialized();
 				int i = findIndex(x);
 				CT y0 = dlib::subm(m_data, dlib::range(1, n), dlib::range(i, i));
 				CT y1 = dlib::subm(m_data, dlib::range(1, n), dlib::range(i + 1, i + 1));
 				return y0 + (y1 - y0)*((x - m_data(0, i)) / (m_data(0, i + 1) - m_data(0, i)));
 			}
-			virtual DT limitHi() override
+			virtual DT limitHi() const override 
 			{
-				if (m_data.nc() == 0)throw new FunctionNotInitialized();
+				if (m_data.nc() == 0)throw FunctionNotInitialized();
 				return m_data(0, m_data.nc() - 1);
 			}
-			virtual DT limitLo() override
+			virtual DT limitLo() const override 
 			{
-				if (m_data.nc() == 0)throw new FunctionNotInitialized();
+				if (m_data.nc() == 0)throw FunctionNotInitialized();
 				return m_data(0, 0);
 			}
 			//reduce or increase the limit of the function
 			virtual void setLimits(DT lo, DT hi) override
 			{
-				throw new FunctionNotImplemented();
+				throw FunctionNotImplemented();
 			}
 			virtual ALFunction<DT, CT>* create_derivative()override
 			{
-				throw new FunctionNotImplemented();
+				throw FunctionNotImplemented();
 			}
 			virtual void bound(const DT& xmin, const DT& xmax, CT& ymin, CT& ymax)override
 			{
@@ -297,6 +297,23 @@ namespace adore
 				}
 			}
 		public: //other useful methods
+
+			/**
+			 * @brief shifts s to be in between limitLo and limitHi
+			 * 
+			 * @param s 
+			 * @return double
+			 * 
+			 * @see limitLo(), limitHi() 
+			 */
+			virtual double limit_s_to_bounds(double s) const
+			{
+				    // s=adore::mad::bound(m_leftBorderDistance_fct.limitLo(),
+					// m_leftBorderDistance_fct.limitLo()+s,
+					// m_leftBorderDistance_fct.limitHi());
+				return adore::mad::bound(limitLo(),limitLo()+s,limitHi());
+			}
+
 			/**
 			 * retains the overall domain between lo and hi, but inverts direction in between
 			 */
@@ -322,6 +339,19 @@ namespace adore
 				set_rowm(m_data,0) = rowm(m_data,0)+dx;
 			}
 			/**
+			 * stretches domain to fit interval [x0,x1]
+			 */
+			virtual void stretchDomain(DT x0, DT x1)
+			{
+				shiftDomain(-limitLo());
+				DT ratio = (x1-x0)/(limitHi()-limitLo());
+				for(int i = 1; i < m_data.nc(); i++)
+				{
+					m_data(0,i) = m_data(0,i)*ratio;
+				}
+				shiftDomain(x0);
+			}
+			/**
 			 * shifts the codomain of the function (move graph up or down)
 			 */
 			void shiftCodomain(CT dy)
@@ -340,13 +370,27 @@ namespace adore
 				set_rowm(m_data,i+1) = rowm(m_data,i+1)+dy;
 			}
 
+			/**
+			 * rotate codomain in 2D 
+			 */
+			void rotateXY(double angle, double x0=0.0, double y0=0.0)
+			{
+				for(int i=0 ; i<m_data.nc(); i++)
+				{
+					double x = m_data(1,i);
+					double y = m_data(2,i);
+					m_data(1,i) =  (x-x0)*std::cos(angle) - (y-y0)*std::sin(angle) + x0;
+					m_data(2,i) =  (x-x0)*std::sin(angle) + (y-y0)*std::cos(angle) + y0;
+				}
+			}
+
 
 			/**
 			 * get a singular value from vector codomain type
 			 */
 			virtual T fi(DT x, int row) override
 			{
-				if (m_data.nc() == 0)throw new FunctionNotInitialized();
+				if (m_data.nc() == 0)throw FunctionNotInitialized();
 				int i = findIndex(x);
 				return m_data(row + 1, i) + (m_data(row + 1, i + 1) - m_data(row + 1, i))*(T)(x - m_data(0, i)) / (T)(m_data(0, i + 1) - m_data(0, i));
 			}
@@ -355,7 +399,7 @@ namespace adore
 			 */
 			virtual T dfidx(DT x, int row)
 			{
-				if (m_data.nc() == 0)throw new FunctionNotInitialized();
+				if (m_data.nc() == 0)throw FunctionNotInitialized();
 				int i = findIndex(x);
 				T dy = m_data(row + 1, i + 1) - m_data(row + 1, i);
 				T dx = m_data(0, i + 1) - m_data(0, i);
@@ -366,7 +410,7 @@ namespace adore
 			 */
 			void sample_dfidx(DT* xvec, T* yvec, int count, int row)
 			{
-				if (m_data.nc() == 0)throw new FunctionNotInitialized();
+				if (m_data.nc() == 0)throw FunctionNotInitialized();
 				for (int i = 0; i < count; i++)
 				{
 					yvec[i] = dfidx(xvec[i], row);
@@ -385,16 +429,16 @@ namespace adore
 				OneDimension() {}
 				OneDimension(LLinearPiecewiseFunctionM* parent, int row) :m_parent(parent), m_row(row) {}
 				virtual T f(DT x) { return m_parent->fi(x, m_row); }
-				virtual DT limitHi() { return m_parent->limitHi(); }
-				virtual DT limitLo() { return m_parent->limitLo(); }
-				virtual void setLimits(DT lo, DT hi) { throw new FunctionNotImplemented(); }
+				virtual DT limitHi() const override { return m_parent->limitHi(); }
+				virtual DT limitLo() const override { return m_parent->limitLo(); }
+				virtual void setLimits(DT lo, DT hi) { throw FunctionNotImplemented(); }
 				virtual  ALFunction<DT, T>* clone()
 				{
 					return new LLinearPiecewiseFunctionS<T>(rowm(m_parent->m_data, 0), rowm(m_parent->m_data, m_row + 1));
 				}
 				virtual ALFunction<DT, T>* create_derivative()override
 				{
-					throw new FunctionNotImplemented();
+					throw FunctionNotImplemented();
 				}
 				virtual void bound(const DT& xmin, const DT& xmax, T& ymin, T& ymax) override
 				{
@@ -753,7 +797,7 @@ namespace adore
 			 *  sets distance to the parameter required to achieve the intersection point via the given line, e.g. ip=(px,py) + (vx,vy)*distance;
 			 *  extend_fringes - if extend_fringes is true, the function is extrapolated in order to provide intersection points beyond its domain
 			 */
-			bool getNextIntersectionWithLine2d(T x0, T px, T py, T vx, T vy, int d1, int d2, T& x_result, T& distance,bool extend_fringes=false)
+			bool getNextIntersectionWithLine2d(T x0, T px, T py, T vx, T vy, int d1, int d2, T& x_result, T& distance,bool extend_fringes=false,bool inside_input_line=false)
 			{
 				int i0 = findIndex(x0);
 				double xa, xb;
@@ -764,7 +808,7 @@ namespace adore
 					adore::mad::intersectLines(px, py, px + vx, py + vy,
 						m_data(d1 + 1, i), m_data(d2 + 1, i), m_data(d1 + 1, i + 1), m_data(d2 + 1, i + 1),
 						xa, xb, xa_inside, xb_inside);
-					if (xb_inside)
+					if (xb_inside && (!inside_input_line || xa_inside))
 					{
 						x_result = m_data(0, i) + (m_data(0, i + 1) - m_data(0, i)) * xb;
 						distance = xa;
@@ -810,7 +854,7 @@ namespace adore
 				py1 = py-max_distance*vy;
 				vx1 = ((T)2)*max_distance*vx;
 				vy1 = ((T)2)*max_distance*vy;
-				bool rv = getNextIntersectionWithLine2d(x0,px1,py1,vx1,vy1,x_result,s,extend_fringes);
+				bool rv = getNextIntersectionWithLine2d(x0,px1,py1,vx1,vy1, 0, 1, x_result,s,extend_fringes,true);
 				if(rv)
 				{
 					distance = ((T)2)*max_distance*s-max_distance;
@@ -1188,25 +1232,25 @@ namespace adore
 				idx(x, dim, i, j);
 				return m_data[i] + (x - xval(i)) / m_dx * (m_data[j] - m_data[i]);
 			}
-			virtual DT limitHi()override
+			virtual DT limitHi() const override
 			{
 				return m_x1;
 			}
-			virtual DT limitLo()override
+			virtual DT limitLo()const override
 			{
 				return m_x0;
 			}
 			//virtual void invertDirection()override
 			//{
-			//	throw new FunctionNotImplemented();
+			//	throw FunctionNotImplemented();
 			//}
 			virtual void setLimits(DT lo, DT hi)override
 			{
-				throw new FunctionNotImplemented();
+				throw FunctionNotImplemented();
 			}
 			virtual ALFunction<DT, CT>* create_derivative()override
 			{
-				throw new FunctionNotImplemented();
+				throw FunctionNotImplemented();
 			}
 			virtual void bound(const DT& xmin, const DT& xmax, CT& ymin, CT& ymax) override
 			{
@@ -1245,9 +1289,9 @@ namespace adore
 				OneDimension() {}
 				OneDimension(LLinearPiecewiseFunctionA* parent, int row) :m_parent(parent), m_row(row) {}
 				virtual T f(DT x) override { return m_parent->fi(x, m_row); }
-				virtual DT limitHi()override { return m_parent->limitHi(); }
-				virtual DT limitLo()override { return m_parent->limitLo(); }
-				virtual void setLimits(DT lo, DT hi)override { throw new FunctionNotImplemented(); }
+				virtual DT limitHi() const override { return m_parent->limitHi(); }
+				virtual DT limitLo() const override { return m_parent->limitLo(); }
+				virtual void setLimits(DT lo, DT hi)override { throw FunctionNotImplemented(); }
 				virtual SUBFUN* clone()override { throw FunctionNotImplemented(); }
 				virtual SUBFUN* create_derivative()override { throw FunctionNotImplemented(); }
 				virtual void bound(const DT& xmin, const DT& xmax, T& ymin, T& ymax) override

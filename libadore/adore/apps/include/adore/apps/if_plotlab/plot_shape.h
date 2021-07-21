@@ -15,6 +15,7 @@
 
 #include <plotlablib/figurestubfactory.h>
 #include <adore/mad/adoremath.h>
+#include <adore/fun/setpointrequest.h>
 
 namespace adore
 {
@@ -47,6 +48,56 @@ inline void plotPosition(std::string tag, double x, double y, DLR_TS::PlotLab::A
         Z[i] = 1;
     }
     figure->patch(tag,X,Y,Z,numPoints,options);
+}
+
+inline void plotCircle(std::string tag, double x, double y, double z, double r, DLR_TS::PlotLab::AFigureStub* figure, 
+    std::string options="LineColor=1,0,0;LineWidth=1")
+{
+    const int numPoints = 16;
+    
+    static double cosAngle[numPoints],sinAngle[numPoints];
+    
+    if(cosAngle[1] == 0.0)
+    {
+        for(int i = 0; i<numPoints; i++)
+        {
+            double angle = 2.0*M_PI*i/numPoints;
+            cosAngle[i] = cos(angle);
+            sinAngle[i] = sin(angle);
+        }
+    }
+    
+    double X[numPoints+1], Y[numPoints+1], Z[numPoints+1];
+    for(int i = 0; i<numPoints; i++)
+    {
+        X[i] = x+cosAngle[i]*r;
+        Y[i] = y+sinAngle[i]*r;
+        Z[i] = z;
+    }
+    X[numPoints]=X[0];
+    Y[numPoints]=Y[0];
+    Z[numPoints]=Z[0];
+    figure->plot(tag,X,Y,Z,numPoints+1,options);
+}
+
+inline void plotCylinder(std::string tag, double x, double y, double z0, double z1, double r, double max_z_diff, DLR_TS::PlotLab::AFigureStub* figure,
+    std::string options="LineColor=1,0,0;LineWidth=1")
+{
+    int i = 0;
+    double h = 0;
+    do
+    {
+        // create tag
+        std::stringstream ss;
+        ss << tag << "/n" << i;
+
+        // calculate z-coordinate of circle, cap at z1
+        h = std::min(z0+i*max_z_diff,z1);
+
+        // plot circle
+        plotCircle(ss.str(),x,y,h,r,figure,options);
+        i++;
+    } while (h < z1);    
 }
 
 inline void plotRectangle(std::string tag, double x, double y, double l, double w, 
@@ -155,6 +206,19 @@ inline void plotArrow(std::string hashtag,double x,double y,double z,double alph
     figure->plot(hashtag,X,Y,z,7,options);
 }
 
+inline void plotLine(std::string hashtag,double x0,double y0,double x1,double y1,double z,std::string options,DLR_TS::PlotLab::AFigureStub* figure)
+{
+    double X[2];
+    double Y[2];
+
+    X[0] = x0;
+    X[1] = x1;
+
+    Y[0] = y0;
+    Y[1] = y1; 
+
+    figure->plot(hashtag,X,Y,z,2,options);
+}
 inline void plotArrow(std::string hashtag,double x0,double y0,double z0,double x1,double y1,double shaft_length,double head_length,std::string options,DLR_TS::PlotLab::AFigureStub* figure)
 {
     double max_length_ratio = 1.0;
@@ -176,6 +240,23 @@ inline void plotVectorField(std::string hashtag,double* X,double* Y,double* dX,d
         double L = std::sqrt(dX[i]*dX[i]+dY[i]*dY[i]);
         plotArrow(s.str(),X[i],Y[i],z0,X[i]+dX[i],Y[i]+dY[i],L,0.33*L,options,figure);
     }
+}
+
+const void plotTrajectory(std::string name, const adore::fun::SetPointRequest * const trajectory, std::string options,DLR_TS::PlotLab::AFigureStub* figure, double z = 0.0)
+{
+    static const size_t n_plot = 100;
+    double X[n_plot];
+    double Y[n_plot];
+    size_t count=0;
+    // int items = std::min(n_plot,trajectory->setPoints.size());
+    for (auto & point : trajectory->setPoints)
+    {
+        X[count] = point.x0ref.getX();
+        Y[count] = point.x0ref.getY();
+        count++;
+        if (count > n_plot) break;
+    }
+    figure->plot(name, X,Y,z,count,options);
 }
 
 inline void plotPath(std::string name,const adoreMatrix<double>& data,double z, std::string options,DLR_TS::PlotLab::AFigureStub* figure)

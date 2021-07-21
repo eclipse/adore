@@ -37,7 +37,9 @@
 #include "conversions/trafficparticipantconverter.h"
 #include "conversions/trafficsimulationfeed.h"
 #include "conversions/simschedulernotificationconverter.h"
+#include "conversions/simactionconverter.h"
 #include "conversions/clocktimeconverter.h"
+#include "conversions/simstdstate.h"
 #include "conversions/trafficlightsimconverter.h"
 
 
@@ -86,8 +88,15 @@ namespace adore
                 //write updates on the vehicle extended state (buttons, etc.)
                 virtual TVehicleExtendedStateWriter* getVehicleExtendedStateWriter()override
                 {
-                    return 0;
-
+                    return new VehicleExtendedStateWriter(n_, 
+                                            "VEH/gear_state",
+                                            "VEH/AutomaticControlState/acceleration",
+                                            "VEH/AutomaticControlState/accelerationActive",
+                                            "VEH/AutomaticControlState/steering",
+                                            "VEH/IndicatorState/left",
+                                            "VEH/IndicatorState/right",
+                                            "VEH/Checkpoints/clearance",                    
+                                        1);
                 }
                 //read the simulation time
                 virtual TSimulationTimeReader* getSimulationTimeReader() override
@@ -149,23 +158,37 @@ namespace adore
                     return new FeedWithCallback<adore::sim::SchedulerNotification,
                                     adore_if_ros_msg::SchedulerNotification,
                                     SimSchedulerNotificationConverter>(n_,"/SIM/scheduling",1000);
-                    //return new Feed<CSA::SIM::
                 }
                 virtual TSchedulerNotificationWriter* getSchedulerNotificationWriter()
                 {
-                    //return new Feed<CSA:: return new Writer<double,std_msgs::Float64,StdConverter>(n_,"/SIM/utc",1);
                     return new Writer<adore::sim::SchedulerNotification,
                                     adore_if_ros_msg::SchedulerNotification,
                                     adore::if_ROS::SimSchedulerNotificationConverter> (n_,"/SIM/scheduling",1);
 
                 }
-
+                 virtual TActionFeed* getActionFeed()
+                {
+                    return new FeedWithCallback<adore::sim::Action,
+                                    adore_if_ros_msg::Action,
+                                    SimActionConverter>(n_,"action",1000);
+                }
+                virtual TActionWriter* getActionWriter()
+                {
+                    //return new Feed<CSA:: return new Writer<double,std_msgs::Float64,StdConverter>(n_,"/SIM/utc",1);
+                    return new Writer<adore::sim::Action,
+                                    adore_if_ros_msg::Action,
+                                    adore::if_ROS::SimActionConverter> (n_,"action",1);
+                }
+                virtual TStdStateWriter* getStdStateWriter()
+                {
+                    return new Writer<adore::sim::StdState,
+                                    adore_if_ros_msg::StdState,
+                                    adore::if_ROS::StdStateConverter> (n_,"SIM/StdState",1);
+                }  
                 // send updates for simulated trafficlights
                 virtual adore::mad::AWriter<adore::env::SimTrafficLight>* getTrafficLightWriter() override
                 {
-                    return new TrafficLightSimWriter(n_,"/SIM/SimTl",300);
-
-                
+                    return new TrafficLightSimWriter(n_,"/SIM/SimTl",300);                
                 }
                 // get updates for simulated trafficlights
                 virtual adore::mad::AReader<adore::env::SimTrafficLightMap>* getTrafficLightReader() override

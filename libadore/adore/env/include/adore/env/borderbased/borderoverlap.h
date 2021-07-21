@@ -91,12 +91,12 @@ namespace adore
 				 * 
 				 * @return int number of intersections between the borders
 				 */
-				int getNumberOfIntersections()
+				unsigned int getNumberOfIntersections()
 				{
-					return	(m_has_intersection_left_left?1:0)
-						+	(m_has_intersection_left_right?1:0)
-						+	(m_has_intersection_right_left?1:0)
-						+	(m_has_intersection_right_right?1:0);
+					return	(m_has_intersection_left_left?1u:0u)
+						+	(m_has_intersection_left_right?1u:0u)
+						+	(m_has_intersection_right_left?1u:0u)
+						+	(m_has_intersection_right_right?1u:0u);
 				}
 				/**
 				 * @brief Get the intersection interval of first right border

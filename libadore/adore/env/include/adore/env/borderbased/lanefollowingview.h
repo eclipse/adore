@@ -20,7 +20,7 @@
 #include <adore/env/borderbased/localroadmap.h>
 #include <adore/env/traffic/egolanetraffic.h>
 #include <adore/params/afactory.h>
-#include <adore/view/alanefollowingview.h>
+#include <adore/view/alane.h>
 #include <adore/env/borderbased/conflictset.h>
 //#include <adore/env/traffic/participant.h>
 
@@ -38,7 +38,7 @@ namespace BorderBased
  *
  */
 
-class LaneFollowingView : public adore::view::ALaneFollowingView
+class LaneFollowingView : public adore::view::ALane
 {
 public:
   typedef LaneFollowingGeometry<20, 200> TLaneFollowingGeometry;
@@ -67,6 +67,12 @@ public:
     apLFV_ = paramsfactory->getLaneFollowingView();
   }
 
+  LaneFollowingView(LocalRoadMap *localRoadMap,
+                    adore::env::traffic::TrafficMap *trafficMap)
+      : LaneFollowingView(adore::params::ParamsFactoryInstance::get(),localRoadMap,trafficMap)
+  {}
+
+
 
 
   std::unordered_multimap<view::ConflictZone*, std::vector<Border*>>* getConflictSetPlotData()
@@ -81,7 +87,7 @@ public:
   {
     lfg_.update(lrm_->getBorderSet(), lrm_->getBorderTrace(),
                 lrm_->getBorderCostMap(), lrm_->getMatchedBorder(),
-                lrm_->getVehicleState(), apLFV_->getLookAhead(),
+                lrm_->getVehicleState(), apLFV_->getLookAhead(), apLFV_->getLookBehind(),
                 apLFV_->getBaselineFitSmoothness(), lrm_->isNavigationActive());
     elt_.mapVehiclesOnBorders(this, *lfg_.getRightBorders()->getBorders());
     cs_.update(lrm_->getBorderSet(),lrm_->getPrecedenceSet(), &elt_, lfg_.getRightBorders()->getBorders(),lfg_.getLeftBorders()->getBorders());
@@ -102,13 +108,29 @@ public: // methods from ALane
    * isValid - return true if representation of lane is valid
    */
   virtual bool isValid() const override { return lfg_.isValid(); }
-  /**
-   * getViewingDistance - returns how far to the horizon the model of the lane
-   * extends, given as maximum progress along lane
-   */
-  virtual double getViewingDistance() const override
+  virtual double getSMax() const override
   {
     return lfg_.getViewingDistance();
+  }
+  virtual double getSMin() const override
+  {
+    return 0.0;
+  }
+  /**
+   * getProgressOfWidthOpen - returns the s-coordinate of the position where the lane starts to 
+   * have at least the required width
+   */
+  virtual double getProgressOfWidthOpen() const override
+  {
+      return lfg_.m_s_lane_width_open;
+  }
+  /**
+   * getProgressOfWidthClosed - returns the s-coordinate of the position where the lane ends to 
+   * have at least the required width
+   */
+  virtual double getProgressOfWidthClosed() const override
+  {
+      return lfg_.m_s_lane_width_closed;
   }
   /**
    * getOnLaneTraffic - return queue of traffic objects moving on lane, ordered
@@ -130,7 +152,7 @@ public: // methods from ALane
    * getSpeedLimit - return the speed limit at a certain distance s along the
    * lane
    */
-  virtual double getSpeedLimit(double s) const override { return 20.0; }
+  virtual double getSpeedLimit(double s) const override { return 40.0; }
   /**
    * hasSpeedRecommendation - return true, if a speed recommendation is
    * available (GLOSA or other infrastructure advice) at a certain distance s
@@ -143,7 +165,13 @@ public: // methods from ALane
    */
   virtual double getSpeedRecommendation(double s) const override { return 0.0; }
 
-public: // methods from ALaneFollowingView
+  virtual double getNavigationCost(double s) override {return 0.0;}
+  virtual void boundNavigationCost(double s0,double s1,double& cmin,double& cmax) override
+  {
+    cmin = 0.0;cmax = 0.0;
+  }
+
+public: // methods from ALane
   /**
    *  getHeading - return the heading of the lane at a distance s along the lane
    */

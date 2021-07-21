@@ -60,11 +60,11 @@ namespace adore
 					R(1, 0) = m_sub->f(x); R(1, 1) = 0;
 					return R;
 				}
-				virtual DT limitHi() override
+				virtual DT limitHi() const override
 				{
 					return m_sub->limitHi();
 				}
-				virtual DT limitLo() override
+				virtual DT limitLo() const override
 				{
 					return m_sub->limitLo();
 				}
@@ -109,11 +109,11 @@ namespace adore
 				R(1, 0) = (std::sin)(m_sub->f(x)); R(1, 1) = (std::cos)(m_sub->f(x));
 				return R;
 			}
-			virtual DT limitHi() override
+			virtual DT limitHi() const override
 			{
 				return m_sub->limitHi();
 			}
-			virtual DT limitLo() override
+			virtual DT limitLo() const override
 			{
 				return m_sub->limitLo();
 			}

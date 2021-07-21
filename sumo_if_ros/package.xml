@@ -10,13 +10,13 @@
  * SPDX-License-Identifier: EPL-2.0 
  *
  * Contributors: 
- *   Daniel Heß - initial API and implementation
+ *   Stephan Lapoehn
  ********************************************************************************-->
 <package format="2">
   <name>sumo_if_ros</name>
-  <version>0.0.1</version>
+  <version>0.2.0</version>
   <description>A SUMO to ROS bridge</description>
-  <maintainer email="Daniel.Hess@DLR.de">fascar</maintainer>
+  <maintainer email="adore-dev@eclipse.org">Stephan Lapoehn</maintainer>
   <license>EPL-2.0</license>
   <!-- <url type="website">http://wiki.ros.org/sumo_if_ros</url> -->
   <buildtool_depend>catkin</buildtool_depend>
@@ -24,6 +24,7 @@
   <build_depend>rospy</build_depend>
   <build_depend>std_msgs</build_depend>
   <depend>adore_if_ros_msg</depend>
+  <depend>v2xsim</depend>
   <build_export_depend>roscpp</build_export_depend>
   <build_export_depend>rospy</build_export_depend>
   <build_export_depend>std_msgs</build_export_depend>

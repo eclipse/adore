@@ -18,6 +18,7 @@ if(BUILD_adore_TESTING)
   set(adore_MAD_TEST_CASES
     test_alfunction
     test_adoremath
+    test_CubicPiecewise_function
   )
 
   find_package(Catch2 CONFIG)

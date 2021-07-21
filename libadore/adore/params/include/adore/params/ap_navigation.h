@@ -26,6 +26,7 @@ namespace adore
 		public:
 			virtual bool getActivePlottingLocal() = 0;
 			virtual bool getActivePlottingGlobal() = 0;
+			virtual double getLaneChangePenalty() const = 0;
 			virtual bool useScenarioManagerMap()=0;
 		};
 	}

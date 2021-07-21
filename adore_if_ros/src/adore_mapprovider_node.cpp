@@ -33,66 +33,24 @@ public:
         int simulationID = 0;
         getParam("simulationID", simulationID);
 
-        // borderset
-        adore::env::BorderBased::BorderSet globalSet;
-
         /* process track parameter, multiple paths to maps delimited by semicolon, comma separated additional configuration */
         std::string trackConfigs = "";
-        std::string trackConfig = "";
         getParam("PARAMS/track", trackConfigs);
-        std::stringstream trackstream(trackConfigs);
 
-        while (std::getline(trackstream, trackConfig, ';'))
-        {
-            /* reading of single track configuration, comma separated */
-            std::stringstream trackConfigStream(trackConfig);
-            bool transform = false;
-            std::string filename = "";
-            std::string token = "";
-            while (std::getline(trackConfigStream, token, ','))
-            {
-                if (token.compare("transform") == 0)
-                {
-                    transform = true;
-                }
-                else
-                {
-                    filename = token;
-                }
-            }
-
-            /* process current file */
-            ROS_INFO("loading track: %s", filename.c_str());
-            adore::if_xodr::XODR2BorderBasedConverter converter;
-            adore::env::BorderBased::BorderSet partialSet;
-            try
-            {
-                converter.convert(filename.c_str(), &partialSet, transform);
-            }
-            catch (...)
-            {
-                ROS_ERROR("Could not parse file %s", filename.c_str());
-                return;
-            }
-            /* add partial map to global map */
-            auto its = partialSet.getAllBorders();
-            for (; its.first != its.second; its.first++)
-            {
-                globalSet.insert_border(its.first->second);
-            }
-            /* global map has responsibility for object/pointers */
-            partialSet.setIsOwner(false);
-        }
-
-        // precedences
         std::string precedenceFile;
         getParam("PARAMS/precedence", precedenceFile);
-        std::cout << "loading precedence: " << precedenceFile << "\n";
-        std::cout << std::flush;
+        ROS_INFO("loading precedence: %s", precedenceFile.c_str());
         adore::env::PrecedenceSet precedenceSet;
         precedenceSet.readFile(precedenceFile);
 
-        mp_ = new adore::apps::MapProvider(getFactory<ENV_Factory>(), getParamsFactory(""), &globalSet, &precedenceSet);
+        adore::apps::MapProvider::Config config;
+        getParam("PARAMS/translation_x",config.trans_x_);
+        getParam("PARAMS/translation_y",config.trans_y_);
+        getParam("PARAMS/translation_z",config.trans_z_);
+        getParam("PARAMS/rotation_x",config.rot_x_);
+        getParam("PARAMS/rotation_y",config.rot_y_);
+        getParam("PARAMS/rotation_psi",config.rot_psi_);
+        mp_ = new adore::apps::MapProvider(getFactory<ENV_Factory>(), getParamsFactory(""), trackConfigs, &precedenceSet, config);
         // timer callbacks
         std::function<void()> run_fcn(std::bind(&adore::apps::MapProvider::run, mp_));
         Baseapp::addTimerCallback(run_fcn);

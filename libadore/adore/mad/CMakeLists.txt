@@ -30,7 +30,7 @@ include(../../external/dlib.cmake)
 
 target_sources(adore_mad 
   PRIVATE
-  src/array_matrix_tools.cpp
+ #src/array_matrix_tools.cpp
   src/cubic_piecewise_function.cpp
   src/csvlog.cpp
 )
@@ -40,7 +40,13 @@ target_include_directories(
   PUBLIC 
     $<BUILD_INTERFACE:${adore_mad_SOURCE_DIR}/include>
     $<INSTALL_INTERFACE:${CMAKE_INSTALL_INCLUDEDIR}>
-    ${qpoases_SOURCE_DIR}/include  
+)
+
+target_include_directories(
+  adore_mad
+  SYSTEM PUBLIC
+  $<BUILD_INTERFACE:${qpoases_SOURCE_DIR}/include>
+    $<INSTALL_INTERFACE:include>
 )
 
 target_link_libraries(adore_mad PUBLIC adore_params dlib::dlib Boost::headers qpOASES)
@@ -55,3 +61,17 @@ target_compile_options(adore_mad PRIVATE
 if(BUILD_adore_TESTING) 
 add_subdirectory(test)
 endif()
+
+install(TARGETS adore_mad EXPORT adore_madTargets
+)
+
+install(EXPORT adore_madTargets
+    FILE adore_madTargets.cmake
+    NAMESPACE adore::
+    DESTINATION ../cmake/adore_mad
+)
+
+export(EXPORT adore_madTargets
+       FILE "${CMAKE_BINARY_DIR}/../cmake/adore_madTargets.cmake"
+       NAMESPACE adore::
+)

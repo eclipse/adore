@@ -97,7 +97,7 @@ namespace adore
 				/*
 				 * Curvature2d retrieves limits from reference path
 				 */
-				throw new FunctionNotImplemented();
+				throw FunctionNotImplemented();
 			}
 			virtual T limitHi()
 			{
@@ -130,12 +130,12 @@ namespace adore
 			}
 			virtual ALFunction<T, T>* create_derivative()
 			{
-				throw new FunctionNotImplemented();
+				throw FunctionNotImplemented();
 			}
 			virtual void bound(const T& xmin, const T& xmax, T& ymin, T& ymax)
 			{
 				//this function could be implemented
-				throw new FunctionNotImplemented();
+				throw FunctionNotImplemented();
 			}
 		};
 
@@ -185,7 +185,7 @@ namespace adore
 				/*
 				 * Curvature2d retrieves limits from reference path
 				 */
-				throw new FunctionNotImplemented();
+				throw FunctionNotImplemented();
 			}
 			virtual T limitHi()
 			{
@@ -223,7 +223,7 @@ namespace adore
 			virtual void bound(const T& xmin, const T& xmax, T& ymin, T& ymax)
 			{
 				//this function could be implemented
-				throw new FunctionNotImplemented();
+				throw FunctionNotImplemented();
 			}
 		};
 	}

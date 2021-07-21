@@ -102,6 +102,20 @@ namespace adore
 			{
 				subsets_.push_back(value);
 			}
+
+			/**
+			 * Removes a set of references and constraints as a subset.
+			 */
+			bool remove(ANominalPlannerInformation* value)
+			{
+				auto it = std::find(subsets_.begin(), subsets_.end(), value);
+				if (it != subsets_.end())
+				{
+					subsets_.erase(it);
+					return true;
+				}
+				return false;
+			}
 		public:
 			/**
 			 * Evaluate reference.

@@ -28,3 +28,17 @@ target_include_directories(
             $<INSTALL_INTERFACE:${CMAKE_INSTALL_INCLUDEDIR}>)
 
 target_compile_features(${PROJECT_NAME} INTERFACE cxx_std_17)
+
+install(TARGETS ${PROJECT_NAME} EXPORT ${PROJECT_NAME}Targets
+)
+
+install(EXPORT ${PROJECT_NAME}Targets
+    FILE ${PROJECT_NAME}Targets.cmake
+    NAMESPACE adore::
+    DESTINATION ../cmake/${PROJECT_NAME}
+)
+
+export(EXPORT ${PROJECT_NAME}Targets
+       FILE "${CMAKE_BINARY_DIR}/../cmake/${PROJECT_NAME}Targets.cmake"
+       NAMESPACE adore::
+)

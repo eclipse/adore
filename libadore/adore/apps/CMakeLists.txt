@@ -20,19 +20,37 @@ project("adore_apps" VERSION 0.0.1
 
 include(GNUInstallDirs)
 
-add_library(${PROJECT_NAME} STATIC)
+add_library(${PROJECT_NAME} INTERFACE)
 
-include(../../external/plotlablib.cmake)
+if(NOT TARGET plotlablib)
+  add_subdirectory(../../../plotlab/lib ${CMAKE_BINARY_DIR}/../plotlablib)
+endif()
 
-target_sources(adore_apps
-  PRIVATE
-    src/apps.cpp
-)
 
 target_include_directories(
   ${PROJECT_NAME}
-  PUBLIC $<BUILD_INTERFACE:${${PROJECT_NAME}_SOURCE_DIR}/include>
-            $<INSTALL_INTERFACE:${CMAKE_INSTALL_INCLUDEDIR}>)
+  INTERFACE $<BUILD_INTERFACE:${${PROJECT_NAME}_SOURCE_DIR}/include>
+            $<INSTALL_INTERFACE:${CMAKE_INSTALL_INCLUDEDIR}>
+)
 
-target_link_libraries(adore_apps PUBLIC adore_params adore_env plotlablib)
-target_compile_features(${PROJECT_NAME} PUBLIC cxx_std_17)
+target_include_directories(
+  ${PROJECT_NAME} SYSTEM INTERFACE ${plotlablib_include_dirs}
+)
+
+# TODO target apps pulls in all dependencies for all apps, should be seperated out
+target_link_libraries(adore_apps INTERFACE adore_params adore_env adore_if_r2s plotlablib adore_sim)
+target_compile_features(${PROJECT_NAME} INTERFACE cxx_std_17)
+
+install(TARGETS ${PROJECT_NAME} EXPORT ${PROJECT_NAME}Targets
+)
+
+install(EXPORT ${PROJECT_NAME}Targets
+    FILE ${PROJECT_NAME}Targets.cmake
+    NAMESPACE adore::
+    DESTINATION ../cmake/${PROJECT_NAME}
+)
+
+export(EXPORT ${PROJECT_NAME}Targets
+       FILE "${CMAKE_BINARY_DIR}/../cmake/${PROJECT_NAME}Targets.cmake"
+       NAMESPACE adore::
+)

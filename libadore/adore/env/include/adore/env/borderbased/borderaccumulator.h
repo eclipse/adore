@@ -174,7 +174,7 @@ namespace adore
 						border = m_current;
 						
 						bool previousCostSet = false;
-						double previousCost;
+						double previousCost = 0.0; // initialized to silence -Wmaybe-uninitialized warning
 						auto previousCostResult = m_borderID2Cost->find(m_current->m_id);
 						if( previousCostResult!=m_borderID2Cost->end() )
 						{
@@ -182,12 +182,11 @@ namespace adore
 							previousCostSet = true;
 						}
 
-						bool costSet = false;
-						double minCost;
+						double minCost = 0.0; // initialized to silence -Wmaybe-uninitialized warning
 
 						for(auto it = m_borderSet->getSuccessors(m_current);it.current()!=it.end();it.current()++)
 						{
-							// check if corresponding lanelets are properly connected
+							// check if corresponding borders are properly connected
 							Border* next = it.current()->second;
 							if(!borderValid(next)) {continue;}
 							Border* nextLeft = m_borderSet->getLeftNeighbor(next);
@@ -203,7 +202,6 @@ namespace adore
 
 								minCost = nextCost;
 								successor = next;
-								costSet = true;
 							}
 						}
 

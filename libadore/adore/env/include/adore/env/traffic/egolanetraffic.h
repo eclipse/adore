@@ -17,7 +17,7 @@
 #include <adore/env/borderbased/lanematchingstrategy.h>
 #include <adore/env/borderbased/borderset.h>
 #include <adore/view/trafficobject.h>
-#include <adore/view/alanefollowingview.h>
+#include <adore/view/alane.h>
 #include <algorithm>
 #include "trafficmap.h"
 
@@ -66,7 +66,7 @@ namespace adore
                  * @param lfv lane following view
                  * @param borders set of borders
                  */
-                void mapVehiclesOnBorders(adore::view::ALaneFollowingView* lfv,
+                void mapVehiclesOnBorders(adore::view::ALane* lfv,
                                           const adore::env::BorderBased::BorderSubSet& borders)
                 {
                     queue_.clear();
@@ -78,7 +78,8 @@ namespace adore
                             auto range = trafficMap_->getBorderToParticipant().equal_range(pborder->m_id);
                             for(auto it = range.first; it != range.second; ++it)
                             {
-                                auto pos = it->second.first;
+                                // TODO investigate if the following unused variable is actually a bug
+                                // auto pos = it->second.first; // fixed Wunused-but-set-variable
                                 Participant::TTrackingID id = it->second.second;
                                 if(idset.find(id)!=idset.end())continue;//don't duplicate
                                 auto it2 = trafficMap_->getTrackingIDToParticipant().find(id);
@@ -111,6 +112,7 @@ namespace adore
                                 object.setExitProgress(1.0e5);
                                 object.setExitTime(par.observation_time_+1.0e5);
                                 object.setTrackingID(par.trackingID_);
+                                object.setV2XStationID(par.v2xStationID_);
                                 object.setLength(par.length_);
                                 queue_.push_back(object);
                             }

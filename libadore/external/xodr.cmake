@@ -10,22 +10,38 @@
 #*
 #* Contributors: 
 #*   Thomas Lobig
+#*   Daniel Hess
 #********************************************************************************
 
 include (FetchContent)
-set(FETCHCONTENT_QUIET off)
-#FetchContent_Declare(xodr
-#    GIT_REPOSITORY https://github.com/DLR-TS/xodr.git
-#    GIT_TAG        avoid_name_clashes
-#)
-#the same with testfeld niedersachsen xsd:
 FetchContent_Declare(xodr
-    GIT_REPOSITORY https://github.com/daniel-gitgit/xodr.git
-    GIT_TAG        tfn2
+   GIT_REPOSITORY https://github.com/DLR-TS/xodr.git
+   GIT_TAG        avoid_name_clashes
 )
+#the same with testfeld niedersachsen xsd:
+# FetchContent_Declare(xodr
+#     GIT_REPOSITORY https://github.com/daniel-gitgit/xodr.git #TODO put that branch back to DLR-TS and fetch from there
+#     GIT_TAG        tfn2
+# )
 FetchContent_GetProperties(xodr)
 if(NOT xodr_POPULATED)
     FetchContent_Populate(xodr)
     add_subdirectory(${xodr_SOURCE_DIR} ${xodr_BINARY_DIR})
-endif()
+    set_property(DIRECTORY ${xodr_SOURCE_DIR} PROPERTY EXCLUDE_FROM_ALL YES)
 
+
+    install(TARGETS xodr EXPORT xodrTargets
+    )
+
+    install(EXPORT xodrTargets
+        FILE xodrTargets.cmake
+        NAMESPACE adore::
+        DESTINATION ../cmake/xodr
+    )
+
+    export(EXPORT xodrTargets
+        FILE "${CMAKE_BINARY_DIR}/../cmake/xodrTargets.cmake"
+        NAMESPACE adore::
+    )
+
+endif()

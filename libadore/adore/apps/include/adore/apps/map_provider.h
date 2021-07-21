@@ -13,12 +13,15 @@
  ********************************************************************************/
 
 #pragma once
+#include <adore/if_xodr/xodr2borderbased.h>
+#include <adore/if_r2s/r2s2borderbased.h>
 #include <adore/env/map/map_border_management.h>
 #include <adore/env/map/precedence.h>
 #include <adore/env/afactory.h>
 #include <adore/params/afactory.h>
+#include <adore/mad/csvlog.h>
 
-#include "if_plotlab/plot.h"
+#include "if_plotlab/plot_border.h"
 
 namespace adore
 {
@@ -32,6 +35,27 @@ namespace adore
          */
         class MapProvider
         {
+            public:
+                struct Config
+                {
+                    double trans_x_, trans_y_, trans_z_, rot_x_, rot_y_, rot_z_, rot_psi_;
+                    Config()
+                    {
+                        trans_x_ = 0;
+                        trans_y_ = 0;
+                        trans_z_ = 0;
+                        rot_x_   = 0;
+                        rot_y_   = 0;
+                        rot_z_   = 0;
+                        rot_psi_ = 0;                    
+                    }
+                };
+                Config config_;
+                
+                void setConfig(Config config)
+                {
+                    config_ = config;
+                }
             private:
                 params::APMapProvider* params_;
                 adore::env::MapBorderManagement map_management_;
@@ -49,17 +73,129 @@ namespace adore
                 DLR_TS::PlotLab::FigureStubFactory * figure_factory_;
                 DLR_TS::PlotLab::FigureStubZMQ * figure_;
 
+                unsigned int subscriber_count_;
+
+                void parseTrackConfigs(std::string trackConfigs, env::BorderBased::BorderSet& targetSet)
+                {
+                    std::string trackConfig = "";
+                    std::stringstream trackstream(trackConfigs);
+                    while(std::getline(trackstream,trackConfig,';'))
+                    {
+                        /* reading of single track configuration, comma separated */
+                        std::stringstream trackConfigStream(trackConfig);
+                        bool transform = false;
+                        std::string xodrFilename = "";
+                        std::string r2sReflineFilename = "";
+                        std::string r2sLaneFilename = "";
+                        std::string token = "";
+                        while(std::getline(trackConfigStream,token,','))
+                        {
+                            if(token.size()<=5)
+                            {
+                                LOG_W("Unrecognizable token: %s", token.c_str());
+                                continue;
+                            }
+                            if(token.compare("transform")==0)
+                            {
+                                transform = true;
+                            }
+                            else if(token.substr(token.size()-5,5).compare(".xodr")==0)
+                            {
+                                xodrFilename = token;
+                            }
+                            else
+                            {
+                                if(token.substr(token.size()-5,5).compare(".r2sr")==0)
+                                {
+                                    r2sReflineFilename = token;
+                                }
+                                else if(token.substr(token.size()-5,5).compare(".r2sl")==0)
+                                {
+                                    r2sLaneFilename = token;
+                                }
+                                else
+                                {
+                                    LOG_W("Unrecognizable token: %s", token.c_str());
+                                    continue;
+                                }
+                            }
+                            
+                        }
+                        /* process current file */
+                        adore::env::BorderBased::BorderSet partialSet;
+                        if(!xodrFilename.empty())
+                        {
+                            adore::if_xodr::XODR2BorderBasedConverter converter;
+                            converter.sampling.numberOfPointsPerBorder = params_->getXODRLoaderPointsPerBorder();
+                            try
+                            {
+                                LOG_I("Processing file %s ...", xodrFilename.c_str());
+                                converter.convert(xodrFilename.c_str(),&partialSet,transform);
+                                LOG_I("Done.");
+                            } 
+                            catch(const std::exception& e) 
+                            {
+                                LOG_E("Could not parse file %s", xodrFilename.c_str());
+                                std::cout << e.what() << '\n';
+                            }
+
+                            /* add partial map to global map */
+                            auto its = partialSet.getAllBorders();
+                            for(;its.first!=its.second;its.first++)
+                            {
+                                targetSet.insert_border(its.first->second);
+                            }
+                            /* global map has responsibility for object/pointers */
+                            partialSet.setIsOwner(false);
+                        }
+                        else if(!(r2sReflineFilename.empty() || r2sLaneFilename.empty()))
+                        {
+                            try
+                            {
+                                LOG_I("Processing files %s and %s ...", r2sReflineFilename.c_str(), r2sLaneFilename.c_str());
+                                if_r2s::R2S2BorderBasedConverter converter;
+                                converter.convert(r2sReflineFilename,r2sLaneFilename, partialSet);
+                                LOG_I("Done.");
+                            }
+                            catch(...)
+                            {
+                                LOG_E("Could not parse R2S files %s and %s", r2sReflineFilename.c_str(), r2sLaneFilename.c_str());
+                            }
+                            
+                            /* add partial map to global map */
+                            auto its = partialSet.getAllBorders();
+                            for(;its.first!=its.second;its.first++)
+                            {
+                                targetSet.insert_border(its.first->second);
+                            }
+                            partialSet.setIsOwner(false);
+                        }
+                        else
+                        {
+                            LOG_E("Could not parse configuration: %s", trackConfig.c_str());
+                        }
+                    }
+                }
+
             public:
                 MapProvider(env::AFactory* env_factory,adore::params::AFactory* params_factory, 
-                                    adore::env::BorderBased::BorderSet * bset,
-                                    adore::env::PrecedenceSet* pset)
+                                    std::string trackConfigs,
+                                    adore::env::PrecedenceSet* pset,
+                                    Config config)
                 {
+                    config_ = config;
+                    /* process trackConfigs parameter, multiple paths to maps delimited by semicolon, comma separated additional configuration */
+                    adore::env::BorderBased::BorderSet globalSet;
                     params_ = params_factory->getMapProvider();
+                    parseTrackConfigs(trackConfigs,globalSet);
+                    globalSet.rotate(config_.rot_psi_, config_.rot_x_, config_.rot_y_);
+                    globalSet.translate(config_.trans_x_, config_.trans_y_, config_.trans_z_);
                     border_output_ = env_factory->getBorderWriter();
                     motion_state_reader_ = env_factory->getVehicleMotionStateReader();
                     precedence_output_ = env_factory->getPrecedenceRuleWriter();
-                    map_management_.init(bset);
+                    map_management_.init(&globalSet);
                     precedence_set_.init(pset);
+                    subscriber_count_ = 0;
 
                     if(params_->getActivatePlotting())
                     {
@@ -80,6 +216,12 @@ namespace adore
                     std::vector<env::BorderBased::BorderID> outdatedBorders;
                     
                     motion_state_reader_->getData(motion_state);
+
+                    if (subscriber_count_ != border_output_->getNumberOfSubscribers())
+                    {
+                        subscriber_count_ = border_output_->getNumberOfSubscribers();
+                        map_management_.reset();
+                    }
                     
                     map_management_.run(motion_state.getX(),motion_state.getY(),params_->getVisibiltyRadius(),newBorders,outdatedBorders,500);
                     

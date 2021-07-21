@@ -1,14 +1,14 @@
 /********************************************************************************
- * Copyright (C) 2017-2020 German Aerospace Center (DLR). 
+ * Copyright (C) 2017-2020 German Aerospace Center (DLR).
  * Eclipse ADORe, Automated Driving Open Research https://eclipse.org/adore
  *
- * This program and the accompanying materials are made available under the 
+ * This program and the accompanying materials are made available under the
  * terms of the Eclipse Public License 2.0 which is available at
  * http://www.eclipse.org/legal/epl-2.0.
  *
- * SPDX-License-Identifier: EPL-2.0 
+ * SPDX-License-Identifier: EPL-2.0
  *
- * Contributors: 
+ * Contributors:
  *   Daniel Heß - initial API and implementation
  ********************************************************************************/
 
@@ -16,12 +16,13 @@
 #include "anominalplanner.h"
 #include "anominalplannerinformation.h"
 #include "roadcoordinates.h"
-#include <adore/view/alanefollowingview.h>
+#include <adore/view/alane.h>
 #include <adore/mad/lq_oc_single_shooting.h>
 #include <adore/mad/adoremath.h>
 #include <adore/params/ap_longitudinal_planner.h>
 #include <adore/params/ap_lateral_planner.h>
 #include <adore/fun/setpointrequest.h>
+#include <stdexcept>
 
 namespace adore
 {
@@ -52,7 +53,7 @@ namespace adore
       private://solvers, constraint/reference definitions, initial state
         TProgressSolver progress_solver_;//solver for longitudinal planning
         TOffsetSolver offset_solver_;//solver for lateral planning
-        double s0,ds0,dds0;//longitudinal initial state 
+        double s0,ds0,dds0;//longitudinal initial state
         double n0,dn0,ddn0;//lateral initial state
         double psi0,omega0;//internal dynamics initial state
         double t0;//observation time of initial state
@@ -60,11 +61,12 @@ namespace adore
         double T_end_;///end time of plan, defines planning horizon as [0,T_end_]
         RoadCoordinateConverter roadCoordinates_;
         adore::params::APLongitudinalPlanner* aplon_;
-        adore::params::APLateralPlanner* aplat_;        
+        adore::params::APLateralPlanner* aplat_;
         adore::params::APTrajectoryGeneration* aptraj_;
         adore::params::APVehicle* apvehicle_;
         SetPointRequest spr_;///the result as a set-point request
         bool valid_;
+        int step_;
 
         void init_progress_default_cost()
         {
@@ -142,19 +144,37 @@ namespace adore
           progress_solver_.x0()(2) = adore::mad::bound(info_.getLB(0,2,t0,s0,ds0),dds0,info_.getUB(0,2,t0,s0,ds0));
 
           double s_estimate = s0;
-          double ds_estimate = progress_solver_.x0()(1);
+          double ds_estimate_i = progress_solver_.x0()(1);
+          double ds_estimate_j = progress_solver_.x0()(1);
+          double ds_reference;
+          double s_reference;
+          double ds_max;
           double ti,tj;
 
           // Forward Pass
           for(int i=0;i<K;i++)
           {
             int j=i+1;
-            ti = T_[i] + t0; 
+            ti = T_[i] + t0;
             tj = T_[j] + t0;
 
-            s_estimate += ds_estimate * (tj-ti);
-            double s_reference;
-            if( info_.getReferenceIfAvailable(0,0,tj,s_estimate,ds_estimate,s_reference))
+            double dds_max = (std::min)(aplon_->getComfortAccUB(),info_.getUB(0,2,tj,s_estimate,ds_estimate_i));
+            ds_estimate_i = ds_estimate_j;
+            ds_estimate_j += dds_max * (tj-ti);
+            ds_max = info_.getUB(0,1,tj,s_estimate,ds_estimate_i);
+            ds_estimate_j = (std::min)(ds_estimate_j,ds_max);
+            if( info_.getReferenceIfAvailable(0,1,tj,s_estimate,ds_estimate_j,ds_reference))
+            {
+              ds_estimate_j = (std::min)(ds_estimate_j,ds_reference);
+            }
+            else
+            {
+              ds_reference = ds_estimate_j;
+            }
+
+
+            s_estimate += (ds_estimate_j+ds_estimate_i)*0.5 * (tj-ti);
+            if( info_.getReferenceIfAvailable(0,0,tj,s_estimate,ds_estimate_j,s_reference))
             {
               s_estimate = (std::min)(s_estimate,s_reference);
             }
@@ -162,28 +182,17 @@ namespace adore
             {
               s_reference = s_estimate;
             }
-            
-            double dds_max = info_.getUB(0,2,tj,s_estimate,ds_estimate);
-            ds_estimate += dds_max * (tj-ti);
-            double ds_reference;
-            if( info_.getReferenceIfAvailable(0,1,tj,s_estimate,ds_estimate,ds_reference))
-            {
-              ds_estimate = (std::min)(ds_estimate,ds_reference);
-            }
-            else
-            {
-              ds_reference = ds_estimate;
-            }
-            
-            progress_solver_.lbx()(0,i) = info_.getLB(0,0,tj,s_estimate,ds_estimate)-s0;//s lower bound
-            progress_solver_.lbx()(1,i) = info_.getLB(0,1,tj,s_estimate,ds_estimate);//ds lower bound
-            progress_solver_.lbx()(2,i) = info_.getLB(0,2,tj,s_estimate,ds_estimate);//dds lower bound
-					  progress_solver_.lbu_hard()(0,i) = info_.getLB(0,3,tj,s_estimate,ds_estimate);//ddds lower bound
 
-            progress_solver_.ubx()(0,i) = info_.getUB(0,0,tj,s_estimate,ds_estimate)-s0;//s upper bound
-            progress_solver_.ubx()(1,i) = info_.getUB(0,1,tj,s_estimate,ds_estimate);//ds upper bound
-            progress_solver_.ubx()(2,i) = info_.getUB(0,2,tj,s_estimate,ds_estimate);//dds upper bound
-					  progress_solver_.ubu_hard()(0,i) = info_.getUB(0,3,tj,s_estimate,ds_estimate);//ddds upper bound
+
+            progress_solver_.lbx()(0,i) = info_.getLB(0,0,tj,s_estimate,ds_estimate_j)-s0;//s lower bound
+            progress_solver_.lbx()(1,i) = info_.getLB(0,1,tj,s_estimate,ds_estimate_j);//ds lower bound
+            progress_solver_.lbx()(2,i) = info_.getLB(0,2,tj,s_estimate,ds_estimate_j);//dds lower bound
+					  progress_solver_.lbu_hard()(0,i) = info_.getLB(0,3,tj,s_estimate,ds_estimate_j);//ddds lower bound
+
+            progress_solver_.ubx()(0,i) = info_.getUB(0,0,tj,s_estimate,ds_estimate_j)-s0;//s upper bound
+            progress_solver_.ubx()(1,i) = info_.getUB(0,1,tj,s_estimate,ds_estimate_j);//ds upper bound
+            progress_solver_.ubx()(2,i) = info_.getUB(0,2,tj,s_estimate,ds_estimate_j);//dds upper bound
+					  progress_solver_.ubu_hard()(0,i) = info_.getUB(0,3,tj,s_estimate,ds_estimate_j);//ddds upper bound
 
             progress_solver_.y()(0,i) = adore::mad::bound(progress_solver_.lbx()(0,i),
                                                         s_reference-s0,
@@ -192,6 +201,7 @@ namespace adore
                                                         ds_reference,
                                                         progress_solver_.ubx()(1,i));
           }
+
 
           // Backward Pass
           for( int j=K-1;j>0;j-- )
@@ -213,11 +223,16 @@ namespace adore
           offset_solver_.x0()(0) = n0;
           offset_solver_.x0()(1) = adore::mad::bound(info_.getLB(1,1,t0,s0,ds0),dn0,info_.getUB(1,1,t0,s0,ds0));
           offset_solver_.x0()(2) = adore::mad::bound(info_.getLB(1,2,t0,s0,ds0),ddn0,info_.getUB(1,2,t0,s0,ds0));
-          double ti,tj,tj_rel,s,ds;
+          // double ti,tj,tj_rel,s,ds; // ti is unused -Wunused-but-set-variable
+          double tj,tj_rel,s,ds;
+          //std::cout<<"DecoupledLFLCPlanner::prepare_offset_computation():"<<std::endl<<"s: (lb, ref, ub)"<<std::endl;
+          //std::cout<<"x0: ("<<offset_solver_.x0()(0)<<", "<<offset_solver_.x0()(1)<<", "<<offset_solver_.x0()(2)<<")"<<std::endl;
+
           for(int i=0;i<K;i++)
           {
             int j=i+1;
-            ti = T_[i]+t0;
+            // TODO investigate: the following might be actually a bug
+            // ti = T_[i]+t0; // ti is unused -Wunused-but-set-variable
             tj = T_[j]+t0;
             tj_rel = adore::mad::bound(progress_solver_.result_fun().limitLo(),
                                       tj-t0,
@@ -239,6 +254,9 @@ namespace adore
             info_.getReferenceIfAvailable(1,1,tj,s,ds,offset_solver_.y()(1,i));
             info_.getReferenceIfAvailable(1,2,tj,s,ds,offset_solver_.y()(2,i));
             info_.getReferenceIfAvailable(1,3,tj,s,ds,offset_solver_.uset()(0,i));
+            // std::cout<<s<<": ("<<offset_solver_.lbx()(0,i)<<", "<<offset_solver_.y()(0,i)<<", "<<offset_solver_.ubx()(0,i)<<")";
+            // std::cout<<" ("<<offset_solver_.lbx()(1,i)<<", "<<offset_solver_.y()(1,i)<<", "<<offset_solver_.ubx()(1,i)<<")";
+            // std::cout<<" ("<<offset_solver_.lbx()(2,i)<<", "<<offset_solver_.y()(2,i)<<", "<<offset_solver_.ubx()(2,i)<<")"<<std::endl;
           }
         }
         bool update_guard(double& target,double value)
@@ -289,7 +307,7 @@ namespace adore
           }
         }
       public:
-        DecoupledLFLCPlanner(adore::view::ALaneFollowingView* lfv,
+        DecoupledLFLCPlanner(adore::view::ALane* lfv,
                              adore::params::APLongitudinalPlanner* aplon,
                              adore::params::APLateralPlanner* aplat,
                              adore::params::APVehicle* apvehicle,
@@ -317,10 +335,31 @@ namespace adore
         TOffsetSolver& getOffsetSolver()
         {
           return offset_solver_;
-        } 
+        }
         RoadCoordinateConverter& getRoadCoordinateConverter()
         {
           return roadCoordinates_;
+        }
+
+        std::string getStatus()
+        {
+          if(valid_)return "";
+          switch(step_)
+          {
+            case 0:
+              return "rc transformation failed";
+            case 1:
+              return "longitudinal planning failed";
+            case 2:
+              return "lateral preparation failed";
+            case 3:
+              return "lateral planning failed";
+            case 4:
+              return "feed forward computation failed";
+            default:
+              return "unknown error";
+          }
+          return "";
         }
 
         /**
@@ -328,16 +367,42 @@ namespace adore
          */
         virtual void compute(const VehicleMotionState9d&  initial_state)override
         {
-          if(!roadCoordinates_.isValid())return; 
+          step_ = 0;
+          valid_ = false;
+          bool log_transformation = false;
+          if(!roadCoordinates_.isValid())return;
+          roadCoordinates_.updateParameters(apvehicle_,aptraj_);
+          auto rc = roadCoordinates_.toRoadCoordinates(initial_state,log_transformation);
+          if(!rc.valid)return;
+          step_ = 1;
+          PlanarVehicleState10d x_test;
+          roadCoordinates_.toVehicleState(rc,initial_state.getPSI(), initial_state.getOmega(),x_test,log_transformation);
+          if(log_transformation)
+          {
+            std::cout<<"roadCoordinates:"<<std::endl;
+            std::cout<<"s0="<<rc.s0<<std::endl;
+            std::cout<<"s1="<<rc.s1<<std::endl;
+            std::cout<<"s2="<<rc.s2<<std::endl;
+            std::cout<<"n0="<<rc.n0<<std::endl;
+            std::cout<<"n1="<<rc.n1<<std::endl;
+            std::cout<<"n2="<<rc.n2<<std::endl;
+            std::cout<<"transformation error:"<<std::endl;
+            std::cout<<"eX="<<initial_state.getX()-x_test.getX()<<std::endl;
+            std::cout<<"eY="<<initial_state.getY()-x_test.getY()<<std::endl;
+            std::cout<<"ePSI="<<initial_state.getPSI()-x_test.getPSI()<<std::endl;
+            std::cout<<"evx="<<initial_state.getvx()-x_test.getvx()<<std::endl;
+            std::cout<<"evy="<<initial_state.getvy()-x_test.getvy()<<std::endl;
+            std::cout<<"eOmega="<<initial_state.getOmega()-x_test.getOmega()<<std::endl;
+            std::cout<<"eDelta="<<initial_state.getDelta()-x_test.getDelta()<<std::endl;
+            std::cout<<"eAx="<<initial_state.getAx()-x_test.getAx()<<std::endl;
+          }
 
-          auto rc = roadCoordinates_.toRoadCoordinates(initial_state);
           s0 = rc.s0;ds0 = rc.s1;dds0 = rc.s2;
           n0 = rc.n0;dn0 = rc.n1;ddn0 = rc.n2;
           psi0 = initial_state.getPSI();
           omega0 = initial_state.getOmega();
           t0 = initial_state.getTime();
 
-          valid_ = false;
 
           //update constraints and reference
           info_.update(initial_state.getTime(),s0,ds0);
@@ -354,13 +419,26 @@ namespace adore
             /*
               *  step 2 - lateral planning
               */
+            step_ = 2;
             update_offset_parameters();
-            prepare_offset_computation();
+            try
+            {
+              prepare_offset_computation();
+            }
+            catch(const std::exception& e)
+            {
+              std::cerr << e.what() << std::endl;
+              return;
+            }
+            step_ = 3;
+
+
             offset_solver_.compute();
             offset_solver_.setEndTime(this->T_end_);
 
             if(offset_solver_.isSolved() && offset_solver_.isFeasible())
             {
+              step_ = 4;
               /*
                 *  step 3 - full state trajectory
                 */
@@ -378,6 +456,7 @@ namespace adore
               spr_.append(integration_time,trajectory,aptraj_->getSetPointCount());
               spr_.setStartTime(initial_state.getTime());
               valid_ = true;
+              step_ = 5;
             }
           }
         }

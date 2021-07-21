@@ -14,6 +14,8 @@
 
 #pragma once
 
+#include <string>
+
 namespace adore
 {
 	namespace params
@@ -27,6 +29,9 @@ namespace adore
 		{
 
 		public:
+			///ID of current vehicle
+			virtual std::string get_vehicle_id()const =0;
+
 		  	///cog to front axle
 			virtual double get_a()const =0;
 

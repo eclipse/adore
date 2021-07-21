@@ -134,6 +134,11 @@ public:
 class ConflictArea
 {
 public:
+
+    ConflictArea() = default;
+    // TODO investigate if calling delete on derived classes will cause memory leaks
+    virtual ~ConflictArea() = default; // -Wdelete-non-virtual-dtor
+
     virtual unsigned int getNumberOfConflictZones() const = 0;
     
     /**
@@ -178,7 +183,7 @@ public:
      * getConflictAreas - return vector of view::ConflictArea objects
      * 
      */
-    virtual std::vector<ConflictArea*> getConflictAreas() const = 0;
+    virtual std::vector<ConflictArea*> getConflictAreas() const = 0; // TODO 
 };
 } // namespace view
 } // namespace adore

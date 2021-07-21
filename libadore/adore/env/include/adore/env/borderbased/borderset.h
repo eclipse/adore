@@ -149,6 +149,39 @@ namespace adore
 					return m_allowedBorderTypes.insert(type).second;
 				}
 
+
+
+				void rotate(double psi, double rot_x=0.0, double rot_y=0.0)
+				{
+					BorderSubSet newBorders;
+					for(auto it=this->getAllBorders(); it.first!=it.second; it.first++)
+					{
+						auto b = new Border(*((it.first)->second));
+						b->rotateXY(psi,rot_x,rot_y);
+						newBorders.push_back(b);						
+					}
+					this->clear();
+					for(auto it=newBorders.begin(); it!=newBorders.end(); it++)
+					{
+						this->insert_border(*it);
+					}
+				}
+				void translate(double trans_x, double trans_y, double trans_z)
+				{
+					BorderSubSet newBorders;
+					for(auto it=this->getAllBorders(); it.first!=it.second; it.first++)
+					{
+						auto b = new Border(*((it.first)->second));
+						b->translate(trans_x,trans_y,trans_z);
+						newBorders.push_back(b);						
+					}
+					this->clear();
+					for(auto it=newBorders.begin(); it!=newBorders.end(); it++)
+					{
+						this->insert_border(*it);
+					}										
+				}
+
 				/**
 				 * @brief remove border type from allowed border types
 				 * 
@@ -191,17 +224,13 @@ namespace adore
 				{
 					// handle duplicate insertions
 					auto it = m_byID.find(b->m_id);
-					if(it!=m_byID.end())// && it->second->m_type==b->m_type)
+					if(it!=m_byID.end())
 					{
 						// duplicate found
-						std::cout<<"BorderSet insertion duplicate:\n";
-						std::cout<<"old:" << it->first.toString()<<"\n";// << "->"<< it->second->m_id.toString() <<"\n";
-						std::cout<<"new:" << b->m_id.toString() <<"\n";
 
 						// if duplicate references itself for left, discard it
 						if(b->m_left!=nullptr && b->m_id == *(b->m_left))
 						{
-							std::cout<<"Border references itself as left neighbor, gets ignored\n";
 							return;
 						}
 						//if new border is not of allowed type and insert is not forced, discard it
@@ -253,9 +282,9 @@ namespace adore
 				void clear()
 				{
 					//delete all borders
-					for(auto it = getAllBorders();it.first!=it.second;it.first++)
+					if(m_isOwner)for(auto it = getAllBorders();it.first!=it.second;it.first++)
 					{
-						if(m_isOwner)delete it.first->second;
+						delete it.first->second;
 					}
 					m_byID.clear();
 					m_byLeftID.clear();
@@ -909,15 +938,15 @@ namespace adore
 				 */
 				itCoordinate2Border getSuccessors(Border* b)
 				{
-					double x0 = b->m_id.m_last.m_X - m_coord_uncertainty_xy;
-					double y0 = b->m_id.m_last.m_Y - m_coord_uncertainty_xy;
-					double z0 = b->m_id.m_last.m_Z - m_coord_uncertainty_z;
-					double x1 = b->m_id.m_last.m_X + m_coord_uncertainty_xy;
-					double y1 = b->m_id.m_last.m_Y + m_coord_uncertainty_xy;
-					double z1 = b->m_id.m_last.m_Z + m_coord_uncertainty_z;
+					static Border::boost_box qBox(Coordinate::boost_point(0.0,0.0,0.0),Coordinate::boost_point(1.0,1.0,1.0));
+					qBox.min_corner().set<0>(b->m_id.m_last.m_X - m_coord_uncertainty_xy);
+					qBox.min_corner().set<1>(b->m_id.m_last.m_Y - m_coord_uncertainty_xy);
+					qBox.min_corner().set<2>(b->m_id.m_last.m_Z - m_coord_uncertainty_z);
+					qBox.max_corner().set<0>(b->m_id.m_last.m_X + m_coord_uncertainty_xy);
+					qBox.max_corner().set<1>(b->m_id.m_last.m_Y + m_coord_uncertainty_xy);
+					qBox.max_corner().set<2>(b->m_id.m_last.m_Z + m_coord_uncertainty_z);
 					return itCoordinate2Border(
-									m_byFirstCoord.qbegin(boost::geometry::index::intersects(Border::boost_box(	Coordinate::boost_point(x0,y0,z0),
-																												Coordinate::boost_point(x1,y1,z1) ))),
+									m_byFirstCoord.qbegin(boost::geometry::index::intersects(qBox)),
 									m_byFirstCoord.qend()
 									);
 				}
@@ -1209,7 +1238,7 @@ namespace adore
 				}
 
 				/**
-				 * @brief returns the given border and all paralle borders with a changeable type
+				 * @brief returns the given border and all parallel borders with a changeable type
 				 * 
 				 * @param b 
 				 * @return BorderSubSet 
@@ -1231,6 +1260,50 @@ namespace adore
 						l = getLeftNeighbor(l);
 					}
 					return value;
+				}
+
+				/**
+				 * @brief computes a pair of borders (left,right) suitable for lane-changing from given source lane
+				 * @param current_right the right border of the current lane
+				 * @param direction_left a lane change to the left if true, otherwise to the right
+				 * @todo implement check for lane marking type: disallow lane changes when lane marking is not broken
+				 * @return a pair of Border*, first=left, second=right. if no elegible lane is available, first=second=nullptr
+				 */
+				std::pair<Border*,Border*> getLaneChangeTarget(Border* current_right,bool direction_left)
+				{
+					std::pair<Border*,Border*> target;
+					target.first=nullptr;
+					target.second=nullptr;
+					if(direction_left)
+					{
+						target.second = getLeftNeighbor(current_right);
+						if(target.second==nullptr)
+						{
+							return target;
+						}
+						target.first = getLeftNeighbor(target.second);
+						if(target.first==nullptr)
+						{
+							target.second = nullptr;
+							return target;
+						}
+					}
+					else
+					{
+						target.second = getRightNeighbor(current_right);
+						if(target.second==nullptr)return target;
+						target.first = current_right;
+					}
+					//check that lane change target is an actual lane
+					if(target.first->m_id==target.second->m_id
+					|| target.first->m_id==target.second->m_id.getReverseDirectionID())
+					{
+						//invalidate
+						target.first=nullptr;
+						target.second=nullptr;
+					}
+
+					return target;
 				}
 				
 				/**

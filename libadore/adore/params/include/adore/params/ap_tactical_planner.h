@@ -38,6 +38,8 @@ namespace adore
 			virtual double getLeadReferenceOffset()const =0;
 			virtual double getFrontReferenceOffset()const =0;
 			virtual double getGapAlignment()const =0;
+			virtual double getAssumedNominalAccelerationMinimum()const =0;
+			virtual double getMaxNavcostLoss()const=0;
 		};
 	}
 }

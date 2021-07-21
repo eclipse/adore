@@ -32,7 +32,7 @@ namespace adore
             bool has_timeout_;      /**< if false, timeout shall be considered infinite */
             Proposition(){}
             Proposition(std::string term,bool value)
-                :order_(0),term_(term),value_(value),has_timeout_(false),timeout_(0.0){}
+                :order_(0),term_(term),value_(value),timeout_(0.0),has_timeout_(false){}
         };
 
         /**

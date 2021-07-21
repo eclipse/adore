@@ -40,7 +40,8 @@ namespace adore
             /**
              * Convert a adore_if_ros_msg::TerminalRequest to a adore::fun::TerminalRequest
              */
-            void operator()(adore_if_ros_msg::TerminalRequestConstPtr msg,adore::fun::TerminalRequest* tr)
+            template<typename Tmsg>
+            void operator()(Tmsg msg,adore::fun::TerminalRequest* tr)
             {
                 tr->set(msg->X,msg->Y,msg->PSI,msg->t,msg->valid);
             }

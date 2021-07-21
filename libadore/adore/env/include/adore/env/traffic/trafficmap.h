@@ -47,6 +47,24 @@ namespace adore
                 adore::env::AFactory::TParticipantSetReader* tpsetReader_; /**< reader of traffic participants */
             public:
                 /**
+                 * @brief Get the set of traffic participants
+                 * 
+                 * @return TParticipantSet&
+                 */
+                TParticipantSet& getTrafficParticipantSet()
+                {
+                    return participantSet_;
+                }
+                /**
+                 * @brief Get the border set
+                 * 
+                 * @return adore::env::BorderBased::BorderSet*
+                 */
+                adore::env::BorderBased::BorderSet* getBorderSet()
+                {
+                    return borderSet_;
+                }
+                /**
                  * @brief Get the border to participant map
                  * 
                  * @return const TBorderToParticipant&
@@ -77,11 +95,28 @@ namespace adore
                  * @brief Construct a new TrafficMap object
                  * 
                  * @param borderSet set of borders
+                 */
+                TrafficMap(adore::env::BorderBased::BorderSet* borderSet)
+                {
+                    tpsetReader_ = EnvFactoryInstance::get()->getTrafficParticipantSetReader();
+                    borderSet_ = borderSet;
+                }
+                /**
+                 * @brief Construct a new TrafficMap object
+                 * 
+                 * @param borderSet set of borders
                  * @param factory 
                  */
                 TrafficMap(adore::env::BorderBased::BorderSet* borderSet,adore::env::AFactory* factory)
                 {
-                    tpsetReader_ = factory->getTrafficParticipantSetReader();
+                    if(factory!=nullptr)
+                    {
+                        tpsetReader_ = factory->getTrafficParticipantSetReader();
+                    }
+                    else
+                    {
+                        tpsetReader_ = nullptr;
+                    }
                     borderSet_ = borderSet;
                 }
                 /**
@@ -98,7 +133,7 @@ namespace adore
                         tpsetReader_->getData(participantSet_);
                         for(auto& participant:participantSet_)
                         {
-                            trackingIDToParticipant_.emplace(std::make_pair(participant.trackingID_,participant));
+                            trackingIDToParticipant_.insert(std::make_pair(participant.trackingID_,participant));
                         }
                         matchBorders();
                     }
@@ -158,8 +193,8 @@ namespace adore
                                     adore::env::BorderBased::BorderPositioning<4> positioning(border,left,Xref,Yref,X,Y);
                                     if(positioning.anyInside())
                                     {
-                                        borderToParticipant_.emplace(std::make_pair(border->m_id,std::make_pair(positioning,participant.trackingID_)));
-                                        participantToBorder_.emplace(std::make_pair(participant.trackingID_,std::make_pair(border->m_id,positioning)));
+                                        borderToParticipant_.insert(std::make_pair(border->m_id,std::make_pair(positioning,participant.trackingID_)));
+                                        participantToBorder_.insert(std::make_pair(participant.trackingID_,std::make_pair(border->m_id,positioning)));
                                     }
                                 }
                             }

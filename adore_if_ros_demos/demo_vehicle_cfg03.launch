@@ -1,0 +1,56 @@
+<!--********************************************************************************
+ * Copyright (C) 2017-2020 German Aerospace Center (DLR). 
+ * Eclipse ADORe, Automated Driving Open Research https://eclipse.org/adore
+ *
+ * This program and the accompanying materials are made available under the 
+ * terms of the Eclipse Public License 2.0 which is available at
+ * http://www.eclipse.org/legal/epl-2.0.
+ *
+ * SPDX-License-Identifier: EPL-2.0 
+ *
+ * Contributors: 
+ *   Daniel Heß - initial API and implementation
+ *
+ * A demo CAV configuration with lane-following/lane-change behavior.
+ ********************************************************************************-->
+<launch>
+    <include ns="PARAMS" file="$(dirname)/adore_params_vehicle_independent.launch"/>
+    <include ns="PARAMS" file="$(dirname)/adore_params_vehicle_fascare.launch"/>
+    <param name="PARAMS/navigation/active_plotting_global" value="false" type="bool" />  
+    <node name="vmodel"     pkg="adore_if_ros" type="adore_vehiclemodel_node"/>
+    <node name="smodel"     pkg="adore_if_ros" type="adore_objectdetectionmodel_node"/>
+    <node name="lmap"       pkg="adore_if_ros" type="adore_mapprovider_node" output="screen"/>
+    <node name="tracker"    pkg="adore_if_ros" type="adore_feedbackcontroller_node"/>
+    <node name="lnav"       pkg="adore_if_ros" type="adore_navigation_node"/>
+    <node name="lvprovider" pkg="adore_if_ros" type="adore_lvprovider_node"/>
+    <node name="predictor" pkg="adore_if_ros" type="adore_prediction_provider" output="screen"/>
+    <node name="predictionFilter" pkg="adore_if_ros" type="adore_prediction_filter" output="screen">
+        <remap from="ENV/Prediction/expected" to="ENV/Prediction/worstcase"/>
+    </node> 
+    <node name="decision_making" pkg="adore_if_ros" type="adore_tactical_planner_node"  launch-prefix="xterm -e" output="screen"/>
+    <node name="planner_lf" pkg="adore_if_ros" type="adore_trajectory_planner_lf_node" >
+        <param name='name' type='string' value='lf'/>
+        <param name='id' type='int' value='1'/>
+        <param name='speed_scale' type='double' value='1'/>        
+    </node>
+    <node name="planner_lcl" pkg="adore_if_ros" type="adore_trajectory_planner_lc_node" >
+        <param name='direction' type='string' value='left'/>
+        <param name='name' type='string' value='lcl'/>
+        <param name='id' type='int' value='2'/>
+    </node>
+    <node name="planner_lcr" pkg="adore_if_ros" type="adore_trajectory_planner_lc_node"> 
+        <param name='direction' type='string' value='right'/>
+        <param name='name' type='string' value='lcr'/>
+        <param name='id' type='int' value='3'/>
+    </node>
+    <!-- <node name="planner_lml" pkg="adore_if_ros" type="adore_trajectory_planner_lm_node" >
+        <param name='direction' type='string' value='left'/>
+        <param name='name' type='string' value='lml'/>
+        <param name='id' type='int' value='4'/>
+    </node>
+    <node name="planner_lmr" pkg="adore_if_ros" type="adore_trajectory_planner_lm_node"> 
+        <param name='direction' type='string' value='right'/>
+        <param name='name' type='string' value='lmr'/>
+        <param name='id' type='int' value='5'/>
+    </node> -->
+</launch>

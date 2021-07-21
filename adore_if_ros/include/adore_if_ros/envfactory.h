@@ -16,10 +16,11 @@
 
 #include <math.h>
 #include <ros/ros.h>
-# include <adore/env/afactory.h>
+#include <adore/env/afactory.h>
 #include <adore_if_ros/ros_com_patterns.h>
 
 #include <adore_if_ros_msg/Border.h>
+#include <adore_if_ros_msg/LaneGeometry.h>
 #include <nav_msgs/Odometry.h>
 
 #include <tf2/LinearMath/Quaternion.h>
@@ -33,6 +34,10 @@
 #include "conversions/precedenceruleconverter.h"
 #include "conversions/propositionconverter.h"
 #include "conversions/precedenceruleconverter.h"
+#include "conversions/tcdconnectionconverter.h"
+#include "conversions/occupancyconverter.h"
+#include "conversions/lanegeometryconverter.h"
+#include "conversions/areaofeffectconverter.h"
 
 
 namespace adore
@@ -121,7 +126,6 @@ namespace adore
         return new Writer<adore::env::Proposition,
                           adore_if_ros_msg::Proposition,
                           PropositionConverter>(n_,"ENV/propositions",100);
-
       }
 
 			// read propositional logic information
@@ -130,7 +134,134 @@ namespace adore
         return new Feed<adore::env::Proposition,
                           adore_if_ros_msg::PropositionConstPtr,
                           PropositionConverter>(n_,"ENV/propositions",100);
+      }
+
+			// read traffic light information: controlled connection specifies state of a connection, which is controlled by for example a traffic light
+			virtual adore::env::AFactory::TControlledConnectionFeed* getControlledConnectionFeed() override
+      {
+        return new Feed<adore::env::ControlledConnection,
+                        adore_if_ros_msg::TCDConnectionStateTraceConstPtr,
+                        TCDConnectionConverter>(n_,"ENV/tcd",100);
+      }
+
+			// read checkpoint information represented as controlled connections
+			virtual adore::env::AFactory::TControlledConnectionFeed* getCheckPointFeed() override
+      {
+        return new Feed<adore::env::ControlledConnection,
+                        adore_if_ros_msg::TCDConnectionStateTraceConstPtr,
+                        TCDConnectionConverter>(n_,"ENV/checkpoints",100);
+      }
+      
+			//write checkpoint information represented as controlled connections
+			virtual adore::env::AFactory::TControlledConnectionWriter* getCheckPointWriter() override
+      {
+        return new Writer<adore::env::ControlledConnection,
+                          adore_if_ros_msg::TCDConnectionStateTrace,
+                          TCDConnectionConverter>(n_,"ENV/checkpoints",100);
+      }
+
+			// read the latest prediction set for expected behavior
+			virtual adore::env::AFactory::TOCPredictionSetReader* getExpectedPredictionSetReader() override
+      {
+        return new Reader<adore::env::OccupancyCylinderPredictionSet,
+                        adore_if_ros_msg::OccupancyCylinderPredictionSetConstPtr,
+                        OccupancyConverter>(n_,"ENV/Prediction/expected",1);
+      }
+
+			// read the latest prediction set for worst-case behavior
+			virtual adore::env::AFactory::TOCPredictionSetReader* getWorstCasePredictionSetReader() override
+      {
+        return new Reader<adore::env::OccupancyCylinderPredictionSet,
+                        adore_if_ros_msg::OccupancyCylinderPredictionSetConstPtr,
+                        OccupancyConverter>(n_,"ENV/Prediction/worstcase",1);
+      }
+
+			// read the latest prediction set for expected behavior, unfiltered
+			virtual adore::env::AFactory::TOCPredictionSetReader* getExpectedRawPredictionSetReader() override
+      {
+        return new Reader<adore::env::OccupancyCylinderPredictionSet,
+                        adore_if_ros_msg::OccupancyCylinderPredictionSetConstPtr,
+                        OccupancyConverter>(n_,"ENV/Prediction/expected_raw",1);
+      }
+
+			// read the latest prediction set for worst-case behavior, unfiltered
+			virtual adore::env::AFactory::TOCPredictionSetReader* getWorstCaseRawPredictionSetReader() override
+      {
+        return new Reader<adore::env::OccupancyCylinderPredictionSet,
+                        adore_if_ros_msg::OccupancyCylinderPredictionSetConstPtr,
+                        OccupancyConverter>(n_,"ENV/Prediction/worstcase_raw",1);
+      }
+
+			// read the latest prediction set for desired behavior
+			virtual adore::env::AFactory::TOCPredictionSetReader* getDesiredPredictionSetReader() override
+      {
+        return new Reader<adore::env::OccupancyCylinderPredictionSet,
+                        adore_if_ros_msg::OccupancyCylinderPredictionSetConstPtr,
+                        OccupancyConverter>(n_,"ENV/Prediction/desired",1);
+      }
+
+			// write the latest prediction set for expected behavior
+			virtual adore::env::AFactory::TOCPredictionSetWriter* getExpectedPredictionSetWriter() override
+      {
+         return new Writer<adore::env::OccupancyCylinderPredictionSet,
+                        adore_if_ros_msg::OccupancyCylinderPredictionSet,
+                        OccupancyConverter>(n_,"ENV/Prediction/expected",1);
      }
+
+			// write the latest prediction set for worst-case behavior
+			virtual adore::env::AFactory::TOCPredictionSetWriter* getWorstCasePredictionSetWriter() override
+      {
+        return new Writer<adore::env::OccupancyCylinderPredictionSet,
+                        adore_if_ros_msg::OccupancyCylinderPredictionSet,
+                        OccupancyConverter>(n_,"ENV/Prediction/worstcase",1);
+      }
+
+			// write the latest prediction set for expected behavior, unfiltered
+			virtual adore::env::AFactory::TOCPredictionSetWriter* getExpectedRawPredictionSetWriter() override
+      {
+         return new Writer<adore::env::OccupancyCylinderPredictionSet,
+                        adore_if_ros_msg::OccupancyCylinderPredictionSet,
+                        OccupancyConverter>(n_,"ENV/Prediction/expected_raw",1);
+     }
+
+			// write the latest prediction set for worst-case behavior, unfiltered
+			virtual adore::env::AFactory::TOCPredictionSetWriter* getWorstCaseRawPredictionSetWriter() override
+      {
+        return new Writer<adore::env::OccupancyCylinderPredictionSet,
+                        adore_if_ros_msg::OccupancyCylinderPredictionSet,
+                        OccupancyConverter>(n_,"ENV/Prediction/worstcase_raw",1);
+      }
+
+			// write the latest prediction set for desired behavior
+			virtual adore::env::AFactory::TOCPredictionSetWriter* getDesiredPredictionSetWriter() override
+      {
+        return new Writer<adore::env::OccupancyCylinderPredictionSet,
+                        adore_if_ros_msg::OccupancyCylinderPredictionSet,
+                        OccupancyConverter>(n_,"ENV/Prediction/desired",1);
+      }
+
+      // get combined lane geometry feed
+			adore::env::AFactory::TLaneGeometryFeed* getLaneGeometryFeed() override
+      {
+        return new Feed<adore::env::BorderBased::CombinedLaneGeometry,
+                          adore_if_ros_msg::LaneGeometryConstPtr,
+                          LaneGeometryConverter>(n_,"ENV/lanegeometry",100);
+      }
+
+      // write the combined lane geometry
+			adore::env::AFactory::TLaneGeometryWriter* getLaneGeometryWriter() override
+      {
+        return new Writer<adore::env::BorderBased::CombinedLaneGeometry,
+                        adore_if_ros_msg::LaneGeometry,
+                        LaneGeometryConverter>(n_,"ENV/lanegeometry",100);
+      }
+ 			adore::env::AFactory::TAreaOfEffectWriter* getAreaOfEffectWriter() override
+      {
+        return new Writer<adore::env::AreaOfEffect,
+                        adore_if_ros_msg::AreaOfEffect,
+                        AreaOfEffectConverter>(n_,"ENV/areaofeffect",1);
+      }
+     
 
     };
   }

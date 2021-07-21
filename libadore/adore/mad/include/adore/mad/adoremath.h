@@ -119,15 +119,16 @@ namespace adore
 		/**
 		 * fills an array with n values evenly spaced between x0 and x1
 		 */
-		template<typename T>
-		void linspace(T x0, T x1, T* target, int n)
+		template<typename T,typename Tarray>
+		void linspace(T x0, T x1, Tarray& target, int n)
 		{
 			T eps = 1e-10;//there seems to be a problem with floating point precision in debug mode
 			for (int i = 0; i < n; i++)
 			{
 				target[i] = x0 + (x1 - x0) / (T)(n - 1)*(T)i;
 			}
-			target[n - 1] = (std::min)(x1 - eps, target[n - 1]);///resolve rounding problem to not exceed limit
+			T tmp = target[n - 1];
+			target[n - 1] = (std::min)(x1 - eps,tmp) ;///resolve rounding problem to not exceed limit
 		}
 		/**
 		 * copy values from a matrix into an array
@@ -298,6 +299,214 @@ namespace adore
 		{
 			T n;
 			return getDistancePointToLine(a,b,c,d,e,f,rel,n);
+		}
+
+
+		/**
+		 * @brief Transformation from Euclidean coordinate system to a relative coordinate system represented by linear-piecewise function xy and normal.
+		 * The approximation of the originally non-linear function leads to inconsistencies with simpler methods.
+		 * The following equation is fulfilled: q=pi+s/L*(pj-pi)+t*(ni+s/L*(nj-ni))
+		 * @param qX the point to be transformed, X component
+		 * @param qY the point to be transformed, Y component
+		 * @param pi the initial point of the linearly approximated baseline (pis,pix,piy)
+		 * @param pj the final point of the linearly approximated baseline (pjs,pjx,pjy)
+		 * @param ni the initial normal vector (nix,niy)
+		 * @param nj the final normal vector (njx,njy)
+		 * @param s output: relative coordinate transversal component
+		 * @param t output: relative coordinate lateral component
+		 * @return true if transformation successful, false if qX,qY is not in the domain
+		 */
+		template<typename T1, typename T2>
+		bool toRelativeWithNormalExtrapolation(double qX,double qY,const T1 pi,const T1 pj, const T2 ni, const T2 nj, double& s, double & t)
+		{
+			const double d = std::sqrt(  (pi(1)-pj(1))*(pi(1)-pj(1))  +  (pi(2)-pj(2))*(pi(2)-pj(2))  );
+			if(d<1e-6)return false;//distance between points is too short
+
+			const double qY_ni = -ni(1)*(qX-pi(1)) + ni(0)*(qY-pi(2));//hight of q above ni
+			if(qY_ni>0.0)
+			{
+				//std::cout<<"q above ni, out of domain"<<std::endl;
+				return false;//above ni->out of domain
+			}
+			const double qY_nj = -nj(1)*(qX-pj(1)) + nj(0)*(qY-pj(2));//hight of q above nj
+			if(qY_nj<=0.0)
+			{
+				//std::cout<<"q below nj, out of domain"<<std::endl;
+				return false;//below nj->out of domain
+			}
+			const double cross_n = ni(0)*nj(1)-ni(1)*nj(0);//angle between normals
+			if(std::abs(cross_n)>1e-10)//if normals are not parallel
+			{
+				const double s_ni = (pj(1)*nj(1)-pj(2)*nj(0)+pi(2)*nj(0)-pi(1)*nj(1)) / cross_n;//distance of normal crossing along ni
+				const double qX_ni =  ni(0)*(qX-pi(1)) + ni(1)*(qY-pi(2));//distance of q along ni
+				if(s_ni<0.0)
+				{
+					if(qX_ni<s_ni)
+					{
+						//std::cout<<"q not in arc a)"<<std::endl;
+						return false;//query point is not in arc/domain
+					}
+				}
+				else
+				{
+					if(qX_ni>s_ni)
+					{
+						//std::cout<<"q not in arc b)"<<std::endl;
+						return false;//query point is not in arc/domain
+					}
+				}
+			}
+			const double L = pj(0)-pi(0);
+			const double cosv = (pj(1)-pi(1))/d;
+			const double sinv = (pj(2)-pi(2))/d;
+			const double qXr = cosv*(qX-pi(1)) + sinv*(qY-pi(2));
+			const double qYr =-sinv*(qX-pi(1)) + cosv*(qY-pi(2));
+			const double nixr = cosv*ni(0) + sinv*ni(1);
+			const double niyr =-sinv*ni(0) + cosv*ni(1);
+			const double njxr = cosv*nj(0) + sinv*nj(1);
+			const double njyr =-sinv*nj(0) + cosv*nj(1);
+			const double a = -d*niyr + d*njyr;
+			const double b = niyr*qXr - njyr*qXr + d*niyr - nixr*qYr + njxr*qYr;
+			const double c = -niyr*qXr + nixr*qYr;
+			
+			double sr=0;
+			if(std::abs(a)>1e-10)
+			{
+				const double s1 = (-b+std::sqrt(b*b-4.0*a*c))*0.5/a;
+				const double s2 = (-b-std::sqrt(b*b-4.0*a*c))*0.5/a;
+				sr = (0.0<=s1 && s1<=1.0)?s1:s2;
+				//std::cout<<"s1="<<s1<<std::endl;
+				//std::cout<<"s2="<<s2<<std::endl;
+			}
+			else if(std::abs(b)>1e-10)
+			{
+				sr = -c/b;
+			}
+			else
+			{
+				return false;
+			}
+			if(!(0.0<=sr && sr<=1.0))
+			{
+				//std::cout<<"sr not in [0,1]"<<std::endl;
+				return false;
+			}
+			
+
+			s = pi(0) + sr * L;
+			const double q0X = (1.0-sr) * pi(1) + sr * pj(1);
+			const double q0Y = (1.0-sr) * pi(2) + sr * pj(2);
+			const double dX = qX-q0X;
+			const double dY = qY-q0Y;
+			const double nx = (1.0-sr) * ni(0) + sr * nj(0);
+			const double ny = (1.0-sr) * ni(1) + sr * nj(1);
+			const double nL = std::sqrt(nx*nx+ny*ny);
+			t = (nx * dX + ny * dY) / nL;
+			const double e = (-ny * dX + nx * dY) / nL;
+			if(std::abs(e)>1.0e-10)
+			{
+				//std::cout<<"result not on normal vector, e="<<e<<std::endl;
+				return false;
+			}
+
+			//std::cout<<"niyr"<<niyr<<std::endl;
+			//std::cout<<"njyr"<<njyr<<std::endl;
+			//std::cout<<"a="<<a<<std::endl;
+			//std::cout<<"b="<<b<<std::endl;
+			//std::cout<<"c="<<c<<std::endl;
+			//std::cout<<"sr="<<sr<<std::endl;
+			//std::cout<<"t="<<t<<std::endl;
+			return true;
+		}
+
+
+		template<typename T1, typename T2>
+		bool toRelativeWithNormalExtrapolation(double qX,double qY,T1 centerline,T2 normals,double& s, double& t)
+		{
+			adoreMatrix<double,3,1> pi,pj;
+			adoreMatrix<double,2,1> ni,nj;
+			for(int i=0;i<centerline->getData().nc()-1;i++)
+			{
+				const int j = i+1;
+				for(int d=0;d<3;d++)pi(d)=centerline->getData()(d,i);
+				for(int d=0;d<3;d++)pj(d)=centerline->getData()(d,j);
+				for(int d=1;d<3;d++)ni(d-1)=normals->getData()(d,i);
+				for(int d=1;d<3;d++)nj(d-1)=normals->getData()(d,j);
+				if(toRelativeWithNormalExtrapolation(qX,qY,pi,pj,ni,nj,s,t))return true;
+			}
+			return false;
+			// double stest,ttest;
+			// bool value_found = false;
+			// for(int i=0;i<centerline->getData().nc()-1;i++)
+			// {
+			// 	const int j = i+1;
+			// 	for(int d=0;d<3;d++)pi(d)=centerline->getData()(d,i);
+			// 	for(int d=0;d<3;d++)pj(d)=centerline->getData()(d,j);
+			// 	for(int d=1;d<3;d++)ni(d-1)=normals->getData()(d,i);
+			// 	for(int d=1;d<3;d++)nj(d-1)=normals->getData()(d,j);
+			// 	if(toRelativeWithNormalExtrapolation(qX,qY,pi,pj,ni,nj,stest,ttest))
+			// 	{
+			// 		if(!value_found||std::abs(ttest)<std::abs(t))
+			// 		{
+			// 			value_found = true;
+			// 			s = stest;
+			// 			t = ttest;
+			// 		}
+			// 	}
+			// }
+			// return value_found;
+		}
+
+
+		/**
+		 * @brief Transform from relative coordinates to Euclidean coordinates.
+		 * @param s relative coordinate transversal component
+		 * @param t relative coordinate lateral component
+		 * @param pi first point of baseline (si,xi,yi)
+		 * @param pj last point of baseline (si,xi,yi)
+		 * @param ni first normal of baseline (nxi,nyi)
+		 * @param nj last normal of baseline (nxj,nyj)
+		 * @param X output, Euclidean x component
+		 * @param Y output, Euclidean y component
+		 * @return true if in domain
+		 */
+		template<typename T1, typename T2>
+		bool fromRelative(double s,double t,const T1 pi,const T1 pj, const T2 ni, const T2 nj, double& X, double & Y, double& Z)
+		{
+			// if(s<pi(0)||pj(0)<s)return false;
+			const double L = pj(0)-pi(0);
+			const double sr = (s-pi(0))/L;
+			const double q0X = (1.0-sr) * pi(1) + sr * pj(1);
+			const double q0Y = (1.0-sr) * pi(2) + sr * pj(2);
+			const double q0Z = (1.0-sr) * pi(3) + sr * pj(3);
+			const double nx = (1.0-sr) * ni(0) + sr * nj(0);
+			const double ny = (1.0-sr) * ni(1) + sr * nj(1);
+			const double nL = std::sqrt(nx*nx+ny*ny);
+			X = q0X + nx * t / nL;
+			Y = q0Y + ny * t / nL;
+			Z = q0Z;
+			return true;
+		}
+
+		/**
+		 * @brief transform from relative coordinates for given centerline and normal functions
+		 * @param s relative coordinate transversal component
+		 * @param t relative coordinate lateral component
+		 * @param centerline centerline function s->(X,Y,..) of type LLinearPiecewiseFunctionM*
+		 * @param normals normal function s->(nx,ny) of type LLinearPiecewiseFunctionM*
+		 */
+		template<typename T1,typename T2>
+		void fromRelative(double s,double t,T1 centerline,T2 normals,double& X,double& Y,double& Z)
+		{
+			adoreMatrix<double,3,1> pi,pj;
+			adoreMatrix<double,2,1> ni,nj;
+			int i = centerline->findIndex(s);
+			int j = i+1;
+			for(int d=0;d<3;d++)pi(d)=centerline->getData()(d,i);
+			for(int d=0;d<3;d++)pj(d)=centerline->getData()(d,j);
+			for(int d=1;d<3;d++)ni(d-1)=normals->getData()(d,i);
+			for(int d=1;d<3;d++)nj(d-1)=normals->getData()(d,j);
+			fromRelative(s,t,pi,pj,ni,nj,X,Y,Z);
 		}
 
 
@@ -496,6 +705,11 @@ namespace adore
 		inline int max( int a,const int & b)
 		{
 			return (std::max)(a, b);
+		}
+		template <typename T>
+		inline int signum(T val)
+		{
+    		return (T(0) < val) - (val < T(0));
 		}
 	}
 }

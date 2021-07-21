@@ -45,6 +45,26 @@ namespace adore
 					m_last.translate(dx,dy,dz);
 				}
 				/**
+				 * @return the distance between first and last coordinate
+				 */
+				double getLength()
+				{
+					const double dx = m_first.m_X-m_last.m_X;
+					const double dy = m_first.m_Y-m_last.m_Y;
+					const double dz = m_first.m_Z-m_last.m_Z;
+					return std::sqrt(dx*dx+dy*dy+dz*dz);
+				}
+
+				/**
+				 * @brief 
+				 * 
+				 */
+				void rotate(double angle, double x0=0.0, double y0=0.0)
+				{
+					m_first.rotate(angle, x0, y0);
+					m_last.rotate(angle, x0, y0);
+				}
+				/**
 				 * @brief Check equality of two BorderIDs
 				 * 
 				 * @param other second BorderID that should be checked for equality
@@ -119,6 +139,10 @@ namespace adore
 					auto test = BorderID(b.m_last,b.m_first);
 					return test;
 				}
+				BorderID getReverseDirectionID()const
+				{
+					return BorderID(m_last,m_first);
+				}				
 			};
 
 			/**

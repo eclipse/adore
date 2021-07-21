@@ -9,7 +9,7 @@
  * SPDX-License-Identifier: EPL-2.0 
  *
  * Contributors: 
- *   Reza Deriani - initial API and implementation
+ *   Reza Dariani - initial API and implementation
  ********************************************************************************/
 
 #pragma once
@@ -100,22 +100,24 @@ namespace adore
 			}
 
 			/**
-			 *  https://wiki.dlr.de/confluence/display/fau/How+to+use+Fit+function
+			 *  based on Schöneberg and Reinsch smoothing spline
+			 * 	https://link.springer.com/content/pdf/10.1007/BF02162161.pdf
+			 *  https://en.wikipedia.org/wiki/Smoothing_spline
+			*	https://wiki.dlr.de/confluence/display/fau/How+to+use+Fit+function
 			 *  size of input_x and input_y has to be N+1
 			 */
 			void fit(double *input_x,double *input_y,double *input_w, double smoothingFactor)
 			{
+				//step by step info  : /adore/mad/src/cubic_piecewise_function.cpp
 				//intermediate variables
 				double dx[N-1];
-				double odx[N-1];
+				double oneDivDx[N-1];
 				double dy[N-1];
-				double divdif[N-1];
-
-				
+				double DyDx[N-1];				
 				ArrayMatrixTools::diff(dx,input_x,N);
 				ArrayMatrixTools::diff(dy,input_y,N);
-				for(int i=0;i<N-1;i++){odx[i]=1.0/dx[i];}
-				ArrayMatrixTools::pointwise_multiply(divdif,odx,dy,N-1);//dy/dx
+				for(int i=0;i<N-1;i++){oneDivDx[i]=1.0/dx[i];}
+				ArrayMatrixTools::pointwise_multiply(DyDx,oneDivDx,dy,N-1);//dy/dx
 				
 				double dx1n_2[N-2]; //dx from 1 --> N-2
 				double dx0n_3[N-2];  //dx from 0 --> N-3
@@ -128,9 +130,9 @@ namespace adore
 				double sp_dx1n_2 [(N-2)*(N-2)];
 				double sp_dx0n_3 [(N-2)*(N-2)];
 				double sp_dx2x1n_20n_3 [(N-2)*(N-2)]; 
-				ArrayMatrixTools::spdiags(sp_dx1n_2,dx1n_2,N-2,N-2,N-2,-1);
-				ArrayMatrixTools::spdiags(sp_dx0n_3,dx0n_3,N-2,N-2,N-2,1);
-				ArrayMatrixTools::spdiags(sp_dx2x1n_20n_3,dx2x1n_20n_3,N-2,N-2,N-2,0);
+				ArrayMatrixTools::sparseDiagonalMatrix(sp_dx1n_2,dx1n_2,N-2,N-2,N-2,-1);
+				ArrayMatrixTools::sparseDiagonalMatrix(sp_dx0n_3,dx0n_3,N-2,N-2,N-2,1);
+				ArrayMatrixTools::sparseDiagonalMatrix(sp_dx2x1n_20n_3,dx2x1n_20n_3,N-2,N-2,N-2,0);
 
 				double R[(N-2)*(N-2)];
 				for(int i=0; i<N-2;i++)  //data are from 1-->n-2 or 0-->n-3 this is why there is an extrea -2 in i<n-2-2
@@ -141,22 +143,22 @@ namespace adore
 					}
 				}						
 				//intermediate variables
-				double odx1n_2[N-2];
-				double odx0n_3[N-2];
-				double odx_1n_20n_3[N-2];
+				double oneDivDx1n_2[N-2];
+				double oneDivDx0n_3[N-2];
+				double oneDivDx_1n_20n_3[N-2];
 				
-				ArrayMatrixTools::pieceOfArray(odx1n_2,odx,1,N-2);
-				ArrayMatrixTools::pieceOfArray(odx0n_3,odx,0,N-3);
+				ArrayMatrixTools::pieceOfArray(oneDivDx1n_2,oneDivDx,1,N-2);
+				ArrayMatrixTools::pieceOfArray(oneDivDx0n_3,oneDivDx,0,N-3);
 				for(int i=0;i<N-2;i++){
-					odx_1n_20n_3[i]=-1*(odx1n_2[i]+odx0n_3[i]);}
+					oneDivDx_1n_20n_3[i]=-1*(oneDivDx1n_2[i]+oneDivDx0n_3[i]);}
 				
 				//sparse matrix intermediate variables
-				double sp_odx1n_2[(N-2)*(N)];
-				double sp_odx0n_3[(N-2)*(N)];
-				double sp_odx_1n_20n_3[(N-2)*(N)];
-				ArrayMatrixTools::spdiags(sp_odx1n_2,odx1n_2,N-2,N,N-2,2);
-				ArrayMatrixTools::spdiags(sp_odx0n_3,odx0n_3,N-2,N,N-2,0);
-				ArrayMatrixTools::spdiags(sp_odx_1n_20n_3,odx_1n_20n_3,N-2,N,N-2,1);
+				double sp_oneDivDx1n_2[(N-2)*(N)];
+				double sp_oneDivDx0n_3[(N-2)*(N)];
+				double sp_oneDivDx_1n_20n_3[(N-2)*(N)];
+				ArrayMatrixTools::sparseDiagonalMatrix(sp_oneDivDx1n_2,oneDivDx1n_2,N-2,N,N-2,2);
+				ArrayMatrixTools::sparseDiagonalMatrix(sp_oneDivDx0n_3,oneDivDx0n_3,N-2,N,N-2,0);
+				ArrayMatrixTools::sparseDiagonalMatrix(sp_oneDivDx_1n_20n_3,oneDivDx_1n_20n_3,N-2,N,N-2,1);
 
 				//Qt and its transpose (see wiki link)
 				double Qt[(N-2)*(N)];
@@ -166,29 +168,29 @@ namespace adore
 				{
 					for(int j=0; j<N;j++)
 					{
-						Qt[i*(N)+j]=sp_odx1n_2[i*(N)+j]+sp_odx0n_3[i*(N)+j]+sp_odx_1n_20n_3[i*(N)+j];
+						Qt[i*(N)+j]=sp_oneDivDx1n_2[i*(N)+j]+sp_oneDivDx0n_3[i*(N)+j]+sp_oneDivDx_1n_20n_3[i*(N)+j];
 					}
 				}
 				
 				//intermediate variables
-				double ow[N];
-				double sp_w[N*N];
-				double Qtw[(N-2)*N];
-				double QtWQ[(N-2)*(N-2)];
+				double D[N];
+				double sp_D[N*N];
+				double QtD[(N-2)*N];
+				double QtDQ[(N-2)*(N-2)];
 				//double temp_M[(N-2)*(N-2)];
-				for(int i=0;i<N;i++) { ow[i]=1.0/input_w[i];}
+				for(int i=0;i<N;i++) { D[i]=1.0/input_w[i];}
 
-				ArrayMatrixTools::spdiags(sp_w,ow,N,N,N,0);		
+				ArrayMatrixTools::sparseDiagonalMatrix(sp_D,D,N,N,N,0);		
 				ArrayMatrixTools::transpose(QtT,Qt,N-2,N);
-				ArrayMatrixTools::matrixMultiplication(Qtw,Qt,N-2,N,sp_w,N,N);
-				ArrayMatrixTools::matrixMultiplication(QtWQ,Qtw,N-2,N,QtT,N,N-2);
+				ArrayMatrixTools::matrixMultiplication(QtD,Qt,N-2,N,sp_D,N,N);
+				ArrayMatrixTools::matrixMultiplication(QtDQ,QtD,N-2,N,QtT,N,N-2);
 				
 				//intermediate matrix definition (dlib will be used to calculated matrix inverse)
 				dlib::matrix<double> M(N-2,N-2);
 				dlib::matrix<double> inv_M;
 				for(int i=0; i<(N-2);i++){
 					for(int j=0; j<(N-2); j++){
-						M(i,j)=6*(1-smoothingFactor)*QtWQ[i*(N-2)+j]+smoothingFactor*R[i*(N-2)+j];
+						M(i,j)=6*(1-smoothingFactor)*QtDQ[i*(N-2)+j]+smoothingFactor*R[i*(N-2)+j];
 					}
 				}
 				inv_M=dlib::inv(M);
@@ -204,33 +206,33 @@ namespace adore
 					}
 				}
 				//intermediate variables 
-				double diff_divdif[N-2];    
+				double diff_DyDx[N-2];    
 				double u[N-2];
 				double u_n[N]; //in order to add zero at beginning and at the end
 				double diff_u_n[N-1];
 
-				ArrayMatrixTools::diff(diff_divdif,divdif,N-1);
-				ArrayMatrixTools::matrixMultiplication(u,temp_invM,N-2,N-2,diff_divdif,N-2,1);
+				ArrayMatrixTools::diff(diff_DyDx,DyDx,N-1);
+				ArrayMatrixTools::matrixMultiplication(u,temp_invM,N-2,N-2,diff_DyDx,N-2,1);
 				u_n[0]=0;  //at beggining
 				u_n[N-1]=0; //at end
 				for(int i=0; i<N-2; i++)  {u_n[i+1]=u[i];}
 				ArrayMatrixTools::diff(diff_u_n,u_n,N); //   matlab equivalent --> diff([zeros(1,yd); u; zeros(1,yd)])
 				
 				 //intermediate variables
-				double diff_u_n_odx [N-1];
-				double diff_unodx_n1[N+1]; //to add a zero at beggining and the end (needed for diff)
-				double diff2_unodx_n1[N];
-				ArrayMatrixTools::pointwise_multiply(diff_u_n_odx,diff_u_n,odx,N-1); // matlab equivalent -->diff([zeros(1,yd); u; zeros(1,yd)])./dx(:,dd)
-				diff_unodx_n1[0]=0; //at beginning
-				diff_unodx_n1[N]=0; //at end
-				for(int i=0; i<N-1; i++) {diff_unodx_n1[i+1]=diff_u_n_odx[i];}
-				ArrayMatrixTools::diff(diff2_unodx_n1,diff_unodx_n1,N+1);
+				double diff_u_n_oneDivDx [N-1];
+				double diff_unoneDivDx_n1[N+1]; //to add a zero at beggining and the end (needed for diff)
+				double diff2_unoneDivDx_n1[N];
+				ArrayMatrixTools::pointwise_multiply(diff_u_n_oneDivDx,diff_u_n,oneDivDx,N-1); // matlab equivalent -->diff([zeros(1,yd); u; zeros(1,yd)])./dx(:,dd)
+				diff_unoneDivDx_n1[0]=0; //at beginning
+				diff_unoneDivDx_n1[N]=0; //at end
+				for(int i=0; i<N-1; i++) {diff_unoneDivDx_n1[i+1]=diff_u_n_oneDivDx[i];}
+				ArrayMatrixTools::diff(diff2_unoneDivDx_n1,diff_unoneDivDx_n1,N+1);
 
 				//Finaly calculating smooth y
 				double yi[N];
 				for(int i=0; i<N; i++)		
 				{
-					yi[i]=input_y[i]-(6*(1-smoothingFactor))*sp_w[i*N+i]*diff2_unodx_n1[i];
+					yi[i]=input_y[i]-(6*(1-smoothingFactor))*sp_D[i*N+i]*diff2_unoneDivDx_n1[i];
 				}
 
 				//Converting y to cubic coeeficients which results is y = coef1*h^3 + coef2*h^2 + coef3*h + coef4
@@ -245,12 +247,12 @@ namespace adore
 				c3[N-1]=0;
 				for(int i=0; i<N-2; i++)  {c3[i+1]=u[i]*smoothingFactor;}
 				ArrayMatrixTools::diff(diff_yi,yi,N);
-				for(int i=0; i<N-1; i++) {c2[i]=diff_yi[i]*odx[i]-dx[i]*(2*c3[i]+c3[i+1]);}
+				for(int i=0; i<N-1; i++) {c2[i]=diff_yi[i]*oneDivDx[i]-dx[i]*(2*c3[i]+c3[i+1]);}
 				ArrayMatrixTools::diff(diff_c3,c3,N);
 				for(int i=0; i<N-1; i++)
 				{
 					breaks[i] = input_x[i];
-					coef_1[i]=diff_c3[i]*odx[i];
+					coef_1[i]=diff_c3[i]*oneDivDx[i];
 					coef_2[i]=3*c3[i];
 					coef_3[i] = c2[i];
 					coef_4[i] = yi[i];

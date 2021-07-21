@@ -1,0 +1,30 @@
+<!--********************************************************************************
+ * Copyright (C) 2017-2020 German Aerospace Center (DLR). 
+ * Eclipse ADORe, Automated Driving Open Research https://eclipse.org/adore
+ *
+ * This program and the accompanying materials are made available under the 
+ * terms of the Eclipse Public License 2.0 which is available at
+ * http://www.eclipse.org/legal/epl-2.0.
+ *
+ * SPDX-License-Identifier: EPL-2.0 
+ *
+ * Contributors: 
+ *   Daniel Heß - initial API and implementation
+ ********************************************************************************-->
+<launch>
+  <node name="timer" pkg="adore_if_ros" type="adore_timer_node" output="screen" launch-prefix="xterm -e" args=""/>
+  <group ns="vehicle0">
+    <include file="demo_vehicle_cfg03.launch"/>
+    <include file="demo_plotters.launch"/>
+    <param name="PARAMS/track" value="$(dirname)/tracks/r2s/tost2dlr.r2sl,$(dirname)/tracks/r2s/tost2dlr.r2sr" type="str" />
+    <param name="PARAMS/local_road_map/navigation_active" value="true" type="bool" />
+    <param name="PARAMS/navigation/active_plotting_global" value="false" type="bool" />  
+    <param name="PARAMS/tactical_planner/global_speed_limit" value="13" type="double" />  
+    <param name="simulationID" value="0" type="int" />  
+    <node pkg="adore_if_ros" type="plot_trajectories_node" name="plot_trajectories"/><!--plot vehicle trajectory-->
+    <!-- set the start position -->
+    <node pkg="rostopic" type="rostopic" name="posereset" args="pub /vehicle0/SIM/ResetVehiclePose geometry_msgs/Pose '{position: {x: 605028.904298, y: 5794739.214180, z: 0},orientation: {z: 0.684698, w: 0.728827}}'"/>
+    <!-- set the goal position -->
+    <node pkg="rostopic" type="rostopic" name="navgoal" args="pub /vehicle0/ENV/NavigationGoal adore_if_ros_msg/NavigationGoal '{target: {x: 605023.526057, y: 5795117.232238, z: 0}}'"/>
+  </group>
+</launch>

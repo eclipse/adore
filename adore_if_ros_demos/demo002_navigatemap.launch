@@ -20,6 +20,7 @@
       <param name="active_plotting_local" value="false" type="bool" />  
       <param name="active_plotting_global" value="true" type="bool" />  
       <param name="use_scenario_mananger_map" value="false" type="bool" />
+      <param name="lane_change_penalty" value="1000.0" type="double" />
     </group>
     <node name="lnav" pkg="adore_if_ros" type="adore_navigation_node" output="screen"/>
     <node pkg="rostopic" type="rostopic" name="navgoal" args="pub /vehicle0/ENV/NavigationGoal adore_if_ros_msg/NavigationGoal '{target: {x: 150, y: 162, z: 0}}'"/>

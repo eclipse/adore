@@ -15,7 +15,6 @@
 
 #pragma once
 
-#include <adore/view/alanefollowingview.h>
 #include <adore/fun/afactory.h>
 #include <adore/fun/tac/basiclanefollowingplanner.h>
 #include <adore/env/afactory.h>
@@ -23,6 +22,15 @@
 #include <adore/env/borderbased/lanefollowingview.h>
 #include <adore/env/borderbased/localroadmap.h>
 #include <adore/env/traffic/trafficmap.h>
+#include <adore/env/navigationgoalobserver.h>
+#include <adore/env/tcd/connectionsonlane.h>
+#include <adore/fun/tac/mrmplanner.h>
+#include <adore/fun/safety/setpointrequestswath.h>
+#include <adore/env/threelaneviewdecoupled.h>
+#include <adore/fun/tac/basicsetpointrequestevaluators.h>
+#include <adore/env/traffic/decoupledtrafficpredictionview.h>
+#include <adore/apps/trajectory_planner_lf.h>
+
 
 namespace adore
 {
@@ -30,88 +38,119 @@ namespace adore
   {
     /**
      * @brief Decision making and maneuver planning, which realizes lane following only.
-     * Based on lane following view, a lane following maneuver is planned and dispatched.
+     * Basically a wrapper for trajectory_planner_lf, with initial state selection and direct SetPointRequest output to controller.
      * 
      */
     class LaneFollowingBehavior
     {
       private:
-      typedef adore::fun::BasicLaneFollowingPlanner<20,5> TPlanner;
-      adore::env::AFactory* envFactory_;
-      adore::fun::AFactory* funFactory_;
-      adore::params::AFactory* paramsFactory_;
       adore::params::APVehicle* pvehicle_;
       adore::params::APTacticalPlanner* pTacticalPlanner_;
-      adore::env::BorderBased::LocalRoadMap roadmap_;
-      adore::env::traffic::TrafficMap trafficMap_;
-      adore::env::BorderBased::LaneFollowingView lfv_;
+      adore::params::APTrajectoryGeneration* pTrajectoryGeneration_;
       adore::mad::AReader<adore::fun::VehicleMotionState9d>* xreader_;
-      adore::mad::AWriter<adore::fun::SetPointRequest>* wwriter_;
+      adore::mad::AReader<adore::fun::VehicleExtendedState>* xxreader_;
+      adore::mad::AWriter<adore::fun::SetPointRequest>* sprwriter_;
+      adore::mad::AWriter<adore::fun::SetPointRequest>* ntwriter_;
+      adore::mad::AWriter<adore::fun::PlanningResult>* prwriter_;
       adore::fun::VehicleMotionState9d x_;
-      TPlanner* planner_;
+      adore::fun::VehicleExtendedState xx_;
+      adore::fun::PlanningResult last_valid_planning_result_;
+
+      TrajectoryPlannerLF trajectory_planner_;
+
+
       public:
       virtual ~LaneFollowingBehavior()
       {
+        delete pvehicle_;
+        delete pTacticalPlanner_;
+        delete pTrajectoryGeneration_;
         delete xreader_;
-        delete wwriter_;
-        delete planner_;
+        delete xxreader_;
+        delete sprwriter_;
+        delete prwriter_;
       }
-      LaneFollowingBehavior(adore::env::AFactory* envFactory,
-                            adore::fun::AFactory* funFactory,
-                            adore::params::AFactory* PARAMS_Factory)
-          :envFactory_(envFactory),funFactory_(funFactory),paramsFactory_(PARAMS_Factory),
-           roadmap_(envFactory,paramsFactory_),trafficMap_(roadmap_.getBorderSet(),envFactory),
-           lfv_(paramsFactory_,&roadmap_,&trafficMap_)
+      LaneFollowingBehavior()
       {
-        pvehicle_ = paramsFactory_->getVehicle();
-        pTacticalPlanner_ = PARAMS_Factory->getTacticalPlanner();
-        planner_ = new TPlanner(&lfv_,
-                                PARAMS_Factory->getLongitudinalPlanner(),
-                                PARAMS_Factory->getLateralPlanner(),
-                                PARAMS_Factory->getTacticalPlanner(),
-                                pvehicle_,
-                                PARAMS_Factory->getTrajectoryGeneration());
-        xreader_ = funFactory->getVehicleMotionStateReader();
-        wwriter_ = funFactory->getSetPointRequestWriter();
+        pvehicle_ = adore::params::ParamsFactoryInstance::get()->getVehicle();
+        pTacticalPlanner_ = adore::params::ParamsFactoryInstance::get()->getTacticalPlanner();
+        pTrajectoryGeneration_ = adore::params::ParamsFactoryInstance::get()->getTrajectoryGeneration();
+        xreader_ = adore::fun::FunFactoryInstance::get()->getVehicleMotionStateReader();
+        xxreader_ = adore::fun::FunFactoryInstance::get()->getVehicleExtendedStateReader();
+        sprwriter_ = adore::fun::FunFactoryInstance::get()->getSetPointRequestWriter();
+        prwriter_ = adore::fun::FunFactoryInstance::get()->getPlanningResultWriter();
+        ntwriter_ = adore::fun::FunFactoryInstance::get()->getNominalTrajectoryWriter();
       }
       /**
-       * @brief update data, views and recompute maneuver
+       * @brief select initial state and recompute maneuver
        * 
        */
       void run()
       {
-        roadmap_.update();
-        trafficMap_.update();
-        lfv_.update();
+        adore::fun::PlanningRequest request;
+        adore::fun::PlanningResult result;
         xreader_->getData(x_);
-        auto x_replan = x_;
-        bool reset = true;
-        if(planner_->hasValidPlan())
+        xxreader_->getData(xx_);
+        request.iteration ++;
+        request.initial_state = selectInitialState(x_,xx_,last_valid_planning_result_.combined_maneuver,
+                                                        last_valid_planning_result_.combined_maneuver_valid);
+        request.t_emergency_start = x_.getTime() + pTrajectoryGeneration_->getEmergencyManeuverDelay();
+
+        trajectory_planner_.computeTrajectory(request,result);
+
+        if(result.combined_maneuver_valid)
         {
-          auto spr = planner_->getSetPointRequest();
-          double t = x_.getTime();
-          if( spr->isActive(t) )
+          sprwriter_->write(result.combined_maneuver);
+          ntwriter_->write(result.nominal_maneuver);
+          last_valid_planning_result_ = result;
+        }        
+
+        prwriter_->write(result);
+      }
+
+      adore::fun::SetPoint selectInitialState(adore::fun::VehicleMotionState9d& x,
+                                              adore::fun::VehicleExtendedState& xx,
+                                              adore::fun::SetPointRequest& last_maneuver,
+                                              bool last_maneuver_valid)
+      {
+        bool reset = true;
+        adore::fun::SetPoint result;
+        result.x0ref = adore::fun::PlanarVehicleState10d(x);
+        result.tStart = x.getTime();
+        result.tEnd = x.getTime();
+
+        if( last_maneuver_valid
+            && last_maneuver.setPoints.size()>0 //maneuver exists 
+            && xx.getAutomaticControlOn() //< Freigabe im Fahrzeuginterface für Längs und Quer erhalten
+            && xx.getAutomaticControlAccelerationActive())// Bestätigung der Freigabe durch Benutzer/Gaspedal erfolgt
+        {
+          double t = x.getTime();
+          if( last_maneuver.isActive(t) )
           {
-            auto x_ref = spr->interpolateReference(t,pvehicle_);
-            double dx = x_.getX()-x_ref.getX();
-            double dy = x_.getY()-x_ref.getY();
-            if(dx*dx+dy*dy<pTacticalPlanner_->getResetRadius())
+            auto x_ref = last_maneuver.interpolateReference(t,pvehicle_);
+            double dx = x.getX()-x_ref.getX();
+            double dy = x.getY()-x_ref.getY();
+            double R = pTacticalPlanner_->getResetRadius();
+            if(dx*dx+dy*dy<R*R)
             {
-              x_replan.setX(x_ref.getX());
-              x_replan.setY(x_ref.getY());
-              x_replan.setPSI(x_ref.getPSI());
-              x_replan.setvx(x_ref.getvx());
-              x_replan.setvy(x_ref.getvy());
-              x_replan.setOmega(x_ref.getOmega());
-              x_replan.setAx(x_ref.getAx());
-              x_replan.setDelta(x_ref.getDelta());
+              result.x0ref = x_ref;
               reset = false;
+            }
+            else
+            {
+              std::cout <<"trajectory cannot be resumed: reset readius exceeded"<<std::endl;
+            }
+          }
+          else
+          {
+            if(last_maneuver.setPoints.size()>0)
+            {
+              std::cout <<"trajectory cannot be resumed due to timeout. t= "<<t<<", spr: ["<<last_maneuver.setPoints.front().tStart<<";"<<last_maneuver.setPoints.back().tEnd<<"]"<<std::endl;
             }
           }
         }
         if(reset)std::cout<<"TestTrajectoryPlanner: Reset initial state.\n";
-        planner_->compute(x_replan);
-        if(planner_->hasValidPlan())wwriter_->write(*planner_->getSetPointRequest());
+        return result;
       }
     };
   }

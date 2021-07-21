@@ -59,8 +59,8 @@ namespace adore
 					return (T)0;
 				}
 			}
-			virtual DT limitHi()override { return m_data->limitHi(); }
-			virtual DT limitLo()override { return m_data->limitLo(); }
+			virtual DT limitHi() const override { return m_data->limitHi(); }
+			virtual DT limitLo() const override { return m_data->limitLo(); }
 			virtual void invertDirection()override { m_data->invertDirection(); }
 			virtual void setLimits(DT lo, DT hi)override { m_data->setLimits(lo, hi); }
 			virtual ALFunction<DT, CT>* clone()override { return new IntegratorChain((AScalarToN<T, depth>*)m_data->clone(), m_level); }

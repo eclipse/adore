@@ -44,17 +44,22 @@ namespace adore
                 params::APVehicle* params_;
                 double last_time_;
                 double integration_step_;
+                double last_time_checkpoint_clearance_;
                 bool last_time_valid_;
+                bool automatic_control_;
+                bool checkpoint_clearance_;
                 adoreMatrix<double,10,1> x_;
                 adore::fun::MotionCommand u_;
                 adore::mad::AReader<double>* timer_;
                 adore::mad::AReader<adore::fun::MotionCommand>* control_input_; 
                 adore::mad::AWriter<adore::fun::VehicleMotionState9d>* gps_output_; /** < publishes ego state measurement inside vehicle */
+                adore::mad::AWriter<adore::fun::VehicleExtendedState>* extended_state_output_; /** < publishes extended state values inside vehicle */
                 adore::mad::OdeRK4<double> solver_;
                 adore::mad::AFeed<adore::sim::ResetVehiclePose>* reset_pose_feed_;
                 adore::mad::AFeed<adore::sim::ResetVehicleTwist>* reset_twist_feed_;  
                 adore::sim::AFactory::TParticipantWriter* participant_writer_;/** < publishes vehicle state globally*/             
-                int simulationID_;
+                adore::env::traffic::Participant::TTrackingID simulationID_;
+                adore::env::traffic::Participant::TV2XStationID v2xStationID_;
 
 
             public:
@@ -65,20 +70,43 @@ namespace adore
                  * @param paramfactory adore::params factory
                  * @param simulationID id of vehicle in simulation
                  */
-                VehicleModel(sim::AFactory* sim_factory,params::AFactory* paramfactory,int simulationID)
+                VehicleModel(sim::AFactory* sim_factory,params::AFactory* paramfactory,adore::env::traffic::Participant::TTrackingID simulationID, adore::env::traffic::Participant::TV2XStationID v2xStationID)
                 {
                     simulationID_ = simulationID;
+                    v2xStationID_ = v2xStationID;
                     integration_step_ = 0.005;
                     last_time_valid_ = false;
                     x_ = dlib::zeros_matrix<double>(10l,1l);
                     timer_ = sim_factory->getSimulationTimeReader();
                     control_input_ = sim_factory->getMotionCommandReader();
                     gps_output_ = sim_factory->getVehicleMotionStateWriter();
+                    extended_state_output_ = sim_factory->getVehicleExtendedStateWriter();
                     reset_pose_feed_ = sim_factory->getVehiclePoseResetFeed();
                     reset_twist_feed_ = sim_factory->getVehicleTwistResetFeed();
                     participant_writer_ = sim_factory->getParticipantWriter();
                     params_ = paramfactory->getVehicle();
+                    automatic_control_ = true;
+                    checkpoint_clearance_ = false;
+                    last_time_checkpoint_clearance_ = 0.0;
                 }
+
+                /**
+                 * @brief switches between manual and automatic control input
+                 */
+                void setAutomaticControl(bool value)
+                {
+                    automatic_control_=value;
+                }
+
+                /**
+                 * @brief confirmation of current checkout
+                 */
+                void setCheckpointClearance()
+                {
+                    checkpoint_clearance_=true;
+                }
+
+
                 /**
                  * @brief simulation step of the vehicle model
                  * 
@@ -119,21 +147,46 @@ namespace adore
 
                         double current_time;
                         timer_->getData(current_time);
+
+                        //handle checkpoint clearance event
+                        if( checkpoint_clearance_ )
+                        {
+                            last_time_checkpoint_clearance_ = current_time;
+                            checkpoint_clearance_ = false;
+                        }
+                        bool delayed_checkpoint_clearance = (current_time - last_time_checkpoint_clearance_)<3.0;
+
                         if(last_time_valid_)
                         {
-                            if( control_input_->hasData() )
+                            if( automatic_control_ )
                             {
-                                control_input_->getData(u_);
+                                if( control_input_->hasData() )
+                                {
+                                    control_input_->getData(u_);
+                                }
+                                else
+                                {
+                                    u_.setAcceleration(0.0);
+                                    u_.setSteeringAngle(0.0);
+                                }
                             }
                             else
                             {
-                                u_.setAcceleration(0.0);
-                                u_.setSteeringAngle(0.0);
+                                // if( manual_input_->hasData() )
+                                // {
+                                //     manual_input_->getData(u_);
+                                // }
+                                // else
+                                {
+                                    u_.setAcceleration(0.0);
+                                    u_.setSteeringAngle(0.0);
+                                }
                             }
+                            
                             auto T = adore::mad::sequence(last_time_,integration_step_,current_time);
                             
                             x_(6) = u_.getAcceleration();
-                            x_(7) = u_.getSteeringAngle();
+                            x_(7) = u_.getSteeringAngle() / params_->get_steeringRatio();
                             x_(8) = 0.0; //dax=0
                             x_(9) = 0.0; //ddelta=0
                             adore::fun::VLB_OpenLoop model(params_);
@@ -153,6 +206,17 @@ namespace adore
                             xout.setDelta(x_(7));
                             xout.setTime(current_time);
                             gps_output_->write(xout);
+
+                            //vehicle extended state
+                            adore::fun::VehicleExtendedState xxout;
+                            xxout.setGearState(adore::fun::VehicleExtendedState::Drive);
+                            xxout.setAutomaticControlAccelerationOn(automatic_control_);
+                            xxout.setAutomaticControlAccelerationActive(automatic_control_);
+                            xxout.setAutomaticControlSteeringOn(automatic_control_);
+                            xxout.setCheckpointClearance(delayed_checkpoint_clearance);
+                            xxout.setIndicatorLeftOn(false);
+                            xxout.setIndicatorRightOn(false);
+                            extended_state_output_->write(xxout);
                             
                             //publication of vehicle state to other vehicles
                             adore::env::traffic::Participant yout;
@@ -174,7 +238,7 @@ namespace adore
                             yout.width_ = params_->get_bodyWidth();
                             yout.yaw_ = xout.getPSI();
                             yout.trackingID_ = simulationID_;
-                            yout.v2xStationID_ = simulationID_;//@TODO: fix this
+                            yout.v2xStationID_ = v2xStationID_;
                             participant_writer_->write(yout);
 
                             last_time_ = current_time;

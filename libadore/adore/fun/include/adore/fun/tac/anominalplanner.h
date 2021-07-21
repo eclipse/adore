@@ -14,8 +14,6 @@
 
 #pragma once
 
-#include <adore/view/alanefollowingview.h>
-#include <adore/view/alanechangeview.h>
 #include <adore/fun/setpointrequest.h>
 #include <adore/fun/vehiclemotionstate9d.h>
 

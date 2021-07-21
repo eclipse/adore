@@ -287,7 +287,7 @@ public:
   public:
     Expansion(Node* n, Border* left, Border* right, itCoordinate2Border& it, ABorderGraphCost* cost,
               bool search_forward, bool allow_direction_inversion = false)
-      : m_n(n), m_it(it), m_cost(cost), m_search_forward(search_forward)
+      : m_it(it), m_n(n), m_cost(cost), m_search_forward(search_forward)
     {
       if (left != 0 && (allow_direction_inversion || n->m_border->getNeighborDirection() == Border::SAME_DIRECTION))
       {

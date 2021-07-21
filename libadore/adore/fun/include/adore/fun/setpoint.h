@@ -43,6 +43,13 @@ namespace adore
 			{
 				
 			}
+			VehicleMotionState9d toMotionState()const
+			{
+				VehicleMotionState9d x;
+				x.copyFromPlanar(x0ref);
+				x.setTime(tStart);
+				return x;
+			}
 		};
 	}
 }

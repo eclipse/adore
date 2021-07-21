@@ -11,6 +11,7 @@
  * Contributors: 
  *   Daniel Heß - initial API and implementation
  *   Stephan Lapoehn - initial API and implementation
+ *   Thomas Lobig - refactoring
  ********************************************************************************/
 
 #pragma once
@@ -18,6 +19,7 @@
 #include <adore/mad/fun_essentials.h>
 #include <boost/geometry.hpp>
 #include <boost/geometry/geometries/box.hpp>
+#include <adore/mad/linearfunctiontypedefs.h>
 
 namespace adore
 {
@@ -59,7 +61,7 @@ namespace adore
 			struct Border
 			{
 				/// L -> X,Y,Z
-				typedef adore::mad::LLinearPiecewiseFunctionM<double, 3> Tborderpath;
+				using Tborderpath = adore::mad::function_type_xyz;
 				/// bounding box
 				typedef boost::geometry::model::box<Coordinate::boost_point> boost_box;
 
@@ -192,18 +194,45 @@ namespace adore
 					m_type = type;
 				}
 				/**
+				 * @brief Construct a new Border object for unit testing
+				 */
+				Border(double rx0,double ry0,double rx1,double ry1,double lx0,double ly0,double lx1,double ly1)
+				{
+					m_id = BorderID(Coordinate(rx0,ry0,0.0),Coordinate(rx1,ry1,0.0));
+					m_left = new BorderID(Coordinate(lx0,ly0,0.0),Coordinate(lx1,ly1,0.0));
+					m_path = nullptr;
+					m_type = BorderType::DRIVING;
+				}
+				/**
+				 * @brief Construct a new Border object for unit testing
+				 */
+				Border(double rx0,double ry0,double rx1,double ry1)
+				{
+					m_id = BorderID(Coordinate(rx0,ry0,0.0),Coordinate(rx1,ry1,0.0));
+					m_left = nullptr;
+					m_path = nullptr;
+					m_type = BorderType::DRIVING;
+				}
+				/**
 				 * @brief Change the type of the border to a "deleted"-type
 				 * 
 				 */
 				void deleteType()
 				{
+
 					switch(m_type)
 					{
+					case BorderType::OTHER: // silence -Wswitch warning
+						break;
 					case BorderType::DRIVING:
 						m_type = BorderType::DRIVING_DELETED;
 						break;
+					case BorderType::DRIVING_DELETED: // silence -Wswitch warning
+						break;
 					case BorderType::EMERGENCY:
 						m_type = BorderType::EMERGENCY_DELETED;
+						break;
+					case BorderType::EMERGENCY_DELETED: // silence -Wswitch warning
 						break;
 					}
 				}
@@ -213,16 +242,22 @@ namespace adore
 				 */
 				void undeleteType()
 				{
-					switch(m_type)
-					{
-					case BorderType::DRIVING_DELETED:
-						m_type = BorderType::DRIVING;
-						break;
-					case BorderType::EMERGENCY_DELETED:
-						m_type = BorderType::EMERGENCY;
-						break;
-					}
-				}
+                    switch (m_type)
+                    {
+                        case BorderType::OTHER: // silence -Wswitch warning
+                            break;
+                        case BorderType::DRIVING: // silence -Wswitch warning
+                            break;
+                        case BorderType::DRIVING_DELETED:
+                            m_type = BorderType::DRIVING;
+                            break;
+                        case BorderType::EMERGENCY: // silence -Wswitch warning
+                            break;
+                        case BorderType::EMERGENCY_DELETED:
+                            m_type = BorderType::EMERGENCY;
+                            break;
+                    }
+                }
 				/**
 				 * @brief Check whether the border is of a "deleted" type
 				 * 
@@ -261,6 +296,16 @@ namespace adore
 						shift = dx,dy,dz;
 						m_path->shiftCodomain(shift);
 					}
+				}
+				/**
+				 * @brief 
+				 * 
+				 */
+				void rotateXY(double angle, double x0=0.0, double y0=0.0)
+				{
+					m_path->rotateXY(angle, x0, y0);
+					m_id.rotate(angle, x0, y0);
+					if(m_left!=0) m_left->rotate(angle, x0, y0);
 				}
 				/**
 				 * @brief Check whether border is a direct successors of another border
@@ -383,16 +428,17 @@ namespace adore
 				bool isRightOf(Border* other)
 				{
 					if(other==0 || this->m_left==0 || other->m_left==0)return false;
-					Coordinate* tp0;
+					// TODO investigate if this is a bug
+					// Coordinate* tp0; // commented out to silence -Wunused-but-set-variable
 					Coordinate* tp1;
-					Coordinate* tp2;
+					// Coordinate* tp2;
 					Coordinate* tp3;
 					Coordinate* op0;
 					Coordinate* op1;
 					Coordinate* op2;
 					Coordinate* op3;
-					tp0 = &(this->m_id.m_first);
-					tp2 = &(this->m_id.m_last);
+					// tp0 = &(this->m_id.m_first);
+					// tp2 = &(this->m_id.m_last);
 					if(this->getNeighborDirection()==Border::OPPOSITE_DIRECTION)
 					{
 						tp1 = &(this->m_left->m_last);
@@ -485,8 +531,16 @@ namespace adore
 					adoreMatrix<double, 3, 1> xyzmin;
 					adoreMatrix<double, 3, 1> xyzmax;
 					((adore::mad::ALFunction<double, adoreMatrix<double, 3, 1>>*)m_path)->bound(xyzmin, xyzmax);
-					return (xyzmin(0) >= x0 && xyzmin(0) <= x1 || xyzmax(0) >= x0 && xyzmax(0) < x1 || xyzmin(0) <= x0 && xyzmax(0) >= x1)
-						&& (xyzmin(1) >= y0 && xyzmin(1) <= y1 || xyzmax(1) >= y0 && xyzmax(1) < y1 || xyzmin(1) <= y0 && xyzmax(1) >= y1);
+					return (
+							   (xyzmin(0) >= x0 && xyzmin(0) <= x1)
+							|| (xyzmax(0) >= x0 && xyzmax(0) < x1)
+							|| (xyzmin(0) <= x0 && xyzmax(0) >= x1)
+						   )
+						&& (
+							   (xyzmin(1) >= y0 && xyzmin(1) <= y1)
+							|| (xyzmax(1) >= y0 && xyzmax(1) < y1 )
+							|| (xyzmin(1) <= y0 && xyzmax(1) >= y1)
+						   );
 				}
 				/**
 				 * @brief Check whether the border and a neighbor, e.g. the line-segment representation, is in the given range
@@ -527,16 +581,43 @@ namespace adore
 				boost_box getBoostBox(Border* leftNeighbor)
 				{
 					static const double free_road_height = 2.0;//@TODO load a parameter, which defines, how big the "free-space tunnel" of a road has to be. this has implications for objects passing over bridges and low hanging infrastructure.
-					adoreMatrix<double, 3, 1> xyzmin;
-					adoreMatrix<double, 3, 1> xyzmax;
-					((adore::mad::ALFunction<double, adoreMatrix<double, 3, 1>>*)m_path)->bound(xyzmin, xyzmax);
-					if (leftNeighbor != 0)
+					adoreMatrix<double, 3, 1> xyzmin {0.0,0.0,0.0};
+					adoreMatrix<double, 3, 1> xyzmax {0.0,0.0,0.0};
+					if(m_path==nullptr)
 					{
-						adoreMatrix<double, 3, 1> xyzmin1;
-						adoreMatrix<double, 3, 1> xyzmax1;
-						((adore::mad::ALFunction<double, adoreMatrix<double, 3, 1>>*)leftNeighbor->m_path)->bound(xyzmin1, xyzmax1);
-						xyzmin = (adore::mad::min<double, 3, 1>)(xyzmin, xyzmin1);
-						xyzmax = (adore::mad::max<double, 3, 1>)(xyzmax, xyzmax1);
+						xyzmin(0) = (std::min)(m_id.m_first.m_X,m_id.m_last.m_X);
+						xyzmin(1) = (std::min)(m_id.m_first.m_Y,m_id.m_last.m_Y);
+						xyzmin(2) = (std::min)(m_id.m_first.m_Z,m_id.m_last.m_Z);
+						xyzmax(0) = (std::max)(m_id.m_first.m_X,m_id.m_last.m_X);
+						xyzmax(1) = (std::max)(m_id.m_first.m_Y,m_id.m_last.m_Y);
+						xyzmax(2) = (std::max)(m_id.m_first.m_Z+ free_road_height,m_id.m_last.m_Z+ free_road_height);
+						if(m_left!=nullptr)
+						{
+							xyzmin(0) = (std::min)(xyzmin(0),m_left->m_last.m_X);
+							xyzmin(1) = (std::min)(xyzmin(1),m_left->m_last.m_Y);
+							xyzmin(2) = (std::min)(xyzmin(2),m_left->m_last.m_Z);
+							xyzmax(0) = (std::max)(xyzmax(0),m_left->m_last.m_X);
+							xyzmax(1) = (std::max)(xyzmax(1),m_left->m_last.m_Y);
+							xyzmax(2) = (std::max)(xyzmax(2),m_left->m_last.m_Z+ free_road_height);
+							xyzmin(0) = (std::min)(m_left->m_first.m_X,xyzmin(0));
+							xyzmin(1) = (std::min)(m_left->m_first.m_Y,xyzmin(1));
+							xyzmin(2) = (std::min)(m_left->m_first.m_Z,xyzmin(2));
+							xyzmax(0) = (std::max)(m_left->m_first.m_X,xyzmax(0));
+							xyzmax(1) = (std::max)(m_left->m_first.m_Y,xyzmax(1));
+							xyzmax(2) = (std::max)(m_left->m_first.m_Z+ free_road_height,xyzmax(2));
+						}
+					}
+					else
+					{
+						((adore::mad::ALFunction<double, adoreMatrix<double, 3, 1>>*)m_path)->bound(xyzmin, xyzmax);
+						if (leftNeighbor != 0)
+						{
+							adoreMatrix<double, 3, 1> xyzmin1;
+							adoreMatrix<double, 3, 1> xyzmax1;
+							((adore::mad::ALFunction<double, adoreMatrix<double, 3, 1>>*)leftNeighbor->m_path)->bound(xyzmin1, xyzmax1);
+							xyzmin = (adore::mad::min<double, 3, 1>)(xyzmin, xyzmin1);
+							xyzmax = (adore::mad::max<double, 3, 1>)(xyzmax, xyzmax1);
+						}
 					}
 					return boost_box(Coordinate::boost_point(xyzmin(0), xyzmin(1), xyzmin(2)),
 						Coordinate::boost_point(xyzmax(0), xyzmax(1), xyzmax(2) + free_road_height));
@@ -599,7 +680,14 @@ namespace adore
 				 */
 				double getLength()
 				{
-					return m_path->limitHi() - m_path->limitLo();
+					if(m_path==nullptr)
+					{
+						return m_id.getLength();
+					}
+					else
+					{
+						return m_path->limitHi() - m_path->limitLo();
+					}
 				}
 
 				/**
@@ -611,6 +699,7 @@ namespace adore
 				 */
 				double getStraightness()
 				{
+					if(m_path==nullptr)return 1.0;
 					auto d = m_path->f(m_path->limitHi()) - m_path->f(m_path->limitLo());
 					return std::sqrt(d(0)*d(0) + d(1)*d(1) + d(2)*d(2)) / (m_path->limitHi() - m_path->limitLo());
 				}
@@ -652,10 +741,31 @@ namespace adore
 				 */
 				double getHeadingChangeAtTransition(Border* next)
 				{
-					double dx0 = this->m_path->dfidx(this->m_path->limitHi(), 0);
-					double dy0 = this->m_path->dfidx(this->m_path->limitHi(), 1);
-					double dx1 = next->m_path->dfidx(next->m_path->limitLo(), 0);
-					double dy1 = next->m_path->dfidx(next->m_path->limitLo(), 1);
+					double dx0,dy0,dx1,dy1;
+					if(this->m_path==nullptr)
+					{
+						const double l = getLength();
+						dx0 = (m_id.m_last.m_X - m_id.m_first.m_X)/l;
+						dy0 = (m_id.m_last.m_Y - m_id.m_first.m_Y)/l;
+					}
+					else
+					{
+						dx0 = this->m_path->dfidx(this->m_path->limitHi(), 0);
+						dy0 = this->m_path->dfidx(this->m_path->limitHi(), 1);
+					}
+					if(next->m_path==nullptr)
+					{
+						const double l = next->getLength();
+						dx1 = (next->m_id.m_last.m_X - next->m_id.m_first.m_X)/l;
+						dy1 = (next->m_id.m_last.m_Y - next->m_id.m_first.m_Y)/l;
+					}
+					else
+					{
+						dx1 = next->m_path->dfidx(next->m_path->limitLo(), 0);
+						dy1 = next->m_path->dfidx(next->m_path->limitLo(), 1);
+					}
+					
+
 					//project next start to this end
 					double rx = dx0 * dx1 + dy0 * dy1; // c s
 					double ry = -dy0 * dx1 + dx0 * dy1; //-s c

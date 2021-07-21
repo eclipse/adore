@@ -67,6 +67,10 @@ namespace adore
 				{
 					m_rightID.translate(dx,dy,dz);
 				}
+				void rotate(double angle, double x0=0, double y0=0)
+				{
+					m_rightID.rotate(angle, x0, y0);
+				}
 				/**
 				 * @brief Check two LanePositions for equality
 				 * 
