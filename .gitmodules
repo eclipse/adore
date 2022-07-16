@@ -1,0 +1,66 @@
+[submodule "adore_if_carla"]
+	path = adore_if_carla
+	url = git@github.com:dlr-ts/adore_if_carla
+[submodule "adore_if_ros_msg"]
+	path = adore_if_ros_msg
+	url = git@github.com:dlr-ts/adore_if_ros_msg
+[submodule "adore_if_v2x"]
+	path = adore_if_v2x
+	url = git@github.com:dlr-ts/adore_if_v2x
+[submodule "adore_v2x_sim"]
+	path = adore_v2x_sim
+	url = git@github.com:dlr-ts/adore_v2x_sim
+[submodule "apt_cacher_ng_docker"]
+	path = apt_cacher_ng_docker
+	url = git@github.com:dlr-ts/apt_cacher_ng_docker
+[submodule "plotlabserver"]
+	path = plotlabserver
+	url = git@github.com:dlr-ts/plotlabserver
+[submodule "sumo_if_ros"]
+	path = sumo_if_ros
+	url = git@github.com:dlr-ts/sumo_if_ros
+[submodule "v2x_if_ros_msg"]
+	path = v2x_if_ros_msg
+	url = git@github.com:dlr-ts/v2x_if_ros_msg
+[submodule "adore_if_ros/adore_if_ros_msg"]
+	path = adore_if_ros/adore_if_ros_msg
+	url = git@github.com:dlr-ts/adore_if_ros_msg
+[submodule "adore_if_ros/cppcheck"]
+	path = adore_if_ros/cppcheck
+	url = git@github.com:dlr-ts/cppcheck_docker
+[submodule "adore_if_ros/cpplint"]
+	path = adore_if_ros/cpplint
+	url = git@github.com:dlr-ts/cpplint_docker
+[submodule "adore_if_ros/lizard"]
+	path = adore_if_ros/lizard
+	url = git@github.com:dlr-ts/lizard_docker
+[submodule "adore_if_ros/plotlablib"]
+	path = adore_if_ros/plotlablib
+	url = git@github.com:dlr-ts/plotlablib
+[submodule "libadore/cppcheck"]
+	path = libadore/cppcheck
+	url = git@github.com:dlr-ts/cppcheck_docker
+[submodule "libadore/cpplint"]
+	path = libadore/cpplint
+	url = git@github.com:dlr-ts/cpplint_docker
+[submodule "libadore/lizard"]
+	path = libadore/lizard
+	url = git@github.com:dlr-ts/lizard_docker
+[submodule "libadore/libadore/external/Catch2"]
+	path = libadore/libadore/external/Catch2
+	url = git@github.com:catchorg/Catch2
+[submodule "libadore/libadore/external/csaps-cpp"]
+	path = libadore/libadore/external/csaps-cpp
+	url = git@github.com:dlr-ts/csaps-cpp
+[submodule "libadore/libadore/external/dlib"]
+	path = libadore/libadore/external/dlib
+	url = git@github.com:davisking/dlib
+[submodule "libadore/libadore/external/osqp"]
+	path = libadore/libadore/external/osqp
+	url = git@github.com:osqp/osqp
+[submodule "libadore/libadore/external/qpOASES"]
+	path = libadore/libadore/external/qpOASES
+	url = git@github.com:coin-or/qpOASES
+[submodule "libadore/libadore/external/xodr"]
+	path = libadore/libadore/external/xodr
+	url = git@github.com:dlr-ts/xodr
