@@ -13,6 +13,13 @@
 
 # Change Log
 
+## 2022-07-16
+- modularized respository structure
+- added osqp, lizard, cppcheck, cpplint
+- added adore_if_carla
+- docker wrappers and make files
+- externalized pngs
+
 ## 2021-11-11
 - New node adore_crosstraffic_provider: Monitors prediction of other traffic participants and tests for intersection of cross-traffic with lane following view. In case of crosstraffic intersecting the lane following view, the nearest intersection with a feasible stopping position is published on the topic ENV/ConflictSet. The node may be extended in the future to publish also all intersection points after the first potential stopping position.
 - adore_trajectory_planner_lf_node has been extended with several startup parameters:
