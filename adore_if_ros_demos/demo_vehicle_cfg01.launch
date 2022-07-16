@@ -20,7 +20,7 @@
     <node name="vmodel" pkg="adore_if_ros" type="adore_vehiclemodel_node"/>
     <node name="smodel" pkg="adore_if_ros" type="adore_objectdetectionmodel_node"/>
     <node name="lmap" pkg="adore_if_ros" type="adore_mapprovider_node" cwd="ROS_HOME"/><!-- ROS_HOME is ~/.ros by default-->
-    <node name="tracker" pkg="adore_if_ros" type="adore_feedbackcontroller_node" output="screen"/>
-    <node name="planner" pkg="adore_if_ros" type="adore_lfbehavior_node" output="screen"/>
+    <node name="tracker" pkg="adore_if_ros" type="adore_feedbackcontroller_node"/>
+    <node name="planner" pkg="adore_if_ros" type="adore_lfbehavior_node"/>
     <node name="lvprovider" pkg="adore_if_ros" type="adore_lvprovider_node"/>
 </launch>

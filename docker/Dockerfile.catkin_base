@@ -1,0 +1,10 @@
+
+ARG PROJECT
+ARG DEBUG
+
+FROM ros:noetic-ros-core-focal AS catkin_base
+
+RUN apt-get update && \
+    apt-get install --no-install-recommends -y make g++ python3-catkin-tools && \
+    rm -rf /var/lib/apt/lists/*
+

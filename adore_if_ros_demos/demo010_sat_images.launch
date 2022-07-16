@@ -12,7 +12,7 @@
  *   Daniel Heß - initial API and implementation
  ********************************************************************************-->
 <launch>
-  <node name="timer" pkg="adore_if_ros" type="adore_timer_node" output="screen" launch-prefix="xterm -e" args=""/>
+  <node name="timer" pkg="adore_if_ros" type="adore_timer_node" output="screen"/>
   <group ns="vehicle0">
     <include file="demo_vehicle_cfg03.launch"/>
     <include file="demo_plotters.launch"/>

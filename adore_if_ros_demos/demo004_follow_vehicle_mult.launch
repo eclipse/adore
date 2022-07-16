@@ -12,8 +12,8 @@
  *   Daniel Heß - initial API and implementation
  ********************************************************************************-->
 <launch>
-  <node name="timer" pkg="adore_if_ros" type="adore_timer_node" output="screen" launch-prefix="xterm -e "/>
-  <node name="graph" pkg="adore_if_ros" type="plot_graph_node"/>0
+  <node name="timer" pkg="adore_if_ros" type="adore_timer_node" output="screen"/>
+  <node name="graph" pkg="adore_if_ros" type="plot_graph_node"/>
   <node pkg="topic_tools" type="transform" name="v0extraction" args="/vehicle0/odom /plot/v0 std_msgs/Float64 'm.twist.twist.linear.x'"/>
   <node pkg="topic_tools" type="transform" name="v1extraction" args="/vehicle1/odom /plot/v1 std_msgs/Float64 'm.twist.twist.linear.x'"/>
   <node pkg="topic_tools" type="transform" name="v2extraction" args="/vehicle2/odom /plot/v2 std_msgs/Float64 'm.twist.twist.linear.x'"/>

@@ -1,0 +1,8 @@
+ros-noetic-tf
+#libxerces-c-dev
+libxerces-c3.2
+## Requirements for dlib
+libopenblas-dev
+
+## required by many launchfiles
+ros-noetic-topic-tools

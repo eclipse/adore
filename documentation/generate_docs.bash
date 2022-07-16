@@ -12,16 +12,7 @@
 #*   Thomas Lobig
 #********************************************************************************
 
-CONFIGFILE=adore_docs.config
-if test -f "$CONFIGFILE"; then
-    echo "Doxygen config found, starting the process"
-    mkdir -p ../../../install/docs_html
-    mkdir -p ../../../build/docs_temp
-    pushd ../../../build/docs_temp
-    doxygen ../../src/adore/documentation/$CONFIGFILE
-    popd
-    rm -r ../../../build/docs_temp
-    echo "Doxygenoutput can now be found in <catkin workspace>/install/docs_html"
-else
-    echo "$CONFIGFILE not found, please execute this script from the folder which includes the config file."
-fi
+cd doxygen
+doxygen Doxyfile-project.cfg
+cd ../sphinx
+make html

@@ -25,5 +25,5 @@ Before checking license, remove unnecessary files for release
 Check for files, which do not contain EPL-2.0: 
 Run the following in adore folder.
 ~~~bash
-licensecheck . -r|egrep -ve ".png|.gif|.r2s|java_v2x|.gitlab-ci.yml|.vscode|Eclipse Public License 2.0"
+licensecheck . -r|egrep -ve ".png|.gif|.r2s|.jpg|build|sumo|java_v2x|.cmake|CMakeFiles|.gitlab-ci.yml|.vscode|Eclipse Public License 2.0"
 ~~~

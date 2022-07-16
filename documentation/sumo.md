@@ -66,9 +66,34 @@ client.connect("localhost", 1337);
 
 
 ## Generate a network file
+One option is to convert OpenDrive files directly:
+
 See sumo doc on [netgenerate](https://sumo.dlr.de/docs/NETGENERATE.html):
 ~~~bash
 netconvert --opendrive myOpenDriveNetwork.xodr -o mySUMOnetwork.net.xml --offset.disable-normalization 
+~~~
+
+Another option is to convert maps, which are readable by adore, into SUMO PlainXML format [SUMO PlainXML specification](https://sumo.dlr.de/docs/Networks/PlainXML.html): ADORe provides a ```plainxmlexporter``` binary, available from the selected binary folder, e.g. ```install/lib/adore_if_ros```.
+Provide one or more map file paths as argument to binary in order to create PlainXML output ```output.nod.xml``` node defintions, ```output.edg.xml``` edge definitions and ```output.con.xml``` connection definitions.
+Currently, xodr and r2s maps can be read and converted.
+The parameters for plainxmlexporter are ```[plot] infile1[,transform] [infile2[,transform]] ... outfile```, where plot allows immediate output of loaded files to plotlab, each infile specifies path to a map file and outfile defines prefix of Plain-XML output files. 
+Road2Simulation input files (file1.r2sl, file1.r2sr) have to be specified as (file1.r2s) in a single infile name.
+The transform arguments allow to enable/disable application of transforms specified in the OpenDrive header.
+The resulting PlainXML files can be further converted to a Net-XML format using sumo ```netconvert```.
+
+Here is an example:
+~~~bash
+cd ~/catkin_ws
+
+prefix=src/adore/adore_if_ros_demos/tracks/r2s/tost2dlr
+
+install/lib/adore_if_ros/plainxmlexporter $prefix.r2s $prefix
+
+src/adore/sumo/bin/netconvert \
+  --node-files=$prefix.nod.xml \
+  --edge-files=$prefix.edg.xml \
+  --connection-files=$prefix.con.xml \
+  --output-file=$prefix.net.xml
 ~~~
 
 ## Define a route description

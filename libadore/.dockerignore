@@ -1,0 +1,6 @@
+libadore/build
+libdore/external
+libdore/external/*/build
+**/build
+**.dockerignore
+**.lizard_report.xml

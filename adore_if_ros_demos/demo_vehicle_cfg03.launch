@@ -14,43 +14,58 @@
  * A demo CAV configuration with lane-following/lane-change behavior.
  ********************************************************************************-->
 <launch>
-    <include ns="PARAMS" file="$(dirname)/adore_params_vehicle_independent.launch"/>
-    <include ns="PARAMS" file="$(dirname)/adore_params_vehicle_fascare.launch"/>
-    <param name="PARAMS/navigation/active_plotting_global" value="false" type="bool" />  
-    <node name="vmodel"     pkg="adore_if_ros" type="adore_vehiclemodel_node"/>
-    <node name="smodel"     pkg="adore_if_ros" type="adore_objectdetectionmodel_node"/>
-    <node name="lmap"       pkg="adore_if_ros" type="adore_mapprovider_node" output="screen"/>
-    <node name="tracker"    pkg="adore_if_ros" type="adore_feedbackcontroller_node"/>
-    <node name="lnav"       pkg="adore_if_ros" type="adore_navigation_node"/>
-    <node name="lvprovider" pkg="adore_if_ros" type="adore_lvprovider_node"/>
-    <node name="predictor" pkg="adore_if_ros" type="adore_prediction_provider" output="screen"/>
-    <node name="predictionFilter" pkg="adore_if_ros" type="adore_prediction_filter" output="screen">
-        <remap from="ENV/Prediction/expected" to="ENV/Prediction/worstcase"/>
-    </node> 
-    <node name="decision_making" pkg="adore_if_ros" type="adore_tactical_planner_node"  launch-prefix="xterm -e" output="screen"/>
-    <node name="planner_lf" pkg="adore_if_ros" type="adore_trajectory_planner_lf_node" >
-        <param name='name' type='string' value='lf'/>
-        <param name='id' type='int' value='1'/>
-        <param name='speed_scale' type='double' value='1'/>        
-    </node>
-    <node name="planner_lcl" pkg="adore_if_ros" type="adore_trajectory_planner_lc_node" >
-        <param name='direction' type='string' value='left'/>
-        <param name='name' type='string' value='lcl'/>
-        <param name='id' type='int' value='2'/>
-    </node>
-    <node name="planner_lcr" pkg="adore_if_ros" type="adore_trajectory_planner_lc_node"> 
-        <param name='direction' type='string' value='right'/>
-        <param name='name' type='string' value='lcr'/>
-        <param name='id' type='int' value='3'/>
-    </node>
-    <!-- <node name="planner_lml" pkg="adore_if_ros" type="adore_trajectory_planner_lm_node" >
-        <param name='direction' type='string' value='left'/>
-        <param name='name' type='string' value='lml'/>
-        <param name='id' type='int' value='4'/>
-    </node>
-    <node name="planner_lmr" pkg="adore_if_ros" type="adore_trajectory_planner_lm_node"> 
-        <param name='direction' type='string' value='right'/>
-        <param name='name' type='string' value='lmr'/>
-        <param name='id' type='int' value='5'/>
-    </node> -->
+<arg name="do_respawn" default="false" doc="(de)activate respawn"/>
+<arg name="em_cancel_active" default="true" doc="allow lane change canceling emergency maneuver"/>
+<arg name="em_continue_active" default="true" doc="allow lane change continuing emergency maneuver"/>
+<arg name="objective_names" default="const_penalty,MinimumNavigationCostOnLane,NormalizedNavigationCost,LongitudinalAccelerationCost,LongitudinalJerkCost,AverageProgressLoss,TTC_nom" doc="names of objectives to be used in maneuver selection"/>
+<arg name="objective_weights" default="1,1,0,0,0,1,1.5" doc="weights of objectives for maneuver selection"/>
+
+	<include ns="PARAMS" file="$(dirname)/adore_params_vehicle_independent.launch"/>
+	<include ns="PARAMS" file="$(dirname)/adore_params_vehicle_fascare.launch"/>
+
+	<param name="PARAMS/navigation/active_plotting_global" value="false" type="bool" />  
+	<node name="vmodel"     pkg="adore_if_ros" type="adore_vehiclemodel_node"/>
+	<node name="smodel"     pkg="adore_if_ros" type="adore_objectdetectionmodel_node"/>
+	<node name="lmap"       pkg="adore_if_ros" type="adore_mapprovider_node" />
+	<node name="tracker"    pkg="adore_if_ros" type="adore_feedbackcontroller_node"/>
+	<node name="lnav"       pkg="adore_if_ros" type="adore_navigation_node"/>
+	<node name="lvprovider" pkg="adore_if_ros" type="adore_lvprovider_node"/>
+	<node name="predictor" pkg="adore_if_ros" type="adore_prediction_provider"/>
+	<node name="predictionFilter" pkg="adore_if_ros" type="adore_prediction_filter">
+		<remap from="ENV/Prediction/expected" to="ENV/Prediction/worstcase"/>
+	</node> 
+	
+	
+        <node name="decision_making" pkg="adore_if_ros" type="adore_tactical_planner_node" respawn="$(arg do_respawn)">
+            <param name="objective_names" type="string" value="$(arg objective_names)"/>
+            <param name="objective_weights" type="string" value="$(arg objective_weights)"/>
+        </node>
+	<node name="planner_lf_c" pkg="adore_if_ros" type="adore_trajectory_planner_lf_node"  respawn="$(arg do_respawn)">
+		<param name='name' type='string' value='lf'/>
+		<param name='id' type='int' value='0'/>
+		<param name='speed_scale' type='double' value='1'/>        
+		<param name='lateral_i_grid' type='double' value='0'/>        
+		<param name='stop_point_id' type='int' value='-1'/>        
+		<param name='const_penalty' type='double' value='0'/>
+	</node>
+
+	<node name="planner_lcl" pkg="adore_if_ros" type="adore_trajectory_planner_lc_node"  respawn="$(arg do_respawn)">
+		<param name='direction' type='string' value='left'/>
+		<param name='name' type='string' value='lcl'/>
+		<param name='id' type='int' value='100'/>
+		<param name='speed_scale' type='double' value='1'/>        
+		<param name='lateral_i_grid' type='double' value='0'/>        
+		<param name='const_penalty' type='double' value='0'/>
+		<param name="em_cancel_active" type="bool" value="$(arg em_cancel_active)"/>
+		<param name="em_continue_active" type="bool" value="$(arg em_continue_active)"/>
+	</node>
+	<node name="planner_lcr" pkg="adore_if_ros" type="adore_trajectory_planner_lc_node" respawn="$(arg do_respawn)"> 
+		<param name='direction' type='string' value='right'/>
+		<param name='name' type='string' value='lcr'/>
+		<param name='id' type='int' value='200'/>
+		<param name='speed_scale' type='double' value='1'/>        
+		<param name='lateral_i_grid' type='double' value='0'/>        
+		<param name="em_cancel_active" type="bool" value="$(arg em_cancel_active)"/>
+		<param name="em_continue_active" type="bool" value="$(arg em_continue_active)"/>
+	</node>
 </launch>

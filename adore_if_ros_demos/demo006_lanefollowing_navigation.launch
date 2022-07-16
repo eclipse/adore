@@ -12,7 +12,7 @@
  *   Robert Markowski - initial API and implementation
  ********************************************************************************-->
 <launch>
-  <node name="timer" pkg="adore_if_ros" type="adore_timer_node" output="screen" launch-prefix="xterm -e" args="paused"/>
+  <node name="timer" pkg="adore_if_ros" type="adore_timer_node" output="screen" />
   <group ns="vehicle0">
     <include file="demo_vehicle_cfg02.launch"/>
     <include file="demo_plotters.launch"/>
@@ -22,9 +22,10 @@
     <param name="PARAMS/tactical_planner/global_speed_limit" value="30" type="double" />  
     <param name="simulationID" value="0" type="int" />  
     <!-- set the start position -->
-    <node pkg="rostopic" type="rostopic" name="posereset" args="pub /vehicle0/SIM/ResetVehiclePose geometry_msgs/Pose '{position: {x: 150, y: 162, z: 0},orientation: { w: 1}}'"/>
+    <node pkg="rostopic" type="rostopic" name="posereset" args="pub SIM/ResetVehiclePose geometry_msgs/Pose '{position: {x: 150, y: 162, z: 0},orientation: { w: 1}}'"/>
     <!-- set the goal position -->
-    <node pkg="rostopic" type="rostopic" name="navgoal" args="pub /vehicle0/ENV/NavigationGoal adore_if_ros_msg/NavigationGoal '{target: {x: 1570, y: 400, z: 0}}'"/>
-    <!-- <node pkg="rostopic" type="rostopic" name="navgoal" args="pub /vehicle0/ENV/NavigationGoal adore_if_ros_msg/NavigationGoal '{target: {x: 360, y: 162, z: 0}}'"/> -->
+    <node pkg="rostopic" type="rostopic" name="navgoal" args="pub ENV/NavigationGoal adore_if_ros_msg/NavigationGoal '{header: {seq: 0, stamp: {secs: 0, nsecs: 0}, frame_id: ''}, target: {x: 1570, y: 400, z: 0}}'"/>
+    <!-- set the goal position via plotlab-->
+    <node pkg="adore_if_ros" type="plotlab2navigationgoal.py" name="navgoalklick" args="$(dirname)/../plotlabserver/plotlabserver/build/logged_positions.txt" output="screen"/>
   </group>
 </launch>

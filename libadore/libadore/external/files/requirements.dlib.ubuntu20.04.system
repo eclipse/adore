@@ -1,0 +1,12 @@
+build-essential
+cmake
+pkg-config
+libx11-dev
+libatlas-base-dev
+libgtk-3-dev
+libboost-python-dev
+nvidia-cuda-dev
+nvidia-cuda-toolkit 
+libblas-dev
+libopenblas-dev
+liblapack-dev

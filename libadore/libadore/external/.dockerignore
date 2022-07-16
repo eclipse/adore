@@ -1,0 +1,9 @@
+**/build
+Catch2/build
+csaps-cpp/build
+dlib/build
+fsfe_reuse_tool/build
+xodr/build
+qpOASES/build
+osqp/build
+**.git

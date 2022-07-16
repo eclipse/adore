@@ -16,15 +16,17 @@
 # ADORe ROS Demos
 In the following, several demonstrations are given to showcase technical solutions on reduced examples.
 Their goal is to serve as venture points for setting up simulation experiments with ADORe automated vehicles.
-To start the demonstrations on your computer, first compile ADORe and its ROS interface, start the plotting server and navigate to the demo folder:
+To run the demo scenarios, build the command-line-interface container and start it:
 ~~~bash
-cd ~/catkin_ws/src/adore
-catkin build adore_if_ros
-cd plotlabserver
-./start.sh
-cd ../adore_if_ros_demos
+make build_adore-cli
+make adore-cli
 ~~~
-After compilation is successful, a demo is started by executig "roslaunch _demo_file_name_".
+Then navigate to the catkin workspace demo directory in the adore-cli container, export your display variable and launch the demo:
+~~~bash
+cd catkin_workspace/src/adore_if_ros_demos
+export DISPLAY=:0
+roslaunch demo001_loadmap.launch
+~~~
 
  
 # Load Open Drive tracks
@@ -46,7 +48,7 @@ After compilation is successful, a demo is started by executig "roslaunch _demo_
 - If the parameter "PARAMS/map_provider/activate_plotting" is set to "true", the overall map will be displayed in figure 1 
 
 Overview plot of tracks loaded by demo001:
-![Overview plot of tracks loaded by demo001](readme_pics/demo001.png)
+![Overview plot of tracks loaded by demo001](https://github.com/DLR-TS/adore_support/blob/master/demos/demo001.png)
 
 # Computation of a navigation function
 - file: [demo002_navigatemap.launch](demo002_navigatemap.launch)
@@ -58,7 +60,7 @@ Overview plot of tracks loaded by demo001:
 - If the parameter "PARAMS/navigation/active_plotting_global" is set to true, the navigation function will be shown color-coded for the overall map in figure 1. (Red is far, and green is near. Please note: In the example below, non-drivable sidewalks are color-coded red at "infinite" cost.)
 
 Color-coded navigation function plotted by demo002:
-![Color-coded navigation function plotted by demo002](readme_pics/demo002.png)
+![Color-coded navigation function plotted by demo002](https://github.com/DLR-TS/adore_support/blob/master/demos/demo002.png)
 
 # Simulation of Automated Lane Following
 - file: [demo003_lanefollowing.launch](demo003_lanefollowing.launch)
@@ -76,7 +78,7 @@ Color-coded navigation function plotted by demo002:
 - The process "adore_borderbird_node" plots a simplistic representation of the local scene from a "birds-eye" perspective: The local "road marking information", the reference trajectory (displayed in red) and the current vehicle state (blue box with triangle).
 
 Local scene for lane following automation in demo003:
-![Local scene for lane following automation in demo003](readme_pics/demo003.png)
+![Local scene for lane following automation in demo003](https://github.com/DLR-TS/adore_support/blob/master/demos/demo003.png)
 
 # Lane following with three automated vehicles
 - file: [demo004_follow_vehicle_mult.launch](demo004_follow_vehicle_mult.launch)
@@ -91,7 +93,7 @@ Local scene for lane following automation in demo003:
     - Note: The parameter can be manipulated during simulation with the shell command "rosparam set /vehicle2/PARAMS/tactical_planner/global_speed_limit 10". Of course, other parameters can also be changed during simulation.
 
 Two fast vehicles following a slow vehicle in demo004:
-![Two fast vehicles following a slow vehicle in demo004](readme_pics/demo004.png)
+![Two fast vehicles following a slow vehicle in demo004](https://github.com/DLR-TS/adore_support/blob/master/demos/demo004.png)
 
 # Lane following with ADORe automated vehicle and multiple SUMO vehicles
 - file: [demo005_follow_vehicle_sumo.launch](demo005_follow_vehicle_sumo.launch) 
@@ -111,7 +113,7 @@ export SUMO_HOME=~/catkin_ws/src/adore/sumo
 - NOTE: The timer is started in "paused" state, to allow startup of all process before simulation begins. Visual output will only be generated as soon as time advances, so make sure to "unpause" the timer node.
 
 Several SUMO vehicles and one ADORe automated vehicle in demo005:
-![Several SUMO vehicles and one ADORe automated vehicle in demo005](readme_pics/demo005.png)
+![Several SUMO vehicles and one ADORe automated vehicle in demo005](https://github.com/DLR-TS/adore_support/blob/master/demos/demo005.png)
 
 # Lane following and navigation to a goal location
 - file: [demo006_lanefollowing_navigation.launch](demo006_lanefollowing_navigation.launch)
@@ -125,7 +127,7 @@ rostopic pub /vehicle0/ENV/NavigationGoal adore_if_ros_msg/NavigationGoal '{targ
 - NOTE: The timer is started in "paused" state, to allow startup of all process before simulation begins. Visual output will only be generated as soon as time advances, so make sure to "unpause" the timer node.
 
 Vehicle turning at intersection and stopping at goal in demo006:
-![Turning](readme_pics/demo006_1.png)![Stopping](readme_pics/demo006_2.png)
+![Turning](https://github.com/DLR-TS/adore_support/blob/master/demos/demo006_1.png)![Stopping](https://github.com/DLR-TS/adore_support/blob/master/demos/demo006_2.png)
 
 # Prediction
 - file: [demo007b_precedence_no_rules.launch](demo007b_precedence_no_rules.launch)
@@ -139,7 +141,7 @@ Vehicle turning at intersection and stopping at goal in demo006:
 - As vehicle0 is approaching a turn, it is initially slower and reaches standstill before vehicle1
 - As soon as vehicle0 is stopped, vehicle1's path is clear and it may continue across the intersection
 - Obviously, such a coordination at an intersection is suboptimal and therefore the next section outlines improved behavior through prediction in combination with static precedence rules
-![vehicle0 and vehicle1 predict each other's path](readme_pics/demo007b.png)
+![vehicle0 and vehicle1 predict each other's path](https://github.com/DLR-TS/adore_support/blob/master/demos/demo007b.png)
 
 # Prediction and precedence rules
 - file: [demo007a_precedence_right.launch](demo007a_precedence_right.launch)
@@ -155,13 +157,13 @@ Vehicle turning at intersection and stopping at goal in demo006:
 - The modified prediciton set is published again and allows to apply only those predictions to collision detection, which do not violate the precedence of the ego vehicle
 - In demo007a vehicle1 has precedence over vehicle0 and by considering the filtered predictions of vehicle0 may cross the intersection unhindered.
 
-![vehicle1 predicts vehicle0 to yield at the intersection](readme_pics/demo007a.png)
+![vehicle1 predicts vehicle0 to yield at the intersection](https://github.com/DLR-TS/adore_support/blob/master/demos/demo007a.png)
 
 - file: [demo007c_precedence_left.launch](demo007c_precedence_left.launch)
 - Demo007c is similar to demo007a, but the precedence [file](tracks/basic_test_track_precedence_v3.txt) is modified to give precedence to the connection leading from west to north
 - Accordingly, vehicle0 crossses the intersection before vehicle1.
 
-![vehicle0 predicts vehicle1 to yield at the intersection](readme_pics/demo007c.png)
+![vehicle0 predicts vehicle1 to yield at the intersection](https://github.com/DLR-TS/adore_support/blob/master/demos/demo007c.png)
 
 # Straight-line Predictions
 - file: [demo007d_sl45_right_turn_pedestrian.launch](demo007d_sl45_right_turn_pedestrian.launch)
@@ -172,10 +174,10 @@ Vehicle turning at intersection and stopping at goal in demo006:
 ```bash
 rosrun topic_tools transform /vehicle0/odom /pedestrian0/SIM/ResetVehicleTwist geometry_msgs/Twist 'geometry_msgs.msg.Twist(linear=geometry_msgs.msg.Vector3(x=2 if m.pose.pose.position.x>662 else 0, y=0.0, z=0.0), angular=geometry_msgs.msg.Vector3( x= 0.0, y= 0.0, z= 0.0))' --import geometry_msgs std_msgs
 ``` 
-![vehicle0 approaching intersection](readme_pics/demo007d01.png)
-![pedestrian starts walking](readme_pics/demo007d02.png)
-![vehicle0 stopping for pedestrian](readme_pics/demo007d03.png)
-![vehicle0 continuing after pedestrian](readme_pics/demo007d04.png)
+![vehicle0 approaching intersection](https://github.com/DLR-TS/adore_support/blob/master/demos/demo007d01.png)
+![pedestrian starts walking](https://github.com/DLR-TS/adore_support/blob/master/demos/demo007d02.png)
+![vehicle0 stopping for pedestrian](https://github.com/DLR-TS/adore_support/blob/master/demos/demo007d03.png)
+![vehicle0 continuing after pedestrian](https://github.com/DLR-TS/adore_support/blob/master/demos/demo007d04.png)
 
 # Traffic Lights
 - file: [demo008_sumo_trafficlights.launch](demo008_sumo_trafficlights.launch)
@@ -190,7 +192,7 @@ rosrun topic_tools transform /vehicle0/odom /pedestrian0/SIM/ResetVehicleTwist g
 - In case of a different sensor type identifying signal phases (most likely camera-based), the information would also be published to /vehicle0/ENV/tcd.
 - The topic /vehicle0/ENV/tcd transmits signal states for all known connections, agnostic to their relevance to the ego vehicle. Trajectory planning processes, such as adore_lfbehavior_node match the data to lane-following and lane-change views to determine where to stop the ego vehicle, while the adore_prediction_filter applies the signal phases to the prediction of other traffic participants near ego.
 - As shown in the image below, current traffic light phases are visualized as icons as well as connection vectors crossing the intersection.
-![vehicle0 approaching a redlight](readme_pics/demo008.png)
+![vehicle0 approaching a redlight](https://github.com/DLR-TS/adore_support/blob/master/demos/demo008.png)
 
 # Lane Changes
 - file: [demo009_lanechange_tostmannplatz.launch](demo009_lanechange_tostmannplatz.launch)
@@ -199,7 +201,7 @@ rosrun topic_tools transform /vehicle0/odom /pedestrian0/SIM/ResetVehicleTwist g
 - The lane change planner "adore_trajectory_planner_lc_node" computes trajectories for preparation and initiation of lane changes, while the lane merge planner "adore_trajectory_planner_lm_node" plans trajectories for the final part of the lane change, merging into the target lane.
 - The decision making module sends PlanningRequest messages and receives PlanningResult messages from active trajectory planners. It selects "the best" trajectory and sends it to the trajectory tracking controller to be executed. In order to allow comparison of trajectories, each planner provides a set of different objective values for a valid trajectory. The "adore_tactical_planner_node" compares trajectories purely on their validity and the objective value of "MinimumNavigationCostOnLane".
 - Indicators are currently not visualized, but their activation can be examined on the topic /vehicle0/FUN/IndicatorCommand. Each PlanningResult specifies which indicator has to be activated. The activation command is generated by the tactical planner node based on the selected trajectory.
-![vehicle0 changing lanes](readme_pics/demo009.png)
+![vehicle0 changing lanes](https://github.com/DLR-TS/adore_support/blob/master/demos/demo009.png)
 
 # Background satellite images
 - file: [demo010_sat_images.launch](demo010_sat_images.launch)
@@ -213,10 +215,10 @@ rosrun topic_tools transform /vehicle0/odom /pedestrian0/SIM/ResetVehicleTwist g
     <param name="plotoptions/tiles/base_url" value="https://www.wms.nrw.de/geobasis/wms_nw_dop?language=ger&#038;SERVICE=WMS&#038;REQUEST=GetMap&#038;VERSION=1.3.0&#038;layers=nw_dop_rgb&#038;styles=&#038;width=400&#038;height=400&#038;CRS=EPSG:25832&#038;FORMAT=image/jpeg&#038;bbox=" type="str" /> 
     <param name="plotoptions/tiles/width_meters" value="100" type="double" /> 
 ```
-![duesseldorf scenario satellite images](readme_pics/demo010.2.png)
-![duesseldorf scenario satellite images, zoom](readme_pics/demo010.png)
+![duesseldorf scenario satellite images](https://github.com/DLR-TS/adore_support/blob/master/demos/demo010.2.png)
+![duesseldorf scenario satellite images, zoom](https://github.com/DLR-TS/adore_support/blob/master/demos/demo010.png)
 
-# Faster (slower) then real-time and background simulation
+# Faster (slower) than real-time and background simulation
 - file: [demo011_scheduler.launch](demo011_scheduler.launch)
 - The scenario of this example is equivalent to [demo006_lanefollowing_navigation.launch](demo006_lanefollowing_navigation.launch)
 - The approach to simulating the scenario has been adapted for "headless" applications, such as batch simulations for validation and machine learning. 
@@ -230,4 +232,31 @@ rosrun topic_tools transform /vehicle0/odom /pedestrian0/SIM/ResetVehicleTwist g
 ```bash
 roslaunch demo011_scheduler.launch headless:=true
 ```
-![headless simulation](readme_pics/demo011xterm.png)
+![headless simulation](https://github.com/DLR-TS/adore_support/blob/master/demos/demo011xterm.png)
+
+# Speed Limit adherence
+
+- file: [demo012_lanefollowing_w_speedlimit.launch](demo012_lanefollowing_w_speedlimit.launch)
+- This is an adaption of [demo003_lanefollowing.launch](demo003_lanefollowing.launch) which adds the speedlimit_provider node. The ego will slow down a bit near the start and again after about 300m.
+- The file [speedlimit.txt](speedlimit.txt) is used as a source for speed limits in a simple csv. Each line has 5 values, the first is the speed limit in m/s and the next two pairs represent the start x/y and stop x/y.
+- The speedlimit_provider node reads this file in, given as a parameter, and will publish each set of data if the ego is close enough. This information is then used in the computation of the laneview provider. There a speedlimit function is derived for each lane, from the global speed limit and each set of speed limit data where both start and stop points are within the lane.
+- The demo csv file contains some off lane speed limits to show that these are ignored.
+
+
+# Simulation of localization errors and odometry drift
+Automated Vehicles often determine their position via (differential) GPS, comparison of LIDAR measurements with an a-priori map, other optical features with an a-priori map or a combination thereof. New observations may lead to a correction of the belief where the AV is located. Feed-back controllers with a high gain should not be directly exposed to such jumps in the belief state, as that could lead to instability or at least uncomfortable control actions. Wheel-speed/rotation measurements, inertial measurement units and optical-differential measurements are often summerized as odometry based information: A common characteristic is that an odometry-based belief state is jump free but drifts (slowly diverges from ground truth with time). Its drift error rules out comparison of the odometry belief against globally referenced information, as is the case for trajectory planners and HD-maps in ADORe.
+By employing localization-based states for predictive feed-forward computation and odometry-based states for feedback, the problems of both signals can be compensated. Such a technique appears to be state-of-the-art and is for example utilized by the ROS [navigation stack](http://wiki.ros.org/navigation/Tutorials/RobotSetup).
+
+The approach is demonstrated for ADORe as follows: Error models for localization and odometry are used in the modified configuration-file [demo_vehicle_cfg01b.launch](demo_vehicle_cfg01b.launch). Both make use of the ground truth (luckily avaliable in simulation), which is supplied by the vehicle model on the topic `/vehicle0/SIM/state` and supply their error-augmented outputs via `/vehicle0/localization` and `/vehicle0/odom`. 
+- file: [demo013_localization_errors.launch](demo013_localization_errors.launch)
+- The vehicle model is started with the argument `external_ego_measurement_models:=true` to suppress error-free outputs. In this case the vehicle model only supplies the topic `/vehicle0/SIM/state`.
+- The additional process adore_odometrymodel_node supplies the odometry estimate
+- The additional process adore_localizationmodel_node supplies the localization estimate
+
+The following image shows a situation from demo013, with ground-truth vehicle state given in red (also vehicle image) and localization belief state in blue. The setup allows the trajectory planner to assess whether a localization update necessitates sharp control action or whether the offset may be corrected over a prolonged period of time. The trajectory planner selects the initial state of the new trajectory at the old reference state in odometry coordinates and calculates where the initial state is located under consideration of the new localization update. Thus guaranteeing continuity in odometry coordinates while also allowing to react to changes in the localization frame.
+
+![Odometry based control and localization errors](https://github.com/DLR-TS/adore_support/blob/master/demos/demo013.png)
+
+Note: 
+- The operation of the vehicle in error-free conditions may be simulated by supplying the argument `external_ego_measurement_models:=false` (or no argument) to the vehicle model and by starting neither adore_odometrymodel_node nor adore_localizationmodel_node.
+- The vehicle may be operated on purely localization information by supplying the localization state also on the topic `/vehicle0/odom` instead of the odometry state.

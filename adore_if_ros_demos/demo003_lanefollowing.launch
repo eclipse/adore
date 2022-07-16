@@ -12,12 +12,13 @@
  *   Daniel Heß - initial API and implementation
  ********************************************************************************-->
 <launch>
-  <node name="timer" pkg="adore_if_ros" type="adore_timer_node" output="screen" launch-prefix="xterm -e"/>
+  <node name="timer" pkg="adore_if_ros" type="adore_timer_node" output="screen"/>
   <group ns="vehicle0">
     <param name="PARAMS/track" value="$(dirname)/tracks/basic_test_track.xodr" type="str" />
     <param name="simulationID" value="0" type="int" />  
     <include file="demo_vehicle_cfg01.launch"/>
     <include file="demo_plotters.launch"/>
+    <node name="plot_planning_details" pkg="adore_if_ros" type="plot_planning_details_node"/>
     <node pkg="rostopic" type="rostopic" name="posereset" args="pub /vehicle0/SIM/ResetVehiclePose geometry_msgs/Pose '{position: {x: 150, y: 162, z: 0},orientation: { w: 1}}'"/>
     <!-- set max speed of this vehicle -->
     <param name="PARAMS/tactical_planner/global_speed_limit" value="30" type="double" />  
