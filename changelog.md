@@ -13,7 +13,7 @@
 
 # Change Log
 
-## 2022-07-16
+## 2022-07-16 -> v0.3.0
 - modularized respository structure
 - added osqp, lizard, cppcheck, cpplint
 - added adore_if_carla
