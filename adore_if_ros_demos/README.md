@@ -16,15 +16,17 @@
 # ADORe ROS Demos
 In the following, several demonstrations are given to showcase technical solutions on reduced examples.
 Their goal is to serve as venture points for setting up simulation experiments with ADORe automated vehicles.
-To start the demonstrations on your computer, first compile ADORe and its ROS interface, start the plotting server and navigate to the demo folder:
+To run the demo scenarios, build the command-line-interface container and start it:
 ~~~bash
-cd ~/catkin_ws/src/adore
-catkin build adore_if_ros
-cd plotlabserver
-./start.sh
-cd ../adore_if_ros_demos
+make build_adore-cli
+make adore-cli
 ~~~
-After compilation is successful, a demo is started by executig "roslaunch _demo_file_name_".
+Then navigate to the catkin workspace demo directory in the adore-cli container, export your display variable and launch the demo:
+~~~bash
+cd catkin_workspace/src/adore_if_ros_demos
+export DISPLAY=:0
+roslaunch demo001_loadmap.launch
+~~~
 
  
 # Load Open Drive tracks
