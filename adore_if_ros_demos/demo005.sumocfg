@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--********************************************************************************
+ * Copyright (C) 2017-2020 German Aerospace Center (DLR). 
+ * Eclipse ADORe, Automated Driving Open Research https://eclipse.org/adore
+ *
+ * This program and the accompanying materials are made available under the 
+ * terms of the Eclipse Public License 2.0 which is available at
+ * http://www.eclipse.org/legal/epl-2.0.
+ *
+ * SPDX-License-Identifier: EPL-2.0 
+ *
+ * Contributors: 
+ *   Daniel Heß
+ ********************************************************************************-->
+
+<configuration xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://sumo.dlr.de/xsd/sumoConfiguration.xsd">
+
+    <input>
+        <net-file value="tracks/circle50m.net.xml"/>
+        <route-files value="tracks/circle50m.rou.xml"/>
+        <additional-files value="tracks/circle50m.add.xml"/>
+    </input>
+
+</configuration>

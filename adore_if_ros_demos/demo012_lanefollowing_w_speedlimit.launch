@@ -1,0 +1,31 @@
+<!--********************************************************************************
+ * Copyright (C) 2017-2020 German Aerospace Center (DLR). 
+ * Eclipse ADORe, Automated Driving Open Research https://eclipse.org/adore
+ *
+ * This program and the accompanying materials are made available under the 
+ * terms of the Eclipse Public License 2.0 which is available at
+ * http://www.eclipse.org/legal/epl-2.0.
+ *
+ * SPDX-License-Identifier: EPL-2.0 
+ *
+ * Contributors: 
+ *   Thomas Lobig
+ ********************************************************************************-->
+<launch>
+  <node name="timer" pkg="adore_if_ros" type="adore_timer_node" output="screen" launch-prefix="xterm -e"/>
+  <node name="graph" pkg="adore_if_ros" type="plot_graph_node"/>
+	  <node pkg="topic_tools" type="transform" name="v0extraction" args="/vehicle0/odom /plot/v0 std_msgs/Float64 'm.twist.twist.linear.x'"/>
+	  <node pkg="rostopic" type="rostopic" name="plotstart0" args="pub /plot adore_if_ros_msg/PlotStart &quot;{tag: 'v0', xtopic: '/SIM/utc', ytopic: '/plot/v0', figure: 3, options: 'LineColor=0,0,1'}&quot;"/>
+  
+  <group ns="vehicle0">
+    <param name="PARAMS/track" value="$(dirname)/tracks/basic_test_track.xodr" type="str" />
+    <param name="simulationID" value="0" type="int" />
+    <param name="PARAMS/speedLimitFile" value="$(dirname)/speedlimit.txt" type="string"/>
+    <include file="demo_vehicle_cfg01.launch"/>
+    <node name="speedlimit" pkg="adore_if_ros" type="adore_speedlimitprovider_node" output="screen"/>
+    <include file="demo_plotters.launch"/>
+    <node pkg="rostopic" type="rostopic" name="posereset" args="pub /vehicle0/SIM/ResetVehiclePose geometry_msgs/Pose '{position: {x: 150, y: 162, z: 0},orientation: { w: 1}}'"/>
+    <!-- set max speed of this vehicle -->
+    <param name="PARAMS/tactical_planner/global_speed_limit" value="30" type="double" />  
+  </group>
+</launch>

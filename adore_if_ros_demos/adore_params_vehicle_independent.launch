@@ -1,0 +1,247 @@
+<launch>
+<arg name="odr" default="100" />
+
+<param name="/tcp_no_delay" value="true"/>
+
+<group ns="adore_if_ibeo">
+    <param name="existance_probability_cutoff" value="-1" type="double" /><!-- -1 deactivate  -->
+    <!-- <param name="existance_probability_cutoff" value="0.05" type="double" /> -->
+    <param name="size_cutoff" value="0.02" type="double" />
+</group>
+<group ns="map_provider">
+    <param name="r" value="300" type="double" />  
+    <param name="activate_plotting" value="true" type="bool" />  
+    <param name="plot_complete_map_in_local_view" value="false" type="bool" />  
+    <param name="use_scenario_manager_map" value="false" type="bool" />
+    <param name="XODRLoaderPointsPerBorder" value="128" type="int" />
+</group>
+<group ns="navigation">
+    <param name="active_plotting_local" value="true" type="bool" />  
+    <param name="active_plotting_global" value="true" type="bool" />  
+    <param name="use_scenario_mananger_map" value="false" type="bool" />
+    <param name="lane_change_penalty" value="1000.0" type="double" />  
+    <param name="navigation_goal_stop_tolerance_lateral" value="1.0" type="double"/>
+</group>
+<group ns="local_road_map">
+    <param name="discard_radius" value="320.0" type="double" />  
+    <param name="navigation_active" value="true" type="bool" />  
+    <param name="border_trace_length" value="120.0" type="double" />  
+</group>
+<group ns="lane_change_view">
+    <param name="look_ahead" value="150.0" type="double" />  
+    <param name="look_behind" value="50.0" type="double" />  
+    <param name="maximum_navcost_loss" value="1000.0" type="double" />  
+    <param name="baseline_fit_smoothness" value="0.001" type="double" />  
+</group>
+<group ns="lane_following_view">
+    <param name="look_ahead" value="150.0" type="double" />  
+    <param name="look_behind" value="50.0" type="double" />
+    <param name="planning_time" value="10.0" type="double" />  
+    <param name="baseline_fit_smoothness" value="0.015" type="double" />  
+</group>
+<group ns="cooperation">
+    <param name="cooperation_mode" value="1" type="int" />  
+    <param name="assumed_chase_acceleration" value="-2.0" type="double" />  
+    <param name="negotiation_time" value="0.5" type="double" />
+    <param name="abs_time_uncertainly_for_lc" value="1.0" type="double" />  
+    <param name="abs_position_uncertainty" value="8.0" type="double" />  
+    <param name="abs_velocity_uncertainty" value="2.5" type="double" />
+    <param name="send_repetitive_messages" value="50" type="int" />
+    <param name="utm_zone" value="32" type="int" />
+</group>
+  <group ns="trajectory_generation">
+    <param name="rho" value="2.2" type="double" />  <!--2.2-->
+    <param name="zd_integration_length" value="9.0" type="double" />  
+    <param name="zd_integration_step" value="0.01" type="double" />  
+    <param name="set_point_count" value="100" type="int" />
+    <param name="emergency_maneuver_delay" value="0.25" type="double" />  
+  </group>
+  <group ns="tactical_planner">
+    <param name="global_speed_limit" value="13.89" type="double" />  
+    <param name="reset_radius" value="2.0" type="double" />  
+    <param name="acc_lat_ub" value="2.0" type="double" />  
+    <param name="acc_lat_ub_min_vel" value="2.0" type="double" />  
+    <param name="acc_lon_ub" value="2.0" type="double" />
+    <param name="acc_lon_lb" value="-3.0" type="double" />  
+    <param name="front_time_gap" value="2.5" type="double" />  
+    <param name="rear_time_gap" value="1" type="double" />  
+    <param name="front_s_gap" value="4.0" type="double" /> 
+    <param name="lower_bound_lf_front_s_gap" value="4.0" type="double" />  <!--distance keeping before lane change -->
+    <param name="rear_s_gap" value="4.0" type="double" />  
+    <param name="chase_reference_offset" value="0.0" type="double" />  
+    <param name="lead_reference_offset" value="0.0" type="double" />  
+    <param name="front_reference_offset" value="0.0" type="double" />  
+    <param name="gap_alignment" value="0.5" type="double" />  
+    <param name="assumed_nominal_acceleration_minimum" value="-1.9" type="double"/>
+    <param name="max_navcost_loss" value="500" type="double"/>
+    <param name="enforce_monotonous_navigation_cost" value="true" type="bool"/>
+    <param name="indicator_lookahead" value="50"/>
+    <param name="preferred_lc_by_manual_indicator_timeout" value ="10"/>
+    <param name="lanechange_suppression_timeout" value="0.5" type="double" />  
+    <param name="collision_detection_front_buffer_space" value="0.0" type="double" />  
+    <param name="collision_detection_lateral_precision" value="0.05" type="double" />  
+    <param name="collision_detection_lateral_error" value="0.0" type="double" />  
+    <param name="collision_detection_longitudinal_error" value="0.0" type="double" />  
+    <param name="nominal_swath_acceleration_error" value="0" type="double"/>
+    <param name="coercion_prevention_strategy" value="2" type="int"/><!--0 switched off, 1 objective function, 2 constraint-->
+    <param name="horizon_stop_reference_distance" value="8" type="double"/>
+    <param name="terminate_after_first_stop_threshold_speed" value="0.1" type="double"/>
+    <param name="lane_view_reset_velocity" value="1.5" type="double" /> 
+  </group>
+  <group ns="longitudinal_planner">
+    <param name="weight_pos" value="2.0" type="double" />  
+    <param name="weight_vel" value="5.0" type="double" />  
+    <param name="weight_acc" value="12" type="double" />  
+    <param name="weight_jerk" value="8.0" type="double" />  
+    <param name="weight_end_pos" value="0.0" type="double" />  
+    <param name="weight_end_vel" value="0.0" type="double" />  
+    <param name="weight_end_acc" value="0.0" type="double" />  
+    <param name="slack_pos" value="0.5" type="double" />  
+    <param name="slack_vel" value="0.01" type="double" />  
+    <param name="slack_acc" value="5.0" type="double" />  
+    <param name="acc_lb" value="-1.75" type="double" />  
+    <param name="acc_ub" value="0.75" type="double" />  
+    <param name="acc_ub_slow" value="1.5" type="double" />
+    <param name="v_acc_ub_slow" value="4" type="double" />
+    <param name="comf_acc_lb" value="-1" type="double" />  
+    <param name="comf_acc_ub" value="1.0" type="double" />  
+    <param name="jerk_lb" value="-100.0" type="double" />  
+    <param name="jerk_ub" value="100.0" type="double" />  
+    <param name="acc_lat_ub" value="1.5" type="double" />  
+    <param name="acc_lat_ub_min_velocity" value="1.0" type="double" />
+    <param name="constraint_clearance_pos" value="0.1" type="double" />
+    <param name="constraint_clearance_vel" value="0.05" type="double" />
+    <param name="min_width_stop" value="2.0" type="double" />
+    <param name="min_width_slow" value="2.0" type="double" />
+    <param name="min_width_slow_speed" value="14.0" type="double" />
+    <param name="min_width_fast" value="2.1" type="double" />
+    <param name="min_width_fast_speed" value="14.0" type="double" />
+    <param name="max_cpu_time" value="0.05" type="double" />
+    <param name="stopAtRedLights_always_before" value="false" type="bool"/><!--true: will always consider stopping possible while vehicle is in front of redlight, false: uses acceleration bound to compute whether stopping is possible. If stopping not possible and signal is in clearance state, vehicle will continue-->
+    <param name="stopAtRedLights_max_connection_length" value="10.0" type="double" />
+    <param name="stop_distance_to_conflict_point" value="5.0" type="double"/><!--distance between stop position and conflict point-->
+  </group>
+  <group ns="lateral_planner">
+    <param name="weight_pos" value="0.5" type="double" />  
+    <param name="weight_vel" value="1.0" type="double" />  
+    <param name="weight_acc" value="1.5" type="double" />  
+    <param name="weight_jerk" value="1.5" type="double" />  
+    <param name="weight_end_pos" value="0.0" type="double" />  
+    <param name="weight_end_vel" value="0.0" type="double" />  
+    <param name="weight_end_acc" value="0.0" type="double" />  
+    <param name="slack_pos" value="0.1" type="double" />  
+    <param name="slack_vel" value="0.1" type="double" />  
+    <param name="slack_acc" value="1" type="double" />  
+    <param name="acc_lb" value="-8.0" type="double" />  
+    <param name="acc_ub" value="8.0" type="double" />  
+    <param name="jerk_lb" value="-100.0" type="double" />  
+    <param name="jerk_ub" value="100.0" type="double" />  
+    <param name="curvature_ub" value="0.5" type="double" />  
+    <param name="curvature_lb" value="-0.5" type="double" />
+    <param name="relative_heading_ub" value="1." type="double" />
+    <param name="relative_heading_lb" value="-1." type="double" />
+    <param name="hard_safety_distance_to_lane_boundary" value="0.15" type="double" />
+    <param name="soft_safety_distance_to_lane_boundary" value="0.3" type="double" />
+    <param name="minimum_lateral_control_space" value="0.15" type="double" />
+    <param name="merge_constraint_delay" value="-1.0" type="double" />
+    <param name="max_cpu_time" value="0.05" type="double" />
+    <param name="lateral_grid_scale" value="1" type="double" />
+  </group>
+  <group ns="checkpoints">
+    <param name="clear_distance" value="50.0" type="double" />
+    <param name="clear_timeout" value="30.0" type="double" />  
+  </group>
+  <group ns="emergency_operation">
+    <param name="kyTerm" value="0.05" type="double" />  
+    <param name="kpsiTerm" value="0.4" type="double" />  
+    <param name="axMinTerm" value="-3.0" type="double" />  
+    <param name="axMinPlan" value="-3.0" type="double" />  
+    <param name="axMaxTerm" value="2.0" type="double" />  
+    <param name="deltaMaxTerm" value="1.0" type="double" />  
+    <param name="deltaMinTerm" value="-1.0" type="double" />  
+
+    <param name="emergencyManeuverAMin" value="-2.5" type="double" />  
+    <param name="emergencyManeuverAMax" value="-1" type="double" />  
+    <param name="emergencyManeuverAStall" value="-2.5" type="double" />  
+    <param name="emergencyManeuverTStall" value="0.0" type="double" />  
+    <param name="emergencyManeuverJMin" value="-1.33" type="double" />  
+  </group>
+
+
+  <group ns="prediction">
+    <param name="static_object_overapproximation" value="0.25" type="double"/>
+    <param name="roadbased_prediction_duration" value="10.0" type="double"/>
+    <param name="roadbased_expected_acc_ub" value="0" type="double"/>
+    <param name="roadbased_expected_acc_lb" value="-1.8" type="double"/>
+    <param name="roadbased_expected_acc_ub_delay" value="3" type="double"/> 
+    <param name="roadbased_expected_vel_ub" value="15.0" type="double"/>
+    <param name="roadbased_worstcase_acc_ub" value="-1.8" type="double"/> 
+    <param name="roadbased_worstcase_acc_ub_delay" value="1" type="double"/> 
+    <param name="roadbased_worstcase_acc_lb" value="-2.5" type="double"/>
+    <param name="roadbased_worstcase_vel_ub" value="15.0" type="double"/>
+    <param name="roadbased_heading_deviation_ub" value="0.78" type="double"/>
+    <param name="roadbased_lat_precision" value="0.1" type="double"/>
+    <param name="roadbased_lat_error" value="0.25" type="double"/>
+    <param name="roadbased_lon_error" value="0.5" type="double"/>
+    <param name="roadbased_time_headway" value="2" type="double"/>
+    <param name="roadbased_time_leeway" value="0" type="double"/>
+    <param name="offroad_prediction_duration" value="5" type="double"/>
+    <param name="offroad_expected_acc_ub" value="0.0" type="double"/>
+    <param name="offroad_expected_acc_lb" value="-1" type="double"/>
+    <param name="offroad_expected_vel_ub" value="15.0" type="double"/>
+    <param name="offroad_worstcase_acc_ub" value="-1.0" type="double"/>
+    <param name="offroad_worstcase_acc_lb" value="-3" type="double"/>
+    <param name="offroad_worstcase_vel_ub" value="15.0" type="double"/>
+    <param name="offroad_lat_precision" value="0.1" type="double"/>
+    <param name="offroad_lat_error" value="0.25" type="double"/>
+    <param name="offroad_lon_error" value="0.02" type="double"/>
+    <param name="offroad_time_headway" value="1.5" type="double"/>
+    <param name="offroad_time_leeway" value="1.5" type="double"/>
+    <param name="area_of_interest_shrink" value="1" type="double"/>
+    <param name="area_of_effect_shrink" value="-0.25" type="double"/>
+    <param name="worstcase_filter_precedence" value="true" type="bool"/>
+    <param name="worstcase_filter_tcd" value="false" type="bool"/>
+    <param name="setbased_prediction_strategy" value="0" type="int"/><!--returns prediction strategy: 0 width of object, 1 width of road, 2 width of object-> width of road-->
+    <param name="prediction_width_lb" value="0.25" type="double"/>
+    <param name="prediction_width_ub" value="2.0" type="double"/>
+  </group>
+
+<!-- simulation only: -->  
+  <group ns="SensorModel">
+    <param name="objectDetectionRange" value="$(arg odr)" type="double" />  
+    <param name="objectDiscardAge" value="1.0" type="double" />  
+  </group>
+  
+  <group ns="OdometryModel">
+    <!-- <param name="k_e_vx" value="0.01" type="double" />
+    <param name="k_e_vy" value="0.01" type="double" />
+    <param name="k_e_omega" value="0.01" type="double" />
+    <param name="k_e_ax" value="0.01" type="double" /> -->
+    <param name="k_e_vx" value="0.02" type="double" />
+    <param name="k_e_vy" value="0.02" type="double" />
+    <param name="k_e_omega" value="0.05" type="double" />
+    <param name="k_e_ax" value="0.05" type="double" />
+  </group>
+  <group ns="LocalizationModel">
+    <!-- <param name="drift_rate_pos" value="0.01" type="double" />
+    <param name="drift_deviation_pos" value="0.25" type="double" />
+    <param name="jump_deviation_pos" value="0.25" type="double" />
+    <param name="jump_threshold_pos" value="0.001" type="double" />
+    <param name="jump_deviation_heading" value="0.01" type="double" />
+    <param name="jump_threshold_heading" value="0.002" type="double" />   -->
+    <!-- <param name="drift_rate_pos" value="0.0" type="double" />
+    <param name="drift_deviation_pos" value="0.0" type="double" />
+    <param name="jump_deviation_pos" value="0.0" type="double" />
+    <param name="jump_threshold_pos" value="0.0" type="double" />
+    <param name="jump_deviation_heading" value="0.05" type="double" />
+    <param name="jump_threshold_heading" value="0.002" type="double" />   -->
+    <param name="drift_rate_pos" value="0.0" type="double" />
+    <param name="drift_deviation_pos" value="0.0" type="double" />
+    <param name="jump_deviation_pos" value="0.0" type="double" />
+    <param name="jump_threshold_pos" value="0.0" type="double" />
+    <param name="jump_deviation_heading" value="0.0" type="double" />
+    <param name="jump_threshold_heading" value="0.00" type="double" />    
+  </group>
+
+</launch>
+

@@ -1,0 +1,13 @@
+cmake
+make
+g++
+gcc
+libeigen3-dev
+libboost-all-dev
+libxerces-c-dev
+xsdcxx
+
+# requirements for dlib
+libblas-dev
+libopenblas-dev
+liblapack-dev

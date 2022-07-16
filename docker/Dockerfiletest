@@ -1,0 +1,7 @@
+# syntax = edrevo/dockerfile-plus
+
+FROM ubuntu:20.04
+
+INCLUDE+ Dockerfile.docker_base.partial
+
+

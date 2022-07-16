@@ -1,0 +1,31 @@
+<!--********************************************************************************
+ * Copyright (C) 2017-2020 German Aerospace Center (DLR). 
+ * Eclipse ADORe, Automated Driving Open Research https://eclipse.org/adore
+ *
+ * This program and the accompanying materials are made available under the 
+ * terms of the Eclipse Public License 2.0 which is available at
+ * http://www.eclipse.org/legal/epl-2.0.
+ *
+ * SPDX-License-Identifier: EPL-2.0 
+ *
+ * Contributors: 
+ *   Robert Markowski - initial API and implementation
+ ********************************************************************************-->
+<launch>
+  <node name="timer" pkg="adore_if_ros" type="adore_timer_node" output="screen" />
+  <group ns="vehicle0">
+    <include file="demo_vehicle_cfg02.launch"/>
+    <include file="demo_plotters.launch"/>
+    <param name="PARAMS/track" value="$(dirname)/tracks/basic_test_track.xodr" type="str" />
+    <param name="PARAMS/local_road_map/navigation_active" value="true" type="bool" />
+    <param name="PARAMS/navigation/active_plotting_global" value="false" type="bool" />  
+    <param name="PARAMS/tactical_planner/global_speed_limit" value="30" type="double" />  
+    <param name="simulationID" value="0" type="int" />  
+    <!-- set the start position -->
+    <node pkg="rostopic" type="rostopic" name="posereset" args="pub SIM/ResetVehiclePose geometry_msgs/Pose '{position: {x: 150, y: 162, z: 0},orientation: { w: 1}}'"/>
+    <!-- set the goal position -->
+    <node pkg="rostopic" type="rostopic" name="navgoal" args="pub ENV/NavigationGoal adore_if_ros_msg/NavigationGoal '{header: {seq: 0, stamp: {secs: 0, nsecs: 0}, frame_id: ''}, target: {x: 1570, y: 400, z: 0}}'"/>
+    <!-- set the goal position via plotlab-->
+    <node pkg="adore_if_ros" type="plotlab2navigationgoal.py" name="navgoalklick" args="$(dirname)/../plotlabserver/plotlabserver/build/logged_positions.txt" output="screen"/>
+  </group>
+</launch>

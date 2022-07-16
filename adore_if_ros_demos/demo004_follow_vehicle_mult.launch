@@ -1,0 +1,48 @@
+<!--********************************************************************************
+ * Copyright (C) 2017-2020 German Aerospace Center (DLR). 
+ * Eclipse ADORe, Automated Driving Open Research https://eclipse.org/adore
+ *
+ * This program and the accompanying materials are made available under the 
+ * terms of the Eclipse Public License 2.0 which is available at
+ * http://www.eclipse.org/legal/epl-2.0.
+ *
+ * SPDX-License-Identifier: EPL-2.0 
+ *
+ * Contributors: 
+ *   Daniel Heß - initial API and implementation
+ ********************************************************************************-->
+<launch>
+  <node name="timer" pkg="adore_if_ros" type="adore_timer_node" output="screen"/>
+  <node name="graph" pkg="adore_if_ros" type="plot_graph_node"/>
+  <node pkg="topic_tools" type="transform" name="v0extraction" args="/vehicle0/odom /plot/v0 std_msgs/Float64 'm.twist.twist.linear.x'"/>
+  <node pkg="topic_tools" type="transform" name="v1extraction" args="/vehicle1/odom /plot/v1 std_msgs/Float64 'm.twist.twist.linear.x'"/>
+  <node pkg="topic_tools" type="transform" name="v2extraction" args="/vehicle2/odom /plot/v2 std_msgs/Float64 'm.twist.twist.linear.x'"/>
+  <node pkg="rostopic" type="rostopic" name="plotstart0" args="pub /plot adore_if_ros_msg/PlotStart &quot;{tag: 'v0', xtopic: '/SIM/utc', ytopic: '/plot/v0', figure: 3, options: 'LineColor=0,0,1'}&quot;"/>
+  <node pkg="rostopic" type="rostopic" name="plotstart1" args="pub /plot adore_if_ros_msg/PlotStart &quot;{tag: 'v1', xtopic: '/SIM/utc', ytopic: '/plot/v1', figure: 3, options: 'LineColor=1,0,0'}&quot;"/>
+  <node pkg="rostopic" type="rostopic" name="plotstart2" args="pub /plot adore_if_ros_msg/PlotStart &quot;{tag: 'v2', xtopic: '/SIM/utc', ytopic: '/plot/v2', figure: 3, options: 'LineColor=0,0.5,0'}&quot;"/>
+
+  <group ns="vehicle0">
+    <param name="PARAMS/track" value="$(dirname)/tracks/circle50m.xodr" type="str" />
+    <param name="simulationID" value="0" type="int" />  
+    <include file="demo_vehicle_cfg01.launch"/>
+    <include file="demo_plotters.launch"/>
+    <param name="plotoptions/followMode" value="false" type="bool" />
+    <node pkg="rostopic" type="rostopic" name="posereset" args="pub /vehicle0/SIM/ResetVehiclePose geometry_msgs/Pose '{position: {x: 0, y: -52, z: 0},orientation: { w: 1}}'"/>
+  </group>
+
+  <group ns="vehicle1">
+    <param name="PARAMS/track" value="$(dirname)/tracks/circle50m.xodr" type="str" />
+    <param name="simulationID" value="1" type="int" />  
+    <include file="demo_vehicle_cfg01.launch"/>
+    <node pkg="rostopic" type="rostopic" name="posereset" args="pub /vehicle1/SIM/ResetVehiclePose geometry_msgs/Pose '{position: {x: 52, y: 0, z: 0},orientation: {z: 1, w: 1}}'"/>
+  </group>
+
+  <group ns="vehicle2">
+    <param name="PARAMS/track" value="$(dirname)/tracks/circle50m.xodr" type="str" />
+    <param name="simulationID" value="2" type="int" />  
+    <include file="demo_vehicle_cfg01.launch"/>
+    <node pkg="rostopic" type="rostopic" name="posereset" args="pub /vehicle2/SIM/ResetVehiclePose geometry_msgs/Pose '{position: {x: 0, y: 52, z: 0},orientation: {z: 1}}'"/>
+    <!-- reduce speed of this vehicle -->
+    <param name="PARAMS/tactical_planner/global_speed_limit" value="3" type="double" />  
+  </group>
+</launch>

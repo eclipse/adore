@@ -1,0 +1,28 @@
+<!--********************************************************************************
+ * Copyright (C) 2017-2020 German Aerospace Center (DLR). 
+ * Eclipse ADORe, Automated Driving Open Research https://eclipse.org/adore
+ *
+ * This program and the accompanying materials are made available under the 
+ * terms of the Eclipse Public License 2.0 which is available at
+ * http://www.eclipse.org/legal/epl-2.0.
+ *
+ * SPDX-License-Identifier: EPL-2.0 
+ *
+ * Contributors: 
+ *   Robert Markowski - initial API and implementation
+ ********************************************************************************-->
+<launch>
+  <group ns="vehicle0">
+    <param name="PARAMS/track" value="$(dirname)/tracks/basic_test_track.xodr" type="str" />
+    <param name="PARAMS/map_provider/r" value="200" type="double" />
+    <group ns="PARAMS/navigation">
+      <param name="activate_plotting" value="true" type="bool" />  
+      <param name="active_plotting_local" value="false" type="bool" />  
+      <param name="active_plotting_global" value="true" type="bool" />  
+      <param name="use_scenario_mananger_map" value="false" type="bool" />
+      <param name="lane_change_penalty" value="1000.0" type="double" />
+    </group>
+    <node name="lnav" pkg="adore_if_ros" type="adore_navigation_node" output="screen"/>
+    <node pkg="rostopic" type="rostopic" name="navgoal" args="pub /vehicle0/ENV/NavigationGoal adore_if_ros_msg/NavigationGoal '{target: {x: 150, y: 162, z: 0}}'"/>
+  </group>
+</launch>

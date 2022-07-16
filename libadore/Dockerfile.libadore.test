@@ -1,0 +1,14 @@
+ARG PROJECT
+
+
+FROM libadore_build as libadore_test_requirements_base
+
+ARG PROJECT
+ARG REQUIREMENTS_FILE="requirements.${PROJECT}.ubuntu20.04.test.system"
+
+
+WORKDIR /tmp/${PROJECT}
+
+#RUN apt-get update && \
+#    apt-get install --no-install-recommends -y $(sed '/^#/d' ${REQUIREMENTS_FILE}) && \
+#    rm -rf /var/lib/apt/lists/*

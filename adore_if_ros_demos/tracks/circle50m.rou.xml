@@ -1,0 +1,19 @@
+<!--
+********************************************************************************
+* Copyright (C) 2017-2020 German Aerospace Center (DLR). 
+* Eclipse ADORe, Automated Driving Open Research https://eclipse.org/adore
+*
+* This program and the accompanying materials are made available under the 
+* terms of the Eclipse Public License 2.0 which is available at
+* http://www.eclipse.org/legal/epl-2.0.
+*
+* SPDX-License-Identifier: EPL-2.0 
+*
+* Contributors: 
+*   Daniel Heß
+********************************************************************************
+-->
+<routes>
+    <vType id="traffic" type="passenger" length="5"  accel="2.6" decel="4.5" maxSpeed="50" carFollowModel="Krauss" sigma="0.9"/>
+    <flow id="carflow1" type="traffic" from="-1.157.08" to="-1.0.00" beg="0" end="0" number="25" departPos="random"/>
+</routes>
