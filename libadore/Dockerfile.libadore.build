@@ -2,11 +2,11 @@ ARG PROJECT
 
 
 
-FROM plotlab:latest as plotlab
+FROM plotlablib:latest as plotlablib
 FROM csaps-cpp:latest as csaps-cpp
 FROM qpoases:latest as qpoases
 FROM dlib:v19.19 as dlib
-FROM xodr:latest as xodr
+FROM xodr:tfn2 as xodr
 FROM catch2:v2.10.2 as catch2
 
 
@@ -41,8 +41,8 @@ RUN dpkg -i *.deb
 
 COPY ${PROJECT} /tmp/${PROJECT}
 
-COPY --from=plotlab /tmp/plotlab /tmp/plotlab
-WORKDIR /tmp/plotlab/lib/build
+COPY --from=plotlablib /tmp/plotlablib /tmp/plotlablib
+WORKDIR /tmp/plotlablib/plotlablib/build
 RUN cmake --install . --prefix /tmp/${PROJECT}/build/install
 
 RUN mkdir -p /tmp/${PROJECT}/build && mkdir -p /tmp/${PROJECT}/build/install

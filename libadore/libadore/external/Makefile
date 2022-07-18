@@ -10,9 +10,6 @@ ROOT_DIR:=$(shell dirname $(realpath $(firstword $(MAKEFILE_LIST))))
 DOCKER_BUILDKIT?=1
 DOCKER_CONFIG?=
 
-XODR_PROJECT=xodr
-XODR_VERSION=tfn2
-XODR_TAG="${XODR_PROJECT}:${XODR_VERSION}"
 QPOASES_PROJECT=qpOASES
 QPOASES_VERSION=latest
 QPOASES_TAG="$(shell echo $(QPOASES_PROJECT) | tr A-Z a-z):${QPOASES_VERSION}"
@@ -31,10 +28,9 @@ OSQP_TAG="${OSQP_PROJECT}:${OSQP_VERSION}"
 
 
 
-build_xodr: set_xodr_env build
-set_xodr_env: 
-	$(eval PROJECT := ${XODR_PROJECT}) 
-	$(eval TAG := ${XODR_TAG})
+build_xodr:
+	cd xodr && \
+    make
 
 build_qpOASES: set_qpOASES_env build
 set_qpOASES_env: 
@@ -62,7 +58,7 @@ set_osqp_env:
 	$(eval TAG := ${OSQP_TAG})
 
 all: 
-	cd xodr && make
+	make build_xodr
 	make build_qpOASES
 	make build_dlib
 	cd csaps-cpp && make
@@ -74,10 +70,8 @@ build:
 	docker build --network host \
                  --tag $(shell echo ${TAG} | tr A-Z a-z) \
                  --build-arg PROJECT=${PROJECT} .
-	mkdir -p "${ROOT_DIR}/tmp/${PROJECT}/build"
-	docker cp $$(docker create --rm $(shell echo ${TAG} | tr A-Z a-z)):/tmp/${PROJECT}/build tmp/${PROJECT}/build
-	cp -r "${ROOT_DIR}/tmp/${PROJECT}/build/build" "${ROOT_DIR}/${PROJECT}"
-	rm -rf ${ROOT_DIR}/tmp
+	docker cp $$(docker create --rm $(shell echo ${TAG} | tr A-Z a-z)):/tmp/${PROJECT}/build ${PROJECT}
+
 clean:
 	rm -rf "${ROOT_DIR}/*/build"
 	rm -rf "${ROOT_DIR}/tmp"

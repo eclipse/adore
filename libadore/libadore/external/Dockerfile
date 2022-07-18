@@ -34,9 +34,9 @@ RUN cmake .. -DCMAKE_INSTALL_PREFIX:PATH=install && \
 WORKDIR /tmp/${PROJECT}/build
 RUN cpack -G DEB && find . -type f -name "*.deb" | xargs mv -t . || true
 
-FROM alpine:3.14
+#FROM alpine:3.14
 
-ARG PROJECT
+#ARG PROJECT
 
-COPY --from=libadore_external_library_builder /tmp/${PROJECT} /tmp/${PROJECT}
+#COPY --from=libadore_external_library_builder /tmp/${PROJECT} /tmp/${PROJECT}
 
