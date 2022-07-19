@@ -16,17 +16,12 @@ QPOASES_TAG="$(shell echo $(QPOASES_PROJECT) | tr A-Z a-z):${QPOASES_VERSION}"
 DLIB_PROJECT=dlib
 DLIB_VERSION=v19.19
 DLIB_TAG="${DLIB_PROJECT}:${DLIB_VERSION}"
-CSAPS_CPP_PROJECT="csaps-cpp"
-CSAPS_CPP_VERSION="latest"
-CSAPS_CPP_TAG="${CSAPS_CPP_PROJECT}:${CSAPS_CPP_VERSION}"
 CATCH2_PROJECT="Catch2"
 CATCH2_VERSION="v2.10.2"
 CATCH2_TAG="${CATCH2_PROJECT}:${CATCH2_VERSION}"
 OSQP_PROJECT="osqp"
 OSQP_VERSION="latest"
 OSQP_TAG="${OSQP_PROJECT}:${OSQP_VERSION}"
-
-
 
 build_xodr:
 	cd xodr && \
@@ -42,10 +37,9 @@ set_dlib_env:
 	$(eval PROJECT := ${DLIB_PROJECT}) 
 	$(eval TAG := ${DLIB_TAG})
 
-build_csaps-cpp: set_csaps-cpp_env build
-set_csaps-cpp_env: 
-	$(eval PROJECT := ${CSAPS_CPP_PROJECT}) 
-	$(eval TAG := ${CSAPS_CPP_TAG})
+build_csaps-cpp:
+	cd csaps-cpp && \
+    make
 
 build_Catch2: set_Catch2_env build
 set_Catch2_env: 

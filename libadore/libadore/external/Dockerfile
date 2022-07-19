@@ -27,16 +27,19 @@ WORKDIR /tmp/${PROJECT}/build
 #    cmake .. && \
 #    make -j$(nproc)
 RUN cmake .. -DCMAKE_INSTALL_PREFIX:PATH=install && \
-    cmake --build . -- -j $(nproc)
+    cmake --build . -- -j $(nproc) && \
+    cmake --install .
     #cmake --build . --config Release --target install -- -j $(nproc)
 
 
 WORKDIR /tmp/${PROJECT}/build
 RUN cpack -G DEB && find . -type f -name "*.deb" | xargs mv -t . || true
 
-#FROM alpine:3.14
+RUN mv CMakeCache.txt CMakeCache.txt.build
 
-#ARG PROJECT
+FROM alpine:3.14
 
-#COPY --from=libadore_external_library_builder /tmp/${PROJECT} /tmp/${PROJECT}
+ARG PROJECT
+
+COPY --from=libadore_external_library_builder /tmp/${PROJECT} /tmp/${PROJECT}
 

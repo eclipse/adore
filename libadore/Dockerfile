@@ -44,8 +44,14 @@ RUN mkdir -p /tmp/${PROJECT}/build && mkdir -p /tmp/${PROJECT}/build/install
 
 WORKDIR /tmp/${PROJECT}/build
 
-COPY --from=dlib /tmp/dlib /tmp/dlib
-WORKDIR /tmp/dlib/build
+COPY --from=dlib /tmp/${PROJECT}/external/dlib /tmp/${PROJECT}/external/dlib
+WORKDIR /tmp/${PROJECT}/external/dlib/build
+RUN cmake --install . --prefix /tmp/${PROJECT}/build/install
+
+COPY --from=xodr /tmp/xodr /tmp/xodr
+WORKDIR /tmp/xodr/build
+COPY --from=dlib /tmp/${PROJECT}/external/dlib /tmp/${PROJECT}/external/dlib
+WORKDIR /tmp/${PROJECT}/external/dlib/build
 RUN cmake --install . --prefix /tmp/${PROJECT}/build/install
 
 COPY --from=qpoases /tmp/qpOASES /tmp/qpOASES
@@ -58,7 +64,7 @@ RUN cmake .. -DBUILD_adore_TESTING=ON -DCMAKE_PREFIX_PATH=install -DCMAKE_INSTAL
 
 WORKDIR /tmp/osqp/build
 RUN cmake .. -DBUILD_adore_TESTING=ON -DCMAKE_PREFIX_PATH=install -DCMAKE_INSTALL_PREFIX:PATH=install && \
-    cmake --build . --config Release --target install -- -j $(nproc)
+    cmake --build . --config Release --target install -- -j $(nproc) 
 
 
 #FROM alpine:3.14 AS libadore_package
