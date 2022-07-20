@@ -22,14 +22,20 @@ if(BUILD_adore_TESTING)
     test_centerandlanewidth
   )
 
-  find_package(Catch2 CONFIG)
+  find_package(Catch2)
   include(CTest)
   include(Catch)
-  
+
   foreach(testcase ${adore_MAD_TEST_CASES})
     add_executable(${testcase}) 
     target_sources(${testcase} PRIVATE ${testcase}.cpp)
-    target_link_libraries(${testcase} PRIVATE mad Catch2::Catch2)
+    target_link_libraries(
+        ${testcase} 
+          PRIVATE 
+            mad 
+            Catch2::Catch2
+            qpoases::qpoases
+    )
     target_compile_features(${testcase} PRIVATE cxx_std_17)
     catch_discover_tests(${testcase})
   endforeach()

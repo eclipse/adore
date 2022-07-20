@@ -63,7 +63,7 @@
 [submodule "libadore/libadore/external/Catch2"]
 	path = libadore/libadore/external/Catch2
 	url = git@github.com:catchorg/Catch2
-	ignore = untracked
+    ignore = dirty
 	shallow = true
 [submodule "libadore/libadore/external/csaps-cpp"]
 	path = libadore/libadore/external/csaps-cpp

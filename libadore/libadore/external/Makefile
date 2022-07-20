@@ -27,7 +27,13 @@ build_xodr:
 	cd xodr && \
     make
 
-build_qpOASES: set_qpOASES_env build
+build_qpOASES: set_qpOASES_env
+#	cp files/cmake qpOASES -r
+#	rm qpOASES/CMakeLists.txt
+#	cp files/CMakeLists.qpOASES.txt qpOASES/CMakeLists.txt
+#	touch qpOASES/README.md
+#	touch qpOASES/LICENSE
+	make build
 set_qpOASES_env: 
 	$(eval PROJECT := ${QPOASES_PROJECT})
 	$(eval TAG := ${QPOASES_TAG})

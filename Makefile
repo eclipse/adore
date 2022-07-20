@@ -9,7 +9,9 @@ CATKIN_WORKSPACE_DIRECTORY=catkin_workspace
 
 .EXPORT_ALL_VARIABLES:
 DOCKER_BUILDKIT?=1
-DOCKER_CONFIG ?= $(shell realpath ${ROOT_DIR})/apt_cacher_ng_docker
+DOCKER_CONFIG?=$(shell realpath ${ROOT_DIR})/apt_cacher_ng_docker
+
+CMAKE_PREFIX_PATH?=$(shell realpath $$(find . -type d | grep "build/install" | grep -v "build/install/") | tr '\n' ';') 
 
 
 DOCKER_GID := $(shell getent group | grep docker | cut -d":" -f3)
@@ -77,6 +79,7 @@ build_adore_v2x_sim: ## Build adore_v2x_sim
 
 .PHONY: build_libadore 
 build_libadore: start_apt_cacher_ng ## Build libadore
+	echo ${CMAKE_PREFIX_PATH} && exit 1
 	cd libadore && \
     make
 

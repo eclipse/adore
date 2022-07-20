@@ -1,12 +1,13 @@
 ARG PROJECT
 
+ARG CMAKE_PREFIX_PATH
 
 
 FROM plotlablib:latest as plotlablib
 FROM csaps-cpp:latest as csaps-cpp
 FROM qpoases:latest as qpOASES
 FROM dlib:v19.19 as dlib
-FROM xodr:tfn2 as xodr
+FROM xodr:latest as xodr
 FROM catch2:v2.10.2 as Catch2
 
 
@@ -14,6 +15,7 @@ FROM ubuntu:20.04 as libadore_builder
 
 ARG PROJECT
 ARG REQUIREMENTS_FILE="requirements.${PROJECT}.ubuntu20.04.system"
+ARG CMAKE_PREFIX_PATH
 
 RUN mkdir -p /tmp/${PROJECT}
 COPY files/${REQUIREMENTS_FILE} /tmp/${PROJECT}
@@ -32,7 +34,7 @@ RUN apt-get update && \
 #COPY --from=catch2 /tmp/Catch2/build/*.deb .
 #COPY --from=plotlab /tmp/plotlab/lib/build/*.deb .
 #SHELL ["/bin/bash", "-c"]
-#RUN dpkg -i *.deb 
+#RUN ls -la && dpkg -i *.deb 
 
 
 COPY ${PROJECT} /tmp/${PROJECT}
@@ -51,13 +53,16 @@ RUN cmake --install . --prefix /tmp/${PROJECT}/build/install
 ARG LIB=xodr
 COPY --from=xodr /tmp/${LIB} /tmp/${PROJECT}/external/${LIB}
 WORKDIR /tmp/${PROJECT}/external/${LIB}/build
+RUN cmake .. || true
 RUN cmake --install . --prefix /tmp/${PROJECT}/build/install
+RUN cmake --install .
 
 ARG LIB=csaps-cpp
 COPY --from=csaps-cpp /tmp/${LIB} /tmp/${PROJECT}/external/${LIB}
 WORKDIR /tmp/${PROJECT}/external/${LIB}/build
 RUN cmake .. || true
 RUN cmake --install . --prefix /tmp/${PROJECT}/build/install
+RUN cmake --install .
 
 ARG LIB=qpOASES
 COPY --from=qpOASES /tmp/${LIB} /tmp/${PROJECT}/external/${LIB}
@@ -68,10 +73,11 @@ RUN cmake --install . --prefix /tmp/${PROJECT}/build/install
 ARG LIB=Catch2
 COPY --from=Catch2 /tmp/${LIB} /tmp/${PROJECT}/external/${LIB}
 WORKDIR /tmp/${PROJECT}/external/${LIB}/build
-RUN cmake .. || true
+RUN cmake ..
 RUN cmake --install . --prefix /tmp/${PROJECT}/build/install
+RUN cmake --install .
 
 WORKDIR /tmp/libadore/build
-RUN cmake .. -DBUILD_adore_TESTING=ON -DCMAKE_PREFIX_PATH=install -DCMAKE_INSTALL_PREFIX:PATH=install && \
+RUN cmake .. -DBUILD_adore_TESTING=ON -DCMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH} -DCMAKE_INSTALL_PREFIX:PATH=install && \
     cmake --build . --config Release --target install -- -j $(nproc)
 

@@ -24,6 +24,7 @@ services:
       dockerfile: Dockerfile.libadore.build
       args:
         PROJECT: libadore
+        CMAKE_PREFIX_PATH: ${CMAKE_PREFIX_PATH:-}
   libadore_test:
     image: libadore_test:latest
     container_name: libadore_test
