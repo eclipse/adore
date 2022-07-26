@@ -1,3 +1,5 @@
+include make_gadgets/Makefile
+
 SHELL:=/bin/bash
 
 .DEFAULT_GOAL := all
@@ -13,10 +15,6 @@ DOCKER_CONFIG?=
 #CMAKE_PREFIX_PATH?=$(shell realpath $$(find . -type d | grep "build/install" | grep -v "build/install/") | tr '\n' ';') 
 CMAKE_PREFIX_PATH?=$(shell realpath $$(find . -type d | grep "build" | grep -v "build/") | tr '\n' ';') 
 
-.PHONY: help  
-help:
-	@awk 'BEGIN {FS = ":.*##"; printf "Usage: make \033[36m<target>\033[0m\n"} /^[a-zA-Z_-]+:.*?##/ { printf "  \033[36m%-10s\033[0m %s\n", $$1, $$2 } /^##@/ { printf "\n\033[1m%s\033[0m\n", substr($$0, 5) } ' $(MAKEFILE_LIST)
-
 LIBADORE_PROJECT="libadore"
 LIBADORE_VERSION="latest"
 LIBADORE_TAG="${LIBADORE_PROJECT}:${LIBADORE_VERSION}"
@@ -30,10 +28,10 @@ set_libadore_env:
 	$(eval TAG := ${LIBADORE_TAG})
 
 .PHONY: all 
-all: build_external build_libadore
+all: root_check docker_group_check build_external build_libadore
 
 .PHONY: build 
-build: all
+build: all## build libadore
 
 .PHONY: clean_libadore 
 clean_libadore:
@@ -45,10 +43,10 @@ build:
 	docker compose build libadore_build
 	docker compose build libadore
 	docker compose build libadore_test
-	docker cp $$(docker create --rm $(shell echo ${TAG} | tr A-Z a-z)):/tmp/${PROJECT}/build ${ROOT_DIR}/${PROJECT}
+	docker cp $$(docker create --rm $(shell echo ${TAG} | tr A-Z a-z)):/tmp/${PROJECT}/${PROJECT}/build ${ROOT_DIR}/${PROJECT}
 
 .PHONY: test 
-test:
+test:## run libadore unit tests
 	@if [[ `docker images -q ${LIBADORE_TAG} 2> /dev/null` == "" ]]; then \
             echo "ERROR: Docker image: ${LIBADORE_TAG} does not exist. Run make build on libadore and try again." 1>&2; \
             exit 1; \
@@ -62,11 +60,11 @@ test:
         fi;
 
 .PHONY: build_external 
-make build_external:
+build_external: ## builds all libadore external libraries 
 	cd "${ROOT_DIR}/libadore/external/" && make
 
 .PHONY: clean_external 
-make clean_external:
+clean_external:
 	cd "${ROOT_DIR}/libadore/external/" && make clean
 
 .PHONY: clean 
@@ -80,12 +78,12 @@ clean_docker:
 	docker rmi ${LIBADORE_TAG} --force
 
 .PHONY: lint 
-lint:
+lint: ## returns a linting report for libadore
 	cd cpplint && \
         make lint CPP_PROJECT_DIRECTORY=$(realpath ${ROOT_DIR}/libadore/adore)
 
 .PHONY: lintfix 
-lintfix:
+lintfix: ## Automated source formatting/lint fixing using clang-format 
 	cd cpplint && \
         make lintfix CPP_PROJECT_DIRECTORY=$(realpath ${ROOT_DIR}/libadore/adore)
 
@@ -95,11 +93,11 @@ lintfix_simulate:
         make lintfix_simulate CPP_PROJECT_DIRECTORY=$(realpath ${ROOT_DIR}/libadore/adore)
 
 .PHONY: cppcheck
-cppcheck:
+cppcheck: ## Runs cppcheck static analysis tool on libadore
 	cd cppcheck && \
         make cppcheck CPP_PROJECT_DIRECTORY=$(realpath ${ROOT_DIR}/libadore/adore)
 
 .PHONY: lizard
-lizard:
+lizard: ## generates a lizard static analysis report on libadore
 	cd lizard && \
         make lizard CPP_PROJECT_DIRECTORY=$(realpath ${ROOT_DIR}/libadore/adore)

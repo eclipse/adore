@@ -1,3 +1,5 @@
+include make_gadgets/Makefile
+
 SHELL:=/bin/bash
 
 .DEFAULT_GOAL := all
@@ -10,6 +12,8 @@ DOCKER_BUILDKIT?=1
 DOCKER_CONFIG?=
 
 
+CMAKE_PREFIX_PATH?=$(shell realpath $$(find . -name install | grep "install" | grep -e "install/\|CPack" -v) | tr '\n' ';') 
+
 .PHONY: set_mode 
 set_mode:
 ifeq ($(DEBUG), 1)
@@ -18,24 +22,20 @@ else
 	$(eval DOCKER_BUILDKIT:=1)
 endif
 
-.PHONY: help 
-help: set_mode
-	@awk 'BEGIN {FS = ":.*##"; printf "Usage: make \033[36m<target>\033[0m\n"} /^[a-zA-Z_-]+:.*?##/ { printf "  \033[36m%-10s\033[0m %s\n", $$1, $$2 } /^##@/ { printf "\n\033[1m%s\033[0m\n", substr($$0, 5) } ' $(MAKEFILE_LIST)
-	@echo ${DOCKER_BUILDKIT}
-
 PROJECT="adore_if_ros"
 VERSION="latest"
 TAG="${PROJECT}:${VERSION}"
 
-
 .PHONY: all 
-all: build
-
-
+all: root_check docker_group_check build
 
 .PHONY: build 
-build: set_mode#builds adore_if_ros
+build: set_mode ## Build adore_if_ros
 	rm -rf ${PROJECT}/build
+	cd adore_if_ros_msg && \
+	make
+	cd plotlablib && \
+	make
 	docker build --tag $(shell echo ${TAG} | tr A-Z a-z) \
                  --network host \
                  --build-arg DEBUG="${DEBUG}" \

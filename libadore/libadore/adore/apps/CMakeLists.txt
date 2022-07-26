@@ -14,10 +14,12 @@
 
 cmake_minimum_required(VERSION 3.13)
 
-project("apps" VERSION 0.0.1
-             DESCRIPTION "abstract apps as part of the adore framework"
-             HOMEPAGE_URL "${adore_REPOSITORY_URL}/libadore/adore/apps")
-
+project(
+    "apps" VERSION 0.0.1
+    DESCRIPTION "abstract apps as part of the adore framework"
+    HOMEPAGE_URL "${adore_REPOSITORY_URL}/libadore/adore/apps"
+)
+ 
 include(GNUInstallDirs)
 
 add_library(${PROJECT_NAME} INTERFACE)

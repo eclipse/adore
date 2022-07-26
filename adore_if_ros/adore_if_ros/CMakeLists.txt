@@ -51,9 +51,9 @@ add_compile_options("-fdiagnostics-color=always")
 include(GNUInstallDirs)
 
 list(APPEND CMAKE_PREFIX_PATH "$ENV{CMAKE_PREFIX_PATH}")
+list(APPEND CMAKE_PREFIX_PATH "${CMAKE_CURRENT_SOURCE_DIR}/../adore_if_ros_msg/adore_if_ros_msg/build/install")
+list(APPEND CMAKE_PREFIX_PATH "${CMAKE_CURRENT_SOURCE_DIR}/../plotlablib/plotlablib/build/install")
 list(APPEND CMAKE_PREFIX_PATH "${CMAKE_CURRENT_SOURCE_DIR}/../../libadore/libadore/build/install")
-list(APPEND CMAKE_PREFIX_PATH "${CMAKE_CURRENT_SOURCE_DIR}/../../adore_if_ros_msg/adore_if_ros_msg/build/install")
-list(APPEND CMAKE_PREFIX_PATH "${CMAKE_CURRENT_SOURCE_DIR}/../../plotlab/lib/build/install")
 
 add_library(qpoases::qpoases STATIC IMPORTED GLOBAL)
 set_property(TARGET qpoases::qpoases PROPERTY IMPORTED_LOCATION ${CMAKE_CURRENT_SOURCE_DIR}/../../libadore/libadore/build/install/lib/libqpOASES.a)
@@ -80,11 +80,10 @@ if (CMAKE_CXX_CPPCHECK)
 endif()
 #            "--suppressions-list=${CMAKE_SOURCE_DIR}/CppCheckSuppressions.txt"
 
-find_package(csaps-cpp CONFIG REQUIRED)
 find_package(adore_if_ros_msg CONFIG REQUIRED)
 find_package(xodr CONFIG REQUIRED)
+find_package(csaps-cpp CONFIG REQUIRED)
 
-#find_package(libadore CONFIG REQUIRED)
 find_package(dlib CONFIG REQUIRED)
 #find_package(qpOASES CONFIG REQUIRED)
 find_package(params CONFIG REQUIRED)
@@ -96,9 +95,11 @@ find_package(if_xodr CONFIG REQUIRED)
 find_package(if_r2s CONFIG REQUIRED)
 find_package(sim CONFIG REQUIRED)
 find_package(apps CONFIG REQUIRED)
+
 find_package(plotlablib CONFIG REQUIRED)
 find_package(cppzmq CONFIG REQUIRED)
 find_package(ZeroMQ CONFIG REQUIRED)
+
 #find_package (xsdcxx REQUIRED)
 find_package(XercesC 3.2.0 REQUIRED)
 
@@ -127,6 +128,7 @@ find_package(catkin REQUIRED
       roscpp
       std_msgs
       tf
+      adore_if_ros_msg
 )
 #set(CMAKE_PREFIX_PATH ${CMAKE_PREFIX_PATH} ../../adore_if_ros_msg/adore_if_ros_msg)
 #message(WARNING ${CMAKE_PREFIX_PATH})
@@ -221,8 +223,9 @@ find_package(catkin REQUIRED
 ## DEPENDS: system dependencies of this project that dependent projects also need
 catkin_package(
   INCLUDE_DIRS include
-#  CATKIN_DEPENDS adore_if_ros_msg
-  CATKIN_DEPENDS tf
+  CATKIN_DEPENDS 
+    tf
+    adore_if_ros_msg
 )
 
 ###########
@@ -248,15 +251,22 @@ catkin_package(
 ## use this line to add a stack trace to your app
 # target_compile_options(adore_TARGETNAME_node BEFORE PRIVATE -g1 -lSegFault)
 
+message(${catkin_INCLUDE_DIRS})
+
 add_executable(adore_vehiclemodel_node)
 target_sources(adore_vehiclemodel_node PRIVATE src/adore_vehiclemodel_node.cpp)
-target_include_directories( adore_vehiclemodel_node PRIVATE include ${catkin_INCLUDE_DIRS})
-target_link_libraries(adore_vehiclemodel_node 
-                        PRIVATE 
-                          ${catkin_LIBRARIES} 
-                          libadore::sim 
-                          libadore::apps 
-                          libadore::params
+target_include_directories( 
+    adore_vehiclemodel_node 
+      PRIVATE include 
+        ${catkin_INCLUDE_DIRS}
+)
+target_link_libraries(
+    adore_vehiclemodel_node 
+      PRIVATE 
+        ${catkin_LIBRARIES} 
+        libadore::sim 
+        libadore::apps 
+        libadore::params
 )
 
 add_executable(adore_odometrymodel_node)
@@ -284,7 +294,8 @@ target_link_libraries(adore_localizationmodel_node
 
 add_executable(adore_objectdetectionmodel_node)
 target_sources(adore_objectdetectionmodel_node PRIVATE src/adore_objectdetectionmodel_node.cpp)
-target_include_directories( adore_objectdetectionmodel_node PRIVATE include ${catkin_INCLUDE_DIRS})
+target_include_directories(
+    adore_objectdetectionmodel_node PRIVATE include ${catkin_INCLUDE_DIRS})
 target_link_libraries(adore_objectdetectionmodel_node 
                         PRIVATE 
                           ${catkin_LIBRARIES} 
@@ -367,11 +378,21 @@ target_link_libraries(adore_navigation_node
 )
 
 add_executable(adore_indicatorhintprovider_node)
-target_sources(adore_indicatorhintprovider_node PRIVATE src/adore_indicatorhintprovider_node.cpp)
-target_include_directories(adore_indicatorhintprovider_node PRIVATE include ${catkin_INCLUDE_DIRS})
+target_sources(
+    adore_indicatorhintprovider_node 
+      PRIVATE 
+        src/adore_indicatorhintprovider_node.cpp
+)
+target_include_directories(
+    adore_indicatorhintprovider_node 
+      PRIVATE 
+        include 
+        ${catkin_INCLUDE_DIRS}
+)
 target_link_libraries(adore_indicatorhintprovider_node 
                         PRIVATE 
                           ${catkin_LIBRARIES}
+                          plotlablib::plotlablib
                           libadore::apps
                           libadore::env
                           libadore::params
@@ -383,14 +404,26 @@ target_link_libraries(adore_indicatorhintprovider_node
 # target_include_directories(adore_borderbird_node PRIVATE include ${catkin_INCLUDE_DIRS})
 # target_link_libraries(adore_borderbird_node PRIVATE ${catkin_LIBRARIES} libadore::apps libadore::params libadore::fun libadore::sim)
 
+get_cmake_property(_variableNames VARIABLES)
+list (SORT _variableNames)
+foreach (_variableName ${_variableNames})
+    message(STATUS "${_variableName}=${${_variableName}}")
+endforeach()
 add_executable(plot_area_of_effect)
 target_sources(plot_area_of_effect PRIVATE src/plot_area_of_effect.cpp)
-target_include_directories(plot_area_of_effect PRIVATE include ${catkin_INCLUDE_DIRS})
-target_link_libraries(plot_area_of_effect 
-                        PRIVATE 
-                          ${catkin_LIBRARIES} 
-                          libadore::env 
-                          plotlablib::plotlablib
+target_include_directories(
+    plot_area_of_effect 
+      PRIVATE 
+        include
+        "$<TARGET_PROPERTY:plotlablib::plotlablib,INTERFACE_INCLUDE_DIRECTORIES>"
+        ${catkin_INCLUDE_DIRS}
+)
+target_link_libraries(
+    plot_area_of_effect 
+      PRIVATE 
+        ${catkin_LIBRARIES} 
+        plotlablib::plotlablib
+        libadore::env 
 )
 
 add_executable(plot_trajectories_node)
@@ -399,8 +432,8 @@ target_include_directories(plot_trajectories_node PRIVATE include ${catkin_INCLU
 target_link_libraries(plot_trajectories_node 
                         PRIVATE 
                           ${catkin_LIBRARIES} 
-                          libadore::fun 
                           plotlablib::plotlablib
+                          libadore::fun 
 )
 
 add_executable(plot_planning_details_node)
@@ -409,10 +442,10 @@ target_include_directories(plot_planning_details_node PRIVATE include ${catkin_I
 target_link_libraries(plot_planning_details_node 
                         PRIVATE 
                           ${catkin_LIBRARIES} 
+                          plotlablib::plotlablib
                           libadore::apps 
                           libadore::mad 
                           libadore::fun 
-                          plotlablib::plotlablib
 )
 
 add_executable(plot_graph_node)
@@ -429,11 +462,11 @@ target_include_directories(test_trajectory_planner_node PRIVATE include ${catkin
 target_link_libraries(test_trajectory_planner_node 
                         PRIVATE 
                           ${catkin_LIBRARIES} 
+                          dlib::dlib
+                          plotlablib::plotlablib 
                           libadore::apps 
                           libadore::fun 
                           libadore::sim 
-                          plotlablib::plotlablib 
-                          dlib::dlib
 )
 
 add_executable(test_mrm_planner_node src/test_mrm_planner_node.cpp)
@@ -563,7 +596,14 @@ target_link_libraries(test_control_dashboard
 )
 
 add_executable(test_control_error_node src/test_control_error_node.cpp)
-target_include_directories(test_control_error_node PRIVATE include ${catkin_INCLUDE_DIRS})
+target_include_directories(
+    test_control_error_node 
+      PUBLIC 
+        include 
+        "$<TARGET_PROPERTY:plotlablib::plotlablib,INTERFACE_INCLUDE_DIRECTORIES>"
+        ${catkin_INCLUDE_DIRS}
+        ${adore_if_ros_msg_INCLUDE_DIRS}
+)
 target_link_libraries(test_control_error_node 
                         PRIVATE 
                           ${catkin_LIBRARIES} 
@@ -831,7 +871,13 @@ target_link_libraries(adore_trajectory_planner_lf_node
 )
 
 add_executable(adore_trajectory_planner_lm_node src/adore_trajectory_planner_lm_node.cpp)
-target_include_directories(adore_trajectory_planner_lm_node PRIVATE include ${catkin_INCLUDE_DIRS})
+target_include_directories(
+    adore_trajectory_planner_lm_node 
+      PRIVATE 
+        include 
+        ${catkin_INCLUDE_DIRS}
+        ${adore_if_ros_msg_INCLUDE_DIRS}
+)
 target_link_libraries(adore_trajectory_planner_lm_node 
                         PRIVATE 
                           ${catkin_LIBRARIES} 

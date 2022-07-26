@@ -1,4 +1,4 @@
-build*
+**build*
 external/catch2/catch2_external_sources
 external/fsfe_reuse_tool/missing_licenses_info.txt
 .vscode
@@ -6,4 +6,4 @@ _deps
 CATKIN_IGNORE
 */build
 libadore/external/*/build
-**.lizard_report.xml
+**lizard_report.xml
