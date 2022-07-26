@@ -63,4 +63,5 @@
 	url = git@github.com:coin-or/qpOASES
 [submodule "libadore/libadore/external/xodr"]
 	path = libadore/libadore/external/xodr
-	url = git@github.com:dlr-ts/xodr
+    url = git@github.com:dlr-ts/xodr
+    branch = adore

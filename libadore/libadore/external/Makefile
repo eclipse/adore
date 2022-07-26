@@ -31,10 +31,10 @@ OSQP_TAG="${OSQP_PROJECT}:${OSQP_VERSION}"
 
 
 
-build_xodr: set_xodr_env build
-set_xodr_env: 
-	$(eval PROJECT := ${XODR_PROJECT}) 
-	$(eval TAG := ${XODR_TAG})
+.PHONY: build_xodr
+build_xodr:
+	cd xodr && \
+    make
 
 build_qpOASES: set_qpOASES_env build
 set_qpOASES_env: 
@@ -78,6 +78,7 @@ build:
 	docker cp $$(docker create --rm $(shell echo ${TAG} | tr A-Z a-z)):/tmp/${PROJECT}/build tmp/${PROJECT}/build
 	cp -r "${ROOT_DIR}/tmp/${PROJECT}/build/build" "${ROOT_DIR}/${PROJECT}"
 	rm -rf ${ROOT_DIR}/tmp
+
 clean:
 	rm -rf "${ROOT_DIR}/*/build"
 	rm -rf "${ROOT_DIR}/tmp"
