@@ -16,23 +16,17 @@ RUN apt-get update && \
     DEBIAN_FRONTEND=noninteractive xargs apt-get install --no-install-recommends -y < ${REQUIREMENTS_FILE} && \
     rm -rf /var/lib/apt/lists/*
 
-COPY ${PROJECT} /tmp/${PROJECT}
+COPY ${PROJECT} /tmp/${PROJECT}/
 
 WORKDIR /tmp/${PROJECT}
 RUN mkdir -p build
 WORKDIR /tmp/${PROJECT}/build
-#RUN rm -rf build && \
-#    mkdir -p build && \
-#    cd build && \
-#    cmake .. && \
-#    make -j$(nproc)
+
 RUN cmake .. -DCMAKE_INSTALL_PREFIX:PATH=install && \
     cmake --build . -- -j $(nproc) && \
     cmake --install .
-    #cmake --build . --config Release --target install -- -j $(nproc)
 
 
-WORKDIR /tmp/${PROJECT}/build
 RUN cpack -G DEB && find . -type f -name "*.deb" | xargs mv -t . || true
 
 RUN mv CMakeCache.txt CMakeCache.txt.build
