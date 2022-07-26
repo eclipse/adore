@@ -2,17 +2,16 @@ version: '3.3'
 
 services:
   plotlab_server:
-    image: plotlab_server:latest
-    container_name: plotlab_server
-    hostname: plotlab_server
+    image: plotlabserver:latest
+    container_name: plotlabserver
+    hostname: plotlabserver
     network_mode: "host"
     ipc: "host"
     #entrypoint: sh -c '(xeyes &) && ./plotlabserver'
     #entrypoint: sh -c 'tail -f /dev/null'
     environment:
-      - DISPLAY_MODE=${DISPLAY_MODE:-native}
-     # - DISPLAY_MODE=${DISPLAY_MODE:-window_manager}
-     # - DISPLAY_MODE=${DISPLAY_MODE:-headless}
+     # - DISPLAY_MODE=${DISPLAY_MODE:-native}
+      - DISPLAY_MODE=${DISPLAY_MODE:-window_manager}
      # - DISPLAY_MODE=${DISPLAY_MODE:-headless}
       - DISPLAY=${DISPLAY}
       - QT_X11_NO_MITSHM=1

@@ -1,3 +1,5 @@
+include adore_if_ros/make_gadgets/Makefile
+
 SHELL:=/bin/bash
 
 .DEFAULT_GOAL := all
@@ -11,22 +13,13 @@ CATKIN_WORKSPACE_DIRECTORY=catkin_workspace
 DOCKER_BUILDKIT?=1
 DOCKER_CONFIG?=$(shell realpath ${ROOT_DIR})/apt_cacher_ng_docker
 
-CMAKE_PREFIX_PATH?=$(shell realpath $$(find . -type d | grep "build/install" | grep -v "build/install/") | tr '\n' ';') 
-
-
 DOCKER_GID := $(shell getent group | grep docker | cut -d":" -f3)
 USER := $(shell whoami)
 UID := $(shell id -u)
 GID := $(shell id -g)
 
-.PHONY: help
-help:
-	@awk 'BEGIN {FS = ":.*##"; printf "Usage: make \033[36m<target>\033[0m\n"} /^[a-zA-Z_-]+:.*?##/ { printf "  \033[36m%-10s\033[0m %s\n", $$1, $$2 } /^##@/ { printf "\n\033[1m%s\033[0m\n", substr($$0, 5) } ' $(MAKEFILE_LIST)
-
-
 .PHONY: all
-all: start_apt_cacher_ng submodules_update build_sumo_if_ros build_adore_if_v2x build_adore_v2x_sim build_plotlabserver build_libadore build_adore_if_ros get_apt_cacher_ng_cache_statistics
-
+all: docker_group_check root_check start_apt_cacher_ng submodules_update build_sumo_if_ros build_adore_if_v2x build_adore_v2x_sim build_plotlabserver build_libadore build_adore_if_ros get_apt_cacher_ng_cache_statistics
 
 .PHONY: build
 build: all
@@ -150,7 +143,7 @@ create_catkin_workspace: clean_catkin_workspace## Creates a catkin workspace @ a
         fi;
 
 .PHONY: build_adore-cli
-build_adore-cli: build_catkin_base ## Builds the ADORe CLI docker context/image
+build_adore-cli: build_catkin_base build_plotlabserver ## Builds the ADORe CLI docker context/image
 	COMPOSE_DOCKER_CLI_BUILD=1 docker compose build \
                                                      --build-arg UID=${UID} \
                                                      --build-arg GID=${GID} \
@@ -161,14 +154,15 @@ run_ci_scenarios:
 	bash tools/run_ci_scenarios.txt 
 
 .PHONY: adore-cli
-adore-cli:
+adore-cli: ## Start an adore-cli context
 	mkdir -p .ros/bag_files
 	touch .zsh_history
 	touch .zsh_history.new
 	[ -n "$$(docker images -q adore-cli:latest)" ] || make build_adore-cli 
-	cd plotlabserver && make stop_plotlabserver
+	cd plotlabserver && \
+	make down
 	docker compose rm -f
 	@xhost + && docker compose up --force-recreate -V -d; xhost - 
-#	(cd plotlab && make start_plotlab_server_detached > /dev/null 2>&1 &);
+	(cd plotlab && make start_plotlab_server_detached > /dev/null 2>&1 &);
 	@docker exec -it --user adore-cli adore-cli /bin/zsh -c "bash tools/adore-cli.sh" || true
 	@docker compose down && xhost - 1> /dev/null

@@ -8,3 +8,4 @@ catkin_workspace/
 .zsh*
 *.sw*
 **.lizard_report.xml**
+**.log

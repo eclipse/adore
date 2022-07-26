@@ -29,3 +29,39 @@ Here you can see one of our automated test vehicles being operated by ADORe:
 - [System requirements and installation](documentation/getting_started.md)
 - [Executable ROS demo scenarios](adore_if_ros_demos)
 
+## Quick Start Guide
+
+### Prerequsits 
+Before you start make sure you have docker, docker compose, and make installed
+and configured for your system. To check this run the following commands:
+1. check your docker version:
+```bash
+$ docker --version
+Docker version 20.10.17, build 100c701
+```
+```bash
+$ docker compose version
+Docker Compose version v2.6.0
+```
+2. Check that you are a member of the docker group:
+```bash
+id | grep docker
+...,998(docker),...
+```
+
+For help installing and configuring docker follow the official docker documentation (https://docs.docker.com/engine/install/ubuntu/)[https://docs.docker.com/engine/install/ubuntu/]
+
+### Quick Start
+1. Clone the repository with submodules:
+```bash
+git clone --recurse-submodules -j8 git@github.com:eclipse/adore.git
+```
+2. Build the system:
+```bash
+cd adore && make
+```
+3. Run the adore-cli:
+```bash
+make adore-cli
+```
+
