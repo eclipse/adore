@@ -79,7 +79,6 @@ build_adore_v2x_sim: ## Build adore_v2x_sim
 
 .PHONY: build_libadore 
 build_libadore: start_apt_cacher_ng ## Build libadore
-	echo ${CMAKE_PREFIX_PATH} && exit 1
 	cd libadore && \
     make
 
