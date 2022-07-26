@@ -64,4 +64,7 @@ cd adore && make
 ```bash
 make adore-cli
 ```
-
+4. Run a test scenario from within the adore-cli context:
+```bash
+cd adore_if_ros_demos && roslaunch baseline_test.launch
+```
