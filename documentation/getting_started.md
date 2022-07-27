@@ -34,6 +34,7 @@ The ADORe build system provides built-in static checking via cppcheck and cpplin
 ```bash
 make lint
 make cppcheck
+make lizard
 ```
 
 Static checks can be run in individual modules by navigating to a module and 
@@ -42,6 +43,7 @@ running the provided make targets as in the following example:
 cd sumo_if_ros
 make lint
 make cppcheck
+make lizard
 ```
 
 ### ADORe CLI
