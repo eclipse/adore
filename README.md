@@ -32,6 +32,14 @@ Here you can see one of our automated test vehicles being operated by ADORe:
 ## Quick Start Guide
 
 ### Prerequsits 
+
+- Docker v20.10.17 or greater
+- docker compose v2.6.0 or greater
+- Make
+- Storage
+  - at least 2.5 GB to clone the repository
+  - at least 15 GB to build all necessary docker context
+
 Before you start make sure you have docker, docker compose, and make installed
 and configured for your system. To check this run the following commands:
 1. check your docker version:
@@ -48,6 +56,11 @@ Docker Compose version v2.6.0
 id | grep docker
 ...,998(docker),...
 ```
+3. Check your storage and be sure you have ~18GB free:
+```bash
+df -h
+```
+
 
 For help installing and configuring docker follow the official docker documentation (https://docs.docker.com/engine/install/ubuntu/)[https://docs.docker.com/engine/install/ubuntu/]
 
