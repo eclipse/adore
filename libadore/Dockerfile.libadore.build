@@ -75,6 +75,7 @@ ARG CMAKE_PREFIX_PATH="/tmp/${PROJECT}/${PROJECT}/build/install"
 
 WORKDIR /tmp/${PROJECT}/${PROJECT}/build
 RUN cmake .. \
+             -DBUILD_adore_TESTING=ON \
              -DCMAKE_EXPORT_COMPILE_COMMANDS=ON \
              -DCMAKE_BUILD_TYPE=Release \
              -DCMAKE_INSTALL_PREFIX="install" \

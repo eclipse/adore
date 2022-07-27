@@ -82,7 +82,9 @@ build_sumo_if_ros: ## Build sumo_if_ros
 
 .PHONY: test 
 test:
-	mkdir -p .log && cd libadore && make test | tee ${ROOT_DIR}/.log/libadore_unit_test.log; exit $$PIPESTATUS
+	mkdir -p .log && \
+    cd libadore && \
+	make test | tee ${ROOT_DIR}/.log/libadore_unit_test.log; exit $$PIPESTATUS
 
 .PHONY: lint_sumo_if_ros 
 lint_sumo_if_ros:
