@@ -81,7 +81,7 @@ make adore-cli
 ```bash
 cd adore_if_ros_demos && roslaunch baseline_test.launch
 ```
-4. Run unit tests:
+5. Run unit tests:
 ```bash
 make test
 ```
