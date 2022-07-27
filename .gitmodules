@@ -1,0 +1,3 @@
+[submodule "API-Documentation-HTML-Template"]
+	path = API-Documentation-HTML-Template
+	url = git@github.com:floriannicolas/API-Documentation-HTML-Template.git
