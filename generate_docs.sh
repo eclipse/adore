@@ -11,11 +11,15 @@ mkdir docs
 
 main_branch=$(git symbolic-ref refs/remotes/origin/HEAD | sed 's@^refs/remotes/origin/@@')
 git checkout $main_branch -- documentation
+git checkout $main_branch -- README.md
 
 cp template/*.md docs
 cp documentation/*.md docs
+cp *.md docs
 rm -rf documentation
 
+
+cat docs/README.md > docs/home.md
 
 docnado --html docs
 git add docs
