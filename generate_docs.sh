@@ -10,16 +10,23 @@ rm -rf docs || true
 mkdir docs
 
 main_branch=$(git symbolic-ref refs/remotes/origin/HEAD | sed 's@^refs/remotes/origin/@@')
+main_branch=bugfix/build_system
 git checkout $main_branch -- documentation
-git checkout $main_branch -- README.md
-
-cp template/*.md docs
-cp documentation/*.md docs
-cp *.md docs
-rm -rf documentation
+#git checkout $main_branch -- README.md
 
 
-cat docs/README.md > docs/home.md
+for docfile in documentation/*.md; do
+    docfile=$(basename $docfile)
+    cat documentation/$docfile | sed "s|DATETIME|$(date)|g" > docs/$docfile
+done
 
-docnado --html docs
-git add docs
+#cp template/*.md docs
+#cp documentation/*.md docs
+#cp *.md docs
+#rm -rf documentation
+
+
+#cat docs/README.md > docs/home.md
+#cat template/home.md | sed "s|DATE|$(date)|g" > docs/home.md
+#docnado --html docs
+#git add docs
