@@ -26,7 +26,9 @@ cd docs && ln -s README.md home.md
 #cp documentation/*.md docs
 #cp *.md docs
 #rm -rf documentation
-
-
+pushd
 docnado --html docs
+cd docs/w
+ln -s home.html index.html
+popd
 git add docs
