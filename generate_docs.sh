@@ -20,6 +20,8 @@ for docfile in documentation/*.md; do
     cat documentation/$docfile | sed "s|DATETIME|$(date)|g" > docs/$docfile
 done
 
+cd docs && ln -s README.md home.md
+
 #cp template/*.md docs
 #cp documentation/*.md docs
 #cp *.md docs
