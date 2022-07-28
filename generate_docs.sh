@@ -5,13 +5,13 @@ SCRIPT_DIRECTORY="$( cd "$( dirname "${BASH_SOURCE[0]}" )" &> /dev/null && pwd )
 
 pip install docnado --upgrade
 
-rm -rf documentation || true
+#rm -rf documentation || true
 rm -rf docs || true
 mkdir docs
 
 main_branch=$(git symbolic-ref refs/remotes/origin/HEAD | sed 's@^refs/remotes/origin/@@')
 main_branch=bugfix/build_system
-git checkout $main_branch -- documentation
+#git checkout $main_branch -- documentation
 #git checkout $main_branch -- README.md
 
 
@@ -28,7 +28,5 @@ cd docs && ln -s README.md home.md
 #rm -rf documentation
 
 
-#cat docs/README.md > docs/home.md
-#cat template/home.md | sed "s|DATE|$(date)|g" > docs/home.md
-#docnado --html docs
-#git add docs
+docnado --html docs
+git add docs
