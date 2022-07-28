@@ -1,0 +1,229 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    
+    <title>Getting Started</title>
+
+
+    <script src="../lib/jquery-3.2.1.slim.min.js"></script>
+    <script src="../lib/bootstrap-4.4.1.min.js"></script>
+    <script src="../lib/highlight-9.12.0.min.js"></script>
+    <script src="../lib/bootbox-4.4.0.min.js"></script>
+
+    <link rel="stylesheet" href="../lib/highlightjs-9.12.0.min.css">
+    <link rel="stylesheet" href="../lib/bootstrap-4.4.1.min.css">
+    <link rel="stylesheet" href="../lib/font-awesome-4.7.0.min.css">
+
+    <link rel="stylesheet" href="../default.css">
+
+    
+    
+
+</head>
+    <body>
+
+        <!-- Header Bar -->
+        <header class="navbar navbar-light page-headbar">
+            <button class="navbar-toggler page-togglesidebar" type="button" data-toggle="collapse" aria-expanded="false" aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon"></span>
+            </button>
+            <a class="navbar-brand" href="/">
+                <!-- Project Name -->
+                
+                <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAEAAAABACAYAAACqaXHeAAASaklEQVR4nNxbCXBd1Xn+zr33PUlPu2Rtlq0NrdjyIoNtIBBwGShgQyBsKTRhyaRbIIVQJglkMgnNUjqlJSXTDB1SQhPaYkJDPZiQBMKOjC1ZMbZsY9myJVn7rqflbfd0/v+e+3T19DZJkKT9ZzSS3rvn3P/7z7+e8x8DK6Bde593/isA6JAyCCHURyYArQ7AeeqnHkA5gFUAMgG41YN+AFMARgGcAdAOoBXAfgDHAUjrBRISgngOWX9ag/dcfeOyMYiVADeCQNDgOTRmijFLHZq4iB4DcBmAcwGkLZO/WQDHALxGOAXkOxIiaMlD6ErC0n54OYJYsgAiVl0PAweKAfyp+mmMGGYzKhzvjHy3dPy2n9UinjkC4N8B+Qwg+qLwsGQhJC2AnXt3Q8w/rglASovRQgBfAvAFpdo2iJACIJaraQ5hmAqoPc8IgCcBPA5gQAoIYRmEaQ9MVhCREo5KtOpzmAEQoH/JBs3CYJAY+yKANgBfU+CDigmhntNWAB4OLTDU36Z6Rz6Ar6p335Pm1WwhGUAREDAjNTXuCxKCj2CGVnYdgCcAXKq+C0as0MdNtobZTvwNtRiHFR9h35BIE+IyHAHeXoE7lepl/h6AR5JTEF4A9wL4N7VQMhkhxDSBBeAlz0Pg/wHAjxT4kEM1f19kmxrxkqF4ewwmTBWKBRY77kUTLKKF4AEpoAvgJwBu+QNY9Vjk1IbnANyueEU8TVgEYpHaC2iQ+BmAa5UXdH28OFZMNo97BHADZyZxzGGBCUSA1wFhQuKn/4fAQ/FIvO6SwLOGSkdjmUMsH6Bb6iMfA3BzsuA1QbYi+DccmY3z80R281HM4RDCTQHyCZZp6I6kMUzhuRySsTOrzwF4OhnwxFhQSswFgwhKE4bQkKLr/HlISvhCIf5cFxrSDAOGEDClXMBOtDncus7P0hx+M4SAqeagzzVt0RxRKKh8wh0AfuzMGm1TYAFc+9JuSEviWkgzTd3kAoaKkZR4yYymgHgDAWS4XFiXl4+mVYWozclFYZoHqbqGuZCJodlZnJgYQ+vwII6MjmDS74eHBKFZCkgAp9UcDbl5aFpVhLqcXBSkpSHN0OEPmRieoznGcXBoEIfHhjHu88FjuMKCiEF2guQD0CQ0HJcm4zGFlPifa25y2IW0HJ5uChnS5FsALpxXneirPh0MIFU3cMXaclxfWYPS9GxL7KYfI3OzmAsFkaIbyE9NhUtL4e8GZ6fw4ukOvNzViSl/gKMVz7GmHJ+qqsaa9BwlFGuO2WCQtSkvNQ1uNcfwnBcvdnbgJZ7Dz4ILxRaCjeFdKcXFQkg7n5GkBWLX3t32Atvq8ZcAfuBQn6jgJ/x+bMhfhS82bkZ1Vj6mg3N4pes03hvoRZd3ileUmKJn010urEnPwLaiEly5tgLZbg/6ZibxxAetmAuFeI7KzDzMBOfwy+7TeLe/D13eSdYsmoM0Ld1woTQ9HVuLSnDV2grkpKSjd3oCTxw+iOaBfmS53fE0wcZC2P4ljFWCBEARTqrMSeYD4iiAPFvLY4G/qqwcD2zaCgEdz51sx89OnsDg3AxcmgaXZtm/sIOzlAgoG85LScU15VW4s249hNDsPQP8Z0c7ft7ZgYHZmbD9x5tjJ81Rv56x/PBIC3afPIHM2EKwi6RRAA2qmOIsR6+77RbM58/iYQBXxlJ9G/zO8ko8sGk7Jnxz+MaBt/HzzpOsRLRKBD5SajSOAKXpBvymif2DA2ge6GUNIuf2tX1v4qUznQyU59Djz0FCeH9wAAeG+rGpoACXlVYiJAPYPzjITjaKCIQjW6Tfr7JGCJhi197n7byZqrkPAWQ7BoWJ1JDUevOqAnxv+ycx5pvDV/e9iY6JCeSkpCBkmok8cnhS8uRTAT/yUlN5tQdmp5Hpcifj1efn0DR2psUeD76z7RMoy8jFt1vewWu93chyuaP5BPuDCQC1AhiWSsVtAVCRk6MkJCJfGDRNVrH7N25hRr/d2hwGH4wCXldxO9quB4U58gsk0HG/DxmK4Wjgo80jFT9k9wMzM3jkwHvwBuZwT+NmFHvSOexGCVu2FhDGO6RgCemaI3++S829yO559YNB3FhVjWJPNn7y4RG0DA2EwUcT9YTfx+AotkeLoaZykHZOEI1IJDTHmC/6PPainJicwJPtv0WW24PP1tazY9VE9Mit2LvLLqI0EdLpg+0A6qIJgKYhuy1KS8OnKmvQPzOBFzo7kOW21D4asFRdx2fr1uPzDRtQkJrGNhuNHYlouZmqu6VEmu7CHXWN+PN1m1DiyWA+RAQwEkK2241fdp/Bh+ODuHxNJSqzsjAbXQtsAdRDiu3Fhb1SkzqDuN6RNCwcIQTH4m1FxfAYqXjx9Em2X1q5qCqrCbbNLQXFuK1mHXaWV2M2FIy1IlGJnp0JBnBRcSk+V7ce11ZUwxvwW3NE0RYNgoVMC6MLA5eUlMIX+502xuuHRoqgkSYC2BFjE9LanRTA9qISSISwb6CfE5dYakvWSjb+Hyfa+Zk/WlPOWWEsLYjKIWmRYeCq8ir+e/fJY+ib8cKtaVGFbj9/cHgIvpCPeXVrOpeBUcjGuENKoWtCyGoVGxFNAOScKDRRato/M8Vx2hWDEZsZev7QyBA6pyaQm5KKi0vW8oomowXW6gexOb8Itdl57NBe7+3mtDcGIOaFUmKKTB0TY6jKyrb8k4wqdBtjg2lq59A/W1XOv0j92W1Kk1NNAtLj9cZTrTDpSoVf7jrJ/19dVsUA4qSrEYAkriqr4r/f6e9B19Qk+5V4QVJjfyDRPe2FS3OzXyDeEdsMCPNWGtcUfm80ZiRYnQQ0zv1jrcKC2cmBGS683dfDq1KVlYOmgmKuDUh77NAW+UOrSNneOVk5nPJKKfGLrk72K8mIjgREoZWWLkXTmfcYS2VP16SpkxvEqviEits0xhJEMoyA7ZXM5bWzZ/iza8qqMBMIchVHITLaz6Tfx5Xj5Wsq+F1U9R0eHWJhxsnzF3BLhROYZ7kAaRRYROca6qwupgDYJgNB9sKUdbl0jVcmEbGO6Tp+1XMa11XUcFS4u2EDa4QeI4IQUWZIAiB6uesUO88059FPDJLK9IrSPHw8SZFKjxE1HFjLDXXIEHNSUkuarHNyAg25q7gQoXogVhgMj+V8wGCnRDn79qLVuLM+8sQsNg3OTqO5vxee+KVumOgZ8lW1Obnom5ni5MmI46wVrTJUgYBEJrB/aACN+SVcwPyqu4vT0OScmsBLZ06yAPyhEF7uPsV2Gk0LKIReVVbJSdYr3Z0Y888hhxKuBO+x65SmVYXIdqfjjd4edsJxxtpYMwzHEXVUIttL0Q2u0e+oW4/rKs7Bb872LA4ZMcamGwZahwdwksJTdi7aR0fwQudxZDuYswFsLSzBjefUMfO/7jnDlV8ytm9njrsqK1lvX+/tiRuqHeROeDZIk1AIIhN4o7cLDblFuKC4hH2CnmRcnw0GsLfrFDP6mZoGTmup+qMVsn9Io26pbuA5KXp0eyfZhyQCYQuvMX8VPlFchkMj/Tg8OgKPnpzj1FRzQkIhkESf7TiOgBnAXfXr4dGNpEyAmKAc4O1+KyRWZGZjQ34h+xWpNu0p8SnLyMJ5BcVW6OvuTMZ+Ld6oSBICdzesY1348fF2y0knl3b6NXWmhtgRw3pJmkEObRz/3fkh1943Vddyzm8k0AJbeIOzM3hVhcSrVZIDdc5O+cGO0nJe8UOjQzgyOpzUCpK2TAas3anGvBK8evYU2oaH2BkmGGt/6dXC20MJiCbMMFx49sRx9E6P4zPV5+LcvDx4g4kzQzsk/rr7NIe18wtLUJ2dy2UraRFFlsvXWNGYTCVomjESuHmid9L4NemZuLt+Ayb8M3jq6BF+T3I5A9OwpnpyEE8D4AiJ3kAATxxu462v+zY08eqaMWr+8Fg7JE6O4f3BPh5zeWkFgmaIV39b4WoUpqWjd9qLfQPJhz4S1L2Nm5DpTsOT7YfQPzOTlN9wYD2jqYakhAKAirWZLhfvwr5w6ihqsgvwhYb1mAokV+iQYdr1AVWJBakezlOo6iOi0EcZYSKzooWgjPJPaupwfuEavH62E7/oPr2E0BzG2k4CaAlzlwSZKuF46lg7jo4N4rrKerbBcZV4xBuXziXrICdHVFw1FRShLDML6/MKuM74zdmuhKHP2pj14aLiEtxZvwFnp8fxz4fbeFwyGWoE1lZNtaL5km2Xkcr+SNKPtu1n2/tS4xYOQ+QU44VGOyRSMkR0xdpK3FhVx9y81duNnun4oU9XpXJZRib+ZtNW3lH+u4P7rQ2aJKOGzQqAOQDva4DsAHBUfZFMfqO2q3R0TU2xENy6gYe3bEeJx8O7P7GEEA6JfT0Y98+hMa8AV6yt4M9J/eMlLyQ8XyjE2vf1LduRk+LB9w+14IPREd5/WILjszEeA+RJqmxCqg8v6pZYLCINIJt7t78XPzjcgsK0THzjvAs4P/DF2JR0hkRSd+vEV8PRsREcGRuOWfVRnLf3Hx9q2oqqrHz89MQHeKnrNHKSt/tIAbwqgJBefesN0DR9Ru2UYimdH/RaD9v1MFJ14JLVFajNyeZcnHd9Y6woAeqd8bIAyB+8eLoj5k6TUP2hftPEV5rOxwXFZXiluwNPHP5touOweEQYHzTmJrvFrr3Pq2YI7rCqjbU1Hnc2lY7et3EzrimrxXsD3XjkQDMDjHZ6K1S9Tv4AnCMYXP9H7vjYx2KzwSC+vLEJf1xWg3f6z+CRln3hvYklwrdb+I4LmI0SWkibb4bAU45OsKUR27aBxw+14bWzp3BB0Vo8tGUrqybF6khz4JxCCC6I6McdZbvLWnkL/F9v2MzgW4bO4rut+3nPQEtQjicQwI/sXifNcRL0NIBxJZAlzS0Vw+TBH21rweu9nbiouBwPb9nG3wViCIEExCdCERrCfQcwOdO7b2MTrimvxcHhPnzrQHM4IVuG6kuFjTA+LTkJR0ivv+1m8IJYNUE2gIsdba5LImKcBr3V14vSdI/lE7Kz8XbfWbbhWNvakXOQwELSxIObzsOVa6vROtyLbx54DwFpqu3uZdm9feD7GIA9dserXmcJwKY25Qw9joblJRE5PvIJ5AgL01JYCBvy89E82IfJQCBhnKcIQs7woS3beWzzQDe+1dLMmrIC8Lbqj6j2uVkLn4Bec9vN9I1SDzGtqsOdy9UC6WhoerP3LDJcOj65ugJbi4rQNjzI3p4rvQgxUDj0BgPIS03BN7deiKZVq/Fqzyl8r20/m5dr+eDhWP0HALw53w4gna1jvIOo6ZohQ2aQHrooXotMIrJVh4qn22vrcWf9Js4a/7alGQcGrYNV+zjc7juoy8nB17dciNXpWVxr/LD9kGq2WpbNR4J/B0K/BDK0oEWGV9g6KbbOKn3BOfrybgDTaoJlvdkelOl245kPj+Lv25p5r+/RCy7FzopKjPutfRjSljGfj8/zHrtwB4N/sr2V4zzl9xpWBN4eSHnO3VL67CZqaS8Qr+7xZ3dD+QKpCY0+GwLQA6vTclmm4OSAQiSlrEdGh3F+YTF2lFayaRwYGmBPTxpy38ZtMGUI32l9F3vOdHJ4xHKlP0/20f/nKdsV0OxO8oVtcjaRKajkwpBAUFjN0fd/FF2ipOZUNpemp+Mrm7ehIbcA+wa7OYHaUVqFbu84vntwH46NjaljrRVCn+f5HxUGw+4ddrbLLugCc7h9MhRDCvPLQmprltItGovsvYSB2Vk82PwG/mLdRlxdVsPfvdV3Bo9/0IpJf0DtFi89F4sgm9fnAHE/II3w2UpEXFsU5q7d+7ytdsJxZP6RNUvbpbQ34Menq2q4knv2xDHOBilP+AhXfo+Q4gYppBnv7kDidnmLyHY+snZ54agfKA6QEOxLcSsg6bD5/xIQt5vK5cdrl4/q3BwPKo5kyIR2q7owYTgajpbNKe8QuVzcICXVye4KKOS4PPEYoN1qwkwIHsu8MnMHgO//gV6ZuUfVNElfmfn/dGnqr9S9wiVdmkoY3+0JZrWAHB8ft196JNvULlM3tfocZhFcVjmdPNnX5mx1p3ffE8rMulSBN2ZIMIGUpMBjSRcnX34eYt5MNQ2Q5vzFyXsB/Nnv8OLkMIB/BfBPAAYh+eqkWM7FySUzZpuEyhl+11dnD6to9IxafagiLmRb58d2ddZJYb/g41Yjp2+A0KQuTXGhyhsuUx1onuW8J/LyNATe5l49i5StB6QV9gX2XP3pJb9gRU4r2vV5IWRQSkcAErCvz29Rwkjm+vwRdWPlAEZxLNy8b+Xp6vo8Hwvzxyu5Pv+/AQAA//9qCNWbwXZg8gAAAABJRU5ErkJggg==" style="max-height:30px;"></img>
+                
+            </a>
+            <nav class="nav">
+                <a class="nav-link" href="#" onclick="window.print();">Print</a>
+                
+            </nav>
+        </header>
+
+        <!-- Side Bar -->
+        <aside class="page-sidebar">
+
+            
+            
+
+            
+
+            <ul class="tree-nav tree-root">
+
+                
+                <li class="tree-leaf">
+                    
+                        <i class="fa fa-circle-thin" aria-hidden="true"></i>
+                    
+                    <a href="README.html"><span>Home</span></a>
+                </li>
+                
+
+                
+                <li class="tree-leaf">
+                    
+                        <i class="fa fa-circle" aria-hidden="true"></i>
+                    
+                    <a href="getting_started.html"><span>Getting Started</span></a>
+                </li>
+                
+            </ul>
+
+            
+            
+        </aside>
+
+        <!-- MAIN PAGE CONTENT -->
+        <section class="page-main">
+            <div class="page-content">
+                
+                
+
+    
+    <div class="page-header">
+        <h1 class="display-4">Getting Started </h1>
+        <p class="lead">Getting Started with ADORe</p>
+        <p>
+            <span class="version">V1.0.0</span>
+            
+            <img src="http://www.gravatar.com/avatar/d11f315b4d0ccb1bdb08d8ff85e4227a?s=100&amp;r=g&amp;d=retro" class="avatar" alt="opensource-ts@dlr.de" title="opensource-ts@dlr.de" />
+            
+            <small>last updated on <span>Thu 28 Jul 2022 03:57:26 PM CEST</span></small>
+        </p>
+
+        
+    </div>
+    <br/>
+    
+
+    <div class="page-md">
+        <h2 id="getting-started-with-adore">Getting Started With ADORe</h2>
+<p>To use the ADORe build system you must have docker, docker compose, and make 
+installed and configured for you user.</p>
+<h4 id="clone-the-reposiotry-and-submodules">Clone the reposiotry and submodules</h4>
+<pre><code class="bash">git clone --recurse-submodules -j8 --branch feature/new_build_system git@gitlab.dlr.de:csa/adore.git
+</code></pre>
+
+<p>or if you have already cloned the repository you must initialize the submodules:</p>
+<pre><code class="bash">git checkout feature/new_build_system
+git submodule update --init --recursive
+</code></pre>
+
+<h4 id="building-adore">Building ADORe</h4>
+<p>Each module provides a Makefile and docker context for build. You can build the 
+whole project by navigating to the ADORe project root and running:</p>
+<pre><code class="bash">make build
+</code></pre>
+
+<p>You can also build individual modules by navigating to the module and running 
+make build such as the following example:</p>
+<pre><code class="bash">cd adore_if_ros_msg
+make build
+</code></pre>
+
+<p>After building you can run unit tests by running the provided target:</p>
+<pre><code class="bash">make test
+</code></pre>
+
+<h4 id="static-checking">Static Checking</h4>
+<p>The ADORe build system provides built-in static checking via cppcheck and cpplint</p>
+<pre><code class="bash">make lint
+make cppcheck
+make lizard
+</code></pre>
+
+<p>Static checks can be run in individual modules by navigating to a module and 
+running the provided make targets as in the following example:</p>
+<pre><code class="bash">cd sumo_if_ros
+make lint
+make cppcheck
+make lizard
+</code></pre>
+
+<h4 id="adore-cli">ADORe CLI</h4>
+<p>The ADORe CLI is a docker compose context with a ros master service, plotlab 
+server service </p>
+<h5 id="starting-the-adore-cli">Starting the ADORe CLI</h5>
+<p>To use the ADORe CLI docker context first build the docker image with the 
+provided make target:</p>
+<pre><code class="bash">make build_adore-cli
+</code></pre>
+
+<p>Next, run the provided make target to start the ADORe CLI context:</p>
+<pre><code class="bash">make adore-cli
+</code></pre>
+
+<p>The ADORe CLI context provides the following features: 
+<em> Execution environment for all ADORe related binaries 
+</em> A pre-generated catkin workspace located at adore/catkin_workspace
+<em> Docker-out-of-docker docker commands can be run within the context
+</em> Reuse of previously generated binaries and build artifacts. All build 
+artifacts generated previously with make build can be executed in this 
+environment
+<em> Headless, native or windowed plotlab server running as a docker compose 
+service.  The display mode for plotlab server can be configured with the 
+docker-compose.yaml. For more information on plotlab server please review the
+README.md provided by that module at plotlab/README.md
+server can be configured 
+</em> ros master running as a docker compose service</p>
+<p>Once in the adore-cli context you can launch scenarios with roslaunch:</p>
+<pre><code class="bash">cd test/ci_scenarios
+roslaunch baseline_test.launch
+</code></pre>
+    </div>
+
+
+            </div>
+        </section>
+    </body>
+
+    <script type="text/javascript">
+
+    $(document).ready(function() {
+
+        // Sidebar functionality.
+        $('.page-togglesidebar').click(function(){
+            $('body').toggleClass('page-sidebar-closed')
+        });
+
+        // Apply code highlighting.
+        $('pre code').each(function(i, block) {
+            hljs.highlightBlock(block);
+        });
+
+        // Apply CSS to all tables.
+        $('.page-md table').addClass('table thead-light table-hover');
+
+        // Set images to lightbox.
+        $('.page-md img').on('click', function(event) {
+            var imgsrc = $(this).attr('src');
+            bootbox.alert({
+                message: '<img src="'+imgsrc+'" style="width:100%; height:auto;"></img>',
+                backdrop: true,
+                closeButton: false,
+                size: 'large'
+            });
+        });
+    });
+    </script>
+
+
+    
+<script type="text/javascript">
+
+    $(document).ready(function() {
+
+        // // Apply CSS specific to a table in a *parts* heading.
+        // $('.page-md #parts + table')
+        //     .addClass('parts')
+        // //     .addClass('table thead-light table-hover')
+        // //     //.css('position', 'absolute')
+        //     //.css('width', '60%');
+    });
+
+</script>
+
+
+</html>
