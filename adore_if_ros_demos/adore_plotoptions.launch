@@ -1,0 +1,54 @@
+<launch>
+  <group ns="plotoptions">
+    <group ns="prediction">
+      <param name="wcp/active" value="0" type="bool" />
+      <param name="wcp/r_start" value="1" type="double" />
+      <param name="wcp/r_end" value="0" type="double" />
+      <param name="wcp/g_start" value="0" type="double" />
+      <param name="wcp/g_end" value="1" type="double" />
+      <param name="wcp/b_start" value="0" type="double" />
+      <param name="wcp/b_end" value="0" type="double" />
+      <param name="scp/active" value="1" type="bool" />
+      <param name="scp/r_start" value="0" type="double" />
+      <param name="scp/r_end" value="1" type="double" />
+      <param name="scp/g_start" value="0" type="double" />
+      <param name="scp/g_end" value="0" type="double" />
+      <param name="scp/b_start" value="0" type="double" />
+      <param name="scp/b_end" value="0" type="double" />
+      <param name="ecp/active" value="0" type="bool" />
+      <param name="ecp/r_start" value="1" type="double" />
+      <param name="ecp/r_end" value="0" type="double" />
+      <param name="ecp/g_start" value="0" type="double" />
+      <param name="ecp/g_end" value="0" type="double" />
+      <param name="ecp/b_start" value="0" type="double" />
+      <param name="ecp/b_end" value="1" type="double" />
+      <param name="ego/active" value="0" type="bool" />
+      <param name="t_prediction_max" value="10" type="double"/>
+    </group>
+    <group ns="viewplotter">
+      <param name="lf_geometry_plotoptions" value="LineColor=0.0,1.0,0.0;LineWidth=1.2" type="str" />
+      <param name="lc_geometry_plotoptions" value="LineColor=1.0,1.0,0.0;LineWidth=1.2" type="str" />
+      <param name="lf_geometry_narrowing" value="0.2" type="double" />
+      <param name="lc_geometry_narrowing" value="0.2" type="double" />
+      <param name="plot_lc_geometry" value="1" type="bool" />
+      <param name="plot_lf_geometry" value="1" type="bool" />
+      <param name="number_of_samples_per_boundary" value="50" type="int" />
+      <param name="lc_sufficient_width_plotoptions" value="LineColor=0.0,1.0,0.0;LineWidth=1.2" type="str" />
+      <param name="lc_gate_plotoptions" value="LineColor=0.0,1.0,0.0;LineWidth=1.2" type="str" />
+    </group>
+    <param name="followMode" value="1" type="int" />  
+    <param name="outer_border" value="LineColor=0.6,0.6,0.6;LineWidth=2.6" type="str" /> 
+    <param name="drive_lane" value="FillColor=0.3,0.3,0.3;LineColor=0.25,0.25,0.25;LineWidth=0.3" type="str" />
+    <param name="emergency_lane" value="FillColor=0.9,0.8,0.8;LineColor=0.8,0.7,0.7;LineWidth=0.3" type="str" />
+    <param name="other_lane" value="FillColor=0.8,0.7,0.7;LineColor=0.75,0.65,0.65;LineWidth=1.6" type="str" />
+    <param name="default_lane" value="FillColor=0.6,0.6,0.6;LineColor=0.65,0.65,0.65;LineWidth=1.6" type="str" />
+    <param name="setpoint" value="LineWidth=5.6;LineColor=0.7,0.4,0.1" type="str" /> 
+    <param name="traffic_lights" value="true" type="bool"/>
+    <param name="tiles/base_url" value="https://adore-ts_reader:-KOxqzq5LfV81J8gW1bR@ts.dlr.de/mumme-server/bs-gov/wms?service=WMS&#038;version=1.1.0&#038;request=GetMap&#038;layers=bs-gov%3Adop-2020&#038;styles=&#038;width=400&#038;height=400&#038;srs=EPSG:32632&#038;format=image/jpeg&#038;bbox=" type="str" />
+    <param name="tiles/width_meters" value="100" type="double" /> 
+    <param name="plot_drive_lane" value="True" type="bool" />
+    <param name="plot_emergency_lane" value="False" type="bool" />
+    <param name="plot_other_lane" value="False" type="bool" />
+  </group>
+    <param name="debugTrafficIDs" value="false" type="bool" />  
+</launch>

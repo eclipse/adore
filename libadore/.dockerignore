@@ -2,5 +2,8 @@ libadore/build
 libdore/external
 libdore/external/*/build
 **/build
-**.dockerignore
-**.lizard_report.xml
+**lizard_report.xml
+make_gadgets
+cppcheck
+cpplint
+lizard

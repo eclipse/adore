@@ -15,15 +15,25 @@
 
 cmake_minimum_required(VERSION 3.13)
 
-project("env" VERSION 0.0.1
-             DESCRIPTION "Environment representation classes as part of the adore framework"
-             HOMEPAGE_URL "${adore_REPOSITORY_URL}/libadore/adore/env"
+project(
+    "env" 
+    VERSION 0.0.1
+    DESCRIPTION "Environment representation classes as part of the adore framework"
+    HOMEPAGE_URL "${adore_REPOSITORY_URL}/libadore/adore/env"
 )
 
 include(GNUInstallDirs)
 
 add_library(${PROJECT_NAME} STATIC)
 
+#list(APPEND CMAKE_PREFIX_PATH "$ENV{CMAKE_PREFIX_PATH}")
+#list(APPEND CMAKE_PREFIX_PATH "${CMAKE_CURRENT_SOURCE_DIR}/../../external/Catch2/build/install")
+#list(APPEND CMAKE_PREFIX_PATH "${CMAKE_CURRENT_SOURCE_DIR}/../../external/csaps-cpp/build/install")
+
+
+foreach(path ${CMAKE_PREFIX_PATH})
+  message("Path: " ${path})
+endforeach(path)
 
 find_package(csaps-cpp CONFIG REQUIRED)
 

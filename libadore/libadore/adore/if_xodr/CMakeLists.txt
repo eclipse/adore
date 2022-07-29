@@ -14,13 +14,23 @@
 
 cmake_minimum_required(VERSION 3.13)
 
-project("if_xodr" VERSION 0.0.1
-             DESCRIPTION "Open drive interface as part of the adore framework"
-             HOMEPAGE_URL "${adore_REPOSITORY_URL}/libadore/adore/if_xodr")
+project(
+    "if_xodr" 
+    VERSION 0.0.1
+    DESCRIPTION "Open drive interface as part of the adore framework"
+    HOMEPAGE_URL "${adore_REPOSITORY_URL}/libadore/adore/if_xodr"
+)
 
 include(GNUInstallDirs)
 
 add_library(${PROJECT_NAME} STATIC)
+
+#list(APPEND CMAKE_PREFIX_PATH "$ENV{CMAKE_PREFIX_PATH}")
+#list(APPEND CMAKE_PREFIX_PATH "${CMAKE_CURRENT_SOURCE_DIR}/../../external/xodr/build")
+
+foreach(path ${CMAKE_PREFIX_PATH})
+  message("Path: " ${path})
+endforeach(path)
 
 find_package(XercesC 3.2.0 REQUIRED)
 find_package(xodr CONFIG REQUIRED)

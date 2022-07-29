@@ -1,16 +1,15 @@
 ARG PROJECT
 
 
-
-FROM plotlab:latest as plotlab
+FROM plotlablib:latest as plotlablib
 FROM csaps-cpp:latest as csaps-cpp
-FROM qpoases:latest as qpoases
+FROM qpoases:latest as qpOASES
 FROM dlib:v19.19 as dlib
 FROM xodr:latest as xodr
-FROM catch2:v2.10.2 as catch2
+FROM catch2:v2.10.2 as Catch2
 
 
-FROM ubuntu:20.04 as libadore_builder
+FROM ubuntu:20.04 as libadore_requirements_base
 
 ARG PROJECT
 ARG REQUIREMENTS_FILE="requirements.${PROJECT}.ubuntu20.04.system"
@@ -19,45 +18,69 @@ RUN mkdir -p /tmp/${PROJECT}
 COPY files/${REQUIREMENTS_FILE} /tmp/${PROJECT}
 WORKDIR /tmp/${PROJECT}
 
-#RUN http_proxy= apt-get update && \
-#    apt-get install --no-install-recommends -y curl && \
-#    curl $http_proxy && exit 1
-
 ENV DEBIAN_FRONTEND=noninteractive
 RUN apt-get update && \
     apt-get install --no-install-recommends -y checkinstall && \
     apt-get install --no-install-recommends -y $(sed '/^#/d' ${REQUIREMENTS_FILE} | sed '/^$/d') && \
     rm -rf /var/lib/apt/lists/*
 
-RUN mkdir -p /tmp/external
-WORKDIR /tmp/external
-COPY --from=csaps-cpp /tmp/csaps-cpp/build/*.deb .
-COPY --from=xodr /tmp/xodr/build/*.deb .
-COPY --from=catch2 /tmp/Catch2/build/*.deb .
-#COPY --from=plotlab /tmp/plotlab/lib/build/*.deb .
-SHELL ["/bin/bash", "-c"]
-RUN dpkg -i *.deb 
+COPY ${PROJECT} /tmp/${PROJECT}/${PROJECT}
 
 
-COPY ${PROJECT} /tmp/${PROJECT}
+FROM libadore_requirements_base AS libadore_external_library_requirements_base
 
-COPY --from=plotlab /tmp/plotlab /tmp/plotlab
-WORKDIR /tmp/plotlab/lib/build
-RUN cmake --install . --prefix /tmp/${PROJECT}/build/install
+ARG PROJECT
 
-RUN mkdir -p /tmp/${PROJECT}/build && mkdir -p /tmp/${PROJECT}/build/install
+ARG INSTALL_PREFIX=/tmp/${PROJECT}/${PROJECT}/build/install
+RUN mkdir -p "${INSTALL_PREFIX}"
 
-WORKDIR /tmp/${PROJECT}/build
+ARG LIBADORE_EXTERNAL_LIBRARY_DIRECTORY=/tmp/${PROJECT}/${PROJECT}/external
 
-COPY --from=dlib /tmp/dlib /tmp/dlib
-WORKDIR /tmp/dlib/build
-RUN cmake --install . --prefix /tmp/${PROJECT}/build/install
+ARG LIB=dlib
+COPY --from=dlib /tmp/${LIB} ${LIBADORE_EXTERNAL_LIBRARY_DIRECTORY}/${LIB}
+WORKDIR ${LIBADORE_EXTERNAL_LIBRARY_DIRECTORY}/${LIB}/build
+RUN cmake .. > /dev/null 2>&1 || true && \
+    cmake --install . --prefix ${INSTALL_PREFIX}
 
-COPY --from=qpoases /tmp/qpOASES /tmp/qpOASES
-WORKDIR /tmp/qpOASES/build
-RUN cmake --install . --prefix /tmp/${PROJECT}/build/install
+ARG LIB=xodr
+COPY --from=xodr /tmp/${LIB} ${LIBADORE_EXTERNAL_LIBRARY_DIRECTORY}/${LIB}
+WORKDIR ${LIBADORE_EXTERNAL_LIBRARY_DIRECTORY}/${LIB}/build
+RUN cmake .. > /dev/null 2>&1 || true && \
+    cmake --install . --prefix ${INSTALL_PREFIX}
 
-WORKDIR /tmp/libadore/build
-RUN cmake .. -DBUILD_adore_TESTING=ON -DCMAKE_PREFIX_PATH=install -DCMAKE_INSTALL_PREFIX:PATH=install && \
-    cmake --build . --config Release --target install -- -j $(nproc)
+ARG LIB=csaps-cpp
+COPY --from=csaps-cpp /tmp/${LIB} ${LIBADORE_EXTERNAL_LIBRARY_DIRECTORY}/${LIB}
+WORKDIR ${LIBADORE_EXTERNAL_LIBRARY_DIRECTORY}/${LIB}/build
+RUN cmake .. > /dev/null 2>&1 || true && \
+    cmake --install . --prefix ${INSTALL_PREFIX}
 
+ARG LIB=qpOASES
+COPY --from=qpOASES /tmp/${LIB} ${LIBADORE_EXTERNAL_LIBRARY_DIRECTORY}/${LIB}
+WORKDIR ${LIBADORE_EXTERNAL_LIBRARY_DIRECTORY}/${LIB}/build
+RUN cmake .. > /dev/null 2>&1 || true && \
+    cmake --install . --prefix ${INSTALL_PREFIX} 
+
+ARG LIB=Catch2
+COPY --from=Catch2 /tmp/${LIB} ${LIBADORE_EXTERNAL_LIBRARY_DIRECTORY}/${LIB}
+WORKDIR ${LIBADORE_EXTERNAL_LIBRARY_DIRECTORY}/${LIB}/build
+RUN cmake .. > /dev/null 2>&1 || true && \
+    cmake --install . --prefix ${INSTALL_PREFIX}
+
+
+FROM libadore_external_library_requirements_base AS libadore_builder
+
+ARG PROJECT
+
+ARG CMAKE_PREFIX_PATH="/tmp/${PROJECT}/${PROJECT}/build/install"
+
+WORKDIR /tmp/${PROJECT}/${PROJECT}/build
+RUN cmake .. \
+             -DBUILD_adore_TESTING=ON \
+             -DCMAKE_EXPORT_COMPILE_COMMANDS=ON \
+             -DCMAKE_BUILD_TYPE=Release \
+             -DCMAKE_INSTALL_PREFIX="install" \
+             -DCMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH} && \
+    cmake --build . -v --config Release --target install -- -j $(nproc)
+
+RUN cmake .. && cpack -G DEB && find . -type f -name "*.deb" | xargs mv -t . || true
+RUN mv CMakeCache.txt CMakeCache.txt.build
