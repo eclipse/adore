@@ -1,3 +1,12 @@
+title:      Getting Started 
+desc:       This guild offers a starting point for building ADORe and running a test scenario.
+date:       ${DOC_DATETIME}
+version:    ${DOC_VERSION}
+template:   document
+nav:        __1__ Guides/Getting Started
+percent:    100
+authors:    opensource-ts@dlr.de
+           
 # Getting Started With ADORe
 To use the ADORe build system you must have docker, docker compose, and make 
 installed and configured for you user.

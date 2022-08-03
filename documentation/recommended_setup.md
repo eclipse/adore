@@ -3,7 +3,7 @@ desc:       This guide offers a minimum recommended system setup for execution a
 date:       DATETIME
 version:    VERSION
 template:   document
-nav:        __1__ Recommended Systems Setup
+nav:        __2__ Recommended Systems Setup
 percent:    100
 authors:    opensource-ts@dlr.de
 
