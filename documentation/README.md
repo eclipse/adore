@@ -3,7 +3,7 @@ desc:       Eclipse ADORe is a modular software library and toolkit for decision
 date:       ${DOC_DATETIME}
 version:    ${DOC_VERSION}
 template:   document
-nav:        __1__ Home
+nav:        Home __1__
 percent:    100
 authors:    opensource-ts@dlr.de
            
