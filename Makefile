@@ -157,13 +157,14 @@ run_ci_scenarios:
 
 .PHONY: adore-cli
 adore-cli: ## Start an adore-cli context
-	mkdir -p .ros/bag_files
+	mkdir -p .log/.ros/bag_files
+	mkdir -p .log/plotlabserver
 	touch .zsh_history
 	touch .zsh_history.new
 	[ -n "$$(docker images -q adore-cli:latest)" ] || make build_adore-cli 
 	docker compose rm -f
-	docker compose up --force-recreate -V -d 
-	(cd plotlab && make up-detached > /dev/null 2>&1 &);
+	@xhost + && docker compose up --force-recreate -V -d; xhost - 
+#	(cd plotlab && make up-detached > /dev/null 2>&1 &);
 	docker exec -it --user adore-cli adore-cli /bin/zsh -c "bash tools/adore-cli.sh" || true
 	@docker compose down && xhost - 1> /dev/null
 	docker compose rm -f
