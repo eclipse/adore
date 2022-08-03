@@ -11,15 +11,15 @@ git pull origin $GIT_BRANCH
 git checkout $GIT_BRANCH -- documentation
 
 for docfile in $(find documentation -name "**.md"); do
-    docfile=$(basename $docfile)
-    envsubst < documentation/$docfile > docs/$docfile
+    docfile_basename=$(basename $docfile)
+    envsubst < $docfile > docs/$docfile_basename
 done
 
 cd docs && ln -s Home.md home.md
 
 cd "${SCRIPT_DIRECTORY}"
 docker build -t docnado:latest .
-#:docker run --user $(id -u):$(id -g) -v ${SCRIPT_DIRECTORY}/docs:/tmp/docs docnado:latest
+docker run --user $(id -u):$(id -g) -v ${SCRIPT_DIRECTORY}/docs:/tmp/docs docnado:latest
 
 
 cd docs/w && ln -s home.html index.html
