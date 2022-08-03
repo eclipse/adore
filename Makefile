@@ -161,10 +161,9 @@ adore-cli: ## Start an adore-cli context
 	touch .zsh_history
 	touch .zsh_history.new
 	[ -n "$$(docker images -q adore-cli:latest)" ] || make build_adore-cli 
-	cd plotlabserver && \
-	make down
 	docker compose rm -f
-	@xhost + && docker compose up --force-recreate -V -d; xhost - 
-	(cd plotlab && make start_plotlab_server_detached > /dev/null 2>&1 &);
-	@docker exec -it --user adore-cli adore-cli /bin/zsh -c "bash tools/adore-cli.sh" || true
+	docker compose up --force-recreate -V -d 
+	(cd plotlab && make up-detached > /dev/null 2>&1 &);
+	docker exec -it --user adore-cli adore-cli /bin/zsh -c "bash tools/adore-cli.sh" || true
 	@docker compose down && xhost - 1> /dev/null
+	docker compose rm -f

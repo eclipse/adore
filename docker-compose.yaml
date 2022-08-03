@@ -29,7 +29,7 @@ services:
     restart: always
     user: nobody
     environment:
-      - "ROS_HOME=/tmp/adore/.ros"
+      - "ROS_HOME=/tmp/adore/.log/.ros"
       - "ROS_MASTER_URI=http://127.0.0.1:11311"
       - "ROS_HOSTNAME=127.0.0.1"
     volumes:
