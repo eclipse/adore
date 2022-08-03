@@ -1,0 +1,203 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    
+    <title></title>
+
+
+    <script src="../lib/jquery-3.2.1.slim.min.js"></script>
+    <script src="../lib/bootstrap-4.4.1.min.js"></script>
+    <script src="../lib/highlight-9.12.0.min.js"></script>
+    <script src="../lib/bootbox-4.4.0.min.js"></script>
+
+    <link rel="stylesheet" href="../lib/highlightjs-9.12.0.min.css">
+    <link rel="stylesheet" href="../lib/bootstrap-4.4.1.min.css">
+    <link rel="stylesheet" href="../lib/font-awesome-4.7.0.min.css">
+
+    <link rel="stylesheet" href="../default.css">
+
+    
+    
+
+</head>
+    <body>
+
+        <!-- Header Bar -->
+        <header class="navbar navbar-light page-headbar">
+            <button class="navbar-toggler page-togglesidebar" type="button" data-toggle="collapse" aria-expanded="false" aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon"></span>
+            </button>
+            <a class="navbar-brand" href="/">
+                <!-- Project Name -->
+                
+            </a>
+            <nav class="nav">
+                <a class="nav-link" href="#" onclick="window.print();">Print</a>
+                
+            </nav>
+        </header>
+
+        <!-- Side Bar -->
+        <aside class="page-sidebar">
+
+            
+            
+
+            
+
+            <ul class="tree-nav tree-root">
+
+                
+                <li class="tree-leaf">
+                    
+                        <i class="fa fa-circle-thin" aria-hidden="true"></i>
+                    
+                    <a href="recommended_setup.html"><span></span></a>
+                </li>
+                
+            </ul>
+
+            
+            
+        </aside>
+
+        <!-- MAIN PAGE CONTENT -->
+        <section class="page-main">
+            <div class="page-content">
+                
+                
+
+    
+
+    <div class="page-md">
+        <h2 id="getting-started-with-adore">Getting Started With ADORe</h2>
+<p>To use the ADORe build system you must have docker, docker compose, and make 
+installed and configured for you user.</p>
+<h4 id="clone-the-reposiotry-and-submodules">Clone the reposiotry and submodules</h4>
+<pre><code class="bash">git clone --recurse-submodules -j8 --branch feature/new_build_system git@gitlab.dlr.de:csa/adore.git
+</code></pre>
+
+<p>or if you have already cloned the repository you must initialize the submodules:</p>
+<pre><code class="bash">git checkout feature/new_build_system
+git submodule update --init --recursive
+</code></pre>
+
+<h4 id="building-adore">Building ADORe</h4>
+<p>Each module provides a Makefile and docker context for build. You can build the 
+whole project by navigating to the ADORe project root and running:</p>
+<pre><code class="bash">make build
+</code></pre>
+
+<p>You can also build individual modules by navigating to the module and running 
+make build such as the following example:</p>
+<pre><code class="bash">cd adore_if_ros_msg
+make build
+</code></pre>
+
+<p>After building you can run unit tests by running the provided target:</p>
+<pre><code class="bash">make test
+</code></pre>
+
+<h4 id="static-checking">Static Checking</h4>
+<p>The ADORe build system provides built-in static checking via cppcheck and cpplint</p>
+<pre><code class="bash">make lint
+make cppcheck
+make lizard
+</code></pre>
+
+<p>Static checks can be run in individual modules by navigating to a module and 
+running the provided make targets as in the following example:</p>
+<pre><code class="bash">cd sumo_if_ros
+make lint
+make cppcheck
+make lizard
+</code></pre>
+
+<h4 id="adore-cli">ADORe CLI</h4>
+<p>The ADORe CLI is a docker compose context with a ros master service, plotlab 
+server service </p>
+<h5 id="starting-the-adore-cli">Starting the ADORe CLI</h5>
+<p>To use the ADORe CLI docker context first build the docker image with the 
+provided make target:</p>
+<pre><code class="bash">make build_adore-cli
+</code></pre>
+
+<p>Next, run the provided make target to start the ADORe CLI context:</p>
+<pre><code class="bash">make adore-cli
+</code></pre>
+
+<p>The ADORe CLI context provides the following features: 
+<em> Execution environment for all ADORe related binaries 
+</em> A pre-generated catkin workspace located at adore/catkin_workspace
+<em> Docker-out-of-docker docker commands can be run within the context
+</em> Reuse of previously generated binaries and build artifacts. All build 
+artifacts generated previously with make build can be executed in this 
+environment
+<em> Headless, native or windowed plotlab server running as a docker compose 
+service.  The display mode for plotlab server can be configured with the 
+docker-compose.yaml. For more information on plotlab server please review the
+README.md provided by that module at plotlab/README.md
+server can be configured 
+</em> ros master running as a docker compose service</p>
+<p>Once in the adore-cli context you can launch scenarios with roslaunch:</p>
+<pre><code class="bash">cd test/ci_scenarios
+roslaunch baseline_test.launch
+</code></pre>
+    </div>
+
+
+            </div>
+        </section>
+    </body>
+
+    <script type="text/javascript">
+
+    $(document).ready(function() {
+
+        // Sidebar functionality.
+        $('.page-togglesidebar').click(function(){
+            $('body').toggleClass('page-sidebar-closed')
+        });
+
+        // Apply code highlighting.
+        $('pre code').each(function(i, block) {
+            hljs.highlightBlock(block);
+        });
+
+        // Apply CSS to all tables.
+        $('.page-md table').addClass('table thead-light table-hover');
+
+        // Set images to lightbox.
+        $('.page-md img').on('click', function(event) {
+            var imgsrc = $(this).attr('src');
+            bootbox.alert({
+                message: '<img src="'+imgsrc+'" style="width:100%; height:auto;"></img>',
+                backdrop: true,
+                closeButton: false,
+                size: 'large'
+            });
+        });
+    });
+    </script>
+
+
+    
+<script type="text/javascript">
+
+    $(document).ready(function() {
+
+        // // Apply CSS specific to a table in a *parts* heading.
+        // $('.page-md #parts + table')
+        //     .addClass('parts')
+        // //     .addClass('table thead-light table-hover')
+        // //     //.css('position', 'absolute')
+        //     //.css('width', '60%');
+    });
+
+</script>
+
+
+</html>

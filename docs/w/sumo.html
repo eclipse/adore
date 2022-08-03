@@ -1,0 +1,240 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    
+    <title></title>
+
+
+    <script src="../lib/jquery-3.2.1.slim.min.js"></script>
+    <script src="../lib/bootstrap-4.4.1.min.js"></script>
+    <script src="../lib/highlight-9.12.0.min.js"></script>
+    <script src="../lib/bootbox-4.4.0.min.js"></script>
+
+    <link rel="stylesheet" href="../lib/highlightjs-9.12.0.min.css">
+    <link rel="stylesheet" href="../lib/bootstrap-4.4.1.min.css">
+    <link rel="stylesheet" href="../lib/font-awesome-4.7.0.min.css">
+
+    <link rel="stylesheet" href="../default.css">
+
+    
+    
+
+</head>
+    <body>
+
+        <!-- Header Bar -->
+        <header class="navbar navbar-light page-headbar">
+            <button class="navbar-toggler page-togglesidebar" type="button" data-toggle="collapse" aria-expanded="false" aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon"></span>
+            </button>
+            <a class="navbar-brand" href="/">
+                <!-- Project Name -->
+                
+            </a>
+            <nav class="nav">
+                <a class="nav-link" href="#" onclick="window.print();">Print</a>
+                
+            </nav>
+        </header>
+
+        <!-- Side Bar -->
+        <aside class="page-sidebar">
+
+            
+            
+
+            
+
+            <ul class="tree-nav tree-root">
+
+                
+                <li class="tree-leaf">
+                    
+                        <i class="fa fa-circle-thin" aria-hidden="true"></i>
+                    
+                    <a href="recommended_setup.html"><span></span></a>
+                </li>
+                
+            </ul>
+
+            
+            
+        </aside>
+
+        <!-- MAIN PAGE CONTENT -->
+        <section class="page-main">
+            <div class="page-content">
+                
+                
+
+    
+
+    <div class="page-md">
+        <!--
+********************************************************************************
+* Copyright (C) 2017-2020 German Aerospace Center (DLR). 
+* Eclipse ADORe, Automated Driving Open Research https://eclipse.org/adore
+*
+* This program and the accompanying materials are made available under the 
+* terms of the Eclipse Public License 2.0 which is available at
+* http://www.eclipse.org/legal/epl-2.0.
+*
+* SPDX-License-Identifier: EPL-2.0 
+*
+* Contributors: 
+*   Daniel Heß
+********************************************************************************
+-->
+
+<h2 id="automatic-sumo-integration">Automatic SUMO integration</h2>
+<p>The cmake files of the sub-project sumo_if_ros are configured to automatically download and install SUMO in the folder catkin_ws/src/adore/sumo.
+To trigger the automatic installation, build sumo_if_ros:</p>
+<pre><code class="bash">cd ~/catkin_ws/src/adore
+catkin build sumo_if_ros
+</code></pre>
+
+<p>The ros node sumo_if_ros/sumotraffic2ros advances SUMO time steps according to the ADORe simulation time and exchanges data between SUMO and ROS.
+See section adore_if_ros_demos for examples.</p>
+<h2 id="manual-sumo-integration">Manual SUMO integration</h2>
+<p>The following steps can be found in the <a href="https://sumo.dlr.de/docs/Installing/Linux_Build.html">SUMO documentation</a> and have been slightly modified to attribute for file paths.</p>
+<p>Install a complete instance of sumo in the src folder:</p>
+<pre><code class="bash"> sudo apt-get install cmake python g++ libxerces-c-dev libfox-1.6-dev libgdal-dev libproj-dev libgl2ps-dev swig
+
+ cd ~/catkin_ws/src/adore
+ git clone --recursive https://github.com/eclipse/sumo
+ export SUMO_HOME=&quot;/home/akoerner/repos/csa/github.com-DLR-TS/test1/adore/sumo&quot;
+
+ mkdir sumo/build/cmake-build &amp;&amp; cd sumo/build/cmake-build
+ cmake ../..
+ make -j$(nproc)
+</code></pre>
+
+<p>The files for TraCI/c++ interfacing with sumo are located here:</p>
+<pre><code class="bash">sumo/src/utils/traci/TraCIAPI.h
+sumo/src/utils/traci/TraCIAPI.cpp
+sumo/src/foreign/tcpip/socket.h
+sumo/src/foreign/tcpip/socket.cpp
+sumo/src/foreign/tcpip/storage.h
+sumo/src/foreign/tcpip/storage.cpp
+sumo/src/traci-server/TraCIConstants.h
+sumo/src/libsumo/TraCIDefs.h
+</code></pre>
+
+<p>If you start sumo with the following parameters:</p>
+<pre><code class="bash">cd 
+./bin/sumo --remote-port 1337 -c tests/complex/tutorial/quickstart/data/quickstart.sumocfg --step-length 0.01
+</code></pre>
+
+<p>The TraCI client can be connected as follows:</p>
+<pre><code class="c++">TraCIAPI client;
+client.connect(&quot;localhost&quot;, 1337);
+</code></pre>
+
+<h3 id="generate-a-network-file">Generate a network file</h3>
+<p>One option is to convert OpenDrive files directly:</p>
+<p>See sumo doc on <a href="https://sumo.dlr.de/docs/NETGENERATE.html">netgenerate</a>:</p>
+<pre><code class="bash">netconvert --opendrive myOpenDriveNetwork.xodr -o mySUMOnetwork.net.xml --offset.disable-normalization 
+</code></pre>
+
+<p>Another option is to convert maps, which are readable by adore, into SUMO PlainXML format <a href="https://sumo.dlr.de/docs/Networks/PlainXML.html">SUMO PlainXML specification</a>: ADORe provides a <code>plainxmlexporter</code> binary, available from the selected binary folder, e.g. <code>install/lib/adore_if_ros</code>.
+Provide one or more map file paths as argument to binary in order to create PlainXML output <code>output.nod.xml</code> node defintions, <code>output.edg.xml</code> edge definitions and <code>output.con.xml</code> connection definitions.
+Currently, xodr and r2s maps can be read and converted.
+The parameters for plainxmlexporter are <code>[plot] infile1[,transform] [infile2[,transform]] ... outfile</code>, where plot allows immediate output of loaded files to plotlab, each infile specifies path to a map file and outfile defines prefix of Plain-XML output files. 
+Road2Simulation input files (file1.r2sl, file1.r2sr) have to be specified as (file1.r2s) in a single infile name.
+The transform arguments allow to enable/disable application of transforms specified in the OpenDrive header.
+The resulting PlainXML files can be further converted to a Net-XML format using sumo <code>netconvert</code>.</p>
+<p>Here is an example:</p>
+<pre><code class="bash">cd ~/catkin_ws
+
+prefix=src/adore/adore_if_ros_demos/tracks/r2s/tost2dlr
+
+install/lib/adore_if_ros/plainxmlexporter .r2s 
+
+src/adore/sumo/bin/netconvert \
+  --node-files=.nod.xml \
+  --edge-files=.edg.xml \
+  --connection-files=.con.xml \
+  --output-file=.net.xml
+</code></pre>
+
+<h3 id="define-a-route-description">Define a route description</h3>
+<p>Define a file routes.xml <a href="https://sumo.dlr.de/xsd/routes_file.xsd">schema</a>, which contain vehicle and flow.</p>
+<pre><code class="xml">&lt;routes&gt;
+    &lt;vType id=&quot;traffic&quot; accel=&quot;0.8&quot; decel=&quot;4.5&quot; sigma=&quot;0.5&quot; length=&quot;5&quot; maxSpeed=&quot;70&quot;/&gt;
+    &lt;flow id=&quot;id&quot; type=&quot;traffic&quot; begin=&quot;0&quot; end=&quot;3600&quot; probability=&quot;0.1&quot; from=&quot;start&quot; to=&quot;end&quot; /&gt;
+&lt;/routes&gt;
+</code></pre>
+
+<h3 id="define-a-re-router-in-additional-file">Define a re-router in additional file</h3>
+<p>Example for circular track can be found <a href="https://sumo.dlr.de/docs/Tutorials/Driving_in_Circles.html">here</a></p>
+<pre><code class="xml">&lt;additionals&gt;
+    &lt;rerouter id=&quot;rerouter_0&quot; edges=&quot;-1.0.00&quot;&gt;
+        &lt;interval end=&quot;1e9&quot;&gt;
+           &lt;destProbReroute id=&quot;-1.157.08&quot;/&gt;
+        &lt;/interval&gt;
+    &lt;/rerouter&gt;
+    &lt;rerouter id=&quot;rerouter_1&quot; edges=&quot;-1.157.08&quot;&gt;
+        &lt;interval end=&quot;1e9&quot;&gt;
+           &lt;destProbReroute id=&quot;-1.0.00&quot;/&gt;
+        &lt;/interval&gt;
+    &lt;/rerouter&gt;
+&lt;/additionals&gt;
+</code></pre>
+    </div>
+
+
+            </div>
+        </section>
+    </body>
+
+    <script type="text/javascript">
+
+    $(document).ready(function() {
+
+        // Sidebar functionality.
+        $('.page-togglesidebar').click(function(){
+            $('body').toggleClass('page-sidebar-closed')
+        });
+
+        // Apply code highlighting.
+        $('pre code').each(function(i, block) {
+            hljs.highlightBlock(block);
+        });
+
+        // Apply CSS to all tables.
+        $('.page-md table').addClass('table thead-light table-hover');
+
+        // Set images to lightbox.
+        $('.page-md img').on('click', function(event) {
+            var imgsrc = $(this).attr('src');
+            bootbox.alert({
+                message: '<img src="'+imgsrc+'" style="width:100%; height:auto;"></img>',
+                backdrop: true,
+                closeButton: false,
+                size: 'large'
+            });
+        });
+    });
+    </script>
+
+
+    
+<script type="text/javascript">
+
+    $(document).ready(function() {
+
+        // // Apply CSS specific to a table in a *parts* heading.
+        // $('.page-md #parts + table')
+        //     .addClass('parts')
+        // //     .addClass('table thead-light table-hover')
+        // //     //.css('position', 'absolute')
+        //     //.css('width', '60%');
+    });
+
+</script>
+
+
+</html>

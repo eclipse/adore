@@ -3,7 +3,6 @@
 function echoerr { echo "$@" >&2; exit 1;}
 SCRIPT_DIRECTORY="$( cd "$( dirname "${BASH_SOURCE[0]}" )" &> /dev/null && pwd )"
 
-sudo python -m pip install docnado --upgrade
 rm -rf docs || true
 mkdir docs
 
@@ -19,8 +18,12 @@ done
 cd docs && ln -s README.md home.md
 
 cd "${SCRIPT_DIRECTORY}"
-docnado --html docs
-cd docs/w
-ln -s home.html index.html
+docker build -t docnado:latest .
+docker run --user $(id -u):$(id -g) -v ${SCRIPT_DIRECTORY}/docs:/tmp/docs docnado:latest
 
-git add docs
+
+cd docs/w && ln -s home.html index.html
+
+cd "${SCRIPT_DIRECTORY}"
+rm -rf documentation
+git add docs/*
