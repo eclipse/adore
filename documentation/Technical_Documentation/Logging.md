@@ -8,4 +8,12 @@ percent:    100
 authors:    opensource-ts@dlr.de
            
 # ADORe Logging
-```
+Many components within ADORe generate log files of various kinds. This article will highlight interesting log files 
+and their locations.
+
+## Log Directory - **<adore repository root>/.log**
+The general log directory for all ADORe components can be found in the root of the adore repository at:**<adore repository root>/.log**
+
+### ROS **<adore repository root>/.log/.ros**
+
+### Plotlab Server
