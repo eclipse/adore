@@ -168,3 +168,4 @@ adore-cli: ## Start an adore-cli context
 	docker exec -it --user adore-cli adore-cli /bin/zsh -c "bash tools/adore-cli.sh" || true
 	@docker compose down && xhost - 1> /dev/null
 	docker compose rm -f
+	@cd .log/.ros/log && ln -s -f $$(basename $$(file latest | cut -d" " -f6)) latest 2> /dev/null || true
