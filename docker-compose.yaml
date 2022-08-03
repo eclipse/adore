@@ -45,7 +45,7 @@ services:
     environment:
       - "ADORE_SOURCE_DIR=/tmp/adore"
       - "BAG_OUTPUT_DIRECTORY=/tmp/adore/.log/.ros/bag_files"
-      - "ROS_HOME=/tmp/adore/.ros"
+      - "ROS_HOME=/tmp/adore/.log/.ros"
       - "HISTFILE=/tmp/adore/.zsh_history"
       - "ROS_MASTER_URI=http://127.0.0.1:11311"
       - "ROS_HOSTNAME=127.0.0.1"
