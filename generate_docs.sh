@@ -10,16 +10,16 @@ source config.env
 git pull origin $GIT_BRANCH
 git checkout $GIT_BRANCH -- documentation
 
-for docfile in documentation/*.md; do
+for docfile in $(find documentation -name "**.md"); do
     docfile=$(basename $docfile)
     envsubst < documentation/$docfile > docs/$docfile
 done
 
-cd docs && ln -s README.md home.md
+cd docs && ln -s Home.md home.md
 
 cd "${SCRIPT_DIRECTORY}"
 docker build -t docnado:latest .
-docker run --user $(id -u):$(id -g) -v ${SCRIPT_DIRECTORY}/docs:/tmp/docs docnado:latest
+#:docker run --user $(id -u):$(id -g) -v ${SCRIPT_DIRECTORY}/docs:/tmp/docs docnado:latest
 
 
 cd docs/w && ln -s home.html index.html
@@ -27,3 +27,5 @@ cd docs/w && ln -s home.html index.html
 cd "${SCRIPT_DIRECTORY}"
 rm -rf documentation
 git add docs/*
+
+git restore --source=HEAD --staged --worktree -- documentation
