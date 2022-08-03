@@ -16,6 +16,24 @@ The general log directory for all ADORe components can be found in the root of t
 
 ### ROS - **<adore repository root>/.log/.ros**
 
+The most recent ros run will have log files located at:
+```
+<adore repository root>/.ros/log/latest
+```
+
 ### Plotlab Server - **<adore repository root>/.log/plotlabserver**
 
+#### plotlab.mkv
+When run in window manger mode or headless mode plotlab will record a video for plotted content.  
+Location: 
+```
+**<adore repository root>/.log/plotlabserver/plotlab.mkv**
+```
+This file is overwritten for each scenario run.
 
+#### ffmpeg.log
+The ffmpeg log contains information on video encoding and length of recorded videos.
+Location: 
+```
+**<adore repository root>/.log/plotlabserver/plotlab.mkv**
+```
