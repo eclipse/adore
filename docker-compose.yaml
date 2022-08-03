@@ -21,7 +21,7 @@ services:
       - 12347:12347
     volumes:
       - /tmp/.X11-unix:/tmp/.X11-unix
-      - .log:/var/log/plotlab
+      - .log/plotlabserver:/var/log/plotlab
   ros-master:
     image: ros:noetic-ros-core
     container_name: ros-master
@@ -29,7 +29,7 @@ services:
     restart: always
     user: nobody
     environment:
-      - "ROS_HOME=/tmp/adore/.ros"
+      - "ROS_HOME=/tmp/adore/.log/.ros"
       - "ROS_MASTER_URI=http://127.0.0.1:11311"
       - "ROS_HOSTNAME=127.0.0.1"
     volumes:
@@ -44,7 +44,7 @@ services:
     command: /bin/bash -c "bash tools/adore-cli_start.sh"
     environment:
       - "ADORE_SOURCE_DIR=/tmp/adore"
-      - "BAG_OUTPUT_DIRECTORY=/tmp/adore/.ros/bag_files"
+      - "BAG_OUTPUT_DIRECTORY=/tmp/adore/.log/.ros/bag_files"
       - "ROS_HOME=/tmp/adore/.ros"
       - "HISTFILE=/tmp/adore/.zsh_history"
       - "ROS_MASTER_URI=http://127.0.0.1:11311"
