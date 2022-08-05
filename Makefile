@@ -92,26 +92,32 @@ lint_sumo_if_ros:
 
 .PHONY: lint 
 lint: ## Run linting for all modules
+	find . -name "**lint_report.log" -exec rm -rf {} \;
 	EXIT_STATUS=0; \
         (cd sumo_if_ros && make lint) || EXIT_STATUS=$$? && \
         (cd libadore && make lint) || EXIT_STATUS=$$? && \
         (cd adore_if_ros && make lint) || EXIT_STATUS=$$? && \
+	    find . -name "**lint_report.log" -print0 | xargs -0 -I {} mv {} .log/ && \
         exit $$EXIT_STATUS
  
 .PHONY: lizard 
 lizard: ## Run lizard static analysis tool for all modules
+	find . -name "**lizard_report.xml" -exec rm -rf {} \;
 	EXIT_STATUS=0; \
         (cd sumo_if_ros && make lizard) || EXIT_STATUS=$$? && \
-        (cd libadore && make lizard) || EXIT_STATUS=$$? && \
+        (cd libadore && make lizard) || EXIT_STATUS=$$? \ && \
         (cd adore_if_ros && make lizard) || EXIT_STATUS=$$? && \
+	    find . -name "**lizard_report.xml" -print0 | xargs -0 -I {} mv {} .log/ && \
         exit $$EXIT_STATUS
 
 .PHONY: cppcheck 
 cppcheck: ## Run cppcheck static checking tool for all modules.
+	find . -name "**cppcheck_report.log" -exec rm -rf {} \;
 	EXIT_STATUS=0; \
         (cd sumo_if_ros && make cppcheck) || EXIT_STATUS=$$? && \
         (cd libadore && make cppcheck) || EXIT_STATUS=$$? && \
         (cd adore_if_ros && make cppcheck) || EXIT_STATUS=$$? && \
+	    find . -name "**cppcheck_report.log" -print0 | xargs -0 -I {} mv {} .log/ && \
         exit $$EXIT_STATUS
 
 .PHONY: clean_catkin_workspace 

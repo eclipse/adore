@@ -36,6 +36,9 @@ build: all## build libadore
 .PHONY: clean_libadore 
 clean_libadore:
 	rm -rf "${ROOT_DIR}/libadore/build"
+	find . -name "**lint_report.log" -exec rm -rf {} \;
+	find . -name "**cppcheck_report.log" -exec rm -rf {} \;
+	find . -name "**lizard_report.xml" -exec rm -rf {} \;
 
 .PHONY: build 
 build:
@@ -57,7 +60,7 @@ test:## run libadore unit tests
 
 	@if grep -q "Errors while running CTest" "libadore/build/ctest.log"; then \
             exit 1; \
-        fi;
+     fi;
 
 .PHONY: build_external 
 build_external: ## builds all libadore external libraries 
@@ -77,10 +80,12 @@ clean_docker:
 	docker rmi $$(docker images --filter "dangling=true" -q) --force
 	docker rmi ${LIBADORE_TAG} --force
 
-.PHONY: lint 
-lint: ## returns a linting report for libadore
-	cd cpplint && \
-        make lint CPP_PROJECT_DIRECTORY=$(realpath ${ROOT_DIR}/libadore/adore)
+.PHONY: lint
+lint: ## Print out lint report to console
+	find . -name "**lint_report.log" -exec rm -rf {} \;
+	cd cpplint_docker && \
+    make lint CPP_PROJECT_DIRECTORY=$(realpath ${ROOT_DIR}/libadore/adore) | \
+	tee ${ROOT_DIR}/libadore/libadore_lint_report.log; exit $$PIPESTATUS
 
 .PHONY: lintfix 
 lintfix: ## Automated source formatting/lint fixing using clang-format 
@@ -92,12 +97,19 @@ lintfix_simulate:
 	cd cpplint && \
         make lintfix_simulate CPP_PROJECT_DIRECTORY=$(realpath ${ROOT_DIR}/libadore/adore)
 
-.PHONY: cppcheck
-cppcheck: ## Runs cppcheck static analysis tool on libadore
-	cd cppcheck && \
-        make cppcheck CPP_PROJECT_DIRECTORY=$(realpath ${ROOT_DIR}/libadore/adore)
+.PHONY: cppcheck 
+cppcheck: ## Print out cppcheck static analysis report of the sumo_if_ros source code.
+	find . -name "**cppcheck_report.log" -exec rm -rf {} \;
+	cd cppcheck_docker && \
+    make cppcheck CPP_PROJECT_DIRECTORY=$$(realpath ${ROOT_DIR}/libadore/adore) | \
+	tee ${ROOT_DIR}/libadore/libadore_cppcheck_report.log; exit $$PIPESTATUS
 
-.PHONY: lizard
-lizard: ## generates a lizard static analysis report on libadore
-	cd lizard && \
-        make lizard CPP_PROJECT_DIRECTORY=$(realpath ${ROOT_DIR}/libadore/adore)
+.PHONY: lizard 
+lizard: ## Print out lizard static analysis report of the sumo_if_ros source code.
+	find . -name "**lizard_report.xml" -exec rm -rf {} \;
+	cd lizard_docker && \
+    make lizard CPP_PROJECT_DIRECTORY=$$(realpath ${ROOT_DIR}/libadore/adore)
+	find . -name "**lizard_report.xml" -print0 | xargs -0 -I {} mv {} libadore/libadore_lizard_report.xml
+
+.PHONY: static_checks
+static_checks: lint lizard cppcheck
