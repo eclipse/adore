@@ -102,12 +102,12 @@ lint: ## Run linting for all modules
  
 .PHONY: lizard 
 lizard: ## Run lizard static analysis tool for all modules
-	find . -name "**lizard_report.xml" -exec rm -rf {} \;
+	find . -name "**lizard_report.**" -exec rm -rf {} \;
 	EXIT_STATUS=0; \
         (cd sumo_if_ros && make lizard) || EXIT_STATUS=$$? && \
         (cd libadore && make lizard) || EXIT_STATUS=$$? \ && \
         (cd adore_if_ros && make lizard) || EXIT_STATUS=$$? && \
-	    find . -name "**lizard_report.xml" -print0 | xargs -0 -I {} mv {} .log/ && \
+	    find . -name "**lizard_report.**" -print0 | xargs -0 -I {} mv {} .log/ && \
         exit $$EXIT_STATUS
 
 .PHONY: cppcheck 

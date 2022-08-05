@@ -1,16 +1,21 @@
 include make_gadgets/Makefile
+include cppcheck_docker/Makefile.cppcheck_target
+include cpplint_docker/Makefile.cpplint_target
+include lizard_docker/Makefile.lizard_target
 
 SHELL:=/bin/bash
 
 .DEFAULT_GOAL := all
 
-ROOT_DIR:=$(shell dirname $(realpath $(firstword $(MAKEFILE_LIST))))
 
 MAKEFLAGS += --no-print-directory
 
 .EXPORT_ALL_VARIABLES:
 DOCKER_BUILDKIT?=1
 DOCKER_CONFIG?=
+ROOT_DIR:=$(shell dirname $(realpath $(firstword $(MAKEFILE_LIST))))
+PROJECT:=libadore
+
 
 #CMAKE_PREFIX_PATH?=$(shell realpath $$(find . -type d | grep "build/install" | grep -v "build/install/") | tr '\n' ';') 
 CMAKE_PREFIX_PATH?=$(shell realpath $$(find . -type d | grep "build" | grep -v "build/") | tr '\n' ';') 
@@ -80,38 +85,6 @@ clean: clean_external clean_libadore
 clean_docker:
 	docker rmi $$(docker images --filter "dangling=true" -q) --force
 	docker rmi ${LIBADORE_TAG} --force
-
-.PHONY: lint
-lint: ## Print out lint report to console
-	find . -name "**lint_report.log" -exec rm -rf {} \;
-	cd cpplint_docker && \
-    make lint CPP_PROJECT_DIRECTORY=$(realpath ${ROOT_DIR}/libadore/adore) | \
-	tee ${ROOT_DIR}/libadore/libadore_lint_report.log; exit $$PIPESTATUS
-
-.PHONY: lintfix 
-lintfix: ## Automated source formatting/lint fixing using clang-format 
-	cd cpplint && \
-        make lintfix CPP_PROJECT_DIRECTORY=$(realpath ${ROOT_DIR}/libadore/adore)
-
-.PHONY: lintfix_simulate 
-lintfix_simulate:
-	cd cpplint && \
-        make lintfix_simulate CPP_PROJECT_DIRECTORY=$(realpath ${ROOT_DIR}/libadore/adore)
-
-.PHONY: cppcheck 
-cppcheck: ## Print out cppcheck static analysis report of the sumo_if_ros source code.
-	find . -name "**cppcheck_report.log" -exec rm -rf {} \;
-	cd cppcheck_docker && \
-    make cppcheck CPP_PROJECT_DIRECTORY=$$(realpath ${ROOT_DIR}/libadore/adore) | \
-	tee ${ROOT_DIR}/libadore/libadore_cppcheck_report.log; exit $$PIPESTATUS
-
-.PHONY: lizard 
-lizard: ## Print out lizard static analysis report of the sumo_if_ros source code.
-	find . -name "**lizard_report.**" -exec rm -rf {} \;
-	cd lizard_docker && \
-    (make lizard CPP_PROJECT_DIRECTORY=$$(realpath ${ROOT_DIR}/libadore/adore) | \
-    tee ${ROOT_DIR}/libadore/libadore_lizard_report.log)
-	find . -name "**lizard_report.xml**" -print0 | xargs -0 -I {} mv {} libadore/libadore_lizard_report.xml
 
 .PHONY: static_checks
 static_checks: lint lizard cppcheck
