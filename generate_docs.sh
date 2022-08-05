@@ -30,5 +30,5 @@ git add docs/*
 
 git restore --source=HEAD --staged --worktree -- documentation
 
-#git commit -am "updated docs"
-#git push
+git commit -am "updated docs"
+git push
