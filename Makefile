@@ -23,6 +23,7 @@ generate_pelican:
 gh-pages_publish:
 	rm -r docs
 	cp -r pelican/output docs
+	git add docs/*
 	git commit -am "updated docs"
 	git push
 
