@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
     
-    <title>Recommended System Setup</title>
+    <title>ADORe</title>
 
 
     <script src="../lib/jquery-3.2.1.slim.min.js"></script>
@@ -53,7 +53,7 @@
                 
                 <li class="tree-leaf">
                     
-                        <i class="fa fa-circle-thin" aria-hidden="true"></i>
+                        <i class="fa fa-circle" aria-hidden="true"></i>
                     
                     <a href="home.html"><span>Home</span></a>
                 </li>
@@ -62,7 +62,7 @@
                 
                 <li class="tree-leaf">
                     
-                        <i class="fa fa-circle" aria-hidden="true"></i>
+                        <i class="fa fa-circle-thin" aria-hidden="true"></i>
                     
                     <a href="Recommended_Setup.html"><span>Recommended Systems Setup</span></a>
                 </li>
@@ -110,14 +110,14 @@
 
     
     <div class="page-header">
-        <h1 class="display-4">Recommended System Setup </h1>
-        <p class="lead">This guide offers a minimum recommended system setup for execution and development of ADORe.</p>
+        <h1 class="display-4">ADORe </h1>
+        <p class="lead">Eclipse ADORe is a modular software library and toolkit for decision making, planning, control and simulation of automated vehicles. It is currently developed at DLR (German Aerospace Center), Institute of Transportation Systems.</p>
         <p>
             <span class="version">V1.0</span>
             
             <img src="http://www.gravatar.com/avatar/d11f315b4d0ccb1bdb08d8ff85e4227a?s=100&amp;r=g&amp;d=retro" class="avatar" alt="opensource-ts@dlr.de" title="opensource-ts@dlr.de" />
             
-            <small>last updated on <span>2022-08-03T14:18:00Z</span></small>
+            <small>last updated on <span>2022-08-05T07:56:49Z</span></small>
         </p>
 
         
@@ -126,17 +126,96 @@
     
 
     <div class="page-md">
-        <h2 id="recommended-system-setup">Recommended System Setup</h2>
-<p>The following article offers a recommended and minimum system configurations
-for build, execution, and development of adore.
-|     | Minimum | Recommended | Comments |
-| --- | --- | --- | --- |
-| <strong>Storage</strong> | ~18 GB | > 50 GB |     |
-| <strong>Memory</strong> | 16 GB | 32 GB |     |
-| <strong>Network</strong> | 40 Mbit download | 80 Mbit Download | First time builds of ADORe require significant data fetching from docker and ubuntu central repositories |
-| <strong>Processor</strong> | 16 logical cores | 32 logical cores | More cores provides faster build times |
-| <strong>Operating System</strong> | Ubuntu 20.04 | Ubuntu 22.04 |     |
-|               |                  |                  |                                                                                                          |</p>
+        <!--
+********************************************************************************
+* Copyright (C) 2017-2020 German Aerospace Center (DLR). 
+* Eclipse ADORe, Automated Driving Open Research https://eclipse.org/adore
+*
+* This program and the accompanying materials are made available under the 
+* terms of the Eclipse Public License 2.0 which is available at
+* http://www.eclipse.org/legal/epl-2.0.
+*
+* SPDX-License-Identifier: EPL-2.0 
+*
+* Contributors: 
+*   Daniel Heß 
+********************************************************************************ü
+-->
+
+<h2 id="automated-driving-open-research-adore">Automated Driving Open Research (ADORe)</h2>
+<p>Eclipse ADORe is a modular software library and toolkit for decision making, planning, control and simulation of automated vehicles. 
+It is currently developed at DLR (German Aerospace Center), Institute of Transportation Systems.
+Some things you will find here:
+- Algorithms and data models applied in real automated driving system for motion planning and control
+- Mechanisms for safe interaction with other CAVs, infrastructure, traffic management, interactions with human-driven vehicles, bicyclists, pedestrians
+- Integration with typical tools and formats such as ROS, <a href="https://github.com/eclipse/sumo">SUMO</a>, CARLA, OpenDrive, Road2Simulation, ITS-G5 V2X (MAPEM, SPATEM, DENM, MCM, SREM)</p>
+<p>Here you can see one of our automated test vehicles being operated by ADORe:
+<a href="https://youtu.be/tlhPDtr4yxg"><img alt="ADORe example video" src="https://github.com/DLR-TS/adore_support/blob/master/vivre_flythrough_screenshot2.png?raw=true" /></a></p>
+<h3 id="quick-start-guide">Quick Start Guide</h3>
+<h4 id="prerequsits">Prerequsits</h4>
+<ul>
+<li>Docker v20.10.17 or greater</li>
+<li>docker compose v2.6.0 or greater</li>
+<li>Make</li>
+<li>Storage</li>
+<li>at least 2.5 GB to clone the repository</li>
+<li>at least 15 GB to build all necessary docker context</li>
+</ul>
+<p>Before you start make sure you have docker, docker compose, and make installed
+and configured for your system. To check this run the following commands:
+1. check your docker version:</p>
+<pre><code class="bash">$ docker --version
+Docker version 20.10.17, build 100c701
+</code></pre>
+
+<pre><code class="bash">$ docker compose version
+Docker Compose version v2.6.0
+</code></pre>
+
+<ol>
+<li>Check that you are a member of the docker group:</li>
+</ol>
+<pre><code class="bash">id | grep docker
+...,998(docker),...
+</code></pre>
+
+<ol>
+<li>Check your storage and be sure you have ~18GB free:</li>
+</ol>
+<pre><code class="bash">df -h
+</code></pre>
+
+<p>For help installing and configuring docker follow the official docker documentation (https://docs.docker.com/engine/install/ubuntu/)[https://docs.docker.com/engine/install/ubuntu/]</p>
+<h4 id="quick-start">Quick Start</h4>
+<ol>
+<li>Clone the repository with submodules:</li>
+</ol>
+<pre><code class="bash">git clone --recurse-submodules -j8 git@github.com:eclipse/adore.git
+</code></pre>
+
+<ol>
+<li>Build the system:</li>
+</ol>
+<pre><code class="bash">cd adore &amp;&amp; make
+</code></pre>
+
+<ol>
+<li>Run the adore-cli:</li>
+</ol>
+<pre><code class="bash">make adore-cli
+</code></pre>
+
+<ol>
+<li>Run a test scenario from within the adore-cli context:</li>
+</ol>
+<pre><code class="bash">cd adore_if_ros_demos &amp;&amp; roslaunch baseline_test.launch
+</code></pre>
+
+<ol>
+<li>Run unit tests:</li>
+</ol>
+<pre><code class="bash">make test
+</code></pre>
     </div>
 
 

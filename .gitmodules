@@ -1,0 +1,6 @@
+[submodule "pelican/pelican-themes"]
+	path = pelican/pelican-themes
+	url = https://github.com/getpelican/pelican-themes
+[submodule "pelican/attila"]
+	path = pelican/attila
+	url = https://github.com/arulrajnet/attila
