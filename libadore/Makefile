@@ -39,6 +39,7 @@ clean_libadore:
 	find . -name "**lint_report.log" -exec rm -rf {} \;
 	find . -name "**cppcheck_report.log" -exec rm -rf {} \;
 	find . -name "**lizard_report.xml" -exec rm -rf {} \;
+	find . -name "**lizard_report.log" -exec rm -rf {} \;
 
 .PHONY: build 
 build:
@@ -106,10 +107,11 @@ cppcheck: ## Print out cppcheck static analysis report of the sumo_if_ros source
 
 .PHONY: lizard 
 lizard: ## Print out lizard static analysis report of the sumo_if_ros source code.
-	find . -name "**lizard_report.xml" -exec rm -rf {} \;
+	find . -name "**lizard_report.**" -exec rm -rf {} \;
 	cd lizard_docker && \
-    make lizard CPP_PROJECT_DIRECTORY=$$(realpath ${ROOT_DIR}/libadore/adore)
-	find . -name "**lizard_report.xml" -print0 | xargs -0 -I {} mv {} libadore/libadore_lizard_report.xml
+    (make lizard CPP_PROJECT_DIRECTORY=$$(realpath ${ROOT_DIR}/libadore/adore) | \
+    tee ${ROOT_DIR}/libadore/libadore_lizard_report.log)
+	find . -name "**lizard_report.xml**" -print0 | xargs -0 -I {} mv {} libadore/libadore_lizard_report.xml
 
 .PHONY: static_checks
 static_checks: lint lizard cppcheck
