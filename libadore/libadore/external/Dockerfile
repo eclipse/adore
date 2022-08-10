@@ -26,7 +26,7 @@ RUN cmake .. -DCMAKE_INSTALL_PREFIX:PATH=install && \
     cmake --build . -- -j $(nproc) && \
     cmake --install .
 
-
+RUN ls -la /tmp/${PROJECT}/build
 RUN cpack -G DEB && find . -type f -name "*.deb" | xargs mv -t . || true
 
 RUN mv CMakeCache.txt CMakeCache.txt.build
