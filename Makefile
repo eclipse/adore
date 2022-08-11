@@ -31,6 +31,8 @@ clean:
 	cd adore_if_ros_msg && make clean
 	cd libadore && make clean
 	cd adore_if_ros && make clean
+	cd adore_if_v2x && make clean
+	cd adore_if_ros/make_gadgets/docker && make delete_all_none_tags
 
 .PHONY: start_apt_cacher_ng 
 start_apt_cacher_ng: ## Start apt cacher ng service
