@@ -43,7 +43,8 @@ clean_libadore:
 .PHONY: build 
 build:
 	rm -rf ${PROJECT}/build
-	docker compose build libadore_build
+	#docker compose build libadore_build
+	docker buildx bake libadore_build
 	docker compose build libadore
 	docker compose build libadore_test
 	docker cp $$(docker create --rm $(shell echo ${TAG} | tr A-Z a-z)):/tmp/${PROJECT}/${PROJECT}/build ${ROOT_DIR}/${PROJECT}
