@@ -81,7 +81,7 @@
 [submodule "libadore/libadore/external/Catch2"]
 	path = libadore/libadore/external/Catch2
 	url = git@github.com:catchorg/Catch2
-	ignore = untracked
+    ignore = dirty
 	shallow = true
 [submodule "libadore/libadore/external/csaps-cpp"]
 	path = libadore/libadore/external/csaps-cpp
@@ -108,3 +108,12 @@
 	url = git@github.com:dlr-ts/xodr
 	ignore = untracked
 	shallow = true
+    branch = adore
+[submodule "libadore/make_gadgets"]
+	path = libadore/make_gadgets
+	url = git@github.com:DLR-TS/make_gadgets.git
+	branch = master
+[submodule "adore_if_ros/make_gadgets"]
+	path = adore_if_ros/make_gadgets
+	url = git@github.com:DLR-TS/make_gadgets.git
+	branch = master

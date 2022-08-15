@@ -25,6 +25,8 @@ libeigen3-dev
 libpng-dev
 libatlas-base-dev
 
+## Requirements for adore_if_ros_msg
+ros-message-runtime
 ## Requirements for dlib
 libopenblas-dev
 libblas-dev

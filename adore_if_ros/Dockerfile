@@ -1,16 +1,11 @@
-
-
 ARG PROJECT
 ARG DEBUG
 
-FROM plotlab:latest AS plotlab
 
-FROM csaps-cpp:latest AS csaps-cpp
-FROM xodr:latest AS xodr
-FROM dlib:v19.19 AS dlib
-FROM qpoases:latest AS qpoases
-FROM libadore:latest AS libadore
 FROM adore_if_ros_msg:latest AS adore_if_ros_msg
+FROM libadore:latest AS libadore
+
+FROM plotlablib:latest AS plotlablib
 FROM libzmq:latest AS libzmq
 FROM cppzmq:latest AS cppzmq
 
@@ -33,57 +28,64 @@ RUN apt-get update && \
 
 RUN pip3 install -r ${REQUIREMENTS_FILE_PIP3}
 
-RUN mkdir -p /tmp/external
-SHELL ["/bin/bash", "-c"]
-WORKDIR /tmp/external
-COPY --from=csaps-cpp /tmp/csaps-cpp/build/*.deb .
-COPY --from=xodr /tmp/xodr/build/*.deb .
-COPY --from=libzmq /tmp/libzmq /tmp/libzmq
-COPY --from=cppzmq /tmp/cppzmq /tmp/cppzmq
-#COPY --from=dlib /tmp/dlib/build/*.deb .
-#COPY --from=qpoases /tmp/qpOASES/build/*.deb .
-RUN dpkg -i *.deb 
-
-WORKDIR /tmp/libzmq/build
-RUN cmake --install . && ldconfig
-
-WORKDIR /tmp/cppzmq/build
-RUN cmake --install . && ldconfig
-
-COPY --from=qpoases /tmp/qpOASES /tmp/qpOASES
-WORKDIR /tmp/qpOASES/build
-RUN cmake --install . && ldconfig
-
 COPY ${PROJECT} /tmp/${PROJECT}/${PROJECT}
 
-COPY --from=plotlab /tmp/plotlab /tmp/plotlab
-COPY --from=libadore /tmp/libadore /tmp/libadore/libadore
-COPY --from=adore_if_ros_msg /tmp/adore_if_ros_msg /tmp/adore_if_ros_msg
+FROM adore_if_ros_requirements_base AS adore_if_ros_external_library_requirements_base
 
-WORKDIR /tmp/adore_if_ros_msg/build
-RUN cmake --install . && ldconfig
+ARG INSTALL_PREFIX=/tmp/${PROJECT}/${PROJECT}/build/install
+RUN mkdir -p "${INSTALL_PREFIX}"
+
+ARG LIB=adore_if_ros_msg
+COPY --from=adore_if_ros_msg /tmp/${LIB} /tmp/${PROJECT}/${LIB}/${LIB}
+SHELL ["/bin/bash", "-c"]
+WORKDIR /tmp/${PROJECT}/${LIB}/${LIB}/build
+RUN source /opt/ros/noetic/setup.bash && \
+    cmake .. > /dev/null 2>&1 || true && \
+    cmake --install . --prefix ${INSTALL_PREFIX}
+RUN dpkg -i *.deb ## TODO fix adore_if_ros cmake library so this is not necessary
+
+ARG LIB=libadore
+COPY --from=libadore /tmp/${LIB} /tmp/${LIB}
+WORKDIR /tmp/${LIB}/${LIB}/build
+RUN cmake .. -DCMAKE_PREFIX_PATH=`realpath install` && \
+    cmake --install . --prefix ${INSTALL_PREFIX}
+
+ARG LIB=plotlablib
+COPY --from=plotlablib /tmp/${LIB} /tmp/${PROJECT}/${LIB}
+SHELL ["/bin/bash", "-c"]
+WORKDIR /tmp/${PROJECT}/${LIB}/${LIB}/build
+RUN cmake .. -DCMAKE_PREFIX_PATH=`realpath install` && \
+    cmake --install . --prefix ${INSTALL_PREFIX}
+RUN dpkg -i *.deb
+
+ARG LIB=libzmq
+COPY --from=libzmq /tmp/${LIB} /tmp/${LIB}
+WORKDIR /tmp/${LIB}/build
+RUN cmake --install . --prefix ${INSTALL_PREFIX}
+
+ARG LIB=cppzmq
+COPY --from=cppzmq /tmp/${LIB} /tmp/${LIB}
+WORKDIR /tmp/${LIB}/build
+RUN cmake --install . --prefix ${INSTALL_PREFIX}
 
 
-FROM adore_if_ros_requirements_base AS adore_if_ros_builder
-
+FROM adore_if_ros_external_library_requirements_base AS adore_if_ros_builder
 
 ARG PROJECT
 ARG DEBUG
 
-RUN mkdir -p /tmp/${PROJECT}/${PROJECT}/build
-
 SHELL ["/bin/bash", "-c"]
 WORKDIR /tmp/${PROJECT}/${PROJECT}/build
-
-
 RUN source /opt/ros/noetic/setup.bash && \
-    cmake .. -DCMAKE_EXPORT_COMPILE_COMMANDS=ON -DCMAKE_BUILD_TYPE=Release -DCMAKE_INSTALL_PREFIX="install" && \
-    cmake --build . -v --config Release --target install -- -j $(nproc)
+    cmake .. \
+             -DCMAKE_EXPORT_COMPILE_COMMANDS=ON \
+             -DCMAKE_BUILD_TYPE=Release \
+             -DCMAKE_INSTALL_PREFIX="install" && \
+    cmake --build . -v --config Release --target install -- -j $(nproc) 
 
-# || [ $DEBUG == 1 ] && true
-    #cmake --build . -- -j $(nproc)
-    #cmake --build . --config Release --target install -- -j $(nproc)
-    #make -j$(nproc) || true
+
+#ARG CMAKE_PREFIX_PATH="/opt/ros/noetic;/tmp/${PROJECT}/${PROJECT}/build/install;/tmp/libadore/libadore/build/install;/tmp/plotlablib/plotlablib/build/install"
+#             -DCMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH} && \
 
 #FROM alpine:3.14 AS adore_if_ros_package
 

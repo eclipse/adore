@@ -14,9 +14,10 @@
 
 cmake_minimum_required(VERSION 3.13)
 
-project(mad VERSION 0.0.1
-             DESCRIPTION "mathematical and algorithmic classes and functions as part of the adore framework"
-             HOMEPAGE_URL "${adore_REPOSITORY_URL}/libadore/adore/mad"
+project(
+    mad VERSION 0.0.1
+    DESCRIPTION "mathematical and algorithmic classes and functions as part of the adore framework"
+    HOMEPAGE_URL "${adore_REPOSITORY_URL}/libadore/adore/mad"
 )
 
 include(GNUInstallDirs)
@@ -25,20 +26,21 @@ add_library(${PROJECT_NAME} STATIC)
 
 
 add_library(dlib::dlib STATIC IMPORTED GLOBAL)
-set_property(TARGET dlib::dlib PROPERTY IMPORTED_LOCATION "${CMAKE_BINARY_DIR}/install/lib/libdlib.a")
+set_property(TARGET dlib::dlib PROPERTY IMPORTED_LOCATION "${CMAKE_CURRENT_LIST_DIR}/../../external/dlib/build/install/lib/libdlib.a")
 target_include_directories(dlib::dlib INTERFACE "${CMAKE_BINARY_DIR}/install/include")
 
 add_library(qpoases::qpoases STATIC IMPORTED GLOBAL)
-set_property(TARGET qpoases::qpoases PROPERTY IMPORTED_LOCATION ${CMAKE_BINARY_DIR}/../../qpOASES/build/libs/libqpOASES.a)
+set_property(TARGET qpoases::qpoases PROPERTY IMPORTED_LOCATION ${CMAKE_CURRENT_LIST_DIR}/../../external/qpOASES/build/install/lib/libqpOASES.a)
 
 find_package(Boost REQUIRED)
 
-target_link_libraries(${PROJECT_NAME} 
-  PUBLIC
-    dlib::dlib
-    qpoases::qpoases
-    blas
-    lapack
+target_link_libraries(
+  ${PROJECT_NAME} 
+    PUBLIC
+      dlib::dlib
+      qpoases::qpoases
+      blas
+      lapack
 )
 
 target_sources(${PROJECT_NAME}

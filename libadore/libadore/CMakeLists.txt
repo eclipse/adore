@@ -15,11 +15,11 @@
 
 cmake_minimum_required(VERSION 3.13)
 
-project("libadore" VERSION 0.0.1.0
-             DESCRIPTION "Automated Driving Open Research: Toolkit libraries"
-             HOMEPAGE_URL "${adore_REPOSITORY_URL}/libadore"
+project(
+    "libadore" VERSION 0.0.1.0
+    DESCRIPTION "Automated Driving Open Research: Toolkit libraries"
+    HOMEPAGE_URL "${adore_REPOSITORY_URL}/libadore"
 )
-
 
 set(PACKAGE_VENDOR "DLR TS-KOS-SAI")
 set(PACKAGE_DESCRIPTION "Automated Driving Open Research: Toolkit libraries")
