@@ -48,6 +48,9 @@ build: set_mode ## Build adore_if_ros
 .PHONY: clean 
 clean:
 	rm -rf "${ROOT_DIR}/${PROJECT}/build"
+	find . -name "**lint_report.log" -exec rm -rf {} \;
+	find . -name "**cppcheck_report.log" -exec rm -rf {} \;
+	find . -name "**lizard_report.xml" -exec rm -rf {} \;
 	docker rm $$(docker ps -a -q --filter "ancestor=${TAG}") 2> /dev/null || true
 	docker rmi $$(docker images -q ${TAG}) 2> /dev/null || true
 	docker rmi ${TAG} --force 2> /dev/null
@@ -56,10 +59,12 @@ clean:
 clean_docker:
 	docker rmi $$(docker images --filter "dangling=true" -q) --force
 
-.PHONY: lint 
-lint:
-	cd cpplint && \
-        make lint CPP_PROJECT_DIRECTORY=$(realpath ${ROOT_DIR}/adore_if_ros)
+.PHONY: lint
+lint: ## Print out lint report to console
+	find . -name "**lint_report.log" -exec rm -rf {} \;
+	cd cpplint_docker && \
+    make lint CPP_PROJECT_DIRECTORY=$(realpath ${ROOT_DIR}/adore_if_ros) | \
+	tee ${ROOT_DIR}/adore_if_ros/adore_if_ros_lint_report.log; exit $$PIPESTATUS
 
 .PHONY: lintfix 
 lintfix:
@@ -72,14 +77,21 @@ lintfix_simulate:
         make lintfix_simulate CPP_PROJECT_DIRECTORY=$(realpath ${ROOT_DIR}/adore_if_ros)
 
 .PHONY: cppcheck 
-cppcheck:
-	cd cppcheck && \
-        make cppcheck CPP_PROJECT_DIRECTORY=$(realpath ${ROOT_DIR}/adore_if_ros); echo "error code $${?}"
+cppcheck: ## Print out cppcheck static analysis report of the sumo_if_ros source code.
+	find . -name "**cppcheck_report.log" -exec rm -rf {} \;
+	cd cppcheck_docker && \
+    make cppcheck CPP_PROJECT_DIRECTORY=$$(realpath ${ROOT_DIR}/adore_if_ros) | \
+	tee ${ROOT_DIR}/adore_if_ros/adore_if_ros_cppcheck_report.log; exit $$PIPESTATUS
 
 .PHONY: lizard 
-lizard:
-	cd lizard && \
-        make lizard CPP_PROJECT_DIRECTORY=$(realpath ${ROOT_DIR}/adore_if_ros); echo "error code $${?}"
+lizard: ## Print out lizard static analysis report of the sumo_if_ros source code.
+	find . -name "**lizard_report.xml" -exec rm -rf {} \;
+	cd lizard_docker && \
+    make lizard CPP_PROJECT_DIRECTORY=$$(realpath ${ROOT_DIR}/adore_if_ros)
+	find . -name "**lizard_report.xml" -print0 | xargs -0 -I {} mv {} adore_if_ros/adore_if_ros_lizard_report.xml
+
+.PHONY: static_checks
+static_checks: lint lizard cppcheck
 
 .PHONY: build_docker_layers 
 build_docker_layers:
