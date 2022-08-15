@@ -17,4 +17,3 @@ for build, execution, and development of adore.
 | **Network** | 40 Mbit download | 80 Mbit Download | First time builds of ADORe require significant data fetching from docker and ubuntu central repositories |
 | **Processor** | 16 logical cores | 32 logical cores | More cores provides faster build times |
 | **Operating System** | Ubuntu 20.04 | Ubuntu 22.04 |     |
-|               |                  |                  |                                                                                                          |
