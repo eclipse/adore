@@ -1,15 +1,5 @@
 documentaiton
+pelican
+.log
+.zsh_**
 
-<<<<<<< HEAD
-=======
-**build
-**.bag
-catkin_workspace/
-.config/
-.bash_history
-.ros
-.zsh*
-*.sw*
-**lizard_report.xml**
-**.log
->>>>>>> 5eb75f3aa368de129ba935a73edb8e174219ab20

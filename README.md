@@ -13,5 +13,5 @@ git checkout gh-Pages
 
 3. Run the provided shell script:
 ```bash
-bash generate_docs.sh
+make
 ```
