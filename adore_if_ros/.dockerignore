@@ -1,5 +1,0 @@
-adore_if_ros/build
-**/build
-Makefile
-**.docker
-**.lizard_report.xml

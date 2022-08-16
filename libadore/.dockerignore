@@ -1,9 +1,0 @@
-libadore/build
-libdore/external
-libdore/external/*/build
-**/build
-**lizard_report.xml
-make_gadgets
-cppcheck
-cpplint
-lizard

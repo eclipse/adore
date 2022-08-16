@@ -1,6 +1,0 @@
-cmake
-g++
-gcc
-make
-libxerces-c-dev
-xsdcxx

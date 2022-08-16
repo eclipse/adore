@@ -1,8 +1,0 @@
-#This dockerfile partial 
-
-ARG USER
-ARG UID
-ARG GID
-
-RUN usermod -u ${UID} ${USER} && groupmod -g ${GID} ${USER}
-RUN chown -r ${UID}:${GID} $$HOME | true
