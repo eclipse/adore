@@ -1,9 +1,9 @@
 title:      ADORe
 desc:       Eclipse ADORe is a modular software library and toolkit for decision making, planning, control and simulation of automated vehicles. It is currently developed at DLR (German Aerospace Center), Institute of Transportation Systems.
-date:       DATETIME
-version:    1.0.0
+date:       ${DOC_DATETIME}
+version:    ${DOC_VERSION}
 template:   document
-nav:        __1__ Home
+nav:        Home __1__
 percent:    100
 authors:    opensource-ts@dlr.de
            
@@ -35,10 +35,6 @@ Some things you will find here:
 Here you can see one of our automated test vehicles being operated by ADORe:
 [![ADORe example video](https://github.com/DLR-TS/adore_support/blob/master/vivre_flythrough_screenshot2.png?raw=true)](https://youtu.be/tlhPDtr4yxg)
 
-## Getting started
-- [System requirements and installation](documentation/getting_started.md)
-- [Executable ROS demo scenarios](adore_if_ros_demos)
-
 ## Quick Start Guide
 
 ### Prerequsits 
@@ -61,11 +57,13 @@ Docker version 20.10.17, build 100c701
 $ docker compose version
 Docker Compose version v2.6.0
 ```
+
 2. Check that you are a member of the docker group:
 ```bash
 id | grep docker
 ...,998(docker),...
 ```
+
 3. Check your storage and be sure you have ~18GB free:
 ```bash
 df -h
