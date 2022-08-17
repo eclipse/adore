@@ -2,6 +2,7 @@ version: '3.3'
 
 services:
   plotlab_server:
+    privileged: true
     image: plotlabserver:latest
     container_name: plotlabserver
     hostname: plotlabserver
@@ -9,11 +10,15 @@ services:
     ipc: "host"
     #entrypoint: sh -c '(xeyes &) && ./plotlabserver'
     #entrypoint: sh -c 'tail -f /dev/null'
+    build:
+      context: ./plotlabserver
+      dockerfile: Dockerfile.plotlabserver
     environment:
-     # - DISPLAY_MODE=${DISPLAY_MODE:-native}
-      - DISPLAY_MODE=${DISPLAY_MODE:-window_manager}
+      - DISPLAY_MODE=${DISPLAY_MODE:-native}
+     # - DISPLAY_MODE=${DISPLAY_MODE:-window_manager}
      # - DISPLAY_MODE=${DISPLAY_MODE:-headless}
       - DISPLAY=${DISPLAY}
+     # - LIBGL_ALWAYS_SOFTWARE=1
       - QT_X11_NO_MITSHM=1
     ports:
       - 12345:12345
@@ -35,10 +40,10 @@ services:
     volumes:
         - .ros:/tmp/adore/.ros
   adore-cli:
+    privileged: true
     image: adore-cli:latest
     container_name: adore-cli
     user: adore-cli
-    privileged: true
     hostname: adore-cli
     network_mode: "host"
     command: /bin/bash -c "bash tools/adore-cli_start.sh"
@@ -50,8 +55,8 @@ services:
       - "ROS_MASTER_URI=http://127.0.0.1:11311"
       - "ROS_HOSTNAME=127.0.0.1"
     depends_on:
-      - ros-master
-      - plotlab_server
+      # - ros-master  #activate this option if you want to start roscore on startup of adore-cli container
+       - plotlab_server  #activate this option if you want to start plotlabserver automatically with adore-cli container
     build:
       context: .
       network: host
