@@ -30,7 +30,7 @@ TEST_CASE( "OCRoadBasedPrediction: predict on circle 50m", "[ocroadbasedpredicti
     //load borders
     adore::env::BorderBased::BorderSet borderSet;
     adore::if_xodr::XODR2BorderBasedConverter converter;
-    std::string xodrFilename = "../../../../../adore/libadore/libadore/adore/env/test/circle50m.xodr";
+    std::string xodrFilename = "../../../../adore/env/test/circle50m.xodr";
     try{converter.convert(xodrFilename.c_str(),&borderSet,false);}catch(...){}
     if(borderSet.size()==0)
     {
@@ -87,7 +87,7 @@ TEST_CASE( "OCRoadBasedPrediction: predict 3 branches at junction", "[ocroadbase
     //load borders
     adore::env::BorderBased::BorderSet borderSet;
     adore::if_xodr::XODR2BorderBasedConverter converter;
-    std::string xodrFilename = "../../../../../adore/libadore/libadore/adore/env/test/basic_test_track.xodr";
+    std::string xodrFilename = "../../../../adore/env/test/basic_test_track.xodr";
     try{converter.convert(xodrFilename.c_str(),&borderSet,false);}catch(...){}
     if(borderSet.size()==0)
     {
