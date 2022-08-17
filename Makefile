@@ -19,7 +19,20 @@ UID := $(shell id -u)
 GID := $(shell id -g)
 
 .PHONY: all
-all: docker_group_check root_check start_apt_cacher_ng submodules_update build_sumo_if_ros build_adore_if_v2x build_adore_v2x_sim build_plotlabserver build_libadore build_adore_if_ros get_apt_cacher_ng_cache_statistics
+all: \
+     submodules_update \
+     docker_group_check \
+     root_check \
+     start_apt_cacher_ng \
+     build_adore_if_ros_msg\
+     build_adore_if_ros\
+     build_adore_if_v2x \
+     build_adore_v2x_sim \
+     build_plotlabserver \
+     build_libadore\
+     build_sumo_if_ros \
+     get_apt_cacher_ng_cache_statistics\
+     
 
 .PHONY: build
 build: all
@@ -56,7 +69,11 @@ submodules_update: # Updates submodules
 build_adore_if_ros: ## build adore_if_ros
 	cd adore_if_ros && \
     make
-
+.PHONY: build_adore_if_ros_msg
+build_adore_if_ros_msg: 
+	cd adore_if_ros_msg && \
+	make
+	
 .PHONY: build_plotlabserver 
 build_plotlabserver: ## Build plotlabserver
 	cd plotlabserver && \
