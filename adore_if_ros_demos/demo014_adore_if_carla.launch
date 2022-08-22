@@ -25,7 +25,7 @@
         
         <!--Parameters-->
         <param name="PARAMS/tactical_planner/global_speed_limit" value="14" type="double"/>
-        <param name="PARAMS/track" value="$(dirname)/../adore_if_carla/adore_if_carla/launch/tracks/Town10HD.xodr" type="str" />
+        <param name="PARAMS/track" value="$(dirname)/../adore_if_carla/adore_if_carla/launch/Town10HD.xodr" type="str" />
         
 
         <include ns="PARAMS" file="$(dirname)/adore_params_vehicle_independent.launch"/>
