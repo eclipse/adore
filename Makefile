@@ -29,12 +29,12 @@ all: \
      root_check \
      start_apt_cacher_ng \
      build_adore_if_ros_msg\
-     build_adore_if_ros\
-     build_adore_if_v2x \
      build_adore_v2x_sim \
+     build_adore_if_v2x \
+     build_sumo_if_ros \
      build_plotlabserver \
      build_libadore\
-     build_sumo_if_ros \
+     build_adore_if_ros\
      get_apt_cacher_ng_cache_statistics\
 
 .PHONY: build
