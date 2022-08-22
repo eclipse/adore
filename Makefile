@@ -19,7 +19,7 @@ USER := $(shell whoami)
 UID := $(shell id -u)
 GID := $(shell id -g)
 
-TEST_SCENARIOS?=baseline_test.launch baseline_test1.launch
+TEST_SCENARIOS?=baseline_test.launch baseline_test.launch
 
 
 .PHONY: all
