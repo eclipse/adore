@@ -8,6 +8,7 @@ ARG USER=adore-cli
 ARG UID
 ARG GID
 
+ARG TEST_SCENARIOS
 
 FROM adore_if_ros:latest AS adore-cli
 
@@ -16,6 +17,8 @@ ARG DEBUG
 ARG USER=adore-cli
 ARG UID
 ARG GID
+
+ARG TEST_SCENARIOS
 
 RUN apt-get update && \
     apt-get install --no-install-recommends -y xterm vim netcat net-tools && \

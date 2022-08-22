@@ -1,4 +1,5 @@
 include adore_if_ros/make_gadgets/Makefile
+include adore_if_ros/make_gadgets/docker/Makefile
 
 SHELL:=/bin/bash
 
@@ -18,6 +19,9 @@ USER := $(shell whoami)
 UID := $(shell id -u)
 GID := $(shell id -g)
 
+TEST_SCENARIOS?=baseline_test.launch baseline_test1.launch
+
+
 .PHONY: all
 all: \
      submodules_update \
@@ -32,20 +36,18 @@ all: \
      build_libadore\
      build_sumo_if_ros \
      get_apt_cacher_ng_cache_statistics\
-     
 
 .PHONY: build
 build: all
 
 .PHONY: clean
-clean: 
+clean: delete_all_none_tags 
 	cd plotlabserver && make clean
 	cd sumo_if_ros && make clean
 	cd adore_if_ros_msg && make clean
 	cd libadore && make clean
 	cd adore_if_ros && make clean
 	cd adore_if_v2x && make clean
-	cd adore_if_ros/make_gadgets/docker && make delete_all_none_tags
 
 .PHONY: start_apt_cacher_ng 
 start_apt_cacher_ng: ## Start apt cacher ng service
@@ -77,7 +79,7 @@ build_adore_if_ros_msg:
 .PHONY: build_plotlabserver 
 build_plotlabserver: ## Build plotlabserver
 	cd plotlabserver && \
-    make
+    make build_fast
 
 .PHONY: build_adore_if_v2x 
 build_adore_if_v2x: ## Build adore_if_v2x
@@ -180,16 +182,34 @@ build_adore-cli: build_catkin_base build_plotlabserver ## Builds the ADORe CLI d
 run_ci_scenarios:
 	bash tools/run_ci_scenarios.txt 
 
-.PHONY: adore-cli
-adore-cli: ## Start an adore-cli context
+
+.PHONY: adore-cli_setup
+adore-cli_setup: 
 	mkdir -p .log/.ros/bag_files
-	mkdir -p .log/plotlabserver
+	cd .log && ln -sf ../plotlabserver/.log plotlabserver
 	touch .zsh_history
 	touch .zsh_history.new
+	cd plotlabserver && make down
 	[ -n "$$(docker images -q adore-cli:latest)" ] || make build_adore-cli 
 	@xhost + && docker compose up --force-recreate -V -d; xhost - 
 #	(cd plotlab && make up-detached > /dev/null 2>&1 &);
-	docker exec -it --user adore-cli adore-cli /bin/zsh -c "bash tools/adore-cli.sh" || true
+
+.PHONY: adore-cli_teardown
+adore-cli_teardown:
 	@docker compose down && xhost - 1> /dev/null
 	docker compose rm -f
-	@cd .log/.ros/log && ln -s -f $$(basename $$(file latest | cut -d" " -f6)) latest 2> /dev/null || true
+#	@cd .log/.ros/log && ln -s -f $$(basename $$(file latest | cut -d" " -f6)) latest 2> /dev/null || true
+
+.PHONY: adore-cli_start
+adore-cli_start:
+	docker exec -it --user adore-cli adore-cli /bin/zsh -c "bash tools/adore-cli.sh" || true
+
+.PHONY: adore-cli_scenarios_run
+adore-cli_scenarios_run:
+	docker exec -it --user adore-cli adore-cli /bin/zsh -c "bash tools/run_test_scenarios.sh" || true
+
+.PHONY: adore-cli
+adore-cli: adore-cli_setup adore-cli_start adore-cli_teardown ## Start an adore-cli context
+
+.PHONY: run_test_scenarios
+run_test_scenarios: adore-cli_setup adore-cli_scenarios_run adore-cli_teardown
