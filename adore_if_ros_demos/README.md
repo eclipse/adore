@@ -260,3 +260,17 @@ The following image shows a situation from demo013, with ground-truth vehicle st
 Note: 
 - The operation of the vehicle in error-free conditions may be simulated by supplying the argument `external_ego_measurement_models:=false` (or no argument) to the vehicle model and by starting neither adore_odometrymodel_node nor adore_localizationmodel_node.
 - The vehicle may be operated on purely localization information by supplying the localization state also on the topic `/vehicle0/odom` instead of the odometry state.
+
+# CARLA Coupling
+- file: [demo014_adore_if_carla.launch](demo014_adore_if_carla.launch)
+- Note: adore_if_carla is experimental.
+The demo shows the the coupling of ADORe and CARLA.
+In order to run this demo, the adore_if_carla package needs to be built. Further instructions on that can be find in the [README](https://github.com/DLR-TS/adore_if_carla/blob/main/README.md).
+To start the demo, the following steps need to be performed:
+1. build adore_if_carla
+2. start CARLA by running [adore_if_carla/run_1_carla.sh](https://github.com/DLR-TS/adore_if_carla/blob/main/run_1_carla.sh)
+3. start the CARLA-ros-bridge by running [adore_if_carla/run_2_carla_ros_bridge.sh](https://github.com/DLR-TS/adore_if_carla/blob/main/run_2_carla_ros_bridge.sh)
+4. start the adore_if_carla core-nodes by running [adore_if_carla/run_3_adore_if_carla.sh](https://github.com/DLR-TS/adore_if_carla/blob/main/run_3_adore_if_carla.sh)
+5. start the [demo014_adore_if_carla.launch](demo014_adore_if_carla.launch) of adore_if_ros_demos
+
+![ADORe-CARLA-interface](https://github.com/DLR-TS/adore_support/blob/master/demos/demo014.png)
