@@ -173,7 +173,7 @@ create_catkin_workspace: clean_catkin_workspace## Creates a catkin workspace @ a
 
 .PHONY: build_adore-cli
 build_adore-cli: build_catkin_base build_plotlabserver ## Builds the ADORe CLI docker context/image
-	COMPOSE_DOCKER_CLI_BUILD=1 docker compose build \
+	COMPOSE_DOCKER_CLI_BUILD=1 docker compose build adore-cli\
                                                      --build-arg UID=${UID} \
                                                      --build-arg GID=${GID} \
                                                      --build-arg DOCKER_GID=${DOCKER_GID}
