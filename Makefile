@@ -8,9 +8,10 @@ SHELL:=/bin/bash
 ROOT_DIR:=$(shell dirname $(realpath $(firstword $(MAKEFILE_LIST))))
 MAKEFLAGS += --no-print-directory
 
-CATKIN_WORKSPACE_DIRECTORY=catkin_workspace
 
 .EXPORT_ALL_VARIABLES:
+CATKIN_WORKSPACE_DIRECTORY=catkin_workspace
+
 DOCKER_BUILDKIT?=1
 COMPOSE_DOCKER_CLI_BUILD?=1 
 DOCKER_CONFIG?=$(shell realpath ${ROOT_DIR})/apt_cacher_ng_docker
