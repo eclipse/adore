@@ -12,6 +12,7 @@ CATKIN_WORKSPACE_DIRECTORY=catkin_workspace
 
 .EXPORT_ALL_VARIABLES:
 DOCKER_BUILDKIT?=1
+COMPOSE_DOCKER_CLI_BUILD?=1 
 DOCKER_CONFIG?=$(shell realpath ${ROOT_DIR})/apt_cacher_ng_docker
 
 DOCKER_GID := $(shell getent group | grep docker | cut -d":" -f3)
@@ -171,12 +172,21 @@ create_catkin_workspace: clean_catkin_workspace## Creates a catkin workspace @ a
             exit 0;\
         fi;
 
+.PHONY: build_adore-cli_fast
+build_adore-cli_fast: # build adore-cli if it does not already exist in the docker repository. If it does exist this is a noop.
+	@[ -n "$$(docker images -q adore-cli:latest)" ] || \
+    make build_adore-cli 
+
 .PHONY: build_adore-cli
 build_adore-cli: build_catkin_base build_plotlabserver ## Builds the ADORe CLI docker context/image
-	COMPOSE_DOCKER_CLI_BUILD=1 docker compose build adore-cli\
-                                                     --build-arg UID=${UID} \
-                                                     --build-arg GID=${GID} \
-                                                     --build-arg DOCKER_GID=${DOCKER_GID}
+	docker compose build adore-cli \
+                         --build-arg UID=${UID} \
+                         --build-arg GID=${GID} \
+                         --build-arg DOCKER_GID=${DOCKER_GID}
+	docker compose build adore-cli-x11-display \
+                         --build-arg UID=${UID} \
+                         --build-arg GID=${GID} \
+                         --build-arg DOCKER_GID=${DOCKER_GID}
 
 .PHONY: run_ci_scenarios
 run_ci_scenarios:
@@ -184,24 +194,29 @@ run_ci_scenarios:
 
 
 .PHONY: adore-cli_setup
-adore-cli_setup: 
-	mkdir -p .log/.ros/bag_files
-	cd .log && ln -sf ../plotlabserver/.log plotlabserver
-	touch .zsh_history
-	touch .zsh_history.new
-	cd plotlabserver && make down
-	[ -n "$$(docker images -q adore-cli:latest)" ] || make build_adore-cli 
-	@xhost + && docker compose up --force-recreate -V -d; xhost - 
-#	(cd plotlab && make up-detached > /dev/null 2>&1 &);
+adore-cli_setup: build_adore-cli_fast
+	@echo "Running adore-cli setup..."
+	@mkdir -p .log/.ros/bag_files
+	@cd .log && ln -sf ../plotlabserver/.log plotlabserver
+	@touch .zsh_history
+	@touch .zsh_history.new
+	cd plotlabserver && \
+    make down
 
 .PHONY: adore-cli_teardown
 adore-cli_teardown:
+	@echo "Running adore-cli teardown..."
 	@docker compose down && xhost - 1> /dev/null
-	docker compose rm -f
-#	@cd .log/.ros/log && ln -s -f $$(basename $$(file latest | cut -d" " -f6)) latest 2> /dev/null || true
+	@docker compose rm -f
 
 .PHONY: adore-cli_start
 adore-cli_start:
+	@xhost + && \
+    docker compose up adore-cli-x11-display --force-recreate -V -d; \
+    xhost - 
+
+.PHONY: adore-cli_attach
+adore-cli_attach:
 	docker exec -it --user adore-cli adore-cli /bin/zsh -c "bash tools/adore-cli.sh" || true
 
 .PHONY: adore-cli_scenarios_run
@@ -209,7 +224,7 @@ adore-cli_scenarios_run:
 	docker exec -it --user adore-cli adore-cli /bin/zsh -c "bash tools/run_test_scenarios.sh" || true
 
 .PHONY: adore-cli
-adore-cli: adore-cli_setup adore-cli_start adore-cli_teardown ## Start an adore-cli context
+adore-cli: adore-cli_setup adore-cli_start adore-cli_attach adore-cli_teardown ## Start an adore-cli context
 
 .PHONY: run_test_scenarios
-run_test_scenarios: adore-cli_setup adore-cli_scenarios_run adore-cli_teardown
+run_test_scenarios: adore-cli_setup adore-cli_start adore-cli_scenarios_run adore-cli_teardown

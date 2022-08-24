@@ -1,7 +1,5 @@
 # syntax = edrevo/dockerfile-plus
 
-
-
 ARG PROJECT
 ARG DEBUG
 ARG USER=adore-cli

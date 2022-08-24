@@ -30,6 +30,16 @@ pipeline {
                  '''
             }
         }
+        stage('Scenarios') {
+            steps {
+                sh '''#!/usr/bin/env bash
+                    set -e
+                    export DOCKER_CONFIG=$(realpath "${DOCKER_CONFIG}") make
+                    export DISPLAY_MODE=headless
+                    make run_test_scenarios
+                 '''
+            }
+        }
         stage('Static Checks: Lint') {
             steps {
                 sh '''#!/usr/bin/env bash
