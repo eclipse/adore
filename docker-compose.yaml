@@ -63,7 +63,6 @@ services:
     user: adore-cli
     hostname: adore-cli
     network_mode: "host"
-    command: /bin/bash -c "bash tools/adore-cli_start.sh"
     environment:
       # - DISPLAY_MODE=${DISPLAY_MODE:-native}
       - DISPLAY_MODE=${DISPLAY_MODE:-window_manager}
