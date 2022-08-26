@@ -2,7 +2,10 @@
 
 SCRIPT_DIR="$( cd -- "$( dirname -- "${BASH_SOURCE[0]:-$0}"; )" &> /dev/null && pwd 2> /dev/null; )";
 
-#clear
+clear
+
+cd ${SCRIPT_DIR}/.. && make create_catkin_workspace > /dev/null &
+
 bash tools/adore-cli_motd.sh
 bash plotlabserver/tools/wait_for_plotlab_server.sh
 

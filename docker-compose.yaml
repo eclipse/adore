@@ -31,7 +31,6 @@ services:
     user: adore-cli
     hostname: adore-cli
     network_mode: "host"
-    command: /bin/bash -c "bash tools/adore-cli_start.sh"
     environment:
       - CATKIN_WORKSPACE_DIRECTORY=${CATKIN_WORKSPACE_DIRECTORY:-catkin_workspace}
       - TEST_SCENARIOS=${TEST_SCENARIOS:-baseline_test.launch}
