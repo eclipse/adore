@@ -13,7 +13,6 @@ RUN apt-get update && \
     apt-get install --no-install-recommends -y $(sed '/^#/d' ${REQUIREMENTS_FILE} | sed '/^$/d') && \
     rm -rf /var/lib/apt/lists/*
 
-#INCLUDE+ docker/Dockerfile.adore-cli_x11_display.partial
 
 USER $USER
 WORKDIR /tmp/adore

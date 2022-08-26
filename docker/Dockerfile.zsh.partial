@@ -1,7 +1,5 @@
 #This dockerfile partial installs zsh
 
-
-
 ARG USER
 
 USER root
@@ -11,4 +9,5 @@ RUN apt-get update && \
 
 USER ${USER}
 WORKDIR /home/${USER}
-RUN sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)" --unattended && exit 1
+RUN zsh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)" ||true
+
