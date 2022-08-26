@@ -14,6 +14,7 @@ and their locations.
 ## Log Directory - **<adore repository root>/.log**
 The general log directory for all ADORe components can be found in the root of the adore repository at:**<adore repository root>/.log**
 
+<<<<<<< HEAD
 ### ROS - **<adore repository root>/.log/.ros**
 
 The most recent ros run will have log files located at:
@@ -37,3 +38,8 @@ Location:
 ```
 **<adore repository root>/.log/plotlabserver/plotlab.mkv**
 ```
+=======
+### ROS **<adore repository root>/.log/.ros**
+
+### Plotlab Server
+>>>>>>> 46efecd (updated docs)
