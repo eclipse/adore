@@ -40,6 +40,5 @@ WORKDIR /tmp/adore
 
 USER ${USER}
 ENV PS1='%n -> %d $$(git_prompt_info)> '
-#ENV PS1='%n'
 CMD exec /bin/bash -c "trap : TERM INT; sleep infinity & wait"
 
