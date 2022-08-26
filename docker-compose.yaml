@@ -9,8 +9,8 @@ services:
       # Change the display mode for plotlabserver by uncommenting the desired mode.
       #   For more information regarding display modes please refer to the plotlabserver
       #   documentation.
-      # - DISPLAY_MODE=${DISPLAY_MODE:-native}
-       - DISPLAY_MODE=${DISPLAY_MODE:-window_manager}
+      - DISPLAY_MODE=${DISPLAY_MODE:-native}
+      #       - DISPLAY_MODE=${DISPLAY_MODE:-window_manager}
       # - DISPLAY_MODE=${DISPLAY_MODE:-headless}
   ros-master:
     image: ros:noetic-ros-core
