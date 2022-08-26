@@ -1,17 +1,14 @@
 title:      Recommended System Setup
 desc:       This guide offers a minimum recommended system setup for execution and development of ADORe.
-date:       DATETIME
-version:    VERSION
+date:       ${DOC_DATETIME}
+version:    ${DOC_VERSION}
 template:   document
-nav:        __2__ Recommended Systems Setup
+nav:        Recommended Systems Setup __2__
 percent:    100
 authors:    opensource-ts@dlr.de
 
-# Automated Driving Open Research (ADORe)
+# Recommended System Setup 
 The following article offers a recommended and minimum system configurations for execution and development of adore.
-
-
-## Quick Start Guide
 
 |               |                  |                  |                                                                                                          |
 |---------------|------------------|------------------|----------------------------------------------------------------------------------------------------------|

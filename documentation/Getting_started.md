@@ -3,7 +3,11 @@ desc:       This guild offers a starting point for building ADORe and running a 
 date:       ${DOC_DATETIME}
 version:    ${DOC_VERSION}
 template:   document
+<<<<<<< HEAD:documentation/Getting_started.md
 nav:        Getting Started __3__
+=======
+nav:        How-To Guides __3__>Getting Started __1__
+>>>>>>> 734f10c (updated docs):documentation/getting_started.md
 percent:    100
 authors:    opensource-ts@dlr.de
            
