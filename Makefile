@@ -115,6 +115,7 @@ lint_sumo_if_ros:
 
 .PHONY: lint 
 lint: ## Run linting for all modules
+	mkdir -p .log
 	find . -name "**lint_report.log" -exec rm -rf {} \;
 	EXIT_STATUS=0; \
         (cd sumo_if_ros && make lint) || EXIT_STATUS=$$? && \
@@ -125,6 +126,7 @@ lint: ## Run linting for all modules
  
 .PHONY: lizard 
 lizard: ## Run lizard static analysis tool for all modules
+	mkdir -p .log
 	find . -name "**lizard_report.**" -exec rm -rf {} \;
 	EXIT_STATUS=0; \
         (cd sumo_if_ros && make lizard) || EXIT_STATUS=$$? && \
@@ -135,6 +137,7 @@ lizard: ## Run lizard static analysis tool for all modules
 
 .PHONY: cppcheck 
 cppcheck: ## Run cppcheck static checking tool for all modules.
+	mkdir -p .log
 	find . -name "**cppcheck_report.log" -exec rm -rf {} \;
 	EXIT_STATUS=0; \
         (cd sumo_if_ros && make cppcheck) || EXIT_STATUS=$$? && \
