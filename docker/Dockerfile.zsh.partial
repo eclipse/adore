@@ -6,9 +6,9 @@ ARG USER
 
 USER root
 RUN apt-get update && \
-    apt-get install --no-install-recommends -y zsh git vim && \
+    apt-get install --no-install-recommends -y zsh git curl && \
     rm -rf /var/lib/apt/lists/*
 
 USER ${USER}
-
-RUN sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)" --unattended
+WORKDIR /home/${USER}
+RUN sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)" --unattended && exit 1
