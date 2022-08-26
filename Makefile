@@ -201,6 +201,7 @@ run_ci_scenarios:
 adore-cli_setup: build_adore-cli_fast
 	@echo "Running adore-cli setup..."
 	@mkdir -p .log/.ros/bag_files
+	@mkdir -p plotlabserver/.log
 	@cd .log && ln -sf ../plotlabserver/.log plotlabserver
 	@touch .zsh_history
 	@touch .zsh_history.new
