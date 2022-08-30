@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
     
-    <title></title>
+    <title>Anonymous Cloning</title>
 
 
     <script src="../lib/jquery-3.2.1.slim.min.js"></script>
@@ -89,7 +89,7 @@
                 
                 <li class="tree-leaf">
                     
-                        <i class="fa fa-circle-thin" aria-hidden="true"></i>
+                        <i class="fa fa-circle" aria-hidden="true"></i>
                     
                     <a href="Anonymous_Cloning.html"><span>Anonymous Cloning</span></a>
                 </li>
@@ -127,36 +127,51 @@
                 
 
     
+    <div class="page-header">
+        <h1 class="display-4">Anonymous Cloning </h1>
+        <p class="lead">This article provides a technical guide for anonymous git cloning of ADORe.</p>
+        <p>
+            <span class="version">V1.0</span>
+            
+            <img src="http://www.gravatar.com/avatar/d11f315b4d0ccb1bdb08d8ff85e4227a?s=100&amp;r=g&amp;d=retro" class="avatar" alt="opensource-ts@dlr.de" title="opensource-ts@dlr.de" />
+            
+            <small>last updated on <span>2022-08-30T07:42:20Z</span></small>
+        </p>
+
+        
+    </div>
+    <br/>
+    
 
     <div class="page-md">
-        <!--
-********************************************************************************
-* Copyright (C) 2017-2020 German Aerospace Center (DLR). 
-* Eclipse ADORe, Automated Driving Open Research https://eclipse.org/adore
-*
-* This program and the accompanying materials are made available under the 
-* terms of the Eclipse Public License 2.0 which is available at
-* http://www.eclipse.org/legal/epl-2.0.
-*
-* SPDX-License-Identifier: EPL-2.0 
-*
-* Contributors: 
-*   Daniel Heß
-********************************************************************************
--->
+        <h2 id="anonymous-cloning">Anonymous Cloning</h2>
+<p>In order to make development more friendly nearly all git submodules are 
+configured to use git over ssh via the .gitmodules. The downside of this is that
+github requires account keys to be configured to in order to clone the repository.
+If you attempt to clone without configuring your account keys you will receive 
+the following error:</p>
+<pre><code class="bash">git clone git@github.com:eclipse/adore.git
+Cloning into 'adore'...
+The authenticity of host 'github.com (140.82.121.3)' can't be established.
+ECDSA key fingerprint is SHA256:p2QAMXNIC1TJYWeIOttrVc98/R1BUFWu3/LiyKgUfQM.
+Are you sure you want to continue connecting (yes/no/[fingerprint])? yes
+Warning: Permanently added 'github.com,140.82.121.3' (ECDSA) to the list of known hosts.
+git@github.com: Permission denied (publickey).
+fatal: Could not read from remote repository.
 
-<h2 id="how-to-check-licenses">How to check licenses</h2>
-<p>Ubuntu comes with a license checker:</p>
-<pre><code class="bash"> sudo apt-get install licensecheck
+Please make sure you have the correct access rights
+and the repository exists.
 </code></pre>
 
-<p>Before checking license, remove unnecessary files for release</p>
-<pre><code class="bash">./tools/release_purge.sh
+<h3 id="anonymous-cloning-over-https">Anonymous Cloning Over HTTPS</h3>
+<p>You can configure git to exclusively use https. This can be done with the 
+following commands:</p>
+<pre><code class="bash">git config --global url.&quot;https://github.com/&quot;.insteadOf git@github.com:
+git config --global url.&quot;https://&quot;.insteadOf git://
 </code></pre>
 
-<p>Check for files, which do not contain EPL-2.0: 
-Run the following in adore folder.</p>
-<pre><code class="bash">licensecheck . -r|egrep -ve &quot;.png|.gif|.r2s|.jpg|build|sumo|java_v2x|.cmake|CMakeFiles|.gitlab-ci.yml|.vscode|Eclipse Public License 2.0&quot;
+<p>Next, you can clone the repository as normal except use https:</p>
+<pre><code class="bash">git clone -recurse-submodules -j$(nproc) https://github.com/eclipse/adore.git
 </code></pre>
     </div>
 
