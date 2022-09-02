@@ -2,4 +2,17 @@
 
 FROM adore-cli:latest as adore-cli
 
-#INCLUDE+ docker/Dockerfile.adore-cli_x11_display.partial
+
+ARG REQUIREMENTS_FILE="requirements.adore-cli_x11_display.ubuntu20.04.system"
+
+USER root
+COPY docker/files/${REQUIREMENTS_FILE} /tmp
+WORKDIR /tmp
+ENV DEBIAN_FRONTEND=noninteractive
+RUN apt-get update && \
+    apt-get install --no-install-recommends -y $(sed '/^#/d' ${REQUIREMENTS_FILE} | sed '/^$/d') && \
+    rm -rf /var/lib/apt/lists/*
+
+
+USER $USER
+WORKDIR /tmp/adore

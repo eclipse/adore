@@ -6,8 +6,11 @@ services:
       file: plotlabserver/plotlabserver.yaml
       service: plotlabserver
     environment:
-       - DISPLAY_MODE=${DISPLAY_MODE:-native}
-      # - DISPLAY_MODE=${DISPLAY_MODE:-window_manager}
+      # Change the display mode for plotlabserver by uncommenting the desired mode.
+      #   For more information regarding display modes please refer to the plotlabserver
+      #   documentation.
+      - DISPLAY_MODE=${DISPLAY_MODE:-native}
+      #       - DISPLAY_MODE=${DISPLAY_MODE:-window_manager}
       # - DISPLAY_MODE=${DISPLAY_MODE:-headless}
   ros-master:
     image: ros:noetic-ros-core
@@ -28,7 +31,6 @@ services:
     user: adore-cli
     hostname: adore-cli
     network_mode: "host"
-    command: /bin/bash -c "bash tools/adore-cli_start.sh"
     environment:
       - CATKIN_WORKSPACE_DIRECTORY=${CATKIN_WORKSPACE_DIRECTORY:-catkin_workspace}
       - TEST_SCENARIOS=${TEST_SCENARIOS:-baseline_test.launch}
@@ -58,11 +60,9 @@ services:
     privileged: true
     image: adore-cli_x11-display:latest
     container_name: adore-cli
-    #user: adore-cli
-    user: root
+    user: adore-cli
     hostname: adore-cli
     network_mode: "host"
-    command: /bin/bash -c "bash tools/adore-cli_start.sh"
     environment:
       # - DISPLAY_MODE=${DISPLAY_MODE:-native}
       - DISPLAY_MODE=${DISPLAY_MODE:-window_manager}
