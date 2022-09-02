@@ -1,0 +1,25 @@
+# syntax = edrevo/dockerfile-plus
+
+ENV DISPLAY_MODE=native
+
+ENV DEBIAN_FRONTEND=noninteractive
+ARG DISPLAY
+ENV DISPLAY=${DISPLAY}
+ENV DEBIAN_FRONTEND noninteractive
+
+ARG USER
+ARG UID
+ARG GID
+
+ARG VIRTUAL_DISPLAY_RESOLUTION=800x600
+ENV VIRTUAL_DISPLAY_RESOLUTION=${VIRTUAL_DISPLAY_RESOLUTION}
+
+ARG VIRTUAL_DISPLAY_ID=":99"
+ENV VIRTUAL_DISPLAY_ID=${VIRTUAL_DISPLAY_ID}
+
+RUN apt-get update && apt-get install --no-install-recommends -y unclutter xdotool ffmpeg xvfb xserver-xephyr i3 #x11-apps
+COPY files/.config /home/${USER}/.config
+
+# Creates virtual display as root so that normal users can call Xvfb on same display 
+RUN timeout .1 Xvfb :99 | true 
+

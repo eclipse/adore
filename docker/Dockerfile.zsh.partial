@@ -1,4 +1,7 @@
 #This dockerfile partial installs zsh
+
+
+
 ARG USER
 
 USER root

@@ -1,0 +1,5 @@
+# syntax = edrevo/dockerfile-plus
+
+FROM adore-cli:latest as adore-cli
+
+#INCLUDE+ docker/Dockerfile.adore-cli_x11_display.partial

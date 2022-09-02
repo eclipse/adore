@@ -1,32 +1,14 @@
 version: '3.3'
 
 services:
-  plotlab_server:
-    privileged: true
-    image: plotlabserver:latest
-    container_name: plotlabserver
-    hostname: plotlabserver
-    network_mode: "host"
-    ipc: "host"
-    #entrypoint: sh -c '(xeyes &) && ./plotlabserver'
-    #entrypoint: sh -c 'tail -f /dev/null'
-    build:
-      context: ./plotlabserver
-      dockerfile: Dockerfile.plotlabserver
+  plotlabserver:
+    extends:
+      file: plotlabserver/plotlabserver.yaml
+      service: plotlabserver
     environment:
-      - DISPLAY_MODE=${DISPLAY_MODE:-native}
-     # - DISPLAY_MODE=${DISPLAY_MODE:-window_manager}
-     # - DISPLAY_MODE=${DISPLAY_MODE:-headless}
-      - DISPLAY=${DISPLAY}
-     # - LIBGL_ALWAYS_SOFTWARE=1
-      - QT_X11_NO_MITSHM=1
-    ports:
-      - 12345:12345
-      - 12346:12346
-      - 12347:12347
-    volumes:
-      - /tmp/.X11-unix:/tmp/.X11-unix
-      - .log/plotlabserver:/var/log/plotlab
+       - DISPLAY_MODE=${DISPLAY_MODE:-native}
+      # - DISPLAY_MODE=${DISPLAY_MODE:-window_manager}
+      # - DISPLAY_MODE=${DISPLAY_MODE:-headless}
   ros-master:
     image: ros:noetic-ros-core
     container_name: ros-master
@@ -37,8 +19,8 @@ services:
       - "ROS_HOME=/tmp/adore/.log/.ros"
       - "ROS_MASTER_URI=http://127.0.0.1:11311"
       - "ROS_HOSTNAME=127.0.0.1"
-    volumes:
-        - .ros:/tmp/adore/.ros
+    #volumes:
+    #    - .ros:/tmp/adore/.ros
   adore-cli:
     privileged: true
     image: adore-cli:latest
@@ -48,6 +30,8 @@ services:
     network_mode: "host"
     command: /bin/bash -c "bash tools/adore-cli_start.sh"
     environment:
+      - CATKIN_WORKSPACE_DIRECTORY=${CATKIN_WORKSPACE_DIRECTORY:-catkin_workspace}
+      - TEST_SCENARIOS=${TEST_SCENARIOS:-baseline_test.launch}
       - "ADORE_SOURCE_DIR=/tmp/adore"
       - "BAG_OUTPUT_DIRECTORY=/tmp/adore/.log/.ros/bag_files"
       - "ROS_HOME=/tmp/adore/.log/.ros"
@@ -56,7 +40,7 @@ services:
       - "ROS_HOSTNAME=127.0.0.1"
     depends_on:
       # - ros-master  #activate this option if you want to start roscore on startup of adore-cli container
-       - plotlab_server  #activate this option if you want to start plotlabserver automatically with adore-cli container
+       - plotlabserver  #activate this option if you want to start plotlabserver automatically with adore-cli container
     build:
       context: .
       network: host
@@ -69,3 +53,44 @@ services:
         - /var/run/docker.sock:/var/run/docker.sock
         - .bash_history:/home/adore-cli/.bash_history
         - ./:/tmp/adore
+  
+  adore-cli-x11-display:
+    privileged: true
+    image: adore-cli_x11-display:latest
+    container_name: adore-cli
+    #user: adore-cli
+    user: root
+    hostname: adore-cli
+    network_mode: "host"
+    command: /bin/bash -c "bash tools/adore-cli_start.sh"
+    environment:
+      # - DISPLAY_MODE=${DISPLAY_MODE:-native}
+      - DISPLAY_MODE=${DISPLAY_MODE:-window_manager}
+      #- DISPLAY_MODE=${DISPLAY_MODE:-headless}
+      - CATKIN_WORKSPACE_DIRECTORY=${CATKIN_WORKSPACE_DIRECTORY:-catkin_workspace}
+      - DISPLAY=${DISPLAY}
+      - UID=${UID}
+      - GID=${GID}
+      - TEST_SCENARIOS=${TEST_SCENARIOS:-baseline_test.launch}
+      - "ADORE_SOURCE_DIR=/tmp/adore"
+      - "BAG_OUTPUT_DIRECTORY=/tmp/adore/.log/.ros/bag_files"
+      - "ROS_HOME=/tmp/adore/.log/.ros"
+      - "HISTFILE=/tmp/adore/.zsh_history"
+      - "ROS_MASTER_URI=http://127.0.0.1:11311"
+      - "ROS_HOSTNAME=127.0.0.1"
+    depends_on:
+      # - ros-master  #activate this option if you want to start roscore on startup of adore-cli container
+       - plotlabserver  #activate this option if you want to start plotlabserver automatically with adore-cli container
+    build:
+      context: .
+      network: host
+      dockerfile: docker/Dockerfile.adore-cli_x11_display
+      args:
+        - USER=adore-cli
+        - UID=${UID:-1000}
+        - GID=${GID:-1001}
+    volumes:
+      - /tmp/.X11-unix:/tmp/.X11-unix
+      - /var/run/docker.sock:/var/run/docker.sock
+      - .bash_history:/home/adore-cli/.bash_history
+      - ./:/tmp/adore
