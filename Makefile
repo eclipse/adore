@@ -220,6 +220,10 @@ adore-cli_start:
     docker compose up adore-cli-x11-display --force-recreate -V -d; \
     xhost - 
 
+.PHONY: adore-cli_start_headless
+adore-cli_start_headless:
+	DISPLAY_MODE=headless make adore-cli_start
+
 .PHONY: adore-cli_attach
 adore-cli_attach:
 	docker exec -it --user adore-cli adore-cli /bin/zsh -c "bash tools/adore-cli.sh" || true
@@ -232,4 +236,4 @@ adore-cli_scenarios_run:
 adore-cli: adore-cli_setup adore-cli_start adore-cli_attach adore-cli_teardown ## Start an adore-cli context
 
 .PHONY: run_test_scenarios
-run_test_scenarios: adore-cli_setup adore-cli_start adore-cli_scenarios_run adore-cli_teardown
+run_test_scenarios: adore-cli_setup adore-cli_start_headless adore-cli_scenarios_run adore-cli_teardown
