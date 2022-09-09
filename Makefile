@@ -5,7 +5,7 @@ SHELL:=/bin/bash
 
 .DEFAULT_GOAL := all
 
-ROOT_DIR:=$(shell dirname $(realpath $(firstword $(MAKEFILE_LIST))))
+ROOT_DIR:=$(shell dirname "$(realpath $(firstword $(MAKEFILE_LIST)))")
 MAKEFLAGS += --no-print-directory
 
 
@@ -14,7 +14,7 @@ CATKIN_WORKSPACE_DIRECTORY=catkin_workspace
 
 DOCKER_BUILDKIT?=1
 COMPOSE_DOCKER_CLI_BUILD?=1 
-DOCKER_CONFIG?=$(shell realpath ${ROOT_DIR})/apt_cacher_ng_docker
+DOCKER_CONFIG?=$(shell realpath "${ROOT_DIR}")/apt_cacher_ng_docker
 
 DOCKER_GID := $(shell getent group | grep docker | cut -d":" -f3)
 USER := $(shell whoami)
@@ -107,7 +107,7 @@ build_sumo_if_ros: ## Build sumo_if_ros
 test:
 	mkdir -p .log && \
     cd libadore && \
-	make test | tee ${ROOT_DIR}/.log/libadore_unit_test.log; exit $$PIPESTATUS
+	make test | tee "${ROOT_DIR}/.log/libadore_unit_test.log"; exit $$PIPESTATUS
 
 .PHONY: lint_sumo_if_ros 
 lint_sumo_if_ros:
@@ -148,7 +148,7 @@ cppcheck: ## Run cppcheck static checking tool for all modules.
 
 .PHONY: clean_catkin_workspace 
 clean_catkin_workspace:
-	rm -rf ${CATKIN_WORKSPACE_DIRECTORY}
+	rm -rf "${CATKIN_WORKSPACE_DIRECTORY}"
 
 .PHONY: build_catkin_base 
 build_catkin_base: ## Build a docker image with base catkin tools installed with tag catkin_base:latest
@@ -161,9 +161,9 @@ build_catkin_base: ## Build a docker image with base catkin tools installed with
 create_catkin_workspace_docker: build_catkin_base
 	docker run -it \
                    --user "${UID}:${GID}" \
-                   --mount type=bind,source=${ROOT_DIR},target=${ROOT_DIR} \
+                   --mount type=bind,source="${ROOT_DIR}",target="${ROOT_DIR}" \
                    catkin_base \
-                   /bin/bash -c 'cd ${ROOT_DIR} && HOME=${ROOT_DIR} CATKIN_WORKSPACE_DIRECTORY=${CATKIN_WORKSPACE_DIRECTORY} bash tools/create_catkin_workspace.sh'
+                   /bin/bash -c 'cd "${ROOT_DIR}" && HOME="${ROOT_DIR}" CATKIN_WORKSPACE_DIRECTORY="${CATKIN_WORKSPACE_DIRECTORY}" bash tools/create_catkin_workspace.sh'
 
 .PHONY: create_catkin_workspace
 create_catkin_workspace: clean_catkin_workspace## Creates a catkin workspace @ adore/catkin_workspace. Can be called within the adore-cli or on the host.
