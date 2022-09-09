@@ -4,7 +4,7 @@ SHELL:=/bin/bash
 
 .PHONY: build
 
-ROOT_DIR:=$(shell dirname $(realpath $(firstword $(MAKEFILE_LIST))))
+ROOT_DIR:=$(shell dirname "$(realpath $(firstword $(MAKEFILE_LIST)))")
 
 .EXPORT_ALL_VARIABLES:
 DOCKER_BUILDKIT?=1
@@ -73,7 +73,7 @@ build:
 	docker cp $$(docker create --rm $(shell echo ${TAG} | tr A-Z a-z)):/tmp/${PROJECT}/build ${PROJECT}
 
 clean:
-	rm -rf "${ROOT_DIR}/*/build"
+	cd "${ROOT_DIR}" && rm -rf $$(find . -name build -type d)
 	docker rm $$(docker ps -a -q --filter "ancestor=${OSQP_TAG}") 2> /dev/null || true
 	docker rmi $$(docker images -q ${OSQP_TAG}) 2> /dev/null || true
 	docker rm $$(docker ps -a -q --filter "ancestor=${QPOASES_TAG}") 2> /dev/null || true
