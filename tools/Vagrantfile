@@ -2,7 +2,7 @@
 # vi: set ft=ruby :
 
 Vagrant.configure("2") do |config|
-  config.vm.box = "bento/ubuntu-20.04"
+  config.vm.box = "bento/ubuntu-22.04"
   config.ssh.extra_args = ["-t", "cd /tmp/adore; bash --login"]
   config.vm.synced_folder File.expand_path('../../adore'), "/tmp/adore"
 
