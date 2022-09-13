@@ -26,7 +26,6 @@ TEST_SCENARIOS?=baseline_test.launch baseline_test.launch
 
 .PHONY: all
 all: \
-     submodules_update \
      docker_group_check \
      root_check \
      start_apt_cacher_ng \
