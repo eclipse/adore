@@ -12,6 +12,10 @@ PLOTLABSERVER_LOG_DIR="${LOG_DIR}/plotlabserver"
 
 
 clear
+cd ${SCRIPT_DIR}/.. 
+
+make create_catkin_workspace > .log/create_catkin_workspace.log 2>&1 &
+
 bash plotlabserver/tools/wait_for_plotlab_server.sh
 
 echo ""

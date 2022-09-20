@@ -34,9 +34,9 @@ all: \
      build_adore_if_v2x \
      build_sumo_if_ros \
      build_plotlabserver \
-     build_libadore\
-     build_adore_if_ros\
-     get_apt_cacher_ng_cache_statistics\
+     build_libadore \
+     build_adore_if_ros \
+     get_apt_cacher_ng_cache_statistics \
 
 .PHONY: build
 build: all
@@ -151,10 +151,13 @@ clean_catkin_workspace:
 
 .PHONY: build_catkin_base 
 build_catkin_base: ## Build a docker image with base catkin tools installed with tag catkin_base:latest
-	docker build --network host \
-	             --file docker/Dockerfile.catkin_base \
-                 --tag catkin_base \
-                 --build-arg PROJECT=catkin_base .
+	cd docker && \
+    docker build \
+                 --network host \
+                 --build-arg UID=${UID} \
+                 --build-arg GID=${GID} \
+                 --file Dockerfile.catkin_base \
+                 --tag catkin_base .
 
 .PHONY: create_catkin_workspace_docker
 create_catkin_workspace_docker: build_catkin_base
@@ -162,12 +165,11 @@ create_catkin_workspace_docker: build_catkin_base
                    --user "${UID}:${GID}" \
                    --mount type=bind,source="${ROOT_DIR}",target="${ROOT_DIR}" \
                    catkin_base \
-                   /bin/bash -c 'cd "${ROOT_DIR}" && HOME="${ROOT_DIR}" CATKIN_WORKSPACE_DIRECTORY="${CATKIN_WORKSPACE_DIRECTORY}" bash tools/create_catkin_workspace.sh'
+				   /bin/bash -c 'cd "${ROOT_DIR}" && HOME="${ROOT_DIR}" CATKIN_WORKSPACE_DIRECTORY="${CATKIN_WORKSPACE_DIRECTORY}" bash tools/create_catkin_workspace.sh 2>&1 | tee -a .log/create_catkin_workspace.log'
 
 .PHONY: create_catkin_workspace
 create_catkin_workspace: clean_catkin_workspace## Creates a catkin workspace @ adore/catkin_workspace. Can be called within the adore-cli or on the host.
-	echo "USER: ${USER}"
-	@if [ "${USER}" == "adore-cli" ]; then\
+	@if [ -f "/.dockerenv" ]; then\
             bash tools/create_catkin_workspace.sh;\
             exit 0;\
         else\
