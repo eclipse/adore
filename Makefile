@@ -38,6 +38,22 @@ all: \
      build_adore_if_ros \
      get_apt_cacher_ng_cache_statistics \
 
+.PHONY: docker_storage_inventory_prebuild
+docker_storage_inventory_prebuild:
+	mkdir -p .log
+	echo "[" > .log/docker_storage_inventory_prebuild.json
+	docker system df --format "{{ json . }}," >> .log/docker_storage_inventory_prebuild.json
+	echo "]" >> .log/docker_storage_inventory_prebuild.json
+	sed -i -z "s|,\n]|\n]|g" .log/docker_storage_inventory_prebuild.json
+
+.PHONY: docker_storage_inventory_prebuild
+docker_storage_inventory_prebuild:
+	mkdir -p .log
+	echo "[" > .log/docker_storage_inventory_postbuild.json
+	docker system df --format "{{ json . }}," >> .log/docker_storage_inventory_postbuild.json
+	echo "]" >> .log/docker_storage_inventory_postbuild.json
+	sed -i -z "s|,\n]|\n]|g" .log/docker_storage_inventory_postbuild.json
+
 .PHONY: build
 build: all
 
