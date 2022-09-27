@@ -5,7 +5,7 @@ SHELL:=/bin/bash
 
 .DEFAULT_GOAL := all
 
-ROOT_DIR:=$(shell dirname $(realpath $(firstword $(MAKEFILE_LIST))))
+ROOT_DIR:=$(shell dirname "$(realpath $(firstword $(MAKEFILE_LIST)))")
 MAKEFLAGS += --no-print-directory
 
 
@@ -14,7 +14,7 @@ CATKIN_WORKSPACE_DIRECTORY=catkin_workspace
 
 DOCKER_BUILDKIT?=1
 COMPOSE_DOCKER_CLI_BUILD?=1 
-DOCKER_CONFIG?=$(shell realpath ${ROOT_DIR})/apt_cacher_ng_docker
+DOCKER_CONFIG?=$(shell realpath "${ROOT_DIR}")/apt_cacher_ng_docker
 
 DOCKER_GID := $(shell getent group | grep docker | cut -d":" -f3)
 USER := $(shell whoami)
@@ -26,7 +26,6 @@ TEST_SCENARIOS?=baseline_test.launch baseline_test.launch
 
 .PHONY: all
 all: \
-     submodules_update \
      docker_group_check \
      root_check \
      start_apt_cacher_ng \
@@ -35,9 +34,9 @@ all: \
      build_adore_if_v2x \
      build_sumo_if_ros \
      build_plotlabserver \
-     build_libadore\
-     build_adore_if_ros\
-     get_apt_cacher_ng_cache_statistics\
+     build_libadore \
+     build_adore_if_ros \
+     get_apt_cacher_ng_cache_statistics \
 
 .PHONY: build
 build: all
@@ -107,7 +106,7 @@ build_sumo_if_ros: ## Build sumo_if_ros
 test:
 	mkdir -p .log && \
     cd libadore && \
-	make test | tee ${ROOT_DIR}/.log/libadore_unit_test.log; exit $$PIPESTATUS
+	make test | tee "${ROOT_DIR}/.log/libadore_unit_test.log"; exit $$PIPESTATUS
 
 .PHONY: lint_sumo_if_ros 
 lint_sumo_if_ros:
@@ -148,27 +147,29 @@ cppcheck: ## Run cppcheck static checking tool for all modules.
 
 .PHONY: clean_catkin_workspace 
 clean_catkin_workspace:
-	rm -rf ${CATKIN_WORKSPACE_DIRECTORY}
+	rm -rf "${CATKIN_WORKSPACE_DIRECTORY}"
 
 .PHONY: build_catkin_base 
 build_catkin_base: ## Build a docker image with base catkin tools installed with tag catkin_base:latest
-	docker build --network host \
-	             --file docker/Dockerfile.catkin_base \
-                 --tag catkin_base \
-                 --build-arg PROJECT=catkin_base .
+	cd docker && \
+    docker build \
+                 --network host \
+                 --build-arg UID=${UID} \
+                 --build-arg GID=${GID} \
+                 --file Dockerfile.catkin_base \
+                 --tag catkin_base .
 
 .PHONY: create_catkin_workspace_docker
 create_catkin_workspace_docker: build_catkin_base
 	docker run -it \
                    --user "${UID}:${GID}" \
-                   --mount type=bind,source=${ROOT_DIR},target=${ROOT_DIR} \
+                   --mount type=bind,source="${ROOT_DIR}",target="${ROOT_DIR}" \
                    catkin_base \
-                   /bin/bash -c 'cd ${ROOT_DIR} && HOME=${ROOT_DIR} CATKIN_WORKSPACE_DIRECTORY=${CATKIN_WORKSPACE_DIRECTORY} bash tools/create_catkin_workspace.sh'
+				   /bin/bash -c 'cd "${ROOT_DIR}" && HOME="${ROOT_DIR}" CATKIN_WORKSPACE_DIRECTORY="${CATKIN_WORKSPACE_DIRECTORY}" bash tools/create_catkin_workspace.sh 2>&1 | tee -a .log/create_catkin_workspace.log'
 
 .PHONY: create_catkin_workspace
 create_catkin_workspace: clean_catkin_workspace## Creates a catkin workspace @ adore/catkin_workspace. Can be called within the adore-cli or on the host.
-	echo "USER: ${USER}"
-	@if [ "${USER}" == "adore-cli" ]; then\
+	@if [ -f "/.dockerenv" ]; then\
             bash tools/create_catkin_workspace.sh;\
             exit 0;\
         else\
@@ -220,6 +221,10 @@ adore-cli_start:
     docker compose up adore-cli-x11-display --force-recreate -V -d; \
     xhost - 
 
+.PHONY: adore-cli_start_headless
+adore-cli_start_headless:
+	DISPLAY_MODE=headless make adore-cli_start
+
 .PHONY: adore-cli_attach
 adore-cli_attach:
 	docker exec -it --user adore-cli adore-cli /bin/zsh -c "bash tools/adore-cli.sh" || true
@@ -232,4 +237,4 @@ adore-cli_scenarios_run:
 adore-cli: adore-cli_setup adore-cli_start adore-cli_attach adore-cli_teardown ## Start an adore-cli context
 
 .PHONY: run_test_scenarios
-run_test_scenarios: adore-cli_setup adore-cli_start adore-cli_scenarios_run adore-cli_teardown
+run_test_scenarios: adore-cli_setup adore-cli_start_headless adore-cli_scenarios_run adore-cli_teardown

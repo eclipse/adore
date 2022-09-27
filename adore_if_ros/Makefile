@@ -7,7 +7,7 @@ SHELL:=/bin/bash
 
 .DEFAULT_GOAL := all
 
-ROOT_DIR:=$(shell dirname $(realpath $(firstword $(MAKEFILE_LIST))))
+ROOT_DIR:=$(shell dirname "$(realpath $(firstword $(MAKEFILE_LIST)))")
 MAKEFLAGS += --no-print-directory
 
 .EXPORT_ALL_VARIABLES:
@@ -15,7 +15,7 @@ DOCKER_BUILDKIT?=1
 DOCKER_CONFIG?=
 
 
-CMAKE_PREFIX_PATH?=$(shell realpath $$(find . -name install | grep "install" | grep -e "install/\|CPack" -v) | tr '\n' ';') 
+CMAKE_PREFIX_PATH?=$(shell realpath "$$(find . -name install | grep "install" | grep -e "install/\|CPack" -v)" | tr '\n' ';') 
 
 .PHONY: set_mode 
 set_mode:
@@ -34,7 +34,7 @@ all: root_check docker_group_check build
 
 .PHONY: build 
 build: set_mode ## Build adore_if_ros
-	rm -rf ${PROJECT}/build
+	rm -rf "${PROJECT}/build"
 	cd adore_if_ros_msg && \
 	make
 	cd plotlablib && \
@@ -43,10 +43,7 @@ build: set_mode ## Build adore_if_ros
                  --network host \
                  --build-arg DEBUG="${DEBUG}" \
                  --build-arg PROJECT=${PROJECT} .
-	mkdir -p "${ROOT_DIR}/tmp/${PROJECT}/build"
-	docker cp $$(docker create --rm $(shell echo ${TAG} | tr A-Z a-z)):/tmp/${PROJECT}/${PROJECT}/build tmp/${PROJECT}/build
-	cp -r "${ROOT_DIR}/tmp/${PROJECT}/build/build" "${ROOT_DIR}/${PROJECT}"
-	rm -rf ${ROOT_DIR}/tmp
+	docker cp $$(docker create --rm $(shell echo ${TAG} | tr A-Z a-z)):/tmp/${PROJECT}/${PROJECT}/build ${PROJECT}
 
 .PHONY: clean 
 clean:
