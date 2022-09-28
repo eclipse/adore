@@ -85,6 +85,7 @@ sed -i "s|\]||g" "${current_log}"
 printf "{\"docker_storage_delta\":\"${docker_storage_size_delta}GB\", \"docker_storage_size_total\":\"${current_log_docker_storage_size}GB\"}\n" >> "${current_log}"
 sed -i -r 's|}|},|g' "${current_log}" 
 sed -i -r 's|,,|},|g' "${current_log}" 
+sed -i -r 's|}}|}|g' "${current_log}" 
 sed -i -r '/^\s*$/d' "${current_log}" 
 sed -i '$ s/.$//' "${current_log}"
 
