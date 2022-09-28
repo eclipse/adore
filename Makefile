@@ -28,6 +28,7 @@ TEST_SCENARIOS?=baseline_test.launch baseline_test.launch
 all: \
      docker_group_check \
      root_check \
+	 docker_storage_inventory_prebuild \
      start_apt_cacher_ng \
      build_adore_if_ros_msg\
      build_adore_v2x_sim \
@@ -37,23 +38,18 @@ all: \
      build_libadore \
      build_adore_if_ros \
      get_apt_cacher_ng_cache_statistics \
+	 docker_storage_inventory_postbuild \
      stop_apt_cacher_ng
 
 .PHONY: docker_storage_inventory_prebuild
 docker_storage_inventory_prebuild:
 	mkdir -p .log
-	echo "[" > .log/docker_storage_inventory_prebuild.json
-	docker system df --format "{{ json . }}," >> .log/docker_storage_inventory_prebuild.json
-	echo "]" >> .log/docker_storage_inventory_prebuild.json
-	sed -i -z "s|,\n]|\n]|g" .log/docker_storage_inventory_prebuild.json
+	bash tools/docker_storage_inventory.sh --log-directory .log > /dev/null 2>&1
 
-.PHONY: docker_storage_inventory_prebuild
-docker_storage_inventory_prebuild:
-	mkdir -p .log
-	echo "[" > .log/docker_storage_inventory_postbuild.json
-	docker system df --format "{{ json . }}," >> .log/docker_storage_inventory_postbuild.json
-	echo "]" >> .log/docker_storage_inventory_postbuild.json
-	sed -i -z "s|,\n]|\n]|g" .log/docker_storage_inventory_postbuild.json
+.PHONY: docker_storage_inventory_postbuild
+docker_storage_inventory_postbuild:
+	bash tools/docker_storage_inventory.sh --log-directory .log
+
 
 .PHONY: build
 build: all
