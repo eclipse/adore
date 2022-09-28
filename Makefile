@@ -196,7 +196,7 @@ build_adore-cli_fast: # build adore-cli if it does not already exist in the dock
     make build_adore-cli 
 
 .PHONY: build_adore-cli
-build_adore-cli: build_catkin_base build_plotlabserver ## Builds the ADORe CLI docker context/image
+build_adore-cli: start_apt_cacher_ng build_catkin_base build_plotlabserver ## Builds the ADORe CLI docker context/image
 	docker compose build adore-cli \
                          --build-arg UID=${UID} \
                          --build-arg GID=${GID} \
@@ -205,6 +205,7 @@ build_adore-cli: build_catkin_base build_plotlabserver ## Builds the ADORe CLI d
                          --build-arg UID=${UID} \
                          --build-arg GID=${GID} \
                          --build-arg DOCKER_GID=${DOCKER_GID}
+	make stop_apt_cacher_ng
 
 .PHONY: run_ci_scenarios
 run_ci_scenarios:
