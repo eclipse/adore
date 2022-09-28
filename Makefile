@@ -37,6 +37,7 @@ all: \
      build_libadore \
      build_adore_if_ros \
      get_apt_cacher_ng_cache_statistics \
+     stop_apt_cacher_ng
 
 .PHONY: docker_storage_inventory_prebuild
 docker_storage_inventory_prebuild:
