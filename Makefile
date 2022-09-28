@@ -44,7 +44,7 @@ all: \
 .PHONY: docker_storage_inventory_prebuild
 docker_storage_inventory_prebuild:
 	mkdir -p .log
-	bash tools/docker_storage_inventory.sh --log-directory .log > /dev/null 2>&1
+	bash tools/docker_storage_inventory.sh --log-directory .log 
 
 .PHONY: docker_storage_inventory_postbuild
 docker_storage_inventory_postbuild:

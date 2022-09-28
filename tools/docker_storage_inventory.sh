@@ -74,12 +74,12 @@ last_log="${LOG_DIRECTORY}/$(cd "${LOG_DIRECTORY}" && ls -Art $LOG_FILE_PREFIX* 
 #echo "    current log: ${current_log}"
 #echo "    last log: ${last_log}"
 
-current_log_docker_storage_size=$(cat ${current_log} | sed ':a;N;$!ba;s/\n//g' | grep -Eo '"Size"[^,]*' | grep -Eo '[^:]*$' | grep "GB" | sed "s|GB||g" | sed "s|\"||g" | awk '{s+=$1} END {print s}')
-last_log_docker_storage_size=$(cat ${last_log} | sed ':a;N;$!ba;s/\n//g' | grep -Eo '"Size"[^,]*' | grep -Eo '[^:]*$' | grep "GB" | sed "s|GB||g" | sed "s|\"||g" | awk '{s+=$1} END {print s}')
+current_log_docker_storage_size=$(cat ${current_log} | sed ':a;N;$!ba;s/\n//g' | grep -Eo '"Size"[^,]*' | grep -Eo '[^:]*$' | grep "GB" | sed "s|GB||g" | sed "s|\"||g" | awk '{s+=$1} END {print s}' 2>/dev/null || echo 0 )
+last_log_docker_storage_size=$(cat ${last_log} | sed ':a;N;$!ba;s/\n//g' | grep -Eo '"Size"[^,]*' | grep -Eo '[^:]*$' | grep "GB" | sed "s|GB||g" | sed "s|\"||g" | awk '{s+=$1} END {print s}' 2> /dev/null || echo 0)
 
 #echo "    current log docker storage size: ${current_log_docker_storage_size}GB"
 #echo "    last log docker storage size: ${last_log_docker_storage_size}GB"
-docker_storage_size_delta=$(awk "BEGIN{ print $current_log_docker_storage_size - $last_log_docker_storage_size }")
+docker_storage_size_delta=$(awk "BEGIN{ print $current_log_docker_storage_size - $last_log_docker_storage_size }" 2> /dev/null || echo 0)
 echo "    docker storage size delta: ${docker_storage_size_delta}GB"
 sed -i "s|\]||g" "${current_log}"
 printf "{\"docker_storage_delta\":\"${docker_storage_size_delta}GB\", \"docker_storage_size_total\":\"${current_log_docker_storage_size}GB\"}\n" >> "${current_log}"
