@@ -28,7 +28,7 @@ TEST_SCENARIOS?=baseline_test.launch baseline_test.launch
 all: \
      docker_group_check \
      root_check \
-	 docker_storage_inventory_prebuild \
+     docker_storage_inventory_prebuild \
      start_apt_cacher_ng \
      build_adore_if_ros_msg\
      build_adore_v2x_sim \
@@ -38,7 +38,7 @@ all: \
      build_libadore \
      build_adore_if_ros \
      get_apt_cacher_ng_cache_statistics \
-	 docker_storage_inventory_postbuild \
+     docker_storage_inventory_postbuild \
      stop_apt_cacher_ng
 
 .PHONY: docker_storage_inventory_prebuild
