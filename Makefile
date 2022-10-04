@@ -12,6 +12,9 @@ MAKEFLAGS += --no-print-directory
 .EXPORT_ALL_VARIABLES:
 CATKIN_WORKSPACE_DIRECTORY=catkin_workspace
 
+DOCKER_IMAGE_CACHE_DIRECTORY=".docker_image_cache"
+DOCKER_IMAGE_SEARCH_PATH=${ROOT_DIR}
+
 DOCKER_BUILDKIT?=1
 COMPOSE_DOCKER_CLI_BUILD?=1 
 DOCKER_CONFIG?=$(shell realpath "${ROOT_DIR}")/apt_cacher_ng_docker
@@ -76,6 +79,13 @@ stop_apt_cacher_ng: ## Stop apt cacher ng service
 get_apt_cacher_ng_cache_statistics: ## returns the cache statistics for apt cahcer ng
 	@cd apt_cacher_ng_docker && \
 	make get_cache_statistics
+
+.PHONY: clean_apt_cacher_ng_cache
+clean_apt_cacher_ng_cache: ## Clean/delete apt cache
+	@cd apt_cacher_ng_docker && \
+	make clean
+
+
 
 .PHONY: submodules_update 
 submodules_update: # Updates submodules

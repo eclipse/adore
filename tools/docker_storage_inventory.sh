@@ -80,9 +80,11 @@ last_log_docker_storage_size=$(cat ${last_log} | sed ':a;N;$!ba;s/\n//g' | grep 
 #echo "    current log docker storage size: ${current_log_docker_storage_size}GB"
 #echo "    last log docker storage size: ${last_log_docker_storage_size}GB"
 docker_storage_size_delta=$(awk "BEGIN{ print $current_log_docker_storage_size - $last_log_docker_storage_size }" 2> /dev/null || echo 0)
+apt_cache_storage=$(cd "${SCRIPT_DIRECTORY}"/.. && du -hs apt_cacher_ng_docker/.cache | cut -f1 2> /dev/null || echo 0)
+
 echo "    docker storage size delta: ${docker_storage_size_delta}GB"
 sed -i "s|\]||g" "${current_log}"
-printf "{\"docker_storage_delta\":\"${docker_storage_size_delta}GB\", \"docker_storage_size_total\":\"${current_log_docker_storage_size}GB\"}\n" >> "${current_log}"
+printf "{\"docker_storage_delta\":\"${docker_storage_size_delta}GB\", \"docker_storage_size_total\":\"${current_log_docker_storage_size}GB\", \"apt_cache_storage\":\"${apt_cache_storage}\"}\n" >> "${current_log}"
 sed -i -r 's|}|},|g' "${current_log}" 
 sed -i -r 's|,,|},|g' "${current_log}" 
 sed -i -r 's|}}|}|g' "${current_log}" 
@@ -98,7 +100,10 @@ echo "            'docker system prune'"
 echo "            'docker docker builder prune'"
 echo "        review the official docker documentaiton for more info: https://docs.docker.com/config/pruning/ "
 echo ""
-
+echo "    Apt cacher ng currently using ${apt_cache_storage} of storage. Consider clearing unneeded cache."
+echo "        You can use the following make target to clear apt cache:"
+echo "            'make clean_apt_cacher_ng_cache'"
+echo ""
 
 
 
