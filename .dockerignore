@@ -15,3 +15,4 @@ catkin_workspace/
 **.log
 **.vagrant
 **.catkin_workspace
+**.docker_image_cache**

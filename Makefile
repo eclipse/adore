@@ -12,7 +12,7 @@ MAKEFLAGS += --no-print-directory
 .EXPORT_ALL_VARIABLES:
 CATKIN_WORKSPACE_DIRECTORY=catkin_workspace
 
-DOCKER_IMAGE_CACHE_DIRECTORY=".docker_image_cache"
+DOCKER_IMAGE_CACHE_DIRECTORY="${ROOT_DIR}/.docker_image_cache"
 DOCKER_IMAGE_SEARCH_PATH=${ROOT_DIR}
 
 DOCKER_BUILDKIT?=1
@@ -31,6 +31,7 @@ TEST_SCENARIOS?=baseline_test.launch baseline_test.launch
 all: \
      docker_group_check \
      root_check \
+     docker_conditional_load \
      docker_storage_inventory_prebuild \
      start_apt_cacher_ng \
      build_adore_if_ros_msg\
@@ -42,7 +43,8 @@ all: \
      build_adore_if_ros \
      get_apt_cacher_ng_cache_statistics \
      docker_storage_inventory_postbuild \
-     stop_apt_cacher_ng
+     stop_apt_cacher_ng \
+     save_docker_images \
 
 .PHONY: docker_storage_inventory_prebuild
 docker_storage_inventory_prebuild:
@@ -85,10 +87,8 @@ clean_apt_cacher_ng_cache: ## Clean/delete apt cache
 	@cd apt_cacher_ng_docker && \
 	make clean
 
-
-
 .PHONY: submodules_update 
-submodules_update: # Updates submodules
+submodules_update: # Updates git submodules
 	git submodule update --init --recursive
 
 .PHONY: build_adore_if_ros 
@@ -261,4 +261,13 @@ adore-cli_scenarios_run:
 adore-cli: adore-cli_setup adore-cli_start adore-cli_attach adore-cli_teardown ## Start an adore-cli context
 
 .PHONY: run_test_scenarios
-run_test_scenarios: adore-cli_setup adore-cli_start_headless adore-cli_scenarios_run adore-cli_teardown
+run_test_scenarios: adore-cli_setup adore-cli_start_headless adore-cli_scenarios_run adore-cli_teardown # run headless test scenarios
+
+.PHONY: save_docker_images
+save_docker_images:
+	@nohup make docker_save > /dev/null 2>&1 & #; #cd "${DOCKER_IMAGE_CACHE_DIRECTORY}" && \
+#    rm -f adore*.tar plotlab*.tar csaps*.tar libzmq*.tar v2x*.tar &
+
+.PHONY: clean_all_cache
+clean_all_cache:
+	echo todo

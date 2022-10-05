@@ -16,6 +16,8 @@ iso8601_datetime="$(date -u +"%Y-%m-%dT%H:%M:%SZ")"
 LOG_FILE_PREFIX="docker_storage_inventory"
 LOG_FILE_EXTENSION="json"
 
+DOCKER_IMAGE_CACHE_DIRECTORY="$(realpath "${SCRIPT_DIRECTORY}/../.docker_image_cache")"
+
 log_file="${LOG_FILE_PREFIX}_${iso8601_datetime}.${LOG_FILE_EXTENSION}"
 
 
@@ -82,9 +84,13 @@ last_log_docker_storage_size=$(cat ${last_log} | sed ':a;N;$!ba;s/\n//g' | grep 
 docker_storage_size_delta=$(awk "BEGIN{ print $current_log_docker_storage_size - $last_log_docker_storage_size }" 2> /dev/null || echo 0)
 apt_cache_storage=$(cd "${SCRIPT_DIRECTORY}"/.. && du -hs apt_cacher_ng_docker/.cache | cut -f1 2> /dev/null || echo 0)
 
+
+docker_image_cache_storage="$(du -h "${DOCKER_IMAGE_CACHE_DIRECTORY}" 2>/dev/null  | cut -f1 || echo 0)"
+
+
 echo "    docker storage size delta: ${docker_storage_size_delta}GB"
 sed -i "s|\]||g" "${current_log}"
-printf "{\"docker_storage_delta\":\"${docker_storage_size_delta}GB\", \"docker_storage_size_total\":\"${current_log_docker_storage_size}GB\", \"apt_cache_storage\":\"${apt_cache_storage}\"}\n" >> "${current_log}"
+printf "{\"docker_storage_delta\":\"${docker_storage_size_delta}GB\", \"docker_storage_size_total\":\"${current_log_docker_storage_size}GB\", \"apt_cache_storage\":\"${apt_cache_storage}\", \"docker_image_cache\":\"${docker_image_cache_storage}\"}\n" >> "${current_log}"
 sed -i -r 's|}|},|g' "${current_log}" 
 sed -i -r 's|,,|},|g' "${current_log}" 
 sed -i -r 's|}}|}|g' "${current_log}" 
@@ -99,6 +105,11 @@ echo "        You can use the following commands to clear docker system resource
 echo "            'docker system prune'"
 echo "            'docker docker builder prune'"
 echo "        review the official docker documentaiton for more info: https://docs.docker.com/config/pruning/ "
+echo ""
+echo "    Docker image cache located at: ${DOCKER_IMAGE_CACHE_DIRECTORY} is currently using: ${docker_image_cache_storage}." 
+echo "        Consider clearing unneeded docker image cache "
+echo "        You can clean or delete docker image cache with the provided make target: "
+echo "            'make clean_docker_image_cache'"
 echo ""
 echo "    Apt cacher ng currently using ${apt_cache_storage} of storage. Consider clearing unneeded cache."
 echo "        You can use the following make target to clear apt cache:"
