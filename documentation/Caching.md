@@ -53,7 +53,7 @@ The following are sources of docker cache:
 The following targets are provided for cleaning various sources of docker cache:
 ```
 docker_orbital_cannon: ## Deletes ALL docker images, volumes, build cache and containers.
-clean_docker: delete_dangling_images delete_all_build_cache ## Clean/delete all docker dangling images and build cache
+clean_docker: ## Clean/delete all docker dangling images and build cache
 delete_all_none_tags: ## Delete all docker orphaned/none tags
 delete_dangling_images: ## Delete all dangling images/tags
 delete_all_build_cache: ## Delete all docker builder cache
