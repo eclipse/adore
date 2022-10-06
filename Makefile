@@ -14,6 +14,9 @@ CATKIN_WORKSPACE_DIRECTORY=catkin_workspace
 
 DOCKER_IMAGE_CACHE_DIRECTORY="${ROOT_DIR}/.docker_image_cache"
 DOCKER_IMAGE_SEARCH_PATH=${ROOT_DIR}
+DOCKER_IMAGE_EXCLUSION_LIST?="adore_if_ros:latest adore_if_ros_msg:latest plotlablib:latest plotlabserver:latest plotlabserver_build:latest v2x_if_ros_msg:latest libzmq:latest csap-cpp:latest"
+
+
 
 DOCKER_BUILDKIT?=1
 COMPOSE_DOCKER_CLI_BUILD?=1 
@@ -31,6 +34,7 @@ TEST_SCENARIOS?=baseline_test.launch baseline_test.launch
 all: \
      docker_group_check \
      root_check \
+     clean \
      docker_conditional_load \
      docker_storage_inventory_prebuild \
      start_apt_cacher_ng \
