@@ -12,10 +12,11 @@ MAKEFLAGS += --no-print-directory
 .EXPORT_ALL_VARIABLES:
 CATKIN_WORKSPACE_DIRECTORY=catkin_workspace
 
+DOCKER_IMAGE_EXCLUSION_LIST="adore_if_ros:latest adore_if_ros_msg:latest plotlablib:latest plotlabserver:latest plotlabserver_build:latest v2x_if_ros_msg:latest libzmq:latest csaps-cpp:latest adore-cli:latest carlasim/carla:0.9.12"
+DOCKER_IMAGE_INCLUSION_LIST="edrevo/dockerfile-plus:latest"
+
 DOCKER_IMAGE_CACHE_DIRECTORY="${ROOT_DIR}/.docker_image_cache"
 DOCKER_IMAGE_SEARCH_PATH=${ROOT_DIR}
-DOCKER_IMAGE_EXCLUSION_LIST?="adore_if_ros:latest adore_if_ros_msg:latest plotlablib:latest plotlabserver:latest plotlabserver_build:latest v2x_if_ros_msg:latest libzmq:latest csap-cpp:latest"
-
 
 
 DOCKER_BUILDKIT?=1
@@ -48,7 +49,7 @@ all: \
      get_apt_cacher_ng_cache_statistics \
      docker_storage_inventory_postbuild \
      stop_apt_cacher_ng \
-     save_docker_images \
+     docker_save_images \
 
 .PHONY: docker_storage_inventory_prebuild
 docker_storage_inventory_prebuild:
@@ -58,7 +59,6 @@ docker_storage_inventory_prebuild:
 .PHONY: docker_storage_inventory_postbuild
 docker_storage_inventory_postbuild:
 	bash tools/docker_storage_inventory.sh --log-directory .log
-
 
 .PHONY: build
 build: all
@@ -267,10 +267,9 @@ adore-cli: adore-cli_setup adore-cli_start adore-cli_attach adore-cli_teardown #
 .PHONY: run_test_scenarios
 run_test_scenarios: adore-cli_setup adore-cli_start_headless adore-cli_scenarios_run adore-cli_teardown # run headless test scenarios
 
-.PHONY: save_docker_images
-save_docker_images:
-	@nohup make docker_save > /dev/null 2>&1 & #; #cd "${DOCKER_IMAGE_CACHE_DIRECTORY}" && \
-#    rm -f adore*.tar plotlab*.tar csaps*.tar libzmq*.tar v2x*.tar &
+.PHONY: docker_save_images
+docker_save_images:
+	@nohup make docker_save > /dev/null 2>&1 &
 
 .PHONY: clean_all_cache
 clean_all_cache:
