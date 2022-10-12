@@ -1,10 +1,10 @@
 # Caching
-The ADORe build system contains a number of sources of data caching.
-Data caching provides a number of benefits depending on context including speeding up building and rebuilding, as well 
-as, saving networking resources. The trade off for this is of course local disk usage.  
+The ADORe build system contains a number of sources of data caching. Data 
+caching provides several technical benefits depending on context including 
+speeding up building and rebuilding, as well as, saving networking resources. 
+The trade off for this is of course local disk usage.  
 
 Cache grows over time and can also become stale requiring cleaning and pruning. 
-
 The various sources of cache within ADORe will be discussed in the following sections.
 
 
@@ -53,11 +53,11 @@ The following are sources of docker cache:
 The following targets are provided for cleaning various sources of docker cache:
 ```
 docker_orbital_cannon: ## Deletes ALL docker images, volumes, build cache and containers.
-clean_docker: ## Clean/delete all docker dangling images and build cache
-delete_all_none_tags: ## Delete all docker orphaned/none tags
-delete_dangling_images: ## Delete all dangling images/tags
-delete_all_build_cache: ## Delete all docker builder cache
-system_prune: ## Prune the docker system
+docker_clean: ## Clean/delete all docker dangling images and build cache
+docker_delete_all_none_tags: ## Delete all docker orphaned/none tags
+docker_delete_dangling_images: ## Delete all dangling images/tags
+docker_delete_all_build_cache: ## Delete all docker builder cache
+docker_delete_system_prune: ## Prune the docker system
 ```
 There is a make target provided from the make_gadgets that will clean **all** docker related cache. You can call this
 target with the following command:
