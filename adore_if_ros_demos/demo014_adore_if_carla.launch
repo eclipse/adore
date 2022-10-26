@@ -26,7 +26,8 @@
         <!--Parameters-->
         <param name="PARAMS/tactical_planner/global_speed_limit" value="14" type="double"/>
         <param name="PARAMS/track" value="$(dirname)/../adore_if_carla/adore_if_carla/launch/Town10HD.xodr" type="str" />
-   <!--     <include ns="PARAMS" file="$(dirname)/adore_params_vehicle_independent.launch"/> -->
+        <include ns="PARAMS" file="$(dirname)/adore_params_vehicle_independent.launch"/>
+        <param name="PARAMS/local_road_map/navigation_active" value="false" type="bool" />
         <include ns="PARAMS" file="$(dirname)/adore_params_vehicle_cybertruck.launch"/>
         <node name="tracker" pkg="adore_if_ros" type="adore_feedbackcontroller_node"/>
         <node name="lmap" pkg="adore_if_ros" type="adore_mapprovider_node" cwd="ROS_HOME"/><!-- ROS_HOME is ~/.ros by default-->
