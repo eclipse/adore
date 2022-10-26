@@ -102,7 +102,7 @@ class Dashboard
             double axs = xs.getAx();
             double epsi = std::atan2(dypsi,dxpsi) * 180.0 / M_PI;
             double eomega = x_.getOmega()-xs.getOmega();
-            double delta = x_.getDelta() / pveh_->get_steeringRatio() * 180.0/M_PI;
+            double delta = x_.getDelta() * 180.0/M_PI;
             double deltas = xs.getDelta() * 180.0/M_PI;
             double deltafb = deltafb_ / pveh_->get_steeringRatio() * 180.0/M_PI;
             double tplot = t - t0_plot_;
