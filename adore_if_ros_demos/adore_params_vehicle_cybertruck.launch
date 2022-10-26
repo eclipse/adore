@@ -1,8 +1,4 @@
 <launch>
-  <group ns="adore_if_ibeo">
-    <param name="existance_probability_cutoff" value="0.05" type="double" />
-    <param name="size_cutoff" value="0.02" type="double" />
-  </group>
   <group ns="Vehicle">
     <param name="a" value="2.03" type="double" />  
     <param name="b" value="1.93" type="double" />  
@@ -23,15 +19,14 @@
     <param name="steeringAngleMin" value="-1.22173" type="double" />
     <param name="observationPointForPosition" value="0.0" type="double" />
   </group>
-
   <group ns="trajectory_tracking">
-    <param name="key" value="1.3" type="double" />  
-    <param name="kepsi" value="2.9" type="double" />  <!-- 2.9 -->
+    <param name="key" value="1.06" type="double" />   <!-- 0.86 -->
+    <param name="kepsi" value="0.5" type="double" />  <!-- 1.0 -->
     <param name="keomega" value="0.15" type="double" />  <!-- 0.15-->
-    <param name="kIy" value="0.09" type="double" /> 
-    <param name="kIx" value="0.0" type="double" />  
-    <param name="k0x" value="0.9" type="double" />  
-    <param name="k1x" value="1.6" type="double" />  
+    <param name="kIy" value="0.1" type="double" /> 
+    <param name="kIx" value="0.005" type="double" />  <!-- 0.05-->
+    <param name="k0x" value="1.0" type="double" /> <!-- 0.9--> 
+    <param name="k1x" value="2.0" type="double" />  
     <param name="muCtrlMax" value="1.0" type="double" />  
     <param name="axMax" value="2.0" type="double" />  
     <param name="axMin" value="-3.0" type="double" />  
@@ -39,7 +34,7 @@
     <param name="eyStatic" value="0.0" type="double" />  
     <param name="deltaMax" value="1.5" type="double" />  
     <param name="deltaMin" value="-1.5" type="double" />  
-    <param name="dDeltaMax" value="0.5" type="double" />  
+    <param name="dDeltaMax" value="0.8" type="double" />  
     <param name="brakingTorqueGain" value="0.0" type="double" />  
     <param name="dBrakingTorqueMax" value="0.0" type="double" />
     <param name="kPev_r" value="0.0" type="double" />
@@ -51,79 +46,6 @@
     <param name="kIepsi_r" value="0.0" type="double" />
   </group>
   <group ns="trajectory_generation">
-    <param name="rho" value="3.0" type="double" />  <!--2.2-->
-    <param name="zd_integration_length" value="9.0" type="double" />  
-    <param name="zd_integration_step" value="0.01" type="double" />  
-    <param name="set_point_count" value="100" type="int" />
-    <param name="emergency_maneuver_delay" value="0.75" type="double" />  
-  </group>
-  <group ns="tactical_planner">
-    <param name="global_speed_limit" value="20" type="double" />  
-    <param name="reset_radius" value="5.0" type="double" />  
-    <param name="acc_lat_ub" value="2.0" type="double" />  
-    <param name="acc_lat_ub_min_vel" value="3.0" type="double" />  
-    <param name="acc_lon_ub" value="2.0" type="double" />
-    <param name="acc_lon_lb" value="-3.0" type="double" />  
-    <param name="front_time_gap" value="0.9" type="double" />  
-    <param name="rear_time_gap" value="0.9" type="double" />  
-    <param name="front_s_gap" value="6.0" type="double" />  
-    <param name="rear_s_gap" value="2.0" type="double" />  
-    <param name="chase_reference_offset" value="0.0" type="double" />  
-    <param name="lead_reference_offset" value="0.0" type="double" />  
-    <param name="front_reference_offset" value="0.0" type="double" />  
-    <param name="gap_alignment" value="0.5" type="double" />  
-  </group>
-  <group ns="longitudinal_planner">
-    <param name="weight_pos" value="2.0" type="double" />  
-    <param name="weight_vel" value="5.0" type="double" />  
-    <param name="weight_acc" value="5.0" type="double" />  
-    <param name="weight_jerk" value="10000.0" type="double" />  
-    <param name="weight_end_pos" value="0.0" type="double" />  
-    <param name="weight_end_vel" value="0.0" type="double" />  
-    <param name="weight_end_acc" value="0.0" type="double" />  
-    <param name="slack_pos" value="0.5" type="double" />  
-    <param name="slack_vel" value="0.01" type="double" />  
-    <param name="slack_acc" value="5.0" type="double" />  
-    <param name="acc_lb" value="-2.5" type="double" />  
-    <param name="acc_ub" value="1.2" type="double" />  
-    <param name="comf_acc_lb" value="-1.0" type="double" />  
-    <param name="comf_acc_ub" value="1.0" type="double" />  
-    <param name="jerk_lb" value="-100.0" type="double" />  
-    <param name="jerk_ub" value="100.0" type="double" />  
-    <param name="acc_lat_ub" value="2.0" type="double" />  
-    <param name="acc_lat_ub_min_velocity" value="1.0" type="double" />
-    <param name="constraint_clearance_pos" value="0.1" type="double" />
-    <param name="constraint_clearance_vel" value="0.05" type="double" />
-    <param name="min_width_stop" value="2.2" type="double" />
-    <param name="min_width_slow" value="2.5" type="double" />
-    <param name="min_width_slow_speed" value="2.0" type="double" />
-    <param name="min_width_fast" value="3.7" type="double" />
-    <param name="min_width_fast_speed" value="12.0" type="double" />
-    <param name="max_cpu_time" value="0.05" type="double" />
-  </group>
-  <group ns="lateral_planner">
-    <param name="weight_pos" value="1.5" type="double" />  
-    <param name="weight_vel" value="1.0" type="double" />  
-    <param name="weight_acc" value="1.5" type="double" />  
-    <param name="weight_jerk" value="1.5" type="double" />  
-    <param name="weight_end_pos" value="0.0" type="double" />  
-    <param name="weight_end_vel" value="0.0" type="double" />  
-    <param name="weight_end_acc" value="0.0" type="double" />  
-    <param name="slack_pos" value="0.1" type="double" />  
-    <param name="slack_vel" value="0.1" type="double" />  
-    <param name="slack_acc" value="0.1" type="double" />  
-    <param name="acc_lb" value="-10.0" type="double" />  
-    <param name="acc_ub" value="10.0" type="double" />  
-    <param name="jerk_lb" value="-100.0" type="double" />  
-    <param name="jerk_ub" value="100.0" type="double" />  
-    <param name="curvature_ub" value="0.5" type="double" />  
-    <param name="curvature_lb" value="-0.5" type="double" />
-    <param name="relative_heading_ub" value="1." type="double" />
-    <param name="relative_heading_lb" value="-1." type="double" />
-    <param name="hard_safety_distance_to_lane_boundary" value="0.15" type="double" />
-    <param name="soft_safety_distance_to_lane_boundary" value="0.3" type="double" />
-    <param name="minimum_lateral_control_space" value="0.15" type="double" />
-    <param name="merge_constraint_delay" value="-1.0" type="double" />
-    <param name="max_cpu_time" value="0.05" type="double" />
+    <param name="rho" value="3.96" type="double" />  
   </group>
 </launch>
