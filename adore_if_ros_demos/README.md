@@ -269,7 +269,7 @@ In order to run this demo, the adore_if_carla package needs to be built. Further
 To start the demo, the following steps need to be performed:
 1. build adore_if_carla by typing "make" in the adore_if_carla directory
 2. start CARLA by typing "docker compose up carla" in the adore_if_carla directory
-3. start the CARLA-ros-bridge by typing "docker compose up carla-ros-bridge" in the adore_if_carla directory
+3. start the CARLA-ros-bridge by typing "xhost local:root; docker compose up carla-ros-bridge" in the adore_if_carla directory
 4. start the adore_if_carla applications by typing "docker compose up adore_if_carla" in the adore_if_carla directory
 5. start the [demo014_adore_if_carla.launch](demo014_adore_if_carla.launch) of adore_if_ros_demos
 
