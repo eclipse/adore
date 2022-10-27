@@ -36,5 +36,5 @@ In order to get started, it is advised to first check system requirements, follo
 - [System requirements](documentation/system_requirements.md)
 - [Installation and getting started](documentation/getting_started.md)
 - [Executable ROS demo scenarios](adore_if_ros_demos)
-- [Manual]()
+- [Manual](documentation/technical_documentation/manual.md)
 - [How to contribute](CONTRIBUTING.md)

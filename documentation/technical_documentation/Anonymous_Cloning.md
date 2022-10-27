@@ -1,3 +1,4 @@
+<!--
 title:      Anonymous Cloning
 desc:       This article provides a technical guide for anonymous git cloning of ADORe.
 date:       ${DOC_DATETIME}
@@ -6,6 +7,7 @@ template:   document
 nav:        Technical Documentation __4__>Anonymous Cloning __1__
 percent:    100
 authors:    opensource-ts@dlr.de
+-->
            
 # Anonymous Cloning
 In order to make development more friendly nearly all git submodules are 

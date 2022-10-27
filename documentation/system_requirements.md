@@ -1,18 +1,25 @@
-title:      System Requirements
-desc:       This guild offers a starting point for building ADORe and running a test scenario.
-date:       ${DOC_DATETIME}
-version:    ${DOC_VERSION}
-template:   document
-nav:        System Requirements __3__
-percent:    100
-authors:    opensource-ts@dlr.de
+<!--
+********************************************************************************
+* Copyright (C) 2017-2020 German Aerospace Center (DLR). 
+* Eclipse ADORe, Automated Driving Open Research https://eclipse.org/adore
+*
+* This program and the accompanying materials are made available under the 
+* terms of the Eclipse Public License 2.0 which is available at
+* http://www.eclipse.org/legal/epl-2.0.
+*
+* SPDX-License-Identifier: EPL-2.0 
+*
+* Contributors: 
+*   Andrew Koerner
+*   Daniel Heß 
+********************************************************************************
+-->
 
 # ADORe System Requirements
 - CPU: Intel CORE i7 7700K or equivalent/better
   - The more cores you have, the more trajectory planners you can run in parallel.
-  - Building speeds up with more cores.
-- No specific graphics card required as basically everything (except plotting) runs on CPU
-- RAM: Min 8GB for execution. Building is better with 16+GB.
+- No specific graphics card is required as everything (except plotting) runs on the CPU
+- RAM: Min 8GB for execution. Compilation process is faster with 16+GB.
 - HDD storage
   - at least 2.5 GB to clone the repository
   - at least 15 GB to build all necessary docker context
