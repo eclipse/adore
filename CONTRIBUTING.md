@@ -12,12 +12,9 @@
 -->
 ## We welcome your contribution!
 Currently ADORe is a small project and yout can contact us with any question or feedback at [adore-dev@eclipse.org](mailto:adore-dev@eclipse.org).
-
-
 If you have ideas for extensions or want to change or fix anything:
-
+* Open an issue on github.
 * Create a fork of the github project.
 * Develop the feature/patch and check the [developer guide](documentation/developer_guide.md)
   for details.
 * Provide a merge request.
-* If it is the first time that you contribute, please don't forget to add yourself to the list of contributors in the [README](README.md).

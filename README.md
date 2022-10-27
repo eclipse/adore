@@ -22,7 +22,7 @@ Building and execution occurs in docker containers. ADORe provides:
 - Mechanisms for safe interaction with other CAVs, infrastructure, traffic management, interactions with human-driven vehicles, bicyclists, pedestrians
 - Integration with typical tools and formats such as ROS, [SUMO](https://github.com/eclipse/sumo), CARLA, OpenDrive, Road2Simulation, ITS-G5 V2X (MAPEM, SPATEM, DENM, MCM, SREM)
 
-# Architecture overview
+# Overview
 An ADORe control system works in concert with a perception stack (not provided) to control an autonomous vehicle platform.
 Using V2X radio messages, a list of detected objects and ego vehicle position and velocity, the ADORe control system provides control inputs to a vehicle platform in order to steer it along a given high-definition roadmap to the desired goal location.
 ![ADORe architectural overview](https://github.com/DLR-TS/adore_support/blob/master/documentation/adore_overview_v03_20221027.png?raw=true)
@@ -36,3 +36,5 @@ In order to get started, it is advised to first check system requirements, follo
 - [System requirements](documentation/system_requirements.md)
 - [Installation and getting started](documentation/getting_started.md)
 - [Executable ROS demo scenarios](adore_if_ros_demos)
+- [Manual]()
+- [How to contribute](CONTRIBUTING.md)
