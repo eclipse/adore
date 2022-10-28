@@ -30,7 +30,7 @@
   13. [ROS-bag replays](system_and_development/rosbag_replay.md)
   13. [Documentation](system_and_development/howto_document.md) <!--how the autogeneration repo/.md to gh-pages/.html works-->
 ## Interfaces
-  1. [ROS integration](interfaces/ros_integration.md) <!--adore_if_ros and adore_if_ros_msg-->
+  1. [ROS](interfaces/ros_integration.md) <!--adore_if_ros and adore_if_ros_msg-->
   2. [Perception](interfaces/perception.md) <!--what is required from perception?-->
   3. [Vehicle Platform](interfaces/vehicle_platform.md) <!--data exchange with base vehicle-->
   4. [V2X messages](interfaces/v2x_messages.md) <!--adore_if_v2x, adore_v2x_sim, v2x_if_ros-->
