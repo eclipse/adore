@@ -10,6 +10,7 @@
 * SPDX-License-Identifier: EPL-2.0 
 *
 * Contributors: 
+* Daniel Heß
 ********************************************************************************
 -->
 ## ADORe interfacing with ROS
@@ -34,3 +35,5 @@ The concrete factories in adore_if_ros, ```envfactory.h```, ```funfactory.h``` a
 ### Parameters
 The abstract factory defined in ```adore/params/afactory.h``` is realized by ```adore_if_ros/paramsfactory.h```: The concrete instances define parameter paths and names used in the ROS environment and query the parameter server.
 
+### ROS Namespaces
+ADORe discriminates namespaces of multiple vehicles. Nodes, communication topics and parameters of a given vehicle are grouped in a collective namespace, for example ```/vehicle0/```. This allows to simulate multiple autonomous vehicles in the same namespace. An arbitrary namespace can be given to each vehicle, but it must be distinct. The namespace ```/SIM``` is reserved for simulation data, meaning the ground truth of the simulation. Accordingly the topic ```/SIM/traffic``` will contain all participant's error-free states, while ```/vehicle0/traffic``` contains observations of vehicle0 about other traffic participants. Similarly ``` /SIM/v2x``` contains all transmitted V2X messages and ```/vehicle0/v2x/incoming``` contains messages received by vehicle0.
