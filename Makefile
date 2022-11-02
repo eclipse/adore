@@ -238,3 +238,6 @@ adore-cli: adore-cli_setup adore-cli_start adore-cli_attach adore-cli_teardown #
 
 .PHONY: run_test_scenarios
 run_test_scenarios: adore-cli_setup adore-cli_start_headless adore-cli_scenarios_run adore-cli_teardown
+
+.PHONY: run_scenarios
+run_scenarios: adore-cli_setup adore-cli_start adore-cli_scenarios_run adore-cli_teardown
