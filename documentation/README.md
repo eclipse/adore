@@ -14,3 +14,7 @@
 -->
 # Documentation
 Markdown files for documentation and related content.
+1. [Technical Documentation: Manual](technical_documentation)
+2. [Getting started](getting_started.md)
+3. [System requirements](system_requirements.md)
+4. Software Documentation (Doxygen): ```./generate_docs.bash```
