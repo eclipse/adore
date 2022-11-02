@@ -217,10 +217,10 @@
     <param name="k_e_vy" value="0.01" type="double" />
     <param name="k_e_omega" value="0.01" type="double" />
     <param name="k_e_ax" value="0.01" type="double" /> -->
-    <param name="k_e_vx" value="0.02" type="double" />
-    <param name="k_e_vy" value="0.02" type="double" />
-    <param name="k_e_omega" value="0.05" type="double" />
-    <param name="k_e_ax" value="0.05" type="double" />
+    <param name="k_e_vx" value="0.0" type="double" />
+    <param name="k_e_vy" value="0.0" type="double" />
+    <param name="k_e_omega" value="0.0" type="double" />
+    <param name="k_e_ax" value="0.0" type="double" />
   </group>
   <group ns="LocalizationModel">
     <!-- <param name="drift_rate_pos" value="0.01" type="double" />

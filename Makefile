@@ -265,7 +265,10 @@ adore-cli_scenarios_run:
 adore-cli: adore-cli_setup adore-cli_start adore-cli_attach adore-cli_teardown ## Start an adore-cli context
 
 .PHONY: run_test_scenarios
-run_test_scenarios: adore-cli_setup adore-cli_start_headless adore-cli_scenarios_run adore-cli_teardown # run headless test scenarios
+run_test_scenarios: adore-cli_setup adore-cli_start_headless adore-cli_scenarios_run adore-cli_teardown
+
+.PHONY: run_scenarios
+run_scenarios: adore-cli_setup adore-cli_start adore-cli_scenarios_run adore-cli_teardown
 
 .PHONY: docker_save_images
 docker_save_images:
@@ -274,3 +277,4 @@ docker_save_images:
 .PHONY: clean_all_cache
 clean_all_cache:
 	echo todo
+
