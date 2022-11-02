@@ -26,15 +26,18 @@
         <!--Parameters-->
         <param name="PARAMS/tactical_planner/global_speed_limit" value="14" type="double"/>
         <param name="PARAMS/track" value="$(dirname)/../adore_if_carla/adore_if_carla/launch/Town10HD.xodr" type="str" />
-        
-
         <include ns="PARAMS" file="$(dirname)/adore_params_vehicle_independent.launch"/>
-        <include ns="PARAMS" file="$(dirname)/adore_params_vehicle_fascare.launch"/>
-        <param name="PARAMS/local_road_map/navigation_active" value="false" type="bool"/>
+        <param name="PARAMS/lateral_planner/weight_pos" value="1.0" type="double" />  
+        <param name="PARAMS/local_road_map/navigation_active" value="false" type="bool" />
+        <include ns="PARAMS" file="$(dirname)/adore_params_vehicle_cybertruck.launch"/>
         <node name="tracker" pkg="adore_if_ros" type="adore_feedbackcontroller_node"/>
         <node name="lmap" pkg="adore_if_ros" type="adore_mapprovider_node" cwd="ROS_HOME"/><!-- ROS_HOME is ~/.ros by default-->
-        <node name="planner" pkg="adore_if_ros" type="adore_lfbehavior_node"/>
-        <node name="lvprovider" pkg="adore_if_ros" type="adore_lvprovider_node"/>
+        <node name="lnav" pkg="adore_if_ros" type="adore_navigation_node" cwd="ROS_HOME"/>  
+        <node name="planner" pkg="adore_if_ros" type="adore_lfbehavior_node" output="screen"/>
+        <node name="lvprovider" pkg="adore_if_ros" type="adore_lvprovider_node" output="screen"/>
+
+        <node name="dash" pkg="adore_if_ros" type="test_control_dashboard"/>
+        <node name="plot_traj" pkg="adore_if_ros" type="plot_trajectories_node"/>
     </group>
 
 </launch>
