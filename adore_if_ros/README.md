@@ -12,8 +12,8 @@
 * Contributors: 
 ********************************************************************************
 -->
-# libadore
-The core library of adore, project folder. Content can be found in subfolder [libadore](libadore).
+# adore_if_ros
+The adore ros interface, project folder. Content can be found in subfolder [adore_if_ros](adore_if_ros).
 
 ## Getting Started
 This module requires **make** and **docker** installed and configured for your user.
