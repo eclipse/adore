@@ -12,20 +12,9 @@
 * Contributors: 
 ********************************************************************************
 -->
-# libadore
-The core library of adore, project folder. Content can be found in subfolder [libadore](libadore).
-
-## Getting Started
-This module requires **make** and **docker** installed and configured for your user.
-
-### Building
-To build libadore run the following:
-```bash
-make
-```
-
-### Testing
-To run unit tests run the following target:
-```bash 
-make test
-```
+# Documentation
+Markdown files for documentation and related content.
+1. [Technical Documentation: Manual](technical_documentation)
+2. [Getting started](getting_started.md)
+3. [System requirements](system_requirements.md)
+4. Software Documentation (Doxygen): ```./generate_docs.bash```
