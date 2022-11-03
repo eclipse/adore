@@ -1,4 +1,5 @@
 include make_gadgets/Makefile
+include make_gadgets/docker/Makefile
 include cppcheck_docker/Makefile.cppcheck_target
 include cpplint_docker/Makefile.cpplint_target
 include lizard_docker/Makefile.lizard_target
@@ -13,7 +14,6 @@ MAKEFLAGS += --no-print-directory
 .EXPORT_ALL_VARIABLES:
 DOCKER_BUILDKIT?=1
 DOCKER_CONFIG?=
-
 
 CMAKE_PREFIX_PATH?=$(shell realpath "$$(find . -name install | grep "install" | grep -e "install/\|CPack" -v)" | tr '\n' ';') 
 

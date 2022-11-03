@@ -1,4 +1,5 @@
 include make_gadgets/Makefile
+include make_gadgets/docker/Makefile
 include cppcheck_docker/Makefile.cppcheck_target
 include cpplint_docker/Makefile.cpplint_target
 include lizard_docker/Makefile.lizard_target

@@ -5,4 +5,4 @@ Makefile
 **.lizard_report.xml
 **_report.log
 **_docker
-make_gadgets
+**make_gadgets
