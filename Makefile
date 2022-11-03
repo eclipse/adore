@@ -21,7 +21,8 @@ DOCKER_IMAGE_SEARCH_PATH=${ROOT_DIR}
 
 DOCKER_BUILDKIT?=1
 COMPOSE_DOCKER_CLI_BUILD?=1 
-DOCKER_CONFIG?=$(shell realpath "${ROOT_DIR}")/apt_cacher_ng_docker
+DOCKER_CONFIG:=$(shell realpath "${ROOT_DIR}")/apt_cacher_ng_docker
+
 
 DOCKER_GID := $(shell getent group | grep docker | cut -d":" -f3)
 USER := $(shell whoami)
@@ -139,14 +140,18 @@ test:
 lint_sumo_if_ros:
 	cd sumo_if_ros && make lint
 
+.PHONY: bla
+bla:
+	cd adore_if_ros && make lint
+
 .PHONY: lint 
 lint: ## Run linting for all modules
 	mkdir -p .log
 	find . -name "**lint_report.log" -exec rm -rf {} \;
 	EXIT_STATUS=0; \
+        (cd adore_if_ros && make lint) || EXIT_STATUS=$$? && \
         (cd sumo_if_ros && make lint) || EXIT_STATUS=$$? && \
         (cd libadore && make lint) || EXIT_STATUS=$$? && \
-        (cd adore_if_ros && make lint) || EXIT_STATUS=$$? && \
 	    find . -name "**lint_report.log" -print0 | xargs -0 -I {} mv {} .log/ && \
         exit $$EXIT_STATUS
  
@@ -155,9 +160,9 @@ lizard: ## Run lizard static analysis tool for all modules
 	mkdir -p .log
 	find . -name "**lizard_report.**" -exec rm -rf {} \;
 	EXIT_STATUS=0; \
-        (cd sumo_if_ros && make lizard) || EXIT_STATUS=$$? && \
         (cd libadore && make lizard) || EXIT_STATUS=$$? \ && \
         (cd adore_if_ros && make lizard) || EXIT_STATUS=$$? && \
+        (cd sumo_if_ros && make lizard) || EXIT_STATUS=$$? && \
 	    find . -name "**lizard_report.**" -print0 | xargs -0 -I {} mv {} .log/ && \
         exit $$EXIT_STATUS
 
@@ -166,9 +171,9 @@ cppcheck: ## Run cppcheck static checking tool for all modules.
 	mkdir -p .log
 	find . -name "**cppcheck_report.log" -exec rm -rf {} \;
 	EXIT_STATUS=0; \
-        (cd sumo_if_ros && make cppcheck) || EXIT_STATUS=$$? && \
         (cd libadore && make cppcheck) || EXIT_STATUS=$$? && \
         (cd adore_if_ros && make cppcheck) || EXIT_STATUS=$$? && \
+        (cd sumo_if_ros && make cppcheck) || EXIT_STATUS=$$? && \
 	    find . -name "**cppcheck_report.log" -print0 | xargs -0 -I {} mv {} .log/ && \
         exit $$EXIT_STATUS
 
