@@ -140,12 +140,8 @@ test:
 lint_sumo_if_ros:
 	cd sumo_if_ros && make lint
 
-.PHONY: bla
-bla:
-	cd adore_if_ros && make lint
-
 .PHONY: lint 
-lint: ## Run linting for all modules
+lint: start_apt_cacher_ng## Run linting for all modules
 	mkdir -p .log
 	find . -name "**lint_report.log" -exec rm -rf {} \;
 	EXIT_STATUS=0; \
@@ -156,7 +152,7 @@ lint: ## Run linting for all modules
         exit $$EXIT_STATUS
  
 .PHONY: lizard 
-lizard: ## Run lizard static analysis tool for all modules
+lizard: start_apt_cacher_ng## Run lizard static analysis tool for all modules
 	mkdir -p .log
 	find . -name "**lizard_report.**" -exec rm -rf {} \;
 	EXIT_STATUS=0; \
@@ -167,7 +163,7 @@ lizard: ## Run lizard static analysis tool for all modules
         exit $$EXIT_STATUS
 
 .PHONY: cppcheck 
-cppcheck: ## Run cppcheck static checking tool for all modules.
+cppcheck: start_apt_cacher_ng## Run cppcheck static checking tool for all modules.
 	mkdir -p .log
 	find . -name "**cppcheck_report.log" -exec rm -rf {} \;
 	EXIT_STATUS=0; \
