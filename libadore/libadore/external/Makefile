@@ -4,7 +4,7 @@ SHELL:=/bin/bash
 
 .PHONY: build
 
-ROOT_DIR:=$(shell dirname $(realpath $(firstword $(MAKEFILE_LIST))))
+ROOT_DIR:=$(shell dirname "$(realpath $(firstword $(MAKEFILE_LIST)))")
 
 .EXPORT_ALL_VARIABLES:
 DOCKER_BUILDKIT?=1
@@ -18,7 +18,7 @@ DLIB_VERSION=v19.19
 DLIB_TAG="${DLIB_PROJECT}:${DLIB_VERSION}"
 CATCH2_PROJECT="Catch2"
 CATCH2_VERSION="v2.10.2"
-CATCH2_TAG="${CATCH2_PROJECT}:${CATCH2_VERSION}"
+CATCH2_TAG="catch2:${CATCH2_VERSION}"
 OSQP_PROJECT="osqp"
 OSQP_VERSION="latest"
 OSQP_TAG="${OSQP_PROJECT}:${OSQP_VERSION}"
@@ -73,10 +73,9 @@ build:
 	docker cp $$(docker create --rm $(shell echo ${TAG} | tr A-Z a-z)):/tmp/${PROJECT}/build ${PROJECT}
 
 clean:
-	rm -rf "${ROOT_DIR}/*/build"
-	rm -rf "${ROOT_DIR}/tmp"
-	docker rm $$(docker ps -a -q --filter "ancestor=${XODR_TAG}") 2> /dev/null || true
-	docker rmi $$(docker images -q ${XODR_TAG}) 2> /dev/null || true
+	cd "${ROOT_DIR}" && rm -rf $$(find . -name build -type d)
+	docker rm $$(docker ps -a -q --filter "ancestor=${OSQP_TAG}") 2> /dev/null || true
+	docker rmi $$(docker images -q ${OSQP_TAG}) 2> /dev/null || true
 	docker rm $$(docker ps -a -q --filter "ancestor=${QPOASES_TAG}") 2> /dev/null || true
 	docker rmi $$(docker images -q ${QPOASES_TAG}) 2> /dev/null || true
 	docker rm $$(docker ps -a -q --filter "ancestor=${DLIB_TAG}") 2> /dev/null || true
@@ -85,3 +84,5 @@ clean:
 	docker rmi $$(docker images -q ${CSAPS_CPP_PROJECT}) 2> /dev/null || true
 	docker rm $$(docker ps -a -q --filter "ancestor=${CATCH2_TAG}") 2> /dev/null || true
 	docker rmi $$(docker images -q ${CATCH2_TAG}) 2> /dev/null || true
+	cd csaps-cpp && make clean
+	cd xodr && make clean

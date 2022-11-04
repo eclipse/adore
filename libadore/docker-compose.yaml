@@ -1,6 +1,19 @@
 version: '3.4'
 
 services:
+
+  libadore_build:
+    image: libadore_build:latest
+    container_name: libadore_build
+    hostname: libadore_build
+    build:
+      context: .
+      network: host
+      dockerfile: Dockerfile.libadore.build
+      args:
+        PROJECT: libadore
+        CMAKE_PREFIX_PATH: ${CMAKE_PREFIX_PATH:-}
+  
   libadore:
     image: libadore:latest
     container_name: libadore
@@ -14,17 +27,6 @@ services:
       args:
         PROJECT: libadore
 
-  libadore_build:
-    image: libadore_build:latest
-    container_name: libadore_build
-    hostname: libadore_build
-    build:
-      context: .
-      network: host
-      dockerfile: Dockerfile.libadore.build
-      args:
-        PROJECT: libadore
-        CMAKE_PREFIX_PATH: ${CMAKE_PREFIX_PATH:-}
   libadore_test:
     image: libadore_test:latest
     container_name: libadore_test

@@ -1,18 +1,21 @@
 include make_gadgets/Makefile
+include make_gadgets/docker/Makefile
+include cppcheck_docker/Makefile.cppcheck_target
+include cpplint_docker/Makefile.cpplint_target
+include lizard_docker/Makefile.lizard_target
 
 SHELL:=/bin/bash
 
 .DEFAULT_GOAL := all
 
-ROOT_DIR:=$(shell dirname $(realpath $(firstword $(MAKEFILE_LIST))))
+ROOT_DIR:=$(shell dirname "$(realpath $(firstword $(MAKEFILE_LIST)))")
 MAKEFLAGS += --no-print-directory
 
 .EXPORT_ALL_VARIABLES:
 DOCKER_BUILDKIT?=1
 DOCKER_CONFIG?=
 
-
-CMAKE_PREFIX_PATH?=$(shell realpath $$(find . -name install | grep "install" | grep -e "install/\|CPack" -v) | tr '\n' ';') 
+CMAKE_PREFIX_PATH?=$(shell realpath "$$(find . -name install | grep "install" | grep -e "install/\|CPack" -v)" | tr '\n' ';') 
 
 .PHONY: set_mode 
 set_mode:
@@ -31,7 +34,7 @@ all: root_check docker_group_check build
 
 .PHONY: build 
 build: set_mode ## Build adore_if_ros
-	rm -rf ${PROJECT}/build
+	rm -rf "${PROJECT}/build"
 	cd adore_if_ros_msg && \
 	make
 	cd plotlablib && \
@@ -40,14 +43,14 @@ build: set_mode ## Build adore_if_ros
                  --network host \
                  --build-arg DEBUG="${DEBUG}" \
                  --build-arg PROJECT=${PROJECT} .
-	mkdir -p "${ROOT_DIR}/tmp/${PROJECT}/build"
-	docker cp $$(docker create --rm $(shell echo ${TAG} | tr A-Z a-z)):/tmp/${PROJECT}/${PROJECT}/build tmp/${PROJECT}/build
-	cp -r "${ROOT_DIR}/tmp/${PROJECT}/build/build" "${ROOT_DIR}/${PROJECT}"
-	rm -rf ${ROOT_DIR}/tmp
+	docker cp $$(docker create --rm $(shell echo ${TAG} | tr A-Z a-z)):/tmp/${PROJECT}/${PROJECT}/build ${PROJECT}
 
 .PHONY: clean 
 clean:
 	rm -rf "${ROOT_DIR}/${PROJECT}/build"
+	find . -name "**lint_report.log" -exec rm -rf {} \;
+	find . -name "**cppcheck_report.log" -exec rm -rf {} \;
+	find . -name "**lizard_report.xml" -exec rm -rf {} \;
 	docker rm $$(docker ps -a -q --filter "ancestor=${TAG}") 2> /dev/null || true
 	docker rmi $$(docker images -q ${TAG}) 2> /dev/null || true
 	docker rmi ${TAG} --force 2> /dev/null
@@ -56,30 +59,8 @@ clean:
 clean_docker:
 	docker rmi $$(docker images --filter "dangling=true" -q) --force
 
-.PHONY: lint 
-lint:
-	cd cpplint && \
-        make lint CPP_PROJECT_DIRECTORY=$(realpath ${ROOT_DIR}/adore_if_ros)
-
-.PHONY: lintfix 
-lintfix:
-	cd cpplint && \
-        make lintfix CPP_PROJECT_DIRECTORY=$(realpath ${ROOT_DIR}/adore_if_ros)
-
-.PHONY: lintfix_simulate 
-lintfix_simulate:
-	cd cpplint && \
-        make lintfix_simulate CPP_PROJECT_DIRECTORY=$(realpath ${ROOT_DIR}/adore_if_ros)
-
-.PHONY: cppcheck 
-cppcheck:
-	cd cppcheck && \
-        make cppcheck CPP_PROJECT_DIRECTORY=$(realpath ${ROOT_DIR}/adore_if_ros); echo "error code $${?}"
-
-.PHONY: lizard 
-lizard:
-	cd lizard && \
-        make lizard CPP_PROJECT_DIRECTORY=$(realpath ${ROOT_DIR}/adore_if_ros); echo "error code $${?}"
+.PHONY: static_checks
+static_checks: lint lizard cppcheck
 
 .PHONY: build_docker_layers 
 build_docker_layers:

@@ -27,39 +27,9 @@
 [submodule "adore_if_ros/adore_if_ros_msg"]
 	path = adore_if_ros/adore_if_ros_msg
 	url = git@github.com:dlr-ts/adore_if_ros_msg
-[submodule "adore_if_ros/cppcheck"]
-	path = adore_if_ros/cppcheck
-	url = git@github.com:dlr-ts/cppcheck_docker
-	ignore = untracked
-	shallow = true
-[submodule "adore_if_ros/cpplint"]
-	path = adore_if_ros/cpplint
-	url = git@github.com:dlr-ts/cpplint_docker
-	ignore = untracked
-	shallow = true
-[submodule "adore_if_ros/lizard"]
-	path = adore_if_ros/lizard
-	url = git@github.com:dlr-ts/lizard_docker
-	ignore = untracked
-	shallow = true
 [submodule "adore_if_ros/plotlablib"]
 	path = adore_if_ros/plotlablib
 	url = git@github.com:dlr-ts/plotlablib
-[submodule "libadore/cppcheck"]
-	path = libadore/cppcheck
-	url = git@github.com:dlr-ts/cppcheck_docker
-	ignore = untracked
-	shallow = true
-[submodule "libadore/cpplint"]
-	path = libadore/cpplint
-	url = git@github.com:dlr-ts/cpplint_docker
-	ignore = untracked
-	shallow = true
-[submodule "libadore/lizard"]
-	path = libadore/lizard
-	url = git@github.com:dlr-ts/lizard_docker
-	ignore = untracked
-	shallow = true
 [submodule "libadore/libadore/external/Catch2"]
 	path = libadore/libadore/external/Catch2
 	url = git@github.com:catchorg/Catch2
@@ -98,4 +68,28 @@
 [submodule "adore_if_ros/make_gadgets"]
 	path = adore_if_ros/make_gadgets
 	url = git@github.com:DLR-TS/make_gadgets.git
+	branch = master
+[submodule "adore_if_ros/cppcheck_docker"]
+	path = adore_if_ros/cppcheck_docker
+	url = git@github.com:DLR-TS/cppcheck_docker.git
+	branch = master
+[submodule "adore_if_ros/lizard_docker"]
+	path = adore_if_ros/lizard_docker
+	url = git@github.com:DLR-TS/lizard_docker.git
+	branch = master
+[submodule "adore_if_ros/cpplint_docker"]
+	path = adore_if_ros/cpplint_docker
+	url = git@github.com:DLR-TS/cpplint_docker.git
+	branch = master
+[submodule "libadore/cpplint_docker"]
+	path = libadore/cpplint_docker
+	url = git@github.com:DLR-TS/cpplint_docker.git
+	branch = master
+[submodule "libadore/cppcheck_docker"]
+	path = libadore/cppcheck_docker
+	url = git@github.com:DLR-TS/cppcheck_docker.git
+	branch = master
+[submodule "libadore/lizard_docker"]
+	path = libadore/lizard_docker
+	url = git@github.com:DLR-TS/lizard_docker.git
 	branch = master

@@ -2,8 +2,8 @@ libadore/build
 libdore/external
 libdore/external/*/build
 **/build
+**build
+**.git
 **lizard_report.xml
 make_gadgets
-cppcheck
-cpplint
-lizard
+**_docker

@@ -1,19 +1,25 @@
 include make_gadgets/Makefile
+include make_gadgets/docker/Makefile
+include cppcheck_docker/Makefile.cppcheck_target
+include cpplint_docker/Makefile.cpplint_target
+include lizard_docker/Makefile.lizard_target
 
 SHELL:=/bin/bash
 
 .DEFAULT_GOAL := all
 
-ROOT_DIR:=$(shell dirname $(realpath $(firstword $(MAKEFILE_LIST))))
 
 MAKEFLAGS += --no-print-directory
 
 .EXPORT_ALL_VARIABLES:
 DOCKER_BUILDKIT?=1
 DOCKER_CONFIG?=
+ROOT_DIR:=$(shell dirname "$(realpath $(firstword $(MAKEFILE_LIST)))")
+PROJECT:=libadore
+
 
 #CMAKE_PREFIX_PATH?=$(shell realpath $$(find . -type d | grep "build/install" | grep -v "build/install/") | tr '\n' ';') 
-CMAKE_PREFIX_PATH?=$(shell realpath $$(find . -type d | grep "build" | grep -v "build/") | tr '\n' ';') 
+CMAKE_PREFIX_PATH?=$(shell realpath "$$(find . -type d | grep "build" | grep -v "build/")" | tr '\n' ';')
 
 LIBADORE_PROJECT="libadore"
 LIBADORE_VERSION="latest"
@@ -36,14 +42,20 @@ build: all## build libadore
 .PHONY: clean_libadore 
 clean_libadore:
 	rm -rf "${ROOT_DIR}/libadore/build"
+	find . -name "**lint_report.log" -exec rm -rf {} \;
+	find . -name "**cppcheck_report.log" -exec rm -rf {} \;
+	find . -name "**lizard_report.xml" -exec rm -rf {} \;
+	find . -name "**lizard_report.log" -exec rm -rf {} \;
 
 .PHONY: build 
-build:
-	rm -rf ${PROJECT}/build
-	docker compose build libadore_build
+build: clean
+	rm -rf "${PROJECT}/build"
+	make build_external
+	#docker compose build libadore_build
+	docker buildx bake libadore_build
 	docker compose build libadore
 	docker compose build libadore_test
-	docker cp $$(docker create --rm $(shell echo ${TAG} | tr A-Z a-z)):/tmp/${PROJECT}/${PROJECT}/build ${ROOT_DIR}/${PROJECT}
+	docker cp $$(docker create --rm $(shell echo ${TAG} | tr A-Z a-z)):/tmp/${PROJECT}/${PROJECT}/build "${ROOT_DIR}/${PROJECT}"
 
 .PHONY: test 
 test:## run libadore unit tests
@@ -57,7 +69,7 @@ test:## run libadore unit tests
 
 	@if grep -q "Errors while running CTest" "libadore/build/ctest.log"; then \
             exit 1; \
-        fi;
+     fi;
 
 .PHONY: build_external 
 build_external: ## builds all libadore external libraries 
@@ -77,27 +89,5 @@ clean_docker:
 	docker rmi $$(docker images --filter "dangling=true" -q) --force
 	docker rmi ${LIBADORE_TAG} --force
 
-.PHONY: lint 
-lint: ## returns a linting report for libadore
-	cd cpplint && \
-        make lint CPP_PROJECT_DIRECTORY=$(realpath ${ROOT_DIR}/libadore/adore)
-
-.PHONY: lintfix 
-lintfix: ## Automated source formatting/lint fixing using clang-format 
-	cd cpplint && \
-        make lintfix CPP_PROJECT_DIRECTORY=$(realpath ${ROOT_DIR}/libadore/adore)
-
-.PHONY: lintfix_simulate 
-lintfix_simulate:
-	cd cpplint && \
-        make lintfix_simulate CPP_PROJECT_DIRECTORY=$(realpath ${ROOT_DIR}/libadore/adore)
-
-.PHONY: cppcheck
-cppcheck: ## Runs cppcheck static analysis tool on libadore
-	cd cppcheck && \
-        make cppcheck CPP_PROJECT_DIRECTORY=$(realpath ${ROOT_DIR}/libadore/adore)
-
-.PHONY: lizard
-lizard: ## generates a lizard static analysis report on libadore
-	cd lizard && \
-        make lizard CPP_PROJECT_DIRECTORY=$(realpath ${ROOT_DIR}/libadore/adore)
+.PHONY: static_checks
+static_checks: lint lizard cppcheck

@@ -1,11 +1,13 @@
 #This dockerfile partial installs zsh
+
 ARG USER
 
 USER root
 RUN apt-get update && \
-    apt-get install --no-install-recommends -y zsh git vim && \
+    apt-get install --no-install-recommends -y zsh git curl && \
     rm -rf /var/lib/apt/lists/*
 
 USER ${USER}
+WORKDIR /home/${USER}
+RUN zsh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)" ||true
 
-RUN sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)" --unattended

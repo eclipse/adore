@@ -1,13 +1,12 @@
 # syntax = edrevo/dockerfile-plus
 
-
-
 ARG PROJECT
 ARG DEBUG
 ARG USER=adore-cli
 ARG UID
 ARG GID
 
+ARG TEST_SCENARIOS
 
 FROM adore_if_ros:latest AS adore-cli
 
@@ -17,8 +16,10 @@ ARG USER=adore-cli
 ARG UID
 ARG GID
 
+ARG TEST_SCENARIOS
+
 RUN apt-get update && \
-    apt-get install --no-install-recommends -y xterm vim netcat net-tools && \
+    apt-get install --no-install-recommends -y xterm netcat net-tools && \
     rm -rf /var/lib/apt/lists/*
 
 
@@ -26,17 +27,18 @@ RUN useradd --create-home ${USER}
 
 
 INCLUDE+ docker/Dockerfile.personalize.partial
-INCLUDE+ docker/Dockerfile.docker-in-docker.partial
 INCLUDE+ docker/Dockerfile.zsh.partial
-#INCLUDE+ docker/Dockerfile.adore.partial
 
+USER root
+COPY docker/files/.zshrc /home/${USER}
+RUN chown -R ${UID}:${GID} /home/${USER}
 
 RUN mkdir -p /tmp/adore
-USER ${USER}
 
 WORKDIR /tmp/adore
 
+
+USER ${USER}
 ENV PS1='%n -> %d $$(git_prompt_info)> '
-#ENV PS1='%n'
 CMD exec /bin/bash -c "trap : TERM INT; sleep infinity & wait"
 

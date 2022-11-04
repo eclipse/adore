@@ -3,7 +3,7 @@
 printf "Welcome to the ADORe Development CLI %s (%s %s %s)\n" "$(lsb_release -a 2>/dev/null | grep Description | cut -d: -f2 | xargs)" "$(uname -o)" "$(uname -r)" "$(uname -m)"
 printf "  whoami: %s\n" "$(whoami)"
 printf "  pwd: %s\n" "$(pwd)"
-printf "  Catkin workspace directory: %s\n" "$(cd catkin_workspace && pwd)"
+printf "  Catkin workspace directory: %s\n" "${CATKIN_WORKSPACE_DIRECTORY}"
 
 
 printf "\n"
