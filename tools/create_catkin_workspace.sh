@@ -96,3 +96,5 @@ else
     echoerr "ERROR: The Catkin workspace directory: ${CATKIN_WORKSPACE_DIRECTORY} already exists."
 fi
 echo "The Catkin workspace directory can be found at: " $(realpath .)
+
+touch marker_file

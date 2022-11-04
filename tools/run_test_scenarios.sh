@@ -14,13 +14,13 @@ PLOTLABSERVER_LOG_DIR="${LOG_DIR}/plotlabserver"
 clear
 cd ${SCRIPT_DIR}/.. 
 
+rm -f catkin_workspace/marker_file
 make create_catkin_workspace > .log/create_catkin_workspace.log 2>&1 &
-
 bash plotlabserver/tools/wait_for_plotlab_server.sh
 
 echo ""
 printf "  Waiting for catkin workspace ..."
-until [ -e catkin_workspace/install/setup.sh ]; do
+until [ -e catkin_workspace/marker_file ]; do
     printf "."
     sleep 1
 done
