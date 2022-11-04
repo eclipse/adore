@@ -15,11 +15,11 @@
 
 
 
-## v0.3.1
+## 2022-11-04 -> v0.3.1
 - updated adore_if_carla submodule to tag v0.1.0
 - bugfixes to the build system
 - introduced caching of externally provided docker images in folder .docker_image_cache
-- 
+
 
 ## 2022-07-16 -> v0.3.0
 - modularized respository structure
