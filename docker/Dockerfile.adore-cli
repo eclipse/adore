@@ -1,18 +1,17 @@
 # syntax = edrevo/dockerfile-plus
 
-ARG PROJECT
-ARG DEBUG
 ARG USER=adore-cli
+
+ARG ADORE_IF_ROS_TAG=latest
+
 ARG UID
 ARG GID
 
 ARG TEST_SCENARIOS
 
-FROM adore_if_ros:latest AS adore-cli
+FROM adore_if_ros:${ADORE_IF_ROS_TAG} AS adore-cli
 
-ARG PROJECT
-ARG DEBUG
-ARG USER=adore-cli
+ARG USER
 ARG UID
 ARG GID
 

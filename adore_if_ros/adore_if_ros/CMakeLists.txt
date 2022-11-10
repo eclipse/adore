@@ -15,6 +15,11 @@
 cmake_minimum_required(VERSION 3.13)
 project(adore_if_ros)
 
+set(PACKAGE_VENDOR "DLR TS-KOS-SAI")
+set(PACKAGE_DESCRIPTION "Automated Driving Open Research: adore interface libraries for ROS")
+set(PACKAGE_MAINTAINER "DLR TS-KOS-SAI")
+set(PACKAGE_MAINTAINER_EMAIL "ts-kos-sai@dlr.de")
+
 include(CTest)
 enable_testing()
 
@@ -51,9 +56,15 @@ add_compile_options("-fdiagnostics-color=always")
 include(GNUInstallDirs)
 
 list(APPEND CMAKE_PREFIX_PATH "$ENV{CMAKE_PREFIX_PATH}")
-list(APPEND CMAKE_PREFIX_PATH "${CMAKE_CURRENT_SOURCE_DIR}/../adore_if_ros_msg/adore_if_ros_msg/build/install")
-list(APPEND CMAKE_PREFIX_PATH "${CMAKE_CURRENT_SOURCE_DIR}/../plotlablib/plotlablib/build/install")
-list(APPEND CMAKE_PREFIX_PATH "${CMAKE_CURRENT_SOURCE_DIR}/../../libadore/libadore/build/install")
+
+set(ADORE_IF_ROS_MSG_CMAKE_INSTALL_PATH "${CMAKE_CURRENT_SOURCE_DIR}/../../adore_if_ros_msg/adore_if_ros_msg/build/install")
+list(APPEND CMAKE_PREFIX_PATH "${adore_if_ros_msg_CMAKE_INSTALL_PATH}")
+
+set(PLOTLABLIB_CMAKE_INSTALL_PATH "${CMAKE_CURRENT_SOURCE_DIR}/../../plotlablib/plotlablib/build/install")
+list(APPEND CMAKE_PREFIX_PATH "${PLOTLABLIB_CMAKE_INSTALL_PATH}")
+
+set(LIBADORE_CMAKE_INSTALL_PATH "${CMAKE_CURRENT_SOURCE_DIR}/../../libadore/libadore/build/install")
+list(APPEND CMAKE_PREFIX_PATH "${LIBADORE_CMAKE_INSTALL_PATH}")
 
 add_library(qpoases::qpoases STATIC IMPORTED GLOBAL)
 set_property(TARGET qpoases::qpoases PROPERTY IMPORTED_LOCATION ${CMAKE_CURRENT_SOURCE_DIR}/../../libadore/libadore/build/install/lib/libqpOASES.a)

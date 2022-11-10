@@ -1,17 +1,21 @@
 #!/usr/bin/env bash
 
-SCRIPT_DIR="$( cd -- "$( dirname -- "${BASH_SOURCE[0]:-$0}"; )" &> /dev/null && pwd 2> /dev/null; )";
+set -euo pipefail
+
+SCRIPT_DIRECTORY="$( cd "$( dirname "${BASH_SOURCE[0]}" )" &> /dev/null && pwd )"
+echoerr (){ printf "%s" "$@" >&2;}
+exiterr (){ echoerr "$@"; exit 1;}
 
 clear
 
-cd ${SCRIPT_DIR}/.. 
+cd "${SCRIPT_DIRECTORY}"/..
 
 make create_catkin_workspace > .log/create_catkin_workspace.log 2>&1 &
 
 bash tools/adore-cli_motd.sh
 bash plotlabserver/tools/wait_for_plotlab_server.sh
 
-echo ""
+printf "\n"
 printf "  Waiting for catkin workspace ..."
 until [ -e catkin_workspace/install/setup.sh ]; do
     printf "."
