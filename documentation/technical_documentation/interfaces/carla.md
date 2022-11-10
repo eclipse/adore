@@ -16,7 +16,7 @@
 
 # ADORe interfacing with CARLA
 
-[adore_if_carla](https://github.com/DLR-TS/adore_if_carla) provides a coupling of [adore_if_ros](adore_if_ros) and [CARLA](https://github.com/carla-simulator/carla/) based on [carla-ros-bridge](https://github.com/carla-simulator/ros-bridge). It allows to use ADORe to control autonomous vehicles in CARLA. Details on prerequisites and building of adore_if_carla and instructions for getting started can be found within the adore_if_carla repository. The coupling is currently in an experimental state. 
+[adore_if_carla](https://github.com/DLR-TS/adore_if_carla) provides a coupling of [adore_if_ros](/adore_if_ros) and [CARLA](https://github.com/carla-simulator/carla/) based on [carla-ros-bridge](https://github.com/carla-simulator/ros-bridge). It allows to use ADORe to control autonomous vehicles in CARLA. Details on prerequisites and building of adore_if_carla and instructions for getting started can be found within the adore_if_carla repository. The coupling is currently in an experimental state. 
 
 ## ROS nodes of adore_if_carla
 When using adore_if_carla, the parameter ```PARAMS/adore_if_carla/carla_namespace``` needs to be set withing the namespace of the adore vehicle to get the matching namespace of the topics published and subscribed by the carla-ros-bridge.
