@@ -3,8 +3,8 @@
 set -e
 
 function echoerr { echo "$@" >&2; exit 1;}
-DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" &> /dev/null && pwd )" 
-
+SCRIPT_DIRECTORY="$( cd "$( dirname "${BASH_SOURCE[0]}" )" &> /dev/null && pwd )"
+LOCKFILE=.lock
 ADORE_SOURCE_DIRECTORY=$(realpath "${DIR}/..")
 
 if ! [ -x "$(command -v catkin)" ]; then
@@ -17,6 +17,7 @@ fi
 
 if [[ ! -d "${CATKIN_WORKSPACE_DIRECTORY}" ]]; then
     mkdir "${CATKIN_WORKSPACE_DIRECTORY}"
+    touch "${CATKIN_WORKSPACE_DIRECTORY}/${LOCKFILE}"
     mkdir "${CATKIN_WORKSPACE_DIRECTORY}"/{build,devel,install,logs,src}
     mkdir -p "${CATKIN_WORKSPACE_DIRECTORY}"/install/{lib/python3/dist-packages,share,include}
 	
@@ -95,4 +96,6 @@ if [[ ! -d "${CATKIN_WORKSPACE_DIRECTORY}" ]]; then
 else
     echoerr "ERROR: The Catkin workspace directory: ${CATKIN_WORKSPACE_DIRECTORY} already exists."
 fi
-echo "The Catkin workspace directory can be found at: " $(realpath .)
+
+rm -f "${LOCKFILE}"
+printf "The Catkin workspace directory can be found at: %s \n" "$(realpath .)"

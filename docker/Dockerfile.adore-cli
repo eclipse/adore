@@ -1,9 +1,8 @@
 # syntax = edrevo/dockerfile-plus
 
 ARG USER=adore-cli
-
 ARG ADORE_IF_ROS_TAG=latest
-
+ARG USER
 ARG UID
 ARG GID
 
@@ -38,6 +37,6 @@ WORKDIR /tmp/adore
 
 
 USER ${USER}
-ENV PS1='%n -> %d $$(git_prompt_info)> '
+
 CMD exec /bin/bash -c "trap : TERM INT; sleep infinity & wait"
 

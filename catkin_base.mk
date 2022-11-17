@@ -5,7 +5,7 @@
 #
 # Run the help target/recipe to get a list of actions that can be performed.
 
-#ifndef CATKIN_BASE_MAKEFILE_PATH
+ifndef CATKIN_BASE_MAKEFILE_PATH
 
 MAKEFLAGS += --no-print-directory
 
@@ -55,16 +55,17 @@ build_catkin_base: ## Build a docker image with base catkin tools installed
                  --file Dockerfile.catkin_base \
                  --tag ${CATKIN_BASE_PROJECT}:${CATKIN_BASE_TAG} .
 
-.PHONY: build_catkin_base_fast
-build_catkin_base_fast: # build catkin_base does not already exist in the docker repository. If it does exist this is a noop.
-	@[ -n "$$(docker images -q ${CATKIN_BASE_PROJECT}:${CATKIN_BASE_TAG})" ] || \
-    unset CATKIN_BASE_MAKEFILE_PATH && make --file ${CATKIN_BASE_MAKEFILE_PATH}/catkin_base.mk build_catkin_base
-
-
+.PHONY: build_fast_catkin_base
+build_fast_catkin_base: # Build the catkin_base docker context if it does not already exist in the docker repository. If it does exist this is a noop.
+	@if [ -n "$$(docker images -q ${CATKIN_BASE_PROJECT}:${CATKIN_BASE_TAG})" ]; then \
+		echo "Docker image: ${CATKIN_BASE_PROJECT}:${CATKIN_BASE_TAG} already build, skipping build."; \
+    else \
+        unset CATKIN_BASE_MAKEFILE_PATH && make --file=${CATKIN_BASE_MAKEFILE_PATH}/catkin_base.mk build_catkin_base;\
+    fi
 
 .PHONY: create_catkin_workspace_docker
 create_catkin_workspace_docker:
-	unset CATKIN_BASE_MAKEFILE_PATH && make --file=${CATKIN_BASE_MAKEFILE_PATH}/catkin_base.mk build_catkin_base_fast
+	unset CATKIN_BASE_MAKEFILE_PATH && make --file=${CATKIN_BASE_MAKEFILE_PATH}/catkin_base.mk build_fast_catkin_base
 	docker run -it \
                    --rm \
                    --user "${UID}:${GID}" \
@@ -87,4 +88,4 @@ create_catkin_workspace: ## Creates a catkin workspace @ adore/catkin_workspace.
 image_catkin_base: ## Returns the current docker image name for catkin base 
 	@printf "%s\n" ${CATKIN_BASE_IMAGE}
 
-#endif
+endif

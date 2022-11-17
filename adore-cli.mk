@@ -1,22 +1,22 @@
 
 # This Makefile contains useful targets that can be included in downstream projects.
 
-ifndef ADORE-CLI_MAKEFILE_PATH
+ifndef ADORE_CLI_MAKEFILE_PATH
 
 MAKEFLAGS += --no-print-directory
 
 .EXPORT_ALL_VARIABLES:
-ADORE-CLI_PROJECT:=adore-cli
+ADORE_CLI_PROJECT:=adore-cli
 
-ADORE-CLI_MAKEFILE_PATH:=$(shell realpath "$(shell dirname "$(lastword $(MAKEFILE_LIST))")")
-MAKE_GADGETS_PATH:=${ADORE-CLI_MAKEFILE_PATH}/adore_if_ros_msg/make_gadgets
-REPO_DIRECTORY:=${ADORE-CLI_MAKEFILE_PATH}
+ADORE_CLI_MAKEFILE_PATH:=$(shell realpath "$(shell dirname "$(lastword $(MAKEFILE_LIST))")")
+MAKE_GADGETS_PATH:=${ADORE_CLI_MAKEFILE_PATH}/adore_if_ros_msg/make_gadgets
+REPO_DIRECTORY:=${ADORE_CLI_MAKEFILE_PATH}
 
-ADORE-CLI_TAG:=$(shell cd "${MAKE_GADGETS_PATH}" && make get_sanitized_branch_name REPO_DIRECTORY="${REPO_DIRECTORY}")
-ADORE-CLI_IMAGE:=${ADORE-CLI_PROJECT}:${ADORE-CLI_TAG}
+ADORE_CLI_TAG:=$(shell cd "${MAKE_GADGETS_PATH}" && make get_sanitized_branch_name REPO_DIRECTORY="${REPO_DIRECTORY}")
+ADORE_CLI_IMAGE:=${ADORE_CLI_PROJECT}:${ADORE_CLI_TAG}
 
-ADORE-CLI_CMAKE_BUILD_PATH:="${ADORE-CLI_PROJECT}/build"
-ADORE-CLI_CMAKE_INSTALL_PATH:="${ADORE-CLI_CMAKE_BUILD_PATH}/install"
+ADORE_CLI_CMAKE_BUILD_PATH:="${ADORE_CLI_PROJECT}/build"
+ADORE_CLI_CMAKE_INSTALL_PATH:="${ADORE_CLI_CMAKE_BUILD_PATH}/install"
 
 UID := $(shell id -u)
 GID := $(shell id -g)
@@ -24,33 +24,69 @@ GID := $(shell id -g)
 include adore_if_ros_msg/make_gadgets/docker/docker-tools.mk
 include plotlabserver/plotlabserver.mk
 include adore_if_ros/adore_if_ros.mk
+include catkin_base.mk
 
-.PHONY: build_adore-cli_fast
-build_adore-cli_fast: # build adore-cli if it does not already exist in the docker repository. If it does exist this is a noop.
-	@[ -n "$$(docker images -q ${ADORE-CLI_PROJECT}:${ADORE-CLI_TAG})" ] || \
-    make build_adore-cli 
+
+.PHONY: adore_if_ros_check
+adore_if_ros_check:
+	@if [ -z "$$(docker images -q '${ADORE_IF_ROS_PROJECT}:${ADORE_IF_ROS_TAG}')" ]; then \
+		echo "adore_if_ros docker image: ${ADORE_IF_ROS_PROJECT}:${ADORE_IF_ROS_TAG} does not exits in the local docker repository. "; \
+        echo "Did you build adore_if_ros?"; \
+		echo "  Hint: run 'make build' to build adore_if_ros."; \
+        exit 1; \
+    fi
+
+.PHONY: adore-cli_up
+adore-cli_up: adore-cli_setup adore-cli_start adore-cli_attach adore-cli_teardown 
+
+.PHONY: adore-cli_attach
+adore-cli: docker_host_context_check adore_if_ros_check build_fast_adore-cli ## Start adore-cli context or attach to it if already running
+	@if [[ "$$(docker inspect -f '{{.State.Running}}' '${ADORE_CLI_PROJECT}' 2>/dev/null)" == "true"  ]]; then\
+        unset ADORE_CLI_MAKEFILE_PATH && make --file=${ADORE_CLI_MAKEFILE_PATH}/adore-cli.mk adore-cli_attach;\
+        exit 0;\
+    else\
+        unset ADORE_CLI_MAKEFILE_PATH && make --file=${ADORE_CLI_MAKEFILE_PATH}/create_catkin_workspace;\
+        unset ADORE_CLI_MAKEFILE_PATH && make --file=${ADORE_CLI_MAKEFILE_PATH}/adore-cli.mk adore-cli_up;\
+        exit 0;\
+    fi;
+
+.PHONY: build_fast_adore-cli
+build_fast_adore-cli: # build the adore-cli conte does not already exist in the docker repository. If it does exist this is a noop.
+	@if [ -n "$$(docker images -q ${ADORE_CLI_PROJECT}:${ADORE_CLI_TAG})" ]; then \
+        echo "Docker image: ${ADORE_CLI_PROJECT}:${ADORE_CLI_TAG} already build, skipping build."; \
+    else \
+        unset ADORE_CLI_MAKEFILE_PATH && make --file=${ADORE_CLI_MAKEFILE_PATH}/adore-cli.mk build_adore-cli;\
+    fi
 
 .PHONY: build_adore-cli
-build_adore-cli: build_catkin_base ## Builds the ADORe CLI docker context/image
-	cd plotlabserver build_fast_plotlabserver
-	cd "${ADORE-CLI_MAKEFILE_PATH}" && \
-    docker compose build ${ADORE-CLI_PROJECT} \
+build_adore-cli: clean_adore-cli ## Builds the ADORe CLI docker context/image
+	echo "${ADORE_CLI_PROJECT}"
+	cd "${ADORE_CLI_MAKEFILE_PATH}" && \
+    docker compose build ${ADORE_CLI_PROJECT} \
                          --build-arg UID=${UID} \
                          --build-arg GID=${GID} \
                          --build-arg DOCKER_GID=${DOCKER_GID} \
-                         --build-arg ADORE_IF_ROS_TAG=${ADORE_IF_ROS_TAG} && \
-    docker compose build adore-cli-x11-display \
+                         --build-arg ADORE_IF_ROS_TAG=${ADORE_IF_ROS_TAG} # && \
+    docker compose build adore-cli_x11-display \
                          --build-arg UID=${UID} \
                          --build-arg GID=${GID} \
                          --build-arg DOCKER_GID=${DOCKER_GID} \
-                         --build-arg ADORE_IF_ROS_TAG=${ADORE_IF_ROS_TAG}
+                         --build-arg ADORE_CLI_TAG=${ADORE_CLI_TAG}
+
+.PHONY: clean_adore-cli 
+clean_adore-cli: ## Clean adore-cli docker context 
+	docker rm $$(docker ps -a -q --filter "ancestor=${CATKIN_BASE_PROJECT}:${ADORE_CLI_TAG}") --force 2> /dev/null || true
+	docker rm $$(docker ps -a -q --filter "ancestor=${CATKIN_BASE_PROJECT}_x11-display:${ADORE_CLI_TAG}") --force 2> /dev/null || true
+	docker rmi $$(docker images -q ${ADORE_CLI_PROJECT}:${ADORE_CLI_TAG}) --force 2> /dev/null || true
+	docker rmi $$(docker images -q ${ADORE_CLI_PROJECT}_x11-display:${ADORE_CLI_TAG}) --force 2> /dev/null || true
+	docker rmi $$(docker images --filter "dangling=true" -q) --force > /dev/null 2>&1 || true
 
 .PHONY: run_ci_scenarios
 run_ci_scenarios:
 	bash tools/run_ci_scenarios.txt 
 
 .PHONY: adore-cli_setup
-adore-cli_setup: build_adore-cli_fast
+adore-cli_setup:
 	@echo "Running adore-cli setup..."
 	@mkdir -p .log/.ros/bag_files
 	@mkdir -p plotlabserver/.log
@@ -69,7 +105,7 @@ adore-cli_teardown:
 .PHONY: adore-cli_start
 adore-cli_start:
 	@xhost + && \
-    docker compose up adore-cli-x11-display --force-recreate -V -d; \
+    docker compose up adore-cli_x11-display --force-recreate -V -d; \
     xhost - 
 
 .PHONY: adore-cli_start_headless
@@ -77,14 +113,12 @@ adore-cli_start_headless:
 	DISPLAY_MODE=headless make adore-cli_start
 
 .PHONY: adore-cli_attach
-adore-cli_attach:
+adore-cli_attach: 
 	docker exec -it --user adore-cli adore-cli /bin/zsh -c "bash tools/adore-cli.sh" || true
 
 .PHONY: adore-cli_scenarios_run
 adore-cli_scenarios_run:
 	docker exec -it --user adore-cli adore-cli /bin/zsh -c "bash tools/run_test_scenarios.sh" || true
 
-.PHONY: adore-cli
-adore-cli: adore-cli_setup adore-cli_start adore-cli_attach adore-cli_teardown ## Start an adore-cli context
 
 endif

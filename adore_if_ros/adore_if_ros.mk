@@ -2,7 +2,7 @@
 
 ifndef ADORE_IF_ROS_MAKEFILE_PATH
 
-makeflags += --no-print-directory
+MAKEFLAGS += --no-print-directory
 
 .EXPORT_ALL_VARIABLES:
 ADORE_IF_ROS_PROJECT:=adore_if_ros
