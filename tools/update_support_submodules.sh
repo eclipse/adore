@@ -1,14 +1,28 @@
-#!/usr/bin/env #!/usr/bin/env bash
+#!/usr/bin/env bash
 
+set -euo pipefail
+#set -euxo pipefail
 
-echo "ERROR: experimental." 1>&2
-exit 1
+echoerr (){ printf "%s" "$@" >&2;}
+exiterr (){ echoerr "$@"; exit 1;}
 
 SCRIPT_DIRECTORY="$( cd "$( dirname "${BASH_SOURCE[0]}" )" &> /dev/null && pwd )"
 
-cd "${SCRIPT_DIRECTORY}"/..
+ADORE_SOURCE_DIR="$(realpath "${SCRIPT_DIRECTORY}/..")"
 
-find . -type d -name make_gadgets -or -name lizard_docker -or -name cpplint_docker -or -name cppcheck_docker -or -name adore_if_ros_msg -or -name v2x_if_ros_msg -or -name coordinate_conversion | grep -v "/build/\|.git\|catkin_workspace" | while read line ; do (cd $line && pwd && git checkout master && git pull); done
+cd "${ADORE_SOURCE_DIR}"
+find . -name make_gadgets -type d | grep -v .git | while read line ; do
+    (cd "${line}" && git checkout master && git pull)
+done
 
+find . -name cpplint_docker -type d | grep -v .git | while read line ; do
+    (cd "${line}" && git checkout master && git pull)
+done
 
+find . -name cppcheck_docker -type d | grep -v .git | while read line ; do
+    (cd "${line}" && git checkout master && git pull)
+done
 
+find . -name lizard_docker -type d | grep -v .git | while read line ; do
+    (cd "${line}" && git checkout master && git pull)
+done

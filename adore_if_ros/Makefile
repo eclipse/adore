@@ -35,7 +35,9 @@ set_env:
 	$(eval TAG := ${ADORE_IF_ROS_TAG})
 
 .PHONY: build 
-build: clean set_env build_libadore build_adore_if_ros_msg build_plotlablib ## Build adore_if_ros
+build: clean set_env build_libadore build_plotlablib ## Build adore_if_ros
+	unset ADORE_IF_ROS_MSG_MAKEFILE_PATH && \
+    make --file=${ADORE_IF_ROS_MAKEFILE_PATH}/adore_if_ros_msg/adore_if_ros_msg.mk build_adore_if_ros_msg 
 	rm -rf "${PROJECT}/build"
 	docker build --tag ${PROJECT}:${TAG} \
                  --network host \

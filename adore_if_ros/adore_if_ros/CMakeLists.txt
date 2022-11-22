@@ -57,6 +57,8 @@ include(GNUInstallDirs)
 
 list(APPEND CMAKE_PREFIX_PATH "$ENV{CMAKE_PREFIX_PATH}")
 
+set(PROJECT_INCLUDE_PATH "${PROJECT_SOURCE_DIR}/build/devel/include")
+
 set(ADORE_IF_ROS_MSG_CMAKE_INSTALL_PATH "${CMAKE_CURRENT_SOURCE_DIR}/../../adore_if_ros_msg/adore_if_ros_msg/build/install")
 list(APPEND CMAKE_PREFIX_PATH "${adore_if_ros_msg_CMAKE_INSTALL_PATH}")
 
