@@ -4,6 +4,9 @@ libdore/external/*/build
 **/build
 **build
 **.git
+**.docker
 **lizard_report.xml
+**_report.log
 make_gadgets
 **_docker
+**make_gadgets

@@ -41,4 +41,5 @@ image_libadore: ## Returns the current docker image name for libadore
 .PHONY: update_libadore
 update_libadore:
 	cd "${LIBADORE_MAKEFILE_PATH}" && git pull
+
 endif

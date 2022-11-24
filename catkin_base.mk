@@ -46,6 +46,7 @@ clean_catkin_base: ## Clean catkin_base docker context
 
 .PHONY: build_catkin 
 build_catkin_base: ## Build a docker image with base catkin tools installed
+	cd ${APT_CACHER_NG_DOCKER_MAKEFILE_PATH} && make up
 	unset CATKIN_BASE_MAKEFILE_PATH && make --file=${CATKIN_BASE_MAKEFILE_PATH}/catkin_base.mk clean_catkin_base
 	cd ${CATKIN_BASE_MAKEFILE_PATH}/docker && \
     docker build \

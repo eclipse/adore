@@ -8,9 +8,9 @@ exiterr (){ echoerr "$@"; exit 1;}
 
 SCRIPT_DIRECTORY="$( cd "$( dirname "${BASH_SOURCE[0]}" )" &> /dev/null && pwd )"
 
-ADORE_SOURCE_DIR="$(realpath "${SCRIPT_DIRECTORY}/..")"
+ADORE_SOURCE_DIRECTORY="$(realpath "${SCRIPT_DIRECTORY}/..")"
 
-cd "${ADORE_SOURCE_DIR}"
+cd "${ADORE_SOURCE_DIRECTORY}"
 find . -name make_gadgets -type d | grep -v .git | while read line ; do
     (cd "${line}" && git checkout master && git pull)
 done

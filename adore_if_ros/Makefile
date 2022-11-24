@@ -24,6 +24,8 @@ include ../libadore/libadore.mk
 DOCKER_BUILDKIT?=1
 DOCKER_CONFIG?=
 
+CPP_PROJECT_DIRECTORY:="${ROOT_DIR}/adore_if_ros"
+
 include adore_if_ros.mk 
 
 #CMAKE_PREFIX_PATH?=$(shell realpath "$$(find . -name install | grep "install" | grep -e "install/\|CPack" -v)" | tr '\n' ';') 
@@ -47,7 +49,7 @@ build: clean set_env build_libadore build_plotlablib ## Build adore_if_ros
 	docker cp $$(docker create --rm ${PROJECT}:${TAG}):/tmp/${PROJECT}/${PROJECT}/build ${PROJECT}
 
 .PHONY: clean 
-clean:
+clean: set_env
 	rm -rf "${ROOT_DIR}/${PROJECT}/build"
 	find . -name "**lint_report.log" -exec rm -rf {} \;
 	find . -name "**cppcheck_report.log" -exec rm -rf {} \;

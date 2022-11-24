@@ -19,7 +19,7 @@ services:
     restart: always
     user: nobody
     environment:
-      - "ROS_HOME=/tmp/adore/.log/.ros"
+      - "ROS_HOME=${ADORE_SOURCE_DIRECTORY}/.log/.ros"
       - "ROS_MASTER_URI=http://127.0.0.1:11311"
       - "ROS_HOSTNAME=127.0.0.1"
     #volumes:
@@ -34,10 +34,10 @@ services:
     environment:
       - CATKIN_WORKSPACE_DIRECTORY=${CATKIN_WORKSPACE_DIRECTORY:-catkin_workspace}
       - TEST_SCENARIOS=${TEST_SCENARIOS:-baseline_test.launch}
-      - "ADORE_SOURCE_DIR=/tmp/adore"
-      - "BAG_OUTPUT_DIRECTORY=/tmp/adore/.log/.ros/bag_files"
-      - "ROS_HOME=/tmp/adore/.log/.ros"
-      - "HISTFILE=/tmp/adore/.zsh_history"
+      - "BAG_OUTPUT_DIRECTORY=${ADORE_SOURCE_DIRECTORY}/.log/.ros/bag_files"
+      - "ROS_HOME=${ADORE_SOURCE_DIRECTORY}/.log/.ros"
+      - "ADORE_SOURCE_DIRECTORY=${ADORE_SOURCE_DIRECTORY}"
+      - "HISTFILE=${ADORE_SOURCE_DIRECTORY}/.zsh_history"
       - "ROS_MASTER_URI=http://127.0.0.1:11311"
       - "ROS_HOSTNAME=127.0.0.1"
     depends_on:
@@ -52,9 +52,10 @@ services:
         - UID=${UID:-1000}
         - GID=${GID:-1001}
     volumes:
+      - ./:/tmp/adore
       - /var/run/docker.sock:/var/run/docker.sock
       - .bash_history:/home/adore-cli/.bash_history
-      - ./:/tmp/adore
+      - ${ADORE_SOURCE_DIRECTORY}:${ADORE_SOURCE_DIRECTORY}
   adore-cli_x11-display:
     privileged: true
     image: adore-cli_x11-display:${ADORE_CLI_TAG:-latest}
@@ -71,10 +72,10 @@ services:
       - UID=${UID}
       - GID=${GID}
       - TEST_SCENARIOS=${TEST_SCENARIOS:-baseline_test.launch}
-      - "ADORE_SOURCE_DIR=/tmp/adore"
-      - "BAG_OUTPUT_DIRECTORY=/tmp/adore/.log/.ros/bag_files"
-      - "ROS_HOME=/tmp/adore/.log/.ros"
-      - "HISTFILE=/tmp/adore/.zsh_history"
+      - "BAG_OUTPUT_DIRECTORY=${ADORE_SOURCE_DIRECTORY}/.log/.ros/bag_files"
+      - "ROS_HOME=${ADORE_SOURCE_DIRECTORY}/.log/.ros"
+      - "ADORE_SOURCE_DIRECTORY=${ADORE_SOURCE_DIRECTORY}"
+      - "HISTFILE=${ADORE_SOURCE_DIRECTORY}/.zsh_history"
       - "ROS_MASTER_URI=http://127.0.0.1:11311"
       - "ROS_HOSTNAME=127.0.0.1"
     depends_on:
@@ -93,3 +94,4 @@ services:
       - /var/run/docker.sock:/var/run/docker.sock
       - .bash_history:/home/adore-cli/.bash_history
       - ./:/tmp/adore
+      - ${ADORE_SOURCE_DIRECTORY}:${ADORE_SOURCE_DIRECTORY}

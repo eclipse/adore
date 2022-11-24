@@ -22,11 +22,11 @@ _git_branch_name() {
 
 setopt prompt_subst
 
+#PROMPT='%B%F{grey}[%F{cyan}ADORe CLI %F %F{magenta}%~%F{grey} %(?.%F{green}.%F{red})=>(%?) %b%f] $ '
+PROMPT='%B%F{grey}%F{cyan}ADORe CLI:%F %{$fg_bold[green]%}%c %{$reset_color%}$(git_prompt_info)%{$fg[green]%}%(?:%{%}:%{%}) %(?.%F{green}.%F{red})(%?)%b%f> %{%} '
+#RPROMPT=$(git_prompt_info)
 
-PROMPT='%B%F{grey}[%F{cyan}ADORe CLI %F %F{magenta}%~%F{grey} %(?.%F{green}.%F{red})=>(%?) %b%f] $ '
-RPROMPT=$(git_prompt_info)
 
-
-alias help='bash ${ADORE_SOURCE_DIR}/tools/adore-cli_help.sh'
+alias help='bash ${ADORE_SOURCE_DIRECTORY}/tools/adore-cli_help.sh'
 
 

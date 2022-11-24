@@ -2,6 +2,9 @@ SHELL:=/bin/bash
 
 .DEFAULT_GOAL := all
 
+.PHONY: all 
+all: root_check docker_group_check build
+
 ROOT_DIR:=$(shell dirname "$(realpath $(firstword $(MAKEFILE_LIST)))")
 MAKEFILE_PATH:=$(shell dirname "$(abspath "$(lastword $(MAKEFILE_LIST)"))")
 
@@ -16,6 +19,8 @@ include lizard_docker/lizard_docker.mk
 .EXPORT_ALL_VARIABLES:
 DOCKER_BUILDKIT?=1
 DOCKER_CONFIG?= 
+
+CPP_PROJECT_DIRECTORY:="${ROOT_DIR}/libadore/adore"
 
 CMAKE_PREFIX_PATH?=$(shell realpath "$$(find . -type d | grep "build" | grep -v "build/")" 2>/dev/null | tr '\n' ';')
 

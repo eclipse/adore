@@ -2,7 +2,7 @@ adore_if_ros/build
 **/build
 Makefile
 **.docker
-**.lizard_report.xml
+**lizard_report.xml
 **_report.log
 **_docker
-**make_gadgets
+:**make_gadgets
