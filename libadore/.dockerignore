@@ -10,3 +10,6 @@ libdore/external/*/build
 make_gadgets
 **_docker
 **make_gadgets
+lizard_docker
+cpplint_docker
+cppcheck_docker

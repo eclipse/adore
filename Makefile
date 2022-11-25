@@ -2,33 +2,65 @@ SHELL:=/bin/bash
 
 .DEFAULT_GOAL := all
 
+ROOT_DIR:=$(shell dirname "$(realpath $(firstword $(MAKEFILE_LIST)))")
+
 include adore_if_ros_msg/make_gadgets/make_gadgets.mk
-#include adore_if_ros_msg/make_gadgets/docker/docker-tools.mk
+include adore_if_ros_msg/make_gadgets/docker/docker-tools.mk
+include adore_if_ros_msg/make_gadgets/docker/docker-image-cacher.mk
+include apt_cacher_ng_docker/apt_cacher_ng_docker.mk
 include adore-cli.mk
 #include adore_if_ros/adore_if_ros.mk
 include adore_if_ros_msg/adore_if_ros_msg.mk
+include v2x_if_ros_msg/v2x_if_ros_msg.mk
 #include plotlabserver/plotlabserver.mk
 #include catkin_base.mk
-#include apt_cacher_ng_docker/apt_cacher_ng_docker.mk
 
 
 .EXPORT_ALL_VARIABLES:
-#DOCKER_IMAGE_EXCLUSION_LIST="adore_if_ros:latest adore_if_ros_msg:latest plotlablib:latest plotlabserver:latest plotlabserver_build:latest v2x_if_ros_msg:latest libzmq:latest csaps-cpp:latest adore-cli:latest carlasim/carla:0.9.12"
-#DOCKER_IMAGE_INCLUSION_LIST="edrevo/dockerfile-plus:latest"
-
-#include plotlabserver/plotlabserver.mk
+DOCKER_IMAGE_EXCLUSION_LIST="adore_if_ros:latest adore_if_ros_msg:latest plotlablib:latest plotlabserver:latest plotlabserver_build:latest v2x_if_ros_msg:latest libzmq:latest csaps-cpp:latest adore-cli:latest carlasim/carla:0.9.13"
+DOCKER_IMAGE_INCLUSION_LIST="edrevo/dockerfile-plus:latest"
+DOCKER_IMAGE_CACHE_DIRECTORY="${ROOT_DIR}/.docker_image_cache"
+DOCKER_IMAGE_SEARCH_PATH=${ROOT_DIR}
 
 .PHONY: all
 all: help 
 
 .PHONY: build 
-build: docker_host_context_check start_apt_cacher_ng build_adore_if_ros_msg build_adore_if_ros clean_up ## Build ADORe 
+build: _build ## Build ADORe 
+
+.PHONY: _build 
+_build: \
+        docker_host_context_check \
+        docker_storage_inventory_prebuild \
+        start_apt_cacher_ng \
+        build_adore_if_ros_msg \
+        build_v2x_if_ros_msg \
+        build_adore_if_ros \
+        docker_storage_inventory_postbuild \
+        clean_up \
 
 .PHONY: clean 
 clean: clean_adore_if_ros ## Clean ADORe
 
 .PHONY: clean_up
 clean_up: stop_apt_cacher_ng
+
+.PHONY: docker_storage_inventory_prebuild
+docker_storage_inventory_prebuild:
+	mkdir -p .log
+	bash tools/docker_storage_inventory.sh --log-directory .log 
+
+.PHONY: docker_storage_inventory_postbuild
+docker_storage_inventory_postbuild:
+	bash tools/docker_storage_inventory.sh --log-directory .log
+
+.PHONY: docker_save_images
+docker_save_images:
+	@nohup sh -c 'make docker_fetch; make docker_save' > /dev/null 2>&1 &
+
+.PHONY: docker_load_images
+docker_load_images:
+	@nohup make docker_load > /dev/null 2>&1 &
 
 .PHONY: test 
 test:
@@ -51,7 +83,8 @@ lint: ## Run linting for all modules
 lizard: ## Run lizard static analysis tool for all modules
 	mkdir -p .log
 	find . -name "**lizard_report.**" -exec rm -rf {} \;
-	EXIT_STATUS=0; \
+	unset -f DOCKER_CONFIG && \
+    EXIT_STATUS=0; \
         (cd sumo_if_ros && make lizard) || EXIT_STATUS=$$? && \
         (cd libadore && make lizard) || EXIT_STATUS=$$? \ && \
         (cd adore_if_ros && make lizard) || EXIT_STATUS=$$? && \

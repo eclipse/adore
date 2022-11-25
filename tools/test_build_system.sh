@@ -16,8 +16,10 @@ ADORE_DIRECTORY="$(realpath "${SCRIPT_DIRECTORY}/..")"
 
 cd "${ADORE_DIRECTORY}"
 
-yes | make docker_orbital_cannon
+#yes | make docker_orbital_cannon || true
 make build
 make test
 make lizard
 make lint | true
+make cppcheck
+make run_test_scenarios

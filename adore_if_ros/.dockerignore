@@ -5,4 +5,8 @@ Makefile
 **lizard_report.xml
 **_report.log
 **_docker
-:**make_gadgets
+**make_gadgets
+cppcheck_docker
+lizard_docker
+cpplint_docker
+make_gadgets

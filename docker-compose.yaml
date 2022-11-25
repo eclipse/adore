@@ -48,6 +48,7 @@ services:
       network: host
       dockerfile: docker/Dockerfile.adore-cli
       args:
+        - ADORE_CLI_TAG=${ADORE_CLI_TAG:-latest}
         - USER=adore-cli
         - UID=${UID:-1000}
         - GID=${GID:-1001}
@@ -64,9 +65,9 @@ services:
     hostname: ADORe-CLI
     network_mode: "host"
     environment:
-      # - DISPLAY_MODE=${DISPLAY_MODE:-native}
-      - DISPLAY_MODE=${DISPLAY_MODE:-window_manager}
-      #- DISPLAY_MODE=${DISPLAY_MODE:-headless}
+      - DISPLAY_MODE=${DISPLAY_MODE:-native}
+      # - DISPLAY_MODE=${DISPLAY_MODE:-window_manager}
+      # - DISPLAY_MODE=${DISPLAY_MODE:-headless}
       - CATKIN_WORKSPACE_DIRECTORY=${CATKIN_WORKSPACE_DIRECTORY:-catkin_workspace}
       - DISPLAY=${DISPLAY}
       - UID=${UID}
@@ -86,6 +87,8 @@ services:
       network: host
       dockerfile: docker/Dockerfile.adore-cli_x11_display
       args:
+        - ADORE_CLI_TAG=${ADORE_CLI_TAG:-latest}
+        - ADORE_IF_ROS_TAG=${ADORE_IF_ROS_TAG:-latest}
         - USER=adore-cli
         - UID=${UID:-1000}
         - GID=${GID:-1001}

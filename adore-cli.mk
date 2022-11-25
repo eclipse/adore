@@ -69,7 +69,7 @@ build_fast_adore-cli: # build the adore-cli conte does not already exist in the 
 .PHONY: build_adore-cli
 build_adore-cli: clean_adore-cli ## Builds the ADORe CLI docker context/image
 	cd ${APT_CACHER_NG_DOCKER_MAKEFILE_PATH} && make up
-	echo "${ADORE_CLI_PROJECT}"
+	cd ${ADORE_CLI_MAKEFILE_PATH}/plotlabserver && make build_fast_plotlabserver
 	cd "${ADORE_CLI_MAKEFILE_PATH}" && \
     docker compose build ${ADORE_CLI_PROJECT} \
                          --build-arg UID=${UID} \
@@ -100,6 +100,7 @@ run_test_scenarios: adore-cli_setup adore-cli_start_headless adore-cli_scenarios
 .PHONY: adore-cli_setup
 adore-cli_setup: 
 	@echo "Running adore-cli setup..."
+	unset ADORE_CLI_MAKEFILE_PATH && make --file=${ADORE_CLI_MAKEFILE_PATH}/adore-cli.mk build_fast_adore-cli
 	unset CATKIN_BASE_MAKEFILE_PATH && make --file=${CATKIN_BASE_MAKEFILE_PATH}/catkin_base.mk create_catkin_workspace
 	@mkdir -p .log/.ros/bag_files
 	@mkdir -p plotlabserver/.log
@@ -112,7 +113,7 @@ adore-cli_setup:
 .PHONY: adore-cli_teardown
 adore-cli_teardown:
 	@echo "Running adore-cli teardown..."
-	@docker compose down && xhost - 1> /dev/null
+	@docker compose down && xhost - 1> /dev/null || true
 	@docker compose rm -f
 
 .PHONY: adore-cli_start
@@ -134,7 +135,14 @@ adore-cli_scenarios_run:
 	docker exec -it --user adore-cli adore-cli /bin/zsh -c "bash tools/run_test_scenarios.sh" || true
 
 .PHONY: run_test_scenarios
-run_test_scenarios: adore-cli_setup adore-cli_start_headless adore-cli_scenarios_run adore-cli_teardown # run headless test scenarios
+run_test_scenarios: adore-cli_setup adore-cli_start_headless adore-cli_scenarios_run adore-cli_teardown ## Run adore test scenarios specified by the TEST_SCENARIOS environmental variable
+	@echo "  To run alternative scenarios call 'make run_test_scenarios' by modifying the environmental variable TEST_SCENARIOS."
+	@echo "    Usage examples: "
+	@echo "      make run_test_scenarios TEST_SCENARIOS=baseline_test.launch"
+	@echo "      make run_test_scenarios TEST_SCENARIOS=a.launch b.launch c.launch"
+	@echo "      make run_test_scenarios DISPLAY_MODE=headless TEST_SCENARIOS=baseline_test.launch"
+	@echo "      make run_test_scenarios DISPLAY_MODE=native TEST_SCENARIOS=baseline_test.launch"
+	@echo "      make run_test_scenarios DISPLAY_MODE=window_manager TEST_SCENARIOS=baseline_test.launch"
 
 
 
