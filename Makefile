@@ -76,7 +76,9 @@ lint: ## Run linting for all modules
         (cd sumo_if_ros && make lint) || EXIT_STATUS=$$? && \
         (cd libadore && make lint) || EXIT_STATUS=$$? && \
         (cd adore_if_ros && make lint) || EXIT_STATUS=$$? && \
-	    find . -name "**lint_report.log" -print0 | xargs -0 -I {} mv {} .log/ && \
+        find sumo_if_ros -type f -name 'lint_report.log' -exec mv {} .log/sumo_if_ros_lint_report.log \; && \
+        find libadore -type f -name 'lint_report.log' -exec mv {} .log/libadore_lint_report.log \; && \
+        find adore_if_ros -type f -name 'lint_report.log' -exec mv {} .log/adore_if_ros_lint_report.log \; && \
         exit $$EXIT_STATUS
  
 .PHONY: lizard 
@@ -88,7 +90,12 @@ lizard: ## Run lizard static analysis tool for all modules
         (cd sumo_if_ros && make lizard) || EXIT_STATUS=$$? && \
         (cd libadore && make lizard) || EXIT_STATUS=$$? \ && \
         (cd adore_if_ros && make lizard) || EXIT_STATUS=$$? && \
-	    find . -name "**lizard_report.**" -print0 | xargs -0 -I {} mv {} .log/ && \
+        find sumo_if_ros -type f -name 'lizard_report.log' -exec mv {} .log/sumo_if_ros_lizard_report.log \; && \
+        find sumo_if_ros -type f -name 'lizard_report.xml' -exec mv {} .log/sumo_if_ros_lizard_report.xml \; && \
+        find libadore -type f -name 'lizard_report.log' -exec mv {} .log/libadore_lizard_report.log \; && \
+        find libadore -type f -name 'lizard_report.xml' -exec mv {} .log/libadore_lizard_report.xml \; && \
+        find adore_if_ros -type f -name 'lizard_report.log' -exec mv {} .log/adore_if_ros_lizard_report.log \; && \
+        find adore_if_ros -type f -name 'lizard_report.xml' -exec mv {} .log/adore_if_ros_if_ros_lizard_report.xml \; && \
         exit $$EXIT_STATUS
 
 .PHONY: cppcheck 
@@ -99,7 +106,9 @@ cppcheck: ## Run cppcheck static checking tool for all modules.
         (cd sumo_if_ros && make cppcheck) || EXIT_STATUS=$$? && \
         (cd libadore && make cppcheck) || EXIT_STATUS=$$? && \
         (cd adore_if_ros && make cppcheck) || EXIT_STATUS=$$? && \
-	    find . -name "**cppcheck_report.log" -print0 | xargs -0 -I {} mv {} .log/ && \
+        find sumo_if_ros -type f -name 'cppcheck_report.log' -exec mv {} .log/sumo_if_ros_cppcheck_report.log \; && \
+        find libadore -type f -name 'cppcheck_report.log' -exec mv {} .log/libadore_cppcheck_report.log \; && \
+        find adore_if_ros -type f -name 'cppcheck_report.log' -exec mv {} .log/adore_if_ros_cppcheck_report.log \; && \
         exit $$EXIT_STATUS
 
 
