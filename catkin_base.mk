@@ -85,6 +85,18 @@ create_catkin_workspace: ## Creates a catkin workspace @ adore/catkin_workspace.
         exit 0;\
     fi;
 
+.PHONY: initialize_catkin_workspace
+initialize_catkin_workspace: ## Creates a catkin workspace @ adore/catkin_workspace only if there is not already one 
+	@if [ -f "${CATKIN_BASE_MAKEFILE_PATH}/${CATKIN_WORKSPACE_DIRECTORY}/.bread_crumb" ]; then\
+		printf "Catkin workspace already exists at: %s, skipping creation of catkin workspace.\n " "${CATKIN_BASE_MAKEFILE_PATH}/${CATKIN_WORKSPACE_DIRECTORY}";\
+        exit 0;\
+    else\
+        unset CATKIN_BASE_MAKEFILE_PATH && make --file ${CATKIN_BASE_MAKEFILE_PATH}/catkin_base.mk create_catkin_workspace;\
+        touch ${CATKIN_BASE_MAKEFILE_PATH}/${CATKIN_WORKSPACE_DIRECTORY}/.bread_crumb;\
+        exit 0;\
+    fi;
+
+
 .PHONY: image_catkin_base
 image_catkin_base: ## Returns the current docker image name for catkin base 
 	@printf "%s\n" ${CATKIN_BASE_IMAGE}

@@ -18,7 +18,7 @@ include v2x_if_ros_msg/v2x_if_ros_msg.mk
 
 .EXPORT_ALL_VARIABLES:
 DOCKER_IMAGE_EXCLUSION_LIST="adore_if_ros:latest adore_if_ros_msg:latest plotlablib:latest plotlabserver:latest plotlabserver_build:latest v2x_if_ros_msg:latest libzmq:latest csaps-cpp:latest adore-cli:latest carlasim/carla:0.9.13"
-DOCKER_IMAGE_INCLUSION_LIST="edrevo/dockerfile-plus:latest"
+DOCKER_IMAGE_INCLUSION_LIST="edrevo/dockerfile-plus:latest ubuntu:20.04 ubuntu:focal"
 DOCKER_IMAGE_CACHE_DIRECTORY="${ROOT_DIR}/.docker_image_cache"
 DOCKER_IMAGE_SEARCH_PATH=${ROOT_DIR}
 
@@ -30,6 +30,7 @@ build: _build ## Build ADORe
 
 .PHONY: _build 
 _build: \
+        docker_load \
         docker_host_context_check \
         docker_storage_inventory_prebuild \
         start_apt_cacher_ng \
@@ -37,13 +38,13 @@ _build: \
         build_v2x_if_ros_msg \
         build_adore_if_ros \
         docker_storage_inventory_postbuild \
-        clean_up \
+        clean_up 
 
 .PHONY: clean 
 clean: clean_adore_if_ros ## Clean ADORe
 
 .PHONY: clean_up
-clean_up: stop_apt_cacher_ng
+clean_up: stop_apt_cacher_ng docker_save_images
 
 .PHONY: docker_storage_inventory_prebuild
 docker_storage_inventory_prebuild:
@@ -56,14 +57,14 @@ docker_storage_inventory_postbuild:
 
 .PHONY: docker_save_images
 docker_save_images:
-	@nohup sh -c 'make docker_fetch; make docker_save' > /dev/null 2>&1 &
+	@nohup sh -c 'make docker_save' > /dev/null 2>&1 &
 
 .PHONY: docker_load_images
 docker_load_images:
 	@nohup make docker_load > /dev/null 2>&1 &
 
 .PHONY: test 
-test:
+test: ## Run ADORe unit tests
 	mkdir -p .log && \
     cd libadore && \
 	make test | tee "${ROOT_DIR}/.log/libadore_unit_test.log"; exit $$PIPESTATUS

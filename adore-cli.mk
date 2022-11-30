@@ -5,6 +5,8 @@ ifndef ADORE_CLI_MAKEFILE_PATH
 
 MAKEFLAGS += --no-print-directory
 
+CLEAR_ENV=env -i
+
 .EXPORT_ALL_VARIABLES:
 ADORE_CLI_PROJECT:=adore-cli
 
@@ -32,13 +34,12 @@ include plotlabserver/plotlabserver.mk
 include adore_if_ros/adore_if_ros.mk
 include catkin_base.mk
 
-
 .PHONY: adore_if_ros_check
 adore_if_ros_check:
 	@if [ -z "$$(docker images -q '${ADORE_IF_ROS_PROJECT}:${ADORE_IF_ROS_TAG}')" ]; then \
-		echo "adore_if_ros docker image: ${ADORE_IF_ROS_PROJECT}:${ADORE_IF_ROS_TAG} does not exits in the local docker repository. "; \
+        echo "adore_if_ros docker image: ${ADORE_IF_ROS_PROJECT}:${ADORE_IF_ROS_TAG} does not exits in the local docker repository. "; \
         echo "Did you build adore_if_ros?"; \
-		echo "  Hint: run 'make build' to build adore_if_ros."; \
+        echo "  Hint: run 'make build' to build adore_if_ros."; \
         exit 1; \
     fi
 
@@ -46,10 +47,13 @@ adore_if_ros_check:
 adore-cli_up: adore-cli_setup adore-cli_start adore-cli_attach adore-cli_teardown 
 
 .PHONY: cli
-cli: adore-cli
+cli: adore-cli ## Same as 'make adore-cli' for the lazy 
+
+.PHONY: stop_adore-cli
+stop_adore-cli: docker_host_context_check adore-cli_teardown ## Stop adore-cli docker context if it is running
 
 .PHONY: adore-cli 
-adore-cli: docker_host_context_check adore_if_ros_check build_fast_plotlabserver build_fast_adore-cli ## Start adore-cli context or attach to it if already running
+adore-cli: docker_host_context_check build_fast_adore_if_ros build_fast_adore-cli ## Start adore-cli context or attach to it if already running
 	@if [[ "$$(docker inspect -f '{{.State.Running}}' '${ADORE_CLI_PROJECT}' 2>/dev/null)" == "true"  ]]; then\
         unset ADORE_CLI_MAKEFILE_PATH && make --file=${ADORE_CLI_MAKEFILE_PATH}/adore-cli.mk adore-cli_attach;\
         exit 0;\
@@ -64,6 +68,14 @@ build_fast_adore-cli: # build the adore-cli conte does not already exist in the 
         echo "Docker image: ${ADORE_CLI_PROJECT}:${ADORE_CLI_TAG} already build, skipping build."; \
     else \
         unset ADORE_CLI_MAKEFILE_PATH && make --file=${ADORE_CLI_MAKEFILE_PATH}/adore-cli.mk build_adore-cli;\
+    fi
+
+.PHONY: build_fast_adore_if_ros
+build_fast_adore_if_ros: # Build adore_if_ros if it does not already exist in the docker repository. If it does exist this is a noop.
+	@if [ -n "$$(docker images -q ${ADORE_IF_ROS_PROJECT}:${ADORE_IF_ROS_TAG})" ]; then \
+        echo "Docker image: ${ADORE_IF_ROS_PROJECT}:${ADORE_IF_ROS_TAG} already build, skipping build."; \
+    else \
+        ${CLEAR_ENV} make build;\
     fi
 
 .PHONY: build_adore-cli
@@ -101,14 +113,14 @@ run_test_scenarios: adore-cli_setup adore-cli_start_headless adore-cli_scenarios
 adore-cli_setup: 
 	@echo "Running adore-cli setup..."
 	unset ADORE_CLI_MAKEFILE_PATH && make --file=${ADORE_CLI_MAKEFILE_PATH}/adore-cli.mk build_fast_adore-cli
-	unset CATKIN_BASE_MAKEFILE_PATH && make --file=${CATKIN_BASE_MAKEFILE_PATH}/catkin_base.mk create_catkin_workspace
+	unset CATKIN_BASE_MAKEFILE_PATH && make --file=${CATKIN_BASE_MAKEFILE_PATH}/catkin_base.mk initialize_catkin_workspace
 	@mkdir -p .log/.ros/bag_files
 	@mkdir -p plotlabserver/.log
 	@cd .log && ln -sf ../plotlabserver/.log plotlabserver
 	@touch .zsh_history
 	@touch .zsh_history.new
 	cd plotlabserver && \
-    make down
+    make down || true
 
 .PHONY: adore-cli_teardown
 adore-cli_teardown:
