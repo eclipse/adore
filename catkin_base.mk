@@ -27,8 +27,8 @@ GID := $(shell id -g)
 
 CATKIN_WORKSPACE_DIRECTORY=catkin_workspace
 
-include apt_cacher_ng_docker/apt_cacher_ng_docker.mk 
-include adore_if_ros_msg/make_gadgets/docker/docker-tools.mk
+include ${CATKIN_BASE_MAKEFILE_PATH}/apt_cacher_ng_docker/apt_cacher_ng_docker.mk 
+include ${CATKIN_BASE_MAKEFILE_PATH}/adore_if_ros_msg/make_gadgets/docker/docker-tools.mk
 
 #Required for dockerfile-plus plugin e.g., any Dockerfile that has: INCLUDE+ 
 DOCKER_BUILDKIT:=1

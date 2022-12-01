@@ -29,10 +29,10 @@ GID := $(shell id -g)
 TEST_SCENARIOS?=baseline_test.launch
 
 #include adore_if_ros_msg/make_gadgets/docker/docker-tools.mk
-include apt_cacher_ng_docker/apt_cacher_ng_docker.mk 
-include plotlabserver/plotlabserver.mk
-include adore_if_ros/adore_if_ros.mk
-include catkin_base.mk
+include ${ADORE_CLI_MAKEFILE_PATH}/apt_cacher_ng_docker/apt_cacher_ng_docker.mk 
+include ${ADORE_CLI_MAKEFILE_PATH}/plotlabserver/plotlabserver.mk
+include ${ADORE_CLI_MAKEFILE_PATH}/adore_if_ros/adore_if_ros.mk
+include ${ADORE_CLI_MAKEFILE_PATH}/catkin_base.mk
 
 .PHONY: adore_if_ros_check
 adore_if_ros_check:
