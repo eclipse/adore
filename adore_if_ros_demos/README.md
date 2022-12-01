@@ -264,12 +264,12 @@ Note:
 - file: [demo014_adore_if_carla.launch](demo014_adore_if_carla.launch)
 - Note: adore_if_carla is experimental.
 The demo shows the the coupling of ADORe and CARLA.
-In order to run this demo, the adore_if_carla package needs to be built. Further instructions on that can be find in the [README](https://github.com/DLR-TS/adore_if_carla/blob/main/README.md).
+In order to run this demo, the adore_if_carla package needs to be built. Further instructions on that can be find in the [README](https://github.com/DLR-TS/adore_if_carla/blob/fix/control/README.md).
 To start the demo, the following steps need to be performed:
-1. build adore_if_carla
-2. start CARLA by running [adore_if_carla/run_1_carla.sh](https://github.com/DLR-TS/adore_if_carla/blob/main/run_1_carla.sh)
-3. start the CARLA-ros-bridge by running [adore_if_carla/run_2_carla_ros_bridge.sh](https://github.com/DLR-TS/adore_if_carla/blob/main/run_2_carla_ros_bridge.sh)
-4. start the adore_if_carla core-nodes by running [adore_if_carla/run_3_adore_if_carla.sh](https://github.com/DLR-TS/adore_if_carla/blob/main/run_3_adore_if_carla.sh)
+1. build adore_if_carla by typing "make" in the adore_if_carla directory
+2. start CARLA by typing "docker compose up carla" in the adore_if_carla directory
+3. start the CARLA-ros-bridge by typing "xhost local:root; docker compose up carla-ros-bridge" in the adore_if_carla directory
+4. start the adore_if_carla applications by typing "docker compose up adore_if_carla" in the adore_if_carla directory
 5. start the [demo014_adore_if_carla.launch](demo014_adore_if_carla.launch) of adore_if_ros_demos
 
 ![ADORe-CARLA-interface](https://github.com/DLR-TS/adore_support/blob/master/demos/demo014.png)

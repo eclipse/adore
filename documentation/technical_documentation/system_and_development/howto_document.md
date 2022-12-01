@@ -12,20 +12,5 @@
 * Contributors: 
 ********************************************************************************
 -->
-# libadore
-The core library of adore, project folder. Content can be found in subfolder [libadore](libadore).
-
-## Getting Started
-This module requires **make** and **docker** installed and configured for your user.
-
-### Building
-To build libadore run the following:
-```bash
-make
-```
-
-### Testing
-To run unit tests run the following target:
-```bash 
-make test
-```
+- The gh-pages documentation is hosted [here](https://eclipse.github.io/adore/).
+- The page documentation/Home.md is picked up as an entry point for the gh-pages generator.

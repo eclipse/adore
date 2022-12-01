@@ -12,20 +12,26 @@
 * Contributors: 
 ********************************************************************************
 -->
-# libadore
-The core library of adore, project folder. Content can be found in subfolder [libadore](libadore).
 
-## Getting Started
-This module requires **make** and **docker** installed and configured for your user.
+# High-definition Maps and Navigation
+## Geoserver
 
-### Building
-To build libadore run the following:
-```bash
-make
-```
+## Lanes
 
-### Testing
-To run unit tests run the following target:
-```bash 
-make test
-```
+### Road2Simulation
+
+### Open Drive
+[how to check open drive files](odrcheck.md)
+
+## Precedence Rules
+
+## Speed Limits
+
+## Checkpoints
+
+## Indicator Hints
+
+## Aerial Images
+
+## Navigation on Lanes
+
