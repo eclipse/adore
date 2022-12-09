@@ -70,13 +70,6 @@ build_fast_adore-cli: # build the adore-cli conte does not already exist in the 
         unset ADORE_CLI_MAKEFILE_PATH && make --file=${ADORE_CLI_MAKEFILE_PATH}/adore-cli.mk build_adore-cli;\
     fi
 
-.PHONY: build_fast_adore_if_ros
-build_fast_adore_if_ros: # Build adore_if_ros if it does not already exist in the docker repository. If it does exist this is a noop.
-	@if [ -n "$$(docker images -q ${ADORE_IF_ROS_PROJECT}:${ADORE_IF_ROS_TAG})" ]; then \
-        echo "Docker image: ${ADORE_IF_ROS_PROJECT}:${ADORE_IF_ROS_TAG} already build, skipping build."; \
-    else \
-        ${CLEAR_ENV} make build;\
-    fi
 
 .PHONY: build_adore-cli
 build_adore-cli: clean_adore-cli ## Builds the ADORe CLI docker context/image
