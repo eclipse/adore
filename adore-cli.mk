@@ -22,6 +22,8 @@ ADORE_CLI_CMAKE_INSTALL_PATH:="${ADORE_CLI_CMAKE_BUILD_PATH}/install"
 
 ADORE_SOURCE_DIRECTORY:=${REPO_DIRECTORY}
 
+DOCKER_COMPOSE_FILE?=docker-compose.yaml
+
 UID := $(shell id -u)
 GID := $(shell id -g)
 
@@ -118,13 +120,13 @@ adore-cli_setup:
 .PHONY: adore-cli_teardown
 adore-cli_teardown:
 	@echo "Running adore-cli teardown..."
-	@docker compose down && xhost - 1> /dev/null || true
-	@docker compose rm -f
+	@docker compose -f ${DOCKER_COMPOSE_FILE} down && xhost - 1> /dev/null || true
+	@docker compose -f ${DOCKER_COMPOSE_FILE} rm -f
 
 .PHONY: adore-cli_start
 adore-cli_start:
-	@xhost + && \
-    docker compose up adore-cli_x11-display --force-recreate -V -d; \
+	xhost + && \
+    docker compose -f ${DOCKER_COMPOSE_FILE} up adore-cli_x11-display --force-recreate -V -d; \
     xhost - 
 
 .PHONY: adore-cli_start_headless
