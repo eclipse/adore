@@ -24,6 +24,8 @@ ADORE_SOURCE_DIRECTORY:=${REPO_DIRECTORY}
 
 DOCKER_COMPOSE_FILE?=docker-compose.yaml
 
+ADORE_CLI_WORKING_DIRECTORY?=${ADORE_SOURCE_DIRECTORY}
+
 UID := $(shell id -u)
 GID := $(shell id -g)
 
@@ -134,8 +136,8 @@ adore-cli_start_headless:
 	DISPLAY_MODE=headless unset ADORE_CLI_MAKEFILE_PATH && make --file=${ADORE_CLI_MAKEFILE_PATH}/adore-cli.mk adore-cli_start 
 
 .PHONY: adore-cli_attach
-adore-cli_attach: 
-	docker exec -it --user adore-cli adore-cli /bin/zsh -c "bash tools/adore-cli.sh" || true
+adore-cli_attach:
+	docker exec -it --user adore-cli adore-cli /bin/zsh -c "ADORE_CLI_WORKING_DIRECTORY=${ADORE_CLI_WORKING_DIRECTORY} bash /tmp/adore/tools/adore-cli.sh" || true
 
 .PHONY: adore-cli_scenarios_run
 adore-cli_scenarios_run:

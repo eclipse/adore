@@ -22,4 +22,6 @@ printf "\n"
 export CATKIN_SHELL=sh
 
 source catkin_workspace/install/setup.sh
+
+cd "${ADORE_CLI_WORKING_DIRECTORY}"
 zsh
