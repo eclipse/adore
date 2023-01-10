@@ -24,4 +24,10 @@ export CATKIN_SHELL=sh
 source catkin_workspace/install/setup.sh
 
 cd "${ADORE_CLI_WORKING_DIRECTORY}"
+
+if [ -z ${VEHICLE_NAME+x} ]; then 
+    echo "No vehicle set."; 
+else 
+    echo "Vehicle environment set to: ${VEHICLE_NAME}"; 
+fi
 zsh
