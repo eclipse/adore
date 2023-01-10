@@ -31,7 +31,7 @@ TEST_SCENARIOS?=baseline_test.launch
 #include adore_if_ros_msg/make_gadgets/docker/docker-tools.mk
 include ${ADORE_CLI_MAKEFILE_PATH}/apt_cacher_ng_docker/apt_cacher_ng_docker.mk 
 include ${ADORE_CLI_MAKEFILE_PATH}/plotlabserver/plotlabserver.mk
-include ${ADORE_CLI_MAKEFILE_PATH}/adore_if_ros/adore_if_ros.mk
+include ${ADORE_CLI_MAKEFILE_PATH}/adore.mk
 include ${ADORE_CLI_MAKEFILE_PATH}/catkin_base.mk
 
 .PHONY: adore_if_ros_check
@@ -108,11 +108,11 @@ adore-cli_setup:
 	unset ADORE_CLI_MAKEFILE_PATH && make --file=${ADORE_CLI_MAKEFILE_PATH}/adore-cli.mk build_fast_adore-cli
 	unset CATKIN_BASE_MAKEFILE_PATH && make --file=${CATKIN_BASE_MAKEFILE_PATH}/catkin_base.mk initialize_catkin_workspace
 	@mkdir -p .log/.ros/bag_files
-	@mkdir -p plotlabserver/.log
-	@cd .log && ln -sf ../plotlabserver/.log plotlabserver
+	@mkdir -p ${ADORE_CLI_MAKEFILE_PATH}/plotlabserver/.log
+	@cd .log && ln -sf ../${ADORE_CLI_MAKEFILE_PATH}/plotlabserver/.log plotlabserver
 	@touch .zsh_history
 	@touch .zsh_history.new
-	cd plotlabserver && \
+	cd ${ADORE_CLI_MAKEFILE_PATH}/plotlabserver && \
     make down || true
 
 .PHONY: adore-cli_teardown
