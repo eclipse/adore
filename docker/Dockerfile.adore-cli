@@ -17,7 +17,13 @@ ARG GID
 ARG TEST_SCENARIOS
 
 RUN apt-get update && \
-    apt-get install --no-install-recommends -y xterm netcat net-tools apt-file && \
+    apt-get install --no-install-recommends -y \
+                                               xterm \
+                                               netcat \
+                                               net-tools \
+                                               apt-file \
+                                               python-is-python3 \
+                                               && \
     rm -rf /var/lib/apt/lists/*
 
 
