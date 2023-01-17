@@ -7,7 +7,6 @@ ROOT_DIR:=$(shell dirname "$(realpath $(firstword $(MAKEFILE_LIST)))")
 include adore_if_ros_msg/make_gadgets/make_gadgets.mk
 include adore_if_ros_msg/make_gadgets/docker/docker-tools.mk
 include adore_if_ros_msg/make_gadgets/docker/docker-image-cacher.mk
-include apt_cacher_ng_docker/apt_cacher_ng_docker.mk
 include adore-cli.mk
 #include adore_if_ros/adore_if_ros.mk
 #include adore_if_ros_msg/adore_if_ros_msg.mk
@@ -22,6 +21,8 @@ DOCKER_IMAGE_INCLUSION_LIST="edrevo/dockerfile-plus:latest ubuntu:20.04 ubuntu:f
 DOCKER_IMAGE_CACHE_DIRECTORY="${ROOT_DIR}/.docker_image_cache"
 DOCKER_IMAGE_SEARCH_PATH=${ROOT_DIR}
 
+include apt_cacher_ng_docker/apt_cacher_ng_docker.mk
+
 .PHONY: all
 all: help 
 
@@ -33,6 +34,12 @@ build_adore_if_ros_msg:
 	cd adore_if_ros_msg && \
 	make build
 
+.PHONY: build_adore_v2x
+build_adore_if_v2x:
+	cd adore_if_v2x && \
+    APT_CACHER_NG_DOCKER_MAKEFILE_PATH= make build
+
+
 .PHONY: _build 
 _build: \
         docker_load \
@@ -42,6 +49,7 @@ _build: \
         build_adore_if_ros_msg \
         build_v2x_if_ros_msg \
         build_adore_if_ros \
+        build_adore_if_v2x \
         docker_storage_inventory_postbuild \
         clean_up 
 
