@@ -48,8 +48,11 @@ build: clean set_env build_libadore build_plotlablib ## Build adore_if_ros
                  --build-arg PLOTLABLIB_TAG="${PLOTLABLIB_TAG}" .
 	docker cp $$(docker create --rm ${PROJECT}:${TAG}):/tmp/${PROJECT}/${PROJECT}/build ${PROJECT}
 
+.PHONY: clean_submodules
+clean_submodules: clean_adore_if_ros_msg clean_plotlablib
+
 .PHONY: clean 
-clean: set_env
+clean: set_env clean_submodules
 	rm -rf "${ROOT_DIR}/${PROJECT}/build"
 	find . -name "**lint_report.log" -exec rm -rf {} \;
 	find . -name "**cppcheck_report.log" -exec rm -rf {} \;
