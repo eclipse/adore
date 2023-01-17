@@ -68,11 +68,11 @@ build_fast_catkin_base: # Build the catkin_base docker context if it does not al
 create_catkin_workspace_docker:
 	unset CATKIN_BASE_MAKEFILE_PATH && make --file=${CATKIN_BASE_MAKEFILE_PATH}/catkin_base.mk build_fast_catkin_base
 	docker run -it \
-                   --rm \
-                   --user "${UID}:${GID}" \
-                   --mount type=bind,source="${CATKIN_BASE_MAKEFILE_PATH}",target="${CATKIN_BASE_MAKEFILE_PATH}" \
-                   ${CATKIN_BASE_PROJECT}:${CATKIN_BASE_TAG} \
-                   /bin/bash -c 'cd "${CATKIN_BASE_MAKEFILE_PATH}" && HOME="${CATKIN_BASE_MAKEFILE_PATH}" CATKIN_WORKSPACE_DIRECTORY="${CATKIN_WORKSPACE_DIRECTORY}" bash ${CATKIN_BASE_MAKEFILE_PATH}/tools/create_catkin_workspace.sh 2>&1 | tee -a .log/create_catkin_workspace.log'
+               --rm \
+               --user "${UID}:${GID}" \
+               --mount type=bind,source="${CATKIN_BASE_MAKEFILE_PATH}",target="${CATKIN_BASE_MAKEFILE_PATH}" \
+               ${CATKIN_BASE_PROJECT}:${CATKIN_BASE_TAG} \
+               'cd "${CATKIN_BASE_MAKEFILE_PATH}" && HOME="${CATKIN_BASE_MAKEFILE_PATH}" CATKIN_WORKSPACE_DIRECTORY="${CATKIN_WORKSPACE_DIRECTORY}" bash "${CATKIN_BASE_MAKEFILE_PATH}/tools/create_catkin_workspace.sh" 2>&1 | tee -a .log/create_catkin_workspace.log'
 
 .PHONY: create_catkin_workspace
 create_catkin_workspace: ## Creates a catkin workspace @ adore/catkin_workspace. Can be called within the adore-cli docker context or on the host
