@@ -49,7 +49,11 @@ build: clean set_env build_libadore build_plotlablib ## Build adore_if_ros
 	docker cp $$(docker create --rm ${PROJECT}:${TAG}):/tmp/${PROJECT}/${PROJECT}/build ${PROJECT}
 
 .PHONY: clean_submodules
-clean_submodules: clean_adore_if_ros_msg clean_plotlablib
+clean_submodules:
+	unset ADORE_IF_ROS_MSG_MAKEFILE_PATH && \
+    make --file=${ADORE_IF_ROS_MAKEFILE_PATH}/adore_if_ros_msg/adore_if_ros_msg.mk clean_adore_if_ros_msg 
+	unset PLOTLABLIB_MAKEFILE_PATH && \
+    make --file=${ADORE_IF_ROS_MAKEFILE_PATH}/plotlablib/plotlablib.mk clean_plotlablib 
 
 .PHONY: clean 
 clean: set_env clean_submodules
