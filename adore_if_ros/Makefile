@@ -15,7 +15,6 @@ include adore_if_ros_msg/make_gadgets/docker/docker-tools.mk
 include cppcheck_docker/cppcheck_docker.mk
 include cpplint_docker/cpplint_docker.mk
 include lizard_docker/lizard_docker.mk
-include adore_if_ros_msg/adore_if_ros_msg.mk 
 include plotlablib/plotlablib.mk 
 include ../libadore/libadore.mk
 
@@ -27,6 +26,7 @@ DOCKER_CONFIG?=
 CPP_PROJECT_DIRECTORY:="${ROOT_DIR}/adore_if_ros"
 
 include adore_if_ros.mk 
+include adore_if_ros_msg/adore_if_ros_msg.mk 
 
 #CMAKE_PREFIX_PATH?=$(shell realpath "$$(find . -name install | grep "install" | grep -e "install/\|CPack" -v)" | tr '\n' ';') 
 CMAKE_PREFIX_PATH?=$(shell realpath "$$(find . -type d | grep "build" | grep -v "build/")" 2>/dev/null | tr '\n' ';')

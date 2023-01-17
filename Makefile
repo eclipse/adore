@@ -10,7 +10,7 @@ include adore_if_ros_msg/make_gadgets/docker/docker-image-cacher.mk
 include apt_cacher_ng_docker/apt_cacher_ng_docker.mk
 include adore-cli.mk
 #include adore_if_ros/adore_if_ros.mk
-include adore_if_ros_msg/adore_if_ros_msg.mk
+#include adore_if_ros_msg/adore_if_ros_msg.mk
 include v2x_if_ros_msg/v2x_if_ros_msg.mk
 #include plotlabserver/plotlabserver.mk
 #include catkin_base.mk
@@ -27,6 +27,11 @@ all: help
 
 .PHONY: build 
 build: _build ## Build ADORe 
+
+.PHONY: build_adore_if_ros_msg
+build_adore_if_ros_msg:
+	cd adore_if_ros_msg && \
+	make build
 
 .PHONY: _build 
 _build: \
