@@ -26,8 +26,8 @@ source catkin_workspace/install/setup.sh
 cd "${ADORE_CLI_WORKING_DIRECTORY}"
 
 if [ -z ${VEHICLE_NAME+x} ]; then 
-    echo "No vehicle set."; 
+    printf "  No vehicle set.\n\n"; 
 else 
-    echo "Vehicle environment set to: ${VEHICLE_NAME}"; 
+    printf "  Vehicle environment set to: ${VEHICLE_NAME}\n\n"; 
 fi
 zsh
