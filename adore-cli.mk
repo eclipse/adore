@@ -153,6 +153,12 @@ run_test_scenarios: adore-cli_setup adore-cli_start_headless adore-cli_scenarios
 	@echo "      make run_test_scenarios DISPLAY_MODE=native TEST_SCENARIOS=baseline_test.launch"
 	@echo "      make run_test_scenarios DISPLAY_MODE=window_manager TEST_SCENARIOS=baseline_test.launch"
 
+.PHONY: __create_catkin_workspace
+__create_catkin_workspace:
+	docker exec -it --user adore-cli adore-cli /bin/zsh -c "cd ${ADORE_SOURCE_DIRECTORY} && make create_catkin_workspace" || true
+
+.PHONY: _create_catkin_workspace 
+_create_catkin_workspace: adore-cli_setup adore-cli_start_headless __create_catkin_workspace adore-cli_teardown
 
 
 endif
