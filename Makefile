@@ -50,6 +50,7 @@ _build: \
         build_v2x_if_ros_msg \
         build_adore_if_ros \
         build_adore_if_v2x \
+        build_adore_if_ros_msg \
         docker_storage_inventory_postbuild \
         clean_up 
 
