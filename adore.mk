@@ -12,7 +12,6 @@ MAKE_GADGETS_PATH:=${ADORE_MAKEFILE_PATH}/adore_if_ros_msg/make_gadgets
 REPO_DIRECTORY:=${ADORE_MAKEFILE_PATH}
 
 include ${ADORE_MAKEFILE_PATH}/adore-cli.mk
-include ${ADORE_CLI_MAKEFILE_PATH}/libadore/libadore.mk
 include ${ADORE_CLI_MAKEFILE_PATH}/adore_if_ros/adore_if_ros.mk
 
 .PHONY: build_fast_adore_if_ros
