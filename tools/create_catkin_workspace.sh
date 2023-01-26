@@ -30,7 +30,9 @@ if [[ ! -d "${CATKIN_WORKSPACE_DIRECTORY}" ]]; then
  
     cd $CATKIN_WORKSPACE_DIRECTORY
     for file in "$ADORE_SOURCE_DIRECTORY"/*; do
-        file="$(realpath "${file}")"
+        
+	printf "file: %s realpath: %s\n" "${file}" "$(realpath "${file}")"    
+	file="$(realpath "${file}")"
         file "${file}"
         if [ -d "$file" ]; then
             #echo "processing: $file"
