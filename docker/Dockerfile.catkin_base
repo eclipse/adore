@@ -1,7 +1,7 @@
 # syntax = edrevo/dockerfile-plus
 
-ARG UID
-ARG GID
+ARG UID=1000
+ARG GID=1000
 ARG USER=catkin
 
 FROM ros:noetic-ros-core-focal AS catkin_base
@@ -11,11 +11,14 @@ ARG GID
 ARG USER
 
 RUN apt-get update && \
-    apt-get install --no-install-recommends -y make g++ python3-catkin-tools && \
+    apt-get install --no-install-recommends -y file make g++ python3-catkin-tools && \
     rm -rf /var/lib/apt/lists/*
 
 RUN useradd catkin
 
 INCLUDE+ Dockerfile.personalize.partial
 
-USER nobody
+USER $USER
+
+ENTRYPOINT ["bash", "-c"]
+

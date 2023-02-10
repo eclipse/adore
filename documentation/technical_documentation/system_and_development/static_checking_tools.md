@@ -1,3 +1,18 @@
+<!--
+********************************************************************************
+* Copyright (C) 2017-2020 German Aerospace Center (DLR). 
+* Eclipse ADORe, Automated Driving Open Research https://eclipse.org/adore
+*
+* This program and the accompanying materials are made available under the 
+* terms of the Eclipse Public License 2.0 which is available at
+* http://www.eclipse.org/legal/epl-2.0.
+*
+* SPDX-License-Identifier: EPL-2.0 
+*
+* Contributors: 
+********************************************************************************
+-->
+<!--
 title:      Static Checking Tools
 desc:       This article provides a technical overview of the static checking tools baked into ADORe .
 date:       ${DOC_DATETIME}
@@ -6,7 +21,7 @@ template:   document
 nav:        Technical Documentation __4__>Static Checking Tools __2__
 percent:    100
 authors:    opensource-ts@dlr.de
-           
+-->           
 # Static Checking Tools
 There are a number of static checking tools build into ADORe intended to increase code quality.  This article will outline
 the use of these tools within ADORe.

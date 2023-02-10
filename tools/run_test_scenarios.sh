@@ -14,7 +14,6 @@ PLOTLABSERVER_LOG_DIR="${LOG_DIR}/plotlabserver"
 clear
 cd ${SCRIPT_DIR}/.. 
 
-make create_catkin_workspace > .log/create_catkin_workspace.log 2>&1 &
 
 bash plotlabserver/tools/wait_for_plotlab_server.sh
 
@@ -36,12 +35,28 @@ for test_scenario in $TEST_SCENARIOS; do
         echoerr "ERROR: Specified test scenario: ${test_scenario} is not found."
     fi
 
-    scenario_name=$(basename $test_scenario .launch)
-    mkdir -p $LOG_DIR/$scenario_name/{plotlabserver,.ros}
+    scenario_name=$(basename "${test_scenario}" .launch)
+    mkdir -p "${LOG_DIR}/${scenario_name}/.ros"
+    mkdir -p "${LOG_DIR}/${scenario_name}/plotlabserver"
     echo "Running scenario: ${test_scenario}"
-    roslaunch $test_scenario 
-    (cd "${ROS_LOG_DIR}" && ln -s -f $(basename $(file latest | cut -d" " -f6)) latest 2> /dev/null || true)
-    (cd "${ROS_LOG_DIR}" && mv -T latest $scenario_name)
-    cp -r $ROS_LOG_DIR/${scenario_name}/* ${LOG_DIR}/$scenario_name/.ros/
-    cp -r $PLOTLABSERVER_LOG_DIR/* ${LOG_DIR}/$scenario_name/plotlabserver/
+    roslaunch "${test_scenario}"
+    cd "${ROS_LOG_DIR}"
+    latest_ros_log_path="$(ls -t | head -1)"
+    rm latest -f
+    ln -s -f "${latest_ros_log_path}" latest 2> /dev/null || true
+    ln -s -f "${latest_ros_log_path}" "${scenario_name}" 2> /dev/null || true
+    #if [[ -L latest ]]; then
+    #    latest_ros_log_path="$(file latest | cut -d " " -f6)"
+    #    if [[ -z "${latest_ros_log_path}" ]]; then
+    #        latest_ros_log_path="$(file latest | cut -d " " -f5)"
+    #    fi
+    #    latest_ros_log_path_basename="$(basename "${latest_ros_log_path}")"
+    #fi
+    #ln -s -f "${latest_ros_log_path_basename}" latest 2> /dev/null || true
+    #mv -T latest "${scenario_name}"
+    mkdir -p "${LOG_DIR}/${scenario_name}/.ros"
+    cp -r "${ROS_LOG_DIR}/${scenario_name}"/* "${LOG_DIR}/$scenario_name/.ros/"
+    #cp -r "${ROS_LOG_DIR}/${scenario_name}/* ${LOG_DIR}/$scenario_name/.ros/
+    (cd "${PLOTLABSERVER_LOG_DIR}" && cp -r * "${LOG_DIR}/${scenario_name}/plotlabserver")
+    #cp -r $PLOTLABSERVER_LOG_DIR/* ${LOG_DIR}/$scenario_name/plotlabserver/
 done

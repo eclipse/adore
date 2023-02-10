@@ -1,6 +1,7 @@
-ARG PROJECT
+ARG PROJECT=libadore
+ARG LIBADORE_TAG=latest
 
-FROM libadore_build AS libadore_build
+FROM libadore_build:${LIBADORE_TAG} AS libadore_build
 
 FROM alpine:3.14 AS libadore_package
 
