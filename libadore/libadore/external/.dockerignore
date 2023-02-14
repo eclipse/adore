@@ -9,3 +9,4 @@ osqp/build
 **.git
 **/.git
 **/build
+*.tar
