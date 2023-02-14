@@ -176,7 +176,7 @@ docker_publish:
 	docker tag "${CATCH2_TAG}" "${DOCKER_REPOSITORY}:${CATCH2_PROJECT}_${CATCH2_VERSION}"
 	docker push "${DOCKER_REPOSITORY}:${CATCH2_PROJECT}_${CATCH2_VERSION}"
 
-.PHONY: docker_publish
+.PHONY: docker_pull
 docker_pull:
 	docker pull "${DOCKER_REPOSITORY}:${QPOASES_PROJECT}_${QPOASES_VERSION}"
 	docker tag "${DOCKER_REPOSITORY}:${QPOASES_PROJECT}_${QPOASES_VERSION}" "${QPOASES_TAG}"
