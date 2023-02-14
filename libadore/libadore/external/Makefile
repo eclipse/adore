@@ -28,6 +28,10 @@ XODR_PROJECT="xodr"
 XODR_VERSION="latest"
 XODR_TAG="${XODR_PROJECT}:${XODR_VERSION}"
 
+CSAPS_CPP_PROJECT="csaps-cpp"
+CSAPS_CPP_VERSION="latest"
+CSAPS_CPP_TAG="${CSAPS_CPP_PROJECT}:${CSAPS_CPP_VERSION}"
+
 DOCKER_REPOSITORY="andrewkoerner/adore"
 
 EXTERNALS_DOCKER_ARCHIVE="/var/tmp/libadore_externals.tar"
@@ -146,7 +150,7 @@ clean:
 	docker rm $$(docker ps -a -q --filter "ancestor=${DLIB_TAG}") 2> /dev/null || true
 	docker rmi $$(docker images -q ${DLIB_TAG}) 2> /dev/null || true
 	docker rm $$(docker ps -a -q --filter "ancestor=${CSAPS_CPP_TAG}") 2> /dev/null || true
-	docker rmi $$(docker images -q ${CSAPS_CPP_PROJECT}) 2> /dev/null || true
+	docker rmi $$(docker images -q ${CSAPS_CPP_TAG}) 2> /dev/null || true
 	docker rm $$(docker ps -a -q --filter "ancestor=${CATCH2_TAG}") 2> /dev/null || true
 	docker rmi $$(docker images -q ${CATCH2_TAG}) 2> /dev/null || true
 	cd csaps-cpp && make clean
@@ -162,6 +166,9 @@ docker_publish:
 
 	docker tag "${OSQP_TAG}" "${DOCKER_REPOSITORY}:${OSQP_PROJECT}_${OSQP_VERSION}"
 	docker push "${DOCKER_REPOSITORY}:${OSQP_PROJECT}_${OSQP_VERSION}"
+	
+	docker tag "${CSAPS_CPP_TAG}" "${DOCKER_REPOSITORY}:${CSAPS_CPP_PROJECT}_${CSAPS_CPP_VERSION}"
+	docker push "${DOCKER_REPOSITORY}:${CSAPS_CPP_PROJECT}_${CSAPS_CPP_VERSION}"
 
 	docker tag "${XODR_TAG}" "${DOCKER_REPOSITORY}:${XODR_PROJECT}_${XODR_VERSION}"
 	docker push "${DOCKER_REPOSITORY}:${XODR_PROJECT}_${XODR_VERSION}"
@@ -182,6 +189,10 @@ docker_pull:
 	docker pull "${DOCKER_REPOSITORY}:${OSQP_PROJECT}_${OSQP_VERSION}"
 	docker tag "${DOCKER_REPOSITORY}:${OSQP_PROJECT}_${OSQP_VERSION}" "${OSQP_TAG}"
 	docker rmi "${DOCKER_REPOSITORY}:${OSQP_PROJECT}_${OSQP_VERSION}"
+	
+	docker pull "${DOCKER_REPOSITORY}:${CSAPS_CPP_PROJECT}_${CSAPS_CPP_VERSION}"
+	docker tag "${DOCKER_REPOSITORY}:${CSAPS_CPP_PROJECT}_${CSAPS_CPP_VERSION}" "${CSAPS_CPP_TAG}"
+	docker rmi "${DOCKER_REPOSITORY}:${CSAPS_CPP_PROJECT}_${CSAPS_CPP_VERSION}"
 
 	docker pull "${DOCKER_REPOSITORY}:${XODR_PROJECT}_${XODR_VERSION}"
 	docker tag "${DOCKER_REPOSITORY}:${XODR_PROJECT}_${XODR_VERSION}" "${XODR_TAG}"
@@ -196,6 +207,7 @@ docker_pull_fast:
 	@[ -n "$$(docker images -q ${QPOASES_TAG})" ] || make docker_pull
 	@[ -n "$$(docker images -q ${DLIB_TAG})" ] || make docker_pull
 	@[ -n "$$(docker images -q ${OSQP_TAG})" ] || make docker_pull
+	@[ -n "$$(docker images -q ${CSAPS_CPP_TAG})" ] || make docker_pull
 	@[ -n "$$(docker images -q ${XODR_TAG})" ] || make docker_pull
 	@[ -n "$$(docker images -q ${CATCH2_TAG})" ] || make docker_pull
 
