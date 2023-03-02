@@ -6,6 +6,7 @@ function echoerr { echo "$@" >&2; exit 1;}
 DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" &> /dev/null && pwd )" 
 
 ADORE_SOURCE_DIRECTORY=$(realpath "${DIR}/..")
+ADORE_SCHEDULING_SOURCE_DIRECTORY=$(realpath "${DIR}/../adore_if_ros/adore_scheduling")
 
 if ! [ -x "$(command -v catkin)" ]; then
     echoerr "ERROR: catkin not installed."
@@ -21,7 +22,7 @@ if [[ ! -d "${CATKIN_WORKSPACE_DIRECTORY}" ]]; then
     mkdir -p "${CATKIN_WORKSPACE_DIRECTORY}"/install/{lib/python3/dist-packages,share,include}
 	
     cd $CATKIN_WORKSPACE_DIRECTORY
-    for file in $ADORE_SOURCE_DIRECTORY/*; do 
+    for file in {$ADORE_SOURCE_DIRECTORY,$ADORE_SCHEDULING_SOURCE_DIRECTORY}/*; do 
     	if [ -d "$file" ]; then
 	    	#echo "processing: $file"
 	    	#short="${${file:0:-1}##*/}"    #extract dir name without path and trailing /
