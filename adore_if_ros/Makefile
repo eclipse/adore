@@ -3,6 +3,7 @@ include make_gadgets/docker/Makefile
 include cppcheck_docker/Makefile.cppcheck_target
 include cpplint_docker/Makefile.cpplint_target
 include lizard_docker/Makefile.lizard_target
+include adore_scheduling/adore_scheduling.mk
 
 SHELL:=/bin/bash
 
@@ -33,7 +34,7 @@ TAG="${PROJECT}:${VERSION}"
 all: root_check docker_group_check build
 
 .PHONY: build 
-build: set_mode ## Build adore_if_ros
+build: set_mode build_adore_scheduling ## Build adore_if_ros
 	rm -rf "${PROJECT}/build"
 	cd adore_if_ros_msg && \
 	make
@@ -42,11 +43,12 @@ build: set_mode ## Build adore_if_ros
 	docker build --tag $(shell echo ${TAG} | tr A-Z a-z) \
                  --network host \
                  --build-arg DEBUG="${DEBUG}" \
-                 --build-arg PROJECT=${PROJECT} .
+				 --build-arg ADORE_IF_ROS_SCHEDULING_TAG=${ADORE_IF_ROS_SCHEDULING_TAG} \
+				 --build-arg PROJECT=${PROJECT} .
 	docker cp $$(docker create --rm $(shell echo ${TAG} | tr A-Z a-z)):/tmp/${PROJECT}/${PROJECT}/build ${PROJECT}
 
 .PHONY: clean 
-clean:
+clean: clean_adore_scheduling
 	rm -rf "${ROOT_DIR}/${PROJECT}/build"
 	find . -name "**lint_report.log" -exec rm -rf {} \;
 	find . -name "**cppcheck_report.log" -exec rm -rf {} \;

@@ -1,9 +1,11 @@
 ARG PROJECT
 ARG DEBUG
+ARG ADORE_IF_ROS_SCHEDULING_TAG
 
 
 FROM adore_if_ros_msg:latest AS adore_if_ros_msg
 FROM libadore:latest AS libadore
+FROM adore_if_ros_scheduling:${ADORE_IF_ROS_SCHEDULING_TAG} AS adore_if_ros_scheduling
 
 FROM plotlablib:latest AS plotlablib
 FROM libzmq:latest AS libzmq
@@ -43,6 +45,23 @@ RUN source /opt/ros/noetic/setup.bash && \
     cmake .. > /dev/null 2>&1 || true && \
     cmake --install . --prefix ${INSTALL_PREFIX}
 RUN dpkg -i *.deb ## TODO fix adore_if_ros cmake library so this is not necessary
+
+# adore_scheduling
+COPY --from=adore_if_ros_scheduling /tmp /tmp
+SHELL ["/bin/bash", "-c"]
+ARG LIB=adore_if_ros_scheduling
+WORKDIR /tmp/${LIB}/${LIB}/build
+RUN source /opt/ros/noetic/setup.bash && \
+    cmake --install . --prefix ${INSTALL_PREFIX}
+ARG LIB=adore_if_ros_scheduling_msg
+WORKDIR /tmp/${LIB}/${LIB}/build
+RUN source /opt/ros/noetic/setup.bash && \
+    cmake --install . --prefix ${INSTALL_PREFIX}
+ARG LIB=lib_adore_scheduling
+WORKDIR /tmp/${LIB}/${LIB}/build
+RUN source /opt/ros/noetic/setup.bash && \
+    cmake --install . --prefix ${INSTALL_PREFIX}
+
 
 ARG LIB=libadore
 COPY --from=libadore /tmp/${LIB} /tmp/${LIB}
