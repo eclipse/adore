@@ -180,22 +180,21 @@ namespace adore
                 }
 
             public:
-                MapProvider(env::AFactory* env_factory,adore::params::AFactory* params_factory, 
-                                    std::string trackConfigs,
+                MapProvider(        std::string trackConfigs,
                                     adore::env::PrecedenceSet* pset,
                                     Config config)
                 {
                     config_ = config;
                     /* process trackConfigs parameter, multiple paths to maps delimited by semicolon, comma separated additional configuration */
                     adore::env::BorderBased::BorderSet globalSet;
-                    params_ = params_factory->getMapProvider();
+                    params_ = adore::params::ParamsFactoryInstance::get()->getMapProvider();
                     parseTrackConfigs(trackConfigs,globalSet);
                     globalSet.rotate(config_.rot_psi_, config_.rot_x_, config_.rot_y_);
                     globalSet.translate(config_.trans_x_, config_.trans_y_, config_.trans_z_);
-                    border_output_ = env_factory->getBorderWriter();
-                    motion_state_reader_ = env_factory->getVehicleMotionStateReader();
-                    border_type_change_feed_ = env_factory->getBorderTypeChangeProfileFeed();
-                    precedence_output_ = env_factory->getPrecedenceRuleWriter();
+                    border_output_ = adore::env::EnvFactoryInstance::get()->getBorderWriter();
+                    motion_state_reader_ = adore::env::EnvFactoryInstance::get()->getVehicleMotionStateReader();
+                    border_type_change_feed_ = adore::env::EnvFactoryInstance::get()->getBorderTypeChangeProfileFeed();
+                    precedence_output_ = adore::env::EnvFactoryInstance::get()->getPrecedenceRuleWriter();
                     map_management_.init(&globalSet);
                     precedence_set_.init(pset);
                     subscriber_count_ = 0;

@@ -12,7 +12,8 @@
  *   Daniel Heß - initial API and implementation
  ********************************************************************************/
 
-#include <adore_if_ros/baseapp.h>
+#include <adore_if_ros_scheduling/baseapp.h>
+#include <adore_if_ros/factorycollection.h>
 #include <adore/apps/tactical_planner.h>
 #include <iostream>
 
@@ -20,7 +21,7 @@ namespace adore
 {
   namespace if_ROS
   {  
-    class TacticalPlannerNode : public Baseapp
+    class TacticalPlannerNode : public FactoryCollection, public adore_if_ros_scheduling::Baseapp
     {
       public:
       adore::apps::TacticalPlanner* tacticalPlanner_;
@@ -39,6 +40,7 @@ namespace adore
       {
         Baseapp::init(argc, argv, rate, nodename);
         Baseapp::initSim();
+        FactoryCollection::init(getRosNodeHandle());
         tacticalPlanner_ = new adore::apps::TacticalPlanner(1.0/rate); 
         std::string objective_names_string;
         std::string objective_weights_string;

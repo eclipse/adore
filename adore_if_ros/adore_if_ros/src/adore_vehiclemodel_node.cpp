@@ -14,17 +14,18 @@
 
 
 #include <adore/apps/vehiclemodel.h>
+#include <adore_if_ros/factorycollection.h>
 #include <iostream>
 #include <thread>
 #include <cstdlib>
-#include <adore_if_ros/baseapp.h>
+#include <adore_if_ros_scheduling/baseapp.h>
 
 
 namespace adore
 {
   namespace if_ROS
   {  
-    class VehicleModelNode : public Baseapp
+    class VehicleModelNode : public FactoryCollection, public adore_if_ros_scheduling::Baseapp
     {
       public:
       adore::apps::VehicleModel* vm_;
@@ -33,6 +34,7 @@ namespace adore
       {
         Baseapp::init(argc, argv, rate, nodename);
         Baseapp::initSim();
+        FactoryCollection::init(getRosNodeHandle());
         int simulationID = 0;
         int v2xStationID = 0;
         getParam("simulationID",simulationID);

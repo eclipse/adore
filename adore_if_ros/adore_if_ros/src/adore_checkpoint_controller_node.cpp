@@ -12,7 +12,8 @@
  *   Daniel Heß - a ros node, which executes checkpoint_controller
  ********************************************************************************/
 
-#include <adore_if_ros/baseapp.h>
+#include <adore_if_ros_scheduling/baseapp.h>
+#include <adore_if_ros/factorycollection.h>
 #include <adore/apps/checkpoint_controller.h>
 
 
@@ -20,7 +21,7 @@ namespace adore
 {
   namespace if_ROS
   {  
-    class CheckpointControllerNode : public Baseapp
+    class CheckpointControllerNode : public FactoryCollection, public adore_if_ros_scheduling::Baseapp
     {
     private:
       adore::apps::CheckpointController* cpc_;
@@ -29,6 +30,7 @@ namespace adore
       {
         Baseapp::init(argc, argv, rate, nodename);
         Baseapp::initSim();
+        FactoryCollection::init(getRosNodeHandle());
         cpc_ = new adore::apps::CheckpointController();
         std::string filename;
         getParam("PARAMS/checkpoints/filename", filename);

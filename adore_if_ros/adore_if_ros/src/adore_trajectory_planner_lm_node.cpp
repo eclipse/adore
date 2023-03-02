@@ -12,7 +12,8 @@
  *   Daniel Heß - initial API and implementation
  ********************************************************************************/
 
-#include <adore_if_ros/baseapp.h>
+#include <adore_if_ros_scheduling/baseapp.h>
+#include <adore_if_ros/factorycollection.h>
 #include <adore/apps/trajectory_planner_lm.h>
 #include <ros/console.h>
 
@@ -20,7 +21,7 @@ namespace adore
 {
   namespace if_ROS
   {  
-    class TrajectoryPlannerLMNode : public Baseapp
+    class TrajectoryPlannerLMNode : public FactoryCollection, public adore_if_ros_scheduling::Baseapp
     {
       public:
       adore::apps::TrajectoryPlannerLM* planner_;
@@ -28,6 +29,7 @@ namespace adore
       {
         Baseapp::init(argc, argv, rate, nodename);
         Baseapp::initSim();
+        FactoryCollection::init(getRosNodeHandle());
         planner_ = new adore::apps::TrajectoryPlannerLM(directionLeft,name,id);
 
         ros::NodeHandle nh("~");

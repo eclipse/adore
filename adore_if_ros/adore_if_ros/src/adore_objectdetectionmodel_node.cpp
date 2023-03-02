@@ -13,12 +13,14 @@
  ********************************************************************************/
 
 #include <adore/apps/objectdetectionmodel.h>
-#include <adore_if_ros/baseapp.h>
+#include <adore_if_ros_scheduling/baseapp.h>
+#include <adore_if_ros/factorycollection.h>
+
 namespace adore
 {
   namespace if_ROS
   {  
-    class ObjectDetectionModelNode : public Baseapp
+    class ObjectDetectionModelNode : public FactoryCollection, public adore_if_ros_scheduling::Baseapp
     {
       public:
       adore::apps::ObjectDetectionModel* model_;
@@ -27,7 +29,7 @@ namespace adore
       {
         Baseapp::init(argc, argv, rate, nodename);
         Baseapp::initSim();
-
+        FactoryCollection::init(getRosNodeHandle());
         int simulationID = 0;
         getParam("simulationID",simulationID);
         model_ = new adore::apps::ObjectDetectionModel(simulationID);

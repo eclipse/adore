@@ -12,7 +12,8 @@
  *   Daniel Heß - initial API and implementation
  ********************************************************************************/
 
-#include <adore_if_ros/baseapp.h>
+#include <adore_if_ros_scheduling/baseapp.h>
+#include <adore_if_ros/factorycollection.h>
 #include <adore/apps/lane_following_behavior.h>
 
 
@@ -20,7 +21,7 @@ namespace adore
 {
   namespace if_ROS
   {  
-    class LaneFollowingBehaviorNode : public Baseapp
+    class LaneFollowingBehaviorNode : public FactoryCollection, public adore_if_ros_scheduling::Baseapp
     {
       public:
       adore::apps::LaneFollowingBehavior* lf_;
@@ -29,6 +30,7 @@ namespace adore
       {
         Baseapp::init(argc, argv, rate, nodename);
         Baseapp::initSim();
+        FactoryCollection::init(getRosNodeHandle());
         lf_ = new adore::apps::LaneFollowingBehavior();
 
         // timer callbacks

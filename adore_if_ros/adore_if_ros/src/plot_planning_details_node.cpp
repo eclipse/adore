@@ -15,14 +15,15 @@
 
 #include <plotlablib/figurestubfactory.h>
 #include <adore/apps/plot_planning_details.h>
-#include <adore_if_ros/baseapp.h>
+#include <adore_if_ros_scheduling/baseapp.h>
+#include <adore_if_ros/factorycollection.h>
 #include <ros/ros.h>
 
 namespace adore
 {
     namespace if_ROS
     {
-        class PlotPlanningDetailsNode : public Baseapp
+        class PlotPlanningDetailsNode : public FactoryCollection, public adore_if_ros_scheduling::Baseapp
         {
           public:
             PlotPlanningDetailsNode()
@@ -37,6 +38,7 @@ namespace adore
             {
                 Baseapp::init(argc, argv, rate, nodename);
                 Baseapp::initSim();
+                FactoryCollection::init(getRosNodeHandle());
                 pdp_ = new adore::apps::PlanningDetailsPlotter();
                 // timer callbacks
                 std::function<void()> run_fcn(std::bind(&adore::apps::PlanningDetailsPlotter::run, pdp_));

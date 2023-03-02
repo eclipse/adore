@@ -75,7 +75,7 @@ namespace adore
 
       public:
       // FancyBird(DLR_TS::PlotLab::AFigureStub* figure,adore::params::APVehicle* pvehicle, adore::params::APMapProvider* pmap,std::string prefix,const adore::PLOT::FancyBirdConfig & config, const adore::PLOT::GeoTilesConfig geoTiles_config)
-      PlotPredictionsMinimal(DLR_TS::PlotLab::AFigureStub* figure,adore::params::APVehicle* pvehicle, std::string prefix,const adore::PLOT::PredictionConfig & config)
+      PlotPredictionsMinimal(DLR_TS::PlotLab::AFigureStub* figure, std::string prefix,const adore::PLOT::PredictionConfig & config)
       {
         counter_=0;
         positionReader_ = adore::env::EnvFactoryInstance::get()->getVehicleMotionStateReader();

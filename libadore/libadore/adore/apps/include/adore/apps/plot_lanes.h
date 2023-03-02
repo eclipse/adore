@@ -14,8 +14,6 @@
  ********************************************************************************/
 
 #pragma once
-#include <adore/params/ap_vehicle.h>
-#include <adore/params/ap_map_provider.h>
 #include <adore/apps/if_plotlab/geoTiles.h>
 #include <adore/apps/if_plotlab/geoTiles_config.h>
 #include <adore/apps/if_plotlab/plot_border.h>
@@ -24,7 +22,7 @@
 #include <adore/apps/if_plotlab/laneplot_config.h>
 #include <adore/env/afactory.h>
 #include <adore/env/borderbased/borderset.h>
-#include <adore/fun/afactory.h>
+#include <adore/params/afactory.h>
 #include <plotlablib/afigurestub.h>
 #include <plotlablib/plcommands.h>
 #include <unordered_map>
@@ -115,12 +113,12 @@ namespace adore
       }
 
       public:
-      PlotLanes(DLR_TS::PlotLab::AFigureStub* figure,adore::params::APVehicle* pvehicle, adore::params::APMapProvider* pmap,std::string prefix,const adore::PLOT::LanePlotConfig & config)
+      PlotLanes(DLR_TS::PlotLab::AFigureStub* figure,std::string prefix,const adore::PLOT::LanePlotConfig & config)
       {
         borderfeed_ = adore::env::EnvFactoryInstance::get()->getBorderFeed();
         positionReader_ = adore::env::EnvFactoryInstance::get()->getVehicleMotionStateReader();
-        pvehicle_= pvehicle;
-        pmap_ = pmap;
+        pvehicle_= adore::params::ParamsFactoryInstance::get()->getVehicle();
+        pmap_ = adore::params::ParamsFactoryInstance::get()->getMapProvider();
         figure_ = figure;      
         prefix_ = prefix;
         fov_width_ = 640.0;
