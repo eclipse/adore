@@ -19,9 +19,8 @@
 <param name="/use_sim_time" value="true"/>
 <param name="/tcp_no_delay" value="true"/>
 <param name="/use_scheduler" value="true"/>
-<param name="/autostart_scheduling" value="true" type="bool"/>
 <param name="/PARAMS/SIM/timeout" value="130.0" type="double"/>
-<node name="scheduler" pkg="adore_if_ros" type="adore_scheduler_node" output="screen" launch-prefix="xterm -e" required="true">
+<node name="scheduler" pkg="adore_scheduler" type="adore_scheduler_node" output="screen" launch-prefix="xterm -e" required="true">
 </node>
 <group if="$(eval arg('headless')==true)">
     <param name="/number_of_nodes" value="8" type="int"/>
@@ -36,21 +35,16 @@
     </group>
     <include file="demo_vehicle_cfg02.launch"/>
     <param name="PARAMS/track" value="$(dirname)/tracks/basic_test_track.xodr" type="str" />
-    <param name="PARAMS/local_road_map/navigation_active" value="true" type="bool" />
+    <param name="PARAMS/local_road_map/navigation_active" value="false" type="bool" />
     <param name="PARAMS/navigation/active_plotting_global" value="false" type="bool" />  
     <param name="PARAMS/tactical_planner/global_speed_limit" value="30" type="double" />  
     <param name="simulationID" value="0" type="int" />  
     <!-- set the start position -->
     <node pkg="rostopic" type="rostopic" name="posereset" args="pub /vehicle0/SIM/ResetVehiclePose geometry_msgs/Pose '{position: {x: 150, y: 162, z: 0},orientation: { w: 1}}'"/>
-    <!-- set the goal position -->
-    <node pkg="rostopic" type="rostopic" name="navgoal" args="pub /vehicle0/ENV/NavigationGoal adore_if_ros_msg/NavigationGoal '{target: {x: 1570, y: 400, z: 0}}'"/>
 
     <!-- monitor node -->
     <node pkg="adore_if_ros" type="adore_monitor0_node" name="monitor0"/>
 </group>
 <!--terminator node--> 
 <node pkg="adore_if_ros" type="adore_ci_terminator_node.py" name="terminator" required="true" output="screen"/>
-<!--generate termination signal from NEAR_GOAL proposition-->
-<node pkg="topic_tools" type="transform" name="goal_reached_trigger" args="/vehicle0/ENV/propositions /SIM/terminate std_msgs/Bool 'std_msgs.msg.Bool(data=(True if m.term==&quot;NEAR_GOAL&quot; and m.value else False))' --import adore_if_ros_msg std_msgs" output="screen"/>
-
 </launch>
