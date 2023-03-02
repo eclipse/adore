@@ -93,3 +93,7 @@
 	path = libadore/lizard_docker
 	url = git@github.com:DLR-TS/lizard_docker.git
 	branch = master
+[submodule "adore_if_ros/adore_scheduling"]
+	path = adore_if_ros/adore_scheduling
+	url = git@github.com:dlr-ts/adore_scheduling.git
+	shallow = true
