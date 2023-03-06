@@ -14,6 +14,8 @@
 # Change Log
 
 
+## 2023-xx-xx -> v0.3.2
+- moved scheduling functionalities to submodule adore_scheduling
 
 ## 2022-11-04 -> v0.3.1
 - updated adore_if_carla submodule to tag v0.1.0
