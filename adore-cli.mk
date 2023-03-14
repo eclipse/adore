@@ -113,7 +113,7 @@ adore-cli_setup:
 	unset CATKIN_BASE_MAKEFILE_PATH && make --file=${CATKIN_BASE_MAKEFILE_PATH}/catkin_base.mk initialize_catkin_workspace
 	@mkdir -p .log/.ros/bag_files
 	@mkdir -p ${ADORE_CLI_MAKEFILE_PATH}/plotlabserver/.log
-	@cd .log && ln -sf ../${ADORE_CLI_MAKEFILE_PATH}/plotlabserver/.log plotlabserver
+	@cd .log && ln -sf ${ADORE_CLI_MAKEFILE_PATH}/plotlabserver/.log plotlabserver
 	@touch .zsh_history
 	@touch .zsh_history.new
 	cd ${ADORE_CLI_MAKEFILE_PATH}/plotlabserver && \
