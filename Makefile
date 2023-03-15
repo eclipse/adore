@@ -55,7 +55,7 @@ _build: \
         clean_up 
 
 .PHONY: clean 
-clean: 
+clean: clean_adore-cli
 	cd adore_if_ros && make clean
 	cd libadore && make clean
 	cd sumo_if_ros && make clean

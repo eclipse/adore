@@ -54,7 +54,11 @@ clean: clean_external set_env ## Clean libadore
 	find . -name "**lizard_report.xml" -exec rm -rf {} \;
 	find . -name "**lizard_report.log" -exec rm -rf {} \;
 	docker rm $$(docker ps -a -q --filter "ancestor=${PROJECT}:${TAG}") --force 2> /dev/null || true
+	docker rm $$(docker ps -a -q --filter "ancestor=${PROJECT}_build:${TAG}") --force 2> /dev/null || true
+	docker rm $$(docker ps -a -q --filter "ancestor=${PROJECT}_test:${TAG}") --force 2> /dev/null || true
 	docker rmi $$(docker images -q ${PROJECT}:${TAG}) --force 2> /dev/null || true
+	docker rmi $$(docker images -q ${PROJECT}_build:${TAG}) --force 2> /dev/null || true
+	docker rmi $$(docker images -q ${PROJECT}_test:${TAG}) --force 2> /dev/null || true
 	docker rmi $$(docker images --filter "dangling=true" -q) --force > /dev/null 2>&1 || true
 
 .PHONY: test 
