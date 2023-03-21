@@ -1,5 +1,0 @@
-FROM ellerbrock/alpine-bash-curl-ssl
-
-COPY check_apt_cacher_service_status.sh .
-
-RUN sh check_apt_cacher_service_status.sh
