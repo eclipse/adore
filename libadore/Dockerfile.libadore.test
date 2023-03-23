@@ -1,7 +1,7 @@
-ARG PROJECT
+ARG PROJECT=libadore
+ARG LIBADORE_TAG=latest
 
-
-FROM libadore_build as libadore_test_requirements_base
+FROM libadore_build:${LIBADORE_TAG} AS libadore_test_requirements_base
 
 ARG PROJECT
 ARG REQUIREMENTS_FILE="requirements.${PROJECT}.ubuntu20.04.test.system"

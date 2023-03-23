@@ -7,3 +7,6 @@ xodr/build
 qpOASES/build
 osqp/build
 **.git
+**/.git
+**/build
+*.tar

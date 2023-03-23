@@ -17,7 +17,7 @@ pipeline {
                 sh '''#!/usr/bin/env bash
                     set -e
                     export DOCKER_CONFIG=$(realpath "${DOCKER_CONFIG}") make
-                    make
+                    make build
                 '''
             }
         }

@@ -14,11 +14,10 @@
 ********************************************************************************
 -->
 # ADORe ROS Demos
-In the following, several demonstrations are given to showcase technical solutions on reduced examples.
+In the following directory several demonstrations are given to showcase technical solutions on reduced examples.
 Their goal is to serve as venture points for setting up simulation experiments with ADORe automated vehicles.
 To run the demo scenarios, build the command-line-interface container and start it:
 ~~~bash
-make build_adore-cli
 make adore-cli
 ~~~
 Then navigate to the catkin workspace demo directory in the adore-cli container, export your display variable and launch the demo:

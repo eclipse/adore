@@ -1,7 +1,10 @@
 # syntax = edrevo/dockerfile-plus
 
-FROM adore-cli:latest as adore-cli
+ARG ADORE_CLI_TAG=latest
+ARG REQUIREMENTS_FILE
+ARG USER
 
+FROM adore-cli:${ADORE_CLI_TAG} as adore-cli
 
 ARG REQUIREMENTS_FILE="requirements.adore-cli_x11_display.ubuntu20.04.system"
 
