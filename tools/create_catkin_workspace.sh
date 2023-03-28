@@ -7,7 +7,7 @@ SCRIPT_DIRECTORY="$( cd "$( dirname "${BASH_SOURCE[0]}" )" &> /dev/null && pwd )
 LOCKFILE=.lock
 ADORE_SOURCE_DIRECTORY=$(realpath "${SCRIPT_DIRECTORY}/..")
 ## TODO may need to reintegrate this in the folder processing below
-ADORE_SCHEDULING_SOURCE_DIRECTORY=$(realpath "${DIR}/../adore_if_ros/adore_scheduling")
+ADORE_SCHEDULING_SOURCE_DIRECTORY=$(realpath "${SCRIPT_DIRECTORY}/../adore_if_ros/adore_scheduling")
 
 if ! [ -x "$(command -v catkin)" ]; then
     echoerr "ERROR: catkin not installed."
