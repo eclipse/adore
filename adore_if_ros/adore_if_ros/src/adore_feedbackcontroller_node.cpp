@@ -12,14 +12,15 @@
  *   Daniel Heß - initial API and implementation
  ********************************************************************************/
 
-#include <adore_if_ros/baseapp.h>
+#include <adore_if_ros_scheduling/baseapp.h>
+#include <adore_if_ros/factorycollection.h>
 #include <adore/apps/feedbackcontroller.h>
 
 namespace adore
 {
   namespace if_ROS
   {  
-    class FeedbackControllerNode : public Baseapp
+    class FeedbackControllerNode : public FactoryCollection, public adore_if_ros_scheduling::Baseapp
     {
       public:
       adore::apps::FeedbackController* fbc_;
@@ -28,7 +29,8 @@ namespace adore
       {
         Baseapp::init(argc, argv, rate, nodename);
         Baseapp::initSim();
-        fbc_ = new adore::apps::FeedbackController(this->getFactory<FUN_Factory>(),this->getParamsFactory(""));
+        FactoryCollection::init(getRosNodeHandle());
+        fbc_ = new adore::apps::FeedbackController();
 
         // timer callbacks
         std::function<void()> run_fcn(std::bind(&adore::apps::FeedbackController::run,fbc_));

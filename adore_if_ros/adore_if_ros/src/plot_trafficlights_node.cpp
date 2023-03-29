@@ -14,14 +14,15 @@
 
 #include <adore/apps/plot_trafficlights.h>
 #include <plotlablib/figurestubfactory.h>
-#include <adore_if_ros/baseapp.h>
+#include <adore_if_ros_scheduling/baseapp.h>
+#include <adore_if_ros/factorycollection.h>
 #include <string>
 
 namespace adore
 {
   namespace if_ROS
   {  
-    class PlotTrafficLightsNode : public Baseapp
+    class PlotTrafficLightsNode : public FactoryCollection, public adore_if_ros_scheduling::Baseapp
     {
       public:
       adore::apps::PlotTrafficLights* app_;
@@ -37,6 +38,7 @@ namespace adore
       {
         Baseapp::init(argc, argv, rate, nodename);
         Baseapp::initSim();
+        FactoryCollection::init(getRosNodeHandle());
         DLR_TS::PlotLab::FigureStubFactory fig_factory;
         auto figure = fig_factory.createFigureStub(2);
         figure->show();

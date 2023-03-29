@@ -1,23 +1,33 @@
 #!/usr/bin/env bash
 
-SCRIPT_DIR="$( cd -- "$( dirname -- "${BASH_SOURCE[0]:-$0}"; )" &> /dev/null && pwd 2> /dev/null; )";
+# This script act as the main entrypoint for the adore-cli docker context.
+
+set -euo pipefail
+
+SCRIPT_DIRECTORY="$( cd "$( dirname "${BASH_SOURCE[0]}" )" &> /dev/null && pwd )"
+echoerr (){ printf "%s" "$@" >&2;}
+exiterr (){ echoerr "$@"; exit 1;}
+
+ADORE_SOURCE_DIRECTORY=$(realpath "${SCRIPT_DIRECTORY}/..")
 
 clear
 
-cd ${SCRIPT_DIR}/.. 
-
-make create_catkin_workspace > .log/create_catkin_workspace.log 2>&1 &
+cd "${ADORE_SOURCE_DIRECTORY}"
 
 bash tools/adore-cli_motd.sh
 bash plotlabserver/tools/wait_for_plotlab_server.sh
 
-echo ""
-printf "  Waiting for catkin workspace ..."
-until [ -e catkin_workspace/install/setup.sh ]; do
-    printf "."
-    sleep 1
-done
-printf " done \n"
+printf "\n"
+
+export CATKIN_SHELL=sh
+
 source catkin_workspace/install/setup.sh
 
+cd "${ADORE_CLI_WORKING_DIRECTORY}"
+
+if [ -z ${VEHICLE_NAME+x} ]; then 
+    printf "  No vehicle set.\n\n"; 
+else 
+    printf "  Vehicle environment set to: ${VEHICLE_NAME}\n\n"; 
+fi
 zsh

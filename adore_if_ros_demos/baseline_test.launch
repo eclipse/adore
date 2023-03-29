@@ -15,12 +15,12 @@
   <node pkg="rosbag" type="record" name="sim_rosbag_recorder" args="record -O $(env BAG_OUTPUT_DIRECTORY)/baseline_test.bag -a"/>
   <node name="timer" pkg="adore_if_ros" type="adore_timer_node" output="screen" launch-prefix=""/>
   <group ns="vehicle0">
-    <param name="PARAMS/track" value="$(env ADORE_SOURCE_DIR)/adore_if_ros_demos/tracks/basic_test_track.xodr" type="str" />
+    <param name="PARAMS/track" value="$(env ADORE_SOURCE_DIRECTORY)/adore_if_ros_demos/tracks/basic_test_track.xodr" type="str" />
     <param name="simulationID" value="0" type="int" />  
     <!-- set max speed of this vehicle -->
     <param name="PARAMS/tactical_planner/global_speed_limit" value="30" type="double" />
-    <include file="$(env ADORE_SOURCE_DIR)/adore_if_ros_demos/demo_vehicle_cfg01.launch"/>
-    <include file="$(env ADORE_SOURCE_DIR)/adore_if_ros_demos/demo_plotters.launch"/>
+    <include file="$(env ADORE_SOURCE_DIRECTORY)/adore_if_ros_demos/demo_vehicle_cfg01.launch"/>
+    <include file="$(env ADORE_SOURCE_DIRECTORY)/adore_if_ros_demos/demo_plotters.launch"/>
     <node pkg="rostopic" type="rostopic" name="posereset" args="pub /vehicle0/SIM/ResetVehiclePose geometry_msgs/Pose '{position: {x: 150, y: 162, z: 0},orientation: { w: 1}}'"/>
     <node pkg="rostopic" type="rostopic" name="navgoal" args="pub /vehicle0/ENV/NavigationGoal adore_if_ros_msg/NavigationGoal '{target: {x: 250, y: 162, z: 0}}'"/>
     <!-- scenario self termination timeout -->

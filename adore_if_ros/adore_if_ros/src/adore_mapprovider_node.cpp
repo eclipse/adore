@@ -15,13 +15,14 @@
 #include <adore/apps/map_provider.h>
 #include <adore/if_xodr/xodr2borderbased.h>
 #include <iostream>
-#include <adore_if_ros/baseapp.h>
+#include <adore_if_ros_scheduling/baseapp.h>
+#include <adore_if_ros/factorycollection.h>
 
 namespace adore
 {
 namespace if_ROS
 {
-class MapProviderNode : public Baseapp
+class MapProviderNode : public FactoryCollection, public adore_if_ros_scheduling::Baseapp
 {
 public:
     adore::apps::MapProvider *mp_;
@@ -30,6 +31,7 @@ public:
     {
         Baseapp::init(argc, argv, rate, nodename);
         Baseapp::initSim();
+        FactoryCollection::init(getRosNodeHandle());
         int simulationID = 0;
         getParam("simulationID", simulationID);
 
@@ -50,7 +52,7 @@ public:
         getParam("PARAMS/rotation_x",config.rot_x_);
         getParam("PARAMS/rotation_y",config.rot_y_);
         getParam("PARAMS/rotation_psi",config.rot_psi_);
-        mp_ = new adore::apps::MapProvider(getFactory<ENV_Factory>(), getParamsFactory(""), trackConfigs, &precedenceSet, config);
+        mp_ = new adore::apps::MapProvider(trackConfigs, &precedenceSet, config);
         // timer callbacks
         std::function<void()> run_fcn(std::bind(&adore::apps::MapProvider::run, mp_));
         Baseapp::addTimerCallback(run_fcn);

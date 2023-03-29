@@ -13,13 +13,14 @@
  ********************************************************************************/
 
 #include <adore/apps/indicator_hints_provider.h>
-#include <adore_if_ros/baseapp.h>
+#include <adore_if_ros/factorycollection.h>
+#include <adore_if_ros_scheduling/baseapp.h>
 
 namespace adore
 {
 namespace if_ROS
 {
-class IndicatorHintsProviderNode : public Baseapp
+class IndicatorHintsProviderNode : public FactoryCollection, public adore_if_ros_scheduling::Baseapp
 {
 public:
     adore::apps::IndicatorHintsProvider *app_;
@@ -28,6 +29,7 @@ public:
     {
         Baseapp::init(argc, argv, rate, nodename);
         Baseapp::initSim();
+        FactoryCollection::init(getRosNodeHandle());
         int simulationID = 0;
         getParam("simulationID", simulationID);
 

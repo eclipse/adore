@@ -14,6 +14,7 @@
 #pragma once
 
 #include <adore/fun/afactory.h>
+#include <adore/params/afactory.h>
 #include <adore/mad/com_patterns.h>
 #include <adore/fun/missiondata.h>
 
@@ -42,13 +43,13 @@ namespace adore
             adore::fun::MissionData mission_data_;
 
         public:
-            MissionController(adore::fun::AFactory* fun_factory,adore::params::AFactory* params_factory)
+            MissionController()
             {
-                motion_state_reader_ = fun_factory->getVehicleMotionStateReader();
-                x_state_reader_ = fun_factory->getVehicleExtendedStateReader();
-                nav_goal_reader_ = fun_factory->getNavigationGoalReader();
-                mission_data_writer_ = fun_factory->getMissionDataWriter();
-                p_mission_control_ = params_factory->getMissionControl();
+                motion_state_reader_ = adore::fun::FunFactoryInstance::get()->getVehicleMotionStateReader();
+                x_state_reader_ = adore::fun::FunFactoryInstance::get()->getVehicleExtendedStateReader();
+                nav_goal_reader_ = adore::fun::FunFactoryInstance::get()->getNavigationGoalReader();
+                mission_data_writer_ = adore::fun::FunFactoryInstance::get()->getMissionDataWriter();
+                p_mission_control_ = adore::params::ParamsFactoryInstance::get()->getMissionControl();
             }
             ~MissionController()
             {

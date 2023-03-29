@@ -13,14 +13,15 @@
 ********************************************************************************/
 
 #include <adore/apps/plot_gaps.h>
-#include <adore_if_ros/baseapp.h>
+#include <adore_if_ros_scheduling/baseapp.h>
+#include <adore_if_ros/factorycollection.h>
 #include <string>
 
 namespace adore
 {
   namespace if_ROS
   {  
-    class ThisNode : public Baseapp
+    class ThisNode : public FactoryCollection, public adore_if_ros_scheduling::Baseapp
     {
       public:
       adore::apps::PlotGaps* app_;
@@ -29,6 +30,7 @@ namespace adore
       {
         Baseapp::init(argc, argv, rate, nodename);
         Baseapp::initSim();
+        FactoryCollection::init(getRosNodeHandle());
         int simulationID = 0;
         getParam("simulationID",simulationID);
  

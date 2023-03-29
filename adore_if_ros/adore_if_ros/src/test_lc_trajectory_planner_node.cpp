@@ -16,7 +16,8 @@
 #include <iostream>
 #include <thread>
 #include <adore/apps/test_lc_trajectory_planner.h>
-#include <adore_if_ros/baseapp.h>
+#include <adore_if_ros_scheduling/baseapp.h>
+#include <adore_if_ros/factorycollection.h>
 #include <plotlablib/figurestubfactory.h>
 #include <adore/fun/tac/decoupled_lflc_planner.h>
 
@@ -36,7 +37,7 @@ namespace adore
 {
 namespace if_ROS
 {
-class TestLCTrajectoryPlannerNode : public Baseapp
+class TestLCTrajectoryPlannerNode : public FactoryCollection, public adore_if_ros_scheduling::Baseapp
 {
 public:
     adore::apps::TestLCTrajectoryPlanner *lc_;
@@ -45,7 +46,8 @@ public:
     {
         Baseapp::init(argc, argv, rate, nodename);
         Baseapp::initSim();
-        lc_ = new adore::apps::TestLCTrajectoryPlanner(this->getFactory<ENV_Factory>(), this->getFactory<FUN_Factory>(), this->getParamsFactory(""));
+        FactoryCollection::init(getRosNodeHandle());
+        lc_ = new adore::apps::TestLCTrajectoryPlanner();
 
         // timer callbacks
         std::function<void()> run_fcn(std::bind(&adore::apps::TestLCTrajectoryPlanner::run, lc_));

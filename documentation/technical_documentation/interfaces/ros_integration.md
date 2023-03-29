@@ -22,7 +22,7 @@ The module adore_if_ros defines transformations between libadore internal c++ cl
 The ROS parameter server provides values for the libadore internal parameters.
 ``` ```
 ### Control Processes and ROS Nodes 
-The header ```adore_if_ros/baseapp.h``` defines a base class, which is used in adore_if_ros control process nodes in order to execute and schedule the control process defined in ```libadore/apps```. 
+The header ```adore_if_ros_scheduling/baseapp.h``` defines a base class, which is used in adore_if_ros control process nodes in order to execute and schedule the control process defined in ```libadore/apps```. 
 
 The most important ros nodes provided by the adore_if_ros package are:
 

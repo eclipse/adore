@@ -26,9 +26,6 @@
 #include <adore/sim/resetvehiclepose.h>
 #include <adore/sim/resetvehicletwist.h>
 #include <adore/env/traffic/participant.h>
-#include <adore/sim/schedulernotification.h>
-#include <adore/sim/action.h>
-#include <adore/sim/stdstate.h>
 
 #include <adore/env/tcd/trafficlight.h>
 
@@ -61,15 +58,9 @@ namespace adore
 			typedef adore::mad::AWriter<adore::env::traffic::TParticipantSet> TParticipantSetWriter;
 			typedef adore::mad::AWriter<adore::env::traffic::Participant> TParticipantWriter;
 			typedef adore::mad::AFeed<adore::env::traffic::Participant> TParticipantFeed;
-			typedef adore::mad::AFeedWithCallback<adore::sim::SchedulerNotification> TSchedulerNotificationFeed;
-			typedef adore::mad::AWriter<adore::sim::SchedulerNotification> TSchedulerNotificationWriter;
 			typedef adore::mad::AWriter<std::pair<uint32_t,uint32_t>> TClockTimeWriter;
-			typedef adore::mad::AWriter<adore::sim::StdState> TStdStateWriter;
-			typedef adore::mad::AReader<adore::sim::StdState> TStdStateReader;
 			typedef adore::mad::AWriter<adore::env::SimTrafficLight> TSimTrafficLightWriter;
 			typedef adore::mad::AReader<adore::env::SimTrafficLightMap> TSimTrafficLightReader;
-			typedef adore::mad::AFeedWithCallback<adore::sim::Action> TActionFeed;
-			typedef adore::mad::AWriter<adore::sim::Action> TActionWriter;
 			typedef adore::mad::AFeedWithCallback<std::string> TSimulationCoordinationFeed;
 			typedef adore::mad::AWriter<std::string> TSimulationCoordinationWriter;
 
@@ -112,22 +103,12 @@ namespace adore
 			virtual TParticipantWriter* getParticipantWriter()=0;
 			///get state updates from all vehicles 
 			virtual TParticipantFeed* getParticipantFeed()=0;
-			///send scheduler notification message
-			virtual TSchedulerNotificationWriter* getSchedulerNotificationWriter()=0;
-			///get notifications for scheduler
-			virtual TSchedulerNotificationFeed* getSchedulerNotificationFeed()=0;
 			///write clock time
 			virtual TClockTimeWriter* getClockTimeWriter()=0;
-			///wirte standard environment representation
-			virtual TStdStateWriter* getStdStateWriter()=0;
 			///send simulated traffic light states  
 			virtual TSimTrafficLightWriter* getTrafficLightWriter()=0;
 			///receive simulated traffic light states 
 			virtual TSimTrafficLightReader* getTrafficLightReader()=0;
-			///send action message
-			virtual TActionWriter* getActionWriter()=0;
-			///get action message
-			virtual TActionFeed* getActionFeed()=0;
 			///send id of vehicle to transform
 			virtual adore::mad::AWriter<int64_t>* getTransformIDtoAdoreWriter()=0;
 		};

@@ -12,7 +12,8 @@
  *   Daniel Heß - a process, which computes lane following geometry
  ********************************************************************************/
 
-#include <adore_if_ros/baseapp.h>
+#include <adore_if_ros_scheduling/baseapp.h>
+#include <adore_if_ros/factorycollection.h>
 #include <adore/apps/lane_view_provider.h>
 
 
@@ -20,7 +21,7 @@ namespace adore
 {
   namespace if_ROS
   {  
-    class LVProviderNode : public Baseapp
+    class LVProviderNode : public FactoryCollection, public adore_if_ros_scheduling::Baseapp
     {
       public:
       adore::apps::LaneViewProvider* lvp_;
@@ -29,6 +30,7 @@ namespace adore
       {
         Baseapp::init(argc, argv, rate, nodename);
         Baseapp::initSim();
+        FactoryCollection::init(getRosNodeHandle());
         lvp_ = new adore::apps::LaneViewProvider();
 
         // timer callbacks

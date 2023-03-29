@@ -1,5 +1,5 @@
 /********************************************************************************
- * Copyright (C) 2017-2020 German Aerospace Center (DLR). 
+ * Copyright (C) 2017-2023 German Aerospace Center (DLR). 
  * Eclipse ADORe, Automated Driving Open Research https://eclipse.org/adore
  *
  * This program and the accompanying materials are made available under the 
@@ -37,10 +37,7 @@
 #include "conversions/stdconverter.h"
 #include "conversions/trafficparticipantconverter.h"
 #include "conversions/trafficsimulationfeed.h"
-#include "conversions/simschedulernotificationconverter.h"
-#include "conversions/simactionconverter.h"
 #include "conversions/clocktimeconverter.h"
-#include "conversions/simstdstate.h"
 #include "conversions/trafficlightsimconverter.h"
 
 
@@ -188,39 +185,6 @@ namespace adore
                     //                 adore_if_ros_msg::TrafficParticipantSimulationConstPtr,
                     //                 TPSimulationConverter>(n_,"/SIM/traffic",1000);
                     return new TrafficSimulationFeed(n_,"/SIM/traffic",1000,"/SIM/traffic/agg",20);
-                }
-
-                virtual TSchedulerNotificationFeed* getSchedulerNotificationFeed()
-                {
-                    return new FeedWithCallback<adore::sim::SchedulerNotification,
-                                    adore_if_ros_msg::SchedulerNotification,
-                                    SimSchedulerNotificationConverter>(n_,"/SIM/scheduling",1000);
-                }
-                virtual TSchedulerNotificationWriter* getSchedulerNotificationWriter()
-                {
-                    return new Writer<adore::sim::SchedulerNotification,
-                                    adore_if_ros_msg::SchedulerNotification,
-                                    adore::if_ROS::SimSchedulerNotificationConverter> (n_,"/SIM/scheduling",1);
-
-                }
-                 virtual TActionFeed* getActionFeed()
-                {
-                    return new FeedWithCallback<adore::sim::Action,
-                                    adore_if_ros_msg::Action,
-                                    SimActionConverter>(n_,"action",1000);
-                }
-                virtual TActionWriter* getActionWriter()
-                {
-                    //return new Feed<CSA:: return new Writer<double,std_msgs::Float64,StdConverter>(n_,"/SIM/utc",1);
-                    return new Writer<adore::sim::Action,
-                                    adore_if_ros_msg::Action,
-                                    adore::if_ROS::SimActionConverter> (n_,"action",1);
-                }
-                virtual TStdStateWriter* getStdStateWriter()
-                {
-                    return new Writer<adore::sim::StdState,
-                                    adore_if_ros_msg::StdState,
-                                    adore::if_ROS::StdStateConverter> (n_,"SIM/StdState",1);
                 }  
                 // send updates for simulated trafficlights
                 virtual adore::mad::AWriter<adore::env::SimTrafficLight>* getTrafficLightWriter() override

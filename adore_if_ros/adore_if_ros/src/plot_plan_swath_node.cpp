@@ -12,17 +12,17 @@
  *   Daniel Heß - initial implementation
  ********************************************************************************/
 
-#include <adore_if_ros/funfactory.h>
+#include <adore_if_ros/factorycollection.h>
 #include <adore/apps/plot_plan_swath.h>
 #include <plotlablib/figurestubfactory.h>
-#include <adore_if_ros/baseapp.h>
+#include <adore_if_ros_scheduling/baseapp.h>
 #include <string>
 
 namespace adore
 {
   namespace if_ROS
   {  
-    class PlotPlanSwathNode : public Baseapp
+    class PlotPlanSwathNode : public FactoryCollection, public adore_if_ros_scheduling::Baseapp
     {
       public:
       adore::apps::PlotPlanSwath* pb_;
@@ -36,6 +36,7 @@ namespace adore
       {
         Baseapp::init(argc, argv, rate, nodename);
         Baseapp::initSim();
+        FactoryCollection::init(getRosNodeHandle());
         int simulationID = 0;
         getParam("simulationID",simulationID);
         std::stringstream ss;

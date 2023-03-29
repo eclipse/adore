@@ -13,15 +13,15 @@
  ********************************************************************************/
 
 
-#include <adore_if_ros/envfactory.h>
-#include <adore_if_ros/paramsfactory.h>
 #include <adore/apps/test_straight_line_predictor.h>
-#include <adore_if_ros/baseapp.h>
+#include <adore_if_ros_scheduling/baseapp.h>
+#include <adore_if_ros/factorycollection.h>
+
 namespace adore
 {
   namespace if_ROS
   {  
-    class TestStraightLinePredictionNode : public Baseapp
+    class TestStraightLinePredictionNode : public FactoryCollection, public adore_if_ros_scheduling::Baseapp
     {
       public:
       adore::apps::TestStraightLinePredictor* app_;
@@ -30,7 +30,8 @@ namespace adore
       {
         Baseapp::init(argc, argv, rate, nodename);
         Baseapp::initSim();
-        app_ = new adore::apps::TestStraightLinePredictor(getFactory<ENV_Factory>());
+        FactoryCollection::init(getRosNodeHandle());
+        app_ = new adore::apps::TestStraightLinePredictor();
         // timer callbacks
         std::function<void()> run_fcn(std::bind(&adore::apps::TestStraightLinePredictor::run,app_));
         Baseapp::addTimerCallback(run_fcn);
