@@ -7,3 +7,7 @@ CATKIN_IGNORE
 */build
 libadore/external/*/build
 **lizard_report.xml
+**build
+**lizard_report.xml
+**make_gadgets
+

@@ -27,10 +27,10 @@ namespace apps
             adore::env::AFactory::TOCPredictionSetWriter* prediction_writer_;
             adore::env::OCStraightLinePrediction predictor_;/**< apply straight line prediction strategy*/
         public:
-            TestStraightLinePredictor(adore::env::AFactory* factory)
+            TestStraightLinePredictor()
             {
-                tpsetReader_ = factory->getTrafficParticipantSetReader();
-                prediction_writer_ = factory->getExpectedPredictionSetWriter();
+                tpsetReader_ = adore::env::EnvFactoryInstance::get()->getTrafficParticipantSetReader();
+                prediction_writer_ = adore::env::EnvFactoryInstance::get()->getExpectedPredictionSetWriter();
             }
             void run()
             {

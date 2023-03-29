@@ -61,37 +61,35 @@ private:
   bool perform_lc_left_, perform_lc_right_;
 
 public:
-  TestLCTrajectoryPlanner(adore::env::AFactory *envFactory,
-                          adore::fun::AFactory *funFactory,
-                          adore::params::AFactory *PARAMS_Factory)
-      : envFactory_(envFactory), funFactory_(funFactory), paramsFactory_(PARAMS_Factory),
-        roadmap_(envFactory, paramsFactory_), trafficMap_(roadmap_.getBorderSet(), envFactory),
+  TestLCTrajectoryPlanner()
+      : envFactory_(adore::env::EnvFactoryInstance::get()), funFactory_(adore::fun::FunFactoryInstance::get()), paramsFactory_(adore::params::ParamsFactoryInstance::get()),
+        roadmap_(envFactory_, paramsFactory_), trafficMap_(roadmap_.getBorderSet(), envFactory_),
         lfv_(paramsFactory_, &roadmap_, &trafficMap_),
         lcvr_(paramsFactory_, &roadmap_, &lfv_, &trafficMap_),
         lcvl_(paramsFactory_, &roadmap_, &lfv_, &trafficMap_), last_n_(0.0)
   {
 
-    pTacticalPlanner_ = PARAMS_Factory->getTacticalPlanner();
+    pTacticalPlanner_ = paramsFactory_->getTacticalPlanner();
     lfplanner_ = new TPlanner(&lfv_,nullptr,nullptr,nullptr,
-                              PARAMS_Factory->getLongitudinalPlanner(),
-                              PARAMS_Factory->getLateralPlanner(),
-                              PARAMS_Factory->getTacticalPlanner(),
-                              PARAMS_Factory->getVehicle(),
-                              PARAMS_Factory->getTrajectoryGeneration());
+                              paramsFactory_->getLongitudinalPlanner(),
+                              paramsFactory_->getLateralPlanner(),
+                              paramsFactory_->getTacticalPlanner(),
+                              paramsFactory_->getVehicle(),
+                              paramsFactory_->getTrajectoryGeneration());
     lcplanner_l_ = new adore::fun::BasicLaneChangePlanner<20, 5>(&lcvl_, nullptr,nullptr,nullptr,nullptr,nullptr, 
-                                                                 PARAMS_Factory->getLongitudinalPlanner(),
-                                                                 PARAMS_Factory->getLateralPlanner(),
-                                                                 PARAMS_Factory->getTacticalPlanner(),
-                                                                 PARAMS_Factory->getVehicle(),
-                                                                 PARAMS_Factory->getTrajectoryGeneration());
+                                                                 paramsFactory_->getLongitudinalPlanner(),
+                                                                 paramsFactory_->getLateralPlanner(),
+                                                                 paramsFactory_->getTacticalPlanner(),
+                                                                 paramsFactory_->getVehicle(),
+                                                                 paramsFactory_->getTrajectoryGeneration());
     lcplanner_r_ = new adore::fun::BasicLaneChangePlanner<20, 5>(&lcvr_, nullptr,nullptr,nullptr,nullptr,nullptr,
-                                                                 PARAMS_Factory->getLongitudinalPlanner(),
-                                                                 PARAMS_Factory->getLateralPlanner(),
-                                                                 PARAMS_Factory->getTacticalPlanner(),
-                                                                 PARAMS_Factory->getVehicle(),
-                                                                 PARAMS_Factory->getTrajectoryGeneration());
-    xreader_ = funFactory->getVehicleMotionStateReader();
-    wwriter_ = funFactory->getSetPointRequestWriter();
+                                                                 paramsFactory_->getLongitudinalPlanner(),
+                                                                 paramsFactory_->getLateralPlanner(),
+                                                                 paramsFactory_->getTacticalPlanner(),
+                                                                 paramsFactory_->getVehicle(),
+                                                                 paramsFactory_->getTrajectoryGeneration());
+    xreader_ = funFactory_->getVehicleMotionStateReader();
+    wwriter_ = funFactory_->getSetPointRequestWriter();
     pvehicle_ = paramsFactory_->getVehicle();
     active_planner_ = lfplanner_;
   }

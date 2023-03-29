@@ -1,6 +1,8 @@
 #This dockerfile partial installs zsh
 
 ARG USER
+ARG ZSH_CUSTOM=/home/${USER}/.oh-my-zsh/custom
+
 
 USER root
 RUN apt-get update && \
@@ -11,3 +13,7 @@ USER ${USER}
 WORKDIR /home/${USER}
 RUN zsh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)" ||true
 
+
+#RUN mkdir -p $ZSH_CUSTOM/themes && \
+#    git clone https://github.com/agkozak/agkozak-zsh-prompt $ZSH_CUSTOM/themes/agkozak && \
+#    ln -s $ZSH_CUSTOM/themes/agkozak/agkozak-zsh-prompt.plugin.zsh $ZSH_CUSTOM/themes/agkozak.zsh-theme

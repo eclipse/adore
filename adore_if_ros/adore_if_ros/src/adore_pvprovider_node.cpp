@@ -12,7 +12,8 @@
  *   Reza Dariani   platoon view provider
  ********************************************************************************/
 
-#include <adore_if_ros/baseapp.h>
+#include <adore_if_ros_scheduling/baseapp.h>
+#include <adore_if_ros/factorycollection.h>
 #include <adore/apps/platoon_view_provider.h>
 
 
@@ -20,7 +21,7 @@ namespace adore
 {
   namespace if_ROS
   {  
-    class PVProviderNode : public Baseapp
+    class PVProviderNode : public FactoryCollection, public adore_if_ros_scheduling::Baseapp
     {
       public:
       adore::apps::PlatoonViewProvider* pvp_;
@@ -29,6 +30,7 @@ namespace adore
       {
         Baseapp::init(argc, argv, rate, nodename);
         Baseapp::initSim();
+        FactoryCollection::init(getRosNodeHandle());
         pvp_ = new adore::apps::PlatoonViewProvider();
 
         // timer callbacks

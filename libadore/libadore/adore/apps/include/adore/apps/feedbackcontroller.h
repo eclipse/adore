@@ -51,17 +51,17 @@ namespace adore
 
 
 		public:
-			FeedbackController(adore::fun::AFactory* fun_factory,
-							   adore::params::AFactory* params_factory)
-						:linear_tracking_controller_(params_factory->getVehicle(),params_factory->getTrajectoryTracking())
+			FeedbackController()
+						:linear_tracking_controller_(adore::params::ParamsFactoryInstance::get()->getVehicle(),
+						 							adore::params::ParamsFactoryInstance::get()->getTrajectoryTracking())
 			{
-				ap_vehicle_ = params_factory->getVehicle();
-				ap_tracking_ = params_factory->getTrajectoryTracking();
-				ap_emergency_ = params_factory->getEmergencyOperation();
-				spr_reader_ = fun_factory->getOdomSetPointRequestReader();
-				state_reader_ = fun_factory->getVehicleOdometryMotionStateReader();
-				x_state_reader_ = fun_factory->getVehicleExtendedStateReader();
-				cmd_writer_ = fun_factory->getMotionCommandWriter();
+				ap_vehicle_ = adore::params::ParamsFactoryInstance::get()->getVehicle();
+				ap_tracking_ = adore::params::ParamsFactoryInstance::get()->getTrajectoryTracking();
+				ap_emergency_ = adore::params::ParamsFactoryInstance::get()->getEmergencyOperation();
+				spr_reader_ = adore::fun::FunFactoryInstance::get()->getOdomSetPointRequestReader();
+				state_reader_ = adore::fun::FunFactoryInstance::get()->getVehicleOdometryMotionStateReader();
+				x_state_reader_ = adore::fun::FunFactoryInstance::get()->getVehicleExtendedStateReader();
+				cmd_writer_ = adore::fun::FunFactoryInstance::get()->getMotionCommandWriter();
 				last_steering_angle_ = 0.0;
 				last_t_ = -1.0;
 				last_ddelta_ = 0.0;

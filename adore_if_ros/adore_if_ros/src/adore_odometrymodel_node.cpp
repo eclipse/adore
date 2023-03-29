@@ -12,22 +12,19 @@
  *   Daniel Heß - initial API and implementation
  ********************************************************************************/
 
-
-#include <adore_if_ros/simfactory.h>
-#include <adore_if_ros/paramsfactory.h>
 #include <adore/apps/odometrymodel.h>
-#include <adore/sim/schedulernotificationmanager.h>
 #include <iostream>
 #include <thread>
 #include <cstdlib>
-#include <adore_if_ros/baseapp.h>
+#include <adore_if_ros_scheduling/baseapp.h>
+#include <adore_if_ros/factorycollection.h>
 
 
 namespace adore
 {
   namespace if_ROS
   {  
-    class OdometryModelNode : public Baseapp
+    class OdometryModelNode : public FactoryCollection, public adore_if_ros_scheduling::Baseapp
     {
       public:
       adore::apps::OdometryModel* om_;
@@ -36,6 +33,7 @@ namespace adore
       {
         Baseapp::init(argc, argv, rate, nodename);
         Baseapp::initSim();
+        FactoryCollection::init(getRosNodeHandle());
         om_ = new adore::apps::OdometryModel();
         // timer callbacks
         std::function<void()> callback(std::bind(&adore::apps::OdometryModel::update,om_));

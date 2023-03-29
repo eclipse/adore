@@ -12,22 +12,19 @@
 *   Thomas Lobig
 ********************************************************************************/
 
-#include <adore_if_ros/envfactory.h>
-#include <adore_if_ros/funfactory.h>
 #include <adore/apps/plot_traffic.h>
 // #include <adore/apps/if_plotlab/fancy_config.h>
 // #include <adore/apps/if_plotlab/geoTiles_config.h>
 #include <plotlablib/figurestubfactory.h>
-// #include <adore/params/ap_vehicle_dummy.h>
-// #include <adore/params/ap_map_provider_dummy.h>
-#include <adore_if_ros/baseapp.h>
+#include <adore_if_ros_scheduling/baseapp.h>
+#include <adore_if_ros/factorycollection.h>
 #include <string>
 
 namespace adore
 {
   namespace if_ROS
   {  
-    class PlotTrafficNode : public Baseapp
+    class PlotTrafficNode : public FactoryCollection, public adore_if_ros_scheduling::Baseapp
     {
       public:
       adore::apps::PlotTraffic* app_;
@@ -36,6 +33,7 @@ namespace adore
       {
         Baseapp::init(argc, argv, rate, nodename);
         Baseapp::initSim();
+        FactoryCollection::init(getRosNodeHandle());
         DLR_TS::PlotLab::FigureStubFactory fig_factory;
         auto figure = fig_factory.createFigureStub(2);
         figure->show();
