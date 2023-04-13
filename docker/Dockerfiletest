@@ -1,7 +1,0 @@
-# syntax = edrevo/dockerfile-plus:0.1
-
-FROM ubuntu:20.04
-
-INCLUDE+ Dockerfile.hello.partial
-
-
