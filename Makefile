@@ -10,6 +10,8 @@ include make_gadgets/make_gadgets.mk
 CATKIN_WORKSPACE_DIRECTORY:=${ROOT_DIR}/catkin_workspace
 SOURCE_DIRECTORY:=${ROOT_DIR}
 ADORE_CLI_WORKING_DIRECTORY:=${ROOT_DIR}
+SUBMODULES_PATH:=${ROOT_DIR}
+
 
 include adore_cli/adore_cli.mk
 

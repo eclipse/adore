@@ -54,3 +54,6 @@
 [submodule "adore_scheduling"]
 	path = adore_scheduling
 	url = git@github.com:DLR-TS/adore_scheduling.git
+[submodule "plotlablib"]
+	path = plotlablib
+	url = git@github.com:DLR-TS/plotlablib.git
