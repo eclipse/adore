@@ -51,3 +51,6 @@
 [submodule "libadore"]
 	path = libadore
 	url = https://github.com/DLR-TS/libadore.git
+[submodule "adore_scheduling"]
+	path = adore_scheduling
+	url = git@github.com:DLR-TS/adore_scheduling.git
