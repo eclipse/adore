@@ -26,7 +26,7 @@
 	url = git@github.com:dlr-ts/v2x_if_ros_msg
 [submodule "catkin_docker"]
 	path = catkin_docker
-	url = git@github.com:DLR-TS/catkin_docker.git
+	url = https://github.com/DLR-TS/catkin_docker.git
 [submodule "cpplint_docker"]
 	path = cpplint_docker
 	url = git@github.com:DLR-TS/cpplint_docker.git
@@ -42,3 +42,12 @@
 [submodule "lizard_docker"]
 	path = lizard_docker
 	url = git@github.com:DLR-TS/lizard_docker.git
+[submodule "adore_cli"]
+	path = adore_cli
+	url = https://github.com/DLR-TS/adore_cli.git
+[submodule "adore_if_ros"]
+	path = adore_if_ros
+	url = https://github.com/DLR-TS/adore_if_ros.git
+[submodule "libadore"]
+	path = libadore
+	url = https://github.com/DLR-TS/libadore.git
