@@ -14,3 +14,12 @@ SUBMODULES_PATH:=${ROOT_DIR}
 
 include adore_cli/adore_cli.mk
 
+
+.PHONY: test
+test:
+	xhost + && \
+    docker compose -f ${DOCKER_COMPOSE_FILE} up adore-cli_x11-display \
+      --force-recreate \
+      --renew-anon-volumes \
+      --detach; \
+    xhost - 
