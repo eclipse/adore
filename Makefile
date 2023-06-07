@@ -10,6 +10,8 @@ SOURCE_DIRECTORY:=${ROOT_DIR}
 ADORE_CLI_WORKING_DIRECTORY:=${ROOT_DIR}
 SUBMODULES_PATH:=${ROOT_DIR}
 
+DOCKER_CONFIG?=${ROOT_DIR}/apt_cacher_ng_docker
+
 include adore_cli/adore_cli.mk
 
 .PHONY: lint 
