@@ -98,7 +98,9 @@ In general every module will produce at least a build docker image. If a module
 requires a runtime context or other contexts these will be generated as well.
 For example on the module libadore located at https://github.com/DLR-TS/
 produces the following images:
+
 ![Libadore Docker Images](images/libadore_docker_image_ls.jpg)
+
 In the case of libadore there is a docker context for build with will contain
 only the build artifacts, a test context which can be used to execute unit tests
 and the main context. What docker images/contexts are produced with make build
@@ -148,33 +150,95 @@ Makefile:
 
 ![Example Makefile with documented target](images/make_help_makefile.jpg)
 
-Calling make help on would then yield the following on this example module:
+will output the comment and target name with the invocation of `make help` 
+
+Calling `make help` on would then yield the following on this example module:
+
 ![Example make help output](images/make_help.jpg)
 
 As can be seen in the previous image the make_gadgets project also provides
-another important recipe/target that is used throughout the ADORe ecosystem 
-specifically the "get_sanitized_branch_name". Calling this target returns the
-branch name or hash that has been sanitized such that it can be used as a docker
-image tag. This will be further detailed in a later section.
+another  very important recipe/target that is used throughout the ADORe 
+ecosystem specifically the "get_sanitized_branch_name". Calling this target 
+returns the branch name or hash that has been sanitized such that it can be 
+used as a docker image tag. This will be further detailed in a later section.
 
 For more information on how the help target works please review the 
-documentation for https://github.com/DLR-TS/make_gadgets or the gist at 
+documentation for
+https://github.com/DLR-TS/make_gadgets or the gist at 
 https://gist.github.com/prwhite/8168133
+
+The Makefile provides the primary means to interact with a module directly by 
+navigating to a module and running make commands on the module. 
 
 
 #### Dockerfile
 The Dockerfile is pretty self-explanatory and in general every module will have
 a Dockerfile in its root. More dockerfile may be provided by a module if 
-necessary depending if the module also requires runtime context.  
+necessary depending if the module also requires runtime context. If there are
+many docker files within a module then they can be organized in a subdirectory 
+called 'docker'. GNU Make is used primarily to invoke `docker` or 
+`docker compose` within ADORe.
 
-#### Interface makefile <modulename>.mk
-There are some targets or recipes that are only relevant to the module itself.
+#### Interface makefile <module name>.mk
+Many modules within adore have two makefiles namely 'Makefile' and 
+'<module name>.mk'. The first makefile ('Makefile') allows make commands to be
+run directly on the module by navigating to the module directory and running 
+for example `make build` or `make clean`. 
 
+The second makefile having the same name of the module itself (for example in 
+adore_if_ros_msg: adore_if_ros_msg.mk) acts as the external interface for the 
+module.  The basic question for this makefile is what behavior, context, and 
+environmental variables should be exported from the module.  
+This makefile will include the following:
+- Important environmental variables for the module (such as docker tag) 
+- All the necessary make includes (does the module depend on other modules?)
+- All targets that should be externally visible to downstream projects
+
+The self-named makefile included in each module is the external interface for
+the module. 
+
+Take this minimal example makefile which includes adore_if_ros_msg.mk:
+```Makefile
+include make_gadgets/make_gadgets.mk
+include adore_if_ros_msg/adore_if_ros_msg.mk
+
+.PHONY: test_target
+test_target: ## this is a test target
+        echo "Hello, World!"
+```
+
+By including adore_if_ros_msg.mk all of the exported targets are now available.
+Calling `make help` now on this example Makefile yields the following output:
+
+![Example make help output with adore_if_ros_msg.mk included](images/adore_if_ros_msg_help.jpg)
+
+This allows composition of modules.
+
+The self-named makefile previous discussed also provides a number of important 
+dynamic environmental variables which follow the basic form: 
+```text
 <module name>_PROJECT
 <module name>_MAKEFILE_PATH
 <module name>_SUBMODULES_PATH
 <module name>_TAG
 <module name>_IMAGE
+```
+
+For example in the module adore_if_ros_msg the following environmental variables
+are provided:
+```text
+ADORE_IF_ROS_MSG_IMAGE= ${ADORE_IF_ROS_MSG_PROJECT}:${ADORE_IF_ROS_MSG_TAG}
+ADORE_IF_ROS_MSG_MAKEFILE_PATH= /home/akoerner/repos/csa/github.com/eclipse/test/adore_if_ros_msg
+ADORE_IF_ROS_MSG_PROJECT= adore_if_ros_msg
+ADORE_IF_ROS_MSG_SUBMODULES_PATH= /home/akoerner/repos/csa/github.com/eclipse/test/adore_if_ros_msg
+ADORE_IF_ROS_MSG_TAG= master
+```
+
+The environmental variables that a module provides is up to the module but the
+previously detailed variables are common.  The most important variable being the 
+`<module name>_IMAGE`, `<module name>_PROJECT`, and `<module name>_TAG`
+variables which all relevant for docker image tagging. 
+
 
 
 #### 'files' directory
