@@ -256,7 +256,7 @@ The ADORe build system offers two methods of module composition which will be
 detailed below. 
 
 #### Hierarchic Composition
-In general a module only have visibility into the contents within the module
+In general a module only has visibility into the contents within said module.
 This allows modules to be cloned and operated on in complete isolation to
 parent context. This is useful for building up complex CI processes. The
 following image illustrates the concept:
