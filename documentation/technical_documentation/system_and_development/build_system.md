@@ -22,10 +22,10 @@ location. To discover the capabilities of a given module or what a module can
 do simple inspect the provided Makefile. It is up to the developer of a module 
 to provide interesting or relevant targets for the project or module. At 
 minimum 'make build', 'make test' and 'make clean' should be provided by a 
-module. Review the [modules](#modules) section for more detail on what constitutes a module.
+module. Review the [modules](#modules) section for more detail on what 
+constitutes a module.
 
 
-![adore_if_ros_msg make help Example](images/adore_if_ros_msg_help.jpg)
 
 
 ## Dependency configuration management
@@ -135,8 +135,8 @@ defined. The Makefile provides "documentation-as-code" so if you are wondering
 what capabilities a module offers the first place to look is the Makefile. 
 
 The makefile also provides important environmental variables for docker build
-and docker run such as docker tag and potentially other important environmental
-variables relevant to the module.
+and docker run such as a docker tag and potentially other important 
+environmental variables relevant to the module.
 
 In general every module should provide a `make help` target to guild users on 
 module capabilities. The 'help' target used throughout the ADORe ecosystem is a
@@ -148,16 +148,22 @@ Any Makefile that has `include make_gadgets/make_gadgets.mk` will have a
 Any target or recipe that has two hash symbols such as the following example
 Makefile:
 
-![Example Makefile with documented target](images/make_help_makefile.jpg)
+```Makefile
+include make_gadgets/make_gadgets.mk
 
-will output the comment and target name with the invocation of `make help` 
+.PHONY: test_target
+test_target: ## this is a test target
+        echo "Hello, World!"
+```
 
-Calling `make help` on would then yield the following on this example module:
+will output the comment and target name with the invocation of `make help`. 
+Calling `make help` on the previous example Makefile would then yield the 
+following:
 
 ![Example make help output](images/make_help.jpg)
 
 As can be seen in the previous image the make_gadgets project also provides
-another  very important recipe/target that is used throughout the ADORe 
+another very important recipe/target that is used throughout the ADORe 
 ecosystem specifically the "get_sanitized_branch_name". Calling this target 
 returns the branch name or hash that has been sanitized such that it can be 
 used as a docker image tag. This will be further detailed in a later section.
@@ -180,10 +186,10 @@ called 'docker'. GNU Make is used primarily to invoke `docker` or
 `docker compose` within ADORe.
 
 #### Interface makefile <module name>.mk
-Many modules within adore have two makefiles namely 'Makefile' and 
+Many modules within ADORe have two makefiles namely 'Makefile' and 
 '<module name>.mk'. The first makefile ('Makefile') allows make commands to be
-run directly on the module by navigating to the module directory and running 
-for example `make build` or `make clean`. 
+run directly on the module by navigating to the module directory in a shell and
+running for example `make build` or `make clean`. 
 
 The second makefile having the same name of the module itself (for example in 
 adore_if_ros_msg: adore_if_ros_msg.mk) acts as the external interface for the 
@@ -234,46 +240,67 @@ ADORE_IF_ROS_MSG_SUBMODULES_PATH= /home/akoerner/repos/csa/github.com/eclipse/te
 ADORE_IF_ROS_MSG_TAG= master
 ```
 
-The environmental variables that a module provides is up to the module but the
-previously detailed variables are common.  The most important variable being the 
-`<module name>_IMAGE`, `<module name>_PROJECT`, and `<module name>_TAG`
-variables which all relevant for docker image tagging. 
-
-
+The environmental variables that a module provides is up to the module author 
+but the previously detailed variables are common.  The most important variable 
+being the `<module name>_IMAGE`, `<module name>_PROJECT`, and 
+`<module name>_TAG` variables which all relevant for docker image building 
+and tagging. 
 
 #### 'files' directory
-
-
+By convention most modules include a 'files' directory this files directory
+contains any context that should be included during build using the docker 
+`COPY` key word such as entry point shell scripts, requirements files et cetera.
 
 ### Module Composition
+The ADORe build system offers two methods of module composition which will be
+detailed below. 
+
+#### Hierarchic Composition
+In general a module only have visibility into the contents within the module
+This allows modules to be cloned and operated on in complete isolation to
+parent context. This is useful for building up complex CI processes. The
+following image illustrates the concept:
 
 ![Hierarchic Composition](images/hierarchial_composition.png)
-```
+
+A give module will have all necessary dependencies within it's tree. Any node
+within the tree can be cloned, built and tested in isolation. This requires
+recursive cloning; here is an example of adore_if_ros_msg being cloned, built
+and tested: 
+```bash
 git clone git clone --recursive -j8 git@github.com:DLR-TS/adore_if_ros_msg.git
 cd adore_if_ros_msg
 make build
 make test
 ```
+Hierarchic composition has a number of benefits but also carries significant
+drawbacks. Development can be cumbersome because every reference to a module
+within a project then needs to be updated with any change. 
 
-### make build
+#### Open Composition
+To address the previously discussed drawback of hierarchic module composition 
+open module composition is also supported within the ADORe ecosystem. This
+allows all modules to be placed in a flat directory structure. The pitfall being
+that all required modules must be present in this directory structure otherwise
+Make operations will fail.
 
-
-```text
-make build
-...
-=> => writing image sha256:9061adda9f2b0009dd09d0224a518b950fdb910fc3da005c658aa082f397afad                                                             0.0s 
- => => naming to docker.io/library/adore_if_ros_msg:master                                                                                               0.0s 
-docker cp $(docker create --rm adore_if_ros_msg:master):/tmp/adore_if_ros_msg/adore_if_ros_msg/build "/home/akoerner/repos/csa/github.com/DLR-TS/adore_if_ros_msg/adore_if_ros_msg"
-Successfully copied 10.6MB to /home/akoerner/repos/csa/github.com/DLR-TS/adore_if_ros_msg/adore_if_ros_msg
-...
-
-```
-
-A module can be cloned, built, and tested in isolation.
-
-
+The following image illustrates the concept of open module composition:
 
 ![Open Composition](images/open_composition.png)
-```
 
+Open module composition is achieved by introducing the `SUBMODULES_PATH`
+environmental variable. This must be defined either by the current environment
+or by a parent Makefile when invoking a make action on a module. 
+
+If the `SUBMODULES_PATH` variable is not defined and a give module has not been
+recursively cloned running any make target on a submodule/module will yield the
+following error:
+```bash
+adore_if_ros_msg(e9019d5) (2)> make help 
+INFO: To clone submodules use: 'git submodules update --init --recursive'
+INFO: To specify alternative path for submodules use: SUBMODULES_PATH="<path to submodules>" make build'
+INFO: Default submodule path is: /home/akoerner/repos/csa/github.com/eclipse/adore/adore_if_ros_msg'
+adore_if_ros_msg.mk:21: *** "ERROR: /home/akoerner/repos/csa/github.com/eclipse/adore/adore_if_ros_msg/make_gadgets does not exist. Did you clone the submodules?".  Stop.
 ```
+To avoid this error the `SUBMODULES_PATH` environmental variable has to be
+sourced.
