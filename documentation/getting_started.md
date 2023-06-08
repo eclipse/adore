@@ -48,22 +48,20 @@ git submodule update --init --recursive
 Each module provides a Makefile and docker context for build. You can build the 
 whole project by navigating to the ADORe project root and running:
 ```bash
-cd adore && make
+cd adore
+make build
 ```
 
 ### ADORe command line interface (CLI)
 The ADORe CLI is a docker compose context with a ros master service and a plotlab 
 server service. 
-To use the ADORe CLI docker context first build the docker image with the 
-provided make target:
+To use the ADORe CLI docker context run the provided make target to start the 
+ADORe CLI context:
 ```bash
-make build_adore-cli
+make cli
 ```
 
-Next, run the provided make target to start the ADORe CLI context:
-```bash
-make adore-cli
-```
+On first run of the ADORe cli
 
 The ADORe CLI context provides the following features: 
 * Execution environment for all ADORe related binaries 

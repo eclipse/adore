@@ -25,6 +25,9 @@
   - at least 15 GB to build all necessary docker context
 - Operating system: Anything that supports newer docker versions. 
   - Recommended: Ubuntu 20.04 or 22.04
+- Network: A reliable network with high throughput and low latency.  Initial build
+can take a significant amount of time to pull all necessary dependencies from apt and docker.
+A poor connection will result in non-deterministic build failures. 
 - Software
   - Docker v20.10.17 or greater and docker compose v2.6.0 or greater
   - Make
