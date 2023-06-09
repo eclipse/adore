@@ -12,21 +12,18 @@ configuration management of dependencies and software reuse.
 
 ## Build interface normalization
 The ADORe build system aims to provide per module predictable building and 
-testing interfaces via GNU Make such as: 'make build' 'make test' et cetera.
+testing interfaces via GNU Make such as: 'make build' 'make test' and more.
 
-GNU Make is not a new tool however it is stable, familiar to many developers.
+GNU Make is not a new tool however it is stable nad familiar to many developers.
 For this reason it was selected as the centralized "glue" for the ADORe build
 system. GNU Make offers "documentation-as-code" for ADORe capturing complex 
-build, testing and execution processes, steps, and commands into a single 
-location. To discover the capabilities of a given module or what a module can 
-do simple inspect the provided Makefile. It is up to the developer of a module 
+build, testing, and execution processes, steps, and commands into a single 
+location. To discover the capabilities of a given module, or what a module can 
+do, simple inspect the provided Makefile. It is up to the developer of a module 
 to provide interesting or relevant targets for the project or module. At 
 minimum 'make build', 'make test' and 'make clean' should be provided by a 
 module. Review the [modules](#modules) section for more detail on what 
 constitutes a module.
-
-
-
 
 ## Dependency configuration management
 In a standard Dockerfile it can be difficult to manage or version system 
@@ -69,11 +66,16 @@ all dependencies within the project can be discovered: `find -name "requirements
 Building up new docker contexts that pull in dependencies from other modules is 
 possible because the dependency files are separate
 - Using sed to filter the dependency file allows the use of "#" comments within 
-the file. This is useful to documenting and managing individual dependencies.
+the file. This is useful to documenting/commenting and managing individual dependencies.
 
-In general there will be a files/requirements.<module>.<base system>.system file 
-that contains all necessary dependencies for that module.  Furhtermore, the
-system dependency file 
+In general there will be a `files/requirements.<module>.<base system>.system` file 
+that contains all necessary dependencies for that module for example: 
+"requirements.adore_if_ros_msg.ubuntu20.04.system" which is the system dependency file
+for adore_if_ros_msg.  Furhtermore, the system dependency files can be seggregated into
+seperate files based off of lifecycle context such as build dependencies and run dependencies.
+This is true for modules such as libadore which have a build requiremetns file and a runtime
+requirements file. Although, it is not strictly essential to seperate build and runtime
+system dependencies it makes managment and composition of dependencies easier.
 
 ## Modules
 ADORe relies heavily on git submodules for code reuse and boundaries. 
@@ -179,7 +181,7 @@ navigating to a module and running make commands on the module.
 
 #### Dockerfile
 The Dockerfile is pretty self-explanatory and in general every module will have
-a Dockerfile in its root. More dockerfile may be provided by a module if 
+a Dockerfile in its root. More dockerfiles may be provided by a module if 
 necessary depending if the module also requires runtime context. If there are
 many docker files within a module then they can be organized in a subdirectory 
 called 'docker'. GNU Make is used primarily to invoke `docker` or 
@@ -243,7 +245,7 @@ ADORE_IF_ROS_MSG_TAG= master
 The environmental variables that a module provides is up to the module author 
 but the previously detailed variables are common.  The most important variable 
 being the `<module name>_IMAGE`, `<module name>_PROJECT`, and 
-`<module name>_TAG` variables which all relevant for docker image building 
+`<module name>_TAG` variables which are all relevant for docker image building 
 and tagging. 
 
 #### 'files' directory
