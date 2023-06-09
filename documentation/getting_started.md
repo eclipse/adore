@@ -35,13 +35,15 @@ id | grep docker
 ```bash
 df -h
 ```
-### Clone the reposiotry and submodules
+### Clone the repository
 ```bash
-git clone --recurse-submodules -j8 git@github.com:eclipse/adore.git
+git clone git@github.com:eclipse/adore.git
+cd adore
+git submodule update --init
 ```
 or if you have already cloned the repository you must initialize the submodules:
 ```bash
-git submodule update --init --recursive
+git submodule update --init
 ```
 
 ### Building ADORe
@@ -53,34 +55,33 @@ make build
 ```
 
 ### ADORe command line interface (CLI)
-The ADORe CLI is a docker compose context with a ros master service and a plotlab 
-server service. 
+The ADORe CLI is a docker compose context with a ros master service and a 
+plotlab server service. 
 To use the ADORe CLI docker context run the provided make target to start the 
 ADORe CLI context:
 ```bash
 make cli
 ```
 
-On first run of the ADORe cli
+On first run of the ADORe cli the system will be built
 
 The ADORe CLI context provides the following features: 
 * Execution environment for all ADORe related binaries 
 * A pre-generated catkin workspace located at adore/catkin_workspace
-* Docker-out-of-docker docker commands can be run within the context
 * Reuse of previously generated binaries and build artifacts. All build 
 artifacts generated previously with make build can be executed in this 
 environment
 * Headless, native or windowed plotlab server running as a docker compose 
 service.  The display mode for plotlab server can be configured with the 
 docker-compose.yaml. For more information on plotlab server please review the
-README.md provided by that module at plotlab/README.md
+README.md provided by that module at plotlabserver/README.md
 server can be configured 
 * ros master running as a docker compose service
 
 
-Once in the adore-cli context you can launch scenarios with roslaunch:
+Once in the cli context you can launch scenarios with roslaunch:
 ```bash
-cd adore_if_ros_demos
+cd adore_scenarios 
 roslaunch demo001_loadmap.launch
 ```
 ### Static checking

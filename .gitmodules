@@ -66,3 +66,6 @@
 [submodule "ci_teststand"]
 	path = ci_teststand
 	url = git@github.com:DLR-TS/ci_teststand.git
+[submodule "adore_scenarios"]
+	path = adore_scenarios
+	url = git@github.com:DLR-TS/adore_scenarios.git
