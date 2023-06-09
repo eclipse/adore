@@ -4,6 +4,8 @@ ROOT_DIR:=$(shell dirname "$(realpath $(firstword $(MAKEFILE_LIST)))")
 
 include make_gadgets/make_gadgets.mk
 
+DOCKER_COMPOSE_FILE?=${ROOT_DIR}/docker-compose.yaml
+
 .EXPORT_ALL_VARIABLES:
 CATKIN_WORKSPACE_DIRECTORY:=${ROOT_DIR}/catkin_workspace
 SOURCE_DIRECTORY:=${ROOT_DIR}
