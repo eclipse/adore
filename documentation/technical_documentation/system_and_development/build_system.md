@@ -14,16 +14,16 @@ configuration management of dependencies and software reuse.
 The ADORe build system aims to provide per module predictable building and 
 testing interfaces via GNU Make such as: 'make build' 'make test' and more.
 
-GNU Make is not a new tool however it is stable nad familiar to many developers.
+GNU Make is not a new tool however it is stable and familiar to many developers.
 For this reason it was selected as the centralized "glue" for the ADORe build
 system. GNU Make offers "documentation-as-code" for ADORe capturing complex 
 build, testing, and execution processes, steps, and commands into a single 
 location. To discover the capabilities of a given module, or what a module can 
 do, simple inspect the provided Makefile. It is up to the developer of a module 
-to provide interesting or relevant targets for the project or module. At 
-minimum 'make build', 'make test' and 'make clean' should be provided by a 
-module. Review the [modules](#modules) section for more detail on what 
-constitutes a module.
+to provide interesting or relevant targets for the project or module. At minimum
+'make build', 'make test' and 'make clean' should be provided by a module. 
+Review the [modules](#modules) section for more detail on what constitutes a 
+module.
 
 ## Dependency configuration management
 In a standard Dockerfile it can be difficult to manage or version system 
@@ -66,16 +66,18 @@ all dependencies within the project can be discovered: `find -name "requirements
 Building up new docker contexts that pull in dependencies from other modules is 
 possible because the dependency files are separate
 - Using sed to filter the dependency file allows the use of "#" comments within 
-the file. This is useful to documenting/commenting and managing individual dependencies.
+the file. This is useful to documenting/commenting and managing individual 
+dependencies.
 
-In general there will be a `files/requirements.<module>.<base system>.system` file 
-that contains all necessary dependencies for that module for example: 
-"requirements.adore_if_ros_msg.ubuntu20.04.system" which is the system dependency file
-for adore_if_ros_msg.  Furhtermore, the system dependency files can be seggregated into
-seperate files based off of lifecycle context such as build dependencies and run dependencies.
-This is true for modules such as libadore which have a build requiremetns file and a runtime
-requirements file. Although, it is not strictly essential to seperate build and runtime
-system dependencies it makes managment and composition of dependencies easier.
+In general there will be a `files/requirements.<module>.<base system>.system` 
+file that contains all necessary dependencies for that module for example: 
+"requirements.adore_if_ros_msg.ubuntu20.04.system" which is the system 
+dependency file for adore_if_ros_msg.  Furthermore, the system dependency files 
+can be segregated into separate files based off of life-cycle context such as 
+build dependencies and run dependencies. This is true for modules such as 
+libadore which have a build requirements file and a runtime requirements file. 
+Although, it is not strictly essential to separate build and runtime system 
+dependencies it makes management and composition of dependencies easier.
 
 ## Modules
 ADORe relies heavily on git submodules for code reuse and boundaries. 
@@ -302,7 +304,8 @@ adore_if_ros_msg(e9019d5) (2)> make help
 INFO: To clone submodules use: 'git submodules update --init --recursive'
 INFO: To specify alternative path for submodules use: SUBMODULES_PATH="<path to submodules>" make build'
 INFO: Default submodule path is: /home/akoerner/repos/csa/github.com/eclipse/adore/adore_if_ros_msg'
-adore_if_ros_msg.mk:21: *** "ERROR: /home/akoerner/repos/csa/github.com/eclipse/adore/adore_if_ros_msg/make_gadgets does not exist. Did you clone the submodules?".  Stop.
+adore_if_ros_msg.mk:21: *** "ERROR: /home/akoerner/repos/csa/github.com/eclipse/adore/adore_if_ros_msg/make_gadgets 
+does not exist. Did you clone the submodules?".  Stop.
 ```
 To avoid this error the `SUBMODULES_PATH` environmental variable has to be
 sourced.
