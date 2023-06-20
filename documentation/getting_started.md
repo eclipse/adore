@@ -46,14 +46,6 @@ or if you have already cloned the repository you must initialize the submodules:
 git submodule update --init
 ```
 
-### Building ADORe
-Each module provides a Makefile and docker context for build. You can build the 
-whole project by navigating to the ADORe project root and running:
-```bash
-cd adore
-make build
-```
-
 ### ADORe command line interface (CLI)
 The ADORe CLI is a docker compose context with a ros master service and a 
 plotlab server service. 
@@ -63,7 +55,8 @@ ADORe CLI context:
 make cli
 ```
 
-On first run of the ADORe cli the system will be built
+On first run of the ADORe cli the system will be built. Initial build can take 
+10-15 minutes depending on system and network. 
 
 The ADORe CLI context provides the following features: 
 * Execution environment for all ADORe related binaries 
@@ -84,6 +77,15 @@ Once in the cli context you can launch scenarios with roslaunch:
 cd adore_scenarios 
 roslaunch demo001_loadmap.launch
 ```
+
+### Building ADORe
+Each module provides a Makefile and docker context for build. You can build the 
+whole project by navigating to the ADORe project root and running:
+```bash
+cd adore
+make build
+```
+
 ### Static checking
 The ADORe build system provides built-in static checking via cppcheck and cpplint
 ```bash

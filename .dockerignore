@@ -18,3 +18,4 @@ catkin_workspace/
 **.docker_image_cache**
 .docker_image_cache
 .log
+adore/
