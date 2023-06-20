@@ -41,10 +41,8 @@ git clone git@github.com:eclipse/adore.git
 cd adore
 git submodule update --init
 ```
-or if you have already cloned the repository you must initialize the submodules:
-```bash
-git submodule update --init
-```
+> :warning: **Warining:** Failing to update the submodules will result in build failures!
+
 
 ### ADORe command line interface (CLI)
 The ADORe CLI is a docker compose context with a ros master service and a 
@@ -84,6 +82,10 @@ whole project by navigating to the ADORe project root and running:
 ```bash
 cd adore
 make build
+```
+By default only core modules are built to save time. To build all ADORe modules you can run the provided target:
+```bash
+make build_all
 ```
 
 ### Static checking
