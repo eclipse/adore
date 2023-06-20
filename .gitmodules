@@ -12,7 +12,7 @@
 	url = git@github.com:dlr-ts/adore_v2x_sim
 [submodule "apt_cacher_ng_docker"]
 	path = apt_cacher_ng_docker
-	url = git@github.com:dlr-ts/apt_cacher_ng_docker
+	url = git@github.com:DLR-TS/apt_cacher_ng_docker.git
 	ignore = untracked
 	shallow = true
 [submodule "plotlabserver"]
@@ -24,71 +24,48 @@
 [submodule "v2x_if_ros_msg"]
 	path = v2x_if_ros_msg
 	url = git@github.com:dlr-ts/v2x_if_ros_msg
-[submodule "adore_if_ros/adore_if_ros_msg"]
-	path = adore_if_ros/adore_if_ros_msg
-	url = git@github.com:dlr-ts/adore_if_ros_msg
-[submodule "adore_if_ros/plotlablib"]
-	path = adore_if_ros/plotlablib
-	url = git@github.com:dlr-ts/plotlablib
-[submodule "libadore/libadore/external/Catch2"]
-	path = libadore/libadore/external/Catch2
-	url = git@github.com:catchorg/Catch2
-    ignore = dirty
-	shallow = true
-[submodule "libadore/libadore/external/csaps-cpp"]
-	path = libadore/libadore/external/csaps-cpp
-	url = git@github.com:dlr-ts/csaps-cpp
-	ignore = untracked
-	shallow = true
-[submodule "libadore/libadore/external/dlib"]
-	path = libadore/libadore/external/dlib
-	url = git@github.com:davisking/dlib
-	ignore = untracked
-	shallow = true
-[submodule "libadore/libadore/external/osqp"]
-	path = libadore/libadore/external/osqp
-	url = git@github.com:osqp/osqp
-	ignore = untracked
-	shallow = true
-[submodule "libadore/libadore/external/qpOASES"]
-	path = libadore/libadore/external/qpOASES
-	url = git@github.com:coin-or/qpOASES
-	ignore = untracked
-	shallow = true
-[submodule "libadore/libadore/external/xodr"]
-	path = libadore/libadore/external/xodr
-	url = git@github.com:dlr-ts/xodr
-	ignore = untracked
-	shallow = true
-    branch = adore
-[submodule "adore_if_ros/cppcheck_docker"]
-	path = adore_if_ros/cppcheck_docker
-	url = git@github.com:DLR-TS/cppcheck_docker.git
-	branch = master
-[submodule "adore_if_ros/lizard_docker"]
-	path = adore_if_ros/lizard_docker
-	url = git@github.com:DLR-TS/lizard_docker.git
-	branch = master
-[submodule "adore_if_ros/cpplint_docker"]
-	path = adore_if_ros/cpplint_docker
+[submodule "catkin_docker"]
+	path = catkin_docker
+	url = git@github.com:DLR-TS/catkin_docker.git
+[submodule "cpplint_docker"]
+	path = cpplint_docker
 	url = git@github.com:DLR-TS/cpplint_docker.git
-	branch = master
-[submodule "libadore/cpplint_docker"]
-	path = libadore/cpplint_docker
-	url = git@github.com:DLR-TS/cpplint_docker.git
-	branch = master
-[submodule "libadore/cppcheck_docker"]
-	path = libadore/cppcheck_docker
+[submodule "cppcheck_docker"]
+	path = cppcheck_docker
 	url = git@github.com:DLR-TS/cppcheck_docker.git
-	branch = master
-[submodule "libadore/lizard_docker"]
-	path = libadore/lizard_docker
-	url = git@github.com:DLR-TS/lizard_docker.git
-	branch = master
-[submodule "adore_if_ros/adore_scheduling"]
-	path = adore_if_ros/adore_scheduling
-	url = git@github.com:DLR-TS/adore_scheduling.git
-	shallow = true
-[submodule "libadore/make_gadgets"]
-	path = libadore/make_gadgets
+[submodule "coordinate_conversion"]
+	path = coordinate_conversion
+	url = git@github.com:DLR-TS/coordinate_conversion.git
+[submodule "make_gadgets"]
+	path = make_gadgets
 	url = git@github.com:DLR-TS/make_gadgets.git
+[submodule "lizard_docker"]
+	path = lizard_docker
+	url = git@github.com:DLR-TS/lizard_docker.git
+[submodule "adore_cli"]
+	path = adore_cli
+	url = git@github.com:DLR-TS/adore_cli.git
+[submodule "adore_if_ros"]
+	path = adore_if_ros
+	url = git@github.com:DLR-TS/adore_if_ros.git
+[submodule "libadore"]
+	path = libadore
+	url = git@github.com:DLR-TS/libadore.git
+[submodule "adore_scheduling"]
+	path = adore_scheduling
+	url = git@github.com:DLR-TS/adore_scheduling.git
+[submodule "plotlablib"]
+	path = plotlablib
+	url = git@github.com:DLR-TS/plotlablib.git
+[submodule "adore_if_ros_scheduling"]
+	path = adore_if_ros_scheduling
+	url = git@github.com:DLR-TS/adore_if_ros_scheduling.git
+[submodule "adore_tools"]
+	path = adore_tools
+	url = git@github.com:DLR-TS/adore_tools.git
+[submodule "ci_teststand"]
+	path = ci_teststand
+	url = git@github.com:DLR-TS/ci_teststand.git
+[submodule "adore_scenarios"]
+	path = adore_scenarios
+	url = git@github.com:DLR-TS/adore_scenarios.git

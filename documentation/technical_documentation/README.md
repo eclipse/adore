@@ -17,7 +17,7 @@
 ## System and development
   1. [Repository structure](system_and_development/repository_structure.md)<!--what is contained in which sub-folder-->
   2. [Sub-folder structure](system_and_development/subfolder_structure.md)<!--file folder with requirements, sub-folder with actual module-->
-  3. [Build process](system_and_development/build_process.md)
+  3. [Build system](system_and_development/build_system.md)
   4. [ADORe CLI](system_and_development/adore_cli.md)<!--the docker container with a command line interface for development work-->
   5. [Continuous integration and deployment CI/CD](system_and_development/adore_cicd.md)
   6. [Unit tests](system_and_development/unit_tests.md)

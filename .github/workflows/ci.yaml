@@ -1,0 +1,50 @@
+name: CI
+on: push
+
+jobs:
+  install_requirements:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Install GNU Make
+      run: sudo apt-get update && sudo apt-get -y install make
+
+  clone_source:
+    runs-on: ubuntu-latest
+    needs: install_requirements 
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+        with:
+          submodules: 'recursive'
+      - name: Save workspace
+        uses: actions/upload-artifact@v2
+        with:
+          name: workspace
+          path: ./
+          
+  build:
+    runs-on: ubuntu-latest
+    needs: clone_source
+    steps:
+      - name: Load workspace 
+        uses: actions/download-artifact@v2
+        with:
+          name: workspace
+      - name: Build
+        run: make build_all && make save_docker_images
+      - name: Save workspace
+        uses: actions/upload-artifact@v2
+        with:
+          name: workspace
+          path: ./
+
+  test:
+    runs-on: ubuntu-latest
+    needs: build
+    steps:
+      - name: Load workspace 
+        uses: actions/download-artifact@v2
+        with:
+          name: workspace
+      - name: Test
+        run: make load_docker_images && make test

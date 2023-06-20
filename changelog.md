@@ -14,8 +14,14 @@
 # Change Log
 
 
-## 2023-xx-xx -> v0.3.2
-- moved scheduling functionalities to submodule adore_scheduling
+## 2023-06
+- configurable submodules allowing open or hierarchical module composition 
+- Modularized adore scheduler@ github.com
+- modularized adore cli@ github.com/DLR-TS/adore_cli.git
+- modularized libadore@ github.com/DLR-TS/libadore
+- modularized adore_if_ros@ github.com/DLR-TS/adore_if_ros
+
+
 
 ## 2022-11-04 -> v0.3.1
 - updated adore_if_carla submodule to tag v0.1.0

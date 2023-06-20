@@ -12,3 +12,4 @@ catkin_workspace/
 **.vagrant
 **.catkin
 **.docker_image_cache**
+adore/
