@@ -16,22 +16,40 @@
 -->
 
 # ADORe System Requirements
-- CPU: Intel CORE i7 7700K or equivalent/better
+**CPU:** Intel CORE i7 7700K or equivalent/better
   - The more cores you have, the more trajectory planners you can run in 
   parallel.
 - No specific graphics card is required as everything (except plotting) runs on 
   the CPU
-- RAM: Min 8GB for execution. Compilation process is faster with 16+GB.
-- HDD storage
+
+**RAM:** Min 8GB for execution. Compilation process is faster with 16+GB
+
+**HDD storage**
   - at least 2.5 GB to clone the repository
   - at least 15 GB to build all necessary docker context
-- Operating system: Anything that supports newer docker versions. 
+
+**Operating system:** 
+  - Anything that supports newer docker versions. 
   - Recommended: Ubuntu 20.04 or 22.04
-- Network: A reliable network with high throughput and low latency. Initial 
+
+
+**Network:**
+
+  A reliable network with high throughput and low latency. Initial 
   build can take a significant amount of time to pull all necessary dependencies
   from apt and docker. A poor connection will result in non-deterministic build 
   failures. 
-- Software
+
+**Software**
   - Docker v20.10.17 or greater and docker compose v2.6.0 or greater. To install
-  the latest docker and docker compose run the following command: `curl -sSL https://raw.githubusercontent.com/DLR-TS/adore_tools/master/tools/install_docker.sh | bash`. For more information review the official docker documentation: https://docs.docker.com/engine/install/ubuntu/
-  - Make
+  the latest docker and docker compose run the following command:
+```bash
+curl -sSL https://raw.githubusercontent.com/DLR-TS/adore_tools/master/tools/install_docker.sh | bash`. 
+```
+For more information review the official docker documentation: https://docs.docker.com/engine/install/ubuntu/
+
+**Make**
+
+:warning: **Warning**: If you have a bad internet connection you will experience non-deterministic failures. Try running
+'make cli' or 'make build' again.
+
