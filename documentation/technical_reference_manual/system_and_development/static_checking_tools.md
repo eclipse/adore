@@ -90,3 +90,6 @@ If you run make lint from the root of the adore repository all lint reports can 
 
 lizard provides two log files namely, <component name>_lizard_report.xml and a human readable <component name>_lizard_report.log
 
+
+### Final note
+Some but not all modules within adore provide static checking capabilities. 
