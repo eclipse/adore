@@ -13,7 +13,10 @@
 *   Andrew Koerner 
 ********************************************************************************
 -->
-# Getting started with ADORe
+## Getting Started
+This guide will help you get your system set up and configure to run ADORe.
+
+## Getting started with ADORe
 
 1. First review the system requirements:
    [system_requirements.md](system_requirements.md) 
@@ -42,27 +45,5 @@ make cli
 For more informant on the ADORe CLI visit:
 [system_and_development/adore_cli.md]
 
-
-
-
-
-
-
-Once in the cli context you can launch scenarios with roslaunch:
-```bash
-cd adore_scenarios 
-roslaunch demo001_loadmap.launch
-```
-
-### Building ADORe
-Each module provides a Makefile and docker context for build. You can build the 
-whole project by navigating to the ADORe project root and running:
-```bash
-cd adore
-make build
-```
-By default only core modules are built to save time. To build all ADORe modules you can run the provided target:
-```bash
-make build_all
-```
-
+## Next
+Whats next????

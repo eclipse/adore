@@ -1,8 +1,15 @@
-# Building components within ADORe
+# Building
+This is a general guide on how to build components within ADORe
+
+For a deep dive into the ADORe build system see:
+[system_and_development/build_system.md]
+
+##  Building components within ADORe
 In general every module in ADORe offers the following general build related make
 targets/recipes: `make help`, `make build`, `make clean`, and `make test`.
 To discover what targets/recipes are provided by a given module navigate to the 
 module and run: `make help`
+
 
 ## ADORe Core
 On first invocation all of the ADORe CLI with `make cli` **only** core modules 
@@ -14,7 +21,17 @@ build or use the provide `make build_all` target.
 |:---------------------------|
 | Only core ADORe modules are build with `make cli`. If you are seeing ros node errors when running roslaunch try the `make build_all` target provided by adore or manually build the module you are trying to use. |
 
-
+Each module provides a Makefile and docker context for build. You can build the 
+core ADORe modules by navigating to the ADORe project root and running:
+```bash
+cd adore
+make build
+```
+By default only core modules are built to save time. To build all ADORe modules 
+you can run the provided target:
+```bash
+make build_all
+```
 
 ## Building 
 You can manually invoke rebuilding of any ADORe module if it supports it.
