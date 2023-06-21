@@ -12,10 +12,7 @@ build or use the provide `make build_all` target.
 
 | :warning: WARNING          |
 |:---------------------------|
-| Only core ADORe modules are build with `make cli` |
-| If you are seeing ros node errors when running roslaunch |
-| try the `make build_all` target provided by adore |
-| or manually build the module you are trying to use see: [Building](#Building). |
+| Only core ADORe modules are build with `make cli`. If you are seeing ros node errors when running roslaunch try the `make build_all` target provided by adore or manually build the module you are trying to use. |
 
 
 
@@ -23,7 +20,9 @@ build or use the provide `make build_all` target.
 You can manually invoke rebuilding of any ADORe module if it supports it.
 1. First you have to set the SUBMODULES_PATH environmental variable.
 - Navigate to the root of the ADORe project and run: `export SUBMODULES_PATH=$(pwd)`
+
 or
+
 - Source the provided environment file by navigating to the root of the ADORe
   project and running: `source adore.env`
 2. Now you can navigate to any module and manually invoke a build
