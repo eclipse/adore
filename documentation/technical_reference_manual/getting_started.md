@@ -14,34 +14,30 @@
 ********************************************************************************
 -->
 # Getting started with ADORe
-To use the ADORe build system you must have docker, docker compose, and make 
-installed and configured for you user.
-To check this run the following commands:
-1. check your docker version:
-```bash
-$ docker --version
-Docker version 20.10.17, build 100c701
-```
-```bash
-$ docker compose version
-Docker Compose version v2.6.0
-```
-2. Check that you are a member of the docker group:
-```bash
-id | grep docker
-...,998(docker),...
-```
-3. Check your storage and be sure you have ~18GB free:
-```bash
-df -h
-```
-### Clone the repository
+
+1. First review the system requirements:
+   [system_requirements.md](system_requirements.md) 
+
+2. Next review the prerequisites:[prerequisites](prerequisites.md) 
+
+3. Clone the repository: 
 ```bash
 git clone git@github.com:eclipse/adore.git
+```
+
+4. Initialize and update the submodules:
+```bash
 cd adore
 git submodule update --init
 ```
 > :warning: **Warining:** Failing to update the submodules will result in build failures!
+
+
+
+
+
+
+
 
 
 ### ADORe command line interface (CLI)

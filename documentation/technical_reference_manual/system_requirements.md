@@ -19,8 +19,9 @@
 **CPU:** Intel CORE i7 7700K or equivalent/better
   - The more cores you have, the more trajectory planners you can run in 
   parallel.
-- No specific graphics card is required as everything (except plotting) runs on 
+  - No specific graphics card is required as everything (except plotting) runs on 
   the CPU
+  - Any x86 base equivalent processor (ARM support is planned)
 
 **RAM:** Min 8GB for execution. Compilation process is faster with 16+GB
 
