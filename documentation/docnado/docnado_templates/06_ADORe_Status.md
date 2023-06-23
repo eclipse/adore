@@ -1,9 +1,9 @@
-title:      ADORe
-desc:       Eclipse ADORe is a modular software library and toolkit for decision making, planning, control and simulation of automated vehicles. It is currently developed at DLR (German Aerospace Center), Institute of Transportation Systems.
+title:      ADORe Ecosystem Status 
+desc:       ADORe Build status for all ecosystem projects
 date:       ${DOC_DATETIME}
 version:    ${DOC_VERSION}
 template:   document
-nav:        Getting Started __3__
+nav:        ADORe Status __6__
 percent:    100
 authors:    opensource-ts@dlr.de
            
@@ -22,4 +22,4 @@ authors:    opensource-ts@dlr.de
 *   Daniel Heß 
 ********************************************************************************ü
 -->
-${getting_started_md}
+${adore_ecosystem_build_statuses_md}

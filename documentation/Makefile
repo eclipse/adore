@@ -24,9 +24,18 @@ build_doxygen_docs: ## Build doxygen documentation. Requires doxygen to be insta
 build_sphinx_docs: ## Build sphinx documentation 
 	command -v sphinx-build >/dev/null 2>&1 || { echo >&2 "Error: sphinx-build is not installed. Install with: 'sudo apt-get install -y sphinx'."; exit 1; }
 	python -c "import breathe" 2>/dev/null || { echo >&2 "Error: sphinx extension breathe is not installed. Install with: 'python3 -m pip install breathe'."; exit 1; }
+	python -c "import exhale" 2>/dev/null || { echo >&2 "Error: sphinx extension exhale is not installed. Install with: 'python3 -m pip install exhale'."; exit 1; }
 
 	cd sphinx && make html
 
 .PHONY: build_docnado_docs
-build_docnado_docs: ## Build docnado documentation aka ghpages webpage 
-	cd docnado && bash generate_docnado_docs.sh 
+build_docnado_docs:  ## Build docnado documentation aka ghpages webpage 
+	cd docnado && bash generate_docnado_docs.sh
+
+.PHONY: build_ghpages
+build_ghpages: build_docnado_docs
+	rm -rf doc
+	mkdir -p doc
+	cp -r landing_page/* doc/
+	cp -r docnado/html doc/docnado
+	cp -r doxygen/generated_doxygen_documentation/html doc/docnado/w/generated_doxygen_documentation 

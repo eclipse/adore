@@ -18,10 +18,9 @@ This guide will help you get your system set up and configure to run ADORe.
 
 ## Getting started with ADORe
 
-1. First review the system requirements:
-   [system_requirements.md](system_requirements.md) 
+1. First review the system requirements: [system_requirements.md](system_requirements.md) 
 
-2. Next review the prerequisites:[prerequisites](prerequisites.md) 
+2. Next review the prerequisites: [prerequisites.md](prerequisites.md) 
 
 3. Clone the repository: 
 ```bash
@@ -47,3 +46,4 @@ For more informant on the ADORe CLI visit:
 
 ## Next
 Whats next????
+

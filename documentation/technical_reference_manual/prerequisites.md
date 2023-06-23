@@ -1,4 +1,4 @@
-## Prerequisites
+# ADORe Prerequisites
 ADORe requires a recent version of make and Docker on your system. ADORe is
 officially supported in Ubuntu 20.04 and 22.04. The following document applies to
 that.
@@ -35,4 +35,4 @@ df -h . | awk 'NR==2 {print "Available Free Space:", $4}'
 
 ## Conclusion
 Once you have to correct operating system, adequate free space, as well as, have make and docker
-installed you are good to proceed with ADORe. 
+installed you are good to proceed with using ADORe. 

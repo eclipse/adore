@@ -1,0 +1,42 @@
+html,
+body {
+    width: 100%;
+    height: 100%;
+}
+
+body {
+    font-family: 'Istok Web', 'Muli', 'Helvetica', 'Arial', 'sans-serif';
+}
+
+.transparent-div {
+    background-color: transparent;
+    opacity: 0.5; /* Adjust the opacity value as needed */
+}
+.navbar {
+    background-color: #f8f9fa; /* Set desired background color for the navigation bar */
+    padding-left: 15px; /* Add left bumper */
+    padding-right: 15px; /* Add right bumper */
+}
+
+.navbar-brand {
+    margin-right: auto;
+    margin-left: auto;
+}
+
+.navbar-nav {
+    margin-left: auto; /* Push the links to the right */
+}
+
+.nav-link {
+    margin-right: 20px; /* Add spacing between nav links */
+    margin-left: 20px; /* Add spacing between nav links */
+}
+
+.section-block {
+    min-height: 100vh; 
+    align-items: left;
+    justify-content: left;
+    margin-bottom: 50px; /* Add padding between sections */
+    padding-top: 100px; /* Add space between navbar and section */
+}
+
