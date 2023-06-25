@@ -1,9 +1,9 @@
-title:      System Requirements
-desc:       The following help article will detail the optimal system configuration for ADORe. 
+title:      Problems and Solutions 
+desc:       A collection of solutions to known problems 
 date:       ${DOC_DATETIME}
 version:    ${DOC_VERSION}
 template:   document
-nav:        Setup __3__> System Requirements __1__
+nav:        Technical Reference Manual __5__> Problems and Solutions __6__
 percent:    100
 authors:    opensource-ts@dlr.de
            
@@ -20,6 +20,6 @@ authors:    opensource-ts@dlr.de
 *
 * Contributors: 
 *   Daniel Heß 
-********************************************************************************ü
+********************************************************************************
 -->
-${system_and_development_system_requirements_md}
+${problems_and_solutions_md}

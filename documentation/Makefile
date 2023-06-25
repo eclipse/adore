@@ -1,6 +1,6 @@
 SHELL:=/bin/bash
 
-.DEFAULT_GOAL := help
+.DEFAULT_GOAL := build_gh-pages
 
 ROOT_DIR:=$(shell dirname "$(realpath $(firstword $(MAKEFILE_LIST)))")
 
@@ -9,8 +9,6 @@ MAKEFLAGS += --no-print-directory
 .PHONY: help  
 help:
 	@printf "Usage: make \033[36m<target>\033[0m\n%s\n" "$$(awk 'BEGIN {FS = ":.*##"} /^[a-zA-Z0-9_-]+:.*?##/ { printf "  \033[36m%-10s\033[0m %s\n", $$1, $$2 } /^##@/ { printf "\n\033[1m%s\033[0m\n", substr($$0, 5) } ' $(MAKEFILE_LIST) | sort | uniq)"
-
-
 
 .PHONY: all
 all: build_doxygen_docs build_sphinx_docs 
@@ -29,13 +27,23 @@ build_sphinx_docs: ## Build sphinx documentation
 	cd sphinx && make html
 
 .PHONY: build_docnado_docs
-build_docnado_docs:  ## Build docnado documentation aka ghpages webpage 
+build_docnado_docs:  ## Build docnado documentation aka gh-pages webpage 
 	cd docnado && bash generate_docnado_docs.sh
 
-.PHONY: build_ghpages
-build_ghpages: build_docnado_docs
-	rm -rf doc
-	mkdir -p doc
-	cp -r landing_page/* doc/
-	cp -r docnado/html doc/docnado
-	cp -r doxygen/generated_doxygen_documentation/html doc/docnado/w/generated_doxygen_documentation 
+.PHONY: build_gh-pages
+build_gh-pages: build_doxygen_docs build_docnado_docs
+	rm -rf docs
+	mkdir -p docs
+	cp -r landing_page/* docs/
+	cp -r docnado/html docs/docnado
+	cp -r doxygen/generated_doxygen_documentation/html docs/docnado/w/generated_doxygen_documentation
+
+.PHONY: publish_gh-pages
+publish_gh-pages: build_gh-pages ## Publish docs to gh-pages branch
+	bash publish_gh-pages.sh
+
+.PHONY: publish
+publish: publish_gh-pages ## Publish docs to gh-pages branch
+
+.PHONY: build
+build: build_gh-pages ## Publish docs to gh-pages branch

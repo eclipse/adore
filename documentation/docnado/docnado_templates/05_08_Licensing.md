@@ -1,9 +1,9 @@
-title:      System Requirements
-desc:       The following help article will detail the optimal system configuration for ADORe. 
+title:      Licensing 
+desc:       Are you curious about software licenseing within ADORe? Then this is for you. 
 date:       ${DOC_DATETIME}
 version:    ${DOC_VERSION}
 template:   document
-nav:        Setup __3__> System Requirements __1__
+nav:        Technical Reference Manual __5__> Getting Help __7__
 percent:    100
 authors:    opensource-ts@dlr.de
            
@@ -20,6 +20,6 @@ authors:    opensource-ts@dlr.de
 *
 * Contributors: 
 *   Daniel Heß 
-********************************************************************************ü
+********************************************************************************
 -->
-${system_and_development_system_requirements_md}
+${licensing_md}

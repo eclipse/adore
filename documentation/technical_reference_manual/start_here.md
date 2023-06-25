@@ -1,4 +1,12 @@
 # ADORe Technical Reference Manual
+
+## Table of Contents
+
+- [System and Development](system_and_development.md)
+- [Control System](control_system.md)
+- [Interfaces](interfaces.md)
+- [Doxygen Documentation](doxygen_documentation.md)
+
 The ADORe Technical Reference Manual is divided into several distinct parts.
 
 ### 1 System and development

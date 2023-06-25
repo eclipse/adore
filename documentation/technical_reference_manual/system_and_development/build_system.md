@@ -54,36 +54,39 @@ RUN apt-get update && \
 ...
 ```
 The previous example provides the following benefits:
+
 - Dependencies can be tracked in an independent file such as in the case with
 adore_if_ros_msg: requirements.adore_if_ros_msg.ubuntu20.04.system
 If the base system is changed or upgraded then all that needs to be updated is 
 the dependency file.
-- There is one dependency per line making visioning easy
-- Discovering dependencies within the system is easy
+ - There is one dependency per line such as the following example for [g++](https://github.com/DLR-TS/adore_if_ros_msg/blob/bed4d8987c864628404b2c8e79735c08946635f4/files/requirements.adore_if_ros_msg.ubuntu20.04.system#L4)
+ - Discovering dependencies within the system is easy
 With the following shell command run on the top level of the ADORe project
 all dependencies within the project can be discovered: `find -name "requirements.*.ubuntu20.04.system"`
-- Composition of dependencies becomes trivial
-Building up new docker contexts that pull in dependencies from other modules is 
+ - Composition of dependencies becomes trivial
+ - Building up new docker contexts that pull in dependencies from other modules is 
 possible because the dependency files are separate
-- Using sed to filter the dependency file allows the use of "#" comments within 
+ - Using sed to filter the dependency file allows the use of "#" comments within 
 the file. This is useful to documenting/commenting and managing individual 
 dependencies.
 
 In general there will be a `files/requirements.<module>.<base system>.system` 
 file that contains all necessary dependencies for that module for example: 
-"requirements.adore_if_ros_msg.ubuntu20.04.system" which is the system 
+"[requirements.adore_if_ros_msg.ubuntu20.04.system](https://github.com/DLR-TS/adore_if_ros_msg/blob/master/files/requirements.adore_if_ros_msg.ubuntu20.04.system)" which is the system 
 dependency file for adore_if_ros_msg.  Furthermore, the system dependency files 
 can be segregated into separate files based off of life-cycle context such as 
 build dependencies and run dependencies. This is true for modules such as 
-libadore which have a build requirements file and a runtime requirements file. 
+libadore which has a [build requirements file](https://github.com/DLR-TS/adore_if_ros/blob/master/files/requirements.adore_if_ros.build.ubuntu20.04.system) and a [runtime requirements file](https://github.com/DLR-TS/adore_if_ros/blob/master/files/requirements.adore_if_ros.runtime.ubuntu20.04.system). 
 Although, it is not strictly essential to separate build and runtime system 
-dependencies it makes management and composition of dependencies easier.
+dependencies it makes management and composition of dependencies easier with the
+effect of lowering overall docker context sizes.
 
 ## Modules
 ADORe relies heavily on git submodules for code reuse and boundaries. 
-- In general every directory is a module and potentially a stand-alone project
-- Every module will provide a Makefile and a Dockerfile 
-- Every module will have at minimum a 'build' and 'clean' make target
+ 
+ - In general every directory is a module and potentially a stand-alone project
+ - Every module will provide a Makefile and a Dockerfile 
+ - Every module will have at minimum a 'build' and 'clean' make target
 
 
 ### Artifacts
@@ -100,18 +103,19 @@ et cetera.
 #### Docker images
 In general every module will produce at least a build docker image. If a module
 requires a runtime context or other contexts these will be generated as well.
-For example on the module libadore located at https://github.com/DLR-TS/
+For example on the module [libadore](https://github.com/DLR-TS/libadore).
 produces the following images:
 
 ![Libadore Docker Images](images/libadore_docker_image_ls.jpg)
 
-In the case of libadore there is a docker context for build with will contain
+In the case of libadore there is a docker context for build which contains
 only the build artifacts, a test context which can be used to execute unit tests
 and the main context. What docker images/contexts are produced with make build
 are dependent on the module needs.
 
 The internal file system layout for each module will be the same and follow the
-same pattern.  All project files will be placed in /tmp/<module name>
+same pattern.  All project files will be placed in /tmp/<module name> within the
+docker context.
 
 In the case of project containing ROS packages the structure will be: 
 `/tmp/<module name>/<module name>` where the first directory contains the docker
@@ -200,9 +204,10 @@ adore_if_ros_msg: adore_if_ros_msg.mk) acts as the external interface for the
 module.  The basic question for this makefile is what behavior, context, and 
 environmental variables should be exported from the module.  
 This makefile will include the following:
-- Important environmental variables for the module (such as docker tag) 
-- All the necessary make includes (does the module depend on other modules?)
-- All targets that should be externally visible to downstream projects
+
+ - Important environmental variables for the module (such as docker tag) 
+ - All the necessary make includes (does the module depend on other modules?)
+ - All targets that should be externally visible to downstream projects
 
 The self-named makefile included in each module is the external interface for
 the module. 
@@ -301,7 +306,7 @@ recursively cloned running any make target on a submodule/module will yield the
 following error:
 ```bash
 adore_if_ros_msg(e9019d5) (2)> make help 
-INFO: To clone submodules use: 'git submodules update --init --recursive'
+INFO: To clone submodules use: 'git submodule update --init --recursive'
 INFO: To specify alternative path for submodules use: SUBMODULES_PATH="<path to submodules>" make build'
 INFO: Default submodule path is: /home/akoerner/repos/csa/github.com/eclipse/adore/adore_if_ros_msg'
 adore_if_ros_msg.mk:21: *** "ERROR: /home/akoerner/repos/csa/github.com/eclipse/adore/adore_if_ros_msg/make_gadgets 

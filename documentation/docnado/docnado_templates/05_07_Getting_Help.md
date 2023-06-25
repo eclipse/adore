@@ -1,9 +1,9 @@
-title:      Start Here 
-desc:       An introduction into the ADORe Technical Reference Manual 
+title:      Getting Help 
+desc:       Are you stuck? Is something not working as expected? Then this is for you. 
 date:       ${DOC_DATETIME}
 version:    ${DOC_VERSION}
 template:   document
-nav:        Technical Reference Manual __5__> Start Here __1__
+nav:        Technical Reference Manual __5__> Getting Help __7__
 percent:    100
 authors:    opensource-ts@dlr.de
            
@@ -20,15 +20,6 @@ authors:    opensource-ts@dlr.de
 *
 * Contributors: 
 *   Daniel Heß 
-********************************************************************************ü
+********************************************************************************
 -->
-${start_here_md}
-
-
-
-
-
-
-
-
-
+${getting_help_md}

@@ -50,5 +50,6 @@ docker build -f Dockerfile.docnado -t docnado:latest .
 docker run --user $(id -u):$(id -g) -v ${DOCNADO_PREPROCESS_DIRECTORY}:/tmp/docs docnado:latest
 
 cd "${DOCNADO_PREPROCESS_DIRECTORY}"
-rm -rf index.html
-ln -sf w/Home.html index.html
+#rm -rf index.html
+cp w/Home.html w/index.html
+sed -i "s|./w/|./w/index.html|g" index.html

@@ -1,9 +1,9 @@
-title:      System Requirements
-desc:       The following help article will detail the optimal system configuration for ADORe. 
+title:      Table of Contents 
+desc:       TOC for the ADORe Technical Reference Manual 
 date:       ${DOC_DATETIME}
 version:    ${DOC_VERSION}
 template:   document
-nav:        Setup __3__> System Requirements __1__
+nav:        Technical Reference Manual __5__> Table of Contents __1__
 percent:    100
 authors:    opensource-ts@dlr.de
            
@@ -22,4 +22,13 @@ authors:    opensource-ts@dlr.de
 *   Daniel Heß 
 ********************************************************************************ü
 -->
-${system_and_development_system_requirements_md}
+${table_of_contents_md}
+
+
+
+
+
+
+
+
+

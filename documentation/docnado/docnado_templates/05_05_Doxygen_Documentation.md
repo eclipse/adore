@@ -1,4 +1,4 @@
-title:      Doxygen 
+title:      Doxygen Documentation 
 desc:       ADORe Doxygen Documentation 
 date:       ${DOC_DATETIME}
 version:    ${DOC_VERSION}
@@ -22,4 +22,4 @@ authors:    opensource-ts@dlr.de
 *   Daniel Heß 
 ********************************************************************************
 -->
-[ADORe Doxygen Documentation](generated_doxygen_documentation/index.html)
+${doxygen_documentation_md}
