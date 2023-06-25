@@ -12,7 +12,7 @@ configuration management of dependencies and software reuse.
 
 ## Build interface normalization
 The ADORe build system aims to provide per module predictable building and 
-testing interfaces via GNU Make such as: 'make build' 'make test' and more.
+testing interfaces via GNU Make such as: 'make build', 'make test, and more.
 
 GNU Make is not a new tool however it is stable and familiar to many developers.
 For this reason it was selected as the centralized "glue" for the ADORe build
@@ -21,7 +21,7 @@ build, testing, and execution processes, steps, and commands into a single
 location. To discover the capabilities of a given module, or what a module can 
 do, simple inspect the provided Makefile. It is up to the developer of a module 
 to provide interesting or relevant targets for the project or module. At minimum
-'make build', 'make test' and 'make clean' should be provided by a module. 
+'make build', 'make test', and 'make clean' should be provided by a module. 
 Review the [modules](#modules) section for more detail on what constitutes a 
 module.
 
@@ -148,8 +148,8 @@ environmental variables relevant to the module.
 
 In general every module should provide a `make help` target to guild users on 
 module capabilities. The 'help' target used throughout the ADORe ecosystem is a
-spin on the following git gist: https://gist.github.com/prwhite/8168133 and is 
-provided by the make_gadgets project at: https://github.com/DLR-TS/make_gadgets.
+spin on the following github gist: [https://gist.github.com/prwhite/8168133](https://gist.github.com/prwhite/8168133) and is 
+provided by the make_gadgets project at: [https://github.com/DLR-TS/make_gadgets](https://github.com/DLR-TS/make_gadgets).
 Any Makefile that has `include make_gadgets/make_gadgets.mk` will have a 
 `make help` target. 
 
@@ -256,7 +256,7 @@ being the `<module name>_IMAGE`, `<module name>_PROJECT`, and
 and tagging. 
 
 #### 'files' directory
-By convention most modules include a 'files' directory this files directory
+By convention most modules include a 'files' directory; this files directory
 contains any context that should be included during build using the docker 
 `COPY` key word such as entry point shell scripts, requirements files et cetera.
 
@@ -313,4 +313,16 @@ adore_if_ros_msg.mk:21: *** "ERROR: /home/akoerner/repos/csa/github.com/eclipse/
 does not exist. Did you clone the submodules?".  Stop.
 ```
 To avoid this error the `SUBMODULES_PATH` environmental variable has to be
-sourced.
+sourced. This can be done in one of two ways.
+
+1. source the provided adore.env file into your interactive shell. CD to the root of the adore project and run:
+```bash
+source adore.env
+```
+This will define and export the `SUBMODULES_PATH` environmental variable for you. After this you can go to any module and invoke make commands such as `make build` and `make clean`
+2. The second option is to simply provide the `SUBMODULES_PATH` environmental variable directly when invoking make such as follows:
+```bash
+cd adore_if_ros_msg
+SUBMODULES_PATH="$(realpath ..)" make build
+```
+
