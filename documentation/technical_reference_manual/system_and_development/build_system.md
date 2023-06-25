@@ -320,6 +320,7 @@ sourced. This can be done in one of two ways.
 source adore.env
 ```
 This will define and export the `SUBMODULES_PATH` environmental variable for you. After this you can go to any module and invoke make commands such as `make build` and `make clean`
+
 2. The second option is to simply provide the `SUBMODULES_PATH` environmental variable directly when invoking make such as follows:
 ```bash
 cd adore_if_ros_msg
