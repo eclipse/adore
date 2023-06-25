@@ -1,4 +1,4 @@
-title:      Table of Contents 
+title:      Technical Reference Manual 
 desc:       TOC for the ADORe Technical Reference Manual 
 date:       ${DOC_DATETIME}
 version:    ${DOC_VERSION}
