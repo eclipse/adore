@@ -7,6 +7,7 @@ ADORe provides tools to generate all of the documentation detailed in the
 ```bash
 cd adore/documentation
 ```
+
 2. Call the build target:
 ```bash
 make build
