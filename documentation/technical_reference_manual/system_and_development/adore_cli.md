@@ -57,11 +57,8 @@ Welcome to the ADORe Development CLI Ubuntu 20.04.6 LTS (GNU/Linux 5.19.0-45-gen
 
 ADORe CLI: adore git:(main)  (0)>  
 ```
-
-| :warning: WARNING          |
-|:---------------------------|
-| Any changes to the adore cli context require manually invoking a build for it to take effect! |
-| The ADORE CLI is only built on first invocation of 'make cli'|
+> **⚠ WARNING:** Any changes to the adore cli context require manually invoking a build for it to take effect! 
+>The ADORE CLI is only built on first invocation of 'make cli'
 
 
 This will build all necessary ADORe components and launch a docker context.
