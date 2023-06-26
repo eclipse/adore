@@ -1,0 +1,5 @@
+FROM mkdocs:latest 
+
+
+USER nobody
+CMD cd /tmp/docs && mkdocs serve

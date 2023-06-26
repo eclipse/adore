@@ -62,7 +62,11 @@ build_mkdocs:  ## Build mkdocs
 
 .PHONY: serve
 serve:   ## Serve docs 
-	cd docs && docker run --entrypoint '/bin/bash' -p 8000:8000 --user ${UID}:${GID} -v ${ROOT_DIR}/docs:/tmp/docs mkdocs:latest "/usr/local/bin/mkdocs serve"
+	rm mkdocs/docs -rf
+	rm mkdocs/site -rf
+	cp docs mkdocs -r 
+	cd mkdocs && docker build -f Dockerfile.mkdocs.serve -t mkdocs_serve:latest .
+	cd docs && docker run -it -p 8000:8000 --user ${UID}:${GID} -v ${ROOT_DIR}/mkdocs:/tmp/docs mkdocs_serve:latest 
 
 
 .PHONY: publish_gh-pages
