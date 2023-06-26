@@ -15,7 +15,13 @@
 ********************************************************************************
 -->
 
-# ADORe System Requirements
+# System Requirements
+The following section will detail the recommended hardware/system configuration,
+as well as, required software configuration in order to build and run ADORe and
+it's components.
+
+
+### Minimum System Configurations 
 **CPU:** Intel CORE i7 7700K or equivalent/better
 
 - The more cores you have, the more trajectory planners you can run in 
@@ -46,28 +52,27 @@ Min 8GB for execution. Compilation process is faster with 16+GB
   from apt and docker. A poor connection will result in non-deterministic build 
   failures. 
 
-<div style="display: inline-block;">
-    <div style="display: flex; align-items: center; justify-content: center;padding: 5px; border: 1px solid #FF7900; background-color: #FF7900;" >
-      <strong><i class="fa fa-exclamation-triangle"></i> Warning</strong>
-    </div>
-    <div style="background-color: white; border: 1px solid 	#FF7900; padding: 10px;">
-        <p>If you have a bad internet connection you will experience non-deterministic failures. Try running
-'make cli' or 'make build' again.</p>
-    </div>
-</div><br />
+> **⚠ WARNING: **
+> If you have a bad internet connection you may experience build failures involving APT cacher ng. Try running 'make cli' or 'make build' again.
+
+It is definitely possible to run and compile ADORe and components of adore on
+less capable hardware however for the best experience equal to or better then the
+previous configuration is recommended. 
 
 
-**Software:**
+### Software Requirements
 
-- Docker v20.10.17 or greater and docker compose v2.6.0 or greater. To install
+- [Docker 🔗](https://www.docker.com/) v20.10.17 or greater and docker compose v2.6.0 or greater. To install
   the latest docker and docker compose run the following command:
 ```bash
 curl -sSL https://raw.githubusercontent.com/DLR-TS/adore_tools/master/tools/install_docker.sh | bash`. 
 ```
-For more information review the official docker documentation: https://docs.docker.com/engine/install/ubuntu/
+For more information review the official docker documentation: [https://docs.docker.com/engine/install/ubuntu/ 🔗](https://docs.docker.com/engine/install/ubuntu/)
 
-**Make:**
+> **⚠️ WARNING:**
+> As a general rule you should never run shell scripts from untrusted sources. 
 
-GNU Make is the backbone of the ADORe build system
+
+- [GNU Make 🔗](https://www.gnu.org/software/make/) is the backbone of the ADORe build system and is also required.
 
 

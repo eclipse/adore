@@ -18,9 +18,9 @@ This guide will help you get your system set up and configure to run ADORe.
 
 ## Getting started with ADORe
 
-1. First review the [System Requirements](system_and_development/system_requirements.md). 
+1. First review the [System Requirements 🔗](system_and_development/system_requirements.md). 
 
-2. Next review the [Prerequisites](system_and_development/prerequisites.md) 
+2. Next review the [Prerequisites 🔗](system_and_development/prerequisites.md) 
 
 3. Clone the repository: 
 ```bash
@@ -32,12 +32,8 @@ git clone git@github.com:eclipse/adore.git
 cd adore
 git submodule update --init
 ```
----
-**WARNING**
-
-Failing to update the submodules will result in build failures!
----
-
+> **⚠️ WARNING:**
+> Failing to update the submodules will result in build failures!
 
 5. Build ADORe and ADORe CLI
 After cloning ADORe and satifisfying all system prerequisites you can build/run
@@ -46,8 +42,7 @@ and run the following command:
 ```bash
 make cli
 ```
-For more informant please visit the [ADORe CLI](system_and_development/adore_cli.md) documentation.
+For more informant please visit the [ADORe CLI 🔗]](system_and_development/adore_cli.md) documentation.
 
 ## Next
-Whats next????
 

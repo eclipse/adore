@@ -1,0 +1,6 @@
+FROM python:3.9.10-slim
+
+RUN python -m pip install mkdocs --upgrade
+
+USER nobody
+CMD cd /tmp/docs && mkdocs build

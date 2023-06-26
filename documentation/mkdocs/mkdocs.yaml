@@ -1,0 +1,27 @@
+site_name: ADORe Documentation
+nav:
+  - Home: about_adore.md
+  - Quick Start: quick_start.md
+  - Setup:
+    - System Requirements: setup/system_requirements.md
+    - Prerequisites: setup/prerequisites.md
+    - Installing Docker: setup/installing_docker.md
+    - Getting Started: setup/getting_started.md
+  - Basic Usage:
+    - Running Your First Scenario: setup/first_scenario.md
+  - Technical Reference Manual:
+    - Table of Contents: table_of_contents.md
+    - System and Development: system_and_development.md
+    - Control System: control_system.md
+    - Interfaces: interfaces.md
+    - Doxygen Documentation: system_and_development/doxygen_documentation.md
+    - Problems and Solutions: problems_and_solutions.md
+    - Getting Help: getting_help.md
+  - ADORe Status: adore_status.md
+  - Contact: contact.md
+
+theme:
+  name: readthedocs
+
+plugins:
+  - search

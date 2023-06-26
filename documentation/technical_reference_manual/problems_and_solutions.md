@@ -16,7 +16,9 @@ n package [adore_if_v2x]. Make sure file exists in package path and permission i
 ...
 ```
 
-### Solution
+### Solution: During roslaunch some node cannot be found
+This likely means the node you are trying to use has not been built.
+
 The fix for this is to deliberately build the node you are interested in. In the 
 previous example the modules "adore_v2x_sim" and "adore_if_v2x" cannot be found.
 One fix is to manually build each
@@ -33,7 +35,13 @@ cd <adore project root directory>
 make build_all
 ```
 
-## Problem: make error when running make commands on individual modules
+> **ℹ️ INFO**
+>
+> By default only **core** ADORe modules are built. Invoke the `make build_all`
+> target from the root ADORe directory to build every module.
+
+
+### Problem: make error when running make commands on individual modules
 I am receiving a similar error message to this when running any make command
 on an individual ADORe module:
 ```bash
@@ -43,7 +51,7 @@ adore_if_ros_msg.mk:21: *** "ERROR: adore/adore_if_ros_msg/make_gadgets does not
 ```
 ---
 
-### Solution
+### Solution: make error when running make commands on individual modules
 This is occurring because by default when cloning adore submodules are not cloned
 recursively.
 
@@ -73,13 +81,62 @@ Usage: make <target>
 ```bash
 adore(master) ✗ (0)> git submodule update --init --recursive
 ```
-For more information on this please refer to the [Build System](system_and_development/build_system.md) documentation.
+For more information on this please refer to the [Build System 🔗](system_and_development/build_system.md) documentation.
 
 
-## Problem: Build fails when pulling apt dependencies
+### Problem: Build fails when pulling apt dependencies
+During an initial build there is a significant amount of data that is pulled and 
+cached from the internet. In order to lessen this burden the tool AptCacherNg is
+used. This added complexity has a drawback if run on an unreliable network 
+resulting in non-deterministic HTTP errors and corrupted apt packages and build
+failures.
 
-### Solution
+For more information on general caching in adore review the
+[Caching 🔗](system_and_development/caching.md)
+documentation and for more information on how AptCacherNg works visit the
+project repository: [https://github.com/DLR-TS/apt_cacher_ng_docker 🔗](https://github.com/DLR-TS/apt_cacher_ng_docker)
+
+### Solution: Build fails when pulling apt dependencies
+The following section will offer a few potential solution steps you can take
+to get past this issue.
+
+#### Brute force
+Simply rerunning the build command can resolve the issue. Rerun the build or make
+command again, if the issue was intermittent it will continue at the previous 
+failure point.
+
+#### Clear apt cacher broken packages
+On unreliable connections apt cacher packages can become corrupt. This can cause
+build errors.
+
+Delete corrupted packages with the apt cacher web interface:
+
+1. navigate to http://127.0.0.1:3142/acng-report.html in your browser 
+2. Check the: "Validate by file name AND file directory (use with care)," and "then validate file contents through checksum (SLOW), also detecting corrupt files," check boxes.
+3. Then click the "Start Scan and/or Expiration" button.
+4. Then click "Check all" button. 
+5. Then click "Delete selected files" button followed by "Delete now" button and close the web browser.
+6. Rerun the make build command.
 
 
-## Other Problems?
-Have you encountered a problem that is not documented? Create an [issue](https://github.com/eclipse/adore/issues).
+##### Disable apt cacher entirely
+APT Cacher Ng works with docker by acting as a proxy and handling any request by
+apt within the docker engine.  This is accomplished via the `DOCKER_CONFIG`
+environmental variable which by default is not set.  When invoking docker via
+make, as with the ADORe build system this environmental variable is set to point
+to the AptCacherNg service. To disable AptCacherNg use the following syntax to 
+disable it: 
+
+ - Disable AptCacherNg for one command:
+```bash
+DOCKER_CONFIG= make <target>
+```
+
+- Disable AptCacherNg for current interactive shell session:
+```bash
+export DOCKER_CONFIG= 
+```
+
+
+### Do You Have Other Problems?
+Have you encountered a problem that is not documented? Create an [issue 🔗](https://github.com/eclipse/adore/issues).

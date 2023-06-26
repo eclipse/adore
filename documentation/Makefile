@@ -4,7 +4,13 @@ SHELL:=/bin/bash
 
 ROOT_DIR:=$(shell dirname "$(realpath $(firstword $(MAKEFILE_LIST)))")
 
-MAKEFLAGS += --no-print-directory
+.EXPORT_ALL_VARIABLES:
+DOCKER_BUILDKIT?=1
+DOCKER_CONFIG?=
+
+USER := $(shell whoami)
+UID := $(shell id -u)
+GID := $(shell id -g)
 
 .PHONY: help  
 help:
@@ -30,17 +36,39 @@ build_sphinx_docs: ## Build sphinx documentation
 build_docnado_docs:  ## Build docnado documentation aka gh-pages webpage 
 	cd docnado && bash generate_docnado_docs.sh
 
-.PHONY: build_gh-pages
-build_gh-pages: build_doxygen_docs build_docnado_docs
+.PHONY: build_gh-pages_docnado
+build_gh-pages_docnado: build_doxygen_docs build_docnado_docs
 	rm -rf docs
 	mkdir -p docs
 	cp -r landing_page/* docs/
 	cp -r docnado/html docs/docnado
 	cp -r doxygen/generated_doxygen_documentation/html docs/docnado/w/generated_doxygen_documentation
 
+.PHONY: build_gh-pages
+build_gh-pages: build_doxygen_docs build_mkdocs
+	rm -rf docs
+	mkdir -p docs
+	cp -r landing_page/* docs/
+	cp -r mkdocs/site docs/mkdocs
+	cp -r doxygen/generated_doxygen_documentation/html docs/generated_doxygen_documentation
+
+.PHONY: build_mkdocs
+build_mkdocs:  ## Build mkdocs 
+	rm mkdocs/docs -rf
+	rm mkdocs/site -rf
+	cp -r technical_reference_manual mkdocs/docs
+	cd mkdocs && docker build -f Dockerfile.mkdocs -t mkdocs:latest .
+	docker run --user ${UID}:${GID} -v ${ROOT_DIR}/mkdocs:/tmp/docs mkdocs:latest
+
+.PHONY: serve
+serve:   ## Serve docs 
+	cd docs && docker run --entrypoint '/bin/bash' -p 8000:8000 --user ${UID}:${GID} -v ${ROOT_DIR}/docs:/tmp/docs mkdocs:latest "/usr/local/bin/mkdocs serve"
+
+
 .PHONY: publish_gh-pages
 publish_gh-pages: build_gh-pages ## Publish docs to gh-pages branch
 	bash publish_gh-pages.sh
+
 
 .PHONY: publish
 publish: publish_gh-pages ## Publish docs to gh-pages branch

@@ -21,11 +21,12 @@
     <body>
 
         <nav class="navbar navbar-expand-lg fixed-top">
-            <div class="container">
-                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <div class="container-fluid">
+                <button class="navbar-toggler collapsed" type="button"
+                    data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button> 
-                <a class="navbar-brand" href="#">
+                <a class="navbar-brand" href="https://github.com/eclipse/adore">
                     <img src="logo.png" alt="Logo">
                     <span class="navbar-text-logo">ADORe</span>
                 </a>
@@ -54,7 +55,12 @@
             </div>
         </nav>
 
-        <div id="banner" class="section-block" style="background-image: url('img/about_background.png');">
+        <div id="banner" class="section-block" 
+             style="
+             background-image: url('img/about_background.png');
+             background-size: cover;
+             background-repeat: no-repeat;"
+        >
         </div>
 
         <div id="about" class="section-block container">
@@ -66,20 +72,20 @@
             We use ADORe to power motion and decision making in our research vehicles such as the 
             <a
                 href="https://www.dlr.de/de/forschung-und-transfer/forschungsinfrastruktur/grossforschungsanlagen/fascar">
-                FASCar</a> and
-            <a href="https://www.dlr.de/de/forschung-und-transfer/forschungsinfrastruktur/grossforschungsanlagen/view-car">VIEWCar</a>.
+                FASCar<i class="fas fa-link"></i></a> and
+            <a href="https://www.dlr.de/de/forschung-und-transfer/forschungsinfrastruktur/grossforschungsanlagen/view-car">VIEWCar<i class="fas fa-link"></i></a>.
             </p>
             <p>
             We provide interfaces to the simulation software of both 
-            <a href="https://github.com/DLR-TS/adore_if_carla">CARLA</a> 
+            <a href="https://github.com/DLR-TS/adore_if_carla">CARLA<i class="fas fa-link"></i></a> 
             and
-            <a href="https://github.com/DLR-TS/sumo_if_ros">SUMO</a>. 
+            <a href="https://github.com/DLR-TS/sumo_if_ros">SUMO<i class="fas fa-link"></i></a>. 
             </p>
             <p>
-            ADORe is <a href="https://ros.org">ROS</a> based.
+            ADORe is <a href="https://ros.org">ROS<i class="fas fa-link"></i></a> based.
             </p>
             <p>
-            ADORe is fully containerized with <a href="https://docker.io">Docker</a>.
+            ADORe is fully containerized with <a href="https://docker.io">Docker<i class="fas fa-link"></i></a>.
             </p>
         </div>
 
@@ -94,14 +100,14 @@
             <h1>Documentation</h1>
             <p> 
             Learn about ADORe by visiting our 
-            <a href="docnado/index.html">Technical Reference Manual</a>
+            <a href="mkdocs/about_adore/index.html">Technical Reference Manual<i class="fas fa-link"></i></a>
             </p>
             <p> 
             Is the documentation missing something? Let us know!
             </p>
             <p>
             Stuck? Are you stuck and having issues? Reach out to us on
-            <a href="https://github.com/eclipse/adore/issues">Github</a>
+            <a href="https://github.com/eclipse/adore/issues">Github<i class="fas fa-link"></i></a>
             we are eager to help!
             </p>
         </div>
@@ -111,14 +117,14 @@
             <p>
             <i class="fas fa-code-branch"></i>
             ADORe is proudly open source.  Sponsor features by sending a 
-            <a href="https://github.com/eclipse/adore/pulls">pull request</a> 
+            <a href="https://github.com/eclipse/adore/pulls">pull request<i class="fas fa-link"></i></a> 
             . We would also love to know how you are using ADORe reach
-            out to us on <a href="https://github.com/eclipse/adore/issues">Github</a>.
+            out to us on <a href="https://github.com/eclipse/adore/issues">Github<i class="fas fa-link"></i></a>.
             </p>
             <p><i class="fas fa-bug"></i> Did you find a bug? The submit an
-            <a href="https://github.com/eclipse/adore/issues">issue</a> or
+            <a href="https://github.com/eclipse/adore/issues">issue<i class="fas fa-link"></i></a> or
             provide a solution by sending a 
-            <a href="https://github.com/eclipse/adore/pulls">pull request</a> 
+            <a href="https://github.com/eclipse/adore/pulls">pull request<i class="fas fa-link"></i></a> 
             and get some open source street cred. 
             </p>
         </div>
@@ -131,10 +137,10 @@
 
             <a href="https://www.dlr.de/ts/en">
                 The German Aerospace Center (DLR) Institute
-                for Transportation Systems
+                for Transportation Systems<i class="fas fa-link"></i>
             </a>
             and
-            <a href="https://www.eclipse.org/org/foundation/">The Eclipse Foundation</a>
+            <a href="https://www.eclipse.org/org/foundation/">The Eclipse Foundation<i class="fas fa-link"></i></a>
             </p>
         </div>
 
@@ -143,7 +149,8 @@
             <p>
             Do you want to reach out to us? Would you like to request a
             feature or support? Reach out to us on  
-            <a href="https://github.com/eclipse/adore/issues">Github</a>
+            <a href="https://github.com/eclipse/adore/issues">Github<i class="fas fa-link"></i></a> or send
+            us an email: <a href="mailto:opensource-ts@dlr.de">opensource-ts@dlr.de<i class="fas fa-link"></i></a>;
             we are eager to help!
             </p>
 

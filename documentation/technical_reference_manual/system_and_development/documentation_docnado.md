@@ -3,16 +3,16 @@ ADORe provides several sources of Documentation which will be detailed below.
 
 ## Landing page
 
-Location: [https://eclipse.github.io/adore/](https://eclipse.github.io/adore/)
+Location: [https://eclipse.github.io/adore/w/generated_doxygen_documentation/index.html](https://eclipse.github.io/adore/w/generated_doxygen_documentation/index.html)
 
-## mkdocs
-ADORe uses [TBD]()
+## Docnado
+ADORe uses [Docnado](https://github.com/HEInventions/docnado) as a documentation
 layout tool.
 
-Location: [TBD]()
+Location: [https://eclipse.github.io/adore/w](https://eclipse.github.io/adore/w)
 
 ## Doxygen
-Location: [TBD]()
+Location: [https://eclipse.github.io/adore/w/generated_doxygen_documentation/index.html](https://eclipse.github.io/adore/w/generated_doxygen_documentation/index.html)
 
 ## GNU Make
 Every ADORe module provides a Makefile providing "documentation as code". To
