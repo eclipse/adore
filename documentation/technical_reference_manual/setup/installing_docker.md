@@ -7,7 +7,7 @@ within the Ubuntu central repositories are always very old.
 
 ## Installing Docker: Ubuntu 20.04 and 22.04
 To install the latest version of docker in Ubuntu 20.04 and 22.04 you can follow
-the official Docker document at: [https://docs.docker.com/engine/install/ubuntu/](https://docs.docker.com/engine/install/ubuntu/)
+the official Docker document at: [https://docs.docker.com/engine/install/ubuntu/ 🔗](https://docs.docker.com/engine/install/ubuntu/)
 
 Alternatively, ADORe provides a shell script that you can use to install the latest Docker. 
 ```bash
@@ -19,24 +19,12 @@ Hello from Docker!
 This message shows that your installation appears to be working correctly.
 ```
 
-<div style="display: inline-block;">
-    <div style="display: flex; align-items: center; justify-content: center;padding: 5px; border: 1px solid #FF7900; background-color: #FF7900;" >
-      <strong><i class="fa fa-exclamation-triangle"></i> Warning</strong>
-    </div>
-    <div style="background-color: white; border: 1px solid 	#FF7900; padding: 10px;">
-        <p>As a general rule you should never run shell scripts from untrusted sources especially as root.</p>
-    </div>
-</div><br />
+> **⚠️  WARNING:**
+> As a general rule you should never run shell scripts from untrusted sources. 
 
 
-<div style="display: inline-block;">
-    <div style="display: flex; align-items: center; justify-content: center;padding: 5px; border: 1px solid #FF7900; background-color: #FF7900;" >
-      <strong><i class="fa fa-exclamation-triangle"></i> Warning</strong>
-    </div>
-    <div style="background-color: white; border: 1px solid 	#FF7900; padding: 10px;">
-        <p>After installing Docker you may need to log out and log back in to make group changes take effect.</p>
-    </div>
-</div><br />
+> **ℹ️ INFO:**
+> After installing Docker you may need to log out and log back in to make group changes take effect.</p>
 
 ### Verifying your Docker group
 In order for you to be able to run any docker commands your current user must
@@ -61,8 +49,11 @@ Hello from Docker!
 This message shows that your installation appears to be working correctly.
 ```
 
-## Docker compose
-The ADORe build system uses docker compose. At some point the docker compose
-tool was renamed from "docker-compose" to "docker compose". If you have an older
-version of docker you will receive an error. Please update your Docker engine.
+> **ℹ️ INFO:**
+> After installing Docker you may need to log out and log back in to make group changes take effect.</p>
+
+> **ℹ️ INFO:**
+> The ADORe build system depends on `docker compose`. At some point the `docker compose`
+> tool was renamed from `docker-compose` to `docker compose`. If you have an older
+> version of docker you will receive an error. Please update your Docker engine.
 

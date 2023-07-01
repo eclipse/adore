@@ -22,7 +22,7 @@ sudo apt-get install -y make
 ```
 
 ### Installing Docker
-Review the help document for installing docker: [system_and_development/installing_docker.md](system_and_development/installing_docker.md) 
+Review the [Installing Docker 🔗](installing_docker.md) 
 
 ### Checking your free space
 ADORe and the associated tools require a significant amount of transient storage
@@ -32,6 +32,16 @@ space on your system you can run the following command:
 ```bash
 df -h . | awk 'NR==2 {print "Available Free Space:", $4}'
 ```
+
+### Time
+On the first build of ADORe you will need ~15-20 minutes to download and clone 
+all the sources, dependencies, and context.  Subsequent builds are very quick 
+after requisite caches (apt, docker) have been established.
+
+> **ℹ️ INFO:**
+> Build and fetch times can very greatly depending on system configuration and
+> network.
+
 
 ## Conclusion
 Once you have to correct operating system, adequate free space, as well as, have make and docker

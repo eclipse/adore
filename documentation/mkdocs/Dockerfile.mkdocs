@@ -1,6 +1,13 @@
 FROM python:3.9.10-slim
 
+## required for pdf-export plugin
+##RUN apt-get update && apt-get install -y golang-gir-gobject-2.0-dev libpango-1.0-0 libpangoft2-1.0-0
+
 RUN python -m pip install mkdocs --upgrade
+
+#RUN python -m pip install mkdocs-pdf-export-plugin weasyprint --upgrade
+RUN python -m pip install mkdocs-material mkdocs-pdf-export-plugin weasyprint --upgrade
+
 
 USER nobody
 CMD cd /tmp/docs && mkdocs build

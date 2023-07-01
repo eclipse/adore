@@ -1,3 +1,5 @@
+# Problems and Solutions
+This section will offer solutions to known issues.
 
 
 ## Problem: During roslaunch some node cannot be found
@@ -96,9 +98,31 @@ For more information on general caching in adore review the
 documentation and for more information on how AptCacherNg works visit the
 project repository: [https://github.com/DLR-TS/apt_cacher_ng_docker 🔗](https://github.com/DLR-TS/apt_cacher_ng_docker)
 
+After running `make build` you receive an HTTP error from APT such as the
+following error message:
+
+```bash
+...
+#0 6.829 Get:76 http://archive.ubuntu.com/ubuntu focal/main amd64 g++ amd64 4:9.3.0-1ubuntu2 [1604 B]
+#0 6.833 E: Failed to fetch http://archive.ubuntu.com/ubuntu/pool/universe/a/asciidoc/asciidoc-common_9.0.0~rc1-1_all.deb  503  Resource temporarily unavailable [IP: 127.0.0.1 3142]
+...
+```
+or
+```bash
+...
+=> ERROR [libadore internal] load metadata for docker.io/library/alpine:3.14
+=> [libadore internal] load metadata for docker.io/library/libadore_build:1d0db8b
+------
+ > [libadore internal] load metadata for docker.io/library/alpine:3.14
+------
+failed to solve: alpine:3.14: failed to do request: Head "https://registry-1.docker.io/v2/library/alpine/manifests/3.14": dial tcp: lookup registry-1.docker.io on 127.0.0.53:53: server misbehaving
+```
+
+
 ### Solution: Build fails when pulling apt dependencies
 The following section will offer a few potential solution steps you can take
 to get past this issue.
+
 
 #### Brute force
 Simply rerunning the build command can resolve the issue. Rerun the build or make

@@ -12,7 +12,7 @@
 * Contributors: 
 ********************************************************************************
 -->
-# ADORe command line interface (CLI)
+## ADORe command line interface (CLI)
 
 The ADORe CLI is a docker runtime context that provides a complete set of tools
 for execution and development within adore. For more information on this tool
@@ -30,8 +30,11 @@ docker-compose.yaml. For more information on plotlab server please review the
 README.md provided by that module at plotlabserver/README.md
 server can be configured 
 * ros master running as a docker compose service
+* All ROS tools preinstalled
+* some basic development and debugging tools
+* ZSH
 
-## Usage
+### ADORe CLI Usage
 Change directory to the root of the ADORe project and run:
 ```
 make cli
@@ -62,3 +65,18 @@ ADORe CLI: adore git:(main)  (0)>
 
 
 This will build all necessary ADORe components and launch a docker context.
+
+
+#### How do I know if I am in the ADORe CLI context?
+
+- If you are in the ADORe CLI context you should have a shell prompt similar to
+  the following: `ADORe CLI: adore git:(master)  (0)>`
+- you can also check your current user with:
+```bash
+whoami
+```
+should report:
+```bash
+adore-cli
+```
+

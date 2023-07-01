@@ -8,20 +8,27 @@ nav:
     - Installing Docker: setup/installing_docker.md
     - Getting Started: setup/getting_started.md
   - Basic Usage:
-    - Running Your First Scenario: setup/first_scenario.md
+    - Running Your First Scenario: basic_usage/first_scenario.md
   - Technical Reference Manual:
-    - Table of Contents: table_of_contents.md
     - System and Development: system_and_development.md
     - Control System: control_system.md
     - Interfaces: interfaces.md
     - Doxygen Documentation: system_and_development/doxygen_documentation.md
+    - Module Quick Reference: modules.md
+    - Questions and Answers: questions_and_answers.md
     - Problems and Solutions: problems_and_solutions.md
     - Getting Help: getting_help.md
   - ADORe Status: adore_status.md
   - Contact: contact.md
 
 theme:
-  name: readthedocs
+  name: material 
+  logo: ../../img/adore_heart_forall3.png
+  favicon: ../../img/adore_heart_forall3.png
+  features:
+    - content.code.copy
+
 
 plugins:
   - search
+  # - pdf-export

@@ -21,7 +21,7 @@ all: build_doxygen_docs build_sphinx_docs
 
 .PHONY: build_doxygen_docs 
 build_doxygen_docs: ## Build doxygen documentation. Requires doxygen to be installed
-	command -v doxygen >/dev/null 2>&1 || { echo >&2 "Error: doxygen is not installed. Install with: 'sudo apt-get install -y doxygen'."; exit 1; }
+	@command -v doxygen >/dev/null 2>&1 || { echo >&2 "Error: doxygen is not installed. Install with: 'sudo apt-get install -y doxygen'."; exit 1; }
 	cd doxygen && doxygen Doxyfile-project.cfg
 
 .PHONY: build_sphinx_docs
@@ -31,10 +31,6 @@ build_sphinx_docs: ## Build sphinx documentation
 	python -c "import exhale" 2>/dev/null || { echo >&2 "Error: sphinx extension exhale is not installed. Install with: 'python3 -m pip install exhale'."; exit 1; }
 
 	cd sphinx && make html
-
-.PHONY: build_docnado_docs
-build_docnado_docs:  ## Build docnado documentation aka gh-pages webpage 
-	cd docnado && bash generate_docnado_docs.sh
 
 .PHONY: build_gh-pages_docnado
 build_gh-pages_docnado: build_doxygen_docs build_docnado_docs
@@ -52,25 +48,31 @@ build_gh-pages: build_doxygen_docs build_mkdocs
 	cp -r mkdocs/site docs/mkdocs
 	cp -r doxygen/generated_doxygen_documentation/html docs/generated_doxygen_documentation
 
+.PHONY: populate_module_docs 
+populate_module_docs:
+	bash populate_module_readme_docs.sh
+
 .PHONY: build_mkdocs
-build_mkdocs:  ## Build mkdocs 
+build_mkdocs: populate_module_docs ## Build mkdocs 
 	rm mkdocs/docs -rf
 	rm mkdocs/site -rf
 	cp -r technical_reference_manual mkdocs/docs
 	cd mkdocs && docker build -f Dockerfile.mkdocs -t mkdocs:latest .
 	docker run --user ${UID}:${GID} -v ${ROOT_DIR}/mkdocs:/tmp/docs mkdocs:latest
 
-.PHONY: serve
-serve:   ## Serve docs 
+.PHONY: serve_nginx
+serve_nginx: build_gh-pages
 	rm mkdocs/docs -rf
 	rm mkdocs/site -rf
-	cp docs mkdocs -r 
-	cd mkdocs && docker build -f Dockerfile.mkdocs.serve -t mkdocs_serve:latest .
-	cd docs && docker run -it -p 8000:8000 --user ${UID}:${GID} -v ${ROOT_DIR}/mkdocs:/tmp/docs mkdocs_serve:latest 
-
+	cp docs mkdocs -r
+	docker rm --force adore-docs
+	cd docs && docker run -it --rm --name "adore-docs" -d -p 80:80 -v ${ROOT_DIR}/docs:/usr/share/nginx/html nginx:latest
+	sleep 1s
+	firefox http://localhost
+	@echo "Docs can be found at: http://localhost" 
 
 .PHONY: publish_gh-pages
-publish_gh-pages: build_gh-pages ## Publish docs to gh-pages branch
+publish_gh-pages: build_gh-pages
 	bash publish_gh-pages.sh
 
 
@@ -78,4 +80,7 @@ publish_gh-pages: build_gh-pages ## Publish docs to gh-pages branch
 publish: publish_gh-pages ## Publish docs to gh-pages branch
 
 .PHONY: build
-build: build_gh-pages ## Publish docs to gh-pages branch
+build: build_gh-pages ## Build docs 
+
+.PHONY: serve
+serve: serve_nginx ## Build and serve docs to http://localhost

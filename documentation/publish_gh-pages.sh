@@ -18,7 +18,7 @@ CLONE_DIRECTORY="$(mktemp -d)"
 git_url="$(git remote get-url origin)"
 
 function cleanup {
-  #rm -rf "${CLONE_DIRECTORY}"
+  rm -rf "${CLONE_DIRECTORY}"
   echo "Deleted temp working directory ${CLONE_DIRECTORY}"
 }
 
@@ -42,7 +42,7 @@ cd "${CLONE_DIRECTORY}"
 printf "Cloning adore to: ${CLONE_DIRECTORY}/adore\n"
 git clone --depth 1 --single-branch "${git_url}"
 cd adore
-git branch "${PUBLISH_BRANCH}" | true
+git branch "${PUBLISH_BRANCH}"
 git checkout "${PUBLISH_BRANCH}"
 git rm -rf .
 git clean -fxd

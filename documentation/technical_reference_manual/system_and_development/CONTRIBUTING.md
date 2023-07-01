@@ -11,10 +11,13 @@
 ********************************************************************************
 -->
 ## We welcome your contribution!
-Currently ADORe is a small project and you can contact us with any question or feedback at [adore-dev@eclipse.org](mailto:adore-dev@eclipse.org).
+Currently ADORe is a small project; please feel free to 
+[contact 🔗](../contact.md) us with any questions or feedback.
 If you have ideas for extensions or want to change or fix anything:
-* Open an issue on github.
-* Create a fork of the github project.
-* Develop the feature/patch and check the [developer guide](documentation/developer_guide.md)
-  for details.
-* Provide a merge request.
+
+ - Open an [issue 🔗](https://github.com/eclipse/adore/issues)
+ - Create a [fork 🔗](https://github.com/eclipse/adore/fork)
+ - Create a [pull request 🔗](https://github.com/eclipse/adore/pulls) and/or 
+   sponsor a feature on ADORe directly or any of the 
+   [ecosystem submodules/projects 🔗](../adore_status.md)
+ - [Get Help](../getting_help.md)

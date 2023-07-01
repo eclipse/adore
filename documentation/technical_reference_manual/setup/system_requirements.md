@@ -22,8 +22,9 @@ it's components.
 
 
 ### Minimum System Configurations 
-**CPU:** Intel CORE i7 7700K or equivalent/better
+**CPU:** 
 
+- Intel CORE i7 7700K or equivalent/better
 - The more cores you have, the more trajectory planners you can run in 
   parallel.
 - No specific graphics card is required as everything (except plotting) runs on 
@@ -52,8 +53,15 @@ Min 8GB for execution. Compilation process is faster with 16+GB
   from apt and docker. A poor connection will result in non-deterministic build 
   failures. 
 
+---
 > **⚠ WARNING: **
-> If you have a bad internet connection you may experience build failures involving APT cacher ng. Try running 'make cli' or 'make build' again.
+> If you have a bad internet connection you may experience build failures 
+> involving APT cacher ng. Try running 'make cli' or 'make build' again.
+> please visit the [Problems and Solutions](../problems_and_solutions.md#problem-build-fails-when-pulling-apt-dependencies)
+> documentation for more information.
+
+---
+
 
 It is definitely possible to run and compile ADORe and components of adore on
 less capable hardware however for the best experience equal to or better then the
@@ -69,9 +77,10 @@ curl -sSL https://raw.githubusercontent.com/DLR-TS/adore_tools/master/tools/inst
 ```
 For more information review the official docker documentation: [https://docs.docker.com/engine/install/ubuntu/ 🔗](https://docs.docker.com/engine/install/ubuntu/)
 
+---
 > **⚠️ WARNING:**
 > As a general rule you should never run shell scripts from untrusted sources. 
-
+---
 
 - [GNU Make 🔗](https://www.gnu.org/software/make/) is the backbone of the ADORe build system and is also required.
 

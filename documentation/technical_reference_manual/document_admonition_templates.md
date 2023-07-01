@@ -1,11 +1,11 @@
 > **⚠️ WARNING:**
 > Doh this ain't good.
 
-> **❌ ERROR:**
+> **❌ERROR:**
 > BAD BAD BAD ERROR
 
-> **ℹ️ INFO**
+> **ℹ️INFO:**
 > Some info.
 
-> **✅ SUCCESS:**
+> **✅SUCCESS:**
 > Some good thing.

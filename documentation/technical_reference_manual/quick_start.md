@@ -15,5 +15,5 @@ This script will do the following:
 For a more nuanced and deeper look into getting ADORe set up please review the 
 [Getting Started](setup/getting_started.md) guide.
 
-> **⚠️ WARNING:**
+> **⚠️  WARNING:**
 > As a general rule you should never run shell scripts from untrusted sources. 
