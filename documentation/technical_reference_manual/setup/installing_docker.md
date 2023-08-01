@@ -5,6 +5,14 @@ For this reason it is important to have a recent version of docker installed.
 Using "apt-get" or "apt" to install Docker is not sufficient. Software packages
 within the Ubuntu central repositories are always very old.
 
+> **⚠️  WARNING:**
+> ADORe depends on docker compose >= v2. If you do not have docker compose >= v2
+> installed your build will fail. The command line tool `docker-compose` was
+> renamed to `docker compose`. Install the latest docker to resolve this issue.
+> For more information view the following stack
+> overflow issue:
+> [https://stackoverflow.com/questions/66514436/difference-between-docker-compose-and-docker-compose 🔗](https://stackoverflow.com/questions/66514436/difference-between-docker-compose-and-docker-compose)
+
 ## Installing Docker: Ubuntu 20.04 and 22.04
 To install the latest version of docker in Ubuntu 20.04 and 22.04 you can follow
 the official Docker document at: [https://docs.docker.com/engine/install/ubuntu/ 🔗](https://docs.docker.com/engine/install/ubuntu/)
