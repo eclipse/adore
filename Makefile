@@ -78,6 +78,15 @@ lizard_all: ## Run lizard for all modules
         find . -name "**_lizard_report.xml" -exec mv {} .log/ \; && \
         exit $$EXIT_STATUS
 
+.PHONY: test_all 
+test_all: ## Run unit tests for all supportingll modules
+	mkdir -p .log
+	find . -name "_ctest.log" -exec rm -rf {} \;
+	EXIT_STATUS=0; \
+        (cd libadore && make test) || EXIT_STATUS=$$? && \
+        find . -name "**_ctest.log" -exec mv {} .log/ \; && \
+        exit $$EXIT_STATUS
+
 .PHONY: test
-test: ci_test
+test: test_all
 
