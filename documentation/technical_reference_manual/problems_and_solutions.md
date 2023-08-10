@@ -161,6 +161,12 @@ DOCKER_CONFIG= make <target>
 export DOCKER_CONFIG= 
 ```
 
+For more information visit the help page on [Disabling Apt Cacher Ng 🔗](system_and_development/disable_apt_cacher_ng.md)
+or the apt-cacher-ng-docker project readme: 
+[https://github.com/DLR-TS/apt_cacher_ng_docker 🔗](https://github.com/DLR-TS/apt_cacher_ng_docker)
+
+
+
 ### Problem: `make cli` fails
 When running `make cli` it fails with error: "ERROR: Cannot extend service"
 

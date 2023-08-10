@@ -12,7 +12,9 @@ SOURCE_DIRECTORY:=${ROOT_DIR}
 ADORE_CLI_WORKING_DIRECTORY:=${ROOT_DIR}
 SUBMODULES_PATH:=${ROOT_DIR}
 
+ifeq ($(APT_CACHER_NG_ENABLED),)
 DOCKER_CONFIG?=${ROOT_DIR}/apt_cacher_ng_docker
+endif
 
 
 include adore_cli/adore_cli.mk
@@ -78,6 +80,15 @@ lizard_all: ## Run lizard for all modules
         find . -name "**_lizard_report.xml" -exec mv {} .log/ \; && \
         exit $$EXIT_STATUS
 
+.PHONY: test_all 
+test_all: ## Run unit tests for all supportingll modules
+	mkdir -p .log
+	find . -name "_ctest.log" -exec rm -rf {} \;
+	EXIT_STATUS=0; \
+        (cd libadore && make test) || EXIT_STATUS=$$? && \
+        find . -name "**_ctest.log" -exec mv {} .log/ \; && \
+        exit $$EXIT_STATUS
+
 .PHONY: test
-test: ci_test
+test: test_all
 
