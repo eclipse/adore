@@ -17,7 +17,8 @@ jobs:
           remove-codeql: 'true'
       - name: Checkout
         uses: actions/checkout@v2
-        #with:
+        with:
+          submodules: true
         #  submodules: 'recursive'
       - name: Install requirements
         run: |
