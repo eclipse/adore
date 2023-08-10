@@ -17,8 +17,8 @@ jobs:
           remove-codeql: 'true'
       - name: Checkout
         uses: actions/checkout@v2
-        with:
-          submodules: 'recursive'
+        #with:
+        #  submodules: 'recursive'
       - name: Install requirements
         run: |
           sudo apt-get update
