@@ -25,11 +25,11 @@ jobs:
           sudo apt-get install -y make
       - name: Build
         run: |
-          make build
+          source adore.env && make build
       - name: CI Test
         run: |
-          make ci_test
+          source adore.env && make ci_test
       - name: Test
         run: |
-          make test
+          source adore.env && make test
 
