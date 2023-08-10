@@ -12,7 +12,9 @@ SOURCE_DIRECTORY:=${ROOT_DIR}
 ADORE_CLI_WORKING_DIRECTORY:=${ROOT_DIR}
 SUBMODULES_PATH:=${ROOT_DIR}
 
+ifeq ($(APT_CACHER_NG_ENABLED),)
 DOCKER_CONFIG?=${ROOT_DIR}/apt_cacher_ng_docker
+endif
 
 
 include adore_cli/adore_cli.mk
