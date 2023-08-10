@@ -33,4 +33,7 @@ jobs:
       - name: Test
         run: |
           source adore.env && make test
+      - name: Simulate
+        run: |
+          make run_test_scenarios
 
