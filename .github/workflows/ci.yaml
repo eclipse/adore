@@ -35,5 +35,5 @@ jobs:
           source adore.env && make test
       - name: Simulate
         run: |
-          make run_test_scenarios
+          DISPLAY_MODE=headless make run_test_scenarios
 
