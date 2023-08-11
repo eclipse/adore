@@ -35,7 +35,8 @@ jobs:
           source adore.env && make test
       - name: Simulate
         run: |
-          Xvfb :1 -screen 0 1280x1024x24
+          Xvfb :1 -screen 0 1280x1024x24 &
+          sleep 2s
           export DISPLAY=:1
           DISPLAY_MODE=headless make run_test_scenarios
 
