@@ -9,10 +9,14 @@ jobs:
       - name: Maximize build space
         uses: easimon/maximize-build-space@master
         with:
+          root-reserve-mb: 512
+          swap-size-mb: 1024
           remove-dotnet: 'true'
           remove-android: 'true'
           remove-haskell: 'true'
           remove-codeql: 'true'
+        run: |
+          df -h
       - name: Checkout
         uses: actions/checkout@v2
         with:
@@ -25,12 +29,15 @@ jobs:
           sudo apt-get install -y make
       - name: Build
         run: |
+          df -h
           source adore.env && make build
       - name: CI Test
         run: |
+          df -h
           source adore.env && make ci_test
       - name: Test
         run: |
+          df -h
           source adore.env && make test
       - name: Simulate
         run: |
