@@ -33,6 +33,7 @@ jobs:
           source adore.env && make test
       - name: Simulate
         run: |
-          export DISPLAY_MODE=headless 
+          export DISPLAY_MODE=headless
+          set -x
           make run_test_scenarios
 
