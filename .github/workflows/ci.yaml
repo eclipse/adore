@@ -7,9 +7,36 @@ jobs:
 
     steps:
       - name: Init
-        uses: ./.github/workflows
+        run: |
+          df -h
+          sudo apt-get update
+      - name: Maximize free space
+        uses: jlumbroso/free-disk-space@main
         with:
-          workflow: base.yml
+          tool-cache: true
+          android: true
+          dotnet: true
+          haskell: true
+          large-packages: true
+          docker-images: true
+          swap-storage: true
+      - name: Freespace Check
+        run: |
+          df -h
+          REQUIRED_FREE_SPACE=25
+          free_space=$(df -h . | awk '{print $4}' | grep "G")
+          free_space="${free_space%G}"
+          if [ -z "$free_space" ]; then
+              echo "ERROR: free_space variable is empty or not set." >&2
+              exit 1
+          fi
+          df -h
+          echo "Free space (required): ${REQUIRED_FREE_SPACE} GB"
+          echo "Free space (available): ${free_space} GB"
+          if (( REQUIRED_FREE_SPACE > free_space )); then
+              echo "ERROR: Insufficient free space: ${free_space} GB available, ${REQUIRED_FREE_SPACE} GB required." >&2
+              exit 1
+          fi
       - name: Checkout
         uses: actions/checkout@v2
         with:
@@ -24,6 +51,10 @@ jobs:
         run: |
           df -h
           source adore.env && make build
+      - name: Build ADORe CLI
+        run: |
+          df -h
+          source adore.env && make build_adore-cli
       - name: CI Test
         run: |
           df -h
