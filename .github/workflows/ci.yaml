@@ -12,14 +12,15 @@ jobs:
           submodules: true
         #  submodules: 'recursive'
       - name: Maximize build space
-        uses: easimon/maximize-build-space@master
+        uses: jlumbroso/free-disk-space@main
         with:
-          root-reserve-mb: 512
-          swap-size-mb: 1024
-          remove-dotnet: 'true'
-          remove-android: 'true'
-          remove-haskell: 'true'
-          remove-codeql: 'true'
+          tool-cache: true
+          android: true
+          dotnet: true
+          haskell: true
+          large-packages: true
+          docker-images: true
+          swap-storage: true
       - name: Freespace Check
         run: |
           df -h
