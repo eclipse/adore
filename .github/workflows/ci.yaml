@@ -6,6 +6,10 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
+      - name: Init
+        run: |
+          df -h
+          sudo apt-get update
       - name: Maximize build space
         uses: jlumbroso/free-disk-space@main
         with:
