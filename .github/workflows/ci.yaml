@@ -6,6 +6,11 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+        with:
+          submodules: true
+        #  submodules: 'recursive'
       - name: Maximize build space
         uses: easimon/maximize-build-space@master
         with:
@@ -18,11 +23,6 @@ jobs:
       - name: Freespace Check
         run: |
           df -h
-      - name: Checkout
-        uses: actions/checkout@v2
-        with:
-          submodules: true
-        #  submodules: 'recursive'
       - name: Install requirements
         run: |
           df -h
