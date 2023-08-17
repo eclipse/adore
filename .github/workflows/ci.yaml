@@ -34,6 +34,4 @@ jobs:
       - name: Simulate
         run: |
           export DISPLAY_MODE=headless
-          set -x
           make run_test_scenarios
-
