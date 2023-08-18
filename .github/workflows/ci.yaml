@@ -67,3 +67,10 @@ jobs:
         run: |
           export DISPLAY_MODE=headless
           make run_test_scenarios
+      - name: Upload Logs
+        uses: actions/upload-artifact@v2
+        with:
+          name: logs
+          path: .logs
+        if: always()
+
