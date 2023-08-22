@@ -23,11 +23,10 @@ nav:
 
 theme:
   name: material 
-  logo: ../../adore/img/logo.png
-  favicon: ../../adore/img/favicon.ico
+  logo: ../../img/logo.png
+  favicon: ../../img/favicon.ico
   features:
     - content.code.copy
-
 
 plugins:
   - search
