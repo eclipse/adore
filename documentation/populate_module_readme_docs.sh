@@ -26,6 +26,7 @@ for exclude in $EXCLUDES; do
     module_readme_files="$(echo "${module_readme_files}" | grep -v "${exclude}")"
 done
 
+
 #echo "${module_readme_files}"
 module_md=$(< "${MODULE_TEMPLATE_MD_FILE}")
 url=

@@ -19,6 +19,10 @@ help:
 .PHONY: all
 all: build_doxygen_docs build_sphinx_docs 
 
+.PHONY: update_submodules
+update_submodules:
+	git submodule update --init
+
 .PHONY: build_doxygen_docs 
 build_doxygen_docs: ## Build doxygen documentation. Requires doxygen to be installed
 	@command -v doxygen >/dev/null 2>&1 || { echo >&2 "Error: doxygen is not installed. Install with: 'sudo apt-get install -y doxygen'."; exit 1; }
@@ -49,7 +53,7 @@ build_gh-pages: build_doxygen_docs build_mkdocs
 	cp -r doxygen/generated_doxygen_documentation/html docs/generated_doxygen_documentation
 
 .PHONY: populate_module_docs 
-populate_module_docs:
+populate_module_docs: update_submodules
 	bash populate_module_readme_docs.sh
 
 .PHONY: build_mkdocs
