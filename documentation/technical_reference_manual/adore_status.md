@@ -1,5 +1,6 @@
 | Repository Name | URL | Build Status |
 | --- | --- | --- |
+| adore | [https://github.com/eclipse/adore]([![CI](https://github.com/eclipse/adore/actions/workflows/ci.yaml/badge.svg)](https://github.com/eclipse/adore/actions/workflows/ci.yaml)) | n/a |
 | adore_cli | [https://github.com/DLR-TS/adore_cli](https://github.com/DLR-TS/adore_cli) | n/a |
 | adore\_if\_carla | [https://github.com/DLR-TS/adore\_if\_carla](https://github.com/DLR-TS/adore_if_carla) | n/a |
 | adore\_if\_ros | [https://github.com/DLR-TS/adore\_if\_ros](https://github.com/DLR-TS/adore_if_ros) | [![CI](https://github.com/DLR-TS/adore_if_ros/actions/workflows/ci.yaml/badge.svg)](https://github.com/DLR-TS/adore_if_ros/actions/workflows/ci.yaml) |
