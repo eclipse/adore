@@ -54,7 +54,7 @@ jobs:
       - name: Build ADORe CLI
         run: |
           df -h
-          source adore.env && make build_adore-cli
+          source adore.env && make build_adore_cli
       - name: CI Test
         run: |
           df -h
