@@ -2,6 +2,7 @@
 
 | Repository Name | URL | Build Status |
 | --- | --- | --- |
+| adore | [https://github.com/exclipse/adore](https://github.com/eclipse/adore) | [![CI](https://github.com/eclipse/adore/actions/workflows/ci.yaml/badge.svg)](https://github.com/eclipse/adore/actions/workflows/ci.yaml) |
 | adore\_cli | [https://github.com/DLR-TS/adore\_cli](https://github.com/DLR-TS/adore_cli) | [![CI](https://github.com/DLR-TS/adore_cli/actions/workflows/ci.yaml/badge.svg)](https://github.com/DLR-TS/adore_cli/actions/workflows/ci.yaml) |
 | adore\_if\_carla | [https://github.com/DLR-TS/adore\_if\_carla](https://github.com/DLR-TS/adore_if_carla) | n/a |
 | adore\_if\_ros | [https://github.com/DLR-TS/adore\_if\_ros](https://github.com/DLR-TS/adore_if_ros) | [![CI](https://github.com/DLR-TS/adore_if_ros/actions/workflows/ci.yaml/badge.svg)](https://github.com/DLR-TS/adore_if_ros/actions/workflows/ci.yaml) |
@@ -11,7 +12,7 @@
 | adore\_v2x\_sim | [https://github.com/DLR-TS/adore\_v2x\_sim](https://github.com/DLR-TS/adore_v2x_sim) | [![CI](https://github.com/DLR-TS/adore_v2x_sim/actions/workflows/ci.yaml/badge.svg)](https://github.com/DLR-TS/adore_v2x_sim/actions/workflows/ci.yaml) |
 | catkin_docker | [https://github.com/DLR-TS/catkin_docker](https://github.com/DLR-TS/catkin_docker) | [![CI](https://github.com/DLR-TS/catkin_docker/actions/workflows/ci.yaml/badge.svg)](https://github.com/DLR-TS/catkin_docker/actions/workflows/ci.yaml) |
 | coordinate_conversion | [https://github.com/DLR-TS/coordinate_conversion](https://github.com/DLR-TS/coordinate_conversion) | [![CI](https://github.com/DLR-TS/coordinate_conversion/actions/workflows/ci.yaml/badge.svg)](https://github.com/DLR-TS/adore_if_ros_msg/actions/workflows/ci.yaml) |
-| libadore | [https://github.com/dlr-ts/libadore](https://github.com/dlr-ts/libadore) | [![CI](https://github.com/DLR-TS/libadore/actions/workflows/ci.yaml/badge.svg)](https://github.com/DLR-TS/libadore/actions/workflows/ci.yaml) |
+| libadore | [https://github.com/dlr-ts/libadore](https://github.com/DLR-TS/libadore) | [![CI](https://github.com/DLR-TS/libadore/actions/workflows/ci.yaml/badge.svg)](https://github.com/DLR-TS/libadore/actions/workflows/ci.yaml) |
 | plotlablib | [https://github.com/DLR-TS/plotlablib](https://github.com/DLR-TS/plotlablib) | [![CI](https://github.com/DLR-TS/plotlablib/actions/workflows/ci.yaml/badge.svg)](https://github.com/DLR-TS/plotlablib/actions/workflows/ci.yaml) |
 | plotlabserver | [https://github.com/DLR-TS/plotlabserver](https://github.com/DLR-TS/plotlabserver) | [![CI](https://github.com/DLR-TS/plotlabserver/actions/workflows/ci.yaml/badge.svg)](https://github.com/DLR-TS/plotlabserver/actions/workflows/ci.yaml) |
 | sumo\_if\_ros | [https://github.com/DLR-TS/sumo\_if\_ros](https://github.com/DLR-TS/sumo_if_ros) | [![CI](https://github.com/DLR-TS/sumo_if_ros/actions/workflows/ci.yaml/badge.svg)](https://github.com/DLR-TS/sumo_if_ros/actions/workflows/ci.yaml) |
