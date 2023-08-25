@@ -173,24 +173,24 @@ When running `make cli` it fails with error: "ERROR: Cannot extend service"
 ```bash
 docker cp $(docker create --rm plotlabserver_build:eeed293):/tmp/plotlabserver/plotlabserver/build "/home/user1/workspace/adore/plotlabserver/plotlabserver"
 cd "/home/user1/workspace/adore/adore_cli" && \
-    docker-compose -f /home/user1/workspace/adore/docker-compose.yaml build adore-cli \
-                         --build-arg ADORE_CLI_PROJECT=adore-cli \
-                         --build-arg ADORE_CLI_PROJECT_X11_DISPLAY=adore-cli_x11-display \
+    docker-compose -f /home/user1/workspace/adore/docker-compose.yaml build adore_cli \
+                         --build-arg ADORE_CLI_PROJECT=adore_cli \
+                         --build-arg ADORE_CLI_PROJECT_X11_DISPLAY=adore_cli_x11-display \
                          --build-arg UID=1000 \
                          --build-arg GID=1000 \
                          --build-arg DOCKER_GID=140 \
                          --build-arg ADORE_IF_ROS_TAG=75edba2 && \
-    docker-compose -f /home/user1/workspace/adore/docker-compose.yaml build adore-cli_x11-display \
-                         --build-arg ADORE_CLI_PROJECT=adore-cli \
-                         --build-arg ADORE_CLI_PROJECT_X11_DISPLAY=adore-cli_x11-display \
+    docker-compose -f /home/user1/workspace/adore/docker-compose.yaml build adore_cli_x11-display \
+                         --build-arg ADORE_CLI_PROJECT=adore_cli \
+                         --build-arg ADORE_CLI_PROJECT_X11_DISPLAY=adore_cli_x11-display \
                          --build-arg UID=1000 \
                          --build-arg GID=1000 \
                          --build-arg DOCKER_GID=140 \
                          --build-arg ADORE_CLI_TAG=03ad9e7
-ERROR: Cannot extend service 'adore-cli' in /home/user1/workspace/adore/adore_cli/adore_cli.yaml: services with 'depends_on' cannot be extended
+ERROR: Cannot extend service 'adore_cli' in /home/user1/workspace/adore/adore_cli/adore_cli.yaml: services with 'depends_on' cannot be extended
 make[2]: *** [Makefile:17: build] Error 1
-make[1]: *** [adore_cli.mk:100: build_adore-cli] Error 2
-make: *** [adore_cli/adore_cli.mk:91: build_fast_adore-cli] Error 2
+make[1]: *** [adore_cli.mk:100: build_adore_cli] Error 2
+make: *** [adore_cli/adore_cli.mk:91: build_fast_adore_cli] Error 2
 ```
 ### Solution: Install the latest version of docker 
 ADORe depends on `docker compose` not `docker-compose` at some point the during
