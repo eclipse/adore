@@ -58,7 +58,7 @@ body {
     min-height: 100vh; 
     align-items: left;
     justify-content: left;
-    padding-top: 100px;
+    padding-top: 175px;
 
 }
 
@@ -67,7 +67,7 @@ body {
     min-height: 100vh; 
     align-items: left;
     justify-content: left;
-    padding-top: 100px;
+    padding-top: 175px;
     background-color: var(--about_color); 
 }
 
@@ -75,7 +75,7 @@ body {
     min-height: 100vh; 
     align-items: left;
     justify-content: left;
-    padding-top: 100px;
+    padding-top: 175px;
     background-color: var(--adore_color); 
 }
 
@@ -83,7 +83,7 @@ body {
     min-height: 100vh; 
     align-items: left;
     justify-content: left;
-    padding-top: 100px;
+    padding-top: 175px;
     background-color: var(--road_color); 
 }
 
@@ -91,7 +91,7 @@ body {
     min-height: 100vh; 
     align-items: left;
     justify-content: left;
-    padding-top: 100px;
+    padding-top: 175px;
     background-color: var(--traffic_light_green_color);
 }
 
@@ -99,7 +99,7 @@ body {
     min-height: 100vh; 
     align-items: left;
     justify-content: left;
-    padding-top: 100px;
+    padding-top: 175px;
     background-color: var(--traffic_light_yellow_color);
 }
 
@@ -107,7 +107,7 @@ body {
     min-height: 100vh; 
     align-items: left;
     justify-content: left;
-    padding-top: 100px;
+    padding-top: 175px;
     background-color: var(--traffic_light_red_color);
 }
 
