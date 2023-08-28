@@ -80,3 +80,10 @@ should report:
 adore-cli
 ```
 
+#### Persistence
+When running the ADORe CLI the adore source directory is mounted as a volume.
+It will be mounted with the same path as the parent context. Any changes made 
+in the adore source tree will persist on the host/parent file system.
+
+
+
