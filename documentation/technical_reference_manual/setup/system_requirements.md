@@ -54,12 +54,11 @@ Min 8GB for execution. Compilation process is faster with 16+GB
   failures. 
 
 ---
-> **⚠ WARNING: **
+> **⚠️ WARNING:**
 > If you have a bad internet connection you may experience build failures 
 > involving APT cacher ng. Try running 'make cli' or 'make build' again.
 > please visit the [Problems and Solutions](../problems_and_solutions.md#problem-build-fails-when-pulling-apt-dependencies)
 > documentation for more information.
-
 ---
 
 
