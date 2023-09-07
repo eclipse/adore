@@ -23,3 +23,7 @@ For a more nuanced and deeper look into getting ADORe set up please review the
 
 > **⚠️  WARNING:**
 > As a general rule you should never run shell scripts from untrusted sources. 
+
+> **ℹ️ INFO:**
+> By default the setup script clones the master branch at: [https://github.com/eclipse/adore.git 🔗](https://github.com/eclipse/adore.git). 
+> You may need to fork, change branch, add remotes, or setup ssh keys.

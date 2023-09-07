@@ -61,3 +61,9 @@ For more informant please visit the [ADORe CLI 🔗](../system_and_development/a
         |           -. 
   ......'-(_)---(_)--' 
 ```
+
+> **ℹ️ INFO:**
+> By default the setup script clones the master branch at: [https://github.com/eclipse/adore.git 🔗](https://github.com/eclipse/adore.git). 
+> You may need to fork, change branch, add remotes, or setup ssh keys.
+
+
