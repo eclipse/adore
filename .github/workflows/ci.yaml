@@ -1,50 +1,76 @@
-name: CI
+name: CI 
 on: push
 
 jobs:
-  install_requirements:
+  CI:
     runs-on: ubuntu-latest
-    steps:
-    - name: Install GNU Make
-      run: sudo apt-get update && sudo apt-get -y install make
 
-  clone_source:
-    runs-on: ubuntu-latest
-    needs: install_requirements 
     steps:
-      - name: Checkout code
+      - name: Init
+        run: |
+          df -h
+          sudo apt-get update
+      - name: Maximize free space
+        uses: jlumbroso/free-disk-space@main
+        with:
+          tool-cache: true
+          android: true
+          dotnet: true
+          haskell: true
+          large-packages: true
+          docker-images: true
+          swap-storage: true
+      - name: Freespace Check
+        run: |
+          df -h
+          REQUIRED_FREE_SPACE=25
+          free_space=$(df -h . | awk '{print $4}' | grep "G")
+          free_space="${free_space%G}"
+          if [ -z "$free_space" ]; then
+              echo "ERROR: free_space variable is empty or not set." >&2
+              exit 1
+          fi
+          df -h
+          echo "Free space (required): ${REQUIRED_FREE_SPACE} GB"
+          echo "Free space (available): ${free_space} GB"
+          if (( REQUIRED_FREE_SPACE > free_space )); then
+              echo "ERROR: Insufficient free space: ${free_space} GB available, ${REQUIRED_FREE_SPACE} GB required." >&2
+              exit 1
+          fi
+      - name: Checkout
         uses: actions/checkout@v2
         with:
-          submodules: 'recursive'
-      - name: Save workspace
-        uses: actions/upload-artifact@v2
-        with:
-          name: workspace
-          path: ./
-          
-  build:
-    runs-on: ubuntu-latest
-    needs: clone_source
-    steps:
-      - name: Load workspace 
-        uses: actions/download-artifact@v2
-        with:
-          name: workspace
+          submodules: true
+        #  submodules: 'recursive'
+      - name: Install requirements
+        run: |
+          df -h
+          sudo apt-get update
+          sudo apt-get install -y make
       - name: Build
-        run: make build_all && make save_docker_images
-      - name: Save workspace
+        run: |
+          df -h
+          source adore.env && make build
+      - name: Build ADORe CLI
+        run: |
+          df -h
+          source adore.env && make build_adore_cli
+      - name: CI Test
+        run: |
+          df -h
+          source adore.env && make ci_test
+      - name: Test
+        run: |
+          df -h
+          source adore.env && make test
+      - name: Simulate
+        run: |
+          export DISPLAY_MODE=headless
+          make run_test_scenarios
+      - name: Upload Logs
         uses: actions/upload-artifact@v2
         with:
-          name: workspace
-          path: ./
+          name: logs
+          path: .log
+        if: always()
 
-  test:
-    runs-on: ubuntu-latest
-    needs: build
-    steps:
-      - name: Load workspace 
-        uses: actions/download-artifact@v2
-        with:
-          name: workspace
-      - name: Test
-        run: make load_docker_images && make test

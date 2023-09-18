@@ -1,0 +1,125 @@
+:root {
+    --navbar_color: #F8F9FA; 
+    --adore_color: #4DB6AC;
+    --about_color: var(--navbar_color);
+/* Colors gpicked from the DLR banner picture */
+    --road_color: #5A5F7E;
+    --traffic_light_red_color: #CE4E47;
+    --traffic_light_yellow_color: #D7C726;
+    --traffic_light_green_color: #00C892;
+}
+
+
+html,
+body {
+    width: 100%;
+    height: 100%;
+}
+
+body {
+    font-family: 'Istok Web', 'Muli', 'Helvetica', 'Arial', 'sans-serif';
+}
+
+
+
+
+.transparent-div {
+    background-color: transparent;
+    opacity: 0.5;
+}
+
+.navbar {
+    background-color: var(--about_color);
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+.navbar-brand {
+    margin-right: auto;
+    margin-left: auto;
+}
+
+.navbar-nav {
+    margin-left: auto;
+}
+
+.nav-link {
+    margin-right: 20px;
+    margin-left: 20px;
+}
+
+.section-block {
+    min-height: 100vh; 
+    align-items: left;
+    justify-content: left;
+}
+
+.section-banner {
+    min-height: 100vh; 
+    align-items: left;
+    justify-content: left;
+    padding-top: 175px;
+
+}
+
+
+.section-about {
+    min-height: 100vh; 
+    align-items: left;
+    justify-content: left;
+    padding-top: 175px;
+    background-color: var(--about_color); 
+}
+
+.section-getting-started {
+    min-height: 100vh; 
+    align-items: left;
+    justify-content: left;
+    padding-top: 175px;
+    background-color: var(--adore_color); 
+}
+
+.section-documentation {
+    min-height: 100vh; 
+    align-items: left;
+    justify-content: left;
+    padding-top: 175px;
+    background-color: var(--road_color); 
+}
+
+.section-contribute {
+    min-height: 100vh; 
+    align-items: left;
+    justify-content: left;
+    padding-top: 175px;
+    background-color: var(--traffic_light_green_color);
+}
+
+.section-sponsors {
+    min-height: 100vh; 
+    align-items: left;
+    justify-content: left;
+    padding-top: 175px;
+    background-color: var(--traffic_light_yellow_color);
+}
+
+.section-contact {
+    min-height: 100vh; 
+    align-items: left;
+    justify-content: left;
+    padding-top: 175px;
+    background-color: var(--traffic_light_red_color);
+}
+
+
+.one-liner-field input[type="text"] {
+    background-color: black;
+    color: white;
+    page-break-inside: avoid;
+    font-family: monospace;
+}
+.one-liner-field .input-group-append button {
+    background-color: black;
+    color: white;
+    border: none;
+}
