@@ -1,10 +1,11 @@
 # System and Development
 This section will contain details on the ADORe build system, software
-components, and software development.
+components, and software development. This section is under development
+and is subsequently sparse.
 
 ## Table of Contents
 
-### [1. System Requirements](system_and_development/system_requirements.md)
+### [1. System Requirements](system_requirements.md)
 ### [2. Build system](system_and_development/build_system.md)
 ### [3. ADORe CLI](system_and_development/adore_cli.md)
 ### [4. Unit tests](system_and_development/unit_tests.md)

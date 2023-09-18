@@ -1,5 +1,5 @@
 ### Running Your First Scenario
-So you have emergent into the world as a new born by installing ADORe while
+So you have emerged into the world as a new born by installing ADORe while
 simultaneously downloading the entire internet. You look around and ahead you 
 spot the ADORe CLI car on the horizon...
 

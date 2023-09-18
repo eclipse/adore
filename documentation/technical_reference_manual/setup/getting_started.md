@@ -38,7 +38,7 @@ This guide will help you get your system set up and configure to run ADORe.
     > **⚠️ WARNING:**
     > Failing to update the submodules will result in build failures!
 
-5. Build ADORe and ADORe CLI
+5. Build ADORe and ADORe CLI:
 
 > **ℹ️ INFO:**
 > It is recommended doing a first build of ADORe connected to hard line
@@ -51,6 +51,11 @@ and run the following command:
 ```bash
 make cli
 ```
+
+`make cli` on first run will build/compile all of the core ADORe components and
+build the ADORe cli docker context. If you wish to run other non-core components
+you want to run you will need to invoke `make build_all` or build them manually. 
+
 For more informant please visit the [ADORe CLI 🔗](../system_and_development/adore_cli.md) documentation.
 
 > **✅ SUCCESS:**
@@ -66,4 +71,4 @@ For more informant please visit the [ADORe CLI 🔗](../system_and_development/a
 > By default the setup script clones the master branch at: [https://github.com/eclipse/adore.git 🔗](https://github.com/eclipse/adore.git). 
 > You may need to fork, change branch, add remotes, or setup ssh keys.
 
-
+Once you have successfully built AOREe you can take a look at:
