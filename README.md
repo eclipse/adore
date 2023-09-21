@@ -39,6 +39,6 @@ In order to get started, it is advised to first check system requirements, follo
 
 - [System requirements](documentation/technical_reference_manual/setup/system_requirements.md)
 - [Getting started](documentation/getting_started.md)
-- [Executable ROS demo scenarios](adore_scenarios)
+- [Executable ROS demo scenarios](adore_scenarios/README.md)
 - [Technical Reference Manual](https://eclipse.github.io/adore/mkdocs/about_adore/index.html)
 - [Github Pages](https://eclipse.github.io/adore/)
