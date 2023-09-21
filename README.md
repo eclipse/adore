@@ -37,8 +37,9 @@ The following video shows an automated vehicle controlled by ADORe in an urban s
 # Documentation
 In order to get started, it is advised to first check system requirements, follow the installation instruction and then try out the demo scenarios.
 
+- [Github Pages](https://eclipse.github.io/adore/)
 - [System requirements](documentation/technical_reference_manual/setup/system_requirements.md)
-- [Getting started](documentation/getting_started.md)
-- [Executable ROS demo scenarios](adore_scenarios/README.md)
+- [Getting started](documentation/technical_reference_manual/setup/getting_started.md)
+- [Executable ROS demo scenarios](https://github.com/DLR-TS/adore_scenarios/README.md)
 - [Technical Reference Manual](https://eclipse.github.io/adore/mkdocs/about_adore/index.html)
 - [Github Pages](https://eclipse.github.io/adore/)
