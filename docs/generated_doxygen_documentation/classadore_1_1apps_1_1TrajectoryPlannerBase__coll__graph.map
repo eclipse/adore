@@ -1,0 +1,5 @@
+<map id="adore::apps::TrajectoryPlannerBase" name="adore::apps::TrajectoryPlannerBase">
+<area shape="rect" id="node1" title="Base class for different trajectory planners: Handles communication w/ decision making module...." alt="" coords="110,204,341,340"/>
+<area shape="rect" id="node2" href="$classadore_1_1mad_1_1AFeedWithCallback.html" title=" " alt="" coords="5,5,216,141"/>
+<area shape="rect" id="node3" href="$classadore_1_1mad_1_1AWriter.html" title=" " alt="" coords="240,5,440,141"/>
+</map>

@@ -1,0 +1,11 @@
+<map id="adore::apps::PlatoonViewProvider::PlatoonViewProvider" name="adore::apps::PlatoonViewProvider::PlatoonViewProvider">
+<area shape="rect" id="node1" title=" " alt="" coords="5,159,204,200"/>
+<area shape="rect" id="node2" href="$classadore_1_1env_1_1EnvFactoryInstance.html#a069fadea20089ddf252a244864f305c1" title=" " alt="" coords="252,17,487,43"/>
+<area shape="rect" id="node4" href="$classadore_1_1fun_1_1FunFactoryInstance.html#a3d8e318e1ad87251caef9bad22a99b40" title=" " alt="" coords="254,74,485,101"/>
+<area shape="rect" id="node6" href="$classadore_1_1env_1_1AFactory.html#aec0c1995f7502a1f48162b6ef3919cdf" title=" " alt="" coords="275,125,463,167"/>
+<area shape="rect" id="node7" href="$classadore_1_1env_1_1AFactory.html#a6c8f50dd6fa1a4f8b1032ad24c2df6a2" title=" " alt="" coords="265,191,473,232"/>
+<area shape="rect" id="node8" href="$classadore_1_1env_1_1ThreeLaneViewDecoupled.html#a8e5ffdb30040c60a96ed70249b8d27fd" title=" " alt="" coords="279,256,460,297"/>
+<area shape="rect" id="node9" href="$classadore_1_1env_1_1AFactory.html#a81f661c576816461f1914436620ac208" title=" " alt="" coords="268,321,471,363"/>
+<area shape="rect" id="node3" href="$classadore_1_1env_1_1EnvFactoryInstance.html#a14835a4420fb827ba3809b94a96a7660" title="Function to access singleton instance of the envFactory using magic static." alt="" coords="535,5,743,47"/>
+<area shape="rect" id="node5" href="$classadore_1_1fun_1_1FunFactoryInstance.html#a0826e9a7ea3c70a3780115e6effbf746" title="Function to access singleton instance of the funFactory using magic static." alt="" coords="537,71,741,112"/>
+</map>

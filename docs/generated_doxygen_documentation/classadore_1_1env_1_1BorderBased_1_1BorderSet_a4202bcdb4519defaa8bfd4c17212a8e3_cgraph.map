@@ -1,0 +1,9 @@
+<map id="adore::env::BorderBased::BorderSet::hasAllPredecessorsInSet" name="adore::env::BorderBased::BorderSet::hasAllPredecessorsInSet">
+<area shape="rect" id="node1" title="check whether all predecessors up to a certain number exist within the set" alt="" coords="5,136,248,177"/>
+<area shape="rect" id="node2" href="$structadore_1_1env_1_1BorderBased_1_1Border.html#a522c4ebdb7a16e0aa89b507f554a4fa6" title="Get the length of the border." alt="" coords="310,71,477,112"/>
+<area shape="rect" id="node6" href="$classadore_1_1env_1_1BorderBased_1_1BorderSet.html#acc68b8957d3092bf9e53a75ffa433b6f" title="get an interator pair for all borders which lead to b" alt="" coords="296,136,491,177"/>
+<area shape="rect" id="node7" href="$namespaceadore_1_1mad.html#ac5aeccec5e3cf50a2bc9492d95a49779" title=" " alt="" coords="337,202,450,229"/>
+<area shape="rect" id="node3" href="$structadore_1_1env_1_1BorderBased_1_1BorderID.html#a21f63cc4e5239a964b37d089d54d2418" title=" " alt="" coords="554,5,721,47"/>
+<area shape="rect" id="node4" href="$classadore_1_1mad_1_1LLinearPiecewiseFunctionM.html#aaa496b8ceb3ed505f6450225c46a077a" title=" " alt="" coords="539,71,736,112"/>
+<area shape="rect" id="node5" href="$classadore_1_1mad_1_1LLinearPiecewiseFunctionM.html#a682841e9bc82a0653745dce6f908bfa6" title=" " alt="" coords="539,136,736,177"/>
+</map>

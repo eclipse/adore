@@ -1,0 +1,19 @@
+digraph "adore::fun::StdGapConstraintAndReference"
+{
+ // LATEX_PDF_SIZE
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  Node1 [label="{adore::fun::StdGapConstraint\lAndReference\n|- s_front_t0_\l- v_front_t0_\l- s_lead_t0_\l- v_lead_t0_\l- s_chase_t0_\l- v_chase_t0_\l- t0_\l- s_\l|+ StdGapConstraintAndReference()\l+ getGapState()\l+ getUB()\l+ getLB()\l+ getReferenceIfAvailable()\l+ update()\l+ getFrontBound()\l+ getLeadBound()\l+ getChaseBound()\l+ getGapCoordinate()\l+ setGapCoordinate()\l}",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black",tooltip=" "];
+  Node2 -> Node1 [dir="back",color="midnightblue",fontsize="10",style="solid",arrowtail="onormal",fontname="Helvetica"];
+  Node2 [label="{adore::fun::ANominalPlanner\lInformation\n||+ getReferenceIfAvailable()\l+ getUB()\l+ getLB()\l+ update()\l}",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classadore_1_1fun_1_1ANominalPlannerInformation.html",tooltip=" "];
+  Node3 -> Node1 [color="grey25",fontsize="10",style="solid",label=" -pgen_" ,arrowhead="odiamond",fontname="Helvetica"];
+  Node3 [label="{adore::params::APTrajectory\lGeneration\n||+ get_rho()\l+ getZDIntegrationLength()\l+ getZDIntegrationStep()\l+ getSetPointCount()\l+ getEmergencyManeuverDelay()\l}",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classadore_1_1params_1_1APTrajectoryGeneration.html",tooltip="abstract class containing parameters to configure the behaviour of trajectory generation"];
+  Node4 -> Node1 [color="grey25",fontsize="10",style="solid",label=" -lcv_" ,arrowhead="odiamond",fontname="Helvetica"];
+  Node4 [label="{adore::view::ALaneChangeView\n||+ getSourceLane()\l+ getTargetLane()\l+ getLCDirection()\l+ getProgressOfGateOpen()\l+ getProgressOfGateClosed()\l+ getOffsetOfStartOuterBorder()\l+ getOffsetOfSeparatingBorder()\l+ getOffsetOfDestinationOuter\lBorder()\l+ getNavigationCostDifference()\l}",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classadore_1_1view_1_1ALaneChangeView.html",tooltip=" "];
+  Node5 -> Node1 [color="grey25",fontsize="10",style="solid",label=" -pveh_" ,arrowhead="odiamond",fontname="Helvetica"];
+  Node5 [label="{adore::params::APVehicle\n||+ get_vehicle_id()\l+ get_a()\l+ get_b()\l+ get_c()\l+ get_d()\l+ get_m()\l+ get_mu()\l+ get_g()\l+ get_h()\l+ get_cf()\land 17 more...\l}",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classadore_1_1params_1_1APVehicle.html",tooltip="abstract class for vehicle configuration related paremeters"];
+  Node6 -> Node1 [color="grey25",fontsize="10",style="solid",label=" -lfv_" ,arrowhead="odiamond",fontname="Helvetica"];
+  Node6 [label="{adore::view::ALane\n||+ isValid()\l+ getSMax()\l+ getSMin()\l+ inSRange()\l+ getProgressOfWidthOpen()\l+ getProgressOfWidthClosed()\l+ getOnLaneTraffic()\l+ getConflictSet()\l+ getSpeedLimit()\l+ getLeftIndicatorHint()\land 11 more...\l}",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classadore_1_1view_1_1ALane.html",tooltip=" "];
+  Node7 -> Node1 [color="grey25",fontsize="10",style="solid",label=" -ptac_" ,arrowhead="odiamond",fontname="Helvetica"];
+  Node7 [label="{adore::params::APTactical\lPlanner\n||+ getGlobalSpeedLimit()\l+ getResetRadius()\l+ getAccLatUB()\l+ getAccLatUB_minVelocity()\l+ getAccLonUB()\l+ getAccLonLB()\l+ getFrontTimeGap()\l+ getRearTimeGap()\l+ getFrontSGap()\l+ getLowerBoundFrontSGapForLF()\land 20 more...\l}",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classadore_1_1params_1_1APTacticalPlanner.html",tooltip="abstract classs containing parameters to configure aspects and constraints of the tactical planner"];
+}

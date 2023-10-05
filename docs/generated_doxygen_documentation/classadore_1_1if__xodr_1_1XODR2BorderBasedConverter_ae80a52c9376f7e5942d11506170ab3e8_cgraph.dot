@@ -1,0 +1,16 @@
+digraph "adore::if_xodr::XODR2BorderBasedConverter::addMovementIdAndJunctionId"
+{
+ // LATEX_PDF_SIZE
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  rankdir="LR";
+  Node1 [label="adore::if_xodr::XODR2Border\lBasedConverter::addMovementIdAnd\lJunctionId",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black",tooltip="determine controller and junction id of traffic lights"];
+  Node1 -> Node2 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node2 [label="adore::env::TCDSet\l::setJunctionId",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classadore_1_1env_1_1TCDSet.html#a6cd521ab33cb98dbc798bd9fbc67dcb1",tooltip=" "];
+  Node2 -> Node3 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node3 [label="adore::env::TCDTrafficLight\lSet::setJunctionId",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classadore_1_1env_1_1TCDTrafficLightSet.html#a022cdcca1ee0c657ea2e6d688e7f105d",tooltip=" "];
+  Node1 -> Node4 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node4 [label="adore::env::TCDSet\l::setMovementId",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classadore_1_1env_1_1TCDSet.html#a11f13325173c449519d5ec0de2c198a3",tooltip=" "];
+  Node4 -> Node5 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node5 [label="adore::env::TCDTrafficLight\lSet::setMovementId",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classadore_1_1env_1_1TCDTrafficLightSet.html#a1e3d9e3b5b5e30837691b2ae8f600010",tooltip=" "];
+}

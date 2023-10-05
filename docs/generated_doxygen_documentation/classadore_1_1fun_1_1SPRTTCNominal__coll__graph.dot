@@ -1,0 +1,13 @@
+digraph "adore::fun::SPRTTCNominal"
+{
+ // LATEX_PDF_SIZE
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  Node1 [label="{adore::fun::SPRTTCNominal\n||+ SPRTTCNominal()\l+ getName()\l+ getCost()\l}",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black",tooltip=" "];
+  Node2 -> Node1 [dir="back",color="midnightblue",fontsize="10",style="solid",arrowtail="onormal",fontname="Helvetica"];
+  Node2 [label="{adore::fun::ASPRCost\n||+ getCost()\l+ getName()\l}",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classadore_1_1fun_1_1ASPRCost.html",tooltip=" "];
+  Node3 -> Node1 [color="grey25",fontsize="10",style="solid",label=" -pvehicle_" ,arrowhead="odiamond",fontname="Helvetica"];
+  Node3 [label="{adore::params::APVehicle\n||+ get_vehicle_id()\l+ get_a()\l+ get_b()\l+ get_c()\l+ get_d()\l+ get_m()\l+ get_mu()\l+ get_g()\l+ get_h()\l+ get_cf()\land 17 more...\l}",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classadore_1_1params_1_1APVehicle.html",tooltip="abstract class for vehicle configuration related paremeters"];
+  Node4 -> Node1 [color="grey25",fontsize="10",style="solid",label=" -predictionView_" ,arrowhead="odiamond",fontname="Helvetica"];
+  Node4 [label="{adore::view::ATrafficPredictionView\n||+ overlapsExpectedBehavior()\l+ overlapsEmergencyBehavior()\l+ getExpectedCollisionTime()\l}",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classadore_1_1view_1_1ATrafficPredictionView.html",tooltip=" "];
+}

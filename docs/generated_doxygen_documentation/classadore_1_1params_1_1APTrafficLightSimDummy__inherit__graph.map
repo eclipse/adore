@@ -1,0 +1,4 @@
+<map id="adore::params::APTrafficLightSimDummy" name="adore::params::APTrafficLightSimDummy">
+<area shape="rect" id="node1" title="a dummy implementation for testing purposes" alt="" coords="5,219,176,384"/>
+<area shape="rect" id="node2" href="$classadore_1_1params_1_1APTrafficLightSim.html" title="abstract class containing parameters to configure aspects of the map provider" alt="" coords="5,5,176,171"/>
+</map>

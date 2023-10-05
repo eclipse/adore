@@ -1,0 +1,12 @@
+digraph "adore::adore_if_carla::Objects2Adore::initROSConnections"
+{
+ // LATEX_PDF_SIZE
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  rankdir="LR";
+  Node1 [label="adore::adore_if_carla\l::Objects2Adore::initROSConnections",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black",tooltip=" "];
+  Node1 -> Node2 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node2 [label="adore::adore_if_carla\l::Objects2Adore::getRosNode\lHandle",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classadore_1_1adore__if__carla_1_1Objects2Adore.html#acf71d9e49880145f08b4be720437762e",tooltip=" "];
+  Node1 -> Node3 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node3 [label="adore::adore_if_carla\l::Objects2Adore::receiveObjects",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classadore_1_1adore__if__carla_1_1Objects2Adore.html#a56a418c32e752206caa2f32b8fd67e42",tooltip=" "];
+}

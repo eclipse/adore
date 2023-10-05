@@ -1,0 +1,4 @@
+<map id="adore::sim::SimFactoryInstance::init" name="adore::sim::SimFactoryInstance::init">
+<area shape="rect" id="node1" title="Initialize private members of AllFactory." alt="" coords="5,5,213,47"/>
+<area shape="rect" id="node2" href="$classadore_1_1sim_1_1SimFactoryInstance.html#a177ce78bb1c9675c9dd0370e5f31f749" title="Function to access singleton instance of the AllFactory using magic static." alt="" coords="261,5,469,47"/>
+</map>

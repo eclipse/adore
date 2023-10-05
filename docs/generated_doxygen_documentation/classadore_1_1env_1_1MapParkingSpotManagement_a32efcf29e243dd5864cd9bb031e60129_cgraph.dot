@@ -1,0 +1,35 @@
+digraph "adore::env::MapParkingSpotManagement::run"
+{
+ // LATEX_PDF_SIZE
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  rankdir="LR";
+  Node1 [label="adore::env::MapParkingSpot\lManagement::run",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black",tooltip="get new and outdated parking spots based on vehicle position"];
+  Node1 -> Node2 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node2 [label="adore::env::BorderBased\l::ParkingSpotSet::eraseParkingSpot",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classadore_1_1env_1_1BorderBased_1_1ParkingSpotSet.html#a8776df8160e432234a5d86aa39c661c3",tooltip=" "];
+  Node2 -> Node3 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node3 [label="adore::env::BorderBased\l::ParkingSpotSet::hasParkingSpot",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classadore_1_1env_1_1BorderBased_1_1ParkingSpotSet.html#adca612dff4078dc4a81367a16e24863a",tooltip=" "];
+  Node1 -> Node4 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node4 [label="adore::env::MAP_AUX\l::getCornerPoints",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$namespaceadore_1_1env_1_1MAP__AUX.html#a4e09ae2be18cbb51b3ecd390e908eaa8",tooltip="Get corner points vector from center point and radius."];
+  Node1 -> Node5 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node5 [label="adore::env::BorderBased\l::ParkingSpotSet::getParking\lSpotsInRegion",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classadore_1_1env_1_1BorderBased_1_1ParkingSpotSet.html#a9b449202be8bb619625acf846c253730",tooltip=" "];
+  Node1 -> Node6 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node6 [label="adore::env::BorderBased\l::ParkingSpotSet::getParking\lSpotsOutsideRegion",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classadore_1_1env_1_1BorderBased_1_1ParkingSpotSet.html#a614445263305df29ac8f8c3a35ff0d7a",tooltip=" "];
+  Node1 -> Node3 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node1 -> Node7 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node7 [label="adore::env::BorderBased\l::ParkingSpotSet::insertParkingSpot",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classadore_1_1env_1_1BorderBased_1_1ParkingSpotSet.html#a55a6c5ae327d2249405f7034ac5b21a1",tooltip=" "];
+  Node7 -> Node2 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node7 -> Node8 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node8 [label="adore::env::BorderBased\l::Coordinate::getBoostPoint",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$structadore_1_1env_1_1BorderBased_1_1Coordinate.html#abb34f84413225a9464afe389cb4f71a7",tooltip="Get a boost_point that has the same coordinates as the Coordinate object."];
+  Node7 -> Node9 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node9 [label="adore::env::BorderBased\l::ParkingSpot::getCoordinate",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classadore_1_1env_1_1BorderBased_1_1ParkingSpot.html#aeb7c1b6f275ea2935bc30579103a3985",tooltip="Get the Coordinate object."];
+  Node7 -> Node10 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node10 [label="adore::env::BorderBased\l::ParkingSpot::getHeading",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classadore_1_1env_1_1BorderBased_1_1ParkingSpot.html#a94cddc2682d2e69054595dd03e9e8108",tooltip="Get the heading of the parking spot."];
+  Node7 -> Node3 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node1 -> Node11 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node11 [label="adore::env::BorderBased\l::ParkingSpotSet::itPair2Parking\lSpotVector",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classadore_1_1env_1_1BorderBased_1_1ParkingSpotSet.html#a8cdff9d7fffa0bbdab8736a186bd75bf",tooltip=" "];
+  Node11 -> Node12 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node12 [label="adore::env::BorderBased\l::ParkingSpotSet::itpair\l::current",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$structadore_1_1env_1_1BorderBased_1_1ParkingSpotSet_1_1itpair.html#ac3a1c10a1e1af8ed346fc1db678274c8",tooltip=" "];
+  Node11 -> Node13 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node13 [label="adore::env::BorderBased\l::ParkingSpotSet::itpair::end",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$structadore_1_1env_1_1BorderBased_1_1ParkingSpotSet_1_1itpair.html#a3d7454907e15ce3f89fa728c1c2441a7",tooltip=" "];
+}

@@ -1,0 +1,16 @@
+digraph "adore::fun::ContinueLCReference::getValueIfAvailable"
+{
+ // LATEX_PDF_SIZE
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  rankdir="LR";
+  Node1 [label="adore::fun::ContinueLCReference\l::getValueIfAvailable",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black",tooltip=" "];
+  Node1 -> Node2 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node2 [label="adore::view::ALaneChange\lView::getOffsetOfDestination\lOuterBorder",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classadore_1_1view_1_1ALaneChangeView.html#a69d39d9f90f30f433c7b810480e8d696",tooltip=" "];
+  Node1 -> Node3 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node3 [label="adore::view::ALaneChange\lView::getOffsetOfSeparatingBorder",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classadore_1_1view_1_1ALaneChangeView.html#aba6c97937219762de65d6c3556c888e6",tooltip=" "];
+  Node1 -> Node4 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node4 [label="adore::view::ALaneChange\lView::getTargetLane",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classadore_1_1view_1_1ALaneChangeView.html#a843001a04d0823731b89ff25f75501d5",tooltip=" "];
+  Node1 -> Node5 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node5 [label="adore::view::ALane\l::isValid",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classadore_1_1view_1_1ALane.html#a7995d6c08470c31414ecd7891ec16f05",tooltip=" "];
+}

@@ -1,0 +1,52 @@
+<map id="main" name="main">
+<area shape="rect" id="node1" title=" " alt="" coords="5,210,56,237"/>
+<area shape="rect" id="node2" href="$classadore_1_1if__ROS_1_1PlotTrafficLightsNode.html#ae938edd4484124c50652f63134ea3d1f" title=" " alt="" coords="104,169,277,211"/>
+<area shape="rect" id="node50" href="$classadore__if__ros__scheduling_1_1Baseapp.html#a201b2569600031e20ac44db3876d6298" title=" " alt="" coords="109,235,272,276"/>
+<area shape="rect" id="node3" href="$classDLR__TS_1_1PlotLab_1_1FigureStubFactory.html#a842dc9d218e8433f3443a08d47cfd6cc" title=" " alt="" coords="335,5,531,47"/>
+<area shape="rect" id="node4" href="$classadore__if__ros__scheduling_1_1Baseapp.html#a57040c153750243c7e47566530cd7bf5" title=" " alt="" coords="351,71,514,112"/>
+<area shape="rect" id="node5" href="$classadore__if__ros__scheduling_1_1Baseapp.html#a7792ee4aa6fd5c5c03d5f54b4c1f213a" title=" " alt="" coords="331,136,534,177"/>
+<area shape="rect" id="node6" href="$classadore_1_1if__ROS_1_1FactoryCollection.html#a07e53e57a417cf66c5d539a5e1bd590a" title=" " alt="" coords="325,201,540,243"/>
+<area shape="rect" id="node16" href="$classadore_1_1apps_1_1PlotTrafficLights.html#a96207460e21be12289b28245e4fab4fb" title=" " alt="" coords="353,709,512,751"/>
+<area shape="rect" id="node49" href="$classDLR__TS_1_1PlotLab_1_1AFigureStub.html#aaf1a1edc084b34e18315896c3f248695" title=" " alt="" coords="343,775,522,816"/>
+<area shape="rect" id="node7" href="$classadore_1_1if__ROS_1_1FactoryCollection.html#ac102972d5592de7cdc76b059017628f9" title=" " alt="" coords="588,136,803,177"/>
+<area shape="rect" id="node8" href="$classadore_1_1env_1_1EnvFactoryInstance.html#ab67767fc777387664b696bd78d2536ef" title="Initialize private members of AllFactory." alt="" coords="591,201,799,243"/>
+<area shape="rect" id="node10" href="$classadore_1_1fun_1_1FunFactoryInstance.html#a291c4c983548f85c633ae6409c7b5233" title="Initialize private members of funFactory." alt="" coords="593,267,797,308"/>
+<area shape="rect" id="node12" href="$classadore_1_1params_1_1ParamsFactoryInstance.html#ac6759c774ade5a97e47c056d1a136253" title="Initialize private members of AllFactory." alt="" coords="594,5,797,47"/>
+<area shape="rect" id="node14" href="$classadore_1_1sim_1_1SimFactoryInstance.html#ac891850728d65e5398216b2bb92f82f6" title="Initialize private members of AllFactory." alt="" coords="591,71,799,112"/>
+<area shape="rect" id="node9" href="$classadore_1_1env_1_1EnvFactoryInstance.html#a14835a4420fb827ba3809b94a96a7660" title="Function to access singleton instance of the envFactory using magic static." alt="" coords="855,168,1063,209"/>
+<area shape="rect" id="node11" href="$classadore_1_1fun_1_1FunFactoryInstance.html#a0826e9a7ea3c70a3780115e6effbf746" title="Function to access singleton instance of the funFactory using magic static." alt="" coords="857,233,1061,275"/>
+<area shape="rect" id="node13" href="$classadore_1_1params_1_1ParamsFactoryInstance.html#a59eae0e003d40b03f9db2d814ec2a3bf" title="Function to access singleton instance of the AllFactory using magic static." alt="" coords="857,5,1060,47"/>
+<area shape="rect" id="node15" href="$classadore_1_1sim_1_1SimFactoryInstance.html#a177ce78bb1c9675c9dd0370e5f31f749" title="Function to access singleton instance of the AllFactory using magic static." alt="" coords="855,71,1063,112"/>
+<area shape="rect" id="node17" href="$classadore_1_1mad_1_1AReader.html#a46ab7520d828d1a574365eaf8b483e29" title=" " alt="" coords="622,860,769,901"/>
+<area shape="rect" id="node18" href="$classadore_1_1mad_1_1AFeed.html#a07f96a9edf1ca4a1a9b0c84aa2631bd0" title=" " alt="" coords="888,1108,1029,1149"/>
+<area shape="rect" id="node19" href="$classadore_1_1mad_1_1AFeed.html#a2a96e59a3364f8fadb08624e38f7c40b" title=" " alt="" coords="888,299,1029,340"/>
+<area shape="rect" id="node20" href="$classadore_1_1mad_1_1AReader.html#a7a8e6d43dcd1129c47d7231e828fb111" title=" " alt="" coords="622,743,769,784"/>
+<area shape="rect" id="node21" href="$classadore_1_1env_1_1BorderBased_1_1BorderSet.html#a5730d3e4fc938c9bd1e1146a8a61deec" title="insert new border into this" alt="" coords="610,1205,781,1247"/>
+<area shape="rect" id="node28" href="$classadore_1_1apps_1_1PlotTrafficLights.html#a5a847f40f3b094984863dd28f1d49a79" title=" " alt="" coords="608,677,783,719"/>
+<area shape="rect" id="node22" href="$classadore_1_1env_1_1BorderBased_1_1BorderSet.html#afb523effcee573e774147446ecc756ab" title="check whether border type is in allowed types of set" alt="" coords="865,1239,1053,1280"/>
+<area shape="rect" id="node23" href="$structadore_1_1env_1_1BorderBased_1_1Border.html#a4b1e646e2c3d98b03e75f286611e0cda" title="Get a bounding box for the implicit lane object." alt="" coords="875,1304,1042,1345"/>
+<area shape="rect" id="node27" href="$structadore_1_1env_1_1BorderBased_1_1Coordinate.html#abb34f84413225a9464afe389cb4f71a7" title="Get a boost_point that has the same coordinates as the Coordinate object." alt="" coords="867,1173,1050,1215"/>
+<area shape="rect" id="node24" href="$namespaceadore_1_1mad.html#adea062854ef0b105a3fdca8cf2aca945" title=" " alt="" coords="1156,1286,1276,1313"/>
+<area shape="rect" id="node26" href="$namespaceadore_1_1mad.html#ab58ecb752f9bbfe27832e0a2c0e22c2b" title=" " alt="" coords="1158,1337,1274,1363"/>
+<area shape="rect" id="node25" href="$namespaceadore_1_1mad.html#a618a8842fed7b9375957b1e393c58492" title=" " alt="" coords="1392,1286,1512,1313"/>
+<area shape="rect" id="node29" href="$classadore_1_1apps_1_1PlotTrafficLights.html#aa70ee2af8959077917ccacbdddcb8fa1" title=" " alt="" coords="1127,729,1305,771"/>
+<area shape="rect" id="node32" href="$structadore_1_1env_1_1VectorIdentifier.html#a9fd66cfaa57a670b73c3e3f6540486f8" title=" " alt="" coords="869,860,1048,901"/>
+<area shape="rect" id="node33" href="$classadore_1_1apps_1_1PlotTrafficLights.html#adfb485a3bea5ee43f6a59f6042d27809" title=" " alt="" coords="865,925,1052,967"/>
+<area shape="rect" id="node36" href="$classadore_1_1apps_1_1PlotTrafficLights.html#ae0dde5536314102d0be3152608fdb0ff" title=" " alt="" coords="1131,1056,1301,1097"/>
+<area shape="rect" id="node39" href="$classadore_1_1env_1_1ControlledConnection.html#a5691ab0eff0709472460d73009b71923" title=" " alt="" coords="851,1043,1067,1084"/>
+<area shape="rect" id="node40" href="$classadore_1_1env_1_1ControlledConnection.html#a9ddc7ad9dbb1485969406d232bf7c047" title=" " alt="" coords="851,364,1067,405"/>
+<area shape="rect" id="node41" href="$structadore_1_1env_1_1VehicleMotionState9d.html#ae7d75a3f7d52a946f075e669832caa17" title="Get the time." alt="" coords="872,429,1045,471"/>
+<area shape="rect" id="node42" href="$structadore_1_1env_1_1VectorIdentifier.html#aa8b59805e30c4a089b3f3661a0fd6b6a" title=" " alt="" coords="869,495,1048,536"/>
+<area shape="rect" id="node43" href="$namespaceadore_1_1mad_1_1funop.html#a85ee119f752305b6413ea70a7f61d48b" title=" " alt="" coords="891,560,1026,601"/>
+<area shape="rect" id="node44" href="$namespaceadore_1_1PLOT.html#ace7bb787808bead40f2faca321cc1d4a" title=" " alt="" coords="885,626,1032,653"/>
+<area shape="rect" id="node46" href="$classDLR__TS_1_1PlotLab_1_1AFigureStub.html#ab53419d39443297fb8f0c9513956922a" title=" " alt="" coords="869,677,1048,719"/>
+<area shape="rect" id="node47" href="$classadore_1_1apps_1_1PlotTrafficLights.html#a0482cdd2779ae28238f01a544212deab" title=" " alt="" coords="860,795,1057,836"/>
+<area shape="rect" id="node30" href="$structadore_1_1env_1_1VehicleMotionState9d.html#a16d6d61f5dfa1028ca97d8f1a8b6e8cf" title="Get the x&#45;coordinate." alt="" coords="1365,763,1539,804"/>
+<area shape="rect" id="node31" href="$structadore_1_1env_1_1VehicleMotionState9d.html#a51e8eed0ef10d909592edcb933c1b802" title="Get the y&#45;coordinate." alt="" coords="1365,697,1539,739"/>
+<area shape="rect" id="node34" href="$classadore_1_1env_1_1BorderBased_1_1BorderSet.html#a3a3da6cfdee8aa6e003079f7f53186b6" title="get all borders at the given point" alt="" coords="1115,860,1317,901"/>
+<area shape="rect" id="node35" href="$classadore_1_1mad_1_1LLinearPiecewiseFunctionM.html#aa94d90c8643e2d6792f8594f3d666503" title=" " alt="" coords="1117,925,1315,967"/>
+<area shape="rect" id="node38" href="$classadore_1_1env_1_1BorderBased_1_1BorderSet.html#aaab8f67e5d8b624225085c44bbd58655" title="number of borders in this" alt="" coords="1133,991,1299,1032"/>
+<area shape="rect" id="node37" href="$namespaceadore_1_1mad.html#a37d645f2d2b0aa8f1c7015ba4e502617" title=" " alt="" coords="1389,1063,1515,1090"/>
+<area shape="rect" id="node45" href="$classDLR__TS_1_1PlotLab_1_1AFigureStub.html#accf20dccb771d2bad1fec053e187a327" title=" " alt="" coords="1127,619,1305,660"/>
+<area shape="rect" id="node48" href="$classDLR__TS_1_1PlotLab_1_1AFigureStub.html#ae5d9d5c708d325610574a002e53501c8" title=" " alt="" coords="1127,795,1305,836"/>
+</map>

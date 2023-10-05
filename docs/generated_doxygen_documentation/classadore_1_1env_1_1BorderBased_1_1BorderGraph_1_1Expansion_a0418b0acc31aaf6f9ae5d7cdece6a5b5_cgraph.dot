@@ -1,0 +1,23 @@
+digraph "adore::env::BorderBased::BorderGraph::Expansion::Expansion"
+{
+ // LATEX_PDF_SIZE
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  rankdir="LR";
+  Node1 [label="adore::env::BorderBased\l::BorderGraph::Expansion\l::Expansion",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black",tooltip=" "];
+  Node1 -> Node2 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node2 [label="adore::env::BorderBased\l::Border::getNeighborDirection",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$structadore_1_1env_1_1BorderBased_1_1Border.html#a4673c950e7cbca452b3b763dcda9b02b",tooltip="Get the direction of the left neighbor."];
+  Node1 -> Node3 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node3 [label="adore::env::BorderBased\l::Border::isContinuousPredecessorOf",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$structadore_1_1env_1_1BorderBased_1_1Border.html#a441b9f3124fd611e074d0337ded96dce",tooltip="Check whether the border is a continuous predecessor of another border."];
+  Node3 -> Node4 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node4 [label="adore::env::BorderBased\l::Coordinate::isNear",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$structadore_1_1env_1_1BorderBased_1_1Coordinate.html#a29c83e934340f40cfa66dab2e7982d20",tooltip="Check whether the Coordinate is near to another Coordinate."];
+  Node3 -> Node5 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node5 [label="adore::env::BorderBased\l::Border::isPredecessorOf",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$structadore_1_1env_1_1BorderBased_1_1Border.html#a26aecd3bc2175fb624dcab6c10570e3b",tooltip="Check whether border is a direct predecessor of another border."];
+  Node5 -> Node4 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node1 -> Node6 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node6 [label="adore::env::BorderBased\l::Border::isContinuousSuccessorOf",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$structadore_1_1env_1_1BorderBased_1_1Border.html#ade619eed462fc686ec91a805e0a78fc7",tooltip="Check whether the border is a continuous successor of another border."];
+  Node6 -> Node4 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node6 -> Node7 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node7 [label="adore::env::BorderBased\l::Border::isSuccessorOf",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$structadore_1_1env_1_1BorderBased_1_1Border.html#a7fb76c709876c81971c00f99e327c2bf",tooltip="Check whether border is a direct successors of another border."];
+  Node7 -> Node4 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+}

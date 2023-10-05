@@ -1,0 +1,5 @@
+<map id="adore::params::APLateralPlanner::getLateralGridScale" name="adore::params::APLateralPlanner::getLateralGridScale">
+<area shape="rect" id="node1" title="getLateralGridScale returns the size of a grid step d for lateral variations of a maneuver: maneuver ..." alt="" coords="239,39,427,80"/>
+<area shape="rect" id="node2" href="$classadore_1_1fun_1_1FollowCenterlineReference.html#a703fb6dae2dbb602ec6c912ba58c5a4a" title=" " alt="" coords="5,5,191,47"/>
+<area shape="rect" id="node3" href="$classadore_1_1fun_1_1LaneChangeIntoGapReference.html#a4ccbe5eb1af4aab87420b9d85336ac50" title=" " alt="" coords="7,71,189,112"/>
+</map>

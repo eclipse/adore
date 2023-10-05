@@ -1,0 +1,4 @@
+<map id="adore::env::BorderBased::LaneFollowingView" name="adore::env::BorderBased::LaneFollowingView">
+<area shape="rect" id="node1" title="LaneFollowingview provides traffic related information for the current lane." alt="" coords="18,277,194,575"/>
+<area shape="rect" id="node2" href="$classadore_1_1view_1_1ALane.html" title=" " alt="" coords="5,5,207,229"/>
+</map>

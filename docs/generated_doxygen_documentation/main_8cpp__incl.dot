@@ -1,0 +1,37 @@
+digraph "/home/fascar/temp/adore/plotlablib/plotlablib/test/main.cpp"
+{
+ // LATEX_PDF_SIZE
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  Node1 [label="/home/fascar/temp/adore\l/plotlablib/plotlablib\l/test/main.cpp",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black",tooltip=" "];
+  Node1 -> Node2 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node2 [label="iostream",height=0.2,width=0.4,color="grey75", fillcolor="white", style="filled",tooltip=" "];
+  Node1 -> Node3 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node3 [label="plotlablib/figurestubfactory.h",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$figurestubfactory_8h.html",tooltip=" "];
+  Node3 -> Node4 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node4 [label="figurestubzmq.h",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$figurestubzmq_8h.html",tooltip=" "];
+  Node4 -> Node5 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node5 [label="zmqobjectprovider.h",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$zmqobjectprovider_8h.html",tooltip=" "];
+  Node5 -> Node6 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node6 [label="zmq.hpp",height=0.2,width=0.4,color="grey75", fillcolor="white", style="filled",tooltip=" "];
+  Node5 -> Node2 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node4 -> Node7 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node7 [label="plcommands.h",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$plcommands_8h.html",tooltip=" "];
+  Node4 -> Node8 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node8 [label="afigurestub.h",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$afigurestub_8h.html",tooltip=" "];
+  Node8 -> Node9 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node9 [label="string",height=0.2,width=0.4,color="grey75", fillcolor="white", style="filled",tooltip=" "];
+  Node4 -> Node10 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node10 [label="algorithm",height=0.2,width=0.4,color="grey75", fillcolor="white", style="filled",tooltip=" "];
+  Node4 -> Node9 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node4 -> Node11 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node11 [label="stdio.h",height=0.2,width=0.4,color="grey75", fillcolor="white", style="filled",tooltip=" "];
+  Node4 -> Node2 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node4 -> Node12 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node12 [label="cmath",height=0.2,width=0.4,color="grey75", fillcolor="white", style="filled",tooltip=" "];
+  Node3 -> Node13 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node13 [label="dummyfigure.h",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$dummyfigure_8h.html",tooltip=" "];
+  Node13 -> Node9 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node13 -> Node8 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node3 -> Node9 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+}

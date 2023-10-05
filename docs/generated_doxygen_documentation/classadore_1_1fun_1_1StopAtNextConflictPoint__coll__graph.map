@@ -1,0 +1,7 @@
+<map id="adore::fun::StopAtNextConflictPoint" name="adore::fun::StopAtNextConflictPoint">
+<area shape="rect" id="node1" title=" " alt="" coords="341,307,542,501"/>
+<area shape="rect" id="node2" href="$classadore_1_1fun_1_1ANominalConstraint.html" title=" " alt="" coords="5,57,211,193"/>
+<area shape="rect" id="node3" href="$classadore_1_1view_1_1AConflictPointSet.html" title=" " alt="" coords="235,79,437,171"/>
+<area shape="rect" id="node4" href="$classadore_1_1params_1_1APVehicle.html" title="abstract class for vehicle configuration related paremeters" alt="" coords="461,13,635,237"/>
+<area shape="rect" id="node5" href="$classadore_1_1params_1_1APLongitudinalPlanner.html" title="abstract class containing parameters related to configuring the longitudinal planner" alt="" coords="660,5,860,244"/>
+</map>

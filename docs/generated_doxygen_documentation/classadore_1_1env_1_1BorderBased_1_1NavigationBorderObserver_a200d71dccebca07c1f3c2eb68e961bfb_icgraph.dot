@@ -1,0 +1,14 @@
+digraph "adore::env::BorderBased::NavigationBorderObserver::init"
+{
+ // LATEX_PDF_SIZE
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  rankdir="RL";
+  Node1 [label="adore::env::BorderBased\l::NavigationBorderObserver::init",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black",tooltip=" "];
+  Node1 -> Node2 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node2 [label="adore::env::NavigationManagement\l::init",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classadore_1_1env_1_1NavigationManagement.html#a6ef6488ee2fc558da1536b4d00a7fa1a",tooltip=" "];
+  Node2 -> Node3 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node3 [label="adore::apps::Navigation\l::Navigation",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classadore_1_1apps_1_1Navigation.html#a0f19b60c5090f48fdd06be105610c304",tooltip=" "];
+  Node1 -> Node4 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node4 [label="adore::env::NavigationManagement\l::reset",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classadore_1_1env_1_1NavigationManagement.html#aebbe0306df887a24a6feb20ce705033d",tooltip=" "];
+}

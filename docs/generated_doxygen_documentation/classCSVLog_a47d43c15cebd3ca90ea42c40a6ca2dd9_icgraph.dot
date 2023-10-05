@@ -1,0 +1,22 @@
+digraph "CSVLog::getCurrentLogLevelConsole"
+{
+ // LATEX_PDF_SIZE
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  rankdir="RL";
+  Node1 [label="CSVLog::getCurrentLogLevel\lConsole",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black",tooltip="get current log level for console log"];
+  Node1 -> Node2 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node2 [label="CSVLog::setLogLevel",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classCSVLog.html#a79823829d8323a15970b5faea8a1a247",tooltip="set the log level for file and console"];
+  Node1 -> Node3 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node3 [label="CSVLog::setLogLevelConsole",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classCSVLog.html#a2e1c3d2f4ef27dc9fb3179993b5ee3f9",tooltip="set log level only for console"];
+  Node1 -> Node4 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node4 [label="CSVLog::writeLog",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classCSVLog.html#a483aac07b38a517ad8f045a34cffdcf9",tooltip="general log generator method"];
+  Node4 -> Node5 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node5 [label="CSVLog::logError",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classCSVLog.html#a99f056783f1903b0332a39732b79a014",tooltip="general log on error level"];
+  Node4 -> Node6 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node6 [label="CSVLog::logInfo",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classCSVLog.html#a5a6e01a0b57519dcfa1b1b94017f79f8",tooltip="general log on info level"];
+  Node4 -> Node7 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node7 [label="CSVLog::logTrace",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classCSVLog.html#a43fd60ab05f615aefdd0af7d3f93840e",tooltip="general log on trace level"];
+  Node4 -> Node8 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node8 [label="CSVLog::logWarning",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classCSVLog.html#a259cf3f2a38398a047342ec4c2820f5c",tooltip="general log on warning level"];
+}

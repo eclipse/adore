@@ -1,0 +1,40 @@
+digraph "adore::env::MapBorderManagement::run"
+{
+ // LATEX_PDF_SIZE
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  rankdir="LR";
+  Node1 [label="adore::env::MapBorderManagement::run",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black",tooltip="reduced run method, receive new visible borders and now outdated borders"];
+  Node1 -> Node2 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node2 [label="adore::env::MapBorderManagement\l::do_run",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classadore_1_1env_1_1MapBorderManagement.html#ad32f8ceaf27f6d7ebff2868d1f99e307",tooltip=" "];
+  Node2 -> Node3 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node3 [label="adore::env::BorderBased\l::BorderSet::erase_border",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classadore_1_1env_1_1BorderBased_1_1BorderSet.html#a8d10d29478d00f091a53f2197b85f1bd",tooltip="erase border from this"];
+  Node3 -> Node4 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node4 [label="adore::env::BorderBased\l::Border::getBoostBox",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$structadore_1_1env_1_1BorderBased_1_1Border.html#a4b1e646e2c3d98b03e75f286611e0cda",tooltip="Get a bounding box for the implicit lane object."];
+  Node4 -> Node5 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node5 [label="adore::mad::max",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$namespaceadore_1_1mad.html#adea062854ef0b105a3fdca8cf2aca945",tooltip=" "];
+  Node5 -> Node6 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node6 [label="adore::mad::max",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$namespaceadore_1_1mad.html#a618a8842fed7b9375957b1e393c58492",tooltip=" "];
+  Node4 -> Node7 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node7 [label="adore::mad::min",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$namespaceadore_1_1mad.html#ab58ecb752f9bbfe27832e0a2c0e22c2b",tooltip=" "];
+  Node7 -> Node8 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node8 [label="adore::mad::min",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$namespaceadore_1_1mad.html#ac61b79c007d1859f93a10c04272095a1",tooltip=" "];
+  Node3 -> Node9 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node9 [label="adore::env::BorderBased\l::Coordinate::getBoostPoint",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$structadore_1_1env_1_1BorderBased_1_1Coordinate.html#abb34f84413225a9464afe389cb4f71a7",tooltip="Get a boost_point that has the same coordinates as the Coordinate object."];
+  Node2 -> Node10 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node10 [label="adore::env::BorderBased\l::BorderSet::getBorder",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classadore_1_1env_1_1BorderBased_1_1BorderSet.html#a69802bccdc7cf3fa598283509808edc2",tooltip="retrieve a border by ID"];
+  Node2 -> Node11 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node11 [label="adore::env::BorderBased\l::BorderSet::getBorderSetOutside\lRegion",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classadore_1_1env_1_1BorderBased_1_1BorderSet.html#ad3b598637664edab77fc8b5f20f235af",tooltip="get all borders outside of region in BorderSubSet"];
+  Node2 -> Node12 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node12 [label="adore::env::BorderBased\l::BorderSet::getBordersInRegion",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classadore_1_1env_1_1BorderBased_1_1BorderSet.html#a5b9a10acc8d477c1d27d5b39fb1f99f3",tooltip="get all borders in this within region"];
+  Node2 -> Node13 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node13 [label="adore::env::MAP_AUX\l::getCornerPoints",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$namespaceadore_1_1env_1_1MAP__AUX.html#a4e09ae2be18cbb51b3ecd390e908eaa8",tooltip="Get corner points vector from center point and radius."];
+  Node2 -> Node14 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node14 [label="adore::env::BorderBased\l::BorderSet::hasBorder",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classadore_1_1env_1_1BorderBased_1_1BorderSet.html#a7ff4cca867c7286fbf2d7e98f07a2da4",tooltip="check whether a border exists in the set"];
+  Node2 -> Node15 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node15 [label="adore::env::BorderBased\l::BorderSet::insert_border",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classadore_1_1env_1_1BorderBased_1_1BorderSet.html#a5730d3e4fc938c9bd1e1146a8a61deec",tooltip="insert new border into this"];
+  Node15 -> Node16 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node16 [label="adore::env::BorderBased\l::BorderSet::borderTypeValid",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classadore_1_1env_1_1BorderBased_1_1BorderSet.html#afb523effcee573e774147446ecc756ab",tooltip="check whether border type is in allowed types of set"];
+  Node15 -> Node4 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node15 -> Node9 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+}

@@ -1,0 +1,52 @@
+<map id="main" name="main">
+<area shape="rect" id="node1" title=" " alt="" coords="5,2343,56,2370"/>
+<area shape="rect" id="node2" href="$classadore_1_1apps_1_1TestMRMPlanner.html#aa437a755996db26933e8c1b63576fff7" title="update function of the trajectory planner" alt="" coords="104,2343,329,2370"/>
+<area shape="rect" id="node3" href="$classadore_1_1fun_1_1MRMPlanner.html#aae8436fc85e3888af12e9e35559e3455" title=" " alt="" coords="395,717,559,759"/>
+<area shape="rect" id="node9" href="$structadore_1_1env_1_1VehicleMotionState9d.html#ae7d75a3f7d52a946f075e669832caa17" title="Get the time." alt="" coords="655,997,828,1039"/>
+<area shape="rect" id="node10" href="$classadore_1_1fun_1_1MRMPlanner.html#af571c3b64d1ca371e14b7721a191b9e3" title=" " alt="" coords="659,1063,823,1104"/>
+<area shape="rect" id="node17" href="$classadore_1_1mad_1_1AReader.html#a46ab7520d828d1a574365eaf8b483e29" title=" " alt="" coords="668,2369,815,2411"/>
+<area shape="rect" id="node18" href="$classadore_1_1fun_1_1MRMPlanner.html#a191e6f9207659a89cd1c8051c84445af" title=" " alt="" coords="395,2852,559,2893"/>
+<area shape="rect" id="node19" href="$structadore_1_1env_1_1VehicleMotionState9d.html#a16d6d61f5dfa1028ca97d8f1a8b6e8cf" title="Get the x&#45;coordinate." alt="" coords="926,2487,1099,2528"/>
+<area shape="rect" id="node20" href="$structadore_1_1env_1_1VehicleMotionState9d.html#a51e8eed0ef10d909592edcb933c1b802" title="Get the y&#45;coordinate." alt="" coords="926,2676,1099,2717"/>
+<area shape="rect" id="node21" href="$classadore_1_1apps_1_1TestMRMPlanner.html#a0431afba1db204ea64409e7c93e0c4d9" title=" " alt="" coords="377,156,576,197"/>
+<area shape="rect" id="node26" href="$classadore_1_1env_1_1BorderBased_1_1LaneFollowingView.html#a7cf867a70cca073393e6ff7320e00244" title="update the LaneFollowingView" alt="" coords="382,1697,571,1739"/>
+<area shape="rect" id="node43" href="$classadore_1_1env_1_1traffic_1_1TrafficMap.html#a20192db128a9de37dd38eea74ef1bf77" title="Update the TrafficMap." alt="" coords="407,2307,546,2348"/>
+<area shape="rect" id="node46" href="$classadore_1_1env_1_1BorderBased_1_1LocalRoadMap.html#a1c5abe938454e1534e406cce82b8c452" title="update the local road map" alt="" coords="393,2577,560,2619"/>
+<area shape="rect" id="node50" href="$classadore_1_1mad_1_1AWriter.html#a1c22b1ccbd19c5f02f832831ca757f3b" title=" " alt="" coords="407,2917,546,2959"/>
+<area shape="rect" id="node4" href="$classadore_1_1fun_1_1MRMPlanner.html#a2d13d368c1da79f554f49f930d9946ad" title=" " alt="" coords="659,436,823,477"/>
+<area shape="rect" id="node5" href="$namespaceadore_1_1mad.html#a927f4883d4edcec4dcfd9bb1f09d4f62" title=" " alt="" coords="676,502,807,529"/>
+<area shape="rect" id="node6" href="$classadore_1_1fun_1_1MRMPlanner.html#a57582ff53b0d642a330a9724f10f016e" title="general parameters" alt="" coords="650,553,833,595"/>
+<area shape="rect" id="node7" href="$classadore_1_1mad_1_1LLinearPiecewiseFunctionM.html#aa94d90c8643e2d6792f8594f3d666503" title=" " alt="" coords="914,331,1111,372"/>
+<area shape="rect" id="node8" href="$classadore_1_1fun_1_1InformationSetPostProcessing.html#a3357cc03eb3f30fb54a72738070c3e56" title=" " alt="" coords="629,619,854,660"/>
+<area shape="rect" id="node11" href="$classadore_1_1fun_1_1InformationSetPostProcessing.html#abdf5c652e5769e5cb8d36f56c5942328" title=" " alt="" coords="641,355,842,411"/>
+<area shape="rect" id="node12" href="$classadore_1_1fun_1_1RoadCoordinateConverter.html#adcfa7a5683e7ce1ce1c495226f9d56d6" title=" " alt="" coords="650,684,833,725"/>
+<area shape="rect" id="node13" href="$classadore_1_1fun_1_1MRMPlanner.html#aa7d62295f89f29019898e1eee2ca1e09" title=" " alt="" coords="659,749,823,791"/>
+<area shape="rect" id="node14" href="$namespaceadore_1_1mad.html#adea062854ef0b105a3fdca8cf2aca945" title=" " alt="" coords="953,1650,1073,1677"/>
+<area shape="rect" id="node15" href="$classadore_1_1fun_1_1RoadCoordinateConverter.html#ab47571780305ab646a4d27598e9e3dc4" title=" " alt="" coords="642,815,841,856"/>
+<area shape="rect" id="node16" href="$classadore_1_1fun_1_1NominalPlannerInformationSet.html#a8f4a317aa2e1c72060d6191988949277" title=" " alt="" coords="651,880,831,921"/>
+<area shape="rect" id="node22" href="$namespaceadore_1_1mad.html#aa25826e01d840952e6e333eacc68d540" title=" " alt="" coords="644,71,839,98"/>
+<area shape="rect" id="node23" href="$classadore_1_1fun_1_1MRMPlanner.html#aceefa66b596be77f9b25f75be1e76d69" title=" " alt="" coords="659,123,823,164"/>
+<area shape="rect" id="node24" href="$classadore_1_1fun_1_1MRMPlanner.html#af75b631aece8765e2eb9d18b4e2f45b1" title=" " alt="" coords="659,188,823,229"/>
+<area shape="rect" id="node25" href="$classDLR__TS_1_1PlotLab_1_1AFigureStub.html#accf20dccb771d2bad1fec053e187a327" title=" " alt="" coords="652,5,831,47"/>
+<area shape="rect" id="node27" href="$classadore_1_1params_1_1APLaneFollowingView.html#af64964dd46c14836c6f04e2c6d1d36b3" title=" " alt="" coords="634,1355,849,1396"/>
+<area shape="rect" id="node28" href="$classadore_1_1env_1_1BorderBased_1_1LocalRoadMap.html#a97fc5f3030bb346d4f9326f6ce3e2f57" title="Get the BorderCostMap object." alt="" coords="624,1420,859,1461"/>
+<area shape="rect" id="node29" href="$classadore_1_1env_1_1BorderBased_1_1BorderAccumulator.html#ad795032b11d319a4065e8e87f0bc7974" title="Get the Accumulated Borders." alt="" coords="907,2224,1119,2265"/>
+<area shape="rect" id="node30" href="$classadore_1_1env_1_1BorderBased_1_1LocalRoadMap.html#ab46703f9cae207a71ee9330fe7d6d981" title="Get the BorderSet object." alt="" coords="641,1485,842,1527"/>
+<area shape="rect" id="node31" href="$classadore_1_1env_1_1BorderBased_1_1LocalRoadMap.html#a0384c27253d23bafcc4b376fa0c82527" title="Get the BorderTrace." alt="" coords="634,1551,849,1592"/>
+<area shape="rect" id="node32" href="$classadore_1_1env_1_1BorderBased_1_1LaneFollowingGeometry.html#a1a29b7190784825d9a544f53f9039b7b" title="Get the left borders of the LaneFollowingGeometry." alt="" coords="656,1617,827,1673"/>
+<area shape="rect" id="node33" href="$classadore_1_1params_1_1APLaneFollowingView.html#a99f4777b53102c2cefd64db35a022164" title=" " alt="" coords="634,1697,849,1739"/>
+<area shape="rect" id="node34" href="$classadore_1_1params_1_1APLaneFollowingView.html#a2a90fc8dfa3f069e4cd1576bfb1736cb" title=" " alt="" coords="634,1763,849,1804"/>
+<area shape="rect" id="node35" href="$classadore_1_1env_1_1BorderBased_1_1LocalRoadMap.html#a84f0b0693142d9a9cf3372f329b5add1" title="Get the matched border." alt="" coords="626,1828,857,1869"/>
+<area shape="rect" id="node36" href="$classadore_1_1env_1_1BorderBased_1_1LocalRoadMap.html#a836840ac8ee35501e0c735ff6385096a" title="Get the PrecedenceSet object." alt="" coords="625,1945,857,1987"/>
+<area shape="rect" id="node37" href="$classadore_1_1env_1_1BorderBased_1_1LaneFollowingGeometry.html#a45b47493b2d7b2afdf0da378784f5f68" title="Get the right borders of the LaneFollowingGeometry." alt="" coords="656,2011,827,2067"/>
+<area shape="rect" id="node38" href="$classadore_1_1env_1_1BorderBased_1_1LocalRoadMap.html#aba03c913d0583839ef348fb9324a1f10" title="Get the VehicleState." alt="" coords="633,2092,850,2133"/>
+<area shape="rect" id="node39" href="$classadore_1_1env_1_1BorderBased_1_1LocalRoadMap.html#a459c6081b2960399a75efe4523844c35" title="transfers value of APLocalRoadMap&#45;&gt;isNavigationActive is true" alt="" coords="643,1194,840,1250"/>
+<area shape="rect" id="node40" href="$classadore_1_1env_1_1traffic_1_1EgoLaneTraffic.html#adc90990af6715b1c68993f7a19a85109" title="Map vehicles on borders." alt="" coords="641,1274,842,1330"/>
+<area shape="rect" id="node41" href="$classadore_1_1env_1_1BorderBased_1_1LaneFollowingGeometry.html#a12d1bfee80e8e90c72f4317b5650ea09" title="update the road geometry" alt="" coords="656,2223,827,2279"/>
+<area shape="rect" id="node42" href="$classadore_1_1env_1_1BorderBased_1_1ConflictSet.html#a94cb06c4ec33f8bcb6fad237cd01a15d" title=" " alt="" coords="658,1128,825,1169"/>
+<area shape="rect" id="node44" href="$classadore_1_1mad_1_1AReader.html#a7a8e6d43dcd1129c47d7231e828fb111" title=" " alt="" coords="668,2304,815,2345"/>
+<area shape="rect" id="node45" href="$classadore_1_1env_1_1traffic_1_1TrafficMap.html#aa5210545ab067b99b8f97d3500bc9e61" title="Match traffic to borders." alt="" coords="651,2157,832,2199"/>
+<area shape="rect" id="node47" href="$classadore_1_1env_1_1BorderBased_1_1LocalRoadMap.html#a4790635fe33599808ceaae8c1bdb63c4" title="Remove Borders outside a certain area." alt="" coords="658,2603,825,2659"/>
+<area shape="rect" id="node48" href="$classadore_1_1params_1_1APVehicle.html#ae446997786812ff17a5c3f6bfa575ce5" title="cog to front axle" alt="" coords="654,2684,829,2725"/>
+<area shape="rect" id="node49" href="$classadore_1_1params_1_1APVehicle.html#a5cc38023fb9f3142348dc9ac22402288" title="rear axle to cog" alt="" coords="654,2487,829,2528"/>
+</map>

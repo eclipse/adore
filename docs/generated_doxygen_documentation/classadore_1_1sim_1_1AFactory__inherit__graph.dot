@@ -1,0 +1,9 @@
+digraph "adore::sim::AFactory"
+{
+ // LATEX_PDF_SIZE
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  Node1 [label="{adore::sim::AFactory\n||+ getMotionCommandReader()\l+ getGearSelectionCommandReader()\l+ getIndicatorCommandReader()\l+ getSimulationTimeReader()\l+ getSimulationTimeWriter()\l+ getVehicleMotionStateWriter()\l+ getOdometryEstimatedVehicle\lStateWriter()\l+ getLocalizationEstimated\lVehicleStateWriter()\l+ getVehicleMotionStateReader()\l+ getVehicleExtendedStateWriter()\land 15 more...\l}",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black",tooltip="abstract factory for adore::sim communication"];
+  Node1 -> Node2 [dir="back",color="midnightblue",fontsize="10",style="solid",arrowtail="onormal",fontname="Helvetica"];
+  Node2 [label="{adore::if_ROS::SIM\l_Factory\n|- n_\l|+ SIM_Factory()\l+ getMotionCommandReader()\l+ getGearSelectionCommandReader()\l+ getIndicatorCommandReader()\l+ getVehicleMotionStateWriter()\l+ getOdometryEstimatedVehicle\lStateWriter()\l+ getLocalizationEstimated\lVehicleStateWriter()\l+ getVehicleMotionStateReader()\l+ getVehicleExtendedStateWriter()\l+ getSimulationTimeReader()\land 16 more...\l}",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classadore_1_1if__ROS_1_1SIM__Factory.html",tooltip=" "];
+}

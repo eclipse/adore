@@ -1,0 +1,4 @@
+<map id="adore::apps::TrajectoryPlannerLM" name="adore::apps::TrajectoryPlannerLM">
+<area shape="rect" id="node1" title="Decoupled trajectory planner, which uses TrajectoryPlannerBase to compute and provide a PlanningResul..." alt="" coords="11,204,230,457"/>
+<area shape="rect" id="node2" href="$classadore_1_1apps_1_1TrajectoryPlannerBase.html" title="Base class for different trajectory planners: Handles communication w/ decision making module...." alt="" coords="5,5,236,156"/>
+</map>

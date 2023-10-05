@@ -1,0 +1,52 @@
+<map id="/home/fascar/temp/adore/adore_if_ros/adore_if_ros/include/adore_if_ros/conversions/borderconverter.h" name="/home/fascar/temp/adore/adore_if_ros/adore_if_ros/include/adore_if_ros/conversions/borderconverter.h">
+<area shape="rect" id="node1" title=" " alt="" coords="1557,5,1757,76"/>
+<area shape="rect" id="node2" title=" " alt="" coords="5,124,59,151"/>
+<area shape="rect" id="node3" title=" " alt="" coords="83,124,259,151"/>
+<area shape="rect" id="node4" title=" " alt="" coords="1129,556,1191,583"/>
+<area shape="rect" id="node5" href="$env_2include_2adore_2env_2afactory_8h.html" title=" " alt="" coords="1496,124,1635,151"/>
+<area shape="rect" id="node47" title=" " alt="" coords="1659,124,1842,151"/>
+<area shape="rect" id="node48" title=" " alt="" coords="1866,124,2043,151"/>
+<area shape="rect" id="node49" title=" " alt="" coords="2067,124,2245,151"/>
+<area shape="rect" id="node50" title=" " alt="" coords="2269,124,2421,151"/>
+<area shape="rect" id="node6" href="$border_8h.html" title=" " alt="" coords="2368,377,2523,419"/>
+<area shape="rect" id="node13" href="$navigationgoal_8h.html" title=" " alt="" coords="2618,206,2801,233"/>
+<area shape="rect" id="node15" href="$env_2include_2adore_2env_2ego_2vehiclemotionstate9d_8h.html" title=" " alt="" coords="651,385,893,411"/>
+<area shape="rect" id="node17" href="$participant_8h.html" title=" " alt="" coords="1365,295,1555,322"/>
+<area shape="rect" id="node20" href="$com__patterns_8h.html" title=" " alt="" coords="334,474,511,501"/>
+<area shape="rect" id="node22" href="$precedence_8h.html" title=" " alt="" coords="435,385,626,411"/>
+<area shape="rect" id="node26" href="$map__border__management_8h.html" title=" " alt="" coords="1603,199,1783,240"/>
+<area shape="rect" id="node31" href="$proposition_8h.html" title=" " alt="" coords="2819,288,2951,329"/>
+<area shape="rect" id="node32" href="$controlledconnection_8h.html" title=" " alt="" coords="1105,295,1340,322"/>
+<area shape="rect" id="node36" href="$occupancycylinderprediction_8h.html" title=" " alt="" coords="810,206,1105,233"/>
+<area shape="rect" id="node39" href="$lanecombinedgeometry_8h.html" title=" " alt="" coords="2975,288,3145,329"/>
+<area shape="rect" id="node42" href="$speedlimit_8h.html" title=" " alt="" coords="1807,206,1990,233"/>
+<area shape="rect" id="node43" href="$areaofeffect_8h.html" title=" " alt="" coords="2014,199,2146,240"/>
+<area shape="rect" id="node44" href="$cooperativeusersprediction_8h.html" title=" " alt="" coords="2170,206,2457,233"/>
+<area shape="rect" id="node45" href="$gapdata_8h.html" title=" " alt="" coords="1579,295,1757,322"/>
+<area shape="rect" id="node46" href="$indicator__hint_8h.html" title=" " alt="" coords="2381,288,2542,329"/>
+<area shape="rect" id="node7" href="$borderid_8h.html" title=" " alt="" coords="2460,467,2615,508"/>
+<area shape="rect" id="node9" href="$fun__essentials_8h.html" title=" " alt="" coords="2253,474,2435,501"/>
+<area shape="rect" id="node10" title=" " alt="" coords="1846,474,1981,501"/>
+<area shape="rect" id="node11" title=" " alt="" coords="2005,467,2185,508"/>
+<area shape="rect" id="node12" href="$linearfunctiontypedefs_8h.html" title=" " alt="" coords="2866,474,3091,501"/>
+<area shape="rect" id="node8" title=" " alt="" coords="2510,556,2565,583"/>
+<area shape="rect" id="node14" href="$globalposition_8h.html" title=" " alt="" coords="2618,295,2795,322"/>
+<area shape="rect" id="node16" href="$adoremath_8h.html" title=" " alt="" coords="1081,474,1239,501"/>
+<area shape="rect" id="node18" title=" " alt="" coords="2133,385,2192,411"/>
+<area shape="rect" id="node19" href="$movingbox_8h.html" title=" " alt="" coords="1365,385,1461,411"/>
+<area shape="rect" id="node21" title=" " alt="" coords="383,556,462,583"/>
+<area shape="rect" id="node23" title=" " alt="" coords="1601,467,1781,508"/>
+<area shape="rect" id="node24" title=" " alt="" coords="627,474,699,501"/>
+<area shape="rect" id="node25" title=" " alt="" coords="536,474,603,501"/>
+<area shape="rect" id="node27" href="$borderset_8h.html" title=" " alt="" coords="2201,288,2356,329"/>
+<area shape="rect" id="node29" href="$map__auxiliary_8h.html" title=" " alt="" coords="1914,295,2025,322"/>
+<area shape="rect" id="node30" title=" " alt="" coords="1781,295,1838,322"/>
+<area shape="rect" id="node28" title=" " alt="" coords="2547,385,2658,411"/>
+<area shape="rect" id="node33" href="$vectoridentifier_8h.html" title=" " alt="" coords="1587,385,1794,411"/>
+<area shape="rect" id="node34" href="$localboxset_8h.html" title=" " alt="" coords="1819,385,2008,411"/>
+<area shape="rect" id="node35" href="$limitline_8h.html" title=" " alt="" coords="1197,385,1341,411"/>
+<area shape="rect" id="node37" href="$occupancycylinder_8h.html" title=" " alt="" coords="917,385,1123,411"/>
+<area shape="rect" id="node38" href="$velocityprediction_8h.html" title=" " alt="" coords="845,295,979,322"/>
+<area shape="rect" id="node40" href="$lanegeometrydataproxy_8h.html" title=" " alt="" coords="2785,377,2956,419"/>
+<area shape="rect" id="node41" href="$lanechangedataproxy_8h.html" title=" " alt="" coords="2981,377,3139,419"/>
+</map>

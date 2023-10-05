@@ -1,0 +1,3 @@
+<map id="adore::sim::ResetVehicleTwist" name="adore::sim::ResetVehicleTwist">
+<area shape="rect" id="node1" title="provides encapsulation of values needed to reset the vehicle twist (vx,vy and omega) in a simulation" alt="" coords="5,5,175,200"/>
+</map>

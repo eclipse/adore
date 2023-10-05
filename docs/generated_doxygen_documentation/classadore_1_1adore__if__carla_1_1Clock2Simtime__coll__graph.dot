@@ -1,0 +1,7 @@
+digraph "adore::adore_if_carla::Clock2Simtime"
+{
+ // LATEX_PDF_SIZE
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  Node1 [label="{adore::adore_if_carla\l::Clock2Simtime\n|- subscriber_\l- publisher_\l- n_\l|+ Clock2Simtime()\l+ init()\l+ run()\l- initSim()\l- getRosNodeHandle()\l- initROSConnections()\l- receiveClockTime()\l}",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black",tooltip=" "];
+}

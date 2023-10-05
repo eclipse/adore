@@ -1,0 +1,4 @@
+<map id="adore::env::BorderBased::LanePositionedObjectSet::discard_distant_objects" name="adore::env::BorderBased::LanePositionedObjectSet::discard_distant_objects">
+<area shape="rect" id="node1" title="Discard distant objects." alt="" coords="5,5,183,61"/>
+<area shape="rect" id="node2" href="$classadore_1_1env_1_1BorderBased_1_1LanePositionedObjectSet.html#a22112eba9e1486daaf0b57f3d7ddd4aa" title="Get the begin()&#45; and end()&#45;iterator for the whole set." alt="" coords="231,5,408,61"/>
+</map>

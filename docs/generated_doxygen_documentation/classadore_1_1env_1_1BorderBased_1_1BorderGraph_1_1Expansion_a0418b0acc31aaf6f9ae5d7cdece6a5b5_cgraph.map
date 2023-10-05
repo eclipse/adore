@@ -1,0 +1,9 @@
+<map id="adore::env::BorderBased::BorderGraph::Expansion::Expansion" name="adore::env::BorderBased::BorderGraph::Expansion::Expansion">
+<area shape="rect" id="node1" title=" " alt="" coords="5,63,177,119"/>
+<area shape="rect" id="node2" href="$structadore_1_1env_1_1BorderBased_1_1Border.html#a4673c950e7cbca452b3b763dcda9b02b" title="Get the direction of the left neighbor." alt="" coords="245,5,444,47"/>
+<area shape="rect" id="node3" href="$structadore_1_1env_1_1BorderBased_1_1Border.html#a441b9f3124fd611e074d0337ded96dce" title="Check whether the border is a continuous predecessor of another border." alt="" coords="225,71,464,112"/>
+<area shape="rect" id="node6" href="$structadore_1_1env_1_1BorderBased_1_1Border.html#ade619eed462fc686ec91a805e0a78fc7" title="Check whether the border is a continuous successor of another border." alt="" coords="231,136,459,177"/>
+<area shape="rect" id="node4" href="$structadore_1_1env_1_1BorderBased_1_1Coordinate.html#a29c83e934340f40cfa66dab2e7982d20" title="Check whether the Coordinate is near to another Coordinate." alt="" coords="733,103,900,144"/>
+<area shape="rect" id="node5" href="$structadore_1_1env_1_1BorderBased_1_1Border.html#a26aecd3bc2175fb624dcab6c10570e3b" title="Check whether border is a direct predecessor of another border." alt="" coords="512,73,685,115"/>
+<area shape="rect" id="node7" href="$structadore_1_1env_1_1BorderBased_1_1Border.html#a7fb76c709876c81971c00f99e327c2bf" title="Check whether border is a direct successors of another border." alt="" coords="515,191,682,232"/>
+</map>

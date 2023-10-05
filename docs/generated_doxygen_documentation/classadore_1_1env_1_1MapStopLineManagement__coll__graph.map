@@ -1,0 +1,4 @@
+<map id="adore::env::MapStopLineManagement" name="adore::env::MapStopLineManagement">
+<area shape="rect" id="node1" title="manage new and outdated stop lines based on newly visible and no longer visible borders and the last ..." alt="" coords="5,336,248,457"/>
+<area shape="rect" id="node2" href="$classadore_1_1env_1_1BorderBased_1_1LanePositionedObjectSet.html" title="This class represents a set of objects that are positioned by LanePosition." alt="" coords="28,5,225,259"/>
+</map>

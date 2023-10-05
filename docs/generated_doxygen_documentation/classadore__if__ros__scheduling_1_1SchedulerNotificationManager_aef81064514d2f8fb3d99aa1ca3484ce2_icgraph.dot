@@ -1,0 +1,12 @@
+digraph "adore_if_ros_scheduling::SchedulerNotificationManager::notifyScheduler"
+{
+ // LATEX_PDF_SIZE
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  rankdir="RL";
+  Node1 [label="adore_if_ros_scheduling\l::SchedulerNotificationManager\l::notifyScheduler",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black",tooltip=" "];
+  Node1 -> Node2 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node2 [label="adore_if_ros_scheduling\l::Baseapp::schedulerCallback",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classadore__if__ros__scheduling_1_1Baseapp.html#ab49dd15b970cba0ffcde7af68374dae4",tooltip=" "];
+  Node2 -> Node3 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node3 [label="adore_if_ros_scheduling\l::Baseapp::initSim",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classadore__if__ros__scheduling_1_1Baseapp.html#a1756fdc7f13d440abbc6e43da1590d73",tooltip=" "];
+}

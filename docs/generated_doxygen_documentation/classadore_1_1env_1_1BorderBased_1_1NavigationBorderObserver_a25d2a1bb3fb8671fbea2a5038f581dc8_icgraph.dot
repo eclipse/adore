@@ -1,0 +1,12 @@
+digraph "adore::env::BorderBased::NavigationBorderObserver::navigationReplanningNecessary"
+{
+ // LATEX_PDF_SIZE
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  rankdir="RL";
+  Node1 [label="adore::env::BorderBased\l::NavigationBorderObserver\l::navigationReplanningNecessary",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black",tooltip=" "];
+  Node1 -> Node2 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node2 [label="adore::env::NavigationManagement\l::update",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classadore_1_1env_1_1NavigationManagement.html#a4106ef1a330c91758e3fdb995e9723de",tooltip=" "];
+  Node2 -> Node3 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node3 [label="adore::apps::Navigation::run",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classadore_1_1apps_1_1Navigation.html#a4be14a35fd450f46452afc37e44d15a6",tooltip=" "];
+}

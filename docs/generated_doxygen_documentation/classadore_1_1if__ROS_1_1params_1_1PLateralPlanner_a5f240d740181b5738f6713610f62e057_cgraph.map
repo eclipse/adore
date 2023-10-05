@@ -1,0 +1,4 @@
+<map id="adore::if_ROS::params::PLateralPlanner::getCurvatureUB" name="adore::if_ROS::params::PLateralPlanner::getCurvatureUB">
+<area shape="rect" id="node1" title="getCurvatureUB returns maximum curvature of path (relevant at low speeds)" alt="" coords="5,5,229,47"/>
+<area shape="rect" id="node2" href="$classadore_1_1if__ROS_1_1ROSParam.html#adf480c94fa5b1368850b0a491791e4e6" title=" " alt="" coords="277,13,484,39"/>
+</map>

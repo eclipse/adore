@@ -1,0 +1,10 @@
+<map id="adore::fun::NominalReferenceSpeed" name="adore::fun::NominalReferenceSpeed">
+<area shape="rect" id="node1" title=" " alt="" coords="306,564,502,744"/>
+<area shape="rect" id="node2" href="$classadore_1_1fun_1_1ANominalReference.html" title=" " alt="" coords="5,343,211,465"/>
+<area shape="rect" id="node3" href="$classadore_1_1view_1_1ALane.html" title=" " alt="" coords="158,13,359,237"/>
+<area shape="rect" id="node4" href="$classadore_1_1fun_1_1CurvatureSpeedLimit.html" title=" " alt="" coords="313,314,495,494"/>
+<area shape="rect" id="node7" href="$classadore_1_1fun_1_1LFVSpeedLimit.html" title=" " alt="" coords="519,307,697,501"/>
+<area shape="rect" id="node5" href="$classadore_1_1fun_1_1ANominalConstraint.html" title=" " alt="" coords="384,57,589,193"/>
+<area shape="rect" id="node6" href="$classadore_1_1params_1_1APLongitudinalPlanner.html" title="abstract class containing parameters related to configuring the longitudinal planner" alt="" coords="613,5,813,244"/>
+<area shape="rect" id="node8" href="$classadore_1_1params_1_1APTacticalPlanner.html" title="abstract classs containing parameters to configure aspects and constraints of the tactical planner" alt="" coords="837,5,1067,244"/>
+</map>

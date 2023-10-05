@@ -1,0 +1,4 @@
+<map id="adore::params::APLongitudinalPlanner::stopAtRedLights_max_connection_length" name="adore::params::APLongitudinalPlanner::stopAtRedLights_max_connection_length">
+<area shape="rect" id="node1" title="stopAtRedLights_max_connection_length returns the maximum length for which clearance based on tcd sta..." alt="" coords="224,5,424,61"/>
+<area shape="rect" id="node2" href="$classadore_1_1fun_1_1AdhereToNextLimitLine.html#ab19455688801d0f63246b3a9b9d3ba94" title=" " alt="" coords="5,13,176,54"/>
+</map>

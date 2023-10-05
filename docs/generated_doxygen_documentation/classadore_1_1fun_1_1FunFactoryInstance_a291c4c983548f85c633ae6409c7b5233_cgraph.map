@@ -1,0 +1,4 @@
+<map id="adore::fun::FunFactoryInstance::init" name="adore::fun::FunFactoryInstance::init">
+<area shape="rect" id="node1" title="Initialize private members of funFactory." alt="" coords="5,5,209,47"/>
+<area shape="rect" id="node2" href="$classadore_1_1fun_1_1FunFactoryInstance.html#a0826e9a7ea3c70a3780115e6effbf746" title="Function to access singleton instance of the funFactory using magic static." alt="" coords="257,5,461,47"/>
+</map>

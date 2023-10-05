@@ -1,0 +1,7 @@
+digraph "adore::env::traffic::Participant"
+{
+ // LATEX_PDF_SIZE
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  Node1 [label="{adore::env::traffic\l::Participant\n|+ trackingID_\l+ v2xStationID_\l+ existance_certainty_\l+ observation_time_\l+ leftIndicatorOn_\l+ leftIndicator_certainty_\l+ rightIndicatorOn_\l+ rightIndicator_certainty_\l+ brakeLightsOn_\l+ brakeLight_certainty_\land 17 more...\l+ UNDEFINED\l+ RADAR\l+ LIDAR\l+ MONO_VIDEO\l+ STEREO_VISION\l+ SPERICAL_CAMERA\l+ NIGHT_VISION\l+ ULTRASONIC\l+ INDUCTIONLOOP\l+ PMD\l+ V2X_CAM\l+ V2X_CPM\l+ V2X_MCM\l+ SPECULATIVE\l|+ getTrackingID()\l+ getStationID()\l+ getExistanceCertainty()\l+ getObservationTime()\l+ getLeftIndicatorOn()\l+ getLeftIndicatorCertainty()\l+ getRightIndicatorOn()\l+ getRightIndicatorCertainty()\l+ getLowBeamOn()\l+ getLowBeamCertainty()\land 18 more...\l}",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black",tooltip="Struct for representing a participant in traffic."];
+}

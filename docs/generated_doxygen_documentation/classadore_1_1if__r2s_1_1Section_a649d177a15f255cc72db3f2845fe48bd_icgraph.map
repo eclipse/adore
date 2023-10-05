@@ -1,0 +1,8 @@
+<map id="adore::if_r2s::Section::geometry2function" name="adore::if_r2s::Section::geometry2function">
+<area shape="rect" id="node1" title="easy conversion from a coordinate vector to a LLinearPiecewiseFunction" alt="" coords="879,39,1025,80"/>
+<area shape="rect" id="node2" href="$classadore_1_1if__r2s_1_1Section.html#ac2a79bd477919d85ff70b4721939c0e7" title="add lane border to section, determine its valid range" alt="" coords="684,5,831,47"/>
+<area shape="rect" id="node3" href="$classadore_1_1if__r2s_1_1Section.html#aeb9ff1c7a938eda9bffc89888ee103aa" title="setter" alt="" coords="684,71,831,112"/>
+<area shape="rect" id="node4" href="$classadore_1_1if__r2s_1_1R2S2BorderBasedConverter.html#adebe8bbc518d9ca4d447230e3c4f900f" title=" " alt="" coords="463,71,636,112"/>
+<area shape="rect" id="node5" href="$classadore_1_1if__r2s_1_1R2S2BorderBasedConverter.html#a6d12e18c673154c8c16fad4895b691c2" title="actual conversion" alt="" coords="227,71,415,112"/>
+<area shape="rect" id="node6" href="$classadore_1_1if__r2s_1_1R2S2BorderBasedConverter.html#aee4fa475a46a509943dbc0c7e26e3b8d" title="convert to borders and get sectionmap with base data" alt="" coords="5,71,179,112"/>
+</map>

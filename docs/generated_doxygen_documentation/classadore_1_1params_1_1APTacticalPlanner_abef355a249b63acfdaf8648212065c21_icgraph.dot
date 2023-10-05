@@ -1,0 +1,12 @@
+digraph "adore::params::APTacticalPlanner::getMaxNavcostLoss"
+{
+ // LATEX_PDF_SIZE
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  rankdir="RL";
+  Node1 [label="adore::params::APTactical\lPlanner::getMaxNavcostLoss",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black",tooltip=" "];
+  Node1 -> Node2 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node2 [label="adore::apps::TrajectoryPlanner\lALC::computeTrajectory",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classadore_1_1apps_1_1TrajectoryPlannerALC.html#ac8684dc66c076b07b57f3bb67328314e",tooltip="update data, views and recompute maneuver"];
+  Node1 -> Node3 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node3 [label="adore::apps::TrajectoryPlanner\lLC::computeTrajectory",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classadore_1_1apps_1_1TrajectoryPlannerLC.html#accad9246ad8f7ab9c45b648c3a70f18a",tooltip="update data, views and recompute maneuver"];
+}

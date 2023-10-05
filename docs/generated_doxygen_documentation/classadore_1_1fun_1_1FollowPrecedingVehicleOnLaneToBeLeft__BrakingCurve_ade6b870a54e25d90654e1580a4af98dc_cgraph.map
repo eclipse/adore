@@ -1,0 +1,11 @@
+<map id="adore::fun::FollowPrecedingVehicleOnLaneToBeLeft_BrakingCurve::update" name="adore::fun::FollowPrecedingVehicleOnLaneToBeLeft_BrakingCurve::update">
+<area shape="rect" id="node1" title=" " alt="" coords="5,194,253,250"/>
+<area shape="rect" id="node2" href="$classadore_1_1fun_1_1FollowPrecedingVehicle__BreakingCurve.html#a91aa6a1f4ef079d2b8fd12cd673123a8" title=" " alt="" coords="301,201,507,243"/>
+<area shape="rect" id="node3" href="$classadore_1_1params_1_1APVehicle.html#ae446997786812ff17a5c3f6bfa575ce5" title="cog to front axle" alt="" coords="601,5,775,47"/>
+<area shape="rect" id="node4" href="$classadore_1_1params_1_1APVehicle.html#a5cc38023fb9f3142348dc9ac22402288" title="rear axle to cog" alt="" coords="601,71,775,112"/>
+<area shape="rect" id="node5" href="$classadore_1_1params_1_1APVehicle.html#aec64e74619601401d6d3d81ebf5fdacd" title="front axle to front border" alt="" coords="601,136,775,177"/>
+<area shape="rect" id="node6" href="$classadore_1_1params_1_1APTrajectoryGeneration.html#a936967cd56f49dba2525921b9160cb1f" title="cor to planning point: movement of planning point shall planned by the trajectory planner" alt="" coords="593,201,783,243"/>
+<area shape="rect" id="node7" href="$classadore_1_1params_1_1APTacticalPlanner.html#afd146a8937ab59aed9681f78bd3686f6" title=" " alt="" coords="555,267,821,323"/>
+<area shape="rect" id="node8" href="$classadore_1_1params_1_1APTacticalPlanner.html#a644e7c8339599b34357baf84281e8a5e" title=" " alt="" coords="600,348,776,389"/>
+<area shape="rect" id="node9" href="$classadore_1_1view_1_1ALane.html#a208cfea37af60e9939687035dfe9b962" title=" " alt="" coords="621,413,755,455"/>
+</map>

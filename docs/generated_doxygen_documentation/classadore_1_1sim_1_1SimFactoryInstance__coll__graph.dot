@@ -1,0 +1,9 @@
+digraph "adore::sim::SimFactoryInstance"
+{
+ // LATEX_PDF_SIZE
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  Node1 [label="{adore::sim::SimFactoryInstance\n||+ get()\l+ init()\l- SimFactoryInstance()\l- ~SimFactoryInstance()\l- SimFactoryInstance()\l- operator=()\l- SimFactoryInstance()\l- operator=()\l- getInstance()\l}",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black",tooltip="Utility class to simplify factory access."];
+  Node2 -> Node1 [color="grey25",fontsize="10",style="solid",label=" -factory_" ,arrowhead="odiamond",fontname="Helvetica"];
+  Node2 [label="{adore::sim::AFactory\n||+ getMotionCommandReader()\l+ getGearSelectionCommandReader()\l+ getIndicatorCommandReader()\l+ getSimulationTimeReader()\l+ getSimulationTimeWriter()\l+ getVehicleMotionStateWriter()\l+ getOdometryEstimatedVehicle\lStateWriter()\l+ getLocalizationEstimated\lVehicleStateWriter()\l+ getVehicleMotionStateReader()\l+ getVehicleExtendedStateWriter()\land 15 more...\l}",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classadore_1_1sim_1_1AFactory.html",tooltip="abstract factory for adore::sim communication"];
+}

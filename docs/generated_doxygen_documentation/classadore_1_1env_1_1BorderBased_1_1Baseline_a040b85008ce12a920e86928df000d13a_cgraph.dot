@@ -1,0 +1,33 @@
+digraph "adore::env::BorderBased::Baseline::defineOffset"
+{
+ // LATEX_PDF_SIZE
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  rankdir="LR";
+  Node1 [label="adore::env::BorderBased\l::Baseline::defineOffset",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black",tooltip="define a function, which represents the offset from baseline to the neighboring function"];
+  Node1 -> Node2 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node2 [label="adore::env::BorderBased\l::BorderSequence::beginLines",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classadore_1_1env_1_1BorderBased_1_1BorderSequence.html#a2ebe7f94c4bdaea6da29e65db454e549",tooltip=" "];
+  Node2 -> Node3 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node3 [label="adore::env::BorderBased\l::BorderSequence::LineIterator\l::begin",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$structadore_1_1env_1_1BorderBased_1_1BorderSequence_1_1LineIterator.html#aad784e3b2d13d28c0cf522361aae57da",tooltip=" "];
+  Node3 -> Node4 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node4 [label="adore::env::BorderBased\l::BorderSequence::LineIterator\l::LineIterator",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$structadore_1_1env_1_1BorderBased_1_1BorderSequence_1_1LineIterator.html#abf0372669207a2cc0fa166e02ac6bd71",tooltip=" "];
+  Node1 -> Node5 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node5 [label="adore::env::BorderBased\l::BorderSequence::endLines",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classadore_1_1env_1_1BorderBased_1_1BorderSequence.html#ac27723bf70cad9ff7280172f22d6c9d2",tooltip=" "];
+  Node5 -> Node6 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node6 [label="adore::env::BorderBased\l::BorderSequence::LineIterator::end",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$structadore_1_1env_1_1BorderBased_1_1BorderSequence_1_1LineIterator.html#ab9473c665f4b94598fbacf2c25eb04c7",tooltip=" "];
+  Node6 -> Node4 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node1 -> Node7 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node7 [label="adore::mad::LLinearPiecewise\lFunctionM::getData",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classadore_1_1mad_1_1LLinearPiecewiseFunctionM.html#aa94d90c8643e2d6792f8594f3d666503",tooltip=" "];
+  Node1 -> Node8 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node8 [label="adore::env::BorderBased\l::BorderSequence::LineIterator\l::getValue",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$structadore_1_1env_1_1BorderBased_1_1BorderSequence_1_1LineIterator.html#a938a2a2b09c4dc55357651fc0ea0a5bb",tooltip=" "];
+  Node8 -> Node9 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node9 [label="adore::env::BorderBased\l::BorderSequence::LineIterator\l::getValue_gap",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$structadore_1_1env_1_1BorderBased_1_1BorderSequence_1_1LineIterator.html#a411d7863fb7a784a14f7f3f46c5fc469",tooltip=" "];
+  Node8 -> Node10 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node10 [label="adore::env::BorderBased\l::BorderSequence::LineIterator\l::getValue_nopath",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$structadore_1_1env_1_1BorderBased_1_1BorderSequence_1_1LineIterator.html#a13f1b995c9f2d1a0fc61301acf6f573d",tooltip=" "];
+  Node8 -> Node11 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node11 [label="adore::env::BorderBased\l::BorderSequence::LineIterator\l::getValue_normal",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$structadore_1_1env_1_1BorderBased_1_1BorderSequence_1_1LineIterator.html#aaf623c99302857d3ebc2e7359a73fc8b",tooltip=" "];
+  Node1 -> Node12 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node12 [label="adore::mad::intersectLines",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$namespaceadore_1_1mad.html#a00aff4dd1b0bfd995fd30c187436d86e",tooltip=" "];
+  Node1 -> Node13 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node13 [label="adore::mad::LLinearPiecewise\lFunctionM::setData",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classadore_1_1mad_1_1LLinearPiecewiseFunctionM.html#a1b396f230375de5238cb283f779310af",tooltip=" "];
+}

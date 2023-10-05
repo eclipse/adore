@@ -1,0 +1,11 @@
+digraph "/home/fascar/temp/adore/libadore/libadore/adore/fun/test" {
+  compound=true
+  node [ fontsize="10", fontname="Helvetica"];
+  edge [ labelfontsize="10", labelfontname="Helvetica"];
+  subgraph clusterdir_649591276c0eecc8bf797bbe7897dd04 {
+    graph [ bgcolor="#ddddee", pencolor="black", label="fun" fontname="Helvetica", fontsize="10", URL="dir_649591276c0eecc8bf797bbe7897dd04.html"]
+  dir_1c9e2ebb94a392b955ee65bcbee8dfb9 [shape=box label="include" fillcolor="white" style="filled" color="red" URL="dir_1c9e2ebb94a392b955ee65bcbee8dfb9.html"];
+  dir_7a42b3e77ae265225db1ef471e650b43 [shape=box, label="test", style="filled", fillcolor="#eeeeff", pencolor="black", URL="dir_7a42b3e77ae265225db1ef471e650b43.html"];
+  }
+  dir_7a42b3e77ae265225db1ef471e650b43->dir_1c9e2ebb94a392b955ee65bcbee8dfb9 [headlabel="2", labeldistance=1.5 headhref="dir_000080_000049.html"];
+}

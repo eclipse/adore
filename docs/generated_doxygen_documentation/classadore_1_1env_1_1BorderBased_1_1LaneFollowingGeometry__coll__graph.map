@@ -1,0 +1,12 @@
+<map id="adore::env::BorderBased::LaneFollowingGeometry&lt; PolyFitPoints, PolyEvaluatePoints &gt;" name="adore::env::BorderBased::LaneFollowingGeometry&lt; PolyFitPoints, PolyEvaluatePoints &gt;">
+<area shape="rect" id="node1" title="A class with a geometry description of the current lane." alt="" coords="156,1461,403,1861"/>
+<area shape="rect" id="node2" href="$classadore_1_1env_1_1BorderBased_1_1BorderAccumulator.html" title="This class collects a sequence of borders, according to chosen BorderAccumulationStrategy." alt="" coords="5,1153,172,1377"/>
+<area shape="rect" id="node3" href="$classadore_1_1mad_1_1LLinearPiecewiseFunctionM.html" title=" " alt="" coords="381,778,578,1031"/>
+<area shape="rect" id="node6" href="$classadore_1_1mad_1_1LLinearPiecewiseFunctionM_1_1OneDimension.html" title=" " alt="" coords="624,1160,847,1369"/>
+<area shape="rect" id="node8" href="$structadore_1_1env_1_1BorderBased_1_1Border.html" title="The border struct contains data of the smallest." alt="" coords="196,1145,363,1384"/>
+<area shape="rect" id="node4" href="$classadore_1_1mad_1_1AScalarToN.html" title=" " alt="" coords="397,425,562,635"/>
+<area shape="rect" id="node5" href="$classadore_1_1mad_1_1ALFunction.html" title=" " alt="" coords="386,5,573,347"/>
+<area shape="rect" id="node7" href="$classadore_1_1mad_1_1ALFunction.html" title=" " alt="" coords="642,741,829,1068"/>
+<area shape="rect" id="node9" href="$structadore_1_1env_1_1BorderBased_1_1BorderID.html" title="This struct identifies a Border by the coordinates of the starting and the end point." alt="" coords="172,763,347,1046"/>
+<area shape="rect" id="node10" href="$structadore_1_1env_1_1BorderBased_1_1Coordinate.html" title="This struct represents 3&#45;dimensional coordines." alt="" coords="176,396,343,664"/>
+</map>

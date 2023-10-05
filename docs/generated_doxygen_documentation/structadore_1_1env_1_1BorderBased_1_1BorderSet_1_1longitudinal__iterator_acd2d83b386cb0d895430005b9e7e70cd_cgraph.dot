@@ -1,0 +1,12 @@
+digraph "adore::env::BorderBased::BorderSet::longitudinal_iterator::latest"
+{
+ // LATEX_PDF_SIZE
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  rankdir="LR";
+  Node1 [label="adore::env::BorderBased\l::BorderSet::longitudinal\l_iterator::latest",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black",tooltip=" "];
+  Node1 -> Node2 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node2 [label="adore::env::BorderBased\l::BorderSet::longitudinal\l_iterator::operator++",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$structadore_1_1env_1_1BorderBased_1_1BorderSet_1_1longitudinal__iterator.html#a675433238c98920c428f56162e0ce401",tooltip=" "];
+  Node2 -> Node3 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node3 [label="adore::env::BorderBased\l::BorderSet::getSuccessors",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classadore_1_1env_1_1BorderBased_1_1BorderSet.html#a4a75adfc507696182edc2514b86f5d24",tooltip="get an interator pair for all borders which follow after b"];
+}

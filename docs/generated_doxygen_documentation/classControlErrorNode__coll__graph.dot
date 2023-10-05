@@ -1,0 +1,7 @@
+digraph "ControlErrorNode"
+{
+ // LATEX_PDF_SIZE
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  Node1 [label="{ControlErrorNode\n|+ terminated_\l+ mode_\l+ time_\l+ activation_time_\l+ error_mode_\l+ subscriber_odom_\l+ subscriber_steering_\l+ subscriber_acceleration_\l+ publisher_steering_\l+ publisher_acceleration_\l+ publisher_propositions_\l|+ ControlErrorNode()\l+ init()\l+ receive_steering()\l+ receive_acceleration()\l+ receive_odom()\l}",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black",tooltip=" "];
+}

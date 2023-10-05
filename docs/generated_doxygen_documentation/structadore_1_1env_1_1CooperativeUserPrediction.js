@@ -1,0 +1,27 @@
+var structadore_1_1env_1_1CooperativeUserPrediction =
+[
+    [ "clear", "structadore_1_1env_1_1CooperativeUserPrediction.html#a923980c50f02193ae38a7fd54086d9e2", null ],
+    [ "setId", "structadore_1_1env_1_1CooperativeUserPrediction.html#a98858501efa5ef0295c88c5de962069c", null ],
+    [ "setLanePosition", "structadore_1_1env_1_1CooperativeUserPrediction.html#a1c2e3b2cf8624d1094ff8daf44a0b1b4", null ],
+    [ "setTargetAutomationLevel", "structadore_1_1env_1_1CooperativeUserPrediction.html#a1a97311fb0fd1d3a34e1bded4f178f9d", null ],
+    [ "setToletatedDistanceAhead", "structadore_1_1env_1_1CooperativeUserPrediction.html#ad2293d91982ed3f359b3df73d3b7a640", null ],
+    [ "setToletatedDistanceBehind", "structadore_1_1env_1_1CooperativeUserPrediction.html#abd46f45cbea619b9ed68d742e3fe7da2", null ],
+    [ "setVehicleLength", "structadore_1_1env_1_1CooperativeUserPrediction.html#ae3a448878083a71a0467f13f42014c6c", null ],
+    [ "setVehicleWidth", "structadore_1_1env_1_1CooperativeUserPrediction.html#a3510e804ea0f876f1edaebcead72d8d0", null ],
+    [ "a", "structadore_1_1env_1_1CooperativeUserPrediction.html#a0a38cca1e783bebfe083a010206799ce", null ],
+    [ "communicationDelay", "structadore_1_1env_1_1CooperativeUserPrediction.html#ad7bd5c508be701e34b6a1110f12f30de", null ],
+    [ "currentTrajectory", "structadore_1_1env_1_1CooperativeUserPrediction.html#a1094ed914505fc60e080a1c5ab971f81", null ],
+    [ "id", "structadore_1_1env_1_1CooperativeUserPrediction.html#a849d3b18bd74d13f987cd4589ecfaf60", null ],
+    [ "lane_position", "structadore_1_1env_1_1CooperativeUserPrediction.html#a45ae90bce2cf1bca9dac0fc1157b570a", null ],
+    [ "psi", "structadore_1_1env_1_1CooperativeUserPrediction.html#a534533eb01c62ef9c808eb09eeb4c4c5", null ],
+    [ "t0", "structadore_1_1env_1_1CooperativeUserPrediction.html#ae14e08f8bb7e54b001e8bbd180294ce3", null ],
+    [ "t1", "structadore_1_1env_1_1CooperativeUserPrediction.html#a5e983928a76503fd429b9379fdd6374b", null ],
+    [ "target_automation_level", "structadore_1_1env_1_1CooperativeUserPrediction.html#a70d97d1656d7be3b000100a3c9ca145d", null ],
+    [ "toletated_distance_ahead", "structadore_1_1env_1_1CooperativeUserPrediction.html#a8851c5685f9a0111d7002c53c5d1bcb3", null ],
+    [ "toletated_distance_behind", "structadore_1_1env_1_1CooperativeUserPrediction.html#a5991993055794ca7e9c8eafee527d36f", null ],
+    [ "v", "structadore_1_1env_1_1CooperativeUserPrediction.html#a06a9a49e0417f29b3731ffaf43e242b2", null ],
+    [ "vehicleLength", "structadore_1_1env_1_1CooperativeUserPrediction.html#a5ccf4fef179e73567f58668d443d9a15", null ],
+    [ "vehicleWidth", "structadore_1_1env_1_1CooperativeUserPrediction.html#a8e2093ed29ece888066934ac27a013db", null ],
+    [ "x", "structadore_1_1env_1_1CooperativeUserPrediction.html#ae966b7389ff4641b938faaba44bda80c", null ],
+    [ "y", "structadore_1_1env_1_1CooperativeUserPrediction.html#af2a29769b6d049c603352f9350443c30", null ]
+];

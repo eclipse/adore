@@ -1,0 +1,48 @@
+digraph "adore::env::BorderBased::LaneChangeBorders::isLCDirectionLeft"
+{
+ // LATEX_PDF_SIZE
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  rankdir="RL";
+  Node1 [label="adore::env::BorderBased\l::LaneChangeBorders::isLCDirectionLeft",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black",tooltip=" "];
+  Node1 -> Node2 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node2 [label="adore::env::BorderBased\l::IndependentLaneChangeGeometry\l::collectNavigationCostBorders",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classadore_1_1env_1_1BorderBased_1_1IndependentLaneChangeGeometry.html#a7977e6eddecc6b3dcc251e0a6f76748a",tooltip="collects points describing the navigation cost reference borders"];
+  Node2 -> Node3 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node3 [label="adore::env::BorderBased\l::IndependentLaneChangeGeometry\l::update",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classadore_1_1env_1_1BorderBased_1_1IndependentLaneChangeGeometry.html#a821bde3f11a80bca977616edaff33587",tooltip="constructs a lane change geometry if a gate is available"];
+  Node3 -> Node4 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node4 [label="adore::apps::LaneViewProvider::run",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classadore_1_1apps_1_1LaneViewProvider.html#a10c08893d16421f195ad2a597bfea8f8",tooltip="update data, views and recompute maneuver"];
+  Node4 -> Node5 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node5 [label="adore::if_ROS::LVProvider\lNode::init",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classadore_1_1if__ROS_1_1LVProviderNode.html#ad35fdbfdaef8f2f89279dc08758bef3a",tooltip=" "];
+  Node3 -> Node6 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node6 [label="TEST_CASE",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$test__independentlanechangegeometry_8cpp.html#a48baafb16e67cf190c9ac4a4a55d1c79",tooltip=" "];
+  Node1 -> Node7 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node7 [label="adore::env::BorderBased\l::IndependentLaneChangeGeometry\l::collectSeparatingBorders",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classadore_1_1env_1_1BorderBased_1_1IndependentLaneChangeGeometry.html#a7713e6bca86dbc98e370e6abe0bce5f8",tooltip="collects points describing the inner, separating border The separating borders are defined as a seque..."];
+  Node7 -> Node8 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node8 [label="TEST_CASE",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$test__independentlanechangegeometry_8cpp.html#aa56a0bce9f9e760f59ceea11ad085348",tooltip=" "];
+  Node7 -> Node3 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node1 -> Node9 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node9 [label="adore::env::BorderBased\l::IndependentLaneChangeGeometry\l::collectSourceOuterBorders",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classadore_1_1env_1_1BorderBased_1_1IndependentLaneChangeGeometry.html#ac25df1df647c1078f125c16a8fa47d0d",tooltip="collects points describing the source-side outer border"];
+  Node9 -> Node8 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node9 -> Node3 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node1 -> Node10 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node10 [label="adore::env::BorderBased\l::IndependentLaneChangeGeometry\l::collectTargetOuterBorders",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classadore_1_1env_1_1BorderBased_1_1IndependentLaneChangeGeometry.html#ab8968d80018282d9f06c57ac0864725a",tooltip="collects points describing the target-side outer border"];
+  Node10 -> Node8 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node10 -> Node3 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node1 -> Node11 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node11 [label="adore::env::BorderBased\l::IndependentLaneChangeGeometry\l::computeGateInterval",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classadore_1_1env_1_1BorderBased_1_1IndependentLaneChangeGeometry.html#a2e82c7945249df7b116d45e1f3fec852",tooltip="compute gate open and close in the domain of the baseline function"];
+  Node1 -> Node12 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node12 [label="adore::env::BorderBased\l::IndependentLaneChangeGeometry\l::computeGateInterval_v2",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classadore_1_1env_1_1BorderBased_1_1IndependentLaneChangeGeometry.html#af78351ed854f3408beeaba6c2b1926b2",tooltip="compute gate open and close in the domain of the baseline function. this version uses offset function..."];
+  Node12 -> Node3 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node1 -> Node13 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node13 [label="adore::apps::LaneViewProvider\l::copy_ilcg",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classadore_1_1apps_1_1LaneViewProvider.html#a35ea0c3c39db670509e1427ee5203924",tooltip=" "];
+  Node13 -> Node4 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node1 -> Node14 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node14 [label="adore::env::BorderBased\l::IndependentLaneChangeGeometry\l::getLeftOffsetFct",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classadore_1_1env_1_1BorderBased_1_1IndependentLaneChangeGeometry.html#a2c64a53494c7d6ec2f479dd2ad13f0d9",tooltip=" "];
+  Node1 -> Node15 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node15 [label="adore::env::BorderBased\l::IndependentLaneChangeGeometry\l::getMaximumTargetLaneWidth",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classadore_1_1env_1_1BorderBased_1_1IndependentLaneChangeGeometry.html#a6f590655c427f34c46079955c6648f6d",tooltip="returns the maximum width of the lane change"];
+  Node15 -> Node16 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node16 [label="adore::env::BorderBased\l::IndependentLaneChangeGeometry\l::sanityTest",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classadore_1_1env_1_1BorderBased_1_1IndependentLaneChangeGeometry.html#a621026b867773d614f34ac50d7d7037f",tooltip="a set of tests making sure that lane change geometry is drivable in real conditions"];
+  Node16 -> Node3 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node1 -> Node17 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node17 [label="adore::env::BorderBased\l::IndependentLaneChangeGeometry\l::getRightOffsetFct",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classadore_1_1env_1_1BorderBased_1_1IndependentLaneChangeGeometry.html#a35f1d4a03256bf91df3923267931a4e1",tooltip=" "];
+}

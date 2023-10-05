@@ -1,0 +1,4 @@
+<map id="adore::env::BorderBased::BorderSet::getIndexableNeighbors" name="adore::env::BorderBased::BorderSet::getIndexableNeighbors">
+<area shape="rect" id="node1" title="returns the given border and all parallel borders with a changeable type, ordered from leftmost to ri..." alt="" coords="283,5,512,47"/>
+<area shape="rect" id="node2" href="$classadore_1_1env_1_1MapBorderManagement.html#abeff1a09f45801fbc4982f6b3e8d3b20" title="change border type based on BorderTypeChangeProfile struct" alt="" coords="5,5,235,47"/>
+</map>

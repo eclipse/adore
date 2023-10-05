@@ -1,0 +1,11 @@
+<map id="adore::env::BorderBased::Baseline::update" name="adore::env::BorderBased::Baseline::update">
+<area shape="rect" id="node1" title="compute fit for borderSequence" alt="" coords="5,151,172,193"/>
+<area shape="rect" id="node2" href="$namespaceadore_1_1mad.html#a927f4883d4edcec4dcfd9bb1f09d4f62" title=" " alt="" coords="257,5,387,32"/>
+<area shape="rect" id="node5" href="$classadore_1_1env_1_1BorderBased_1_1Baseline.html#a7ed18c020f4232f9c7432863dd718ef7" title=" " alt="" coords="220,57,424,98"/>
+<area shape="rect" id="node6" href="$classadore_1_1mad_1_1LLinearPiecewiseFunctionM.html#aa94d90c8643e2d6792f8594f3d666503" title=" " alt="" coords="223,122,421,163"/>
+<area shape="rect" id="node7" href="$classadore_1_1env_1_1BorderBased_1_1BorderSequence.html#a95f9f6e36b133a67324208d9c2905737" title="returns the total lenght of all contained borders" alt="" coords="472,249,663,290"/>
+<area shape="rect" id="node8" href="$namespaceadore_1_1mad.html#a7bfd7c9a7c5816ef00e7b52d20957690" title=" " alt="" coords="251,188,393,215"/>
+<area shape="rect" id="node9" href="$classadore_1_1env_1_1BorderBased_1_1BorderSequence.html#a12e97fcc17d244067b00e64e8e6e950e" title="step through border sequence and sample the values along the borders" alt="" coords="234,290,410,331"/>
+<area shape="rect" id="node3" href="$namespaceadore_1_1mad.html#a618a8842fed7b9375957b1e393c58492" title=" " alt="" coords="507,5,627,32"/>
+<area shape="rect" id="node4" href="$namespaceadore_1_1mad.html#ac61b79c007d1859f93a10c04272095a1" title=" " alt="" coords="509,172,625,199"/>
+</map>

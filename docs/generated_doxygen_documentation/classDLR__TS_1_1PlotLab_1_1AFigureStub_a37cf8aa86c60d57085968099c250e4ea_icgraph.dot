@@ -1,0 +1,31 @@
+digraph "DLR_TS::PlotLab::AFigureStub::setXLabel"
+{
+ // LATEX_PDF_SIZE
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  rankdir="RL";
+  Node1 [label="DLR_TS::PlotLab::AFigure\lStub::setXLabel",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black",tooltip=" "];
+  Node1 -> Node2 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node2 [label="Dashboard::Dashboard",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classDashboard.html#a0e6f5adac5375dd723e98c5e3a2ebb64",tooltip=" "];
+  Node1 -> Node3 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node3 [label="adore::apps::TestMRMPlanner\l::init_plot",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classadore_1_1apps_1_1TestMRMPlanner.html#aa8c7867be2e16ff0cfec0992e8a7e022",tooltip=" "];
+  Node3 -> Node4 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node4 [label="adore::apps::TestMRMPlanner\l::TestMRMPlanner",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classadore_1_1apps_1_1TestMRMPlanner.html#a74d9df0af81169404306abb78046c979",tooltip=" "];
+  Node1 -> Node5 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node5 [label="initFigures",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$test__lc__trajectory__planner__node_8cpp.html#a7ba9c5513fd73e410f953f7af789525b",tooltip=" "];
+  Node5 -> Node6 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node6 [label="main",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$test__lc__trajectory__planner__node_8cpp.html#a3c04138a5bfe5d72780bb7e82a18e627",tooltip=" "];
+  Node1 -> Node7 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node7 [label="adore::apps::PlanningDetails\lPlotter::initialize_plot",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classadore_1_1apps_1_1PlanningDetailsPlotter.html#aa3e1bf0ae1e38264086e41afd083b726",tooltip=" "];
+  Node7 -> Node8 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node8 [label="adore::apps::PlanningDetails\lPlotter::PlanningDetailsPlotter",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classadore_1_1apps_1_1PlanningDetailsPlotter.html#a593b11a7c17134cc002bfb66e3bc629f",tooltip=" "];
+  Node1 -> Node9 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node9 [label="main",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$plot__scalar__node_8cpp.html#a3c04138a5bfe5d72780bb7e82a18e627",tooltip=" "];
+  Node1 -> Node10 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node10 [label="Dashboard::plot_spr",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classDashboard.html#a706267b562854b57076eefada411205f",tooltip=" "];
+  Node10 -> Node11 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node11 [label="Dashboard::receive_spr",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classDashboard.html#aa255608d58054f68cf8370f12de688bd",tooltip=" "];
+  Node11 -> Node2 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node1 -> Node12 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node12 [label="PlotLongControlInfo\l::PlotLongControlInfo",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classPlotLongControlInfo.html#a3d3e1904f2495d7a53475bf51667ad96",tooltip=" "];
+}

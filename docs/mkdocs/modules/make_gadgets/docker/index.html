@@ -1,0 +1,950 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+      
+      
+      <link rel="icon" href="../../../../img/favicon.ico">
+      <meta name="generator" content="mkdocs-1.5.3, mkdocs-material-9.4.3">
+    
+    
+      
+        <title>Make Gadgets docker Makefile - ADORe Documentation</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.79e020e9.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    <body dir="ltr">
+  
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&"object"==typeof palette.color)for(var key of Object.keys(palette.color))document.body.setAttribute("data-md-color-"+key,palette.color[key])</script>
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#make-gadgets-docker-makefile" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../../.." title="ADORe Documentation" class="md-header__button md-logo" aria-label="ADORe Documentation" data-md-component="logo">
+      
+  <img src="../../../../img/logo.png" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            ADORe Documentation
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Make Gadgets docker Makefile
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../.." title="ADORe Documentation" class="md-nav__button md-logo" aria-label="ADORe Documentation" data-md-component="logo">
+      
+  <img src="../../../../img/logo.png" alt="logo">
+
+    </a>
+    ADORe Documentation
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../about_adore/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Home
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../quick_start/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Quick Start
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Setup
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            Setup
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../setup/system_requirements/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    System Requirements
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../setup/prerequisites/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Prerequisites
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../setup/installing_docker/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Installing Docker
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../setup/getting_started/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Getting Started
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Basic Usage
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            Basic Usage
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../basic_usage/first_scenario/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Running Your First Scenario
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Technical Reference Manual
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            Technical Reference Manual
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../system_and_development/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    System and Development
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../control_system/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Control System
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../interfaces/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Interfaces
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../system_and_development/doxygen_documentation/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Doxygen Documentation
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Module Quick Reference
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../questions_and_answers/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Questions and Answers
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../problems_and_solutions/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Problems and Solutions
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../getting_help/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Getting Help
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../adore_status/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    ADORe Status
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../contact/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Contact
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#docker-tools-makefile" class="md-nav__link">
+    Docker tools Makefile
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#docker-image-cachersh" class="md-nav__link">
+    docker-image-cacher.sh
+  </a>
+  
+    <nav class="md-nav" aria-label="docker-image-cacher.sh">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#image-discovery" class="md-nav__link">
+    Image Discovery
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#printing" class="md-nav__link">
+    Printing
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#fetching" class="md-nav__link">
+    Fetching
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#savingcaching" class="md-nav__link">
+    Saving/Caching
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#loading" class="md-nav__link">
+    Loading
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#help" class="md-nav__link">
+    Help
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#use-cases" class="md-nav__link">
+    Use Cases
+  </a>
+  
+    <nav class="md-nav" aria-label="Use Cases">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#scrape-your-home-directory-for-docker-images-fetch-them-and-save-them" class="md-nav__link">
+    Scrape your home directory for docker images, fetch them, and save them
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#save-all-docker-images-in-the-local-registry-to-the-default-cache-location" class="md-nav__link">
+    Save all docker images in the local registry to the default cache location
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#load-docker-images-from-the-default-cache-location-into-the-local-registry" class="md-nav__link">
+    Load docker images from the default cache location into the local registry
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#fetch-and-save-the-docker-image-ubuntulatest" class="md-nav__link">
+    Fetch and save the docker image 'ubuntu:latest'
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#fetch-and-save-the-docker-image-ubuntulatest-and-alpinelatest" class="md-nav__link">
+    Fetch and save the docker image 'ubuntu:latest' and 'alpine:latest'
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+<h1 id="make-gadgets-docker-makefile">Make Gadgets docker Makefile</h1>
+<p>This directory contains a Makefile with docker helper targets.  They can be
+imported to extend your makefile or called directly.</p>
+<h2 id="docker-tools-makefile">Docker tools Makefile</h2>
+<p>This directory contains a Makefile that enhance vanilla docker with make.</p>
+<p>The Makefile also provides several practical targets that wrap the functionality of the docker-image-cacher.sh tool
+provided in this project.</p>
+<p>To consume the provided targets/recipes from the project you can directly import the desired module to your Makefile 
+such as follows: </p>
+<pre><code class="language-make">include make_gadgets/docker/docker-tools.mk
+</code></pre>
+<p>To include the docker-image-cacher target/recipes add the following to the top of your Makefile:</p>
+<pre><code class="language-bash">include make_gadgets/docker/docker-image-cacher.mk
+</code></pre>
+<p>You can directly call the provided targets/recipes by calling make directly on this directory:</p>
+<pre><code class="language-bash">cd make_gadgets/docker
+make docker_save
+...
+make docker_load
+...
+make docker_orbital_cannon
+</code></pre>
+<h2 id="docker-image-cachersh">docker-image-cacher.sh</h2>
+<p>The docker-image-cacher.sh is a utility script for batch caching/saving and loading docker images to archives with the
+goal of saving network resources and quotas.</p>
+<p>There are several major functions this script offers namely fetching, saving, loading, and printing.  All of these
+will be discussed in the coming sections.</p>
+<h3 id="image-discovery">Image Discovery</h3>
+<p>The docker-image-cacher.sh uses a very simple strategy for discovering docker images to fetch and cache:
+1. The image search path is searched and scraped recursively for Dockerfiles containing 'from <repository:tag>'
+- If no search path is provided then the docker image list is assumed from the docker local registry e.g., everything in 'docker image ls'
+- If the local registry is empty then only images provided in the inclusion list are added
+2. All images provided in the inclusion list are appended to the found images
+3. All images from the exclusion list are removed from the found images</p>
+<p>Image discovery is used for fetching, caching/saving, and printing. </p>
+<h3 id="printing">Printing</h3>
+<p>you can call docker-image-cacher.sh with the -p or --print flag to perform a print operation.</p>
+<p>The print operation or action simply prints the docker image list that will be fetched and cached/saved with their respective
+operations.</p>
+<p>Printing preempts all other actions, the list of docker images will be printed and the program will exit.</p>
+<h3 id="fetching">Fetching</h3>
+<p>You can call docker-image-cacher.sh with the -f or --fetch flag to perform a fetch operation.</p>
+<p>There are two ways this can be done. The fist way provides a docker image search path as a basis
+to collect a list of images to fetch as in the following example:</p>
+<pre><code class="language-bash">bash docker-image-cacher.sh --docker-image-search-path &quot;&lt;some search path&gt;&quot; --fetch
+</code></pre>
+<p>All Dockerfiles in the search path provided will be recursively searched for the docker key word "FROM". Any image 
+that is referenced by "FROM IMAGE:TAG" in any Dockerfile within the search path will be fetched with docker using 
+the docker pull command.</p>
+<p>The second way to fetch docker images is to provide no search path such as follows:</p>
+<pre><code class="language-bash">bash docker-image-cacher.sh --fetch
+</code></pre>
+<p>This will effectively update every image already loaded into docker on your host.</p>
+<h3 id="savingcaching">Saving/Caching</h3>
+<p>Saving can be called in several ways.  The first way is providing a cache directory and search path:</p>
+<pre><code class="language-bash">bash docker-image-cacher.sh --docker-image-search-path &quot;&lt;some search path&gt;&quot; --docker-image-cache-directory &quot;&lt;cache dir to save images to&gt;&quot; --save
+</code></pre>
+<p>resulting in every discovered docker image will be saved into the default docker image cache directory as an archive 
+for each image. </p>
+<p>Another way save can be called is providing a search path but no cache directory:</p>
+<pre><code class="language-bash">bash docker-image-cacher.sh --docker-image-search-path &quot;&lt;some search path&gt;&quot; --save
+</code></pre>
+<p>The image archives will be saved to the default cache path.</p>
+<p>Another way to call save is without a search path such as follows:</p>
+<pre><code class="language-bash">bash docker-image-cacher.sh --save
+</code></pre>
+<p>Every image in the docker registry will be saved to disk as a tar archive into
+the default docker image cache directory.</p>
+<p>In order for save to work all docker images in the image list must exist in the docker registry. An image can be added
+to the registry in multiple ways:
+- Calling 'docker build' on a Dockerfile containing an image reference will pull it to the local registry
+- Calling 'docker pull <repository:tag>'
+- Using docker-image-cacher.sh with the --fetch flag to batch pull a list of images.</p>
+<h3 id="loading">Loading</h3>
+<p>All images that are cached as tar archives in the default docker image cache directory will be loaded into the docker registry.</p>
+<pre><code class="language-bash">bash docker-image-cacher.sh --load
+</code></pre>
+<p>You can also load all docker images from a specific cache directory:</p>
+<pre><code class="language-bash">bash docker-image-cacher.sh --docker-image-cache-directory &quot;&lt;some cache dir&gt;&quot; --load
+</code></pre>
+<h3 id="help">Help</h3>
+<p>To view more documentation on this tool you can run the help flag:</p>
+<pre><code class="language-bash">bash docker-image-cacher.sh --help
+</code></pre>
+<h2 id="use-cases">Use Cases</h2>
+<p>This section will give a few practical use cases for the docker-image-cacher.sh tool</p>
+<h3 id="scrape-your-home-directory-for-docker-images-fetch-them-and-save-them">Scrape your home directory for docker images, fetch them, and save them</h3>
+<pre><code class="language-bash">bash docker-image-cacher.sh -docker-image-search-path &quot;${HOME}&quot; --fetch --save
+</code></pre>
+<p>Your home directory must have at least one Dockerfile somewhere in the directory tree.</p>
+<h3 id="save-all-docker-images-in-the-local-registry-to-the-default-cache-location">Save all docker images in the local registry to the default cache location</h3>
+<pre><code class="language-bash">bash docker-image-cacher.sh --save
+</code></pre>
+<h3 id="load-docker-images-from-the-default-cache-location-into-the-local-registry">Load docker images from the default cache location into the local registry</h3>
+<pre><code class="language-bash">bash docker-image-cacher.sh --load
+</code></pre>
+<h3 id="fetch-and-save-the-docker-image-ubuntulatest">Fetch and save the docker image 'ubuntu:latest'</h3>
+<pre><code class="language-bash">bash docker-image-cacher.sh --save --fetch -i 'ubuntu:latest'
+</code></pre>
+<p>and later 'ubuntu:latest' can be loaded from disk back into the local registry with:</p>
+<pre><code class="language-bash">bash docker-image-cacher.sh --load 
+</code></pre>
+<h3 id="fetch-and-save-the-docker-image-ubuntulatest-and-alpinelatest">Fetch and save the docker image 'ubuntu:latest' and 'alpine:latest'</h3>
+<pre><code class="language-bash">bash docker-image-cacher.sh --save --fetch -i 'ubuntu:latest alpine:latest'
+</code></pre>
+<p>and later both 'ubuntu:latest' and 'alpine:latest' can be loaded from disk back into the local registry with:</p>
+<pre><code class="language-bash">bash docker-image-cacher.sh --load 
+</code></pre>
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    <script id="__config" type="application/json">{"base": "../../..", "features": ["content.code.copy"], "search": "../../../assets/javascripts/workers/search.a264c092.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    
+    
+      <script src="../../../assets/javascripts/bundle.6eac0284.min.js"></script>
+      
+    
+  </body>
+</html>

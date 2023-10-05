@@ -1,0 +1,14 @@
+<map id="adore::env::BorderBased::BorderSet::deepBorderCopy" name="adore::env::BorderBased::BorderSet::deepBorderCopy">
+<area shape="rect" id="node1" title="generate a complete copy including copies of objects the pointers point to" alt="" coords="1321,71,1515,112"/>
+<area shape="rect" id="node2" href="$classadore_1_1env_1_1MapBorderManagement.html#a25784909ff107901436e24176dae605e" title="initialization of internal sets" alt="" coords="767,41,996,83"/>
+<area shape="rect" id="node7" href="$classadore_1_1env_1_1MapBorderManagement.html#ac6242acbd87511c8b40182aa60cd7489" title="initialization of global set" alt="" coords="1044,100,1273,141"/>
+<area shape="rect" id="node3" href="$classadore_1_1env_1_1MapBorderManagement.html#a13b26d2d811b62a087fc50faf0e4c0b9" title="initialization routine with base map" alt="" coords="489,41,719,83"/>
+<area shape="rect" id="node4" href="$classadore_1_1env_1_1NavigationManagement.html#a6ef6488ee2fc558da1536b4d00a7fa1a" title=" " alt="" coords="213,5,441,47"/>
+<area shape="rect" id="node6" href="$classadore_1_1apps_1_1MapProvider.html#a1d9aa34b5f68408f3d494a1fad7b62be" title=" " alt="" coords="242,71,413,112"/>
+<area shape="rect" id="node5" href="$classadore_1_1apps_1_1Navigation.html#a0f19b60c5090f48fdd06be105610c304" title=" " alt="" coords="5,5,165,47"/>
+<area shape="rect" id="node8" href="$classadore_1_1env_1_1MapBorderManagement.html#ac13559ca4e9b72fbd15b4f52a30767c5" title="undo all changes to global map and clears local map" alt="" coords="767,107,996,148"/>
+<area shape="rect" id="node9" href="$classadore_1_1env_1_1NavigationManagement.html#aebbe0306df887a24a6feb20ce705033d" title=" " alt="" coords="490,107,718,148"/>
+<area shape="rect" id="node10" href="$classadore_1_1apps_1_1MapProvider.html#acf95a64b3622a78f235223fe70bd15ff" title="update function" alt="" coords="505,173,703,199"/>
+<area shape="rect" id="node11" href="$classadore_1_1if__ROS_1_1MapProviderNode.html#a2dd3f906b4d4fe4ac67e415a6812d525" title=" " alt="" coords="234,165,421,207"/>
+<area shape="rect" id="node12" href="$adore__mapprovider__node_8cpp.html#a3c04138a5bfe5d72780bb7e82a18e627" title=" " alt="" coords="60,173,111,199"/>
+</map>

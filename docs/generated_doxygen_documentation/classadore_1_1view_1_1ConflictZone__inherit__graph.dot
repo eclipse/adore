@@ -1,0 +1,9 @@
+digraph "adore::view::ConflictZone"
+{
+ // LATEX_PDF_SIZE
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  Node1 [label="{adore::view::ConflictZone\n|- startProgress_\l- endProgress_\l- hasEndProgress_\l- waitingPosition_\l- hasPriority_\l- crossTraffic_\l- limitLine_\l|+ ConflictZone()\l+ getStartProgress()\l+ getEndProgress()\l+ hasEndProgress()\l+ getWaitingPosition()\l+ hasPriority()\l+ getCrossTraffic()\l+ getLimitLine()\l+ setStartProgress()\l+ setEndProgress()\l+ setHasEndProgress()\l+ setWaitingPosition()\l+ setPriority()\l+ setCrossTraffic()\l+ setLimitLine()\l}",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black",tooltip=" "];
+  Node1 -> Node2 [dir="back",color="midnightblue",fontsize="10",style="solid",arrowtail="onormal",fontname="Helvetica"];
+  Node2 [label="{adore::env::BorderBased\l::ConflictZone\n|- pathOfCrossTraffic_\l- coordinates_\l- firstBorderDistToExit_\l- firstBorderDistToEntr_\l- distancesCalculated_\l|+ ConflictZone()\l+ setPathOfCrossTraffic()\l+ getPathOfCrossTraffic()\l+ setCoordinates()\l+ calcDistances()\l+ getFirstBorderExitDistance()\l+ getFirstBorderEntranceDistance()\l}",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classadore_1_1env_1_1BorderBased_1_1ConflictZone.html",tooltip=" "];
+}

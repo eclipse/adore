@@ -1,0 +1,13 @@
+<map id="adore::mad::fromRelative" name="adore::mad::fromRelative">
+<area shape="rect" id="node1" title="Transform from relative coordinates to Euclidean coordinates." alt="" coords="1052,121,1221,148"/>
+<area shape="rect" id="node2" href="$namespaceadore_1_1mad.html#a5d1a9db2fc490af943038b0866630104" title="transform from relative coordinates for given centerline and normal functions" alt="" coords="804,5,973,32"/>
+<area shape="rect" id="node3" href="$test__adoremath_8cpp.html#a79535f7ec2f209d6dcc27db642a5cbd7" title=" " alt="" coords="839,56,939,83"/>
+<area shape="rect" id="node4" href="$classadore_1_1env_1_1BorderBased_1_1LaneFollowingViewProxy.html#aed5849b5a9bb3b46a37cab8e753a2654" title=" " alt="" coords="801,107,977,163"/>
+<area shape="rect" id="node5" href="$classadore_1_1env_1_1ThreeLaneViewDecoupled_1_1LaneProxy.html#a04f9a5724139796d6359f9c9d4ca60ba" title=" " alt="" coords="773,187,1004,243"/>
+<area shape="rect" id="node6" href="$classadore_1_1env_1_1BorderBased_1_1LaneFollowingGeometry.html#a9bbf6e74ae3889713c5047a0d28d3b4f" title="Transform from relative to euclidian coordinates." alt="" coords="803,267,974,323"/>
+<area shape="rect" id="node7" href="$classadore_1_1env_1_1BorderBased_1_1LaneFollowingGeometry.html#a91d06352b5dccccf7b1e89d31bd632c7" title="Get the best matching border for a given ego position." alt="" coords="531,227,701,283"/>
+<area shape="rect" id="node10" href="$classadore_1_1env_1_1BorderBased_1_1LaneFollowingView.html#aae2405f9178db8bbd90a3ec427a7bced" title=" " alt="" coords="507,307,725,363"/>
+<area shape="rect" id="node8" href="$classadore_1_1apps_1_1LaneViewProvider.html#a10c08893d16421f195ad2a597bfea8f8" title="update data, views and recompute maneuver" alt="" coords="229,241,459,268"/>
+<area shape="rect" id="node9" href="$classadore_1_1if__ROS_1_1LVProviderNode.html#ad35fdbfdaef8f2f89279dc08758bef3a" title=" " alt="" coords="5,234,181,275"/>
+<area shape="rect" id="node11" href="$classadore_1_1env_1_1BorderBased_1_1DependentLane.html#a9c77271c31c669339d756deb8ecfb629" title=" " alt="" coords="245,307,443,363"/>
+</map>

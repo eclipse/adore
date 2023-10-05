@@ -1,0 +1,10 @@
+<map id="adore::env::BorderBased::BorderSet::insert_border" name="adore::env::BorderBased::BorderSet::insert_border">
+<area shape="rect" id="node1" title="insert new border into this" alt="" coords="5,71,176,112"/>
+<area shape="rect" id="node2" href="$classadore_1_1env_1_1BorderBased_1_1BorderSet.html#afb523effcee573e774147446ecc756ab" title="check whether border type is in allowed types of set" alt="" coords="224,5,412,47"/>
+<area shape="rect" id="node3" href="$structadore_1_1env_1_1BorderBased_1_1Border.html#a4b1e646e2c3d98b03e75f286611e0cda" title="Get a bounding box for the implicit lane object." alt="" coords="235,71,401,112"/>
+<area shape="rect" id="node8" href="$structadore_1_1env_1_1BorderBased_1_1Coordinate.html#abb34f84413225a9464afe389cb4f71a7" title="Get a boost_point that has the same coordinates as the Coordinate object." alt="" coords="227,136,409,177"/>
+<area shape="rect" id="node4" href="$namespaceadore_1_1mad.html#adea062854ef0b105a3fdca8cf2aca945" title=" " alt="" coords="460,53,580,79"/>
+<area shape="rect" id="node6" href="$namespaceadore_1_1mad.html#ab58ecb752f9bbfe27832e0a2c0e22c2b" title=" " alt="" coords="462,103,578,130"/>
+<area shape="rect" id="node5" href="$namespaceadore_1_1mad.html#a618a8842fed7b9375957b1e393c58492" title=" " alt="" coords="628,53,748,79"/>
+<area shape="rect" id="node7" href="$namespaceadore_1_1mad.html#ac61b79c007d1859f93a10c04272095a1" title=" " alt="" coords="630,103,746,130"/>
+</map>

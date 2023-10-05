@@ -1,0 +1,27 @@
+var classadore_1_1if__ROS_1_1SREMGenerator =
+[
+    [ "getDebugMode", "classadore_1_1if__ROS_1_1SREMGenerator.html#a3136efb1343cfc3f5e58e643165759ca", null ],
+    [ "getDSecond", "classadore_1_1if__ROS_1_1SREMGenerator.html#a87c111f228e0345f7b6181b8a2567502", null ],
+    [ "getSecondOfYearFromUTC", "classadore_1_1if__ROS_1_1SREMGenerator.html#afb14b70549ac527d4018f311cfb44559", null ],
+    [ "getTime", "classadore_1_1if__ROS_1_1SREMGenerator.html#afce1a294ed9f3d037f308e82ea6e9756", null ],
+    [ "init", "classadore_1_1if__ROS_1_1SREMGenerator.html#afdb4fe37fe1aaee19fe2de97b923e3c9", null ],
+    [ "isInArea", "classadore_1_1if__ROS_1_1SREMGenerator.html#ad4fab0c566535679e39b3c24b0094f64", null ],
+    [ "receive_position", "classadore_1_1if__ROS_1_1SREMGenerator.html#ac6f81b30420ebb5279c9e9d7bb351a17", null ],
+    [ "run", "classadore_1_1if__ROS_1_1SREMGenerator.html#a60aeeebba9731489f07c695d927b08c6", null ],
+    [ "send_srem", "classadore_1_1if__ROS_1_1SREMGenerator.html#a38287294649696bd5d96ff4d274ba2b9", null ],
+    [ "setDebugMode", "classadore_1_1if__ROS_1_1SREMGenerator.html#ab1113a01f5c2c1da6c6c0bd0a7e3b1a4", null ],
+    [ "debug_mode_", "classadore_1_1if__ROS_1_1SREMGenerator.html#a5243b2b99c4bb54537aff76a406931f0", null ],
+    [ "last_debug_mode_", "classadore_1_1if__ROS_1_1SREMGenerator.html#a3fe6f2f88a3ea08d95aaef785cf57bf5", null ],
+    [ "nh_", "classadore_1_1if__ROS_1_1SREMGenerator.html#a3760cf5e0bfe34b2ab8c246599dea90a", null ],
+    [ "position_initialized_", "classadore_1_1if__ROS_1_1SREMGenerator.html#a08e206ce55110a76ac5a3e3aa23a7758", null ],
+    [ "rate_", "classadore_1_1if__ROS_1_1SREMGenerator.html#a731e5d12c4e43f3546e366f7da40d6d6", null ],
+    [ "request_counter_", "classadore_1_1if__ROS_1_1SREMGenerator.html#ab5041eb00111908358b08c90fe19f66f", null ],
+    [ "srem_", "classadore_1_1if__ROS_1_1SREMGenerator.html#afef1d19a5210205e4f9a975983f87f36", null ],
+    [ "srem_publisher_", "classadore_1_1if__ROS_1_1SREMGenerator.html#af00270aef9f526c192958184d7b1a378", null ],
+    [ "srem_zones_", "classadore_1_1if__ROS_1_1SREMGenerator.html#aacddb027dd897f09d561836f8fe9a30a", null ],
+    [ "state_subscriber_", "classadore_1_1if__ROS_1_1SREMGenerator.html#a520645a2b5ba7e71c781bf6c382ff276", null ],
+    [ "t_", "classadore_1_1if__ROS_1_1SREMGenerator.html#ad28f1b44513af39ed5766ac7214dd23c", null ],
+    [ "x_", "classadore_1_1if__ROS_1_1SREMGenerator.html#a1bc6d50f7e98c0866a5dc2b7d43cca76", null ],
+    [ "y_", "classadore_1_1if__ROS_1_1SREMGenerator.html#a0f2f0b49a5b46e73bde627e444460c21", null ],
+    [ "z_", "classadore_1_1if__ROS_1_1SREMGenerator.html#a065315b6c9b7ec34c445006ada1a2cd0", null ]
+];

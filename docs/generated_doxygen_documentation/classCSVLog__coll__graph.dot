@@ -1,0 +1,7 @@
+digraph "CSVLog"
+{
+ // LATEX_PDF_SIZE
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  Node1 [label="{CSVLog\n|- _seperator\l- _linecountBuffer\l- _linecountFile\l- _maxLinesBuffer\l- _maxLinesFile\l- _maxTimeBetweenWrites\l- _useFile\l- _lowThroughputMode\l- _timestampVersion\l- _filename\l- _currentFilename\l- os\l- _lastWriteTime\l|+ CSVLog()\l+ ~CSVLog()\l+ init()\l+ setLogLevel()\l+ setLogLevelFromConsole()\l+ setLogLevelFile()\l+ setLogLevelConsole()\l+ setTimestampVersion()\l+ setSeperator()\l+ setMaxLinesBuffer()\land 16 more...\l+ getInstance()\l+ getCurrentLogLevelFile()\l+ getCurrentLogLevelConsole()\l- CSVLog()\l- operator=()\l- writeLog()\l- writeLogToConsole()\l- writeLogToBuffer()\l- writeBufferToFile()\l- logConsole()\l- logFile()\l- getCurrentTime()\l- getCurrentTimeEpoch()\l- lvlToString()\l- lvlToConsoleColor()\l- lvlToConsoleColorLinux()\l}",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black",tooltip="singleton class for logging on the console and in a file, only interact with it via the defined macro..."];
+}

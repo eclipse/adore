@@ -1,0 +1,7 @@
+digraph "adore::env::BorderBased::BorderSet"
+{
+ // LATEX_PDF_SIZE
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  Node1 [label="{adore::env::BorderBased\l::BorderSet\n|# m_coord_uncertainty_xy\l# m_coord_uncertainty_z\l# m_guard\l# m_max_lane_width\l# m_byID\l# m_byLeftID\l# m_byFirstCoord\l# m_byLastCoord\l# m_byRegion\l# m_isOwner\l- m_allowedBorderTypes\l|+ BorderSet()\l+ ~BorderSet()\l+ addAllowedType()\l+ rotate()\l+ translate()\l+ removeAllowedType()\l+ borderTypeValid()\l+ setIsOwner()\l+ insert_border()\l+ erase_border()\land 46 more...\l}",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black",tooltip="efficiently store borders in boost R-tree"];
+}

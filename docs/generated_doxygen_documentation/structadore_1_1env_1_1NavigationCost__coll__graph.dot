@@ -1,0 +1,7 @@
+digraph "adore::env::NavigationCost"
+{
+ // LATEX_PDF_SIZE
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  Node1 [label="{adore::env::NavigationCost\n|- distanceToGoal_\l|+ operator\<()\l+ operator==()\l+ NavigationCost()\l+ NavigationCost()\l+ getDistanceToGoal()\l+ setDistanceToGoal()\l+ getCombinedCost()\l+ maximum_cost()\l}",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black",tooltip="Struct to organize navigation cost."];
+}

@@ -1,0 +1,17 @@
+digraph "/home/fascar/temp/adore/adore_if_ros" {
+  compound=true
+  node [ fontsize="10", fontname="Helvetica"];
+  edge [ labelfontsize="10", labelfontname="Helvetica"];
+  subgraph clusterdir_ea393da78a52787363d9c069b837d71c {
+    graph [ bgcolor="#eeeeff", pencolor="black", label="" URL="dir_ea393da78a52787363d9c069b837d71c.html"];
+    dir_ea393da78a52787363d9c069b837d71c [shape=plaintext label="adore_if_ros"];
+  dir_7513d58817f953f5027249008b56698c [shape=box label="adore_if_ros" fillcolor="white" style="filled" color="red" URL="dir_7513d58817f953f5027249008b56698c.html"];
+  }
+  dir_00929dca45ec76ed6859584482da2a34 [shape=box label="libadore" fillcolor="white" style="filled" color="red" URL="dir_00929dca45ec76ed6859584482da2a34.html"];
+  dir_7138404cf228e46fcedf986e3a17d1a6 [shape=box label="adore_scheduling" fillcolor="white" style="filled" color="red" URL="dir_7138404cf228e46fcedf986e3a17d1a6.html"];
+  dir_18b2dfb3931f9961b4b7423d99338341 [shape=box label="plotlablib" fillcolor="white" style="filled" color="red" URL="dir_18b2dfb3931f9961b4b7423d99338341.html"];
+  dir_7513d58817f953f5027249008b56698c->dir_00929dca45ec76ed6859584482da2a34 [headlabel="116", labeldistance=1.5 headhref="dir_000004_000036.html"];
+  dir_7513d58817f953f5027249008b56698c->dir_7138404cf228e46fcedf986e3a17d1a6 [headlabel="38", labeldistance=1.5 headhref="dir_000004_000013.html"];
+  dir_7513d58817f953f5027249008b56698c->dir_18b2dfb3931f9961b4b7423d99338341 [headlabel="20", labeldistance=1.5 headhref="dir_000004_000099.html"];
+  dir_00929dca45ec76ed6859584482da2a34->dir_18b2dfb3931f9961b4b7423d99338341 [headlabel="26", labeldistance=1.5 headhref="dir_000036_000099.html"];
+}

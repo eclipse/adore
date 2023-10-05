@@ -1,0 +1,24 @@
+digraph "adore::fun::MRMPlanner::brake_params_trapezoidal"
+{
+ // LATEX_PDF_SIZE
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  rankdir="LR";
+  Node1 [label="adore::fun::MRMPlanner\l::brake_params_trapezoidal",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black",tooltip="general parameters"];
+  Node1 -> Node2 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node2 [label="adore::fun::MRMPlanner\l::amin_medium_brake_trapezoidal",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classadore_1_1fun_1_1MRMPlanner.html#ace52d05e8518e6676ae9822b1607dc7d",tooltip="minimum acceleration that can be achieved before inverting jerk to end with v=0 and a=0"];
+  Node1 -> Node3 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node3 [label="adore::fun::MRMPlanner\l::brake_case_trapezoidal",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classadore_1_1fun_1_1MRMPlanner.html#ad84ee33d296d41c9a3f7f986242eca70",tooltip=" "];
+  Node3 -> Node2 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node3 -> Node4 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node4 [label="adore::mad::min",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$namespaceadore_1_1mad.html#ab58ecb752f9bbfe27832e0a2c0e22c2b",tooltip=" "];
+  Node4 -> Node5 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node5 [label="adore::mad::min",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$namespaceadore_1_1mad.html#ac61b79c007d1859f93a10c04272095a1",tooltip=" "];
+  Node1 -> Node6 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node6 [label="adore::fun::MRMPlanner\l::t_long_brake_trapezoidal",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classadore_1_1fun_1_1MRMPlanner.html#a7d4b8776654f4f69f7b89666844c17fe",tooltip="times required for ramp down, constant and ramp up during long brake"];
+  Node1 -> Node7 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node7 [label="adore::fun::MRMPlanner\l::t_medium_brake_trapezoidal",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classadore_1_1fun_1_1MRMPlanner.html#a0cab3a7fd870896bb4dfaca1b5683eb0",tooltip="times required for ramp down and ramp up during medium brake"];
+  Node7 -> Node2 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node1 -> Node8 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node8 [label="adore::fun::MRMPlanner\l::t_short_brake_trapezoidal",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classadore_1_1fun_1_1MRMPlanner.html#a97b92b9317f724c7d758df4e5d640816",tooltip="times required for ramp up during short brake"];
+}

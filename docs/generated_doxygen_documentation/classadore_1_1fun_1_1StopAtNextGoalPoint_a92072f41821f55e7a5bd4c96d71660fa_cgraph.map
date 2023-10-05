@@ -1,0 +1,10 @@
+<map id="adore::fun::StopAtNextGoalPoint::update" name="adore::fun::StopAtNextGoalPoint::update">
+<area shape="rect" id="node1" title=" " alt="" coords="5,201,188,243"/>
+<area shape="rect" id="node2" href="$classadore_1_1params_1_1APVehicle.html#ae446997786812ff17a5c3f6bfa575ce5" title="cog to front axle" alt="" coords="259,5,434,47"/>
+<area shape="rect" id="node3" href="$classadore_1_1params_1_1APVehicle.html#a5cc38023fb9f3142348dc9ac22402288" title="rear axle to cog" alt="" coords="259,71,434,112"/>
+<area shape="rect" id="node4" href="$classadore_1_1params_1_1APVehicle.html#aec64e74619601401d6d3d81ebf5fdacd" title="front axle to front border" alt="" coords="259,136,434,177"/>
+<area shape="rect" id="node5" href="$classadore_1_1params_1_1APTrajectoryGeneration.html#a936967cd56f49dba2525921b9160cb1f" title="cor to planning point: movement of planning point shall planned by the trajectory planner" alt="" coords="252,201,441,243"/>
+<area shape="rect" id="node6" href="$classadore_1_1view_1_1ANavigationGoalView.html#aa9982beb00cfe5f05368ec83fd64c254" title=" " alt="" coords="263,267,431,308"/>
+<area shape="rect" id="node7" href="$classadore_1_1view_1_1ANavigationGoalView.html#adbaa1287dd0f271fa0288fb6127ebee0" title=" " alt="" coords="242,332,451,373"/>
+<area shape="rect" id="node8" href="$classadore_1_1view_1_1ANavigationGoalView.html#a643ec9581657aa6c5d368067fc910500" title=" " alt="" coords="236,397,457,439"/>
+</map>

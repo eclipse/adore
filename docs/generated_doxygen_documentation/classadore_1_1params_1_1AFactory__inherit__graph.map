@@ -1,0 +1,5 @@
+<map id="adore::params::AFactory" name="adore::params::AFactory">
+<area shape="rect" id="node1" title="abstract factory for adore::params classes" alt="" coords="115,5,300,229"/>
+<area shape="rect" id="node2" href="$classadore_1_1if__ROS_1_1PARAMS__Factory.html" title=" " alt="" coords="5,292,191,545"/>
+<area shape="rect" id="node3" href="$classadore_1_1params_1_1DummyFactory.html" title="a dummy implementation of the adore::params::afactory for testing purposes" alt="" coords="215,277,418,560"/>
+</map>

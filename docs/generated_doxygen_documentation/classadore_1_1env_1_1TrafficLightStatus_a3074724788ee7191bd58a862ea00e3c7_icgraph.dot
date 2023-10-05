@@ -1,0 +1,12 @@
+digraph "adore::env::TrafficLightStatus::getCurrentColor"
+{
+ // LATEX_PDF_SIZE
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  rankdir="RL";
+  Node1 [label="adore::env::TrafficLight\lStatus::getCurrentColor",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black",tooltip=" "];
+  Node1 -> Node2 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node2 [label="adore::env::TrafficLight\lStatus::GenerateSpeedAdvisories",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classadore_1_1env_1_1TrafficLightStatus.html#aeb60947c11818089578d2ed1b1f34da3",tooltip=" "];
+  Node1 -> Node3 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node3 [label="adore::env::TrafficLight\lStatus::toString",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classadore_1_1env_1_1TrafficLightStatus.html#a795c2a27cc24410240bf8f5dcb7ed6f6",tooltip=" "];
+}

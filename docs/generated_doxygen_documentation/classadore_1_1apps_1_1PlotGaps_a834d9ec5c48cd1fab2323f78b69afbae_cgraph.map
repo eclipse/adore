@@ -1,0 +1,7 @@
+<map id="adore::apps::PlotGaps::PlotGaps" name="adore::apps::PlotGaps::PlotGaps">
+<area shape="rect" id="node1" title=" " alt="" coords="5,64,157,105"/>
+<area shape="rect" id="node2" href="$classDLR__TS_1_1PlotLab_1_1FigureStubFactory.html#a842dc9d218e8433f3443a08d47cfd6cc" title=" " alt="" coords="225,5,421,47"/>
+<area shape="rect" id="node3" href="$classadore_1_1env_1_1EnvFactoryInstance.html#a069fadea20089ddf252a244864f305c1" title=" " alt="" coords="205,71,440,98"/>
+<area shape="rect" id="node5" href="$classadore_1_1env_1_1AFactory.html#a81f661c576816461f1914436620ac208" title=" " alt="" coords="221,123,424,164"/>
+<area shape="rect" id="node4" href="$classadore_1_1env_1_1EnvFactoryInstance.html#a14835a4420fb827ba3809b94a96a7660" title="Function to access singleton instance of the envFactory using magic static." alt="" coords="488,64,696,105"/>
+</map>

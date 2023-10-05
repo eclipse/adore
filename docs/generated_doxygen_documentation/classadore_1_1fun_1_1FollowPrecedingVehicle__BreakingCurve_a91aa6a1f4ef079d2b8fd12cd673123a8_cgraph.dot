@@ -1,0 +1,22 @@
+digraph "adore::fun::FollowPrecedingVehicle_BreakingCurve::update"
+{
+ // LATEX_PDF_SIZE
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  rankdir="LR";
+  Node1 [label="adore::fun::FollowPreceding\lVehicle_BreakingCurve::update",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black",tooltip=" "];
+  Node1 -> Node2 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node2 [label="adore::params::APVehicle\l::get_a",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classadore_1_1params_1_1APVehicle.html#ae446997786812ff17a5c3f6bfa575ce5",tooltip="cog to front axle"];
+  Node1 -> Node3 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node3 [label="adore::params::APVehicle\l::get_b",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classadore_1_1params_1_1APVehicle.html#a5cc38023fb9f3142348dc9ac22402288",tooltip="rear axle to cog"];
+  Node1 -> Node4 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node4 [label="adore::params::APVehicle\l::get_c",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classadore_1_1params_1_1APVehicle.html#aec64e74619601401d6d3d81ebf5fdacd",tooltip="front axle to front border"];
+  Node1 -> Node5 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node5 [label="adore::params::APTrajectory\lGeneration::get_rho",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classadore_1_1params_1_1APTrajectoryGeneration.html#a936967cd56f49dba2525921b9160cb1f",tooltip="cor to planning point: movement of planning point shall planned by the trajectory planner"];
+  Node1 -> Node6 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node6 [label="adore::params::APTactical\lPlanner::getAssumedNominalAcceleration\lMinimum",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classadore_1_1params_1_1APTacticalPlanner.html#afd146a8937ab59aed9681f78bd3686f6",tooltip=" "];
+  Node1 -> Node7 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node7 [label="adore::params::APTactical\lPlanner::getFrontSGap",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classadore_1_1params_1_1APTacticalPlanner.html#a644e7c8339599b34357baf84281e8a5e",tooltip=" "];
+  Node1 -> Node8 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node8 [label="adore::view::ALane\l::getOnLaneTraffic",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classadore_1_1view_1_1ALane.html#a208cfea37af60e9939687035dfe9b962",tooltip=" "];
+}

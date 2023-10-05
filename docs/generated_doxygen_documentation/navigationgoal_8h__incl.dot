@@ -1,0 +1,9 @@
+digraph "/home/fascar/temp/adore/libadore/libadore/adore/view/include/adore/view/navigationgoal.h"
+{
+ // LATEX_PDF_SIZE
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  Node1 [label="/home/fascar/temp/adore\l/libadore/libadore/adore\l/view/include/adore/view\l/navigationgoal.h",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black",tooltip=" "];
+  Node1 -> Node2 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node2 [label="adore/mad/globalposition.h",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$globalposition_8h.html",tooltip=" "];
+}

@@ -1,0 +1,7 @@
+<map id="adore::fun::StopAtNextGoalPoint::StopAtNextGoalPoint" name="adore::fun::StopAtNextGoalPoint::StopAtNextGoalPoint">
+<area shape="rect" id="node1" title=" " alt="" coords="5,71,191,112"/>
+<area shape="rect" id="node2" href="$classadore_1_1params_1_1ParamsFactoryInstance.html#ae4d79d6130cebb47d90a82b6edb7660d" title=" " alt="" coords="239,5,441,47"/>
+<area shape="rect" id="node4" href="$classadore_1_1params_1_1AFactory.html#a552a3f6c4a21a5faf17070402003a718" title=" " alt="" coords="255,71,425,112"/>
+<area shape="rect" id="node5" href="$classadore_1_1params_1_1AFactory.html#a8391b48b706bb01a21e7502824875d0b" title=" " alt="" coords="257,136,423,177"/>
+<area shape="rect" id="node3" href="$classadore_1_1params_1_1ParamsFactoryInstance.html#a59eae0e003d40b03f9db2d814ec2a3bf" title="Function to access singleton instance of the AllFactory using magic static." alt="" coords="489,5,692,47"/>
+</map>

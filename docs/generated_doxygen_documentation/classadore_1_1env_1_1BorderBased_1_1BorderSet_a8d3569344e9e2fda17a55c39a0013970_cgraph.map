@@ -1,0 +1,4 @@
+<map id="adore::env::BorderBased::BorderSet::isConnected" name="adore::env::BorderBased::BorderSet::isConnected">
+<area shape="rect" id="node1" title="check whether end of border a is beginning of border b" alt="" coords="5,5,175,47"/>
+<area shape="rect" id="node2" href="$classadore_1_1env_1_1BorderBased_1_1BorderSet.html#aab9bddfc9a6e9e93e3bb94806e98e0c8" title="checks whether two coordinates are similar based on certainties of this" alt="" coords="223,5,389,47"/>
+</map>

@@ -1,0 +1,6 @@
+<map id="adore::if_r2s::LaneBorder::isSane" name="adore::if_r2s::LaneBorder::isSane">
+<area shape="rect" id="node1" title=" " alt="" coords="5,39,173,80"/>
+<area shape="rect" id="node2" href="$structadore_1_1env_1_1BorderBased_1_1BorderID.html#a167fd45e0f4515809ccff2b9ac64e078" title="returns sum of distance between this.m_first and other.m_first and distance between this...." alt="" coords="222,5,389,47"/>
+<area shape="rect" id="node4" href="$structadore_1_1if__r2s_1_1LaneBorder.html#a05ef83a8b56c8663ea3fff7abeda95cf" title=" " alt="" coords="221,71,389,112"/>
+<area shape="rect" id="node3" href="$structadore_1_1env_1_1BorderBased_1_1Coordinate.html#a9b30e3a45ea26742bb9dafc844377861" title="Calculate the distance between two Coordinates." alt="" coords="437,5,604,47"/>
+</map>

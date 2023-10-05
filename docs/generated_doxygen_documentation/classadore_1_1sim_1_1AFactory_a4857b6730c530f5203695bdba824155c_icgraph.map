@@ -1,0 +1,4 @@
+<map id="adore::sim::AFactory::getLocalizationEstimatedVehicleStateWriter" name="adore::sim::AFactory::getLocalizationEstimatedVehicleStateWriter">
+<area shape="rect" id="node1" title="write updates on the localization estimated vehicle motion state" alt="" coords="229,5,448,61"/>
+<area shape="rect" id="node2" href="$classadore_1_1apps_1_1VehicleModel.html#ae694b4c954a7ba03571a5e40a29f5f08" title="Construct a new Vehicle Model object." alt="" coords="5,13,181,54"/>
+</map>

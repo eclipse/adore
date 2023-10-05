@@ -1,0 +1,48 @@
+digraph "adore::mad::LLinearPiecewiseFunctionM::dfidx"
+{
+ // LATEX_PDF_SIZE
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  rankdir="RL";
+  Node1 [label="adore::mad::LLinearPiecewise\lFunctionM::dfidx",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black",tooltip=" "];
+  Node1 -> Node2 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node2 [label="adore::env::BorderBased\l::Border::getHeadingChangeAt\lTransition",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$structadore_1_1env_1_1BorderBased_1_1Border.html#a30a1b88f91492f3e88fdaa5aa535d657",tooltip="Get the heading change at transition of two borders."];
+  Node2 -> Node3 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node3 [label="adore::env::BorderBased\l::Border::getContinuityRating",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$structadore_1_1env_1_1BorderBased_1_1Border.html#aebfb6180e67e4736c017b07d49cf15b3",tooltip="Get the continuity rating."];
+  Node3 -> Node4 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node4 [label="adore::env::BorderBased\l::BASFollowStraight::getNext\lBorder",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classadore_1_1env_1_1BorderBased_1_1BASFollowStraight.html#a84602111513a391f491d175411a09083",tooltip="Get the next border."];
+  Node4 -> Node5 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node5 [label="adore::env::BorderBased\l::BASFollowNavigation\l::getNextBorder",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classadore_1_1env_1_1BorderBased_1_1BASFollowNavigation.html#a19152de0ccb0c37bb5f5a2edf5218961",tooltip="Get the next border."];
+  Node5 -> Node6 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node6 [label="adore::env::BorderBased\l::LaneChangeBorders::update",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classadore_1_1env_1_1BorderBased_1_1LaneChangeBorders.html#a324178919d6a3a2bea8dd4c04fc65cea",tooltip="collects all borders relevant for lane change view in object-variable vectors"];
+  Node6 -> Node7 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node7 [label="TEST_CASE",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$test__independentlanechangegeometry_8cpp.html#aa56a0bce9f9e760f59ceea11ad085348",tooltip=" "];
+  Node6 -> Node8 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node8 [label="adore::env::BorderBased\l::IndependentLaneChangeGeometry\l::update",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classadore_1_1env_1_1BorderBased_1_1IndependentLaneChangeGeometry.html#a821bde3f11a80bca977616edaff33587",tooltip="constructs a lane change geometry if a gate is available"];
+  Node8 -> Node9 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node9 [label="adore::apps::LaneViewProvider::run",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classadore_1_1apps_1_1LaneViewProvider.html#a10c08893d16421f195ad2a597bfea8f8",tooltip="update data, views and recompute maneuver"];
+  Node9 -> Node10 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node10 [label="adore::if_ROS::LVProvider\lNode::init",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classadore_1_1if__ROS_1_1LVProviderNode.html#ad35fdbfdaef8f2f89279dc08758bef3a",tooltip=" "];
+  Node8 -> Node11 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node11 [label="TEST_CASE",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$test__independentlanechangegeometry_8cpp.html#a48baafb16e67cf190c9ac4a4a55d1c79",tooltip=" "];
+  Node4 -> Node12 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node12 [label="adore::env::BorderBased\l::LaneChangeGeometry::\lupdate",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classadore_1_1env_1_1BorderBased_1_1LaneChangeGeometry.html#ada2e1c0aa77292509de1dbdda55c5dc9",tooltip="update the road geometry"];
+  Node12 -> Node13 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node13 [label="adore::env::BorderBased\l::LaneChangeView::update",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classadore_1_1env_1_1BorderBased_1_1LaneChangeView.html#a83432efdfec3bb90153ec1c4ce9bcee9",tooltip="Update the LaneChangeView."];
+  Node13 -> Node14 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node14 [label="adore::apps::TestLCTrajectory\lPlanner::run",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classadore_1_1apps_1_1TestLCTrajectoryPlanner.html#ac2912d7058c947a47405a0ce64e5609f",tooltip=" "];
+  Node14 -> Node15 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node15 [label="adore::if_ROS::TestLCTrajectory\lPlannerNode::init",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classadore_1_1if__ROS_1_1TestLCTrajectoryPlannerNode.html#aadf9b829e6afee6af3219321b72d4d3c",tooltip=" "];
+  Node15 -> Node16 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node16 [label="main",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$test__lc__trajectory__planner__node_8cpp.html#a3c04138a5bfe5d72780bb7e82a18e627",tooltip=" "];
+  Node1 -> Node17 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node17 [label="adore::env::OCRoadBasedPrediction\l::predict",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classadore_1_1env_1_1OCRoadBasedPrediction.html#af6fda5b2a78669c5e19e222348665713",tooltip=" "];
+  Node17 -> Node18 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node18 [label="adore::apps::PredictionProvider::run",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classadore_1_1apps_1_1PredictionProvider.html#a2cbc8dae07b19988248bcc37aee7fbb5",tooltip=" "];
+  Node18 -> Node19 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node19 [label="adore::if_ROS::Prediction\lProviderNode::init",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classadore_1_1if__ROS_1_1PredictionProviderNode.html#a2bd0137f5108911b604d344cec08231b",tooltip=" "];
+  Node17 -> Node20 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node20 [label="TEST_CASE",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$test__ocroadbasedprediction_8cpp.html#a8a83239243952bcc807580ed96244f28",tooltip=" "];
+  Node1 -> Node21 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node21 [label="adore::mad::LLinearPiecewise\lFunctionM::sample_dfidx",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classadore_1_1mad_1_1LLinearPiecewiseFunctionM.html#a42cb9068ee254240b9952c61e4e01c51",tooltip=" "];
+}

@@ -1,0 +1,11 @@
+digraph "adore::env::BorderBased::LanePosition"
+{
+ // LATEX_PDF_SIZE
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  Node1 [label="{adore::env::BorderBased\l::LanePosition\n|+ m_progress\l|+ LanePosition()\l+ LanePosition()\l+ LanePosition()\l+ translate()\l+ rotate()\l+ operator==()\l+ toString()\l}",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black",tooltip="This is a struct that contains a position defined by a BorderID and a progress on that border."];
+  Node2 -> Node1 [color="grey25",fontsize="10",style="solid",label=" +m_rightID" ,arrowhead="odiamond",fontname="Helvetica"];
+  Node2 [label="{adore::env::BorderBased\l::BorderID\n||+ BorderID()\l+ BorderID()\l+ translate()\l+ distance()\l+ distance()\l+ getLength()\l+ rotate()\l+ operator==()\l+ inverse()\l+ operator\<()\l+ toString()\l+ isInArea()\l+ getReverseDirectionID()\l+ getReverseDirectionID()\l}",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$structadore_1_1env_1_1BorderBased_1_1BorderID.html",tooltip="This struct identifies a Border by the coordinates of the starting and the end point."];
+  Node3 -> Node2 [color="grey25",fontsize="10",style="solid",label=" +m_first\n+m_last" ,arrowhead="odiamond",fontname="Helvetica"];
+  Node3 [label="{adore::env::BorderBased\l::Coordinate\n|+ m_X\l+ m_Y\l+ m_Z\l|+ Coordinate()\l+ Coordinate()\l+ Coordinate()\l+ Coordinate()\l+ translate()\l+ rotate()\l+ discretize()\l+ distance()\l+ isNear()\l+ operator==()\land 8 more...\l}",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$structadore_1_1env_1_1BorderBased_1_1Coordinate.html",tooltip="This struct represents 3-dimensional coordines."];
+}

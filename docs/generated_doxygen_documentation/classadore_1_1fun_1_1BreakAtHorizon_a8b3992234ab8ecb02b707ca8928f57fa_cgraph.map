@@ -1,0 +1,8 @@
+<map id="adore::fun::BreakAtHorizon::update" name="adore::fun::BreakAtHorizon::update">
+<area shape="rect" id="node1" title=" " alt="" coords="5,136,185,177"/>
+<area shape="rect" id="node2" href="$classadore_1_1params_1_1APVehicle.html#ae446997786812ff17a5c3f6bfa575ce5" title="cog to front axle" alt="" coords="241,5,415,47"/>
+<area shape="rect" id="node3" href="$classadore_1_1params_1_1APVehicle.html#a5cc38023fb9f3142348dc9ac22402288" title="rear axle to cog" alt="" coords="241,71,415,112"/>
+<area shape="rect" id="node4" href="$classadore_1_1params_1_1APVehicle.html#aec64e74619601401d6d3d81ebf5fdacd" title="front axle to front border" alt="" coords="241,136,415,177"/>
+<area shape="rect" id="node5" href="$classadore_1_1params_1_1APTrajectoryGeneration.html#a936967cd56f49dba2525921b9160cb1f" title="cor to planning point: movement of planning point shall planned by the trajectory planner" alt="" coords="233,201,423,243"/>
+<area shape="rect" id="node6" href="$classadore_1_1view_1_1ALane.html#a344a89f8d9d469bb914937290c6e8665" title=" " alt="" coords="261,267,395,308"/>
+</map>

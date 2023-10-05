@@ -1,0 +1,14 @@
+digraph "Graphical Class Hierarchy"
+{
+ // LATEX_PDF_SIZE
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  rankdir="LR";
+  Node538 [label="object",height=0.2,width=0.4,color="grey75", fillcolor="white", style="filled",tooltip=" "];
+  Node538 -> Node0 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node0 [label="adore_suppress_lanechanges.\lPublisher",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classadore__suppress__lanechanges_1_1Publisher.html",tooltip=" "];
+  Node538 -> Node540 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node540 [label="plotlab2navigationgoal.Observer",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classplotlab2navigationgoal_1_1Observer.html",tooltip=" "];
+  Node538 -> Node541 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node541 [label="test_vectorsize.listener",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classtest__vectorsize_1_1listener.html",tooltip=" "];
+}

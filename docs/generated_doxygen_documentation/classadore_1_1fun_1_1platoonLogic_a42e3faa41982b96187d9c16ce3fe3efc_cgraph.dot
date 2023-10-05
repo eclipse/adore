@@ -1,0 +1,50 @@
+digraph "adore::fun::platoonLogic::update"
+{
+ // LATEX_PDF_SIZE
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  rankdir="LR";
+  Node1 [label="adore::fun::platoonLogic\l::update",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black",tooltip=" "];
+  Node1 -> Node2 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node2 [label="adore::env::CooperativeUsers\lProcess::followingExists",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classadore_1_1env_1_1CooperativeUsersProcess.html#acd3ec592cfd3ce21ce54d058db902f04",tooltip=" "];
+  Node1 -> Node3 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node3 [label="adore::env::CooperativeUsers\lProcess::getFollowing",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classadore_1_1env_1_1CooperativeUsersProcess.html#a2a9ea1bceb7bec6c138175dce0b89f69",tooltip=" "];
+  Node1 -> Node4 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node4 [label="adore::env::CooperativeUsers\lProcess::getFollowingTimeHeadway",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classadore_1_1env_1_1CooperativeUsersProcess.html#ac60e02fdf3720598ddba961d0425807c",tooltip=" "];
+  Node1 -> Node5 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node5 [label="adore::fun::logic::\lPlatooningStateMachine\l::getInPlatoonTimeHeadway",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$structadore_1_1fun_1_1logic_1_1PlatooningStateMachine.html#aac641a36b0afd8a1db9ba35cfb3f5265",tooltip=" "];
+  Node1 -> Node6 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node6 [label="adore::fun::logic::\lPlatooningStateMachine\l::getPlatooningState",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$structadore_1_1fun_1_1logic_1_1PlatooningStateMachine.html#a8cf82b0f79b380973dc9bdf34881af74",tooltip=" "];
+  Node1 -> Node7 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node7 [label="adore::env::CooperativeUsers\lProcess::getPreceding",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classadore_1_1env_1_1CooperativeUsersProcess.html#acead1c97755afd9dcedd5477502c615e",tooltip=" "];
+  Node1 -> Node8 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node8 [label="adore::env::CooperativeUsers\lProcess::getPrecedingTimeHeadway",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classadore_1_1env_1_1CooperativeUsersProcess.html#acb837ec2c5dc690a4054dc292590900d",tooltip=" "];
+  Node1 -> Node9 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node9 [label="adore::fun::logic::\lPlatooningStateMachine\l::getTimeHeadway",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$structadore_1_1fun_1_1logic_1_1PlatooningStateMachine.html#a6374c3751b34957dec0cf3186aaf5a9a",tooltip=" "];
+  Node1 -> Node10 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node10 [label="adore::env::VehicleMotion\lState9d::getvx",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$structadore_1_1env_1_1VehicleMotionState9d.html#a2547f79442e772d79fbf5051a2a08bfa",tooltip="Get the longitudinal velocity."];
+  Node1 -> Node11 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node11 [label="adore::env::CooperativeUsers\lProcess::leaderExists",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classadore_1_1env_1_1CooperativeUsersProcess.html#abd908df19427e757e7118e394d2c933b",tooltip=" "];
+  Node1 -> Node12 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node12 [label="adore::mad::max",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$namespaceadore_1_1mad.html#adea062854ef0b105a3fdca8cf2aca945",tooltip=" "];
+  Node12 -> Node13 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node13 [label="adore::mad::max",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$namespaceadore_1_1mad.html#a618a8842fed7b9375957b1e393c58492",tooltip=" "];
+  Node1 -> Node14 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node14 [label="adore::env::CooperativeUsers\lProcess::noVehicleBetweenEgoAnd\lFollowing",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classadore_1_1env_1_1CooperativeUsersProcess.html#a5367a3477723352f666e97aeabf8c78f",tooltip=" "];
+  Node1 -> Node15 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node15 [label="adore::env::CooperativeUsers\lProcess::noVehicleBetweenEgoAnd\lPreceding",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classadore_1_1env_1_1CooperativeUsersProcess.html#ae5eb7cdda8817ba8434ed2caeb515249",tooltip=" "];
+  Node1 -> Node16 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node16 [label="adore::env::CooperativeUsers\lProcess::precedingExists",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classadore_1_1env_1_1CooperativeUsersProcess.html#a02ced95477a7933f9f7b33bf26a1cd2c",tooltip=" "];
+  Node1 -> Node17 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node17 [label="adore::fun::PlatooningInformation\l::setId",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classadore_1_1fun_1_1PlatooningInformation.html#a8c523adb0913efc12ef55d0bbeca15a9",tooltip=" "];
+  Node1 -> Node18 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node18 [label="adore::fun::PlatooningInformation\l::setLanePosition",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classadore_1_1fun_1_1PlatooningInformation.html#ab9b2369c311c063434f5de26d893bf23",tooltip=" "];
+  Node1 -> Node19 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node19 [label="adore::fun::PlatooningInformation\l::setTargetAutomationLevel",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classadore_1_1fun_1_1PlatooningInformation.html#ac3d7744c579c9e4707192d0b7e527d49",tooltip=" "];
+  Node1 -> Node20 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node20 [label="adore::fun::PlatooningInformation\l::setToleratedDistanceAhead",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classadore_1_1fun_1_1PlatooningInformation.html#ad2bf9be8c41135b6f70e5f2fc1515a0a",tooltip=" "];
+  Node1 -> Node21 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node21 [label="adore::fun::PlatooningInformation\l::setToleratedDistanceBehind",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classadore_1_1fun_1_1PlatooningInformation.html#a987ae6e9d47054346742bd371990eeb3",tooltip=" "];
+  Node1 -> Node22 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node22 [label="adore::mad::AWriter\l::write",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classadore_1_1mad_1_1AWriter.html#a1c22b1ccbd19c5f02f832831ca757f3b",tooltip=" "];
+}

@@ -1,0 +1,27 @@
+digraph "adore::env::BorderBased::Coordinate::distance"
+{
+ // LATEX_PDF_SIZE
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  rankdir="RL";
+  Node1 [label="adore::env::BorderBased\l::Coordinate::distance",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black",tooltip="Calculate the distance between two Coordinates."];
+  Node1 -> Node2 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node2 [label="adore::env::BorderBased\l::SimpleBorderGraphCost\l::assign",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classadore_1_1env_1_1BorderBased_1_1SimpleBorderGraphCost.html#a606f0befcf568aa885f4d9ec39519822",tooltip=" "];
+  Node1 -> Node3 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node3 [label="adore::env::BorderBased\l::BorderID::distance",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$structadore_1_1env_1_1BorderBased_1_1BorderID.html#a167fd45e0f4515809ccff2b9ac64e078",tooltip="returns sum of distance between this.m_first and other.m_first and distance between this...."];
+  Node3 -> Node4 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node4 [label="adore::if_r2s::LaneBorder\l::distance",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$structadore_1_1if__r2s_1_1LaneBorder.html#a59470f0f7b2b0439b1124dcbb6d3c015",tooltip=" "];
+  Node4 -> Node5 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node5 [label="adore::if_r2s::LaneBorder\l::getBorderPath",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$structadore_1_1if__r2s_1_1LaneBorder.html#a6dca8415d4e509038eda2f890c04fbc3",tooltip=" "];
+  Node5 -> Node6 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node6 [label="adore::if_r2s::LaneBorder\l::getBorder",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$structadore_1_1if__r2s_1_1LaneBorder.html#a4d325110dd763597d0500d046b2def75",tooltip=" "];
+  Node3 -> Node7 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node7 [label="adore::if_r2s::LaneBorder\l::isOnRightHandSide",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$structadore_1_1if__r2s_1_1LaneBorder.html#a5dd3982bfd785d95530bf91ea81de9fa",tooltip=" "];
+  Node7 -> Node8 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node8 [label="adore::if_r2s::LaneBorder\l::sortingDistance",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$structadore_1_1if__r2s_1_1LaneBorder.html#a83fd5d89da1e2b3f0a7825fe0e51eabd",tooltip=" "];
+  Node3 -> Node9 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node9 [label="adore::if_r2s::Reference\lLine::isSane",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$structadore_1_1if__r2s_1_1ReferenceLine.html#a6b445eadfe1be94c1904754e1224bb06",tooltip=" "];
+  Node3 -> Node10 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node10 [label="adore::if_r2s::LaneBorder\l::isSane",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$structadore_1_1if__r2s_1_1LaneBorder.html#a730332494a0cf6f912a9d78d5b7feaad",tooltip=" "];
+  Node3 -> Node8 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+}

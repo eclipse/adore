@@ -1,0 +1,16 @@
+digraph "adore::params::APTrajectoryTracking::getAxMin"
+{
+ // LATEX_PDF_SIZE
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  rankdir="RL";
+  Node1 [label="adore::params::APTrajectory\lTracking::getAxMin",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black",tooltip="hard coded minimum longitudinal acceleration"];
+  Node1 -> Node2 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node2 [label="adore::fun::LinearTracking\lController::compute_control_input",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classadore_1_1fun_1_1LinearTrackingController.html#a6dd536fe3c1648f267b882c1687f95ab",tooltip=" "];
+  Node2 -> Node3 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node3 [label="adore::apps::FeedbackController::run",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classadore_1_1apps_1_1FeedbackController.html#a53938de6939b52cd8f61a3882cbd86e0",tooltip=" "];
+  Node3 -> Node4 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node4 [label="adore::if_ROS::FeedbackController\lNode::init",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classadore_1_1if__ROS_1_1FeedbackControllerNode.html#a943201b1a268172c3fa63155493f61a3",tooltip=" "];
+  Node4 -> Node5 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node5 [label="main",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$adore__feedbackcontroller__node_8cpp.html#a3c04138a5bfe5d72780bb7e82a18e627",tooltip=" "];
+}

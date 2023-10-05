@@ -1,0 +1,5 @@
+<map id="adore::env::BorderBased::LanePositionedObjectSet::clear" name="adore::env::BorderBased::LanePositionedObjectSet::clear">
+<area shape="rect" id="node1" title="Clear the LanePositionedObjectSet." alt="" coords="296,35,473,91"/>
+<area shape="rect" id="node2" href="$classadore_1_1env_1_1MapStopLineManagement.html#ae0ba6db5f2c5a11bf78093ebd2ddf095" title="clear local sets and pending updates" alt="" coords="5,5,248,47"/>
+<area shape="rect" id="node3" href="$classadore_1_1env_1_1BorderBased_1_1LanePositionedObjectSet.html#a3ed71eb0d55c1fc18b160e3e0d641b79" title="Destroy the LanePositionedObjectSet object." alt="" coords="34,71,219,127"/>
+</map>

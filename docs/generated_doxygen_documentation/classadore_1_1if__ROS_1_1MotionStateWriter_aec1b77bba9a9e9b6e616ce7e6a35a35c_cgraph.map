@@ -1,0 +1,18 @@
+<map id="adore::if_ROS::MotionStateWriter::write" name="adore::if_ROS::MotionStateWriter::write">
+<area shape="rect" id="node1" title=" " alt="" coords="5,397,188,439"/>
+<area shape="rect" id="node2" href="$classadore_1_1params_1_1ParamsFactoryInstance.html#ae4d79d6130cebb47d90a82b6edb7660d" title=" " alt="" coords="236,5,439,47"/>
+<area shape="rect" id="node4" href="$classadore_1_1params_1_1APVehicle.html#ac67acb30ee133526e87d8ae1932f7db2" title=" " alt="" coords="250,71,425,112"/>
+<area shape="rect" id="node5" href="$structadore_1_1env_1_1VehicleMotionState9d.html#a7a4bdd18cf6a76bb87ac80dd8cdc3e14" title="Get the longitudinal acceleration." alt="" coords="251,136,424,177"/>
+<area shape="rect" id="node6" href="$structadore_1_1env_1_1VehicleMotionState9d.html#aad1cd97fe5b255cdbea40f4dee602f8e" title="Get the steering angle." alt="" coords="251,201,424,243"/>
+<area shape="rect" id="node7" href="$structadore_1_1env_1_1VehicleMotionState9d.html#a39294f52e08a67b58a6beabec70d2d97" title="Get the yaw rate." alt="" coords="251,267,424,308"/>
+<area shape="rect" id="node8" href="$structadore_1_1env_1_1VehicleMotionState9d.html#a65ca6ea033cf05674de50b8996a586a3" title="Get the heading." alt="" coords="251,332,424,373"/>
+<area shape="rect" id="node9" href="$structadore_1_1env_1_1VehicleMotionState9d.html#ae7d75a3f7d52a946f075e669832caa17" title="Get the time." alt="" coords="251,397,424,439"/>
+<area shape="rect" id="node10" href="$structadore_1_1env_1_1VehicleMotionState9d.html#a2547f79442e772d79fbf5051a2a08bfa" title="Get the longitudinal velocity." alt="" coords="251,463,424,504"/>
+<area shape="rect" id="node11" href="$structadore_1_1env_1_1VehicleMotionState9d.html#a96153986634c3718e2c8f3586e94cc6a" title="Get the lateral velocity." alt="" coords="251,528,424,569"/>
+<area shape="rect" id="node12" href="$structadore_1_1env_1_1VehicleMotionState9d.html#a16d6d61f5dfa1028ca97d8f1a8b6e8cf" title="Get the x&#45;coordinate." alt="" coords="251,593,424,635"/>
+<area shape="rect" id="node13" href="$structadore_1_1env_1_1VehicleMotionState9d.html#a51e8eed0ef10d909592edcb933c1b802" title="Get the y&#45;coordinate." alt="" coords="251,659,424,700"/>
+<area shape="rect" id="node14" href="$structadore_1_1env_1_1VehicleMotionState9d.html#aaae8ed387d8baab7fe0f14379b2bf5d2" title="Get the z&#45;coordinate." alt="" coords="251,724,424,765"/>
+<area shape="rect" id="node15" href="$structadore_1_1if__ROS_1_1QuaternionConverter.html#adb522195e5563762833c8a26f0f6aeff" title="set heading of a Pose message" alt="" coords="249,789,425,831"/>
+<area shape="rect" id="node3" href="$classadore_1_1params_1_1ParamsFactoryInstance.html#a59eae0e003d40b03f9db2d814ec2a3bf" title="Function to access singleton instance of the AllFactory using magic static." alt="" coords="487,5,689,47"/>
+<area shape="rect" id="node16" href="$namespaceadore_1_1mad_1_1funop.html#a85ee119f752305b6413ea70a7f61d48b" title=" " alt="" coords="521,789,655,831"/>
+</map>

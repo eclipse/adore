@@ -1,0 +1,12 @@
+<map id="adore::env::BorderBased::LaneFollowingGeometry::excludeObstaclePoint" name="adore::env::BorderBased::LaneFollowingGeometry::excludeObstaclePoint">
+<area shape="rect" id="node1" title="Modify a lane boundary to exclude a given point." alt="" coords="5,151,176,207"/>
+<area shape="rect" id="node2" href="$namespaceadore_1_1mad.html#a927f4883d4edcec4dcfd9bb1f09d4f62" title=" " alt="" coords="257,56,388,83"/>
+<area shape="rect" id="node5" href="$classadore_1_1mad_1_1LLinearPiecewiseFunctionM.html#a92f9ea09083d587aa2ffa1ec600be3b5" title=" " alt="" coords="224,158,421,199"/>
+<area shape="rect" id="node6" href="$classadore_1_1mad_1_1LLinearPiecewiseFunctionM.html#aaa496b8ceb3ed505f6450225c46a077a" title=" " alt="" coords="469,169,667,210"/>
+<area shape="rect" id="node7" href="$classadore_1_1mad_1_1LLinearPiecewiseFunctionM.html#a682841e9bc82a0653745dce6f908bfa6" title=" " alt="" coords="469,255,667,297"/>
+<area shape="rect" id="node8" href="$namespaceadore_1_1mad.html#ab58ecb752f9bbfe27832e0a2c0e22c2b" title=" " alt="" coords="510,107,626,133"/>
+<area shape="rect" id="node9" href="$classadore_1_1mad_1_1LLinearPiecewiseFunctionM.html#aa94d90c8643e2d6792f8594f3d666503" title=" " alt="" coords="224,326,421,367"/>
+<area shape="rect" id="node10" href="$namespaceadore_1_1mad.html#adea062854ef0b105a3fdca8cf2aca945" title=" " alt="" coords="263,5,383,32"/>
+<area shape="rect" id="node3" href="$namespaceadore_1_1mad.html#a618a8842fed7b9375957b1e393c58492" title=" " alt="" coords="508,5,628,32"/>
+<area shape="rect" id="node4" href="$namespaceadore_1_1mad.html#ac61b79c007d1859f93a10c04272095a1" title=" " alt="" coords="715,81,831,108"/>
+</map>

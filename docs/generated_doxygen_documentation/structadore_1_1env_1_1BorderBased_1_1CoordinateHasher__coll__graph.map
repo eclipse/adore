@@ -1,0 +1,3 @@
+<map id="adore::env::BorderBased::CoordinateHasher" name="adore::env::BorderBased::CoordinateHasher">
+<area shape="rect" id="node1" title="a functor, which hashes a Coordinate object &#45;&gt; std::unordered_set&lt;Coordinate,CoordinateHasher&gt; amap(0..." alt="" coords="5,5,172,97"/>
+</map>

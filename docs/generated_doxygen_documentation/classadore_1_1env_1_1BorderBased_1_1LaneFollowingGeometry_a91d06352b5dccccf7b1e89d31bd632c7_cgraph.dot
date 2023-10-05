@@ -1,0 +1,48 @@
+digraph "adore::env::BorderBased::LaneFollowingGeometry::getBestMatchingBorder"
+{
+ // LATEX_PDF_SIZE
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  rankdir="LR";
+  Node1 [label="adore::env::BorderBased\l::LaneFollowingGeometry\l::getBestMatchingBorder",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black",tooltip="Get the best matching border for a given ego position."];
+  Node1 -> Node2 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node2 [label="adore::env::BorderBased\l::BorderAccumulator::getBorders",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classadore_1_1env_1_1BorderBased_1_1BorderAccumulator.html#ad795032b11d319a4065e8e87f0bc7974",tooltip="Get the Accumulated Borders."];
+  Node1 -> Node3 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node3 [label="adore::env::BorderBased\l::LaneFollowingGeometry\l::getOffsetOfLeftBorder",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classadore_1_1env_1_1BorderBased_1_1LaneFollowingGeometry.html#a06948f564268fcc8839d8f68264dd21c",tooltip="Get the offset of the left border at a certain position."];
+  Node3 -> Node4 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node4 [label="adore::mad::bound",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$namespaceadore_1_1mad.html#a927f4883d4edcec4dcfd9bb1f09d4f62",tooltip=" "];
+  Node4 -> Node5 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node5 [label="adore::mad::max",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$namespaceadore_1_1mad.html#a618a8842fed7b9375957b1e393c58492",tooltip=" "];
+  Node4 -> Node6 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node6 [label="adore::mad::min",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$namespaceadore_1_1mad.html#ac61b79c007d1859f93a10c04272095a1",tooltip=" "];
+  Node1 -> Node7 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node7 [label="adore::env::BorderBased\l::LaneFollowingGeometry\l::getOffsetOfRightBorder",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classadore_1_1env_1_1BorderBased_1_1LaneFollowingGeometry.html#a9a5eb2a8767f13365d0e62fa024bc6a5",tooltip="Get the offset of the right border at a certain position."];
+  Node7 -> Node4 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node1 -> Node8 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node8 [label="adore::env::BorderBased\l::LaneFollowingGeometry\l::getViewingDistance",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classadore_1_1env_1_1BorderBased_1_1LaneFollowingGeometry.html#a0aef7b4db2039cfd07b543a06403d823",tooltip="Get the viewing distance."];
+  Node1 -> Node9 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node9 [label="adore::mad::max",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$namespaceadore_1_1mad.html#adea062854ef0b105a3fdca8cf2aca945",tooltip=" "];
+  Node9 -> Node5 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node1 -> Node10 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node10 [label="adore::mad::min",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$namespaceadore_1_1mad.html#ab58ecb752f9bbfe27832e0a2c0e22c2b",tooltip=" "];
+  Node10 -> Node6 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node1 -> Node11 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node11 [label="adore::env::BorderBased\l::LaneFollowingGeometry\l::toEucledianCoordinates",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classadore_1_1env_1_1BorderBased_1_1LaneFollowingGeometry.html#a9bbf6e74ae3889713c5047a0d28d3b4f",tooltip="Transform from relative to euclidian coordinates."];
+  Node11 -> Node4 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node11 -> Node12 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node12 [label="adore::mad::fromRelative",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$namespaceadore_1_1mad.html#af94af4a69ee6bebfb81f9dd81f99d307",tooltip="Transform from relative coordinates to Euclidean coordinates."];
+  Node1 -> Node13 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node13 [label="adore::env::BorderBased\l::LaneFollowingGeometry\l::toRelativeCoordinates",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classadore_1_1env_1_1BorderBased_1_1LaneFollowingGeometry.html#a0313fa463e2ee26a0981fb9fc0bbc900",tooltip="Transform from euclidian to relative coordinates."];
+  Node13 -> Node14 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node14 [label="adore::mad::LLinearPiecewise\lFunctionM::getClosestParameter",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classadore_1_1mad_1_1LLinearPiecewiseFunctionM.html#a21c464e587889f52d3b5aba703d80ccd",tooltip=" "];
+  Node14 -> Node15 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node15 [label="adore::mad::getDistancePoint\lToLine",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$namespaceadore_1_1mad.html#ad4afe3dd742448995d7c56d1e4de5019",tooltip=" "];
+  Node14 -> Node16 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node16 [label="adore::mad::LLinearPiecewise\lFunctionM::limitHi",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classadore_1_1mad_1_1LLinearPiecewiseFunctionM.html#aaa496b8ceb3ed505f6450225c46a077a",tooltip=" "];
+  Node14 -> Node17 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node17 [label="adore::mad::LLinearPiecewise\lFunctionM::limitLo",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classadore_1_1mad_1_1LLinearPiecewiseFunctionM.html#a682841e9bc82a0653745dce6f908bfa6",tooltip=" "];
+  Node14 -> Node9 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node14 -> Node10 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node13 -> Node18 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node18 [label="adore::mad::toRelativeWith\lNormalExtrapolation",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$namespaceadore_1_1mad.html#aa1564df2fc7ee50aa41f61a67be1760c",tooltip="Transformation from Euclidean coordinate system to a relative coordinate system represented by linear..."];
+}

@@ -1,0 +1,5 @@
+<map id="adore::fun::CurvatureSpeedLimit::update" name="adore::fun::CurvatureSpeedLimit::update">
+<area shape="rect" id="node1" title=" " alt="" coords="5,39,188,80"/>
+<area shape="rect" id="node2" href="$classadore_1_1params_1_1APLongitudinalPlanner.html#a107c8d434c01a9944d8434b289781776" title="getAccLatUB returns the absolute lateral acceleration bound which has to be maintained by reducing sp..." alt="" coords="249,5,449,47"/>
+<area shape="rect" id="node3" href="$classadore_1_1params_1_1APLongitudinalPlanner.html#a436db3b2faf5aa2826d8ea0213c0ef6e" title="getAccLatUB_minVelocity returns the minimum velocity, which is always feasible despite getAccLatUB" alt="" coords="236,71,463,112"/>
+</map>

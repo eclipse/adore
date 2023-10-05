@@ -1,0 +1,8 @@
+<map id="adore::fun::LaneWidthSpeedLimitLFV::update" name="adore::fun::LaneWidthSpeedLimitLFV::update">
+<area shape="rect" id="node1" title=" " alt="" coords="5,136,192,177"/>
+<area shape="rect" id="node2" href="$classadore_1_1params_1_1APLongitudinalPlanner.html#ac9d706c897a153f6d3fd34172fc758dc" title="getMinWidthFast returns the minimum lane width, below/at which vehicle moves fast: Should be greater ..." alt="" coords="247,5,447,47"/>
+<area shape="rect" id="node3" href="$classadore_1_1params_1_1APLongitudinalPlanner.html#a5c5e4a247575b6b120989ab3e05d6b41" title="getMinWidthFastSpeed returns the fast speed to be applied, if lane width equals minWidthFast: Should ..." alt="" coords="241,71,452,112"/>
+<area shape="rect" id="node4" href="$classadore_1_1params_1_1APLongitudinalPlanner.html#a8bb4ab95782ab90f03165c0d599eb99d" title="getMinWidthSlow returns the minimum lane width, below/at which vehicle moves slowly: Should be greate..." alt="" coords="247,136,447,177"/>
+<area shape="rect" id="node5" href="$classadore_1_1params_1_1APLongitudinalPlanner.html#afd1c5525867e31abff0ac5907c37652d" title="getMinWidthSlowSpeed returns the slow speed to be applied, if lane width equals minWidthSlow: Should ..." alt="" coords="240,201,453,243"/>
+<area shape="rect" id="node6" href="$classadore_1_1params_1_1APLongitudinalPlanner.html#a6454207bb0e87670a6efc7c02c712101" title="getMinWidthStop returns the minimum lane width, below/at which vehicle stops: Should be greater or eq..." alt="" coords="247,267,447,308"/>
+</map>

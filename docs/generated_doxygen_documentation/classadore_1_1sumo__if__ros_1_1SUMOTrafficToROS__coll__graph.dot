@@ -1,0 +1,13 @@
+digraph "adore::sumo_if_ros::SUMOTrafficToROS"
+{
+ // LATEX_PDF_SIZE
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  Node1 [label="{adore::sumo_if_ros\l::SUMOTrafficToROS\n|# nh_\l# publisher_\l# mapem_publisher_\l# spatem_publisher_\l# last_tl_update_time_\l# subscriber1_\l# subscriber2_\l# sumo_rosveh_prefix_\l# sumo_rosped_prefix_\l# rostimers_\land 13 more...\l|+ SUMOTrafficToROS()\l+ ~SUMOTrafficToROS()\l+ getRosNodeHandle()\l+ run()\l+ runCallback()\l+ newStep()\l+ transferDataSumoToRos()\l+ transferDataRosToSumo()\l+ init_rosconnection()\l+ init_sumo()\l+ setRosNodeHandle()\l+ closeSumo()\l# getNewIntID()\l# removeVehicle()\l# addVehicle()\l# setMaxSpeed()\l# setSpeed()\l# moveToXY()\l}",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black",tooltip=" "];
+  Node2 -> Node1 [color="grey25",fontsize="10",style="solid",label=" #rosVehicleSet_" ,arrowhead="odiamond",fontname="Helvetica"];
+  Node2 [label="{adore::sumo_if_ros\l::ROSVehicleSet\n|+ data_\l|+ receive()\l}",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$structadore_1_1sumo__if__ros_1_1ROSVehicleSet.html",tooltip=" "];
+  Node3 -> Node1 [color="grey25",fontsize="10",style="solid",label=" #sumotls2ros" ,arrowhead="odiamond",fontname="Helvetica"];
+  Node3 [label="{adore::sumo_if_ros\l::SumoTLs2Ros\n|+ utm_zone_\l+ is_south_hemi_\l+ _use_system_time\l+ _generate_spat_timing\l- sumo_lane_id_mapping_\l- sumo_intersection_id\l_mapping_\l- intersections_\l- _MAPEM\l- sumo_signal_group_id\l_mapping_\l|+ getMAPEMFromSUMO()\l+ getSPATEMFromSUMO()\l+ getIntersectionIDForSUMOString()\l+ getSUMOStringFromIntersectionID()\l+ SumoTLs2Ros()\l- getNodesFromSUMOLane()\l- getGeoreferencedLinks()\l- autofill_bit_string()\l- generateMAPEMFromSUMO()\l- convertToROSMsg()\l- wgs84_distance()\l- getSystemTime()\l- getMOY()\l- getLeapYearSeconds()\l- getSecondOfYearFromUTC()\l}",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classadore_1_1sumo__if__ros_1_1SumoTLs2Ros.html",tooltip=" "];
+  Node4 -> Node1 [color="grey25",fontsize="10",style="solid",label=" #timer_" ,arrowhead="odiamond",fontname="Helvetica"];
+  Node4 [label="{adore::sumo_if_ros\l::Timer\n|+ tUTC_\l|+ Timer()\l+ receive()\l}",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$structadore_1_1sumo__if__ros_1_1Timer.html",tooltip=" "];
+}

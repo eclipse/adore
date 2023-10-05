@@ -1,0 +1,14 @@
+digraph "adore::apps::PlotEgo::plotCircle"
+{
+ // LATEX_PDF_SIZE
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  rankdir="RL";
+  Node1 [label="adore::apps::PlotEgo\l::plotCircle",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black",tooltip=" "];
+  Node1 -> Node2 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node2 [label="adore::apps::PlotEgo::run",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classadore_1_1apps_1_1PlotEgo.html#a9694e6cb6541efadc64fc8bf146168f7",tooltip=" "];
+  Node2 -> Node3 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node3 [label="adore::if_ROS::PlotEgoNode\l::init",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classadore_1_1if__ROS_1_1PlotEgoNode.html#a711abb35ea3afc045103c0f17a41713e",tooltip=" "];
+  Node3 -> Node4 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node4 [label="main",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$plot__ego__node_8cpp.html#a3c04138a5bfe5d72780bb7e82a18e627",tooltip=" "];
+}

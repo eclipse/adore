@@ -1,0 +1,12 @@
+<map id="adore::if_ROS::FactoryCollection::init" name="adore::if_ROS::FactoryCollection::init">
+<area shape="rect" id="node1" title=" " alt="" coords="5,136,220,177"/>
+<area shape="rect" id="node2" href="$classadore_1_1if__ROS_1_1FactoryCollection.html#ac102972d5592de7cdc76b059017628f9" title=" " alt="" coords="268,5,483,47"/>
+<area shape="rect" id="node3" href="$classadore_1_1env_1_1EnvFactoryInstance.html#ab67767fc777387664b696bd78d2536ef" title="Initialize private members of AllFactory." alt="" coords="271,71,479,112"/>
+<area shape="rect" id="node5" href="$classadore_1_1fun_1_1FunFactoryInstance.html#a291c4c983548f85c633ae6409c7b5233" title="Initialize private members of funFactory." alt="" coords="273,136,477,177"/>
+<area shape="rect" id="node7" href="$classadore_1_1params_1_1ParamsFactoryInstance.html#ac6759c774ade5a97e47c056d1a136253" title="Initialize private members of AllFactory." alt="" coords="274,201,477,243"/>
+<area shape="rect" id="node9" href="$classadore_1_1sim_1_1SimFactoryInstance.html#ac891850728d65e5398216b2bb92f82f6" title="Initialize private members of AllFactory." alt="" coords="271,267,479,308"/>
+<area shape="rect" id="node4" href="$classadore_1_1env_1_1EnvFactoryInstance.html#a14835a4420fb827ba3809b94a96a7660" title="Function to access singleton instance of the envFactory using magic static." alt="" coords="531,71,739,112"/>
+<area shape="rect" id="node6" href="$classadore_1_1fun_1_1FunFactoryInstance.html#a0826e9a7ea3c70a3780115e6effbf746" title="Function to access singleton instance of the funFactory using magic static." alt="" coords="533,136,737,177"/>
+<area shape="rect" id="node8" href="$classadore_1_1params_1_1ParamsFactoryInstance.html#a59eae0e003d40b03f9db2d814ec2a3bf" title="Function to access singleton instance of the AllFactory using magic static." alt="" coords="533,201,736,243"/>
+<area shape="rect" id="node10" href="$classadore_1_1sim_1_1SimFactoryInstance.html#a177ce78bb1c9675c9dd0370e5f31f749" title="Function to access singleton instance of the AllFactory using magic static." alt="" coords="531,267,739,308"/>
+</map>

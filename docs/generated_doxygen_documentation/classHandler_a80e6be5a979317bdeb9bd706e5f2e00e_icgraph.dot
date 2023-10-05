@@ -1,0 +1,12 @@
+digraph "Handler::plot"
+{
+ // LATEX_PDF_SIZE
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  rankdir="RL";
+  Node1 [label="Handler::plot",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black",tooltip=" "];
+  Node1 -> Node2 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node2 [label="Handler::receive_y",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classHandler.html#a57f24c07db2aaf2cf072258b9718cda3",tooltip=" "];
+  Node2 -> Node3 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node3 [label="Handler::Handler",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classHandler.html#ac6874a623c4bf7238c67abf15f495ed5",tooltip=" "];
+}

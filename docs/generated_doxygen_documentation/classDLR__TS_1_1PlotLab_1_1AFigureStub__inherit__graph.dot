@@ -1,0 +1,11 @@
+digraph "DLR_TS::PlotLab::AFigureStub"
+{
+ // LATEX_PDF_SIZE
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  Node1 [label="{DLR_TS::PlotLab::AFigureStub\n||+ ~AFigureStub()\l+ circlestrip()\l+ tristrip()\l+ tristrip()\l+ tristrip()\l+ patch()\l+ patch()\l+ patch()\l+ plot()\l+ plot()\land 27 more...\l}",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black",tooltip=" "];
+  Node1 -> Node2 [dir="back",color="midnightblue",fontsize="10",style="solid",arrowtail="onormal",fontname="Helvetica"];
+  Node2 [label="{DLR_TS::PlotLab::DummyFigure\n||+ ~DummyFigure()\l+ circlestrip()\l+ tristrip()\l+ tristrip()\l+ tristrip()\l+ patch()\l+ patch()\l+ patch()\l+ plot()\l+ plot()\land 27 more...\l}",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classDLR__TS_1_1PlotLab_1_1DummyFigure.html",tooltip=" "];
+  Node1 -> Node3 [dir="back",color="midnightblue",fontsize="10",style="solid",arrowtail="onormal",fontname="Helvetica"];
+  Node3 [label="{DLR_TS::PlotLab::FigureStubZMQ\n|- m_id\l- m_paint\l- m_other\l- m_view\l|+ FigureStubZMQ()\l+ FigureStubZMQ()\l+ ~FigureStubZMQ()\l+ circlestrip()\l+ tristrip()\l+ tristrip()\l+ tristrip()\l+ patch()\l+ patch()\l+ patch()\land 28 more...\l# send_paint()\l# plotTexture()\l# send_paint()\l# send_other()\l# send_view()\l}",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classDLR__TS_1_1PlotLab_1_1FigureStubZMQ.html",tooltip=" "];
+}

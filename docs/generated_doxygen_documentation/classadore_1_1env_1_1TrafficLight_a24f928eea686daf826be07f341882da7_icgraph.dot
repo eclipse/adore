@@ -1,0 +1,14 @@
+digraph "adore::env::TrafficLight::getStatus"
+{
+ // LATEX_PDF_SIZE
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  rankdir="RL";
+  Node1 [label="adore::env::TrafficLight\l::getStatus",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black",tooltip=" "];
+  Node1 -> Node2 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node2 [label="adore::if_ROS::TrafficLight\lSimReader::receive_simTL",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classadore_1_1if__ROS_1_1TrafficLightSimReader.html#a0772209256ce6c15b77c70cf3bfe59d3",tooltip=" "];
+  Node2 -> Node3 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node3 [label="adore::if_ROS::TrafficLight\lSimReader::TrafficLightSimReader",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classadore_1_1if__ROS_1_1TrafficLightSimReader.html#a16aba8fc7fa61cd9ead9af37d32cc3ba",tooltip=" "];
+  Node1 -> Node4 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node4 [label="adore::if_ROS::TrafficLight\lSimWriter::write",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classadore_1_1if__ROS_1_1TrafficLightSimWriter.html#a6c656b5a26486bf446dedf5adc86bb30",tooltip="write sends out data value"];
+}

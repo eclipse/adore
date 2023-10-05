@@ -1,0 +1,38 @@
+digraph "adore::env::BorderBased::SimpleBorderGraphCost::assign"
+{
+ // LATEX_PDF_SIZE
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  rankdir="LR";
+  Node1 [label="adore::env::BorderBased\l::SimpleBorderGraphCost\l::assign",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black",tooltip=" "];
+  Node1 -> Node2 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node2 [label="adore::env::BorderBased\l::Coordinate::distance",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$structadore_1_1env_1_1BorderBased_1_1Coordinate.html#a9b30e3a45ea26742bb9dafc844377861",tooltip="Calculate the distance between two Coordinates."];
+  Node1 -> Node3 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node3 [label="adore::env::BorderBased\l::Node::g",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$structadore_1_1env_1_1BorderBased_1_1Node.html#a9a64a10fffc6765e7655259fa4ba3f84",tooltip=" "];
+  Node1 -> Node4 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node4 [label="adore::env::BorderBased\l::Border::getLength",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$structadore_1_1env_1_1BorderBased_1_1Border.html#a522c4ebdb7a16e0aa89b507f554a4fa6",tooltip="Get the length of the border."];
+  Node4 -> Node5 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node5 [label="adore::env::BorderBased\l::BorderID::getLength",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$structadore_1_1env_1_1BorderBased_1_1BorderID.html#a21f63cc4e5239a964b37d089d54d2418",tooltip=" "];
+  Node4 -> Node6 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node6 [label="adore::mad::LLinearPiecewise\lFunctionM::limitHi",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classadore_1_1mad_1_1LLinearPiecewiseFunctionM.html#aaa496b8ceb3ed505f6450225c46a077a",tooltip=" "];
+  Node4 -> Node7 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node7 [label="adore::mad::LLinearPiecewise\lFunctionM::limitLo",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classadore_1_1mad_1_1LLinearPiecewiseFunctionM.html#a682841e9bc82a0653745dce6f908bfa6",tooltip=" "];
+  Node1 -> Node8 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node8 [label="adore::env::BorderBased\l::Border::isPredecessorOf",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$structadore_1_1env_1_1BorderBased_1_1Border.html#a26aecd3bc2175fb624dcab6c10570e3b",tooltip="Check whether border is a direct predecessor of another border."];
+  Node8 -> Node9 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node9 [label="adore::env::BorderBased\l::Coordinate::isNear",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$structadore_1_1env_1_1BorderBased_1_1Coordinate.html#a29c83e934340f40cfa66dab2e7982d20",tooltip="Check whether the Coordinate is near to another Coordinate."];
+  Node1 -> Node10 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node10 [label="adore::env::BorderBased\l::Border::isSuccessorOf",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$structadore_1_1env_1_1BorderBased_1_1Border.html#a7fb76c709876c81971c00f99e327c2bf",tooltip="Check whether border is a direct successors of another border."];
+  Node10 -> Node9 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node1 -> Node11 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node11 [label="adore::mad::min",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$namespaceadore_1_1mad.html#ab58ecb752f9bbfe27832e0a2c0e22c2b",tooltip=" "];
+  Node11 -> Node12 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node12 [label="adore::mad::min",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$namespaceadore_1_1mad.html#ac61b79c007d1859f93a10c04272095a1",tooltip=" "];
+  Node1 -> Node13 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node13 [label="adore::env::BorderBased\l::Node::setG",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$structadore_1_1env_1_1BorderBased_1_1Node.html#a55d96ad2ec7ee5f11c92056b8cc37f3d",tooltip=" "];
+  Node13 -> Node3 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node1 -> Node14 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node14 [label="adore::env::BorderBased\l::Node::setH",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$structadore_1_1env_1_1BorderBased_1_1Node.html#aad097b5a55a3b4c6647a0e4f8b579beb",tooltip=" "];
+  Node14 -> Node15 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node15 [label="adore::env::BorderBased\l::Node::h",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$structadore_1_1env_1_1BorderBased_1_1Node.html#ae7dedf652d1cbaa3d4df22b2ba918936",tooltip=" "];
+}

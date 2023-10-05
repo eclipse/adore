@@ -1,0 +1,4 @@
+<map id="adore::env::BorderBased::BorderID::distance" name="adore::env::BorderBased::BorderID::distance">
+<area shape="rect" id="node1" title="returns distance between coordinates in id" alt="" coords="5,5,172,47"/>
+<area shape="rect" id="node2" href="$structadore_1_1env_1_1BorderBased_1_1Coordinate.html#a9b30e3a45ea26742bb9dafc844377861" title="Calculate the distance between two Coordinates." alt="" coords="220,5,387,47"/>
+</map>

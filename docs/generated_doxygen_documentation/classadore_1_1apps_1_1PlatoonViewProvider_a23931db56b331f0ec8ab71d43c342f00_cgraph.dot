@@ -1,0 +1,16 @@
+digraph "adore::apps::PlatoonViewProvider::readCooperativeUser"
+{
+ // LATEX_PDF_SIZE
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  rankdir="LR";
+  Node1 [label="adore::apps::PlatoonView\lProvider::readCooperativeUser",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black",tooltip=" "];
+  Node1 -> Node2 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node2 [label="adore::env::CooperativeUser\lPrediction::clear",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$structadore_1_1env_1_1CooperativeUserPrediction.html#a923980c50f02193ae38a7fd54086d9e2",tooltip=" "];
+  Node1 -> Node3 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node3 [label="adore::mad::AReader\l::getData",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classadore_1_1mad_1_1AReader.html#a46ab7520d828d1a574365eaf8b483e29",tooltip=" "];
+  Node1 -> Node4 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node4 [label="adore::apps::PlatoonView\lProvider::getIndex",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classadore_1_1apps_1_1PlatoonViewProvider.html#a469f4989a7c367215bd189ee07f4462d",tooltip=" "];
+  Node1 -> Node5 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node5 [label="adore::mad::AReader\l::hasData",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classadore_1_1mad_1_1AReader.html#a79b8efec6ede53587ff114ae00ca8419",tooltip=" "];
+}

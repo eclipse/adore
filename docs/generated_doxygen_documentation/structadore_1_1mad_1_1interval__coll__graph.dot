@@ -1,0 +1,7 @@
+digraph "adore::mad::interval&lt; T &gt;"
+{
+ // LATEX_PDF_SIZE
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  Node1 [label="{adore::mad::interval\< T \>\n|+ lb\l+ ub\l|+ interval()\l+ interval()\l+ interval()\l+ set()\l+ setMinMax()\l+ operator+=()\l+ operator-=()\l+ operator*=()\l+ operator-()\l}",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black",tooltip=" "];
+}

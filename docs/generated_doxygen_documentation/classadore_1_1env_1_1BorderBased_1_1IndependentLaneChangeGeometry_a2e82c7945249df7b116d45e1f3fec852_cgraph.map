@@ -1,0 +1,12 @@
+<map id="adore::env::BorderBased::IndependentLaneChangeGeometry::computeGateInterval" name="adore::env::BorderBased::IndependentLaneChangeGeometry::computeGateInterval">
+<area shape="rect" id="node1" title="compute gate open and close in the domain of the baseline function" alt="" coords="5,162,236,218"/>
+<area shape="rect" id="node2" href="$classadore_1_1mad_1_1LLinearPiecewiseFunctionM.html#a21c464e587889f52d3b5aba703d80ccd" title=" " alt="" coords="305,136,520,177"/>
+<area shape="rect" id="node10" href="$classadore_1_1env_1_1BorderBased_1_1LaneChangeBorders.html#a47633cc3c94ab462740891cc7ad9ede5" title=" " alt="" coords="284,201,541,243"/>
+<area shape="rect" id="node3" href="$namespaceadore_1_1mad.html#ad4afe3dd742448995d7c56d1e4de5019" title=" " alt="" coords="591,5,785,47"/>
+<area shape="rect" id="node4" href="$classadore_1_1mad_1_1LLinearPiecewiseFunctionM.html#aaa496b8ceb3ed505f6450225c46a077a" title=" " alt="" coords="589,71,787,112"/>
+<area shape="rect" id="node5" href="$classadore_1_1mad_1_1LLinearPiecewiseFunctionM.html#a682841e9bc82a0653745dce6f908bfa6" title=" " alt="" coords="589,136,787,177"/>
+<area shape="rect" id="node6" href="$namespaceadore_1_1mad.html#adea062854ef0b105a3fdca8cf2aca945" title=" " alt="" coords="628,202,748,229"/>
+<area shape="rect" id="node8" href="$namespaceadore_1_1mad.html#ab58ecb752f9bbfe27832e0a2c0e22c2b" title=" " alt="" coords="630,253,746,279"/>
+<area shape="rect" id="node7" href="$namespaceadore_1_1mad.html#a618a8842fed7b9375957b1e393c58492" title=" " alt="" coords="835,202,955,229"/>
+<area shape="rect" id="node9" href="$namespaceadore_1_1mad.html#ac61b79c007d1859f93a10c04272095a1" title=" " alt="" coords="837,253,953,279"/>
+</map>

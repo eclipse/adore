@@ -1,0 +1,16 @@
+digraph "adore::if_ROS::MotionCommandReader::MotionCommandReader"
+{
+ // LATEX_PDF_SIZE
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  rankdir="LR";
+  Node1 [label="adore::if_ROS::MotionCommand\lReader::MotionCommandReader",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black",tooltip=" "];
+  Node1 -> Node2 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node2 [label="adore::if_ROS::MotionCommand\lReader::receive_accelerationRequest",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classadore_1_1if__ROS_1_1MotionCommandReader.html#a416263016f34e700e3022520a53d32ae",tooltip=" "];
+  Node2 -> Node3 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node3 [label="adore::fun::MotionCommand\l::setAcceleration",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classadore_1_1fun_1_1MotionCommand.html#a742aa8521acc5c1647be671e58775e3d",tooltip=" "];
+  Node1 -> Node4 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node4 [label="adore::if_ROS::MotionCommand\lReader::receive_steeringRequest",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classadore_1_1if__ROS_1_1MotionCommandReader.html#a3304fbbcb9d4e98a6c5effd829463125",tooltip=" "];
+  Node4 -> Node5 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node5 [label="adore::fun::MotionCommand\l::setSteeringAngle",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classadore_1_1fun_1_1MotionCommand.html#ad9e80cc45a694051399325f358da810a",tooltip=" "];
+}

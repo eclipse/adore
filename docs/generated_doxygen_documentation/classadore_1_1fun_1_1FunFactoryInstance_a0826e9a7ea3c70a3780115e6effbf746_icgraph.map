@@ -1,0 +1,52 @@
+<map id="adore::fun::FunFactoryInstance::getInstance" name="adore::fun::FunFactoryInstance::getInstance">
+<area shape="rect" id="node1" title="Function to access singleton instance of the funFactory using magic static." alt="" coords="871,823,1075,864"/>
+<area shape="rect" id="node2" href="$classadore_1_1fun_1_1FunFactoryInstance.html#a3d8e318e1ad87251caef9bad22a99b40" title=" " alt="" coords="592,569,823,595"/>
+<area shape="rect" id="node20" href="$classadore_1_1fun_1_1FunFactoryInstance.html#a291c4c983548f85c633ae6409c7b5233" title="Initialize private members of funFactory." alt="" coords="605,852,809,893"/>
+<area shape="rect" id="node3" href="$classadore_1_1fun_1_1ActivationStateObserver.html#ad8390375a2042d783f08742af32bb603" title=" " alt="" coords="304,5,529,47"/>
+<area shape="rect" id="node4" href="$classadore_1_1apps_1_1CheckpointController.html#aa53b944d2e9e4dac0c1887b36f63140a" title=" " alt="" coords="307,71,527,112"/>
+<area shape="rect" id="node5" href="$classadore_1_1apps_1_1FeedbackController.html#a750977fded924ee0b5f0d8bec43e56ba" title=" " alt="" coords="311,136,522,177"/>
+<area shape="rect" id="node6" href="$classadore_1_1fun_1_1IndicatorDispatcher.html#aee5920daae4cc4bd89bfd848079ee904" title=" " alt="" coords="316,201,517,243"/>
+<area shape="rect" id="node7" href="$classadore_1_1fun_1_1InitialStateSelector.html#aa6d1dc31d9ccf3d1e8d68e2a4a572739" title=" " alt="" coords="323,267,511,308"/>
+<area shape="rect" id="node8" href="$classadore_1_1apps_1_1LaneFollowingBehavior.html#abf55bd11b80d4c78dd70b4aab0cc9f57" title=" " alt="" coords="309,332,524,373"/>
+<area shape="rect" id="node9" href="$classadore_1_1apps_1_1MissionController.html#af6638f915933f785f6b0fc451d11a071" title=" " alt="" coords="317,397,516,439"/>
+<area shape="rect" id="node10" href="$classadore_1_1apps_1_1PlanningDetailsPlotter.html#a593b11a7c17134cc002bfb66e3bc629f" title=" " alt="" coords="318,463,515,504"/>
+<area shape="rect" id="node11" href="$classadore_1_1fun_1_1platoonLogic.html#a20e7e17bc4604c75b01121dc4924d8a7" title=" " alt="" coords="336,528,497,569"/>
+<area shape="rect" id="node12" href="$classadore_1_1apps_1_1PlatoonViewProvider.html#a63039cc8e771ee3714c55a2cc6b63b60" title=" " alt="" coords="317,593,516,635"/>
+<area shape="rect" id="node13" href="$classadore_1_1apps_1_1PlotEgo.html#abb6be28d06e6a1c6f9edf800cb1f7b14" title=" " alt="" coords="345,659,489,700"/>
+<area shape="rect" id="node14" href="$classadore_1_1apps_1_1PlotPlanSwath.html#ad6ac75f426081c797ae2d730d2e540a4" title=" " alt="" coords="325,724,509,765"/>
+<area shape="rect" id="node15" href="$classadore_1_1fun_1_1SetPointRequestDispatcher.html#a6b46b3d68c06f96a4bdcc0abb0d408f2" title=" " alt="" coords="289,789,544,831"/>
+<area shape="rect" id="node16" href="$classadore_1_1apps_1_1TacticalPlanner.html#ae5aa95a09bce4de67a12b60972740ad6" title="constructur" alt="" coords="323,855,510,896"/>
+<area shape="rect" id="node17" href="$classadore_1_1apps_1_1TrajectoryPlannerBase.html#a3d7bbcaa96b45c0a12216697d065c687" title=" " alt="" coords="317,920,517,961"/>
+<area shape="rect" id="node18" href="$classadore_1_1fun_1_1TurnSignalObserver.html#af9dcf0c78fe9eb3277aae86fc2412f76" title=" " alt="" coords="315,985,518,1027"/>
+<area shape="rect" id="node19" href="$classadore_1_1apps_1_1VehicleModel.html#ae694b4c954a7ba03571a5e40a29f5f08" title="Construct a new Vehicle Model object." alt="" coords="329,1051,505,1092"/>
+<area shape="rect" id="node21" href="$classadore_1_1if__ROS_1_1FactoryCollection.html#a07e53e57a417cf66c5d539a5e1bd590a" title=" " alt="" coords="309,1116,524,1157"/>
+<area shape="rect" id="node22" href="$classadore_1_1if__ROS_1_1CheckpointControllerNode.html#a5d71fbe87caca52f85b90552024aca2f" title=" " alt="" coords="34,201,213,243"/>
+<area shape="rect" id="node23" href="$classadore_1_1if__ROS_1_1CrosstrafficProvider.html#ac4aae75f5a431b7f494f958d366b9161" title=" " alt="" coords="33,267,214,308"/>
+<area shape="rect" id="node24" href="$classadore_1_1if__ROS_1_1FeedbackControllerNode.html#a943201b1a268172c3fa63155493f61a3" title=" " alt="" coords="10,332,237,373"/>
+<area shape="rect" id="node25" href="$classadore_1_1if__ROS_1_1GapProviderNode.html#a0401f80cea2b23b6e9dcd5a272116bae" title=" " alt="" coords="31,397,216,439"/>
+<area shape="rect" id="node26" href="$classadore_1_1if__ROS_1_1IndicatorHintsProviderNode.html#a8c9818268bfdf14b4d9834c3af7f4747" title=" " alt="" coords="42,463,205,504"/>
+<area shape="rect" id="node27" href="$classadore_1_1if__ROS_1_1LaneFollowingBehaviorNode.html#a0cb478c2dde1ec76031977170055577a" title=" " alt="" coords="25,528,221,569"/>
+<area shape="rect" id="node28" href="$classadore_1_1if__ROS_1_1LocalizationModelNode.html#ae940d37d3c0a9af5eab3930cc968825f" title=" " alt="" coords="32,593,215,635"/>
+<area shape="rect" id="node29" href="$classadore_1_1if__ROS_1_1LVProviderNode.html#ad35fdbfdaef8f2f89279dc08758bef3a" title=" " alt="" coords="35,659,211,700"/>
+<area shape="rect" id="node30" href="$classadore_1_1if__ROS_1_1MapProviderNode.html#a2dd3f906b4d4fe4ac67e415a6812d525" title=" " alt="" coords="30,724,217,765"/>
+<area shape="rect" id="node31" href="$classadore_1_1if__ROS_1_1MissionControllerNode.html#a397d4763bcd05cac76cfa56e10d4976c" title=" " alt="" coords="16,789,231,831"/>
+<area shape="rect" id="node32" href="$classadore_1_1if__ROS_1_1ObjectDetectionModelNode.html#a39ae32803b33d5f7560be9df5df7d10c" title=" " alt="" coords="20,855,227,896"/>
+<area shape="rect" id="node33" href="$classadore_1_1if__ROS_1_1OdometryModelNode.html#aa2f0b1687532cb423461e448e4f9cc57" title=" " alt="" coords="21,920,226,961"/>
+<area shape="rect" id="node34" href="$classadore_1_1if__ROS_1_1PredictionProviderNode.html#a2bd0137f5108911b604d344cec08231b" title=" " alt="" coords="38,985,209,1027"/>
+<area shape="rect" id="node35" href="$classadore_1_1if__ROS_1_1PVProviderNode.html#ab587b60f56d77e0a3ef0e1039a557519" title=" " alt="" coords="34,1051,213,1092"/>
+<area shape="rect" id="node36" href="$classadore_1_1if__ROS_1_1SpeedLimitProviderNode.html#a2d4bf50d95b32c9ff2de6c0208940b87" title=" " alt="" coords="34,1116,213,1157"/>
+<area shape="rect" id="node37" href="$classadore_1_1if__ROS_1_1TacticalPlannerNode.html#a5180bc2cd8b841db9a091f1d0f668942" title=" " alt="" coords="22,1181,225,1223"/>
+<area shape="rect" id="node38" href="$classadore_1_1if__ROS_1_1VehicleModelNode.html#a39bfd98cab9c1dbc6cf52d0ef4395adc" title=" " alt="" coords="28,1247,219,1288"/>
+<area shape="rect" id="node39" href="$classadore_1_1if__ROS_1_1AreaOfEffectProviderNode.html#aee236389544ea8187bde86872d11368d" title=" " alt="" coords="29,1312,218,1353"/>
+<area shape="rect" id="node40" href="$classadore_1_1if__ROS_1_1PlotConflictsNode.html#a487c464653d00b9ee784a78d489e22ce" title=" " alt="" coords="29,1377,217,1419"/>
+<area shape="rect" id="node41" href="$classadore_1_1if__ROS_1_1PlotEgoNode.html#a711abb35ea3afc045103c0f17a41713e" title=" " alt="" coords="28,1443,219,1484"/>
+<area shape="rect" id="node42" href="$classadore_1_1if__ROS_1_1ThisNode.html#aaf328a3eb557965433f5454a4dc6bf76" title=" " alt="" coords="39,1508,208,1549"/>
+<area shape="rect" id="node43" href="$classadore_1_1if__ROS_1_1PlotLanesNode.html#a784126bbfb438fe1ac65e2a8b8e44d37" title=" " alt="" coords="38,1573,209,1615"/>
+<area shape="rect" id="node44" href="$classadore_1_1if__ROS_1_1PlotPlanSwathNode.html#a99222b2043e1dc1a1ffb44edb14568d5" title=" " alt="" coords="24,1639,223,1680"/>
+<area shape="rect" id="node45" href="$classadore_1_1if__ROS_1_1PlotPlanningDetailsNode.html#a8a1db79dbf2fea19a352d85df90e20ca" title=" " alt="" coords="30,1704,217,1745"/>
+<area shape="rect" id="node46" href="$classadore_1_1if__ROS_1_1PlotPredictionsMinimalNode.html#ade04f327e681cb352a0e8694bd58fef7" title=" " alt="" coords="23,1769,224,1811"/>
+<area shape="rect" id="node47" href="$classadore_1_1if__ROS_1_1PlotPredictionsNode.html#adaaaac22d2e45a50c65f7889a84d432e" title=" " alt="" coords="23,1835,224,1876"/>
+<area shape="rect" id="node48" href="$classadore_1_1if__ROS_1_1PlotRoadAnnotationsNode.html#a542ee009bf265c7c1f61e542439b77f8" title=" " alt="" coords="5,1900,241,1941"/>
+<area shape="rect" id="node49" href="$classadore_1_1if__ROS_1_1PlotSatImagesNode.html#ab130eceaf0b67b8e2e680e3f2482a8a8" title=" " alt="" coords="24,1965,223,2007"/>
+<area shape="rect" id="node50" href="$classadore_1_1if__ROS_1_1PlotTrafficNode.html#a13e04e642d67a9a307a789061b84002e" title=" " alt="" coords="37,2031,210,2072"/>
+</map>

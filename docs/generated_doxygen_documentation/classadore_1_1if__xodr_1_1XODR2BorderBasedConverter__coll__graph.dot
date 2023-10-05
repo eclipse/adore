@@ -1,0 +1,7 @@
+digraph "adore::if_xodr::XODR2BorderBasedConverter"
+{
+ // LATEX_PDF_SIZE
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  Node1 [label="{adore::if_xodr::XODR2Border\lBasedConverter\n|+ emax\l+ edes\l+ xmin\l+ xmax\l+ xstart\l+ numberOfPointsPerBorder\l+ sampling\l+ m_x0\l+ m_y0\l- XODR_SIGNALTYPE_STOPLINE\l|+ XODR2BorderBasedConverter()\l+ convert()\l+ convert()\l+ convert()\l+ convert()\l+ convert()\l- convertLaneType()\l- extractRoadCenterLine\l_Spiral()\l- extractRoadCenterLine\l_Line()\l- extractRoadCenterLine\l_Poly3()\l- extractRoadCenterLine\l_ParamPoly3()\l- extractRoadCenterLine()\l- extractLanes_width()\l- extractLanes_border()\l- extractRoadSection()\l- convertTCDType()\land 7 more...\l}",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black",tooltip="OpenDRIVE converter from file to object sets."];
+}

@@ -1,0 +1,14 @@
+digraph "adore::fun::CurvatureSpeedLimit::getValue"
+{
+ // LATEX_PDF_SIZE
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  rankdir="RL";
+  Node1 [label="adore::fun::CurvatureSpeed\lLimit::getValue",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black",tooltip=" "];
+  Node1 -> Node2 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node2 [label="adore::fun::CurvatureSpeed\lLimitSmooth::getValue",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classadore_1_1fun_1_1CurvatureSpeedLimitSmooth.html#a71bae46b2caaf4b447910157e5a098cb",tooltip=" "];
+  Node1 -> Node3 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node3 [label="adore::fun::CurvatureSpeed\lLimitPredict::getValue",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classadore_1_1fun_1_1CurvatureSpeedLimitPredict.html#a933263cdb2039755d7f4b980720a9aa3",tooltip=" "];
+  Node1 -> Node4 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node4 [label="adore::fun::NominalReference\lSpeed::getValueIfAvailable",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classadore_1_1fun_1_1NominalReferenceSpeed.html#a75a1080c9abbf207f8970a780ad19fff",tooltip=" "];
+}

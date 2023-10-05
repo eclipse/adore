@@ -1,0 +1,16 @@
+digraph "adore::env::NavigationGoalObserver::NavigationGoalObserver"
+{
+ // LATEX_PDF_SIZE
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  rankdir="LR";
+  Node1 [label="adore::env::NavigationGoal\lObserver::NavigationGoalObserver",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black",tooltip=" "];
+  Node1 -> Node2 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node2 [label="adore::params::ParamsFactory\lInstance::get",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classadore_1_1params_1_1ParamsFactoryInstance.html#ae4d79d6130cebb47d90a82b6edb7660d",tooltip=" "];
+  Node2 -> Node3 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node3 [label="adore::params::ParamsFactory\lInstance::getInstance",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classadore_1_1params_1_1ParamsFactoryInstance.html#a59eae0e003d40b03f9db2d814ec2a3bf",tooltip="Function to access singleton instance of the AllFactory using magic static."];
+  Node1 -> Node4 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node4 [label="adore::params::AFactory\l::getNavigation",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classadore_1_1params_1_1AFactory.html#a72b749ed2e34c379c620d7d729cf8d92",tooltip=" "];
+  Node1 -> Node5 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node5 [label="adore::env::AFactory\l::getNavigationGoalReader",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classadore_1_1env_1_1AFactory.html#a32a2e8fb3f28143aa8ffb86f3e20c6fc",tooltip=" "];
+}

@@ -1,0 +1,9 @@
+digraph "adore::env::ThreeLaneViewDecoupled::LaneChangeViewProxy"
+{
+ // LATEX_PDF_SIZE
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  Node1 [label="{adore::env::ThreeLaneView\lDecoupled::LaneChangeViewProxy\n|+ source_\l+ target_\l+ data_\l|+ limitS()\l+ LaneChangeViewProxy()\l+ setLanes()\l+ getSourceLane()\l+ getTargetLane()\l+ getLCDirection()\l+ getProgressOfGateOpen()\l+ getProgressOfGateClosed()\l+ getOffsetOfStartOuterBorder()\l+ getOffsetOfSeparatingBorder()\l+ getOffsetOfDestinationOuter\lBorder()\l+ getNavigationCostDifference()\l}",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black",tooltip=" "];
+  Node2 -> Node1 [dir="back",color="midnightblue",fontsize="10",style="solid",arrowtail="onormal",fontname="Helvetica"];
+  Node2 [label="{adore::view::ALaneChangeView\n||+ getSourceLane()\l+ getTargetLane()\l+ getLCDirection()\l+ getProgressOfGateOpen()\l+ getProgressOfGateClosed()\l+ getOffsetOfStartOuterBorder()\l+ getOffsetOfSeparatingBorder()\l+ getOffsetOfDestinationOuter\lBorder()\l+ getNavigationCostDifference()\l}",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classadore_1_1view_1_1ALaneChangeView.html",tooltip=" "];
+}

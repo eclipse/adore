@@ -1,0 +1,9 @@
+digraph "adore::if_ROS::MotionStateFeed"
+{
+ // LATEX_PDF_SIZE
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  Node1 [label="{adore::if_ROS::MotionStateFeed\n|- odom_subscriber_\l- steering_subscriber_\l- acceleration_subscriber_\l- ax_\l- delta_\l- params_\l- queue_\l|+ MotionStateFeed()\l+ hasNext()\l+ getNext()\l+ getLatest()\l- receive_odom()\l- receive_steering()\l- receive_acceleration()\l}",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black",tooltip=" "];
+  Node2 -> Node1 [dir="back",color="midnightblue",fontsize="10",style="solid",arrowtail="onormal",fontname="Helvetica"];
+  Node2 [label="{adore::mad::AFeed\<\l adore::fun::VehicleMotion\lState9d \>\n||+ hasNext()\l+ getNext()\l+ getLatest()\l}",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classadore_1_1mad_1_1AFeed.html",tooltip=" "];
+}

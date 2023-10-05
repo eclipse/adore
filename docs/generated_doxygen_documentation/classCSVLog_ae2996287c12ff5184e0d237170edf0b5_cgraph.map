@@ -1,0 +1,9 @@
+<map id="CSVLog::logErrorFile" name="CSVLog::logErrorFile">
+<area shape="rect" id="node1" title="log on error level in file" alt="" coords="5,81,151,108"/>
+<area shape="rect" id="node2" href="$classCSVLog.html#abf2187c78e4eb54e1724438a1074aaad" title="generate log entry in file" alt="" coords="199,81,316,108"/>
+<area shape="rect" id="node3" href="$classCSVLog.html#a668001de9868bbc7f605cd7252df9d2f" title="get time of day as string" alt="" coords="368,5,537,32"/>
+<area shape="rect" id="node4" href="$classCSVLog.html#ad6cab441e362a65b4c60aaf223811b42" title="get epoch as string" alt="" coords="589,81,796,108"/>
+<area shape="rect" id="node5" href="$classCSVLog.html#a3c428d922317879c1aa99204fa32bf61" title="writes content of buffer to file" alt="" coords="364,107,541,133"/>
+<area shape="rect" id="node6" href="$classCSVLog.html#a42ea472abab2f1edd941af3912edcb1d" title="general log generator for buffer" alt="" coords="364,157,541,184"/>
+<area shape="rect" id="node7" href="$classCSVLog.html#aac8cc94d98c714221aca42f9c4c14441" title="get string for log level" alt="" coords="623,157,763,184"/>
+</map>

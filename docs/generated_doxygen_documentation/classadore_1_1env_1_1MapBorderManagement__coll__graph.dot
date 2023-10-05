@@ -1,0 +1,9 @@
+digraph "adore::env::MapBorderManagement"
+{
+ // LATEX_PDF_SIZE
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  Node1 [label="{adore::env::MapBorderManagement\n|- m_updateQueue\l|+ MapBorderManagement()\l+ getSuccessors()\l+ getBordersAtPoint()\l+ init()\l+ getBorder()\l+ clearLocalMap()\l+ reset()\l+ getGlobalMap()\l+ deleteBordersInRegion()\l+ addBordersInRegion()\land 6 more...\l- initGlobalSet()\l- initBaseSet()\l- do_run()\l}",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black",tooltip="Automatically manage local map and necessary updates based on vehicle position and last state of obje..."];
+  Node2 -> Node1 [color="grey25",fontsize="10",style="solid",label=" -m_baseSet\n-m_globalSet\n-m_localSet" ,arrowhead="odiamond",fontname="Helvetica"];
+  Node2 [label="{adore::env::BorderBased\l::BorderSet\n|# m_coord_uncertainty_xy\l# m_coord_uncertainty_z\l# m_guard\l# m_max_lane_width\l# m_byID\l# m_byLeftID\l# m_byFirstCoord\l# m_byLastCoord\l# m_byRegion\l# m_isOwner\l- m_allowedBorderTypes\l|+ BorderSet()\l+ ~BorderSet()\l+ addAllowedType()\l+ rotate()\l+ translate()\l+ removeAllowedType()\l+ borderTypeValid()\l+ setIsOwner()\l+ insert_border()\l+ erase_border()\land 46 more...\l}",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classadore_1_1env_1_1BorderBased_1_1BorderSet.html",tooltip="efficiently store borders in boost R-tree"];
+}

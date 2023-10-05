@@ -1,0 +1,9 @@
+digraph "adore::env::TrafficControlDevice"
+{
+ // LATEX_PDF_SIZE
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  Node1 [label="{adore::env::TrafficControl\lDevice\n|- type_\l- id_\l- orientation_\l|+ getTCDClass()\l+ getNumericValue1()\l+ TrafficControlDevice()\l+ TrafficControlDevice()\l+ translate()\l+ rotate()\l+ getID()\l+ setID()\l+ setType()\l+ getType()\l+ setOrientation()\l+ getOrientation()\l+ setCoordinate()\l+ getCoordinate()\l}",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black",tooltip=" "];
+  Node2 -> Node1 [color="grey25",fontsize="10",style="solid",label=" -coordinate_" ,arrowhead="odiamond",fontname="Helvetica"];
+  Node2 [label="{adore::env::BorderBased\l::Coordinate\n|+ m_X\l+ m_Y\l+ m_Z\l|+ Coordinate()\l+ Coordinate()\l+ Coordinate()\l+ Coordinate()\l+ translate()\l+ rotate()\l+ discretize()\l+ distance()\l+ isNear()\l+ operator==()\land 8 more...\l}",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$structadore_1_1env_1_1BorderBased_1_1Coordinate.html",tooltip="This struct represents 3-dimensional coordines."];
+}

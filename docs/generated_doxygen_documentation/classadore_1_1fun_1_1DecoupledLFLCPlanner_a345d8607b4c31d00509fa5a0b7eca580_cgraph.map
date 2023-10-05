@@ -1,0 +1,19 @@
+<map id="adore::fun::DecoupledLFLCPlanner::update_offset_parameters" name="adore::fun::DecoupledLFLCPlanner::update_offset_parameters">
+<area shape="rect" id="node1" title=" " alt="" coords="5,496,232,537"/>
+<area shape="rect" id="node2" href="$classadore_1_1params_1_1APLateralPlanner.html#a332207c4342f1d5c3d9719f4bac83a18" title="getSlackAcc returns maximum slack of soft&#45;constraints for acceleration" alt="" coords="308,5,479,47"/>
+<area shape="rect" id="node3" href="$classadore_1_1params_1_1APLateralPlanner.html#a4ff3177fd882dc9cd5ca08a86a0db858" title="getSlackPos returns maximum slack of soft&#45;constraints for position" alt="" coords="308,71,479,112"/>
+<area shape="rect" id="node4" href="$classadore_1_1params_1_1APLateralPlanner.html#a4a4c1a78bda759d872cf10e8be191b77" title="getSlackVel returns maximum slack of soft&#45;constraints for velocity" alt="" coords="308,136,479,177"/>
+<area shape="rect" id="node5" href="$classadore_1_1params_1_1APLateralPlanner.html#a60e916727829be1f11f910d2e1297669" title="getWeightAcc returns cost function weight for quadratic acceleration term" alt="" coords="308,201,479,243"/>
+<area shape="rect" id="node6" href="$classadore_1_1params_1_1APLateralPlanner.html#a2cb3d247137ed81d3efeca336e0943cb" title="getWeightEndAcc returns cost function weight for quadratic acceleration term at end point" alt="" coords="304,267,483,308"/>
+<area shape="rect" id="node7" href="$classadore_1_1params_1_1APLateralPlanner.html#ae2aa5a19705f7107fd935072837bc60e" title="getWeightEndPos returns cost function weight for quadratic position error term at end point" alt="" coords="304,332,483,373"/>
+<area shape="rect" id="node8" href="$classadore_1_1params_1_1APLateralPlanner.html#aaa55208828c863bc6eb40c9f02e7a5aa" title="getWeightEndVel returns cost function weight for quadratic velocity error term at end point" alt="" coords="306,397,481,439"/>
+<area shape="rect" id="node9" href="$classadore_1_1params_1_1APLateralPlanner.html#ae5a7e51485b238a08dcecac579102922" title="getWeightJerk returns cost function weight for quadratic jerk term" alt="" coords="308,463,479,504"/>
+<area shape="rect" id="node10" href="$classadore_1_1params_1_1APLateralPlanner.html#ac3f04bae048e3fe9cfff12b4d0a597d9" title="getWeightPos returns cost function weight for quadratic position error term" alt="" coords="308,528,479,569"/>
+<area shape="rect" id="node11" href="$classadore_1_1params_1_1APLateralPlanner.html#a6ba2fe5da267a198f8465043ae594adf" title="getWeightVel returns cost function weight for quadratic velocity error term" alt="" coords="308,593,479,635"/>
+<area shape="rect" id="node12" href="$classadore_1_1mad_1_1LQ__OC__single__shooting.html#a5fcac1ea767ff35c986d236caf3d6ec4" title=" " alt="" coords="293,659,494,700"/>
+<area shape="rect" id="node13" href="$classadore_1_1mad_1_1LQ__OC__single__shooting.html#ab493ff12358e118e70f7aba8688c7e54" title=" " alt="" coords="303,724,483,765"/>
+<area shape="rect" id="node14" href="$classadore_1_1fun_1_1DecoupledLFLCPlanner.html#af7df2c139c101f2cfd6fa9bf9965391a" title=" " alt="" coords="280,789,507,831"/>
+<area shape="rect" id="node15" href="$classadore_1_1mad_1_1LQ__OC__single__shooting.html#af213a45160b684948610a4a72e188267" title=" " alt="" coords="303,855,483,896"/>
+<area shape="rect" id="node16" href="$classadore_1_1mad_1_1LQ__OC__single__shooting.html#a3093fe03c2605d1fe61c1614f398212f" title=" " alt="" coords="303,920,483,961"/>
+<area shape="rect" id="node17" href="$classadore_1_1mad_1_1LQ__OC__single__shooting.html#a7f83aeb20a771e3b38aa4a52942afed2" title=" " alt="" coords="303,985,483,1027"/>
+</map>

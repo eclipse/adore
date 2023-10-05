@@ -1,0 +1,9 @@
+digraph "adore::env::ControlledConnection"
+{
+ // LATEX_PDF_SIZE
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  Node1 [label="{adore::env::ControlledConnection\n|+ data_\l|+ ControlledConnection()\l+ ControlledConnection()\l+ setID()\l+ getID()\l+ insertStateEvent()\l+ clear()\l+ getState_byMinTime()\l+ convert()\l}",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black",tooltip=" "];
+  Node2 -> Node1 [color="grey25",fontsize="10",style="solid",label=" -id_" ,arrowhead="odiamond",fontname="Helvetica"];
+  Node2 [label="{adore::env::VectorIdentifier\n|- id_\l- precision_\l|+ VectorIdentifier()\l+ equals()\l+ getPrecision()\l+ getID()\l+ getFrom()\l+ getTo()\l}",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$structadore_1_1env_1_1VectorIdentifier.html",tooltip=" "];
+}

@@ -1,0 +1,14 @@
+digraph "adore::params::APSensorModel::get_objectDetectionRange"
+{
+ // LATEX_PDF_SIZE
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  rankdir="RL";
+  Node1 [label="adore::params::APSensorModel\l::get_objectDetectionRange",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black",tooltip="maximum sensor range for object detection in a generalized sensor setting"];
+  Node1 -> Node2 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node2 [label="adore::apps::ObjectDetection\lModel::run",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classadore_1_1apps_1_1ObjectDetectionModel.html#a5f8c0581e1883754fa0a498e7e8b4280",tooltip="publish updates on the detection of traffic participants"];
+  Node2 -> Node3 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node3 [label="adore::if_ROS::ObjectDetection\lModelNode::init",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classadore_1_1if__ROS_1_1ObjectDetectionModelNode.html#a39ae32803b33d5f7560be9df5df7d10c",tooltip=" "];
+  Node3 -> Node4 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node4 [label="main",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$adore__objectdetectionmodel__node_8cpp.html#a3c04138a5bfe5d72780bb7e82a18e627",tooltip=" "];
+}

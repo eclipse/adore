@@ -1,0 +1,52 @@
+<map id="adore::mad::max" name="adore::mad::max">
+<area shape="rect" id="node1" title=" " alt="" coords="759,639,879,665"/>
+<area shape="rect" id="node2" href="$namespaceadore_1_1mad.html#a927f4883d4edcec4dcfd9bb1f09d4f62" title=" " alt="" coords="580,1880,711,1907"/>
+<area shape="rect" id="node40" href="$namespaceadore_1_1mad.html#a62516f1abc40135ec50badd35dd03059" title=" " alt="" coords="322,5,501,32"/>
+<area shape="rect" id="node41" href="$namespaceadore_1_1mad.html#adea062854ef0b105a3fdca8cf2aca945" title=" " alt="" coords="585,639,705,665"/>
+<area shape="rect" id="node3" href="$classadore_1_1fun_1_1SetPointRequestSwath.html#a25b8ab48b288e512953324e391bc946e" title=" " alt="" coords="291,697,532,738"/>
+<area shape="rect" id="node4" href="$namespaceadore_1_1mad.html#a3950e63dd81881b955e8e213a959e46b" title=" " alt="" coords="346,2089,477,2116"/>
+<area shape="rect" id="node5" href="$classadore_1_1fun_1_1MRMPlanner.html#aae8436fc85e3888af12e9e35559e3455" title=" " alt="" coords="329,762,493,803"/>
+<area shape="rect" id="node6" href="$classadore_1_1fun_1_1LinearTrackingController.html#a6dd536fe3c1648f267b882c1687f95ab" title=" " alt="" coords="303,2023,520,2065"/>
+<area shape="rect" id="node7" href="$classadore_1_1apps_1_1FeedbackController.html#a53938de6939b52cd8f61a3882cbd86e0" title=" " alt="" coords="5,1972,243,1999"/>
+<area shape="rect" id="node8" href="$classadore_1_1fun_1_1TerminalController.html#a833cfa688d4c838b1c4bbc3e4e2d2269" title=" " alt="" coords="315,827,508,869"/>
+<area shape="rect" id="node9" href="$classadore_1_1env_1_1LaneChangeGaps.html#add65c54915bf8c76c346fef8e68f14bc" title=" " alt="" coords="314,2141,509,2182"/>
+<area shape="rect" id="node10" href="$classadore_1_1if__xodr_1_1XODR2BorderBasedConverter.html#adf9ff05235f364296ad823c54ad22929" title="determine absolute coordinate and heading of non stop line headings" alt="" coords="292,2207,531,2263"/>
+<area shape="rect" id="node11" href="$namespaceadore_1_1mad.html#a9b37b72a4ab15b34bf4bba7583a34dee" title=" " alt="" coords="320,2287,503,2329"/>
+<area shape="rect" id="node12" href="$classadore_1_1env_1_1BorderBased_1_1LaneFollowingGeometry.html#ad186acfd36137d81b50ab523d9d2938f" title="Modify a lane boundary to exclude a given point." alt="" coords="326,893,497,949"/>
+<area shape="rect" id="node13" href="$classadore_1_1fun_1_1VLB__OpenLoop.html#a4cabed52bbea40a691433e5cad0891ae" title=" " alt="" coords="316,2353,507,2380"/>
+<area shape="rect" id="node14" href="$structadore_1_1env_1_1BorderBased_1_1BorderOverlap.html#a275703815047077c6ac3b75389105d2c" title="Get the corner points of the overlap." alt="" coords="304,974,519,1015"/>
+<area shape="rect" id="node15" href="$classadore_1_1env_1_1BorderBased_1_1LaneFollowingGeometry.html#ad1a92624a2dd914dc135eca0309ef9a8" title="Get the curvature of the lane at a certain position." alt="" coords="326,2404,497,2460"/>
+<area shape="rect" id="node16" href="$classadore_1_1mad_1_1LLinearPiecewiseFunctionM.html#aa33105fe6aeb10a32eb188d84b3be890" title=" " alt="" coords="303,1039,520,1081"/>
+<area shape="rect" id="node17" href="$classadore_1_1env_1_1BorderBased_1_1LaneFollowingGeometry.html#a1720c305927de419daeb577fb3055630" title="Get the heading at a certain position." alt="" coords="326,2484,497,2540"/>
+<area shape="rect" id="node18" href="$structadore_1_1fun_1_1PlanningResult.html#a36a6fe94ff79083182756ac564459006" title=" " alt="" coords="323,2565,499,2606"/>
+<area shape="rect" id="node19" href="$classadore_1_1env_1_1BorderBased_1_1LaneChangeGeometry.html#afc7f7418aed3c6261dcd6f5b864cc229" title="Get the offset of the left border at a certain position." alt="" coords="327,2631,495,2687"/>
+<area shape="rect" id="node20" href="$classadore_1_1env_1_1BorderBased_1_1LaneFollowingGeometry.html#a06948f564268fcc8839d8f68264dd21c" title="Get the offset of the left border at a certain position." alt="" coords="326,2711,497,2767"/>
+<area shape="rect" id="node21" href="$classadore_1_1env_1_1BorderBased_1_1LaneChangeGeometry.html#a9b119a119b33546fde049def7e9478d5" title="Get the offset of the right border at a certain position." alt="" coords="327,2791,495,2847"/>
+<area shape="rect" id="node22" href="$classadore_1_1env_1_1BorderBased_1_1LaneFollowingGeometry.html#a9a5eb2a8767f13365d0e62fa024bc6a5" title="Get the offset of the right border at a certain position." alt="" coords="326,2871,497,2927"/>
+<area shape="rect" id="node23" href="$classadore_1_1mad_1_1LLinearPiecewiseFunctionM.html#af583aeb46e42f595578832e0869becf7" title="shifts s to be in between limitLo and limitHi" alt="" coords="313,2951,510,2993"/>
+<area shape="rect" id="node24" href="$classadore_1_1env_1_1BorderBased_1_1LaneFollowingViewProxy.html#af6812487d6f186eb764ce20b34ee9f8a" title=" " alt="" coords="323,3017,499,3073"/>
+<area shape="rect" id="node25" href="$classadore_1_1env_1_1ThreeLaneViewDecoupled_1_1LaneProxy.html#a685b3d49deb2efe36d5b36f9789f5575" title=" " alt="" coords="314,3098,509,3139"/>
+<area shape="rect" id="node26" href="$classadore_1_1fun_1_1SPRNavigationCostOnLane.html#a1b9b71f775b0630b647567144cd35f06" title="minimum cost of given lane, independent of trajectory" alt="" coords="309,3163,514,3205"/>
+<area shape="rect" id="node27" href="$classadore_1_1fun_1_1SPRNormalizedNavigationCost.html#a0d97ab593763f208e17053affdcb428e" title="simplified version of normalized_nav_cost: lane is given" alt="" coords="320,1105,503,1161"/>
+<area shape="rect" id="node28" href="$namespaceadore_1_1PLOT.html#a06e182f546ad1bb12ff78136e6318edd" title=" " alt="" coords="313,1185,510,1212"/>
+<area shape="rect" id="node29" href="$classadore_1_1env_1_1OCStraightLinePrediction.html#a98a7c5f4c101c7a917f8e5a3e984cd16" title=" " alt="" coords="321,1237,501,1278"/>
+<area shape="rect" id="node30" href="$classadore_1_1env_1_1OCRoadBasedPrediction.html#af6fda5b2a78669c5e19e222348665713" title=" " alt="" coords="293,1302,530,1343"/>
+<area shape="rect" id="node31" href="$classadore_1_1fun_1_1DecoupledLFLCPlanner.html#ae79c739be18dc79db3521eb2540fb678" title=" " alt="" coords="298,1367,525,1409"/>
+<area shape="rect" id="node32" href="$classadore_1_1fun_1_1LateralPlanner.html#a693509deea6464322cd6219ebced4b05" title=" " alt="" coords="316,1433,507,1474"/>
+<area shape="rect" id="node33" href="$classadore_1_1fun_1_1DecoupledLFLCPlanner.html#a1ed615f477f8ccb4b64217e7690563c2" title=" " alt="" coords="298,1498,525,1539"/>
+<area shape="rect" id="node34" href="$classadore_1_1env_1_1GapRating__NearEgo.html#a85bf9cc9e77eaece44563ef5382a0b87" title=" " alt="" coords="335,1563,488,1605"/>
+<area shape="rect" id="node35" href="$classadore_1_1if__ROS_1_1setpointrequest__to__mcm.html#acfc54ebf23396c9a4a012b0ef185556c" title=" " alt="" coords="307,1629,515,1670"/>
+<area shape="rect" id="node36" href="$classadore_1_1env_1_1BorderBased_1_1LaneFollowingGeometry.html#a9bbf6e74ae3889713c5047a0d28d3b4f" title="Transform from relative to euclidian coordinates." alt="" coords="326,1695,497,1751"/>
+<area shape="rect" id="node37" href="$classadore_1_1apps_1_1LocalizationModel.html#a4b0b280b821ef650bead639c9f17b271" title="simulation step of the odometry estimate model" alt="" coords="328,1775,495,1817"/>
+<area shape="rect" id="node38" href="$classadore_1_1apps_1_1OdometryModel.html#a2b8a8009f336999f7768a9eba0590c75" title="simulation step of the odometry estimate model" alt="" coords="316,1841,507,1882"/>
+<area shape="rect" id="node39" href="$classadore_1_1env_1_1BorderBased_1_1Baseline.html#a09c90ecc7b472770bc2ec35de280ae3c" title="compute fit for borderSequence" alt="" coords="328,1906,495,1947"/>
+<area shape="rect" id="node42" href="$classadore_1_1env_1_1BorderBased_1_1ConflictSet.html#a0ccefac65a9dcd4137c9643bc9ce5c4d" title=" " alt="" coords="291,370,531,411"/>
+<area shape="rect" id="node43" href="$classadore_1_1mad_1_1LLinearFunction.html#a192292284a579320adf578f3262486dd" title=" " alt="" coords="318,435,505,477"/>
+<area shape="rect" id="node44" href="$classadore_1_1mad_1_1LLinearPiecewiseFunctionS.html#a41c2636b8d6a4a65889072724a84f0bd" title=" " alt="" coords="313,501,510,542"/>
+<area shape="rect" id="node45" href="$classadore_1_1mad_1_1LLinearPiecewiseFunctionA.html#af59f04d29e52f9e390de25c640414117" title=" " alt="" coords="313,566,510,607"/>
+<area shape="rect" id="node46" href="$classadore_1_1mad_1_1LPiecewiseFunction.html#a1d202a47edbf17011073159b7f49e162" title=" " alt="" coords="305,631,517,673"/>
+<area shape="rect" id="node47" href="$classadore_1_1mad_1_1LLinearPiecewiseFunctionM_1_1OneDimension.html#aa634146e750d2bd4ea2f57b3a69769b7" title=" " alt="" coords="301,57,521,98"/>
+<area shape="rect" id="node48" href="$classadore_1_1mad_1_1LLinearPiecewiseFunctionA_1_1OneDimension.html#a5f56bace745f248da5092d39e3c7df35" title=" " alt="" coords="302,122,521,163"/>
+<area shape="rect" id="node49" href="$structadore_1_1mad_1_1OccupancyCylinder.html#aff6dd171b8963e049fbc67ec2cae231a" title=" " alt="" coords="307,187,516,229"/>
+<area shape="rect" id="node50" href="$classadore_1_1mad_1_1BoundingVolumes_1_1OBB3d.html#a516ef865d6424d2a2c725fb868bae28e" title=" " alt="" coords="311,253,511,294"/>
+</map>

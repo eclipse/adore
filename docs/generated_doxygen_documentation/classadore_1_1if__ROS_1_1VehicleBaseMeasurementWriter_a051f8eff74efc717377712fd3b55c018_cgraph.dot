@@ -1,0 +1,18 @@
+digraph "adore::if_ROS::VehicleBaseMeasurementWriter::write"
+{
+ // LATEX_PDF_SIZE
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  rankdir="LR";
+  Node1 [label="adore::if_ROS::VehicleBase\lMeasurementWriter::write",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black",tooltip="write sends out data value"];
+  Node1 -> Node2 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node2 [label="adore::fun::VehicleBaseMeasurement\l::getEspAx",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classadore_1_1fun_1_1VehicleBaseMeasurement.html#a16fe624bd38d3db0e255109edc442b70",tooltip=" "];
+  Node1 -> Node3 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node3 [label="adore::fun::VehicleBaseMeasurement\l::getEspAy",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classadore_1_1fun_1_1VehicleBaseMeasurement.html#a589ea76b8512d404a3dde90fdd69b222",tooltip=" "];
+  Node1 -> Node4 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node4 [label="adore::fun::VehicleBaseMeasurement\l::getSteeringAngle",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classadore_1_1fun_1_1VehicleBaseMeasurement.html#aecb1a0fe3f74bb142105e8610434d670",tooltip=" "];
+  Node1 -> Node5 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node5 [label="adore::fun::VehicleBaseMeasurement\l::getWheelSpeeds",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classadore_1_1fun_1_1VehicleBaseMeasurement.html#abad5eb2877a343b9b2c4e1424cb05486",tooltip=" "];
+  Node1 -> Node6 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node6 [label="adore::fun::VehicleBaseMeasurement\l::getYawRate",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classadore_1_1fun_1_1VehicleBaseMeasurement.html#aab3ea54aff184af05da14d45644755ca",tooltip=" "];
+}

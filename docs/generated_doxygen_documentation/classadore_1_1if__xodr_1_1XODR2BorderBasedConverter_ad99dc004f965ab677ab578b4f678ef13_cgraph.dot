@@ -1,0 +1,45 @@
+digraph "adore::if_xodr::XODR2BorderBasedConverter::convertBorders"
+{
+ // LATEX_PDF_SIZE
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  rankdir="LR";
+  Node1 [label="adore::if_xodr::XODR2Border\lBasedConverter::convertBorders",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black",tooltip="convert function representation of road to border representation, determine absolute stop line positi..."];
+  Node1 -> Node2 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node2 [label="adore::mad::LLinearPiecewise\lFunctionM::getXAfterNPoints",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classadore_1_1mad_1_1LLinearPiecewiseFunctionM.html#a02be13be6fdce6a38d67401b41fd95ff",tooltip=" "];
+  Node2 -> Node3 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node3 [label="adore::mad::LLinearPiecewise\lFunctionM::findIndex",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classadore_1_1mad_1_1LLinearPiecewiseFunctionM.html#a92f9ea09083d587aa2ffa1ec600be3b5",tooltip=" "];
+  Node3 -> Node4 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node4 [label="adore::mad::LLinearPiecewise\lFunctionM::limitHi",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classadore_1_1mad_1_1LLinearPiecewiseFunctionM.html#aaa496b8ceb3ed505f6450225c46a077a",tooltip=" "];
+  Node3 -> Node5 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node5 [label="adore::mad::LLinearPiecewise\lFunctionM::limitLo",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classadore_1_1mad_1_1LLinearPiecewiseFunctionM.html#a682841e9bc82a0653745dce6f908bfa6",tooltip=" "];
+  Node3 -> Node6 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node6 [label="adore::mad::min",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$namespaceadore_1_1mad.html#ab58ecb752f9bbfe27832e0a2c0e22c2b",tooltip=" "];
+  Node6 -> Node7 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node7 [label="adore::mad::min",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$namespaceadore_1_1mad.html#ac61b79c007d1859f93a10c04272095a1",tooltip=" "];
+  Node2 -> Node5 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node2 -> Node8 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node8 [label="adore::mad::max",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$namespaceadore_1_1mad.html#adea062854ef0b105a3fdca8cf2aca945",tooltip=" "];
+  Node8 -> Node9 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node9 [label="adore::mad::max",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$namespaceadore_1_1mad.html#a618a8842fed7b9375957b1e393c58492",tooltip=" "];
+  Node2 -> Node6 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node1 -> Node10 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node10 [label="adore::env::BorderBased\l::BorderSet::insert_border",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classadore_1_1env_1_1BorderBased_1_1BorderSet.html#a5730d3e4fc938c9bd1e1146a8a61deec",tooltip="insert new border into this"];
+  Node10 -> Node11 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node11 [label="adore::env::BorderBased\l::BorderSet::borderTypeValid",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classadore_1_1env_1_1BorderBased_1_1BorderSet.html#afb523effcee573e774147446ecc756ab",tooltip="check whether border type is in allowed types of set"];
+  Node10 -> Node12 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node12 [label="adore::env::BorderBased\l::Border::getBoostBox",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$structadore_1_1env_1_1BorderBased_1_1Border.html#a4b1e646e2c3d98b03e75f286611e0cda",tooltip="Get a bounding box for the implicit lane object."];
+  Node12 -> Node8 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node12 -> Node6 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node10 -> Node13 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node13 [label="adore::env::BorderBased\l::Coordinate::getBoostPoint",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$structadore_1_1env_1_1BorderBased_1_1Coordinate.html#abb34f84413225a9464afe389cb4f71a7",tooltip="Get a boost_point that has the same coordinates as the Coordinate object."];
+  Node1 -> Node14 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node14 [label="adore::env::BorderBased\l::LanePositionedObjectSet\l::insert_object",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classadore_1_1env_1_1BorderBased_1_1LanePositionedObjectSet.html#a29fcda96ff83818d11fcfd6f039923d2",tooltip="Insert a new object."];
+  Node14 -> Node15 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node15 [label="adore::env::BorderBased\l::LanePositionedObjectSet\l::erase_object",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classadore_1_1env_1_1BorderBased_1_1LanePositionedObjectSet.html#addbf17050f8673f2e6b56d7119eec2f3",tooltip="Erase objects on a certain LanePosition."];
+  Node14 -> Node16 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node16 [label="adore::env::BorderBased\l::ALanePositionedObject\l::getLanePosition",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classadore_1_1env_1_1BorderBased_1_1ALanePositionedObject.html#a0dc7e0c282bcd5a1face09d3eb0a61ac",tooltip="Get the LanePosition of the Object."];
+  Node1 -> Node4 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node1 -> Node8 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node1 -> Node6 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+}

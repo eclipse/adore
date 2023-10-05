@@ -1,0 +1,7 @@
+digraph "adore::env::VehicleState10d"
+{
+ // LATEX_PDF_SIZE
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  Node1 [label="{adore::env::VehicleState10d\n|+ data\l|+ getX()\l+ getY()\l+ getPSI()\l+ getvx()\l+ getvy()\l+ getOmega()\l+ getAx()\l+ getDelta()\l+ getDAx()\l+ getDDelta()\land 10 more...\l}",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black",tooltip="This struct holds the state of the vehicle in 10d."];
+}

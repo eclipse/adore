@@ -1,0 +1,10 @@
+digraph "adore::env::BorderBased::BorderSet::longitudinal_iterator::operator--"
+{
+ // LATEX_PDF_SIZE
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  rankdir="LR";
+  Node1 [label="adore::env::BorderBased\l::BorderSet::longitudinal\l_iterator::operator--",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black",tooltip=" "];
+  Node1 -> Node2 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node2 [label="adore::env::BorderBased\l::BorderSet::getPredecessors",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classadore_1_1env_1_1BorderBased_1_1BorderSet.html#acc68b8957d3092bf9e53a75ffa433b6f",tooltip="get an interator pair for all borders which lead to b"];
+}

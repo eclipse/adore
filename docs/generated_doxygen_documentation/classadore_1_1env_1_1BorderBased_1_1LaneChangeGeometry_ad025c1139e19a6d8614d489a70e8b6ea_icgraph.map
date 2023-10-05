@@ -1,0 +1,4 @@
+<map id="adore::env::BorderBased::LaneChangeGeometry::getProgressOfGateClosed" name="adore::env::BorderBased::LaneChangeGeometry::getProgressOfGateClosed">
+<area shape="rect" id="node1" title="Get the s&#45;coordinate where the lane ends to be in direct adjacency to the LaneFollowingGeometry whith..." alt="" coords="264,5,439,61"/>
+<area shape="rect" id="node2" href="$classadore_1_1env_1_1BorderBased_1_1LaneChangeView.html#a8c3d3b10832dc6d90d2a68bd75c3ae7e" title=" " alt="" coords="5,5,216,61"/>
+</map>

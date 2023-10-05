@@ -1,0 +1,24 @@
+digraph "DLR_TS::PlotLab::AFigureStub::erase_similar"
+{
+ // LATEX_PDF_SIZE
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  rankdir="RL";
+  Node1 [label="DLR_TS::PlotLab::AFigure\lStub::erase_similar",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black",tooltip=" "];
+  Node1 -> Node2 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node2 [label="adore::apps::PlotTraffic\l::PlotTraffic",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classadore_1_1apps_1_1PlotTraffic.html#a0ed34868c5098804725d8954ece45f8b",tooltip=" "];
+  Node1 -> Node3 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node3 [label="adore::apps::PlotViews\l::PlotViews",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classadore_1_1apps_1_1PlotViews.html#a7ce33c0b0a1be308cf875e061237e44b",tooltip=" "];
+  Node1 -> Node4 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node4 [label="adore::apps::PlotPlanSwath::run",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classadore_1_1apps_1_1PlotPlanSwath.html#a52e4e74ad0b689b53c3c0a6961bfc63d",tooltip=" "];
+  Node4 -> Node5 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node5 [label="adore::if_ROS::PlotPlanSwath\lNode::init",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classadore_1_1if__ROS_1_1PlotPlanSwathNode.html#a99222b2043e1dc1a1ffb44edb14568d5",tooltip=" "];
+  Node5 -> Node6 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node6 [label="main",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$plot__plan__swath__node_8cpp.html#a3c04138a5bfe5d72780bb7e82a18e627",tooltip=" "];
+  Node1 -> Node7 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node7 [label="adore::apps::PlotViews::run",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classadore_1_1apps_1_1PlotViews.html#ade792711bc6fe29fe77550b0577ac51b",tooltip=" "];
+  Node7 -> Node8 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node8 [label="adore::if_ROS::PlotViews\lNode::init",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classadore_1_1if__ROS_1_1PlotViewsNode.html#a9319849f4337c3d73487610f62eb1e7a",tooltip=" "];
+  Node8 -> Node9 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node9 [label="main",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$plot__views__node_8cpp.html#a3c04138a5bfe5d72780bb7e82a18e627",tooltip=" "];
+}

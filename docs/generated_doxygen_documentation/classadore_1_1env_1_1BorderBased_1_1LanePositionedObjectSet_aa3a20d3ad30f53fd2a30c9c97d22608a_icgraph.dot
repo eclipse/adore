@@ -1,0 +1,12 @@
+digraph "adore::env::BorderBased::LanePositionedObjectSet::setIsOwner"
+{
+ // LATEX_PDF_SIZE
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  rankdir="RL";
+  Node1 [label="adore::env::BorderBased\l::LanePositionedObjectSet\l::setIsOwner",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black",tooltip="Set the owner flag."];
+  Node1 -> Node2 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node2 [label="adore::env::MapStopLineManagement\l::init",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classadore_1_1env_1_1MapStopLineManagement.html#a616d4b2df2e12ba63ac2bb22f9fc11db",tooltip="initialization routine"];
+  Node1 -> Node3 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node3 [label="adore::env::MapStopLineManagement\l::MapStopLineManagement",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classadore_1_1env_1_1MapStopLineManagement.html#a51a888c84c739e7a6a6d4ad69b7eb287",tooltip="Construct a new Map Stop Line Management object."];
+}

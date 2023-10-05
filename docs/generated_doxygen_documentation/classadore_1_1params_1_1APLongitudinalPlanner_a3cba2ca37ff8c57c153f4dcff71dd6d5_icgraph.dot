@@ -1,0 +1,10 @@
+digraph "adore::params::APLongitudinalPlanner::getAccUBSlow"
+{
+ // LATEX_PDF_SIZE
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  rankdir="RL";
+  Node1 [label="adore::params::APLongitudinal\lPlanner::getAccUBSlow",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black",tooltip="getAccUBSlow returns acceleration upper bound at low speeds"];
+  Node1 -> Node2 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node2 [label="adore::fun::Longitudinal\lAccelerationConstraint\l::update",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classadore_1_1fun_1_1LongitudinalAccelerationConstraint.html#a1ea41866a453ef6e63dfbdeb8e060f4b",tooltip=" "];
+}

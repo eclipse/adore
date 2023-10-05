@@ -1,0 +1,5 @@
+<map id="adore::fun::TerminalController" name="adore::fun::TerminalController">
+<area shape="rect" id="node1" title=" " alt="" coords="107,307,300,399"/>
+<area shape="rect" id="node2" href="$classadore_1_1params_1_1APVehicle.html" title="abstract class for vehicle configuration related paremeters" alt="" coords="5,13,180,237"/>
+<area shape="rect" id="node3" href="$classadore_1_1params_1_1APEmergencyOperation.html" title="abstract class containing parameters concerning emergency operation behaviour" alt="" coords="205,5,423,244"/>
+</map>

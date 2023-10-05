@@ -1,0 +1,13 @@
+digraph "adore::fun::SPRNormalizedNavigationCost"
+{
+ // LATEX_PDF_SIZE
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  Node1 [label="{adore::fun::SPRNormalized\lNavigationCost\n|- max_overshoot_\l- laneID_\l|+ SPRNormalizedNavigationCost()\l+ getName()\l+ getCost()\l+ normalized_nav_cost\l_simple()\l}",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black",tooltip=" "];
+  Node2 -> Node1 [dir="back",color="midnightblue",fontsize="10",style="solid",arrowtail="onormal",fontname="Helvetica"];
+  Node2 [label="{adore::fun::ASPRCost\n||+ getCost()\l+ getName()\l}",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classadore_1_1fun_1_1ASPRCost.html",tooltip=" "];
+  Node3 -> Node1 [color="grey25",fontsize="10",style="solid",label=" -params_" ,arrowhead="odiamond",fontname="Helvetica"];
+  Node3 [label="{adore::params::APTactical\lPlanner\n||+ getGlobalSpeedLimit()\l+ getResetRadius()\l+ getAccLatUB()\l+ getAccLatUB_minVelocity()\l+ getAccLonUB()\l+ getAccLonLB()\l+ getFrontTimeGap()\l+ getRearTimeGap()\l+ getFrontSGap()\l+ getLowerBoundFrontSGapForLF()\land 20 more...\l}",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classadore_1_1params_1_1APTacticalPlanner.html",tooltip="abstract classs containing parameters to configure aspects and constraints of the tactical planner"];
+  Node4 -> Node1 [color="grey25",fontsize="10",style="solid",label=" -threeLaneView_" ,arrowhead="odiamond",fontname="Helvetica"];
+  Node4 [label="{adore::view::AThreeLaneView\n||+ getCurrentLane()\l+ getLeftLaneChange()\l+ getRightLaneChange()\l}",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classadore_1_1view_1_1AThreeLaneView.html",tooltip=" "];
+}

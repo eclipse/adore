@@ -1,0 +1,5 @@
+<map id="adore::env::BorderBased::LMSNearest" name="adore::env::BorderBased::LMSNearest">
+<area shape="rect" id="node1" title=" " alt="" coords="103,453,269,575"/>
+<area shape="rect" id="node2" href="$classadore_1_1env_1_1BorderBased_1_1LaneMatchingStrategy.html" title=" " alt="" coords="5,152,172,244"/>
+<area shape="rect" id="node3" href="$classadore_1_1env_1_1BorderBased_1_1BorderSet.html" title="efficiently store borders in boost R&#45;tree" alt="" coords="196,5,371,391"/>
+</map>

@@ -1,0 +1,10 @@
+digraph "adore::if_r2s::Section::FunctionMap::mend"
+{
+ // LATEX_PDF_SIZE
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  rankdir="RL";
+  Node1 [label="adore::if_r2s::Section\l::FunctionMap::mend",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black",tooltip="try to repair some mistakes that might occur due to matching to closest point on refline"];
+  Node1 -> Node2 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node2 [label="adore::if_r2s::Section\l::mend",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classadore_1_1if__r2s_1_1Section.html#ab4230b287a5fed56f8c54d0518220b32",tooltip="try to repair mistakes that occured during function generation"];
+}

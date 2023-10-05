@@ -1,0 +1,19 @@
+<map id="adore::env::BorderBased::LaneChangeBorders::isLCDirectionLeft" name="adore::env::BorderBased::LaneChangeBorders::isLCDirectionLeft">
+<area shape="rect" id="node1" title=" " alt="" coords="1343,342,1600,383"/>
+<area shape="rect" id="node2" href="$classadore_1_1env_1_1BorderBased_1_1IndependentLaneChangeGeometry.html#a7977e6eddecc6b3dcc251e0a6f76748a" title="collects points describing the navigation cost reference borders" alt="" coords="785,85,1016,141"/>
+<area shape="rect" id="node7" href="$classadore_1_1env_1_1BorderBased_1_1IndependentLaneChangeGeometry.html#a7713e6bca86dbc98e370e6abe0bce5f8" title="collects points describing the inner, separating border The separating borders are defined as a seque..." alt="" coords="1064,375,1295,431"/>
+<area shape="rect" id="node9" href="$classadore_1_1env_1_1BorderBased_1_1IndependentLaneChangeGeometry.html#ac25df1df647c1078f125c16a8fa47d0d" title="collects points describing the source&#45;side outer border" alt="" coords="1064,215,1295,271"/>
+<area shape="rect" id="node10" href="$classadore_1_1env_1_1BorderBased_1_1IndependentLaneChangeGeometry.html#ab8968d80018282d9f06c57ac0864725a" title="collects points describing the target&#45;side outer border" alt="" coords="1064,295,1295,351"/>
+<area shape="rect" id="node11" href="$classadore_1_1env_1_1BorderBased_1_1IndependentLaneChangeGeometry.html#a2e82c7945249df7b116d45e1f3fec852" title="compute gate open and close in the domain of the baseline function" alt="" coords="1064,505,1295,561"/>
+<area shape="rect" id="node12" href="$classadore_1_1env_1_1BorderBased_1_1IndependentLaneChangeGeometry.html#af78351ed854f3408beeaba6c2b1926b2" title="compute gate open and close in the domain of the baseline function. this version uses offset function..." alt="" coords="785,165,1016,221"/>
+<area shape="rect" id="node13" href="$classadore_1_1apps_1_1LaneViewProvider.html#a35ea0c3c39db670509e1427ee5203924" title=" " alt="" coords="521,375,723,417"/>
+<area shape="rect" id="node14" href="$classadore_1_1env_1_1BorderBased_1_1IndependentLaneChangeGeometry.html#a2c64a53494c7d6ec2f479dd2ad13f0d9" title=" " alt="" coords="1064,585,1295,641"/>
+<area shape="rect" id="node15" href="$classadore_1_1env_1_1BorderBased_1_1IndependentLaneChangeGeometry.html#a6f590655c427f34c46079955c6648f6d" title="returns the maximum width of the lane change" alt="" coords="1064,12,1295,68"/>
+<area shape="rect" id="node17" href="$classadore_1_1env_1_1BorderBased_1_1IndependentLaneChangeGeometry.html#a35f1d4a03256bf91df3923267931a4e1" title=" " alt="" coords="1064,665,1295,721"/>
+<area shape="rect" id="node3" href="$classadore_1_1env_1_1BorderBased_1_1IndependentLaneChangeGeometry.html#a821bde3f11a80bca977616edaff33587" title="constructs a lane change geometry if a gate is available" alt="" coords="507,231,737,287"/>
+<area shape="rect" id="node4" href="$classadore_1_1apps_1_1LaneViewProvider.html#a10c08893d16421f195ad2a597bfea8f8" title="update data, views and recompute maneuver" alt="" coords="229,307,459,333"/>
+<area shape="rect" id="node6" href="$test__independentlanechangegeometry_8cpp.html#a48baafb16e67cf190c9ac4a4a55d1c79" title=" " alt="" coords="294,245,394,272"/>
+<area shape="rect" id="node5" href="$classadore_1_1if__ROS_1_1LVProviderNode.html#ad35fdbfdaef8f2f89279dc08758bef3a" title=" " alt="" coords="5,299,181,341"/>
+<area shape="rect" id="node8" href="$test__independentlanechangegeometry_8cpp.html#aa56a0bce9f9e760f59ceea11ad085348" title=" " alt="" coords="851,296,951,323"/>
+<area shape="rect" id="node16" href="$classadore_1_1env_1_1BorderBased_1_1IndependentLaneChangeGeometry.html#a621026b867773d614f34ac50d7d7037f" title="a set of tests making sure that lane change geometry is drivable in real conditions" alt="" coords="785,5,1016,61"/>
+</map>

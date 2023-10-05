@@ -1,0 +1,5 @@
+<map id="adore::env::MapBorderManagement::changeBorderType" name="adore::env::MapBorderManagement::changeBorderType">
+<area shape="rect" id="node1" title="change border type of border identified by id" alt="" coords="5,39,235,80"/>
+<area shape="rect" id="node2" href="$classadore_1_1env_1_1BorderBased_1_1BorderSet.html#a69802bccdc7cf3fa598283509808edc2" title="retrieve a border by ID" alt="" coords="290,5,457,47"/>
+<area shape="rect" id="node3" href="$structadore_1_1env_1_1BorderBased_1_1Border.html#a6aef4b2d46c09542a7e792dd27770365" title="Check whether type is Changeable." alt="" coords="283,71,464,112"/>
+</map>

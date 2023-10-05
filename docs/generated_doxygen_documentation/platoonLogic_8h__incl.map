@@ -1,0 +1,52 @@
+<map id="/home/fascar/temp/adore/libadore/libadore/adore/fun/include/adore/fun/logic/platoonLogic.h" name="/home/fascar/temp/adore/libadore/libadore/adore/fun/include/adore/fun/logic/platoonLogic.h">
+<area shape="rect" id="node1" title=" " alt="" coords="4069,5,4248,76"/>
+<area shape="rect" id="node2" href="$platoonStateMachine_8h.html" title=" " alt="" coords="716,124,900,165"/>
+<area shape="rect" id="node10" href="$distanceStateMachine_8h.html" title=" " alt="" coords="434,124,594,165"/>
+<area shape="rect" id="node11" href="$threelaneviewdecoupled_8h.html" title=" " alt="" coords="4042,221,4275,247"/>
+<area shape="rect" id="node39" href="$fun_2include_2adore_2fun_2vehiclemotionstate9d_8h.html" title=" " alt="" coords="4299,221,4514,247"/>
+<area shape="rect" id="node41" href="$localroadmap_8h.html" title=" " alt="" coords="1750,213,1905,255"/>
+<area shape="rect" id="node46" href="$cooperativeusersprocess_8h.html" title=" " alt="" coords="4020,131,4296,158"/>
+<area shape="rect" id="node49" title=" " alt="" coords="4538,213,4701,255"/>
+<area shape="rect" id="node50" title=" " alt="" coords="4422,124,4585,165"/>
+<area shape="rect" id="node3" title=" " alt="" coords="944,221,1122,247"/>
+<area shape="rect" id="node4" title=" " alt="" coords="26,213,176,255"/>
+<area shape="rect" id="node5" title=" " alt="" coords="200,213,359,255"/>
+<area shape="rect" id="node6" title=" " alt="" coords="384,213,546,255"/>
+<area shape="rect" id="node7" title=" " alt="" coords="571,221,770,247"/>
+<area shape="rect" id="node8" title=" " alt="" coords="794,221,920,247"/>
+<area shape="rect" id="node9" title=" " alt="" coords="1212,489,1284,515"/>
+<area shape="rect" id="node12" href="$env_2include_2adore_2env_2afactory_8h.html" title=" " alt="" coords="2821,310,2960,337"/>
+<area shape="rect" id="node18" href="$participant_8h.html" title=" " alt="" coords="2664,489,2855,515"/>
+<area shape="rect" id="node29" href="$lanegeometrydataproxy_8h.html" title=" " alt="" coords="3990,481,4161,523"/>
+<area shape="rect" id="node35" href="$athreelaneview_8h.html" title=" " alt="" coords="4562,310,4747,337"/>
+<area shape="rect" id="node38" href="$trafficqueueonalane_8h.html" title=" " alt="" coords="4287,399,4531,426"/>
+<area shape="rect" id="node13" href="$border_8h.html" title=" " alt="" coords="1836,571,1990,612"/>
+<area shape="rect" id="node14" href="$navigationgoal_8h.html" title=" " alt="" coords="2931,399,3114,426"/>
+<area shape="rect" id="node15" href="$env_2include_2adore_2env_2ego_2vehiclemotionstate9d_8h.html" title=" " alt="" coords="2096,489,2338,515"/>
+<area shape="rect" id="node21" href="$com__patterns_8h.html" title=" " alt="" coords="1552,489,1730,515"/>
+<area shape="rect" id="node22" href="$precedence_8h.html" title=" " alt="" coords="1286,399,1476,426"/>
+<area shape="rect" id="node23" href="$map__border__management_8h.html" title=" " alt="" coords="2356,392,2536,433"/>
+<area shape="rect" id="node25" href="$proposition_8h.html" title=" " alt="" coords="3323,392,3455,433"/>
+<area shape="rect" id="node26" href="$controlledconnection_8h.html" title=" " alt="" coords="1710,399,1945,426"/>
+<area shape="rect" id="node27" href="$occupancycylinderprediction_8h.html" title=" " alt="" coords="2612,399,2907,426"/>
+<area shape="rect" id="node28" href="$lanecombinedgeometry_8h.html" title=" " alt="" coords="3683,392,3852,433"/>
+<area shape="rect" id="node30" href="$speedlimit_8h.html" title=" " alt="" coords="3064,489,3247,515"/>
+<area shape="rect" id="node31" href="$areaofeffect_8h.html" title=" " alt="" coords="3271,481,3403,523"/>
+<area shape="rect" id="node32" href="$cooperativeusersprediction_8h.html" title=" " alt="" coords="3427,489,3714,515"/>
+<area shape="rect" id="node33" href="$gapdata_8h.html" title=" " alt="" coords="3738,489,3915,515"/>
+<area shape="rect" id="node34" href="$indicator__hint_8h.html" title=" " alt="" coords="3138,392,3299,433"/>
+<area shape="rect" id="node16" href="$adoremath_8h.html" title=" " alt="" coords="2138,660,2296,687"/>
+<area shape="rect" id="node17" title=" " alt="" coords="3364,735,3438,761"/>
+<area shape="rect" id="node19" title=" " alt="" coords="3217,578,3276,605"/>
+<area shape="rect" id="node20" href="$movingbox_8h.html" title=" " alt="" coords="2484,578,2580,605"/>
+<area shape="rect" id="node24" href="$borderset_8h.html" title=" " alt="" coords="2362,481,2517,523"/>
+<area shape="rect" id="node36" href="$alane_8h.html" title=" " alt="" coords="4652,489,4716,515"/>
+<area shape="rect" id="node37" href="$alanechangeview_8h.html" title=" " alt="" coords="4555,399,4754,426"/>
+<area shape="rect" id="node40" title=" " alt="" coords="4878,310,4961,337"/>
+<area shape="rect" id="node42" href="$bordertrace_8h.html" title=" " alt="" coords="1434,303,1589,344"/>
+<area shape="rect" id="node43" href="$lanematchingstrategy_8h.html" title=" " alt="" coords="2020,392,2179,433"/>
+<area shape="rect" id="node44" href="$bordercostmap_8h.html" title=" " alt="" coords="1805,481,1960,523"/>
+<area shape="rect" id="node45" href="$params_2include_2adore_2params_2afactory_8h.html" title=" " alt="" coords="1198,310,1359,337"/>
+<area shape="rect" id="node47" href="$arraymatrixtools_8h.html" title=" " alt="" coords="3914,310,4104,337"/>
+<area shape="rect" id="node48" href="$cubicpiecewisefunction_8h.html" title=" " alt="" coords="3876,399,4110,426"/>
+</map>

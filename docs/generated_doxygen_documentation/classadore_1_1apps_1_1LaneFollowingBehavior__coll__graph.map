@@ -1,0 +1,52 @@
+<map id="adore::apps::LaneFollowingBehavior" name="adore::apps::LaneFollowingBehavior">
+<area shape="rect" id="node1" title="Decision making and maneuver planning, which realizes lane following only. Basically a wrapper for tr..." alt="" coords="3859,1904,4043,2025"/>
+<area shape="rect" id="node2" href="$classadore_1_1params_1_1APTrajectoryGeneration.html" title="abstract class containing parameters to configure the behaviour of trajectory generation" alt="" coords="113,115,330,266"/>
+<area shape="rect" id="node3" href="$classadore_1_1apps_1_1TrajectoryPlannerLF.html" title="Decoupled trajectory planner, which uses TrajectoryPlannerBase to compute and provide a PlanningResul..." alt="" coords="3681,1632,3895,1841"/>
+<area shape="rect" id="node21" href="$classadore_1_1fun_1_1DecoupledLFLCPlanner.html" title=" " alt="" coords="356,468,583,1103"/>
+<area shape="rect" id="node26" href="$classadore_1_1fun_1_1LowerBoundSGapToPrecedingVehicle.html" title=" " alt="" coords="1244,673,1455,897"/>
+<area shape="rect" id="node30" href="$classadore_1_1fun_1_1StopAtNextGoalPoint.html" title=" " alt="" coords="98,703,281,868"/>
+<area shape="rect" id="node33" href="$classadore_1_1fun_1_1AdhereToNextLimitLine.html" title=" " alt="" coords="1479,688,1655,883"/>
+<area shape="rect" id="node34" href="$classadore_1_1fun_1_1FollowPrecedingVehicle__BreakingCurve.html" title=" " alt="" coords="807,673,991,897"/>
+<area shape="rect" id="node4" href="$classadore_1_1apps_1_1TrajectoryPlannerBase.html" title="Base class for different trajectory planners: Handles communication w/ decision making module...." alt="" coords="3826,1382,4057,1518"/>
+<area shape="rect" id="node5" href="$classadore_1_1mad_1_1AFeedWithCallback.html" title=" " alt="" coords="3836,717,4047,853"/>
+<area shape="rect" id="node6" href="$classadore_1_1mad_1_1AWriter.html" title=" " alt="" coords="3511,717,3711,853"/>
+<area shape="rect" id="node7" href="$classadore_1_1fun_1_1SPRTTCNominal.html" title=" " alt="" coords="4486,732,4677,839"/>
+<area shape="rect" id="node8" href="$classadore_1_1fun_1_1ASPRCost.html" title=" " alt="" coords="4721,145,4874,237"/>
+<area shape="rect" id="node9" href="$classadore_1_1params_1_1APVehicle.html" title="abstract class for vehicle configuration related paremeters" alt="" coords="1594,79,1769,303"/>
+<area shape="rect" id="node12" href="$classadore_1_1fun_1_1SPRInvariantCollisionFreedom.html" title=" " alt="" coords="2791,732,3012,839"/>
+<area shape="rect" id="node24" href="$classadore_1_1fun_1_1FollowCenterlineReference.html" title=" " alt="" coords="1915,688,2114,883"/>
+<area shape="rect" id="node28" href="$classadore_1_1fun_1_1LateralOffsetConstraintLF.html" title=" " alt="" coords="2575,651,2767,919"/>
+<area shape="rect" id="node39" href="$classadore_1_1fun_1_1SPRNonCoercive.html" title=" " alt="" coords="2359,732,2551,839"/>
+<area shape="rect" id="node45" href="$classadore_1_1fun_1_1SetPointRequestDispatcher.html" title="class helps to dispatch SetPointRequest to controller SetPointRequestDispatcher handles selection of ..." alt="" coords="5815,1338,6027,1562"/>
+<area shape="rect" id="node10" href="$classadore_1_1view_1_1ATrafficPredictionView.html" title=" " alt="" coords="4153,137,4381,244"/>
+<area shape="rect" id="node35" href="$classadore_1_1env_1_1DecoupledTrafficPredictionView.html" title=" " alt="" coords="5321,688,5529,883"/>
+<area shape="rect" id="node11" href="$classadore_1_1params_1_1APPrediction.html" title="parameter interface for parameters related to prediction" alt="" coords="3319,5,3508,376"/>
+<area shape="rect" id="node13" href="$classadore_1_1fun_1_1ASPRConstraint.html" title=" " alt="" coords="2690,152,2875,229"/>
+<area shape="rect" id="node14" href="$classadore_1_1params_1_1APTacticalPlanner.html" title="abstract classs containing parameters to configure aspects and constraints of the tactical planner" alt="" coords="2292,71,2521,310"/>
+<area shape="rect" id="node15" href="$classadore_1_1params_1_1APEmergencyOperation.html" title="abstract class containing parameters concerning emergency operation behaviour" alt="" coords="2619,1331,2837,1569"/>
+<area shape="rect" id="node16" href="$classadore_1_1env_1_1ConnectionsOnLane.html" title=" " alt="" coords="4253,725,4462,846"/>
+<area shape="rect" id="node17" href="$classadore_1_1view_1_1ALimitLineEnRoute.html" title=" " alt="" coords="3046,137,3221,244"/>
+<area shape="rect" id="node18" href="$classadore_1_1view_1_1ALane.html" title=" " alt="" coords="3533,79,3734,303"/>
+<area shape="rect" id="node29" href="$classadore_1_1fun_1_1LateralJerkReference.html" title=" " alt="" coords="3037,717,3249,853"/>
+<area shape="rect" id="node31" href="$classadore_1_1fun_1_1LateralAccelerationReference.html" title=" " alt="" coords="3273,710,3487,861"/>
+<area shape="rect" id="node37" href="$classadore_1_1env_1_1NavigationGoalObserver.html" title=" " alt="" coords="4701,622,4912,949"/>
+<area shape="rect" id="node38" href="$classadore_1_1env_1_1DecoupledConflictPointView.html" title=" " alt="" coords="4936,717,5144,853"/>
+<area shape="rect" id="node19" href="$classadore_1_1env_1_1ControlledConnectionSet.html" title=" " alt="" coords="4461,108,4697,273"/>
+<area shape="rect" id="node40" href="$classadore_1_1env_1_1ControlledConnectionSet4Ego.html" title="Specialization of ControlledConnectionSet: Filters connections in range of ego." alt="" coords="6421,725,6637,846"/>
+<area shape="rect" id="node20" href="$classadore_1_1fun_1_1BasicLaneFollowingPlanner.html" title=" " alt="" coords="1407,1375,1611,1525"/>
+<area shape="rect" id="node22" href="$classadore_1_1fun_1_1SetPointRequest.html" title=" " alt="" coords="3848,71,4035,310"/>
+<area shape="rect" id="node23" href="$classadore_1_1fun_1_1HeadingConstraint.html" title=" " alt="" coords="2138,695,2334,875"/>
+<area shape="rect" id="node43" href="$classadore_1_1fun_1_1BasicMRMPlanner.html" title="Plans minimum risk maneuvers on given lane. K number of control points for planning...." alt="" coords="3109,1389,3307,1511"/>
+<area shape="rect" id="node25" href="$classadore_1_1fun_1_1CurvatureSpeedLimitPredict.html" title=" " alt="" coords="1015,681,1220,890"/>
+<area shape="rect" id="node27" href="$classadore_1_1fun_1_1DontDriveBackwards.html" title=" " alt="" coords="1679,710,1891,861"/>
+<area shape="rect" id="node32" href="$classadore_1_1fun_1_1LongitudinalAccelerationConstraint.html" title=" " alt="" coords="607,651,782,919"/>
+<area shape="rect" id="node36" href="$classadore_1_1mad_1_1AReader.html" title=" " alt="" coords="5512,130,5691,251"/>
+<area shape="rect" id="node42" href="$classadore_1_1env_1_1ThreeLaneViewDecoupled.html" title=" " alt="" coords="4604,1127,4807,1307"/>
+<area shape="rect" id="node48" href="$classadore_1_1fun_1_1ActivationStateObserver.html" title=" " alt="" coords="6197,725,6397,846"/>
+<area shape="rect" id="node41" href="$structadore_1_1env_1_1VehicleMotionState9d.html" title="This struct holds the motion state of the vehicle in 9d." alt="" coords="6559,64,6732,317"/>
+<area shape="rect" id="node44" href="$classadore_1_1mad_1_1AWriter.html" title=" " alt="" coords="3920,1669,4131,1805"/>
+<area shape="rect" id="node46" href="$classadore_1_1fun_1_1VehicleMotionStateBuffer.html" title="Buffers and interpolates vehicle positions." alt="" coords="5603,681,5802,890"/>
+<area shape="rect" id="node47" href="$classadore_1_1mad_1_1AWriter.html" title=" " alt="" coords="5827,725,6016,846"/>
+<area shape="rect" id="node49" href="$structadore_1_1fun_1_1PlanningRequest.html" title=" " alt="" coords="6383,1676,6569,1797"/>
+<area shape="rect" id="node50" href="$classadore_1_1fun_1_1SetPoint.html" title=" " alt="" coords="6407,1382,6545,1518"/>
+</map>

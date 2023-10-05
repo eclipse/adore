@@ -1,0 +1,8 @@
+<map id="adore::fun::MRMPlanner&lt; K, P &gt;" name="adore::fun::MRMPlanner&lt; K, P &gt;">
+<area shape="rect" id="node1" title=" " alt="" coords="373,175,605,604"/>
+<area shape="rect" id="node3" href="$classadore_1_1fun_1_1BasicMRMPlanner.html" title="Plans minimum risk maneuvers on given lane. K number of control points for planning...." alt="" coords="5,689,228,927"/>
+<area shape="rect" id="node4" href="$classadore_1_1fun_1_1CancelLCMRMPlanner.html" title="Plans minimum risk maneuver to cancel lane change." alt="" coords="252,667,475,949"/>
+<area shape="rect" id="node5" href="$classadore_1_1fun_1_1ContinueLCMRMPlanner.html" title="Plans minimum risk maneuver to cancel lane change." alt="" coords="499,652,732,964"/>
+<area shape="rect" id="node6" href="$classadore_1_1fun_1_1MergeMRMPlanner.html" title="Plans minimum risk maneuver to cancel lane change." alt="" coords="756,674,979,942"/>
+<area shape="rect" id="node2" href="$classadore_1_1fun_1_1ANominalPlanner.html" title=" " alt="" coords="394,5,583,127"/>
+</map>

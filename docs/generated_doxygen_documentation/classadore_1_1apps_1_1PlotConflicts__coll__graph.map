@@ -1,0 +1,9 @@
+<map id="adore::apps::PlotConflicts" name="adore::apps::PlotConflicts">
+<area shape="rect" id="node1" title="a plot module for handling prediction plots" alt="" coords="437,535,611,715"/>
+<area shape="rect" id="node2" href="$classDLR__TS_1_1PlotLab_1_1AFigureStub.html" title=" " alt="" coords="5,233,211,457"/>
+<area shape="rect" id="node3" href="$classadore_1_1mad_1_1AReader.html" title=" " alt="" coords="235,285,413,406"/>
+<area shape="rect" id="node4" href="$structadore_1_1env_1_1VehicleMotionState9d.html" title="This struct holds the motion state of the vehicle in 9d." alt="" coords="437,219,611,472"/>
+<area shape="rect" id="node5" href="$classadore_1_1mad_1_1AReader.html" title=" " alt="" coords="635,270,821,421"/>
+<area shape="rect" id="node6" href="$structadore_1_1PLOT_1_1PredictionConfig_1_1prediction__config.html" title=" " alt="" coords="845,292,1043,399"/>
+<area shape="rect" id="node7" href="$structadore_1_1PLOT_1_1PredictionConfig_1_1prediction__config_1_1color__range.html" title=" " alt="" coords="843,5,1045,127"/>
+</map>

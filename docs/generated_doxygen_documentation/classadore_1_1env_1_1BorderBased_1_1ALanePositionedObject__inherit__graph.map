@@ -1,0 +1,5 @@
+<map id="adore::env::BorderBased::ALanePositionedObject" name="adore::env::BorderBased::ALanePositionedObject">
+<area shape="rect" id="node1" title="Abstract class for Objects that are positioned by a connection to a certain lane." alt="" coords="101,5,287,112"/>
+<area shape="rect" id="node2" href="$classadore_1_1env_1_1BorderBased_1_1StopLine.html" title="This class provide information about stoplines." alt="" coords="5,160,172,428"/>
+<area shape="rect" id="node3" href="$classadore_1_1if__xodr_1_1XODR2BorderBasedConverter_1_1XODR__Signal.html" title="internal signal representation for conversion" alt="" coords="196,175,403,413"/>
+</map>

@@ -1,0 +1,22 @@
+digraph "adore::if_ROS::VehicleExtendedStateWriter::write"
+{
+ // LATEX_PDF_SIZE
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  rankdir="LR";
+  Node1 [label="adore::if_ROS::VehicleExtended\lStateWriter::write",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black",tooltip="write sends out data value"];
+  Node1 -> Node2 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node2 [label="adore::fun::VehicleExtended\lState::getAutomaticControlAcceleration\lActive",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classadore_1_1fun_1_1VehicleExtendedState.html#ad9744853f1e97e3f883121b4cb83e34e",tooltip=" "];
+  Node1 -> Node3 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node3 [label="adore::fun::VehicleExtended\lState::getAutomaticControlAccelerationOn",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classadore_1_1fun_1_1VehicleExtendedState.html#a1630acbb00043937337d8f7bdfd20e44",tooltip=" "];
+  Node1 -> Node4 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node4 [label="adore::fun::VehicleExtended\lState::getAutomaticControlSteeringOn",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classadore_1_1fun_1_1VehicleExtendedState.html#ad6a0a81e0e00e8146ea2b02e4afa393f",tooltip=" "];
+  Node1 -> Node5 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node5 [label="adore::fun::VehicleExtended\lState::getCheckpointClearance",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classadore_1_1fun_1_1VehicleExtendedState.html#a6db3f141e0dd42828aa6c4d2dc4fb5ad",tooltip=" "];
+  Node1 -> Node6 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node6 [label="adore::fun::VehicleExtended\lState::getGearState",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classadore_1_1fun_1_1VehicleExtendedState.html#ade2c3952f44ebb4690818361090116a7",tooltip=" "];
+  Node1 -> Node7 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node7 [label="adore::fun::VehicleExtended\lState::getIndicatorLeftOn",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classadore_1_1fun_1_1VehicleExtendedState.html#a0310ee5b9290b3378a7264e4895e820b",tooltip=" "];
+  Node1 -> Node8 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node8 [label="adore::fun::VehicleExtended\lState::getIndicatorRightOn",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classadore_1_1fun_1_1VehicleExtendedState.html#afe6addb280fa1cd385fcc1b895de789d",tooltip=" "];
+}

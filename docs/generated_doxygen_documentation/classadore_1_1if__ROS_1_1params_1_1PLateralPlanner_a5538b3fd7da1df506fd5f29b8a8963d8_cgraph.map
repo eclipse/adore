@@ -1,0 +1,4 @@
+<map id="adore::if_ROS::params::PLateralPlanner::getWeightAcc" name="adore::if_ROS::params::PLateralPlanner::getWeightAcc">
+<area shape="rect" id="node1" title="getWeightAcc returns cost function weight for quadratic acceleration term" alt="" coords="5,5,216,47"/>
+<area shape="rect" id="node2" href="$classadore_1_1if__ROS_1_1ROSParam.html#adf480c94fa5b1368850b0a491791e4e6" title=" " alt="" coords="264,13,471,39"/>
+</map>

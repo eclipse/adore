@@ -1,0 +1,27 @@
+var classadore_1_1env_1_1OCStraightLinePrediction =
+[
+    [ "OCStraightLinePrediction", "classadore_1_1env_1_1OCStraightLinePrediction.html#aac6a27f6a0c136b2f1b47a9656ddb27a", null ],
+    [ "predict", "classadore_1_1env_1_1OCStraightLinePrediction.html#a98a7c5f4c101c7a917f8e5a3e984cd16", null ],
+    [ "setAMax", "classadore_1_1env_1_1OCStraightLinePrediction.html#a933b45db56568fbc2c8f3fa9186ec37f", null ],
+    [ "setAMin", "classadore_1_1env_1_1OCStraightLinePrediction.html#aaf6657b154da9070a2a7f4a13eba7036", null ],
+    [ "setLatError", "classadore_1_1env_1_1OCStraightLinePrediction.html#a26472f88f2984b3cd2b61b79dee75d9e", null ],
+    [ "setLatPrecision", "classadore_1_1env_1_1OCStraightLinePrediction.html#a4117face929152a6354de3e5661be384", null ],
+    [ "setLonError", "classadore_1_1env_1_1OCStraightLinePrediction.html#ac6ff3a8c322b71db03e982c7e943a482", null ],
+    [ "setTimeHeadway", "classadore_1_1env_1_1OCStraightLinePrediction.html#afadac22a8d2eebf8811c455d7fd9e83a", null ],
+    [ "setTimeLeeway", "classadore_1_1env_1_1OCStraightLinePrediction.html#a7088823f880eb47d5cd081378823419a", null ],
+    [ "setTMaxUTC", "classadore_1_1env_1_1OCStraightLinePrediction.html#a73ba234046536ae82d348789f53f1faa", null ],
+    [ "setVMax", "classadore_1_1env_1_1OCStraightLinePrediction.html#a21da3bc02a606b7ec65e32ee4dd24619", null ],
+    [ "setWidthLB", "classadore_1_1env_1_1OCStraightLinePrediction.html#a1601dab66d32693d354d5669b94523eb", null ],
+    [ "setWidthUB", "classadore_1_1env_1_1OCStraightLinePrediction.html#a622f378a516abf152c0d7adc6add3ec1", null ],
+    [ "a_max_", "classadore_1_1env_1_1OCStraightLinePrediction.html#a7984a0f16ec493a245995aac582501db", null ],
+    [ "a_min_", "classadore_1_1env_1_1OCStraightLinePrediction.html#a0ac8bf1a2d47b61833a17b1658a8c9dd", null ],
+    [ "lat_error_", "classadore_1_1env_1_1OCStraightLinePrediction.html#a07ef16cdbb268b91378198dd7d7d321a", null ],
+    [ "lat_precision_", "classadore_1_1env_1_1OCStraightLinePrediction.html#a14a7e328152cbede0a2ec58365c349c9", null ],
+    [ "lon_error_", "classadore_1_1env_1_1OCStraightLinePrediction.html#a2c40cc5d6a86bd87bedff36532bb89b1", null ],
+    [ "t_max_utc_", "classadore_1_1env_1_1OCStraightLinePrediction.html#a88c14c0c7393e6e57a16deed5e4fca46", null ],
+    [ "time_headway_", "classadore_1_1env_1_1OCStraightLinePrediction.html#ae4cd82516866c41978676ecf7247ab3f", null ],
+    [ "time_leeway_", "classadore_1_1env_1_1OCStraightLinePrediction.html#a89b764ff46dad53a75ee4c91badf8b52", null ],
+    [ "v_max_", "classadore_1_1env_1_1OCStraightLinePrediction.html#adcfe5c135ad0581499bd5c8c503211ec", null ],
+    [ "width_lb_", "classadore_1_1env_1_1OCStraightLinePrediction.html#a1015f4ddff51faeb9063a1d8909c7172", null ],
+    [ "width_ub_", "classadore_1_1env_1_1OCStraightLinePrediction.html#a339131dcaaa374cd90323aa91873d3ce", null ]
+];

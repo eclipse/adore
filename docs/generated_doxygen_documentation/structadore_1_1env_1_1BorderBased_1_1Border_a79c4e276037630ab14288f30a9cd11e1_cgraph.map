@@ -1,0 +1,9 @@
+<map id="adore::env::BorderBased::Border::hasBBOverlap" name="adore::env::BorderBased::Border::hasBBOverlap">
+<area shape="rect" id="node1" title="Check whether the bounding boxes of two lane objects overlap." alt="" coords="5,53,172,94"/>
+<area shape="rect" id="node2" href="$structadore_1_1env_1_1BorderBased_1_1Border.html#a4b1e646e2c3d98b03e75f286611e0cda" title="Get a bounding box for the implicit lane object." alt="" coords="220,23,387,65"/>
+<area shape="rect" id="node7" href="$namespaceadore_1_1mad.html#acc8a3ed2c31387f747a32048655d82d9" title=" " alt="" coords="231,89,375,116"/>
+<area shape="rect" id="node3" href="$namespaceadore_1_1mad.html#adea062854ef0b105a3fdca8cf2aca945" title=" " alt="" coords="435,5,555,32"/>
+<area shape="rect" id="node5" href="$namespaceadore_1_1mad.html#ab58ecb752f9bbfe27832e0a2c0e22c2b" title=" " alt="" coords="437,56,553,83"/>
+<area shape="rect" id="node4" href="$namespaceadore_1_1mad.html#a618a8842fed7b9375957b1e393c58492" title=" " alt="" coords="603,5,723,32"/>
+<area shape="rect" id="node6" href="$namespaceadore_1_1mad.html#ac61b79c007d1859f93a10c04272095a1" title=" " alt="" coords="605,56,721,83"/>
+</map>

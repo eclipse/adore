@@ -1,0 +1,7 @@
+digraph "adore::mad::OccupancyCylinder"
+{
+ // LATEX_PDF_SIZE
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  Node1 [label="{adore::mad::OccupancyCylinder\n|+ rxy_\l+ x_\l+ y_\l+ t0_\l+ t1_\l+ z0_\l+ z1_\l|+ OccupancyCylinder()\l+ OccupancyCylinder()\l+ intersects()\l+ bound()\l}",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black",tooltip=" "];
+}

@@ -1,0 +1,10 @@
+<map id="adore::env::BorderBased::Coordinate::toString" name="adore::env::BorderBased::Coordinate::toString">
+<area shape="rect" id="node1" title="Write information of the Coordinate to a string." alt="" coords="961,64,1128,105"/>
+<area shape="rect" id="node2" href="$structadore_1_1env_1_1BorderBased_1_1BorderID.html#a6a3db5f943dc3d441697c9fa1b09d99e" title="Write information of the BorderID to a string." alt="" coords="747,64,913,105"/>
+<area shape="rect" id="node3" href="$structadore_1_1env_1_1BorderBased_1_1LanePosition.html#a1c6aebaf6e84d11020c2e9cba3922bfd" title="Extract the information of the LanePosition to a string." alt="" coords="524,5,691,47"/>
+<area shape="rect" id="node4" href="$namespaceadore_1_1PLOT.html#ac3b3ee24f0ba5f8b1d6c9869ad2971d4" title=" " alt="" coords="519,71,696,98"/>
+<area shape="rect" id="node6" href="$classadore_1_1env_1_1BorderBased_1_1NavigationBorderObserver.html#ac5fa0898e9d616883fd335f58eb03a82" title=" " alt="" coords="516,122,699,178"/>
+<area shape="rect" id="node5" href="$namespaceadore_1_1PLOT.html#a1a40cec5806595f1355bf0f6db10beeb" title=" " alt="" coords="265,71,443,98"/>
+<area shape="rect" id="node7" href="$classadore_1_1env_1_1NavigationManagement.html#a4106ef1a330c91758e3fdb995e9723de" title=" " alt="" coords="240,129,468,171"/>
+<area shape="rect" id="node8" href="$classadore_1_1apps_1_1Navigation.html#a4be14a35fd450f46452afc37e44d15a6" title=" " alt="" coords="5,137,192,163"/>
+</map>

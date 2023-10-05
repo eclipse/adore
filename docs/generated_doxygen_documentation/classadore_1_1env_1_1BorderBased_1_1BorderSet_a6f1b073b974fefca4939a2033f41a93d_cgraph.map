@@ -1,0 +1,8 @@
+<map id="adore::env::BorderBased::BorderSet::getCenterlineWithOffset" name="adore::env::BorderBased::BorderSet::getCenterlineWithOffset">
+<area shape="rect" id="node1" title="gets centerline between border and left neighbor" alt="" coords="5,49,205,105"/>
+<area shape="rect" id="node2" href="$namespaceadore_1_1mad.html#ad28075589c1a25cfd4ef82d9bd61efe3" title=" " alt="" coords="253,5,457,32"/>
+<area shape="rect" id="node5" href="$classadore_1_1env_1_1BorderBased_1_1BorderSet.html#a69802bccdc7cf3fa598283509808edc2" title="retrieve a border by ID" alt="" coords="272,57,439,98"/>
+<area shape="rect" id="node6" href="$classadore_1_1env_1_1BorderBased_1_1BorderSet.html#a8af807fde181a20de55594592d752adc" title="Get left neighbor of a border." alt="" coords="261,122,449,163"/>
+<area shape="rect" id="node3" href="$namespaceadore_1_1mad.html#adea062854ef0b105a3fdca8cf2aca945" title=" " alt="" coords="505,5,625,32"/>
+<area shape="rect" id="node4" href="$namespaceadore_1_1mad.html#a618a8842fed7b9375957b1e393c58492" title=" " alt="" coords="673,5,793,32"/>
+</map>

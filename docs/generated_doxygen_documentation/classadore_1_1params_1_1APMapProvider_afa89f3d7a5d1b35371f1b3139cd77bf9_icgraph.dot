@@ -1,0 +1,16 @@
+digraph "adore::params::APMapProvider::getXODRLoaderPointsPerBorder"
+{
+ // LATEX_PDF_SIZE
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  rankdir="RL";
+  Node1 [label="adore::params::APMapProvider\l::getXODRLoaderPointsPerBorder",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black",tooltip=" "];
+  Node1 -> Node2 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node2 [label="adore::apps::MapProvider\l::parseTrackConfigs",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classadore_1_1apps_1_1MapProvider.html#ad6e153760ff95bac2290d48594745c22",tooltip=" "];
+  Node2 -> Node3 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node3 [label="adore::apps::MapProvider\l::MapProvider",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classadore_1_1apps_1_1MapProvider.html#a1d9aa34b5f68408f3d494a1fad7b62be",tooltip=" "];
+  Node1 -> Node4 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node4 [label="adore::apps::Navigation\l::parseTrackConfigs",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classadore_1_1apps_1_1Navigation.html#a77e0f4a96b663ca6ec5287af1965822f",tooltip=" "];
+  Node4 -> Node5 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node5 [label="adore::apps::Navigation\l::Navigation",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classadore_1_1apps_1_1Navigation.html#a0f19b60c5090f48fdd06be105610c304",tooltip=" "];
+}

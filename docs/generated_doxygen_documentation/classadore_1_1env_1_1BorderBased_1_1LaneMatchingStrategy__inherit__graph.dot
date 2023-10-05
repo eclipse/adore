@@ -1,0 +1,13 @@
+digraph "adore::env::BorderBased::LaneMatchingStrategy"
+{
+ // LATEX_PDF_SIZE
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  Node1 [label="{adore::env::BorderBased\l::LaneMatchingStrategy\n||+ getBestMatch()\l}",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black",tooltip=" "];
+  Node1 -> Node2 [dir="back",color="midnightblue",fontsize="10",style="solid",arrowtail="onormal",fontname="Helvetica"];
+  Node2 [label="{adore::env::BorderBased\l::LMSContinuation\n|- m_lastMatch_initialized\l- m_lastMatch\l- m_nearestLaneStragey\l- m_borderSet\l- m_delayedSwitching\l- m_a\l- m_b\l- m_c\l- m_d\l- m_w\l|+ LMSContinuation()\l+ setDimensions()\l+ getBestMatch()\l+ reset()\l}",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classadore_1_1env_1_1BorderBased_1_1LMSContinuation.html",tooltip=" "];
+  Node1 -> Node3 [dir="back",color="midnightblue",fontsize="10",style="solid",arrowtail="onormal",fontname="Helvetica"];
+  Node3 [label="{adore::env::BorderBased\l::LMSNavigation\n|- m_lastMatch_initialized\l- m_borderSet\l- m_lastMatch\l- m_borderID2Cost\l- m_continuationStrategy\l|+ LMSNavigation()\l+ getBestMatch()\l}",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classadore_1_1env_1_1BorderBased_1_1LMSNavigation.html",tooltip=" "];
+  Node1 -> Node4 [dir="back",color="midnightblue",fontsize="10",style="solid",arrowtail="onormal",fontname="Helvetica"];
+  Node4 [label="{adore::env::BorderBased\l::LMSNearest\n|- m_borderSet\l- m_w_orientation\l|+ LMSNearest()\l+ getBestMatch()\l+ getBestMatch()\l}",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classadore_1_1env_1_1BorderBased_1_1LMSNearest.html",tooltip=" "];
+}

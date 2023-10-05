@@ -1,0 +1,4 @@
+<map id="CSVLog::setTimeBetweenWrites" name="CSVLog::setTimeBetweenWrites">
+<area shape="rect" id="node1" title="defines the max time between the buffer being written to the file in low throughput mode" alt="" coords="5,5,220,32"/>
+<area shape="rect" id="node2" href="$classCSVLog.html#aa3870ea8f1a1fe963f1bb98c3ab36f68" title="in low throughput mode, the buffer is written to the file after a certain time even if the max buffer..." alt="" coords="268,5,487,32"/>
+</map>

@@ -1,0 +1,10 @@
+<map id="adore::apps::FeedbackController::FeedbackController" name="adore::apps::FeedbackController::FeedbackController">
+<area shape="rect" id="node1" title=" " alt="" coords="5,133,216,175"/>
+<area shape="rect" id="node2" href="$classadore_1_1fun_1_1FunFactoryInstance.html#a3d8e318e1ad87251caef9bad22a99b40" title=" " alt="" coords="264,14,495,41"/>
+<area shape="rect" id="node4" href="$classadore_1_1params_1_1ParamsFactoryInstance.html#ae4d79d6130cebb47d90a82b6edb7660d" title=" " alt="" coords="278,68,481,109"/>
+<area shape="rect" id="node6" href="$classadore_1_1params_1_1AFactory.html#a9f68de9f3798a36ca70b4de8ee7ec4b8" title=" " alt="" coords="294,133,465,175"/>
+<area shape="rect" id="node7" href="$classadore_1_1params_1_1AFactory.html#a50692df31a465e3af6398fcb7a608bd6" title=" " alt="" coords="296,199,463,240"/>
+<area shape="rect" id="node8" href="$classadore_1_1params_1_1AFactory.html#a8391b48b706bb01a21e7502824875d0b" title=" " alt="" coords="296,264,463,305"/>
+<area shape="rect" id="node3" href="$classadore_1_1fun_1_1FunFactoryInstance.html#a0826e9a7ea3c70a3780115e6effbf746" title="Function to access singleton instance of the funFactory using magic static." alt="" coords="543,5,747,47"/>
+<area shape="rect" id="node5" href="$classadore_1_1params_1_1ParamsFactoryInstance.html#a59eae0e003d40b03f9db2d814ec2a3bf" title="Function to access singleton instance of the AllFactory using magic static." alt="" coords="543,71,746,112"/>
+</map>

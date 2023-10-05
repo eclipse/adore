@@ -1,0 +1,4 @@
+<map id="adore::env::BorderBased::BorderSequence::sample" name="adore::env::BorderBased::BorderSequence::sample">
+<area shape="rect" id="node1" title="step through border sequence and sample the values along the borders" alt="" coords="5,5,181,47"/>
+<area shape="rect" id="node2" href="$classadore_1_1env_1_1BorderBased_1_1BorderSequence.html#a95f9f6e36b133a67324208d9c2905737" title="returns the total lenght of all contained borders" alt="" coords="229,5,420,47"/>
+</map>

@@ -1,0 +1,8 @@
+<map id="adore::view::AGap::getState" name="adore::view::AGap::getState">
+<area shape="rect" id="node1" title="get the state of the gap at a certain time, depending on ego position" alt="" coords="575,107,713,148"/>
+<area shape="rect" id="node2" href="$classadore_1_1fun_1_1LaneChangePhaseEstimator.html#ae0d020ec9a2414dc64b9ca3c0c354046" title=" " alt="" coords="307,41,521,83"/>
+<area shape="rect" id="node5" href="$classadore_1_1fun_1_1LateralOffsetConstraintLC.html#a6c66332f5af0aecb945b89e3d2d7a03f" title=" " alt="" coords="333,107,495,148"/>
+<area shape="rect" id="node6" href="$classadore_1_1fun_1_1LaneChangeIntoGapReference.html#af9922af49844a6601b5bea0ddf15825b" title=" " alt="" coords="301,172,527,213"/>
+<area shape="rect" id="node3" href="$classadore_1_1fun_1_1AdvancedLateralOffsetConstraintLC.html#ac062d58126ab5b8d3a3ad38570bb2343" title=" " alt="" coords="33,5,226,47"/>
+<area shape="rect" id="node4" href="$classadore_1_1fun_1_1FollowPrecedingVehicleOnLaneToBeLeft__BrakingCurve.html#ad476f6086d29fa74d207a1b345a172c0" title=" " alt="" coords="5,71,253,127"/>
+</map>

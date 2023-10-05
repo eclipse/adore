@@ -1,0 +1,8 @@
+<map id="adore::apps::GapProvider::GapProvider" name="adore::apps::GapProvider::GapProvider">
+<area shape="rect" id="node1" title=" " alt="" coords="5,97,176,139"/>
+<area shape="rect" id="node2" href="$classadore_1_1env_1_1EnvFactoryInstance.html#a069fadea20089ddf252a244864f305c1" title=" " alt="" coords="224,13,459,39"/>
+<area shape="rect" id="node4" href="$classadore_1_1env_1_1AFactory.html#a897460dc54531ce604647eb177ecd575" title=" " alt="" coords="244,64,439,105"/>
+<area shape="rect" id="node5" href="$classadore_1_1env_1_1AFactory.html#abbf8d78c84490fa5a1d2e809ffd07826" title=" " alt="" coords="240,129,443,171"/>
+<area shape="rect" id="node6" href="$classadore_1_1env_1_1AFactory.html#a81f661c576816461f1914436620ac208" title=" " alt="" coords="240,195,443,236"/>
+<area shape="rect" id="node3" href="$classadore_1_1env_1_1EnvFactoryInstance.html#a14835a4420fb827ba3809b94a96a7660" title="Function to access singleton instance of the envFactory using magic static." alt="" coords="507,5,715,47"/>
+</map>

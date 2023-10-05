@@ -1,0 +1,10 @@
+digraph "adore::mad::BoundingVolumes::OBBTree3d"
+{
+ // LATEX_PDF_SIZE
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  Node1 [label="{adore::mad::BoundingVolumes\l::OBBTree3d\n|- sibling_valid\l- child_valid\l- box_valid\l|+ OBBTree3d()\l+ ~OBBTree3d()\l+ setBox()\l+ setChild()\l+ setSibling()\l+ copy()\l+ rotateZ()\l+ translate()\l+ getSibling()\l+ getChild()\l+ getBox()\l+ transform_forwards()\l+ isCollisionFree()\l+ isCollisionFree()\l- initSibling()\l- initChild()\l- initBox()\l}",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black",tooltip=" "];
+  Node2 -> Node1 [color="grey25",fontsize="10",style="solid",label=" -box" ,arrowhead="odiamond",fontname="Helvetica"];
+  Node2 [label="{adore::mad::BoundingVolumes\l::OBB3d\n|- v\l- v_backup\l|+ OBB3d()\l+ OBB3d()\l+ OBB3d()\l+ setData()\l+ resetTransformation()\l+ transform_forwards()\l+ isCollisionFree()\l+ isPointInside()\l+ rotateZ()\l+ translate()\land 8 more...\l}",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classadore_1_1mad_1_1BoundingVolumes_1_1OBB3d.html",tooltip=" "];
+  Node1 -> Node1 [color="grey25",fontsize="10",style="solid",label=" -child\n-sibling" ,arrowhead="odiamond",fontname="Helvetica"];
+}

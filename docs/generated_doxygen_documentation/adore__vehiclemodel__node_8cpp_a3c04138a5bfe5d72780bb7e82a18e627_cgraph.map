@@ -1,0 +1,52 @@
+<map id="main" name="main">
+<area shape="rect" id="node1" title=" " alt="" coords="5,1883,56,1910"/>
+<area shape="rect" id="node2" href="$classadore_1_1if__ROS_1_1VehicleModelNode.html#a39bfd98cab9c1dbc6cf52d0ef4395adc" title=" " alt="" coords="104,201,295,243"/>
+<area shape="rect" id="node43" href="$adore__vehiclemodel__node_8cpp.html#a1ae39fdc2e2fbbe41c16516273eae1ff" title=" " alt="" coords="167,1915,231,1942"/>
+<area shape="rect" id="node44" href="$classadore_1_1if__ROS_1_1VehicleModelNode.html#a51fe532236fd4445926631ef93be415e" title=" " alt="" coords="355,1843,545,1884"/>
+<area shape="rect" id="node50" href="$classadore__if__ros__scheduling_1_1Baseapp.html#a201b2569600031e20ac44db3876d6298" title=" " alt="" coords="118,1967,281,2008"/>
+<area shape="rect" id="node3" href="$classadore__if__ros__scheduling_1_1Baseapp.html#a57040c153750243c7e47566530cd7bf5" title=" " alt="" coords="369,71,531,112"/>
+<area shape="rect" id="node4" href="$classadore__if__ros__scheduling_1_1Baseapp.html#a7792ee4aa6fd5c5c03d5f54b4c1f213a" title=" " alt="" coords="349,136,551,177"/>
+<area shape="rect" id="node5" href="$classadore_1_1if__ROS_1_1FactoryCollection.html#a07e53e57a417cf66c5d539a5e1bd590a" title=" " alt="" coords="343,201,557,243"/>
+<area shape="rect" id="node11" href="$classadore_1_1apps_1_1VehicleModel.html#a267c9d625e6bab5adef42d48492866d7" title="simulation step of the vehicle model" alt="" coords="349,1273,551,1299"/>
+<area shape="rect" id="node6" href="$classadore_1_1if__ROS_1_1FactoryCollection.html#ac102972d5592de7cdc76b059017628f9" title=" " alt="" coords="605,5,820,47"/>
+<area shape="rect" id="node7" href="$classadore_1_1env_1_1EnvFactoryInstance.html#ab67767fc777387664b696bd78d2536ef" title="Initialize private members of AllFactory." alt="" coords="609,71,817,112"/>
+<area shape="rect" id="node8" href="$classadore_1_1fun_1_1FunFactoryInstance.html#a291c4c983548f85c633ae6409c7b5233" title="Initialize private members of funFactory." alt="" coords="611,136,815,177"/>
+<area shape="rect" id="node9" href="$classadore_1_1params_1_1ParamsFactoryInstance.html#ac6759c774ade5a97e47c056d1a136253" title="Initialize private members of AllFactory." alt="" coords="611,201,814,243"/>
+<area shape="rect" id="node10" href="$classadore_1_1sim_1_1SimFactoryInstance.html#ac891850728d65e5398216b2bb92f82f6" title="Initialize private members of AllFactory." alt="" coords="609,267,817,308"/>
+<area shape="rect" id="node12" href="$namespaceadore_1_1mad.html#a70b9fe3efbb34c0f9621147e3456bfa8" title=" " alt="" coords="655,333,771,359"/>
+<area shape="rect" id="node13" href="$classadore_1_1params_1_1APVehicle.html#ae446997786812ff17a5c3f6bfa575ce5" title="cog to front axle" alt="" coords="625,384,800,425"/>
+<area shape="rect" id="node14" href="$classadore_1_1params_1_1APVehicle.html#a5cc38023fb9f3142348dc9ac22402288" title="rear axle to cog" alt="" coords="625,449,800,491"/>
+<area shape="rect" id="node15" href="$classadore_1_1params_1_1APVehicle.html#a71c62e5ede07773108e7a291672bdd85" title=" " alt="" coords="625,515,800,556"/>
+<area shape="rect" id="node16" href="$classadore_1_1params_1_1APVehicle.html#aec64e74619601401d6d3d81ebf5fdacd" title="front axle to front border" alt="" coords="625,580,800,621"/>
+<area shape="rect" id="node17" href="$classadore_1_1params_1_1APVehicle.html#ad8a4b0411e6d030aeace5bd44ab8876e" title="rear border to rear axle" alt="" coords="625,645,800,687"/>
+<area shape="rect" id="node18" href="$classadore_1_1params_1_1APVehicle.html#ac67acb30ee133526e87d8ae1932f7db2" title=" " alt="" coords="625,711,800,752"/>
+<area shape="rect" id="node19" href="$classadore_1_1fun_1_1MotionCommand.html#ab1deda99c43e3a40a6d5a21675cf2b33" title=" " alt="" coords="619,776,806,817"/>
+<area shape="rect" id="node20" href="$structadore_1_1env_1_1VehicleMotionState9d.html#a7a4bdd18cf6a76bb87ac80dd8cdc3e14" title="Get the longitudinal acceleration." alt="" coords="626,841,799,883"/>
+<area shape="rect" id="node21" href="$classadore_1_1mad_1_1AReader.html#a46ab7520d828d1a574365eaf8b483e29" title=" " alt="" coords="639,907,786,948"/>
+<area shape="rect" id="node22" href="$structadore_1_1fun_1_1IndicatorCommand.html#a43acf7313d09a45930f676ab6b510919" title=" " alt="" coords="613,972,812,1013"/>
+<area shape="rect" id="node23" href="$structadore_1_1fun_1_1IndicatorCommand.html#a9d8a189b7509f3fbbacc4a67e26dd582" title=" " alt="" coords="613,1037,812,1079"/>
+<area shape="rect" id="node24" href="$classadore_1_1mad_1_1AFeed.html#a7c162212573031293eb7ef26719726d6" title=" " alt="" coords="642,1103,783,1144"/>
+<area shape="rect" id="node25" href="$structadore_1_1env_1_1VehicleMotionState9d.html#a39294f52e08a67b58a6beabec70d2d97" title="Get the yaw rate." alt="" coords="626,1168,799,1209"/>
+<area shape="rect" id="node26" href="$structadore_1_1sim_1_1ResetVehicleTwist.html#ad4a2ec27670b0cdd7613f30777117736" title=" " alt="" coords="628,1233,797,1275"/>
+<area shape="rect" id="node27" href="$structadore_1_1env_1_1VehicleMotionState9d.html#a65ca6ea033cf05674de50b8996a586a3" title="Get the heading." alt="" coords="626,1299,799,1340"/>
+<area shape="rect" id="node28" href="$structadore_1_1sim_1_1ResetVehiclePose.html#aef060b8fc1e27b25b25e7119703320c0" title=" " alt="" coords="628,1364,797,1405"/>
+<area shape="rect" id="node29" href="$classadore_1_1fun_1_1MotionCommand.html#a8a769ab491120b03f3ee4d7e98faefcc" title=" " alt="" coords="619,1429,806,1471"/>
+<area shape="rect" id="node30" href="$structadore_1_1env_1_1VehicleMotionState9d.html#a2547f79442e772d79fbf5051a2a08bfa" title="Get the longitudinal velocity." alt="" coords="626,1495,799,1536"/>
+<area shape="rect" id="node31" href="$structadore_1_1sim_1_1ResetVehicleTwist.html#ad454b45981028b0cdd505d2f0f34c277" title=" " alt="" coords="628,1560,797,1601"/>
+<area shape="rect" id="node32" href="$structadore_1_1env_1_1VehicleMotionState9d.html#a96153986634c3718e2c8f3586e94cc6a" title="Get the lateral velocity." alt="" coords="626,1625,799,1667"/>
+<area shape="rect" id="node33" href="$structadore_1_1sim_1_1ResetVehicleTwist.html#a1caa1e644ac42cc66648b4546b1e1b59" title=" " alt="" coords="628,1691,797,1732"/>
+<area shape="rect" id="node34" href="$structadore_1_1env_1_1VehicleMotionState9d.html#a16d6d61f5dfa1028ca97d8f1a8b6e8cf" title="Get the x&#45;coordinate." alt="" coords="626,1756,799,1797"/>
+<area shape="rect" id="node35" href="$structadore_1_1sim_1_1ResetVehiclePose.html#a47e288be8ff707cf5957afc53c085039" title=" " alt="" coords="628,1821,797,1863"/>
+<area shape="rect" id="node36" href="$structadore_1_1env_1_1VehicleMotionState9d.html#a51e8eed0ef10d909592edcb933c1b802" title="Get the y&#45;coordinate." alt="" coords="626,1887,799,1928"/>
+<area shape="rect" id="node37" href="$structadore_1_1sim_1_1ResetVehiclePose.html#acd06f2515c1941a1399b04de7b793f39" title=" " alt="" coords="628,1952,797,1993"/>
+<area shape="rect" id="node38" href="$structadore_1_1env_1_1VehicleMotionState9d.html#aaae8ed387d8baab7fe0f14379b2bf5d2" title="Get the z&#45;coordinate." alt="" coords="626,2017,799,2059"/>
+<area shape="rect" id="node39" href="$classadore_1_1mad_1_1AReader.html#a79b8efec6ede53587ff114ae00ca8419" title=" " alt="" coords="639,2083,786,2124"/>
+<area shape="rect" id="node40" href="$classadore_1_1mad_1_1AFeed.html#a2a96e59a3364f8fadb08624e38f7c40b" title=" " alt="" coords="642,2148,783,2189"/>
+<area shape="rect" id="node41" href="$classadore_1_1mad_1_1AReader.html#a7a8e6d43dcd1129c47d7231e828fb111" title=" " alt="" coords="639,2213,786,2255"/>
+<area shape="rect" id="node42" href="$namespaceadore_1_1mad.html#a15b1829de65d2573103877d5ffb6215a" title=" " alt="" coords="637,2279,788,2306"/>
+<area shape="rect" id="node46" href="$classadore_1_1if__ROS_1_1VehicleModelNode.html#aeec984c96c9146cca4da43de8e241577" title=" " alt="" coords="348,1908,552,1949"/>
+<area shape="rect" id="node47" href="$classadore_1_1if__ROS_1_1VehicleModelNode.html#a2d4cbd0d494bfbccfdd0f85fcb5f9bb6" title=" " alt="" coords="355,1973,545,2015"/>
+<area shape="rect" id="node48" href="$classadore_1_1if__ROS_1_1VehicleModelNode.html#a2ef42318ad00318ff2e9b918f5f17d0a" title=" " alt="" coords="355,2039,545,2080"/>
+<area shape="rect" id="node49" href="$classadore_1_1if__ROS_1_1VehicleModelNode.html#a44ea23bccb826e456c06e35b436fb4f9" title=" " alt="" coords="355,2104,545,2145"/>
+<area shape="rect" id="node45" href="$classadore_1_1apps_1_1VehicleModel.html#aed154f20607e6129ee9089796764141c" title="switches between manual and automatic control input" alt="" coords="625,2331,801,2372"/>
+</map>

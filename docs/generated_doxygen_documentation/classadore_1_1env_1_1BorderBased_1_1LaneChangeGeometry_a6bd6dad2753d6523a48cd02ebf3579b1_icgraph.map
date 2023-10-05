@@ -1,0 +1,4 @@
+<map id="adore::env::BorderBased::LaneChangeGeometry::getProgressOfGateOpen" name="adore::env::BorderBased::LaneChangeGeometry::getProgressOfGateOpen">
+<area shape="rect" id="node1" title="Get the s&#45;coordinate where the lane starts to be in direct adjacency to the LaneFollowingGeometry whi..." alt="" coords="264,5,432,61"/>
+<area shape="rect" id="node2" href="$classadore_1_1env_1_1BorderBased_1_1LaneChangeView.html#a9137770c63b359787b0c6d88e8f44bee" title=" " alt="" coords="5,5,216,61"/>
+</map>

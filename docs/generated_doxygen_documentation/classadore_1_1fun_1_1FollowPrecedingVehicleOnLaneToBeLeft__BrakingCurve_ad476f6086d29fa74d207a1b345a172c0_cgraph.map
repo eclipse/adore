@@ -1,0 +1,13 @@
+<map id="adore::fun::FollowPrecedingVehicleOnLaneToBeLeft_BrakingCurve::getValue" name="adore::fun::FollowPrecedingVehicleOnLaneToBeLeft_BrakingCurve::getValue">
+<area shape="rect" id="node1" title=" " alt="" coords="5,191,253,247"/>
+<area shape="rect" id="node2" href="$classadore_1_1fun_1_1LaneChangePhaseEstimator.html#ae0d020ec9a2414dc64b9ca3c0c354046" title=" " alt="" coords="302,136,517,177"/>
+<area shape="rect" id="node7" href="$classadore_1_1fun_1_1FollowPrecedingVehicle__BreakingCurve.html#a2942679ce9a4b1038f3a09f3e3b7b01d" title=" " alt="" coords="301,260,517,301"/>
+<area shape="rect" id="node3" href="$classadore_1_1view_1_1ALaneChangeView.html#af9a6da34e4964f7737c839eb980f0f69" title=" " alt="" coords="565,5,744,47"/>
+<area shape="rect" id="node4" href="$classadore_1_1view_1_1AGap.html#a591ae9d2ea5c9fb69cfcc5eba5393624" title="get the state of the gap at a certain time, depending on ego position" alt="" coords="585,71,724,112"/>
+<area shape="rect" id="node5" href="$classadore_1_1view_1_1ALaneChangeView.html#a843001a04d0823731b89ff25f75501d5" title=" " alt="" coords="565,136,744,177"/>
+<area shape="rect" id="node6" href="$classadore_1_1view_1_1ALane.html#a7995d6c08470c31414ecd7891ec16f05" title=" " alt="" coords="587,201,722,243"/>
+<area shape="rect" id="node8" href="$namespaceadore_1_1mad.html#adea062854ef0b105a3fdca8cf2aca945" title=" " alt="" coords="595,267,715,294"/>
+<area shape="rect" id="node10" href="$namespaceadore_1_1mad.html#ab58ecb752f9bbfe27832e0a2c0e22c2b" title=" " alt="" coords="597,318,713,345"/>
+<area shape="rect" id="node9" href="$namespaceadore_1_1mad.html#a618a8842fed7b9375957b1e393c58492" title=" " alt="" coords="792,267,912,294"/>
+<area shape="rect" id="node11" href="$namespaceadore_1_1mad.html#ac61b79c007d1859f93a10c04272095a1" title=" " alt="" coords="794,318,910,345"/>
+</map>

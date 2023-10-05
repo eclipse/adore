@@ -1,0 +1,7 @@
+<map id="adore::env::BorderBased::LaneFollowingGeometry::isValid" name="adore::env::BorderBased::LaneFollowingGeometry::isValid">
+<area shape="rect" id="node1" title="Check whether the LaneFollowingGeometry is valid." alt="" coords="757,57,928,113"/>
+<area shape="rect" id="node2" href="$classadore_1_1apps_1_1LaneViewProvider.html#ac395295921a3718b1747dc016ba8061b" title=" " alt="" coords="507,5,709,47"/>
+<area shape="rect" id="node3" href="$classadore_1_1apps_1_1LaneViewProvider.html#a10c08893d16421f195ad2a597bfea8f8" title="update data, views and recompute maneuver" alt="" coords="229,42,459,69"/>
+<area shape="rect" id="node5" href="$classadore_1_1env_1_1BorderBased_1_1LaneFollowingView.html#ac12d921e0c64ef105124c97d64619b3b" title=" " alt="" coords="514,123,702,164"/>
+<area shape="rect" id="node4" href="$classadore_1_1if__ROS_1_1LVProviderNode.html#ad35fdbfdaef8f2f89279dc08758bef3a" title=" " alt="" coords="5,35,181,76"/>
+</map>

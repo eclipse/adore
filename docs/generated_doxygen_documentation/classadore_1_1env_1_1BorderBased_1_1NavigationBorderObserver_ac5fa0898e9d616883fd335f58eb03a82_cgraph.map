@@ -1,0 +1,16 @@
+<map id="adore::env::BorderBased::NavigationBorderObserver::update" name="adore::env::BorderBased::NavigationBorderObserver::update">
+<area shape="rect" id="node1" title=" " alt="" coords="5,147,188,203"/>
+<area shape="rect" id="node2" href="$classadore_1_1env_1_1BorderBased_1_1BorderSet.html#a8d10d29478d00f091a53f2197b85f1bd" title="erase border from this" alt="" coords="241,23,412,65"/>
+<area shape="rect" id="node9" href="$classadore_1_1env_1_1BorderBased_1_1BorderSet.html#a7ff4cca867c7286fbf2d7e98f07a2da4" title="check whether a border exists in the set" alt="" coords="243,154,410,195"/>
+<area shape="rect" id="node10" href="$classadore_1_1env_1_1BorderBased_1_1BorderSet.html#a5730d3e4fc938c9bd1e1146a8a61deec" title="insert new border into this" alt="" coords="241,89,412,130"/>
+<area shape="rect" id="node12" href="$structadore_1_1env_1_1BorderBased_1_1BorderID.html#a6a3db5f943dc3d441697c9fa1b09d99e" title="Write information of the BorderID to a string." alt="" coords="243,219,410,261"/>
+<area shape="rect" id="node14" href="$structadore_1_1env_1_1BorderBased_1_1Border.html#a6aef4b2d46c09542a7e792dd27770365" title="Check whether type is Changeable." alt="" coords="236,285,417,326"/>
+<area shape="rect" id="node3" href="$structadore_1_1env_1_1BorderBased_1_1Border.html#a4b1e646e2c3d98b03e75f286611e0cda" title="Get a bounding box for the implicit lane object." alt="" coords="476,23,643,65"/>
+<area shape="rect" id="node8" href="$structadore_1_1env_1_1BorderBased_1_1Coordinate.html#abb34f84413225a9464afe389cb4f71a7" title="Get a boost_point that has the same coordinates as the Coordinate object." alt="" coords="468,89,651,130"/>
+<area shape="rect" id="node4" href="$namespaceadore_1_1mad.html#adea062854ef0b105a3fdca8cf2aca945" title=" " alt="" coords="701,5,821,32"/>
+<area shape="rect" id="node6" href="$namespaceadore_1_1mad.html#ab58ecb752f9bbfe27832e0a2c0e22c2b" title=" " alt="" coords="703,56,819,83"/>
+<area shape="rect" id="node5" href="$namespaceadore_1_1mad.html#a618a8842fed7b9375957b1e393c58492" title=" " alt="" coords="869,5,989,32"/>
+<area shape="rect" id="node7" href="$namespaceadore_1_1mad.html#ac61b79c007d1859f93a10c04272095a1" title=" " alt="" coords="871,56,987,83"/>
+<area shape="rect" id="node11" href="$classadore_1_1env_1_1BorderBased_1_1BorderSet.html#afb523effcee573e774147446ecc756ab" title="check whether border type is in allowed types of set" alt="" coords="465,154,653,195"/>
+<area shape="rect" id="node13" href="$structadore_1_1env_1_1BorderBased_1_1Coordinate.html#af032c53f03306e3d352d9954e4895f72" title="Write information of the Coordinate to a string." alt="" coords="476,219,643,261"/>
+</map>

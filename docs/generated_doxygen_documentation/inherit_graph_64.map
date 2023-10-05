@@ -1,0 +1,6 @@
+<map id="Graphical Class Hierarchy" name="Graphical Class Hierarchy">
+<area shape="rect" id="node1" href="$classadore_1_1env_1_1BorderBased_1_1BorderAccumulationStrategy.html" title="This class defines how successors of a border should be chosen." alt="" coords="5,71,201,112"/>
+<area shape="rect" id="node2" href="$classadore_1_1env_1_1BorderBased_1_1BASFollowNavigation.html" title="This class chooses the successor with the lowest cost until an upper limit on distance is reached." alt="" coords="249,5,416,47"/>
+<area shape="rect" id="node3" href="$classadore_1_1env_1_1BorderBased_1_1BASFollowStraight.html" title="This class chooses the straightest successor of a border until an upper limit on distance is reached." alt="" coords="249,71,416,112"/>
+<area shape="rect" id="node4" href="$classadore_1_1env_1_1BorderBased_1_1BASNeighbor.html" title="This class choses the left/right neighbors of a border sequence." alt="" coords="249,136,416,177"/>
+</map>

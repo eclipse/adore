@@ -1,0 +1,6 @@
+<map id="adore::fun::MRMPlanner::brake_case_trapezoidal" name="adore::fun::MRMPlanner::brake_case_trapezoidal">
+<area shape="rect" id="node1" title=" " alt="" coords="5,35,172,76"/>
+<area shape="rect" id="node2" href="$classadore_1_1fun_1_1MRMPlanner.html#ace52d05e8518e6676ae9822b1607dc7d" title="minimum acceleration that can be achieved before inverting jerk to end with v=0 and a=0" alt="" coords="220,5,440,47"/>
+<area shape="rect" id="node3" href="$namespaceadore_1_1mad.html#ab58ecb752f9bbfe27832e0a2c0e22c2b" title=" " alt="" coords="272,71,388,98"/>
+<area shape="rect" id="node4" href="$namespaceadore_1_1mad.html#ac61b79c007d1859f93a10c04272095a1" title=" " alt="" coords="488,71,604,98"/>
+</map>

@@ -1,0 +1,15 @@
+<map id="adore::if_xodr::XODR2BorderBasedConverter::extractRoadSection" name="adore::if_xodr::XODR2BorderBasedConverter::extractRoadSection">
+<area shape="rect" id="node1" title="combine lanes and center line to function representation of road section" alt="" coords="5,174,244,215"/>
+<area shape="rect" id="node2" href="$namespaceadore_1_1mad_1_1funop.html#ab75cabff9d927c73df808195c367d322" title=" " alt="" coords="335,5,491,32"/>
+<area shape="rect" id="node3" href="$classadore_1_1mad_1_1LPiecewiseFunction.html#ab890f9a93007739a348ee430298afa07" title=" " alt="" coords="588,106,800,147"/>
+<area shape="rect" id="node7" href="$classadore_1_1mad_1_1LPiecewiseFunction.html#a3e7e8b3d6cd205fa2e15144df1e4c121" title=" " alt="" coords="307,57,519,98"/>
+<area shape="rect" id="node8" href="$classadore_1_1mad_1_1ALFunction.html#a3e21784680fec965fdcf4ff4c1bcbbe6" title=" " alt="" coords="333,389,494,430"/>
+<area shape="rect" id="node9" href="$classadore_1_1if__xodr_1_1XODR2BorderBasedConverter.html#aaa98b045eb148e224530cea33c50be7b" title="extract lanes with border entries" alt="" coords="292,174,535,215"/>
+<area shape="rect" id="node11" href="$classadore_1_1if__xodr_1_1XODR2BorderBasedConverter.html#a0ab395a4479d5d5fac6a8443635485e5" title="extract lanes with width entries" alt="" coords="295,239,532,281"/>
+<area shape="rect" id="node12" href="$classadore_1_1mad_1_1LPiecewiseFunction.html#a13592d27b3b0815f82fbff80d33485b6" title=" " alt="" coords="307,323,519,365"/>
+<area shape="rect" id="node4" href="$classadore_1_1mad_1_1ALFunction.html#a8efcded5c3bb775f11eaf529d0116eff" title=" " alt="" coords="879,139,1040,181"/>
+<area shape="rect" id="node5" href="$classadore_1_1mad_1_1LPiecewiseFunction.html#a199f0141f1de1de289716ff7bbaf21c8" title=" " alt="" coords="853,227,1065,269"/>
+<area shape="rect" id="node6" href="$classadore_1_1mad_1_1ALFunction.html#aa03d0d015dd282bc5e5810b1dae85bea" title=" " alt="" coords="879,74,1040,115"/>
+<area shape="rect" id="node10" href="$classadore_1_1if__xodr_1_1XODR2BorderBasedConverter.html#a8e5c2465fdcd8c462219591390145529" title="convert xodr lane type to border type" alt="" coords="583,223,805,265"/>
+<area shape="rect" id="node13" href="$classadore_1_1mad_1_1LPiecewiseFunction.html#a22001808ab82f8ca51396b4c15792dee" title=" " alt="" coords="588,391,800,433"/>
+</map>

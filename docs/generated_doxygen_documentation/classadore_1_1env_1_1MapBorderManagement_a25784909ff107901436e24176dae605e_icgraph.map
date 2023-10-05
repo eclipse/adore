@@ -1,0 +1,7 @@
+<map id="adore::env::MapBorderManagement::initBaseSet" name="adore::env::MapBorderManagement::initBaseSet">
+<area shape="rect" id="node1" title="initialization of internal sets" alt="" coords="767,39,996,80"/>
+<area shape="rect" id="node2" href="$classadore_1_1env_1_1MapBorderManagement.html#a13b26d2d811b62a087fc50faf0e4c0b9" title="initialization routine with base map" alt="" coords="489,39,719,80"/>
+<area shape="rect" id="node3" href="$classadore_1_1env_1_1NavigationManagement.html#a6ef6488ee2fc558da1536b4d00a7fa1a" title=" " alt="" coords="213,5,441,47"/>
+<area shape="rect" id="node5" href="$classadore_1_1apps_1_1MapProvider.html#a1d9aa34b5f68408f3d494a1fad7b62be" title=" " alt="" coords="242,71,413,112"/>
+<area shape="rect" id="node4" href="$classadore_1_1apps_1_1Navigation.html#a0f19b60c5090f48fdd06be105610c304" title=" " alt="" coords="5,5,165,47"/>
+</map>

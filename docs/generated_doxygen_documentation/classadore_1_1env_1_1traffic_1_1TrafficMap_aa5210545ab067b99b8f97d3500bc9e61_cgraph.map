@@ -1,0 +1,12 @@
+<map id="adore::env::traffic::TrafficMap::matchBorders" name="adore::env::traffic::TrafficMap::matchBorders">
+<area shape="rect" id="node1" title="Match traffic to borders." alt="" coords="5,165,187,207"/>
+<area shape="rect" id="node2" href="$classadore_1_1env_1_1BorderBased_1_1BorderPositioning.html#aea8cf3c0dbc78e921a32c32aec03a296" title=" " alt="" coords="242,5,438,47"/>
+<area shape="rect" id="node3" href="$namespaceadore_1_1mad.html#a70b9fe3efbb34c0f9621147e3456bfa8" title=" " alt="" coords="282,122,398,149"/>
+<area shape="rect" id="node4" href="$namespaceadore_1_1mad.html#acec540f9bf9b6eb0e027d332d3fe5577" title=" " alt="" coords="493,147,605,174"/>
+<area shape="rect" id="node5" href="$namespaceadore_1_1mad.html#adea062854ef0b105a3fdca8cf2aca945" title=" " alt="" coords="653,122,773,149"/>
+<area shape="rect" id="node7" href="$namespaceadore_1_1mad.html#ab58ecb752f9bbfe27832e0a2c0e22c2b" title=" " alt="" coords="655,198,771,225"/>
+<area shape="rect" id="node9" href="$classadore_1_1env_1_1BorderBased_1_1BorderSet.html#a5b9a10acc8d477c1d27d5b39fb1f99f3" title="get all borders in this within region" alt="" coords="235,275,445,316"/>
+<area shape="rect" id="node10" href="$classadore_1_1env_1_1BorderBased_1_1BorderSet.html#a8af807fde181a20de55594592d752adc" title="Get left neighbor of a border." alt="" coords="246,340,434,381"/>
+<area shape="rect" id="node6" href="$namespaceadore_1_1mad.html#a618a8842fed7b9375957b1e393c58492" title=" " alt="" coords="821,122,941,149"/>
+<area shape="rect" id="node8" href="$namespaceadore_1_1mad.html#ac61b79c007d1859f93a10c04272095a1" title=" " alt="" coords="823,198,939,225"/>
+</map>

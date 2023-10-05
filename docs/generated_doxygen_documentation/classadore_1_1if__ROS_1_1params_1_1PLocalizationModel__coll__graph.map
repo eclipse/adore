@@ -1,0 +1,5 @@
+<map id="adore::if_ROS::params::PLocalizationModel" name="adore::if_ROS::params::PLocalizationModel">
+<area shape="rect" id="node1" title=" " alt="" coords="134,292,290,545"/>
+<area shape="rect" id="node2" href="$classadore_1_1params_1_1APLocalizationModel.html" title="abstract class containing parameters which configure localization state estimation model" alt="" coords="5,5,205,244"/>
+<area shape="rect" id="node3" href="$classadore_1_1if__ROS_1_1ROSParam.html" title=" " alt="" coords="230,71,410,178"/>
+</map>

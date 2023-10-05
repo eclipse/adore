@@ -1,0 +1,11 @@
+digraph "adore::fun::TurnSignalObserver"
+{
+ // LATEX_PDF_SIZE
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  Node1 [label="{adore::fun::TurnSignalObserver\n|- right_indicator_\l- left_indicator_\l- last_change_left_indicator_\l- last_change_right_indicator_\l- turned_on_manually\l_left_\l- turned_on_manually\l_right_\l- right_state_provided_\l- left_state_provided_\l- turned_on_automatically\l_left_\l- turned_on_automatically\l_right_\l- max_powerup_delay_\l- t0_\l|+ TurnSignalObserver()\l+ ~TurnSignalObserver()\l+ update()\l+ rightIndicatorTurnedOnWithin\lLastSecond()\l+ rightIndicatorTurnedOnManually\lWithinLastSecond()\l+ leftIndicatorTurnedOnManually\lWithinLastSecond()\l+ leftIndicatorTurnedOnWithin\lLastSecond()\l+ bothIndicatorsOn()\l+ newRightIndicatorOnEvent()\l+ newLeftIndicatorOnEvent()\l+ newManualLeftIndicatorOn\lEvent()\l+ newManualRightIndicatorOn\lEvent()\l}",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black",tooltip=" "];
+  Node2 -> Node1 [color="grey25",fontsize="10",style="solid",label=" -extended_state_reader\l_\n-indicator_command\l_reader_" ,arrowhead="odiamond",fontname="Helvetica"];
+  Node2 [label="{adore::mad::AReader\< T \>\n||+ hasData()\l+ hasUpdate()\l+ getData()\l+ getDesc()\l}",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classadore_1_1mad_1_1AReader.html",tooltip=" "];
+  Node3 -> Node1 [color="grey25",fontsize="10",style="solid",label=" -extended_state_" ,arrowhead="odiamond",fontname="Helvetica"];
+  Node3 [label="{adore::fun::VehicleExtended\lState\n|- gearState_\l- indicatorLeftOn_\l- indicatorRightOn_\l- automaticControlAccelerationOn_\l- automaticControlAcceleration\lActive_\l- automaticControlSteeringOn_\l- checkpointClearance_\l|+ VehicleExtendedState()\l+ getGearState()\l+ setGearState()\l+ getIndicatorLeftOn()\l+ setIndicatorLeftOn()\l+ getIndicatorRightOn()\l+ setIndicatorRightOn()\l+ getAutomaticControlAccelerationOn()\l+ setAutomaticControlAccelerationOn()\l+ getAutomaticControlAcceleration\lActive()\land 6 more...\l}",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classadore_1_1fun_1_1VehicleExtendedState.html",tooltip=" "];
+}

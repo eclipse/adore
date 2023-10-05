@@ -1,0 +1,15 @@
+digraph "DLR_TS::PlotLab::FigureStubZMQ"
+{
+ // LATEX_PDF_SIZE
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  Node1 [label="{DLR_TS::PlotLab::FigureStubZMQ\n|- m_id\l|+ FigureStubZMQ()\l+ FigureStubZMQ()\l+ ~FigureStubZMQ()\l+ circlestrip()\l+ tristrip()\l+ tristrip()\l+ tristrip()\l+ patch()\l+ patch()\l+ patch()\land 28 more...\l# send_paint()\l# plotTexture()\l# send_paint()\l# send_other()\l# send_view()\l}",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black",tooltip=" "];
+  Node2 -> Node1 [dir="back",color="midnightblue",fontsize="10",style="solid",arrowtail="onormal",fontname="Helvetica"];
+  Node2 [label="{DLR_TS::PlotLab::AFigureStub\n||+ ~AFigureStub()\l+ circlestrip()\l+ tristrip()\l+ tristrip()\l+ tristrip()\l+ patch()\l+ patch()\l+ patch()\l+ plot()\l+ plot()\land 27 more...\l}",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classDLR__TS_1_1PlotLab_1_1AFigureStub.html",tooltip=" "];
+  Node3 -> Node1 [color="grey25",fontsize="10",style="solid",label=" -m_other" ,arrowhead="odiamond",fontname="Helvetica"];
+  Node3 [label="{ZMQObjectProvider\<\l DLR_TS::PlotLab::PLComOther \>\n|- m_socket\l- m_context\l- m_initialized\l|+ ZMQObjectProvider()\l+ ZMQObjectProvider()\l+ ~ZMQObjectProvider()\l+ send()\l- initialize()\l}",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classZMQObjectProvider.html",tooltip=" "];
+  Node4 -> Node1 [color="grey25",fontsize="10",style="solid",label=" -m_view" ,arrowhead="odiamond",fontname="Helvetica"];
+  Node4 [label="{ZMQObjectProvider\<\l DLR_TS::PlotLab::PLComView \>\n|- m_socket\l- m_context\l- m_initialized\l|+ ZMQObjectProvider()\l+ ZMQObjectProvider()\l+ ~ZMQObjectProvider()\l+ send()\l- initialize()\l}",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classZMQObjectProvider.html",tooltip=" "];
+  Node5 -> Node1 [color="grey25",fontsize="10",style="solid",label=" -m_paint" ,arrowhead="odiamond",fontname="Helvetica"];
+  Node5 [label="{ZMQObjectProvider\<\l DLR_TS::PlotLab::PLComPaint \>\n|- m_socket\l- m_context\l- m_initialized\l|+ ZMQObjectProvider()\l+ ZMQObjectProvider()\l+ ~ZMQObjectProvider()\l+ send()\l- initialize()\l}",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classZMQObjectProvider.html",tooltip=" "];
+}

@@ -1,0 +1,12 @@
+digraph "CSVLog::writeLogToConsole"
+{
+ // LATEX_PDF_SIZE
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  rankdir="LR";
+  Node1 [label="CSVLog::writeLogToConsole",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black",tooltip="general log generator for console"];
+  Node1 -> Node2 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node2 [label="CSVLog::lvlToConsoleColor\lLinux",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classCSVLog.html#a18c9b756df7e7f4a95a117d7b29e4c5b",tooltip="get console color from log level on linux"];
+  Node1 -> Node3 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node3 [label="CSVLog::lvlToString",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classCSVLog.html#aac8cc94d98c714221aca42f9c4c14441",tooltip="get string for log level"];
+}

@@ -1,0 +1,7 @@
+<map id="adore::fun::BreakAtHorizon" name="adore::fun::BreakAtHorizon">
+<area shape="rect" id="node1" title=" " alt="" coords="363,292,543,443"/>
+<area shape="rect" id="node2" href="$classadore_1_1fun_1_1ANominalConstraint.html" title=" " alt="" coords="5,49,211,185"/>
+<area shape="rect" id="node3" href="$classadore_1_1params_1_1APTrajectoryGeneration.html" title="abstract class containing parameters to configure the behaviour of trajectory generation" alt="" coords="235,42,453,193"/>
+<area shape="rect" id="node4" href="$classadore_1_1params_1_1APVehicle.html" title="abstract class for vehicle configuration related paremeters" alt="" coords="477,5,651,229"/>
+<area shape="rect" id="node5" href="$classadore_1_1view_1_1ALane.html" title=" " alt="" coords="675,5,877,229"/>
+</map>

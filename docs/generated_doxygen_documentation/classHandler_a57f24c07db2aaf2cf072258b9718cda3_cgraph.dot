@@ -1,0 +1,12 @@
+digraph "Handler::receive_y"
+{
+ // LATEX_PDF_SIZE
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  rankdir="LR";
+  Node1 [label="Handler::receive_y",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black",tooltip=" "];
+  Node1 -> Node2 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node2 [label="Handler::plot",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classHandler.html#a80e6be5a979317bdeb9bd706e5f2e00e",tooltip=" "];
+  Node2 -> Node3 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node3 [label="DLR_TS::PlotLab::AFigure\lStub::append",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classDLR__TS_1_1PlotLab_1_1AFigureStub.html#a4da398fda2c19ea3ca5b4b289d785942",tooltip=" "];
+}

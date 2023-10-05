@@ -1,0 +1,977 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+      
+      
+      <link rel="icon" href="../../../../img/favicon.ico">
+      <meta name="generator" content="mkdocs-1.5.3, mkdocs-material-9.4.3">
+    
+    
+      
+        <title>Index - ADORe Documentation</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.79e020e9.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    <body dir="ltr">
+  
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&"object"==typeof palette.color)for(var key of Object.keys(palette.color))document.body.setAttribute("data-md-color-"+key,palette.color[key])</script>
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#message-definitions-for-ros-interface-of-adore" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../../.." title="ADORe Documentation" class="md-header__button md-logo" aria-label="ADORe Documentation" data-md-component="logo">
+      
+  <img src="../../../../img/logo.png" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            ADORe Documentation
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Index
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../.." title="ADORe Documentation" class="md-nav__button md-logo" aria-label="ADORe Documentation" data-md-component="logo">
+      
+  <img src="../../../../img/logo.png" alt="logo">
+
+    </a>
+    ADORe Documentation
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../about_adore/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Home
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../quick_start/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Quick Start
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Setup
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            Setup
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../setup/system_requirements/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    System Requirements
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../setup/prerequisites/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Prerequisites
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../setup/installing_docker/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Installing Docker
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../setup/getting_started/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Getting Started
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Basic Usage
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            Basic Usage
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../basic_usage/first_scenario/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Running Your First Scenario
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Technical Reference Manual
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            Technical Reference Manual
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../system_and_development/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    System and Development
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../control_system/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Control System
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../interfaces/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Interfaces
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../system_and_development/doxygen_documentation/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Doxygen Documentation
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Module Quick Reference
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../questions_and_answers/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Questions and Answers
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../problems_and_solutions/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Problems and Solutions
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../getting_help/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Getting Help
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../adore_status/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    ADORe Status
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../contact/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Contact
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#message-definitions-for-ros-interface-of-adore" class="md-nav__link">
+    Message definitions for ROS interface of adore
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#from-vehicle-base-system-to-adore" class="md-nav__link">
+    From vehicle base system to adore
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#from-adore-to-vehicle-base-system" class="md-nav__link">
+    From adore to vehicle base system
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#from-sensors-to-adore" class="md-nav__link">
+    From sensors to adore
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#adore-internal" class="md-nav__link">
+    adore internal
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#simulation" class="md-nav__link">
+    Simulation
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+  <h1>Index</h1>
+
+<!--
+********************************************************************************
+* Copyright (C) 2017-2020 German Aerospace Center (DLR). 
+* Eclipse ADORe, Automated Driving Open Research https://eclipse.org/adore
+*
+* This program and the accompanying materials are made available under the 
+* terms of the Eclipse Public License 2.0 which is available at
+* http://www.eclipse.org/legal/epl-2.0.
+*
+* SPDX-License-Identifier: EPL-2.0 
+*
+* Contributors: 
+*   Daniel Heß - initial API and implementation
+********************************************************************************
+-->
+
+<h2 id="message-definitions-for-ros-interface-of-adore">Message definitions for ROS interface of adore</h2>
+<p>In order to communicate with ADORe in ROS this package should be used. By separating adore_if_ros and adore_if_ros_msg, interacting components are independent from adore source code.
+Message types from common_msgs and std_msgs are preferredly employed for communication with external modules. 
+Internal messages will be mainly specified as user defined messages.
+All message headers shall be time-stamped with the true UTC time from the GPS module (or simulation equivalent).</p>
+<h2 id="from-vehicle-base-system-to-adore">From vehicle base system to adore</h2>
+<ul>
+<li>measured steering wheel angle in rad: <ul>
+<li>std_msgs::Float32</li>
+<li>/vehicle0/VEH/steering_angle_measured</li>
+</ul>
+</li>
+<li>wheel speeds (speed above ground in m/s), FL,RL,RR,FR<ul>
+<li>std_msgs::Float32MultiArray</li>
+<li>/vehicle0/VEH/wheel_speed</li>
+</ul>
+</li>
+<li>automatic control enabled<ul>
+<li>std_msgs::Bool</li>
+<li>/vehicle0/VEH/AutomaticControlState/acceleration</li>
+<li>/vehicle0/VEH/AutomaticControlState/accelerationActive</li>
+<li>/vehicle0/VEH/AutomaticControlState/steering</li>
+</ul>
+</li>
+<li>yaw-rate measured by ESP (rad/s)<ul>
+<li>std_msgs::Float32</li>
+<li>/vehicle0/VEH/yaw_rate</li>
+</ul>
+</li>
+<li>acceleration measured by ESP (m/s², ax, ay, az) <ul>
+<li>std_msgs::Float32</li>
+<li>/vehicle0/VEH/ax</li>
+</ul>
+</li>
+<li>indicator state: left/right<ul>
+<li>std_msgs::Bool</li>
+<li>/vehicle0/VEH/IndicatorState/left</li>
+</ul>
+</li>
+<li>gear state (0:Park, 1: Drive, 2: Reverse, 3: Neutral): <ul>
+<li>std_msgs::Int8</li>
+<li>/vehicle0/VEH/gear_state</li>
+</ul>
+</li>
+</ul>
+<h2 id="from-adore-to-vehicle-base-system">From adore to vehicle base system</h2>
+<ul>
+<li>control input: longitudinal acceleration request (m/s²): <ul>
+<li>std_msgs::Float32</li>
+<li>/vehicle0/FUN/MotionCommand/acceleration</li>
+</ul>
+</li>
+<li>control input: steering wheel angle request (rad): <ul>
+<li>std_msgs::Float32</li>
+<li>/vehicle0/FUN/MotionCommand/steeringAngle</li>
+</ul>
+</li>
+<li>indicator input: left/right <ul>
+<li>std_msgs::Bool</li>
+<li>/vehicle0/FUN/IndicatorCommand/left</li>
+</ul>
+</li>
+<li>gear request (0:Park, 1: Drive, 2: Reverse, 3: Neutral): <ul>
+<li>std_msgs::Int8</li>
+<li>/vehicle0/FUN/GearSelectionCommand</li>
+</ul>
+</li>
+</ul>
+<h2 id="from-sensors-to-adore">From sensors to adore</h2>
+<ul>
+<li>Localization based ego state estimate (Position xyz UTM (current tile) in m, rotation around xyz in rad, velocity linear in vehicle coordinates m/s, velocity rotational rad/s): <ul>
+<li>nav_msgs::Odometry</li>
+<li>/vehicle0/localization</li>
+</ul>
+</li>
+<li>Odometry based ego state estimate (Position xyz in m in arbitrary frame, rotation around xyz in rad, velocity linear in vehicle coordinates m/s, velocity rotational rad/s): <ul>
+<li>nav_msgs::Odometry</li>
+<li>/vehicle0/odom</li>
+</ul>
+</li>
+<li>observation of other traffic participants<ul>
+<li>object oriented information: Specify geometric state, type, indicator/lights</li>
+<li>adore_if_ros_msgs::TrafficParticipantSet</li>
+<li>/vehicle0/traffic</li>
+</ul>
+</li>
+</ul>
+<h2 id="adore-internal">adore internal</h2>
+<ul>
+<li>ENV (environment representations)<ul>
+<li>road marking/ drivable lane: Border<ul>
+<li>adore_if_ros_msg::Border</li>
+<li>/vehicle0/ENV/Border</li>
+</ul>
+</li>
+<li>traffic light, traffic sign, precedence rules<ul>
+<li>static precedence rule<ul>
+<li>adore_if_ros_msg::Precedence</li>
+<li>/vehicle0/ENV/Precedence</li>
+</ul>
+</li>
+<li>tcd controlled state of a connection<ul>
+<li>adore_if_ros_msg::TCDConnectionState</li>
+<li>/vehicle0/ENV/TCDConnectionState</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>parking spot: ParkingSpot, tbd</li>
+<li>logical propositions about environment and ego state<ul>
+<li>adore_if_ros_msg::Proposition</li>
+<li>/vehicle0/ENV/Propositions</li>
+</ul>
+</li>
+<li>prediction of space occupied by other traffic participants in the future<ul>
+<li>adore_if_ros_msg::OccupancyCylinderPredictionSet</li>
+<li>/vehicle0/ENV/Prediction/expected - the expected behavior</li>
+<li>/vehicle0/ENV/Prediction/worstcase - the worst-case behavior</li>
+<li>/vehicle0/ENV/Prediction/desired - the desired behavior of an agent</li>
+</ul>
+</li>
+<li>space that may be affected by ego vehicle<ul>
+<li>adore:if_ros_msg::AreaOfEffect</li>
+<li>/vehicle0/ENV/areaofeffect</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>FUN (control functions)<ul>
+<li>Trajectory to be executed<ul>
+<li>adore_if_ros_msg::SetPointRequest</li>
+<li>/vehicle0/FUN/SetPointRequest</li>
+</ul>
+</li>
+<li>Nominal Trajectory, which could be executed if emergency maneuver is not triggered<ul>
+<li>adore_if_ros_msg::SetPointRequest</li>
+<li>/vehicle0/FUN/NominalTrajectory</li>
+</ul>
+</li>
+<li>low level emergency breaking: <ul>
+<li>adore_if_ros_msg::TerminalRequest</li>
+<li>/vehicle0/FUN/TerminalRequest</li>
+</ul>
+</li>
+<li>navigation goal: current target point for navigation node<ul>
+<li>adore_if_ros_msg::NavigationGoal</li>
+<li>/vehicle0/FUN/NavigationGoal</li>
+</ul>
+</li>
+<li>Request to plan trajectories <ul>
+<li>adore_if_ros_msg::PlanningRequest</li>
+<li>/vehicle0/FUN/PlanningRequest</li>
+</ul>
+</li>
+<li>Trajectory planning result, reply to PlanningRequest<ul>
+<li>adore_if_ros_msg::PlanningResult</li>
+<li>/vehicle0/FUN/PlanningResult</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h2 id="simulation">Simulation</h2>
+<ul>
+<li>simulation time<ul>
+<li>std_msgs::Float64</li>
+<li>/SIM/utc</li>
+</ul>
+</li>
+<li>state information of all traffic participants in the simulation<ul>
+<li>TrafficParticipantSimulation</li>
+<li>/SIM/traffic, /SIM/traffic/agg</li>
+</ul>
+</li>
+<li>reset vehicle state<ul>
+<li>geometry_msgs::Pose</li>
+<li>/vehicle0/SIM/ResetVehiclePose</li>
+<li>geometry_msgs::Twist</li>
+<li>/vehicle0/SIM/ResetVehicleTwist</li>
+</ul>
+</li>
+<li>vehicle state ground truth<ul>
+<li>nav_msgs::Odometry</li>
+<li>/vehicle0/SIM/state</li>
+</ul>
+</li>
+</ul>
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    <script id="__config" type="application/json">{"base": "../../..", "features": ["content.code.copy"], "search": "../../../assets/javascripts/workers/search.a264c092.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    
+    
+      <script src="../../../assets/javascripts/bundle.6eac0284.min.js"></script>
+      
+    
+  </body>
+</html>

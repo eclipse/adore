@@ -1,0 +1,9 @@
+<map id="adore::env::BorderBased::Border::typeIsChangeable" name="adore::env::BorderBased::Border::typeIsChangeable">
+<area shape="rect" id="node1" title="Check whether type is Changeable." alt="" coords="795,71,976,112"/>
+<area shape="rect" id="node2" href="$classadore_1_1env_1_1MapBorderManagement.html#ab4037107652ca0504440f9276375a792" title="change border type of border identified by id" alt="" coords="517,5,747,47"/>
+<area shape="rect" id="node3" href="$classadore_1_1env_1_1BorderBased_1_1BorderSet.html#af9ba7b5fa63d42f4c7a107b2bc163bca" title="returns the given border and all parallel borders with a changeable type, ordered from leftmost to ri..." alt="" coords="517,71,747,112"/>
+<area shape="rect" id="node5" href="$classadore_1_1env_1_1BorderBased_1_1NavigationBorderObserver.html#ac5fa0898e9d616883fd335f58eb03a82" title=" " alt="" coords="541,137,723,193"/>
+<area shape="rect" id="node4" href="$classadore_1_1env_1_1MapBorderManagement.html#abeff1a09f45801fbc4982f6b3e8d3b20" title="change border type based on BorderTypeChangeProfile struct" alt="" coords="240,71,469,112"/>
+<area shape="rect" id="node6" href="$classadore_1_1env_1_1NavigationManagement.html#a4106ef1a330c91758e3fdb995e9723de" title=" " alt="" coords="241,144,469,185"/>
+<area shape="rect" id="node7" href="$classadore_1_1apps_1_1Navigation.html#a4be14a35fd450f46452afc37e44d15a6" title=" " alt="" coords="5,151,192,178"/>
+</map>

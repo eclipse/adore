@@ -1,0 +1,4 @@
+<map id="adore::params::APLongitudinalPlanner::getMinWidthSlowSpeed" name="adore::params::APLongitudinalPlanner::getMinWidthSlowSpeed">
+<area shape="rect" id="node1" title="getMinWidthSlowSpeed returns the slow speed to be applied, if lane width equals minWidthSlow: Should ..." alt="" coords="240,5,453,47"/>
+<area shape="rect" id="node2" href="$classadore_1_1fun_1_1LaneWidthSpeedLimitLFV.html#a7a4912c6a8885b475079422ba8bd8f88" title=" " alt="" coords="5,5,192,47"/>
+</map>

@@ -1,0 +1,9 @@
+<map id="Dashboard" name="Dashboard">
+<area shape="rect" id="node1" title=" " alt="" coords="415,683,625,1053"/>
+<area shape="rect" id="node2" href="$classDLR__TS_1_1PlotLab_1_1AFigureStub.html" title=" " alt="" coords="5,293,211,517"/>
+<area shape="rect" id="node3" href="$structadore_1_1env_1_1VehicleMotionState9d.html" title="This struct holds the motion state of the vehicle in 9d." alt="" coords="235,279,408,532"/>
+<area shape="rect" id="node4" href="$classadore_1_1params_1_1APVehicle.html" title="abstract class for vehicle configuration related paremeters" alt="" coords="433,293,607,517"/>
+<area shape="rect" id="node5" href="$classadore_1_1fun_1_1SetPointRequest.html" title=" " alt="" coords="632,286,819,525"/>
+<area shape="rect" id="node6" href="$classadore_1_1if__ROS_1_1PARAMS__Factory.html" title=" " alt="" coords="843,279,1029,532"/>
+<area shape="rect" id="node7" href="$classadore_1_1params_1_1AFactory.html" title="abstract factory for adore::params classes" alt="" coords="843,5,1029,229"/>
+</map>

@@ -1,0 +1,14 @@
+digraph "adore::mad::LLinearPiecewiseFunctionM::dimension"
+{
+ // LATEX_PDF_SIZE
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  rankdir="RL";
+  Node1 [label="adore::mad::LLinearPiecewise\lFunctionM::dimension",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black",tooltip=" "];
+  Node1 -> Node2 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node2 [label="adore::mad::LSpiralFunction\l::dimension",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classadore_1_1mad_1_1LSpiralFunction.html#a43b9b7ae8b5d0bb2fadfbf6e3972c02c",tooltip=" "];
+  Node1 -> Node3 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node3 [label="adore::mad::LLinearPiecewise\lFunctionM::getFirstIntersection1d",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classadore_1_1mad_1_1LLinearPiecewiseFunctionM.html#a259255708a5267fb95fe33dd1b8f0b7c",tooltip=" "];
+  Node3 -> Node4 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node4 [label="adore::mad::LLinearPiecewise\lFunctionM::getFirstIntersection1d",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classadore_1_1mad_1_1LLinearPiecewiseFunctionM.html#a497b3431383f2192051ddca5d1992327",tooltip=" "];
+}

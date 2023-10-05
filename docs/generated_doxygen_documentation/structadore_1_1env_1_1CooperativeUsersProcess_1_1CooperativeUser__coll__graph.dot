@@ -1,0 +1,9 @@
+digraph "adore::env::CooperativeUsersProcess::CooperativeUser"
+{
+ // LATEX_PDF_SIZE
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  Node1 [label="{adore::env::CooperativeUsers\lProcess::CooperativeUser\n|+ PlatooningState\l+ inPlatooningRange\l+ progress_front_side\l+ progress_rear_side\l|}",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black",tooltip="prediction plus CACC(Platoon)"];
+  Node2 -> Node1 [color="grey25",fontsize="10",style="solid",label=" +MCM" ,arrowhead="odiamond",fontname="Helvetica"];
+  Node2 [label="{adore::env::CooperativeUser\lPrediction\n|+ id\l+ toletated_distance\l_behind\l+ toletated_distance\l_ahead\l+ target_automation_level\l+ lane_position\l+ vehicleLength\l+ vehicleWidth\l+ communicationDelay\l+ x\l+ y\land 6 more...\l|+ setId()\l+ setLanePosition()\l+ setTargetAutomationLevel()\l+ setToletatedDistanceBehind()\l+ setToletatedDistanceAhead()\l+ setVehicleLength()\l+ setVehicleWidth()\l+ clear()\l}",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$structadore_1_1env_1_1CooperativeUserPrediction.html",tooltip=" "];
+}

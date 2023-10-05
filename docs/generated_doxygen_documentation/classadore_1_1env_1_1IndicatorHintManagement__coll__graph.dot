@@ -1,0 +1,9 @@
+digraph "adore::env::IndicatorHintManagement"
+{
+ // LATEX_PDF_SIZE
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  Node1 [label="{adore::env::IndicatorHint\lManagement\n|- known_hints\l|+ IndicatorHintManagement()\l+ update()\l+ getFunctions()\l- isOnLane()\l}",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black",tooltip="automatically manage indicator hints based on current vehicle position"];
+  Node2 -> Node1 [color="grey25",fontsize="10",style="solid",label=" -indicatorhint_feed_" ,arrowhead="odiamond",fontname="Helvetica"];
+  Node2 [label="{adore::mad::AFeed\< T \>\n||+ hasNext()\l+ getNext()\l+ getLatest()\l}",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classadore_1_1mad_1_1AFeed.html",tooltip=" "];
+}

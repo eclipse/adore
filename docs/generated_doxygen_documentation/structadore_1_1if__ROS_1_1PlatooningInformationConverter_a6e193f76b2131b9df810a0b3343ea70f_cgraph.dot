@@ -1,0 +1,18 @@
+digraph "adore::if_ROS::PlatooningInformationConverter::operator()"
+{
+ // LATEX_PDF_SIZE
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  rankdir="LR";
+  Node1 [label="adore::if_ROS::Platooning\lInformationConverter::operator()",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black",tooltip=" "];
+  Node1 -> Node2 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node2 [label="adore::fun::PlatooningInformation\l::getId",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classadore_1_1fun_1_1PlatooningInformation.html#a8959199277d6936f702e86773a0b1788",tooltip=" "];
+  Node1 -> Node3 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node3 [label="adore::fun::PlatooningInformation\l::getLanePosition",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classadore_1_1fun_1_1PlatooningInformation.html#abefd5c8edb1c18e5d51255bdf0a4a291",tooltip=" "];
+  Node1 -> Node4 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node4 [label="adore::fun::PlatooningInformation\l::getTargetAutomationLevel",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classadore_1_1fun_1_1PlatooningInformation.html#a8258bf4e7e2e141aeee5bd474487fffd",tooltip=" "];
+  Node1 -> Node5 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node5 [label="adore::fun::PlatooningInformation\l::getToleratedDistanceAhead",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classadore_1_1fun_1_1PlatooningInformation.html#a6f24fc46d4b38b65959b7a9d41cd65d4",tooltip=" "];
+  Node1 -> Node6 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node6 [label="adore::fun::PlatooningInformation\l::getToleratedDistanceBehind",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classadore_1_1fun_1_1PlatooningInformation.html#ab17dbb54f5fe2d983e084453bd2abe23",tooltip=" "];
+}

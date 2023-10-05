@@ -1,0 +1,5 @@
+<map id="adore::env::BorderBased::BorderSet::getLaneChangeTarget" name="adore::env::BorderBased::BorderSet::getLaneChangeTarget">
+<area shape="rect" id="node1" title="computes a pair of borders (left,right) suitable for lane&#45;changing from given source lane" alt="" coords="5,39,228,80"/>
+<area shape="rect" id="node2" href="$classadore_1_1env_1_1BorderBased_1_1BorderSet.html#a8af807fde181a20de55594592d752adc" title="Get left neighbor of a border." alt="" coords="281,5,469,47"/>
+<area shape="rect" id="node3" href="$classadore_1_1env_1_1BorderBased_1_1BorderSet.html#a49e8f6a0309cd0c2c2afa28412435f4f" title="get the right neighbor of a border" alt="" coords="276,71,473,112"/>
+</map>

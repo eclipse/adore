@@ -1,0 +1,52 @@
+<map id="DLR_TS::PlotLab::AFigureStub::plot" name="DLR_TS::PlotLab::AFigureStub::plot">
+<area shape="rect" id="node1" title=" " alt="" coords="765,822,944,863"/>
+<area shape="rect" id="node2" href="$test__trajectory__planner__node_8cpp.html#a3c04138a5bfe5d72780bb7e82a18e627" title=" " alt="" coords="593,5,643,32"/>
+<area shape="rect" id="node3" href="$classadore_1_1apps_1_1TestMRMPlanner.html#a0431afba1db204ea64409e7c93e0c4d9" title=" " alt="" coords="519,57,717,98"/>
+<area shape="rect" id="node5" href="$classadore_1_1apps_1_1GapQueuePlotter.html#a3ad11f0753d9d1322d883a33c8760bd7" title=" " alt="" coords="519,122,717,163"/>
+<area shape="rect" id="node7" href="$test__lc__trajectory__planner__node_8cpp.html#a4271d2f26204b949d52317d5ed9f2887" title=" " alt="" coords="597,188,639,215"/>
+<area shape="rect" id="node10" href="$classPlotter.html#ae8f8c8b886c2346ce75ab5d9485a8e47" title=" " alt="" coords="573,340,663,367"/>
+<area shape="rect" id="node13" href="$classadore_1_1apps_1_1PlanningDetailsPlotter.html#aa676ba23e557181b67ff4f7b0a6b7b02" title=" " alt="" coords="523,391,713,447"/>
+<area shape="rect" id="node15" href="$classadore_1_1apps_1_1PlanningDetailsPlotter.html#ac225b1a93fca9e19960ec120a2679138" title=" " alt="" coords="523,471,713,527"/>
+<area shape="rect" id="node16" href="$classDashboard.html#a706267b562854b57076eefada411205f" title=" " alt="" coords="549,551,687,577"/>
+<area shape="rect" id="node18" href="$classDashboard.html#a809cd76a08281e6206d53a226463e663" title=" " alt="" coords="289,652,417,679"/>
+<area shape="rect" id="node20" href="$namespaceadore_1_1PLOT.html#a80354490aefe850ffc495623d663d3ce" title=" " alt="" coords="538,703,698,729"/>
+<area shape="rect" id="node21" href="$namespaceadore_1_1PLOT.html#a858101598db90a3b6ea51e36e24896c2" title=" " alt="" coords="236,753,471,780"/>
+<area shape="rect" id="node23" href="$namespaceadore_1_1PLOT.html#a192ca1b413ee8eb6ba81e694c2013c87" title=" " alt="" coords="539,804,697,831"/>
+<area shape="rect" id="node26" href="$classadore_1_1apps_1_1TestLCTrajectoryPlanner.html#ab5614f86d444be7fc280aff63bde2c5b" title=" " alt="" coords="519,906,717,947"/>
+<area shape="rect" id="node27" href="$classadore_1_1apps_1_1TestLCTrajectoryPlanner.html#af05d2638fef292a04fe4d9265e9c791f" title=" " alt="" coords="254,906,453,947"/>
+<area shape="rect" id="node28" href="$namespaceadore_1_1PLOT.html#a0c82a93ad086fd2da386e5d0dcdd23d3" title="plots a border object, including left neighbor if !=0 into figure object" alt="" coords="537,971,699,1013"/>
+<area shape="rect" id="node29" href="$namespaceadore_1_1PLOT.html#a3eef67b932118400091cf5fc1de87d5d" title=" " alt="" coords="525,1037,711,1064"/>
+<area shape="rect" id="node31" href="$classadore_1_1apps_1_1PlotEgo.html#a6029920ca2a9af0e2c8594313f7757a8" title=" " alt="" coords="546,1089,690,1130"/>
+<area shape="rect" id="node33" href="$namespaceadore_1_1PLOT.html#a3b7a0d12bf0fea66a92420cb5cb86dc5" title=" " alt="" coords="539,1220,697,1247"/>
+<area shape="rect" id="node35" href="$classadore_1_1apps_1_1TestLCTrajectoryPlanner.html#a364f82eba5a19cd4bfeb95f7fd29cd7e" title=" " alt="" coords="254,282,453,323"/>
+<area shape="rect" id="node36" href="$namespaceadore_1_1PLOT.html#a16f5d9d5b5f04b06a75f27d70260bc64" title=" " alt="" coords="533,1271,703,1313"/>
+<area shape="rect" id="node38" href="$namespaceadore_1_1PLOT.html#a4c9444d1a63c9729bf7f372918222e73" title=" " alt="" coords="543,1337,693,1364"/>
+<area shape="rect" id="node39" href="$namespaceadore_1_1PLOT.html#ace7bb787808bead40f2faca321cc1d4a" title=" " alt="" coords="545,1388,691,1415"/>
+<area shape="rect" id="node42" href="$namespaceadore_1_1PLOT.html#ae57d46be7acb0606dd77454e29cdbd93" title=" " alt="" coords="543,239,693,265"/>
+<area shape="rect" id="node43" href="$classadore_1_1apps_1_1PlotEgo.html#ad0544404c555bd4d8439522667b15523" title="plotting a vehicle" alt="" coords="546,1154,690,1195"/>
+<area shape="rect" id="node44" href="$classDashboard.html#a819293b9e5a583b09b931405f46e5db5" title="plotting a vehicle" alt="" coords="537,652,699,679"/>
+<area shape="rect" id="node45" href="$classadore_1_1apps_1_1PlotTraffic.html#a53b66f46710a20ffa4e7864fec56056f" title="plotting a vehicle" alt="" coords="539,1439,697,1481"/>
+<area shape="rect" id="node47" href="$namespaceadore_1_1PLOT.html#a74b6d10d76c82eda1dd2869527320e9c" title=" " alt="" coords="527,1505,709,1532"/>
+<area shape="rect" id="node48" href="$classPlotter.html#ad410199b48fb1577f5e8169d53321534" title=" " alt="" coords="559,1556,677,1583"/>
+<area shape="rect" id="node49" href="$namespaceadore_1_1PLOT.html#abc99cd02175a9145ca42af927b78b578" title=" " alt="" coords="527,1607,709,1633"/>
+<area shape="rect" id="node50" href="$classPlotter.html#a98b2b4f7d6260513719ae18705af3c8c" title=" " alt="" coords="563,1657,673,1684"/>
+<area shape="rect" id="node4" href="$classadore_1_1apps_1_1TestMRMPlanner.html#aa437a755996db26933e8c1b63576fff7" title="update function of the trajectory planner" alt="" coords="241,48,466,75"/>
+<area shape="rect" id="node6" href="$classadore_1_1apps_1_1GapQueuePlotter.html#a83590532de3df22436336313ee818f11" title=" " alt="" coords="254,99,453,141"/>
+<area shape="rect" id="node8" href="$test__lc__trajectory__planner__node_8cpp.html#a3c04138a5bfe5d72780bb7e82a18e627" title=" " alt="" coords="328,165,379,192"/>
+<area shape="rect" id="node9" href="$classadore_1_1apps_1_1TestLCTrajectoryPlanner.html#a009d63a8cbbef7168d170df02c69d34d" title=" " alt="" coords="254,217,453,258"/>
+<area shape="rect" id="node11" href="$classPlotter.html#a7f8fec1b1f38191fa304341eef884f80" title=" " alt="" coords="284,348,423,375"/>
+<area shape="rect" id="node12" href="$classPlotter.html#a20eef5011ae499bbd488ea04c2aa93c2" title=" " alt="" coords="286,399,421,425"/>
+<area shape="rect" id="node14" href="$classadore_1_1apps_1_1PlanningDetailsPlotter.html#a1f306cc684b4b6ba77653e131c9664a6" title=" " alt="" coords="259,465,448,506"/>
+<area shape="rect" id="node17" href="$classDashboard.html#aa255608d58054f68cf8370f12de688bd" title=" " alt="" coords="273,551,433,577"/>
+<area shape="rect" id="node19" href="$classDashboard.html#aa5ec1adc6b9b6530344249bc049792e5" title=" " alt="" coords="9,652,184,679"/>
+<area shape="rect" id="node22" href="$classadore_1_1apps_1_1PlotViews.html#ade792711bc6fe29fe77550b0577ac51b" title=" " alt="" coords="5,728,188,755"/>
+<area shape="rect" id="node24" href="$namespaceadore_1_1PLOT.html#a0eb6eb08d7d2d214203a1c1d3e7259df" title=" " alt="" coords="275,804,432,831"/>
+<area shape="rect" id="node25" href="$namespaceadore_1_1PLOT.html#a12df6cebddeb4ffbe58e9cefbfc8a3c4" title=" " alt="" coords="259,855,448,881"/>
+<area shape="rect" id="node30" href="$namespaceadore_1_1PLOT.html#ac157afb98167a75b689e6ef5af6c2b71" title=" " alt="" coords="273,1037,434,1064"/>
+<area shape="rect" id="node32" href="$classadore_1_1apps_1_1PlotEgo.html#a9694e6cb6541efadc64fc8bf146168f7" title=" " alt="" coords="268,1128,439,1155"/>
+<area shape="rect" id="node34" href="$namespaceadore_1_1PLOT.html#ac06fa1894b3bf9900c638d5b21beac39" title=" " alt="" coords="268,1220,439,1247"/>
+<area shape="rect" id="node37" href="$namespaceadore_1_1PLOT.html#ac27f18c7e00c6311a34b485e52cc699d" title=" " alt="" coords="263,1271,444,1313"/>
+<area shape="rect" id="node40" href="$classadore_1_1apps_1_1PlotRoadAnnotations.html#a2feaba59c4d910d47301a5737a81e054" title=" " alt="" coords="243,1337,464,1378"/>
+<area shape="rect" id="node41" href="$classadore_1_1apps_1_1PlotTrafficLights.html#a5a847f40f3b094984863dd28f1d49a79" title=" " alt="" coords="266,1402,441,1443"/>
+<area shape="rect" id="node46" href="$classadore_1_1apps_1_1PlotTraffic.html#aec99fb7149647aefa619ecf979c2fb66" title=" " alt="" coords="261,1468,445,1495"/>
+</map>

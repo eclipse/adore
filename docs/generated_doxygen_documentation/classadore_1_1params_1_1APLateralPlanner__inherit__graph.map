@@ -1,0 +1,5 @@
+<map id="adore::params::APLateralPlanner" name="adore::params::APLateralPlanner">
+<area shape="rect" id="node1" title="abstract class containing parameters related to configuring the lateral planner" alt="" coords="91,5,262,244"/>
+<area shape="rect" id="node2" href="$classadore_1_1if__ROS_1_1params_1_1PLateralPlanner.html" title=" " alt="" coords="5,292,161,531"/>
+<area shape="rect" id="node3" href="$classadore_1_1params_1_1APLateralPlannerDummy.html" title="a dummy implementation for testing purposes" alt="" coords="186,292,357,531"/>
+</map>

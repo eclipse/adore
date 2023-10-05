@@ -1,0 +1,9 @@
+digraph "adore::mad::LPiecewiseFunction&lt; DT, CT &gt;"
+{
+ // LATEX_PDF_SIZE
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  Node1 [label="{adore::mad::LPiecewiseFunction\l\< DT, CT \>\n|- m_data\l- m_searchIndex\l- m_deconstruct_pieces\l|+ LPiecewiseFunction()\l+ LPiecewiseFunction()\l+ setDeconstructPieces()\l+ ~LPiecewiseFunction()\l+ findIndex()\l+ appendHi()\l+ appendHi_shifted()\l+ f()\l+ limitHi()\l+ limitLo()\l+ setLimits()\l+ create_derivative()\l+ clone()\l+ bound()\l}",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black",tooltip=" "];
+  Node2 -> Node1 [dir="back",color="midnightblue",fontsize="10",style="solid",arrowtail="onormal",fontname="Helvetica"];
+  Node2 [label="{adore::mad::ALFunction\l\< DT, CT \>\n|- cached_ymin\l- cached_ymax\l- cached_bounds_valid\l|+ setLimits()\l+ limitHi()\l+ limitLo()\l+ f()\l+ clone()\l+ create_derivative()\l+ bound()\l+ ~ALFunction()\l+ ALFunction()\l+ operator()()\l+ isInDomain()\l+ f_bounded()\l+ f()\l+ bound()\l+ invalidateCachedBounds()\l}",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classadore_1_1mad_1_1ALFunction.html",tooltip=" "];
+}

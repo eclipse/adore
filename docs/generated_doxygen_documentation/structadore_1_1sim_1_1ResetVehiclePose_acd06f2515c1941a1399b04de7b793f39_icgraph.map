@@ -1,0 +1,10 @@
+<map id="adore::sim::ResetVehiclePose::getY" name="adore::sim::ResetVehiclePose::getY">
+<area shape="rect" id="node1" title=" " alt="" coords="608,64,777,105"/>
+<area shape="rect" id="node2" href="$structadore_1_1if__ROS_1_1SimVehicleResetConverter.html#add09f5625d7e4ac6491e52ad4c96339d" title=" " alt="" coords="369,5,548,47"/>
+<area shape="rect" id="node3" href="$classadore_1_1apps_1_1VehicleModel.html#a267c9d625e6bab5adef42d48492866d7" title="simulation step of the vehicle model" alt="" coords="357,71,560,98"/>
+<area shape="rect" id="node6" href="$classadore_1_1apps_1_1OdometryModel.html#a2b8a8009f336999f7768a9eba0590c75" title="simulation step of the odometry estimate model" alt="" coords="363,124,554,165"/>
+<area shape="rect" id="node4" href="$classadore_1_1if__ROS_1_1VehicleModelNode.html#a39bfd98cab9c1dbc6cf52d0ef4395adc" title=" " alt="" coords="111,61,302,103"/>
+<area shape="rect" id="node5" href="$adore__vehiclemodel__node_8cpp.html#a3c04138a5bfe5d72780bb7e82a18e627" title=" " alt="" coords="5,69,56,95"/>
+<area shape="rect" id="node7" href="$classadore_1_1if__ROS_1_1OdometryModelNode.html#aa2f0b1687532cb423461e448e4f9cc57" title=" " alt="" coords="104,127,309,168"/>
+<area shape="rect" id="node8" href="$adore__odometrymodel__node_8cpp.html#a3c04138a5bfe5d72780bb7e82a18e627" title=" " alt="" coords="5,134,56,161"/>
+</map>

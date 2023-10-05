@@ -1,0 +1,10 @@
+digraph "adore::env::TrafficLightStatus::getValidUntilTimestamp"
+{
+ // LATEX_PDF_SIZE
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  rankdir="RL";
+  Node1 [label="adore::env::TrafficLight\lStatus::getValidUntilTimestamp",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black",tooltip=" "];
+  Node1 -> Node2 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node2 [label="adore::env::TrafficLight\lStatus::GenerateSpeedAdvisories",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classadore_1_1env_1_1TrafficLightStatus.html#aeb60947c11818089578d2ed1b1f34da3",tooltip=" "];
+}

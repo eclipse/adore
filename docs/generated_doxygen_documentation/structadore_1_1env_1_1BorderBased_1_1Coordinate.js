@@ -1,0 +1,25 @@
+var structadore_1_1env_1_1BorderBased_1_1Coordinate =
+[
+    [ "boost_point", "structadore_1_1env_1_1BorderBased_1_1Coordinate.html#ab1b5f64e7170feca7e43c3a262896b7c", null ],
+    [ "Coordinate", "structadore_1_1env_1_1BorderBased_1_1Coordinate.html#a325557a49ad8596fa486a6c708cf5418", null ],
+    [ "Coordinate", "structadore_1_1env_1_1BorderBased_1_1Coordinate.html#a634bd9abafebe7ec1d98a46b15074506", null ],
+    [ "Coordinate", "structadore_1_1env_1_1BorderBased_1_1Coordinate.html#a2f5b14bfc7df609a1bdd61e4c8ddee42", null ],
+    [ "Coordinate", "structadore_1_1env_1_1BorderBased_1_1Coordinate.html#ae565f15fa143f663d5682f5b22c38cac", null ],
+    [ "discretize", "structadore_1_1env_1_1BorderBased_1_1Coordinate.html#a93065209df81253a42a46c9491287948", null ],
+    [ "distance", "structadore_1_1env_1_1BorderBased_1_1Coordinate.html#a9b30e3a45ea26742bb9dafc844377861", null ],
+    [ "getBoostPoint", "structadore_1_1env_1_1BorderBased_1_1Coordinate.html#abb34f84413225a9464afe389cb4f71a7", null ],
+    [ "isInArea", "structadore_1_1env_1_1BorderBased_1_1Coordinate.html#a07016103c02a44bf19c006914f5de5b9", null ],
+    [ "isNear", "structadore_1_1env_1_1BorderBased_1_1Coordinate.html#a29c83e934340f40cfa66dab2e7982d20", null ],
+    [ "operator!=", "structadore_1_1env_1_1BorderBased_1_1Coordinate.html#af0e3f3b9e5824d53c2d121089800a957", null ],
+    [ "operator+", "structadore_1_1env_1_1BorderBased_1_1Coordinate.html#a2ee465270a38e265b4fbc0b1f1eb690f", null ],
+    [ "operator+=", "structadore_1_1env_1_1BorderBased_1_1Coordinate.html#a7ba4914062b9236003b7d6d49f5723fd", null ],
+    [ "operator-", "structadore_1_1env_1_1BorderBased_1_1Coordinate.html#a17e21346ec68324aa9b49970bf2d39e8", null ],
+    [ "operator<", "structadore_1_1env_1_1BorderBased_1_1Coordinate.html#a81c268c2ae7846b10ea2c28bff2ee783", null ],
+    [ "operator==", "structadore_1_1env_1_1BorderBased_1_1Coordinate.html#a372bb0c35c6d138a6434941e57731dfe", null ],
+    [ "rotate", "structadore_1_1env_1_1BorderBased_1_1Coordinate.html#a108d76720fbd589483618adf4965654e", null ],
+    [ "toString", "structadore_1_1env_1_1BorderBased_1_1Coordinate.html#af032c53f03306e3d352d9954e4895f72", null ],
+    [ "translate", "structadore_1_1env_1_1BorderBased_1_1Coordinate.html#a89c101904eb4d7a7a601fa5758dd5437", null ],
+    [ "m_X", "structadore_1_1env_1_1BorderBased_1_1Coordinate.html#aa7d044280353f40250b919ca1ad34596", null ],
+    [ "m_Y", "structadore_1_1env_1_1BorderBased_1_1Coordinate.html#a96a931832c46a18d52c323e73181bb8a", null ],
+    [ "m_Z", "structadore_1_1env_1_1BorderBased_1_1Coordinate.html#aa63056f248492509893452e69e8482d9", null ]
+];

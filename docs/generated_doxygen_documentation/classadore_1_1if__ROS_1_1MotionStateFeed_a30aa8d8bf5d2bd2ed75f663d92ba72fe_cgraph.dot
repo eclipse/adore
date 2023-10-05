@@ -1,0 +1,42 @@
+digraph "adore::if_ROS::MotionStateFeed::MotionStateFeed"
+{
+ // LATEX_PDF_SIZE
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  rankdir="LR";
+  Node1 [label="adore::if_ROS::MotionState\lFeed::MotionStateFeed",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black",tooltip=" "];
+  Node1 -> Node2 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node2 [label="adore::if_ROS::MotionState\lFeed::receive_acceleration",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classadore_1_1if__ROS_1_1MotionStateFeed.html#af51e58d6ae460e5c820c7204d28ce5f1",tooltip=" "];
+  Node1 -> Node3 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node3 [label="adore::if_ROS::MotionState\lFeed::receive_odom",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classadore_1_1if__ROS_1_1MotionStateFeed.html#a54fd4455dc5c442be9ce7cde22d4e457",tooltip=" "];
+  Node3 -> Node4 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node4 [label="adore::if_ROS::Quaternion\lConverter::quaternionToHeading",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$structadore_1_1if__ROS_1_1QuaternionConverter.html#ab4dba6ab02bc42e99cb6dac9effa1656",tooltip="convert quaternion to heading"];
+  Node3 -> Node5 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node5 [label="adore::env::VehicleMotion\lState9d::setAx",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$structadore_1_1env_1_1VehicleMotionState9d.html#a386b3340baca41b2837ce151d0723a34",tooltip="Set the longitudinal acceleration."];
+  Node3 -> Node6 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node6 [label="adore::env::VehicleMotion\lState9d::setDelta",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$structadore_1_1env_1_1VehicleMotionState9d.html#ac1ead2ba99a3e67f90d81a9de1f26dea",tooltip="Set the steering angle."];
+  Node3 -> Node7 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node7 [label="adore::env::VehicleMotion\lState9d::setOmega",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$structadore_1_1env_1_1VehicleMotionState9d.html#a88c3073bde99b03a8431e0ad0ddf110a",tooltip="Set the yaw rate."];
+  Node3 -> Node8 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node8 [label="adore::env::VehicleMotion\lState9d::setPSI",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$structadore_1_1env_1_1VehicleMotionState9d.html#ab86b791bc6990e970e9fb6e0e5a4007b",tooltip="set the heading"];
+  Node3 -> Node9 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node9 [label="adore::env::VehicleMotion\lState9d::setTime",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$structadore_1_1env_1_1VehicleMotionState9d.html#ae567103c42e2b947fe4655e8bff22cfc",tooltip="Set the time."];
+  Node3 -> Node10 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node10 [label="adore::env::VehicleMotion\lState9d::setvx",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$structadore_1_1env_1_1VehicleMotionState9d.html#a467c0270b93452680cc6c2cfdb78d2f0",tooltip="set the longitudinal velocity"];
+  Node3 -> Node11 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node11 [label="adore::env::VehicleMotion\lState9d::setvy",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$structadore_1_1env_1_1VehicleMotionState9d.html#aba1577c93d3804f2271db465e8487007",tooltip="set the lateral velocity"];
+  Node3 -> Node12 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node12 [label="adore::env::VehicleMotion\lState9d::setX",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$structadore_1_1env_1_1VehicleMotionState9d.html#a9c0059501475287069f2c66f81bccbe0",tooltip="Set the x-coordinate."];
+  Node3 -> Node13 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node13 [label="adore::env::VehicleMotion\lState9d::setY",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$structadore_1_1env_1_1VehicleMotionState9d.html#a14d7aaf7687a0d1d133fb1d0ff186a77",tooltip="Set the y-coordinate."];
+  Node3 -> Node14 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node14 [label="adore::env::VehicleMotion\lState9d::setZ",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$structadore_1_1env_1_1VehicleMotionState9d.html#a00563022c6911fc985e8fd60ac0ad946",tooltip="Set the z-coordinate."];
+  Node1 -> Node15 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node15 [label="adore::if_ROS::MotionState\lFeed::receive_steering",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classadore_1_1if__ROS_1_1MotionStateFeed.html#a9ea43a65d12c6009a14dad168cd195a4",tooltip=" "];
+  Node15 -> Node16 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node16 [label="adore::params::ParamsFactory\lInstance::get",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classadore_1_1params_1_1ParamsFactoryInstance.html#ae4d79d6130cebb47d90a82b6edb7660d",tooltip=" "];
+  Node16 -> Node17 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node17 [label="adore::params::ParamsFactory\lInstance::getInstance",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classadore_1_1params_1_1ParamsFactoryInstance.html#a59eae0e003d40b03f9db2d814ec2a3bf",tooltip="Function to access singleton instance of the AllFactory using magic static."];
+  Node15 -> Node18 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node18 [label="adore::params::APVehicle\l::get_steeringRatio",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classadore_1_1params_1_1APVehicle.html#ac67acb30ee133526e87d8ae1932f7db2",tooltip=" "];
+}

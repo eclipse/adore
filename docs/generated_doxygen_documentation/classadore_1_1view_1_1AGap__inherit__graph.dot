@@ -1,0 +1,9 @@
+digraph "adore::view::AGap"
+{
+ // LATEX_PDF_SIZE
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  Node1 [label="{adore::view::AGap\n||+ getState()\l+ getLeadProgress()\l+ getChaseProgress()\l}",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black",tooltip="defines a gap in traffic, into which a merge may be planned"];
+  Node1 -> Node2 [dir="back",color="midnightblue",fontsize="10",style="solid",arrowtail="onormal",fontname="Helvetica"];
+  Node2 [label="{adore::env::EmptyGap\n||+ getState()\l+ getLeadProgress()\l+ getChaseProgress()\l}",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classadore_1_1env_1_1EmptyGap.html",tooltip="defines a gap for testing purposes, which never has lead or chase vehicles."];
+}

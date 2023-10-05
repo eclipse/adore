@@ -1,0 +1,18 @@
+<map id="adore::if_r2s::Section::addLaneBorder" name="adore::if_r2s::Section::addLaneBorder">
+<area shape="rect" id="node1" title="add lane border to section, determine its valid range" alt="" coords="5,217,152,259"/>
+<area shape="rect" id="node2" href="$classadore_1_1if__r2s_1_1Section_1_1FunctionMap.html#a7111208a20a14186b052459e9152611b" title="add function to container" alt="" coords="207,5,391,47"/>
+<area shape="rect" id="node3" href="$classadore_1_1mad_1_1LLinearPiecewiseFunctionM.html#a0ec611759526365bf49ca6f8781f0262" title=" " alt="" coords="200,371,397,412"/>
+<area shape="rect" id="node5" href="$classadore_1_1mad_1_1LLinearPiecewiseFunctionM.html#aaa496b8ceb3ed505f6450225c46a077a" title=" " alt="" coords="708,203,905,244"/>
+<area shape="rect" id="node6" href="$classadore_1_1mad_1_1LLinearPiecewiseFunctionM.html#a682841e9bc82a0653745dce6f908bfa6" title=" " alt="" coords="708,297,905,339"/>
+<area shape="rect" id="node9" href="$classadore_1_1if__r2s_1_1Section.html#a649d177a15f255cc72db3f2845fe48bd" title="easy conversion from a coordinate vector to a LLinearPiecewiseFunction" alt="" coords="479,188,626,229"/>
+<area shape="rect" id="node10" href="$classadore_1_1mad_1_1LLinearPiecewiseFunctionM.html#a21c464e587889f52d3b5aba703d80ccd" title=" " alt="" coords="445,436,660,477"/>
+<area shape="rect" id="node14" href="$classadore_1_1mad_1_1LLinearPiecewiseFunctionM.html#a668ce3b454f80b9cd817389d3dbe4c77" title=" " alt="" coords="454,253,651,295"/>
+<area shape="rect" id="node15" href="$classadore_1_1mad_1_1LLinearPiecewiseFunctionM.html#a2e10175096108e1145aab80a89771a0c" title=" " alt="" coords="454,123,651,164"/>
+<area shape="rect" id="node4" href="$classadore_1_1mad_1_1LLinearPiecewiseFunctionM.html#a92f9ea09083d587aa2ffa1ec600be3b5" title=" " alt="" coords="454,371,651,412"/>
+<area shape="rect" id="node7" href="$namespaceadore_1_1mad.html#ab58ecb752f9bbfe27832e0a2c0e22c2b" title=" " alt="" coords="749,379,865,406"/>
+<area shape="rect" id="node8" href="$namespaceadore_1_1mad.html#ac61b79c007d1859f93a10c04272095a1" title=" " alt="" coords="955,379,1071,406"/>
+<area shape="rect" id="node11" href="$namespaceadore_1_1mad.html#ad4afe3dd742448995d7c56d1e4de5019" title=" " alt="" coords="709,433,904,475"/>
+<area shape="rect" id="node12" href="$namespaceadore_1_1mad.html#adea062854ef0b105a3fdca8cf2aca945" title=" " alt="" coords="747,499,867,526"/>
+<area shape="rect" id="node13" href="$namespaceadore_1_1mad.html#a618a8842fed7b9375957b1e393c58492" title=" " alt="" coords="953,499,1073,526"/>
+<area shape="rect" id="node16" href="$classadore_1_1mad_1_1LLinearPiecewiseFunctionM.html#aec042b3538fb5ea403f2f91fd82fd07c" title=" " alt="" coords="708,123,905,164"/>
+</map>

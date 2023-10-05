@@ -1,0 +1,7 @@
+<map id="adore::apps::TrajectoryPlannerBase::planning_request_handler" name="adore::apps::TrajectoryPlannerBase::planning_request_handler">
+<area shape="rect" id="node1" title=" " alt="" coords="5,104,212,145"/>
+<area shape="rect" id="node2" href="$classadore_1_1apps_1_1TrajectoryPlannerBase.html#a0280406edd56d5c77a454d740e446905" title="override computeTrajectory with actual planning method" alt="" coords="265,5,465,47"/>
+<area shape="rect" id="node3" href="$classadore_1_1mad_1_1AFeedWithCallback.html#ac1bfa28227e6aa550119003b3c76f9a0" title=" " alt="" coords="260,71,471,112"/>
+<area shape="rect" id="node4" href="$classadore_1_1mad_1_1AFeedWithCallback.html#a3976b45485468cf1737c7bab3ab234f3" title=" " alt="" coords="260,136,471,177"/>
+<area shape="rect" id="node5" href="$classadore_1_1mad_1_1AWriter.html#a1c22b1ccbd19c5f02f832831ca757f3b" title=" " alt="" coords="296,201,435,243"/>
+</map>

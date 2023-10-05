@@ -1,0 +1,5 @@
+<map id="CSVLog::writeLogToConsole" name="CSVLog::writeLogToConsole">
+<area shape="rect" id="node1" title="general log generator for console" alt="" coords="5,42,196,69"/>
+<area shape="rect" id="node2" href="$classCSVLog.html#a18c9b756df7e7f4a95a117d7b29e4c5b" title="get console color from log level on linux" alt="" coords="244,5,429,47"/>
+<area shape="rect" id="node3" href="$classCSVLog.html#aac8cc94d98c714221aca42f9c4c14441" title="get string for log level" alt="" coords="267,71,407,98"/>
+</map>

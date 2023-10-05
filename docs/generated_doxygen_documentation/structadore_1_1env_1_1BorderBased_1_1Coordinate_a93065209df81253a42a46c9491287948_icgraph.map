@@ -1,0 +1,6 @@
+<map id="adore::env::BorderBased::Coordinate::discretize" name="adore::env::BorderBased::Coordinate::discretize">
+<area shape="rect" id="node1" title="Discretize the coordinate object." alt="" coords="252,71,419,112"/>
+<area shape="rect" id="node2" href="$structadore_1_1env_1_1BorderBased_1_1Coordinate.html#af0e3f3b9e5824d53c2d121089800a957" title="Check inequality of two Coordinate objects." alt="" coords="21,5,188,47"/>
+<area shape="rect" id="node3" href="$structadore_1_1env_1_1BorderBased_1_1CoordinateHasher.html#abdfd7bdb16dd378051626f40555dbb65" title=" " alt="" coords="5,71,204,112"/>
+<area shape="rect" id="node4" href="$structadore_1_1env_1_1BorderBased_1_1Coordinate.html#a372bb0c35c6d138a6434941e57731dfe" title="Check equality of two Coordinate objects." alt="" coords="21,136,188,177"/>
+</map>

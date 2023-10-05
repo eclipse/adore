@@ -1,0 +1,11 @@
+digraph "adore::env::BorderBased::ConflictSet"
+{
+ // LATEX_PDF_SIZE
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  Node1 [label="{adore::env::BorderBased\l::ConflictSet\n|- ca_\l- corner_points_vec\l- overlap_sets\l- overlapping_borders\l- right_borders_of_conf\l_lanes\l- valid_\l|+ ConflictSet()\l+ getConflictAreas()\l+ isValid()\l+ update()\l+ assembleConflictZones()\l+ mapParticipantsToConflict\lZones()\l+ getCornerPoints()\l+ getOverlapSet()\l+ get_right_borders_of\l_conf_lanes()\l+ getBordersToPrint()\l}",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black",tooltip=" "];
+  Node2 -> Node1 [dir="back",color="midnightblue",fontsize="10",style="solid",arrowtail="onormal",fontname="Helvetica"];
+  Node2 [label="{adore::view::ConflictSet\n||+ isValid()\l+ getConflictAreas()\l}",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classadore_1_1view_1_1ConflictSet.html",tooltip=" "];
+  Node3 -> Node1 [color="grey25",fontsize="10",style="solid",label=" -lfg_" ,arrowhead="odiamond",fontname="Helvetica"];
+  Node3 [label="{adore::env::BorderBased\l::LaneFollowingGeometry\l\< 20, 200 \>\n|+ m_velocity_fct\l+ m_leftBorder_fct\l+ m_rightBorder_fct\l+ m_centerRaw_fct\l+ m_centerSmoothed_fct\l+ m_centerSmoothedDerivative1_fct\l+ m_centerSmoothedDerivative2_fct\l+ m_centerNormal_fct\l+ m_centerHeading_fct\l+ m_centerSmoothedCurvature_fct\land 28 more...\l|+ LaneFollowingGeometry()\l+ update()\l+ computeNavigationCost()\l+ excludeObstaclePoint()\l+ getRightBorders()\l+ getLeftBorders()\l+ getBestMatchingBorder()\l+ isValid()\l+ getViewingDistance()\l+ getSMax()\land 17 more...\l}",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classadore_1_1env_1_1BorderBased_1_1LaneFollowingGeometry.html",tooltip=" "];
+}

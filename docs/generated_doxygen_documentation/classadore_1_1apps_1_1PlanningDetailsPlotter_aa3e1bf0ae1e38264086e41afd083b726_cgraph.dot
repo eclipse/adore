@@ -1,0 +1,22 @@
+digraph "adore::apps::PlanningDetailsPlotter::initialize_plot"
+{
+ // LATEX_PDF_SIZE
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  rankdir="LR";
+  Node1 [label="adore::apps::PlanningDetails\lPlotter::initialize_plot",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black",tooltip=" "];
+  Node1 -> Node2 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node2 [label="DLR_TS::PlotLab::FigureStub\lFactory::createFigureStub",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classDLR__TS_1_1PlotLab_1_1FigureStubFactory.html#a842dc9d218e8433f3443a08d47cfd6cc",tooltip=" "];
+  Node1 -> Node3 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node3 [label="DLR_TS::PlotLab::AFigure\lStub::setTitle",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classDLR__TS_1_1PlotLab_1_1AFigureStub.html#a3994095bb7e5a790101141b2ff6afaa2",tooltip=" "];
+  Node1 -> Node4 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node4 [label="DLR_TS::PlotLab::AFigure\lStub::setXLabel",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classDLR__TS_1_1PlotLab_1_1AFigureStub.html#a37cf8aa86c60d57085968099c250e4ea",tooltip=" "];
+  Node1 -> Node5 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node5 [label="DLR_TS::PlotLab::AFigure\lStub::setYLabel",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classDLR__TS_1_1PlotLab_1_1AFigureStub.html#a87aa4facd550c9fd8c13ef81180b7aa3",tooltip=" "];
+  Node1 -> Node6 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node6 [label="DLR_TS::PlotLab::AFigure\lStub::show",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classDLR__TS_1_1PlotLab_1_1AFigureStub.html#aaf1a1edc084b34e18315896c3f248695",tooltip=" "];
+  Node1 -> Node7 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node7 [label="DLR_TS::PlotLab::AFigure\lStub::showAxis",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classDLR__TS_1_1PlotLab_1_1AFigureStub.html#a5dfd916c9ea11459ee05d73d4d37744d",tooltip=" "];
+  Node1 -> Node8 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node8 [label="DLR_TS::PlotLab::AFigure\lStub::showGrid",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classDLR__TS_1_1PlotLab_1_1AFigureStub.html#a6a1df8146daff2b1a7003d85c4d2caaf",tooltip=" "];
+}

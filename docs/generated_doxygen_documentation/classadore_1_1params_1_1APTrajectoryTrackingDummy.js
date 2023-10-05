@@ -1,0 +1,26 @@
+var classadore_1_1params_1_1APTrajectoryTrackingDummy =
+[
+    [ "getAxMax", "classadore_1_1params_1_1APTrajectoryTrackingDummy.html#aef2ad246d5d04dbe5634eb052caf5027", null ],
+    [ "getAxMin", "classadore_1_1params_1_1APTrajectoryTrackingDummy.html#a0595575e677fee0948390d4916fd8bb4", null ],
+    [ "getBrakingTorqueGain", "classadore_1_1params_1_1APTrajectoryTrackingDummy.html#ab259701ae105bac7664f067fe870a243", null ],
+    [ "getDBrakingTorqueMax", "classadore_1_1params_1_1APTrajectoryTrackingDummy.html#a67ea578b1ec35633372276e836606e3e", null ],
+    [ "getDDeltaMax", "classadore_1_1params_1_1APTrajectoryTrackingDummy.html#a43ad55c17b73d3c69d3540d0c0ab3890", null ],
+    [ "getDeltaMax", "classadore_1_1params_1_1APTrajectoryTrackingDummy.html#ac88471a57168af6cd19c7271d55e8865", null ],
+    [ "getDeltaMin", "classadore_1_1params_1_1APTrajectoryTrackingDummy.html#ad3afa736c9204f3d9064d6b41255ecec", null ],
+    [ "getExStatic", "classadore_1_1params_1_1APTrajectoryTrackingDummy.html#a4709be54865fd5522145cf0ecf11a8b0", null ],
+    [ "getEyStatic", "classadore_1_1params_1_1APTrajectoryTrackingDummy.html#afcc8b6cb3656d99fe95054ec2b6be6f9", null ],
+    [ "getK0x", "classadore_1_1params_1_1APTrajectoryTrackingDummy.html#a0c322a6ef9ed3cfed706b463451389fa", null ],
+    [ "getK1x", "classadore_1_1params_1_1APTrajectoryTrackingDummy.html#ad78922007cfea96a139a1d72381e4d18", null ],
+    [ "getKeomega", "classadore_1_1params_1_1APTrajectoryTrackingDummy.html#a2c3b3cf323f74f4f10c1d2f9a6fe8252", null ],
+    [ "getKepsi", "classadore_1_1params_1_1APTrajectoryTrackingDummy.html#a706a43e67f9639fd7539f5ce5243a01b", null ],
+    [ "getKey", "classadore_1_1params_1_1APTrajectoryTrackingDummy.html#a37edc7b16c08d0e60a706b63323ab2e3", null ],
+    [ "getKIepsi_r", "classadore_1_1params_1_1APTrajectoryTrackingDummy.html#a19e74a09c8bce7506be3b7300ab17021", null ],
+    [ "getKIev_r", "classadore_1_1params_1_1APTrajectoryTrackingDummy.html#af7a1cc240bd2f29ecf345326895bab49", null ],
+    [ "getKIex_r", "classadore_1_1params_1_1APTrajectoryTrackingDummy.html#a44dd0b895196b803ad258632612c1964", null ],
+    [ "getKIx", "classadore_1_1params_1_1APTrajectoryTrackingDummy.html#adfafd94753d98c7257bbe5c2ea40750b", null ],
+    [ "getKPepsi_r", "classadore_1_1params_1_1APTrajectoryTrackingDummy.html#a6483cf7810141b219a83e6d4a6c98868", null ],
+    [ "getKPev_r", "classadore_1_1params_1_1APTrajectoryTrackingDummy.html#a63473a67bb84f823e2a7040d43ede1fb", null ],
+    [ "getKPex_r", "classadore_1_1params_1_1APTrajectoryTrackingDummy.html#aef3a286ab290871ba5c4f2f42b5e8feb", null ],
+    [ "getKPey_r", "classadore_1_1params_1_1APTrajectoryTrackingDummy.html#a617a80da3fb623851c51e74d38a49f8b", null ],
+    [ "getMuCtrlMax", "classadore_1_1params_1_1APTrajectoryTrackingDummy.html#a471deb41f977ddfb9faee6240bebc38d", null ]
+];

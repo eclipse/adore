@@ -1,0 +1,9 @@
+<map id="adore::if_ROS::FUN_Factory::getVehicleMotionStateReader" name="adore::if_ROS::FUN_Factory::getVehicleMotionStateReader">
+<area shape="rect" id="node1" title=" " alt="" coords="355,63,536,119"/>
+<area shape="rect" id="node2" href="$classadore_1_1if__ROS_1_1mcm__to__platoon.html#aa273cb3d4051e4d8c74bfefef6fb190e" title=" " alt="" coords="134,5,277,47"/>
+<area shape="rect" id="node4" href="$classadore_1_1if__ROS_1_1mcm__to__prediction.html#a7d385686b1879bb7b032a36203bc006c" title=" " alt="" coords="134,71,277,112"/>
+<area shape="rect" id="node6" href="$classadore_1_1if__ROS_1_1setpointrequest__to__mcm.html#a0a7216b8383eda995a26fd126066cec9" title=" " alt="" coords="104,136,307,177"/>
+<area shape="rect" id="node3" href="$mcm__to__platoon__node_8cpp.html#a3c04138a5bfe5d72780bb7e82a18e627" title=" " alt="" coords="5,13,56,39"/>
+<area shape="rect" id="node5" href="$mcm__to__prediction__node_8cpp.html#a3c04138a5bfe5d72780bb7e82a18e627" title=" " alt="" coords="5,78,56,105"/>
+<area shape="rect" id="node7" href="$setpointrequest__to__mcm__node_8cpp.html#a3c04138a5bfe5d72780bb7e82a18e627" title=" " alt="" coords="5,143,56,170"/>
+</map>

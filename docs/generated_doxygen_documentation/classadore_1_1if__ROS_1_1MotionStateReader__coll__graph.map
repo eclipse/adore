@@ -1,0 +1,6 @@
+<map id="adore::if_ROS::MotionStateReader" name="adore::if_ROS::MotionStateReader">
+<area shape="rect" id="node1" title=" " alt="" coords="208,321,391,604"/>
+<area shape="rect" id="node2" href="$classadore_1_1mad_1_1AReader.html" title=" " alt="" coords="5,57,188,207"/>
+<area shape="rect" id="node3" href="$structadore_1_1env_1_1VehicleMotionState9d.html" title="This struct holds the motion state of the vehicle in 9d." alt="" coords="213,5,386,259"/>
+<area shape="rect" id="node4" href="$classadore_1_1params_1_1APVehicle.html" title="abstract class for vehicle configuration related paremeters" alt="" coords="411,20,585,244"/>
+</map>

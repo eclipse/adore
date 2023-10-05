@@ -1,0 +1,4 @@
+<map id="adore::env::BorderBased::LocalRoadMap::updateEgoState" name="adore::env::BorderBased::LocalRoadMap::updateEgoState">
+<area shape="rect" id="node1" title="update only the ego state" alt="" coords="5,5,224,47"/>
+<area shape="rect" id="node2" href="$classadore_1_1mad_1_1AReader.html#a46ab7520d828d1a574365eaf8b483e29" title=" " alt="" coords="272,5,419,47"/>
+</map>

@@ -1,0 +1,5 @@
+<map id="adore::env::BorderBased::LaneFollowingGeometry::getHeading" name="adore::env::BorderBased::LaneFollowingGeometry::getHeading">
+<area shape="rect" id="node1" title="Get the heading at a certain position." alt="" coords="512,5,683,61"/>
+<area shape="rect" id="node2" href="$classadore_1_1env_1_1BorderBased_1_1LaneFollowingView.html#a43339d02fd4adb2848f020893f6ef688" title=" " alt="" coords="248,13,464,54"/>
+<area shape="rect" id="node3" href="$classadore_1_1env_1_1BorderBased_1_1DependentLane.html#a720a6daf67e51d6316b06b997ea5ec31" title=" " alt="" coords="5,13,200,54"/>
+</map>

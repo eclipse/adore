@@ -1,0 +1,12 @@
+<map id="adore::params::APTacticalPlanner::getCollisionDetectionLateralPrecision" name="adore::params::APTacticalPlanner::getCollisionDetectionLateralPrecision">
+<area shape="rect" id="node1" title=" " alt="" coords="1065,63,1264,119"/>
+<area shape="rect" id="node2" href="$classadore_1_1apps_1_1TrajectoryPlannerALC.html#ac8684dc66c076b07b57f3bb67328314e" title="update data, views and recompute maneuver" alt="" coords="577,5,777,47"/>
+<area shape="rect" id="node3" href="$classadore_1_1apps_1_1TrajectoryPlannerLC.html#accad9246ad8f7ab9c45b648c3a70f18a" title="update data, views and recompute maneuver" alt="" coords="577,71,777,112"/>
+<area shape="rect" id="node4" href="$classadore_1_1apps_1_1TrajectoryPlannerLF.html#a0f66455260fa8707f58fd45668328d6f" title="update data, views and recompute maneuver" alt="" coords="577,136,777,177"/>
+<area shape="rect" id="node8" href="$classadore_1_1fun_1_1SPRInvariantCollisionFreedom.html#af502cdc82e44335176f0db4a212aad3e" title=" " alt="" coords="837,136,1006,177"/>
+<area shape="rect" id="node10" href="$classadore_1_1fun_1_1SPRNonCoercive.html#aadb12128ed9636e011c7f486769dc6f0" title=" " alt="" coords="825,71,1017,112"/>
+<area shape="rect" id="node5" href="$classadore_1_1apps_1_1LaneFollowingBehavior.html#a122fa3811850a5235e3c10f80c8f3e94" title="select initial state and recompute maneuver" alt="" coords="348,136,529,177"/>
+<area shape="rect" id="node6" href="$classadore_1_1if__ROS_1_1LaneFollowingBehaviorNode.html#a0cb478c2dde1ec76031977170055577a" title=" " alt="" coords="104,136,300,177"/>
+<area shape="rect" id="node7" href="$adore__lfbehavior__node_8cpp.html#a3c04138a5bfe5d72780bb7e82a18e627" title=" " alt="" coords="5,143,56,170"/>
+<area shape="rect" id="node9" href="$classadore_1_1apps_1_1TrajectoryPlannerLM.html#ab9d92ef8076c4374d81144bda2a81b90" title="update data, views and recompute maneuver" alt="" coords="577,201,777,243"/>
+</map>

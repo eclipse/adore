@@ -1,0 +1,4 @@
+<map id="adore::params::APVehicleDummy" name="adore::params::APVehicleDummy">
+<area shape="rect" id="node1" title="dummy implementation of an abstract vehicle parameter object for testing purposes" alt="" coords="5,277,180,516"/>
+<area shape="rect" id="node2" href="$classadore_1_1params_1_1APVehicle.html" title="abstract class for vehicle configuration related paremeters" alt="" coords="5,5,180,229"/>
+</map>

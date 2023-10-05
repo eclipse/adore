@@ -1,0 +1,31 @@
+<map id="adore::mad::LPiecewiseFunction::limitHi" name="adore::mad::LPiecewiseFunction::limitHi">
+<area shape="rect" id="node1" title=" " alt="" coords="2375,309,2587,351"/>
+<area shape="rect" id="node2" href="$classadore_1_1mad_1_1LPiecewiseFunction.html#ab890f9a93007739a348ee430298afa07" title=" " alt="" coords="2115,515,2327,556"/>
+<area shape="rect" id="node3" href="$classadore_1_1mad_1_1LPiecewiseFunction.html#ae7e13a67c9d3634153df6119e61ee750" title=" " alt="" coords="1839,280,2051,321"/>
+<area shape="rect" id="node4" href="$classadore_1_1if__xodr_1_1XODR2BorderBasedConverter.html#a4f146e126a7509b4d135f20d8daf1c26" title="extract road center line geometry to center and center heading functions" alt="" coords="1231,264,1489,305"/>
+<area shape="rect" id="node23" href="$classadore_1_1if__xodr_1_1XODR2BorderBasedConverter.html#aaa98b045eb148e224530cea33c50be7b" title="extract lanes with border entries" alt="" coords="1824,763,2067,804"/>
+<area shape="rect" id="node24" href="$classadore_1_1if__xodr_1_1XODR2BorderBasedConverter.html#a0ab395a4479d5d5fac6a8443635485e5" title="extract lanes with width entries" alt="" coords="1827,397,2064,439"/>
+<area shape="rect" id="node25" href="$classadore_1_1if__xodr_1_1XODR2BorderBasedConverter.html#adf9ff05235f364296ad823c54ad22929" title="determine absolute coordinate and heading of non stop line headings" alt="" coords="1241,122,1479,178"/>
+<area shape="rect" id="node26" href="$classadore_1_1mad_1_1LPiecewiseFunction.html#a8868cf4dc133268ead5fa0edf7f97138" title=" " alt="" coords="1839,56,2051,97"/>
+<area shape="rect" id="node29" href="$classadore_1_1mad_1_1LPiecewiseFunction.html#a13592d27b3b0815f82fbff80d33485b6" title=" " alt="" coords="2115,339,2327,380"/>
+<area shape="rect" id="node19" href="$classadore_1_1mad_1_1LPiecewiseFunction.html#a3e7e8b3d6cd205fa2e15144df1e4c121" title=" " alt="" coords="1839,515,2051,556"/>
+<area shape="rect" id="node20" href="$classadore_1_1if__xodr_1_1XODR2BorderBasedConverter.html#ad44ad78fc703b6119dc78513b650b015" title="combine lanes and center line to function representation of road section" alt="" coords="1537,515,1776,556"/>
+<area shape="rect" id="node21" href="$classadore_1_1mad_1_1LPiecewiseFunction.html#a59bf4ef43b3df649e7004fdebb15bc5e" title=" " alt="" coords="1839,632,2051,673"/>
+<area shape="rect" id="node22" href="$namespaceadore_1_1mad.html#ab8ec5148b36c5e689fb02a4e0dd2ac7c" title=" " alt="" coords="1850,697,2041,739"/>
+<area shape="rect" id="node16" href="$classadore_1_1if__xodr_1_1XODR2BorderBasedConverter.html#ad715981dda7ef365ccc4fd1a2a73726b" title="extract line geometry of road center line" alt="" coords="1539,354,1774,410"/>
+<area shape="rect" id="node17" href="$classadore_1_1if__xodr_1_1XODR2BorderBasedConverter.html#a68f3a74394c593136a3b5746e415a590" title="extract parampoly3 geometry of road center line" alt="" coords="1539,434,1774,490"/>
+<area shape="rect" id="node18" href="$classadore_1_1if__xodr_1_1XODR2BorderBasedConverter.html#a07461404bb2d823d44de682945d4b174" title="extract spiral geometry of road center line" alt="" coords="1539,223,1774,279"/>
+<area shape="rect" id="node5" href="$classadore_1_1if__xodr_1_1XODR2BorderBasedConverter.html#a7f2969e95bacb9b0e03d244d4f57ac89" title="convert road geometry to borders and also extract traffic control devices and stop lines" alt="" coords="984,181,1183,223"/>
+<area shape="rect" id="node6" href="$classadore_1_1if__xodr_1_1XODR2BorderBasedConverter.html#a6ca6d0c42c07f37d316e7003676fb297" title="Fills data sets of BorderBased map data representation with data from openDrive xml file." alt="" coords="743,181,936,223"/>
+<area shape="rect" id="node7" href="$classadore_1_1if__xodr_1_1XODR2BorderBasedConverter.html#afb43456b1cc2ee1c30ca4f5a8278f1ba" title="full conversion of OpenDRIVE map to object representations" alt="" coords="501,181,695,223"/>
+<area shape="rect" id="node8" href="$classadore_1_1if__xodr_1_1XODR2BorderBasedConverter.html#a97fecbc54c87b560db6f8a79fd44bda3" title="slightly reduced conversion without reference point of map" alt="" coords="242,51,435,92"/>
+<area shape="rect" id="node9" href="$classadore_1_1apps_1_1MapProvider.html#ad6e153760ff95bac2290d48594745c22" title=" " alt="" coords="253,116,424,157"/>
+<area shape="rect" id="node11" href="$classadore_1_1apps_1_1Navigation.html#a77e0f4a96b663ca6ec5287af1965822f" title=" " alt="" coords="259,181,419,223"/>
+<area shape="rect" id="node13" href="$classadore_1_1apps_1_1PlainXMLExporter.html#acd64af468d0194ac614c575d91df877e" title=" " alt="" coords="224,247,453,274"/>
+<area shape="rect" id="node15" href="$test__ocroadbasedprediction_8cpp.html#a8a83239243952bcc807580ed96244f28" title=" " alt="" coords="289,298,389,325"/>
+<area shape="rect" id="node10" href="$classadore_1_1apps_1_1MapProvider.html#a1d9aa34b5f68408f3d494a1fad7b62be" title=" " alt="" coords="5,116,176,157"/>
+<area shape="rect" id="node12" href="$classadore_1_1apps_1_1Navigation.html#a0f19b60c5090f48fdd06be105610c304" title=" " alt="" coords="11,181,171,223"/>
+<area shape="rect" id="node14" href="$plainxmlexporter_8cpp.html#a3c04138a5bfe5d72780bb7e82a18e627" title=" " alt="" coords="65,247,116,274"/>
+<area shape="rect" id="node27" href="$classadore_1_1mad_1_1LPiecewiseFunction.html#a1d202a47edbf17011073159b7f49e162" title=" " alt="" coords="1551,5,1763,47"/>
+<area shape="rect" id="node28" href="$classadore_1_1mad_1_1LPiecewiseFunction.html#ac93874f3a63493331f921894252029ba" title=" " alt="" coords="1545,71,1769,98"/>
+</map>

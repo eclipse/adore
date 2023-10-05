@@ -1,0 +1,7 @@
+digraph "adore::if_xodr::BorderIDTranslation"
+{
+ // LATEX_PDF_SIZE
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  Node1 [label="{adore::if_xodr::BorderIDTranslation\n|- borderID2roadID_\l- roadID2borderID_\l- roadID2junctionID_\l- junctionID2roadID_\l- default_empty_id_\l|+ insert()\l+ insert()\l+ getBorderIDsOfRoad()\l+ getBorderIDsOfJunction()\l+ getRoadID()\l+ getJunctionID()\l+ isInJunction()\l+ isInJunction()\l}",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black",tooltip="BorderIDTranslation is a set of translation tables, which keeps track of road ids,..."];
+}

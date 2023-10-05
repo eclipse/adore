@@ -1,0 +1,4 @@
+<map id="adore::params::APTrajectoryTrackingDummy" name="adore::params::APTrajectoryTrackingDummy">
+<area shape="rect" id="node1" title="a dummy implementation for testing purposes" alt="" coords="5,292,195,531"/>
+<area shape="rect" id="node2" href="$classadore_1_1params_1_1APTrajectoryTracking.html" title="abstract class containing parameters to configure the behaviour of the trajactory tracking controller" alt="" coords="5,5,195,244"/>
+</map>

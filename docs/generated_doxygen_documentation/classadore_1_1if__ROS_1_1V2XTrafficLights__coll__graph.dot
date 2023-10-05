@@ -1,0 +1,7 @@
+digraph "adore::if_ROS::V2XTrafficLights"
+{
+ // LATEX_PDF_SIZE
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  Node1 [label="{adore::if_ROS::V2XTraffic\lLights\n|- received_mapem_layers_\l- intersectionID_to_map_\l- X_\l- Y_\l- Z_\l- t_\l- odom_subscriber_\l- mapem_subscriber_\l- spatem_subscriber_\l- connection_state_publisher\l- _use_system_time\l- _utm_zone_\l- _logging_frequency\l|+ V2XTrafficLights()\l+ odom_receive()\l+ init()\l+ getTime()\l+ mapemLayerAlreadyProcessed()\l+ receive_mapem()\l+ receive_spatem()\l+ generateConnectionStates()\l+ getConnectionsForSignalgroup()\l+ getConnectionStatesFromSPAT()\land 8 more...\l}",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black",tooltip=" "];
+}

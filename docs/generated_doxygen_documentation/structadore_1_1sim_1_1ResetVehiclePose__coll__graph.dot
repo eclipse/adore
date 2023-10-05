@@ -1,0 +1,7 @@
+digraph "adore::sim::ResetVehiclePose"
+{
+ // LATEX_PDF_SIZE
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  Node1 [label="{adore::sim::ResetVehiclePose\n|- X\l- Y\l- Z\l- PSI\l|+ getX()\l+ setX()\l+ getY()\l+ setY()\l+ getPSI()\l+ setPSI()\l+ getZ()\l+ setZ()\l}",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black",tooltip="provides encapsulation of values needed to reset the vehicle pose in a simulation"];
+}

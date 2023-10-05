@@ -1,0 +1,14 @@
+digraph "adore::if_ROS::SimVehicleResetConverter::operator()"
+{
+ // LATEX_PDF_SIZE
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  rankdir="LR";
+  Node1 [label="adore::if_ROS::SimVehicle\lResetConverter::operator()",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black",tooltip=" "];
+  Node1 -> Node2 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node2 [label="adore::sim::ResetVehicle\lTwist::getOmega",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$structadore_1_1sim_1_1ResetVehicleTwist.html#ad4a2ec27670b0cdd7613f30777117736",tooltip=" "];
+  Node1 -> Node3 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node3 [label="adore::sim::ResetVehicle\lTwist::getVx",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$structadore_1_1sim_1_1ResetVehicleTwist.html#ad454b45981028b0cdd505d2f0f34c277",tooltip=" "];
+  Node1 -> Node4 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node4 [label="adore::sim::ResetVehicle\lTwist::getVy",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$structadore_1_1sim_1_1ResetVehicleTwist.html#a1caa1e644ac42cc66648b4546b1e1b59",tooltip=" "];
+}

@@ -1,0 +1,7 @@
+digraph "adore::sumo_if_ros::MAPEMLane"
+{
+ // LATEX_PDF_SIZE
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  Node1 [label="{adore::sumo_if_ros\l::MAPEMLane\n|+ lanetype_attribute_\l+ lane_id_\l+ nodes_count_\l+ v_nodes_\l+ connected_lanes_count_\l+ v_connector_lanes_id_\l+ directional_use_\l|+ operator==()\l+ isEqualShallow()\l}",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black",tooltip=" "];
+}

@@ -1,0 +1,8 @@
+<map id="adore::apps::Monitor0" name="adore::apps::Monitor0">
+<area shape="rect" id="node1" title=" " alt="" coords="357,388,505,495"/>
+<area shape="rect" id="node2" href="$classadore_1_1mad_1_1AReader.html" title=" " alt="" coords="5,13,184,134"/>
+<area shape="rect" id="node6" href="$classadore_1_1apps_1_1GoalAttainmentMonitor.html" title="A class, which monitors distance between vehicle and goal." alt="" coords="194,219,382,325"/>
+<area shape="rect" id="node3" href="$classadore_1_1mad_1_1AWriter.html" title=" " alt="" coords="336,13,525,134"/>
+<area shape="rect" id="node5" href="$classadore_1_1apps_1_1CollisionMonitor.html" title="A class, which monitors for collisions between ego and other objects." alt="" coords="573,219,763,325"/>
+<area shape="rect" id="node4" href="$classadore_1_1mad_1_1AFeed.html" title=" " alt="" coords="673,5,815,141"/>
+</map>

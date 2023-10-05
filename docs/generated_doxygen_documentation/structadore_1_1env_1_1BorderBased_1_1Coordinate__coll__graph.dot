@@ -1,0 +1,7 @@
+digraph "adore::env::BorderBased::Coordinate"
+{
+ // LATEX_PDF_SIZE
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  Node1 [label="{adore::env::BorderBased\l::Coordinate\n|+ m_X\l+ m_Y\l+ m_Z\l|+ Coordinate()\l+ Coordinate()\l+ Coordinate()\l+ Coordinate()\l+ translate()\l+ rotate()\l+ discretize()\l+ distance()\l+ isNear()\l+ operator==()\land 8 more...\l}",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black",tooltip="This struct represents 3-dimensional coordines."];
+}

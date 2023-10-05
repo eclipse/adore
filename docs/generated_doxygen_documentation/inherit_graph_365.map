@@ -1,0 +1,4 @@
+<map id="Graphical Class Hierarchy" name="Graphical Class Hierarchy">
+<area shape="rect" id="node1" href="$classadore_1_1view_1_1AGap.html" title="defines a gap in traffic, into which a merge may be planned" alt="" coords="5,5,136,32"/>
+<area shape="rect" id="node2" href="$classadore_1_1env_1_1EmptyGap.html" title="defines a gap for testing purposes, which never has lead or chase vehicles." alt="" coords="184,5,337,32"/>
+</map>

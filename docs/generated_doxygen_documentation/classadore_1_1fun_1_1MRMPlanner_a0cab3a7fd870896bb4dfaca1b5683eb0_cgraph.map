@@ -1,0 +1,4 @@
+<map id="adore::fun::MRMPlanner::t_medium_brake_trapezoidal" name="adore::fun::MRMPlanner::t_medium_brake_trapezoidal">
+<area shape="rect" id="node1" title="times required for ramp down and ramp up during medium brake" alt="" coords="5,5,201,47"/>
+<area shape="rect" id="node2" href="$classadore_1_1fun_1_1MRMPlanner.html#ace52d05e8518e6676ae9822b1607dc7d" title="minimum acceleration that can be achieved before inverting jerk to end with v=0 and a=0" alt="" coords="249,5,469,47"/>
+</map>

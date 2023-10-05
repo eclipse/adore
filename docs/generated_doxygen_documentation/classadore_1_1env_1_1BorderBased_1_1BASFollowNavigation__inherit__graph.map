@@ -1,0 +1,4 @@
+<map id="adore::env::BorderBased::BASFollowNavigation" name="adore::env::BorderBased::BASFollowNavigation">
+<area shape="rect" id="node1" title="This class chooses the successor with the lowest cost until an upper limit on distance is reached." alt="" coords="5,175,223,340"/>
+<area shape="rect" id="node2" href="$classadore_1_1env_1_1BorderBased_1_1BorderAccumulationStrategy.html" title="This class defines how successors of a border should be chosen." alt="" coords="10,5,218,127"/>
+</map>

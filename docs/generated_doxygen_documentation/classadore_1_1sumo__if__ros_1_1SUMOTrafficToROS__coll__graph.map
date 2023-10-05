@@ -1,0 +1,6 @@
+<map id="adore::sumo_if_ros::SUMOTrafficToROS" name="adore::sumo_if_ros::SUMOTrafficToROS">
+<area shape="rect" id="node1" title=" " alt="" coords="193,512,380,1000"/>
+<area shape="rect" id="node2" href="$structadore_1_1sumo__if__ros_1_1ROSVehicleSet.html" title=" " alt="" coords="5,181,139,273"/>
+<area shape="rect" id="node3" href="$classadore_1_1sumo__if__ros_1_1SumoTLs2Ros.html" title=" " alt="" coords="163,5,410,449"/>
+<area shape="rect" id="node4" href="$structadore_1_1sumo__if__ros_1_1Timer.html" title=" " alt="" coords="435,174,568,281"/>
+</map>

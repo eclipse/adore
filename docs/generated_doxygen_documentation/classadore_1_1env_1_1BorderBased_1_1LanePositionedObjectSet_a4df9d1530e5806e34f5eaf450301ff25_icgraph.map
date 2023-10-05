@@ -1,0 +1,6 @@
+<map id="adore::env::BorderBased::LanePositionedObjectSet::getObjects" name="adore::env::BorderBased::LanePositionedObjectSet::getObjects">
+<area shape="rect" id="node1" title="Get the begin()&#45; and end()&#45;iterator for objects that are positioned on a certain border." alt="" coords="321,85,499,141"/>
+<area shape="rect" id="node2" href="$classadore_1_1env_1_1BorderBased_1_1LanePositionedObjectSet.html#aaf87b4e6d7f16b6dfd7d2ebf7e3500b4" title="Get the objects that are positioned on a certain LanePosition." alt="" coords="51,5,228,61"/>
+<area shape="rect" id="node3" href="$classadore_1_1env_1_1BorderBased_1_1LanePositionedObjectSet.html#a9772de83f2d875da58e72da84b2b6aa0" title="Check whether the set holds at least one object on a certain LanePosition." alt="" coords="51,85,228,141"/>
+<area shape="rect" id="node4" href="$classadore_1_1env_1_1MapStopLineManagement.html#a611549203f6fa9c10d80d67551017687" title="receive newly visible or newly outdated stop lines based on new and outdated borders" alt="" coords="5,165,273,192"/>
+</map>

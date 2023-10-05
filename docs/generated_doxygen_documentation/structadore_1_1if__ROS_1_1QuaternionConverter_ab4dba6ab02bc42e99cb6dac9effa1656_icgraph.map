@@ -1,0 +1,15 @@
+<map id="adore::if_ROS::QuaternionConverter::quaternionToHeading" name="adore::if_ROS::QuaternionConverter::quaternionToHeading">
+<area shape="rect" id="node1" title="convert quaternion to heading" alt="" coords="812,208,1021,249"/>
+<area shape="rect" id="node2" href="$classadore_1_1if__ROS_1_1TrafficParticipantConverter.html#a10e7d1b12723d934a352133e4a3709f9" title=" " alt="" coords="536,77,764,119"/>
+<area shape="rect" id="node7" href="$structadore_1_1if__ROS_1_1VehicleMotionStateConverter.html#a2b0ecebcd8c104ccf13b9b575b7a1319" title=" " alt="" coords="553,143,747,184"/>
+<area shape="rect" id="node8" href="$classadore_1_1if__ROS_1_1MotionStateReader.html#a208b4d7e51111ea04cebe7279b8d32b1" title=" " alt="" coords="559,208,741,249"/>
+<area shape="rect" id="node10" href="$classadore_1_1if__ROS_1_1MotionStateFeed.html#a54fd4455dc5c442be9ce7cde22d4e457" title=" " alt="" coords="559,273,741,315"/>
+<area shape="rect" id="node12" href="$classDashboard.html#aa5ec1adc6b9b6530344249bc049792e5" title=" " alt="" coords="563,339,737,366"/>
+<area shape="rect" id="node3" href="$classadore_1_1if__ROS_1_1TrafficParticipantConverter.html#af51bd5618ccf12e2f4c83a74a86026c2" title=" " alt="" coords="260,30,488,86"/>
+<area shape="rect" id="node6" href="$classadore_1_1if__ROS_1_1TPSimulationConverter.html#a9f5991f934c6ace6e27ffff42c2c46dd" title=" " alt="" coords="279,111,469,152"/>
+<area shape="rect" id="node4" href="$classadore_1_1if__ROS_1_1TPDetectionConverter.html#a48811efd793c699bdfb15b16434fc537" title=" " alt="" coords="15,5,202,47"/>
+<area shape="rect" id="node5" href="$classadore_1_1if__ROS_1_1TPSetConverter.html#a61d14573edd74941eb5143ae5f81262b" title=" " alt="" coords="5,71,212,112"/>
+<area shape="rect" id="node9" href="$classadore_1_1if__ROS_1_1MotionStateReader.html#a78d332a2c7fe9fdc0f28cca7d638e815" title=" " alt="" coords="282,208,466,249"/>
+<area shape="rect" id="node11" href="$classadore_1_1if__ROS_1_1MotionStateFeed.html#a30aa8d8bf5d2bd2ed75f663d92ba72fe" title=" " alt="" coords="283,273,465,315"/>
+<area shape="rect" id="node13" href="$classDashboard.html#a0e6f5adac5375dd723e98c5e3a2ebb64" title=" " alt="" coords="296,339,452,366"/>
+</map>

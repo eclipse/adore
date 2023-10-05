@@ -1,0 +1,11 @@
+<map id="adore::apps::PredictionProvider::PredictionProvider" name="adore::apps::PredictionProvider::PredictionProvider">
+<area shape="rect" id="node1" title=" " alt="" coords="5,179,209,220"/>
+<area shape="rect" id="node2" href="$classadore_1_1env_1_1EnvFactoryInstance.html#a069fadea20089ddf252a244864f305c1" title=" " alt="" coords="257,14,492,41"/>
+<area shape="rect" id="node4" href="$classadore_1_1params_1_1ParamsFactoryInstance.html#ae4d79d6130cebb47d90a82b6edb7660d" title=" " alt="" coords="273,68,476,109"/>
+<area shape="rect" id="node6" href="$classadore_1_1env_1_1AFactory.html#aeb2ad78afa5cc9d32a23e20628831009" title=" " alt="" coords="271,134,479,190"/>
+<area shape="rect" id="node7" href="$classadore_1_1params_1_1AFactory.html#a97342bdeb05e0362b622374868827b4c" title=" " alt="" coords="291,215,458,256"/>
+<area shape="rect" id="node8" href="$classadore_1_1env_1_1AFactory.html#a041008d7e3134a0ebbc0ce245d3e4ce2" title=" " alt="" coords="270,280,479,321"/>
+<area shape="rect" id="node9" href="$classadore_1_1env_1_1AFactory.html#ac91efd6c6f09b3b3087dcca0981193b2" title=" " alt="" coords="275,346,474,402"/>
+<area shape="rect" id="node3" href="$classadore_1_1env_1_1EnvFactoryInstance.html#a14835a4420fb827ba3809b94a96a7660" title="Function to access singleton instance of the envFactory using magic static." alt="" coords="540,5,748,47"/>
+<area shape="rect" id="node5" href="$classadore_1_1params_1_1ParamsFactoryInstance.html#a59eae0e003d40b03f9db2d814ec2a3bf" title="Function to access singleton instance of the AllFactory using magic static." alt="" coords="543,71,745,112"/>
+</map>

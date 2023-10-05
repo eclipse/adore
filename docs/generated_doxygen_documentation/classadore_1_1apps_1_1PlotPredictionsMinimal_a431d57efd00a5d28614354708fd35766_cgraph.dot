@@ -1,0 +1,22 @@
+digraph "adore::apps::PlotPredictionsMinimal::PlotPredictionsMinimal"
+{
+ // LATEX_PDF_SIZE
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  rankdir="LR";
+  Node1 [label="adore::apps::PlotPredictions\lMinimal::PlotPredictionsMinimal",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black",tooltip=" "];
+  Node1 -> Node2 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node2 [label="adore::env::EnvFactoryInstance::get",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classadore_1_1env_1_1EnvFactoryInstance.html#a069fadea20089ddf252a244864f305c1",tooltip=" "];
+  Node2 -> Node3 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node3 [label="adore::env::EnvFactoryInstance\l::getInstance",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classadore_1_1env_1_1EnvFactoryInstance.html#a14835a4420fb827ba3809b94a96a7660",tooltip="Function to access singleton instance of the envFactory using magic static."];
+  Node1 -> Node4 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node4 [label="adore::env::AFactory\l::getDesiredPredictionSetReader",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classadore_1_1env_1_1AFactory.html#ad98821d4ad5427e37f20e61b9b4e5b7e",tooltip=" "];
+  Node1 -> Node5 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node5 [label="adore::env::AFactory\l::getExpectedPredictionSetReader",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classadore_1_1env_1_1AFactory.html#a451e9650baf017f9bca0bfac08b4917c",tooltip=" "];
+  Node1 -> Node6 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node6 [label="adore::env::AFactory\l::getStaticObstaclesPrediction\lSetReader",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classadore_1_1env_1_1AFactory.html#a580fe386cebc2482b188361e0a8d95ef",tooltip=" "];
+  Node1 -> Node7 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node7 [label="adore::env::AFactory\l::getVehicleMotionStateReader",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classadore_1_1env_1_1AFactory.html#a81f661c576816461f1914436620ac208",tooltip=" "];
+  Node1 -> Node8 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node8 [label="adore::env::AFactory\l::getWorstCasePredictionSet\lReader",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classadore_1_1env_1_1AFactory.html#ad54009b0fa032065f45d9dd7e6673372",tooltip=" "];
+}

@@ -1,0 +1,13 @@
+<map id="adore::if_xodr::XODR2BorderBasedConverter::extractRoadCenterLine_Spiral" name="adore::if_xodr::XODR2BorderBasedConverter::extractRoadCenterLine_Spiral">
+<area shape="rect" id="node1" title="extract spiral geometry of road center line" alt="" coords="5,240,240,296"/>
+<area shape="rect" id="node2" href="$classadore_1_1mad_1_1LPiecewiseFunction.html#ae7e13a67c9d3634153df6119e61ee750" title=" " alt="" coords="288,132,500,173"/>
+<area shape="rect" id="node8" href="$classadore_1_1mad_1_1LSpiralFunction.html#a2ece01c00eaf02d95ceaf172c68a8296" title=" " alt="" coords="301,302,487,344"/>
+<area shape="rect" id="node3" href="$classadore_1_1mad_1_1LPiecewiseFunction.html#ab890f9a93007739a348ee430298afa07" title=" " alt="" coords="548,102,760,144"/>
+<area shape="rect" id="node4" href="$classadore_1_1mad_1_1ALFunction.html#a8efcded5c3bb775f11eaf529d0116eff" title=" " alt="" coords="833,37,995,78"/>
+<area shape="rect" id="node5" href="$classadore_1_1mad_1_1LPiecewiseFunction.html#a199f0141f1de1de289716ff7bbaf21c8" title=" " alt="" coords="808,189,1020,230"/>
+<area shape="rect" id="node6" href="$classadore_1_1mad_1_1ALFunction.html#aa03d0d015dd282bc5e5810b1dae85bea" title=" " alt="" coords="833,102,995,144"/>
+<area shape="rect" id="node7" href="$namespaceadore_1_1mad_1_1funop.html#ac1d9b9c769e1e51c36eb5740fb04518d" title=" " alt="" coords="587,37,721,78"/>
+<area shape="rect" id="node9" href="$classadore_1_1mad_1_1LLinearPiecewiseFunctionM.html#aa94d90c8643e2d6792f8594f3d666503" title=" " alt="" coords="555,270,753,312"/>
+<area shape="rect" id="node10" href="$classadore_1_1mad_1_1LLinearPiecewiseFunctionM.html#aaa496b8ceb3ed505f6450225c46a077a" title=" " alt="" coords="555,336,753,377"/>
+<area shape="rect" id="node11" href="$classadore_1_1mad_1_1LLinearPiecewiseFunctionM.html#a682841e9bc82a0653745dce6f908bfa6" title=" " alt="" coords="555,401,753,442"/>
+</map>

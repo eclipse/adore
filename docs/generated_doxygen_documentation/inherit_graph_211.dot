@@ -1,0 +1,8 @@
+digraph "Graphical Class Hierarchy"
+{
+ // LATEX_PDF_SIZE
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  rankdir="LR";
+  Node0 [label="adore::if_r2s::Section\l::FunctionMap",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classadore_1_1if__r2s_1_1Section_1_1FunctionMap.html",tooltip="storage class to access different functions by their domain intervals"];
+}

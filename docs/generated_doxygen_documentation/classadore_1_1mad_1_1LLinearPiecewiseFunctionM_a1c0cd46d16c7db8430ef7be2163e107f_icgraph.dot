@@ -1,0 +1,14 @@
+digraph "adore::mad::LLinearPiecewiseFunctionM::getFirstIntersection2d"
+{
+ // LATEX_PDF_SIZE
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  rankdir="RL";
+  Node1 [label="adore::mad::LLinearPiecewise\lFunctionM::getFirstIntersection2d",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black",tooltip=" "];
+  Node1 -> Node2 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node2 [label="adore::env::BorderBased\l::BorderOverlap::BorderOverlap",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$structadore_1_1env_1_1BorderBased_1_1BorderOverlap.html#a7e06ae5d50a86f2fc38464a5772c82ba",tooltip="Construct a new Border Overlap object."];
+  Node1 -> Node3 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node3 [label="adore::mad::LLinearPiecewise\lFunctionM::getFirstIntersection2d",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classadore_1_1mad_1_1LLinearPiecewiseFunctionM.html#aff495d05fc8df952b093c38abe7108dc",tooltip=" "];
+  Node1 -> Node4 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node4 [label="adore::env::BorderBased\l::Border::intersectionWithOther\lBorder",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$structadore_1_1env_1_1BorderBased_1_1Border.html#a78c705257ca2a9ff56fbe27556a8883d",tooltip="Check whether two borders intersect."];
+}

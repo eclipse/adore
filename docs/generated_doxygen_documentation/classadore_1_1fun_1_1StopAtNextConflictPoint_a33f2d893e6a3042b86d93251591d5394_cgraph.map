@@ -1,0 +1,9 @@
+<map id="adore::fun::StopAtNextConflictPoint::update" name="adore::fun::StopAtNextConflictPoint::update">
+<area shape="rect" id="node1" title=" " alt="" coords="5,169,207,211"/>
+<area shape="rect" id="node2" href="$classadore_1_1params_1_1APVehicle.html#ae446997786812ff17a5c3f6bfa575ce5" title="cog to front axle" alt="" coords="297,5,472,47"/>
+<area shape="rect" id="node3" href="$classadore_1_1params_1_1APVehicle.html#a5cc38023fb9f3142348dc9ac22402288" title="rear axle to cog" alt="" coords="297,71,472,112"/>
+<area shape="rect" id="node4" href="$classadore_1_1params_1_1APVehicle.html#aec64e74619601401d6d3d81ebf5fdacd" title="front axle to front border" alt="" coords="297,136,472,177"/>
+<area shape="rect" id="node5" href="$classadore_1_1view_1_1AConflictPointSet.html#afceaba453c6c5d6bcd4504eb410ca6f3" title=" " alt="" coords="294,201,475,243"/>
+<area shape="rect" id="node6" href="$classadore_1_1params_1_1APLongitudinalPlanner.html#abcf02018c495710f299f31c494c9b913" title="distance between stop position and conflict point" alt="" coords="255,267,515,308"/>
+<area shape="rect" id="node7" href="$classadore_1_1view_1_1AConflictPointSet.html#ad3516d87e0cba3671643c00bb71b35c7" title=" " alt="" coords="294,332,475,373"/>
+</map>

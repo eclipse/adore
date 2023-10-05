@@ -1,0 +1,10 @@
+<map id="adore::fun::SetPointRequestDispatcher::SetPointRequestDispatcher" name="adore::fun::SetPointRequestDispatcher::SetPointRequestDispatcher">
+<area shape="rect" id="node1" title=" " alt="" coords="5,133,260,175"/>
+<area shape="rect" id="node2" href="$classadore_1_1fun_1_1FunFactoryInstance.html#a3d8e318e1ad87251caef9bad22a99b40" title=" " alt="" coords="308,14,539,41"/>
+<area shape="rect" id="node4" href="$classadore_1_1params_1_1ParamsFactoryInstance.html#ae4d79d6130cebb47d90a82b6edb7660d" title=" " alt="" coords="322,68,525,109"/>
+<area shape="rect" id="node6" href="$classadore_1_1params_1_1AFactory.html#a3a0b2562d10e6802c6a6158e2fcbeebe" title=" " alt="" coords="340,133,507,175"/>
+<area shape="rect" id="node7" href="$classadore_1_1params_1_1AFactory.html#a8391b48b706bb01a21e7502824875d0b" title=" " alt="" coords="340,199,507,240"/>
+<area shape="rect" id="node8" href="$classadore_1_1env_1_1AFactory.html#a81f661c576816461f1914436620ac208" title=" " alt="" coords="322,264,525,305"/>
+<area shape="rect" id="node3" href="$classadore_1_1fun_1_1FunFactoryInstance.html#a0826e9a7ea3c70a3780115e6effbf746" title="Function to access singleton instance of the funFactory using magic static." alt="" coords="587,5,791,47"/>
+<area shape="rect" id="node5" href="$classadore_1_1params_1_1ParamsFactoryInstance.html#a59eae0e003d40b03f9db2d814ec2a3bf" title="Function to access singleton instance of the AllFactory using magic static." alt="" coords="587,71,790,112"/>
+</map>

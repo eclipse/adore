@@ -1,0 +1,7 @@
+digraph "adore_scheduling::SchedulerNotification"
+{
+ // LATEX_PDF_SIZE
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  Node1 [label="{adore_scheduling::Scheduler\lNotification\n|- m_identifier\l- m_upperTimeLimitSec\l- m_upperTimeLimitNsec\l|+ SchedulerNotification()\l+ SchedulerNotification()\l+ getUpperTimeLimitSec()\l+ getUpperTimeLimitNsec()\l+ getUpperTimeLimitPair()\l+ setUpperTimeLimit()\l+ setZero()\l+ getID()\l+ setID()\l}",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black",tooltip=" "];
+}

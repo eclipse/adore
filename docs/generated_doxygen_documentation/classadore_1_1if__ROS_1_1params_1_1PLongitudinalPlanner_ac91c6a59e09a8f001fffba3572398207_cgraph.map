@@ -1,0 +1,4 @@
+<map id="adore::if_ROS::params::PLongitudinalPlanner::getVAccUBSlow" name="adore::if_ROS::params::PLongitudinalPlanner::getVAccUBSlow">
+<area shape="rect" id="node1" title="getVAccUBSlow returns speed up to which slow speed acceleration is used" alt="" coords="5,5,161,61"/>
+<area shape="rect" id="node2" href="$classadore_1_1if__ROS_1_1ROSParam.html#adf480c94fa5b1368850b0a491791e4e6" title=" " alt="" coords="209,20,416,47"/>
+</map>

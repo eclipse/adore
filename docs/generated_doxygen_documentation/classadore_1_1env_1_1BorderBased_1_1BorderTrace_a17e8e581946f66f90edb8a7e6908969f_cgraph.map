@@ -1,0 +1,10 @@
+<map id="adore::env::BorderBased::BorderTrace::insert" name="adore::env::BorderBased::BorderTrace::insert">
+<area shape="rect" id="node1" title=" " alt="" coords="5,88,172,129"/>
+<area shape="rect" id="node2" href="$classadore_1_1env_1_1BorderBased_1_1BorderTrace.html#aaf2bb22f2386d65468e0498cb1a657e8" title=" " alt="" coords="220,23,387,64"/>
+<area shape="rect" id="node3" href="$structadore_1_1env_1_1BorderBased_1_1Border.html#a522c4ebdb7a16e0aa89b507f554a4fa6" title="Get the length of the border." alt="" coords="220,88,387,129"/>
+<area shape="rect" id="node7" href="$structadore_1_1env_1_1BorderBased_1_1Border.html#a7fb76c709876c81971c00f99e327c2bf" title="Check whether border is a direct successors of another border." alt="" coords="220,169,387,211"/>
+<area shape="rect" id="node4" href="$structadore_1_1env_1_1BorderBased_1_1BorderID.html#a21f63cc4e5239a964b37d089d54d2418" title=" " alt="" coords="450,5,617,47"/>
+<area shape="rect" id="node5" href="$classadore_1_1mad_1_1LLinearPiecewiseFunctionM.html#aaa496b8ceb3ed505f6450225c46a077a" title=" " alt="" coords="435,71,632,112"/>
+<area shape="rect" id="node6" href="$classadore_1_1mad_1_1LLinearPiecewiseFunctionM.html#a682841e9bc82a0653745dce6f908bfa6" title=" " alt="" coords="435,136,632,177"/>
+<area shape="rect" id="node8" href="$structadore_1_1env_1_1BorderBased_1_1Coordinate.html#a29c83e934340f40cfa66dab2e7982d20" title="Check whether the Coordinate is near to another Coordinate." alt="" coords="450,201,617,243"/>
+</map>

@@ -1,0 +1,7 @@
+digraph "adore::env::GapData"
+{
+ // LATEX_PDF_SIZE
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  Node1 [label="{adore::env::GapData\n|+ rating\l+ feasible\l+ anchor_X\l+ anchor_Y\l+ anchor_Z\l+ anchor_dX\l+ anchor_dY\l+ anchor_dZ\l+ anchor_vt\l+ t_obs\land 9 more...\l|+ GapData()\l}",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black",tooltip=" "];
+}

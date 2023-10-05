@@ -1,0 +1,20 @@
+digraph "Handler::Handler"
+{
+ // LATEX_PDF_SIZE
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  rankdir="LR";
+  Node1 [label="Handler::Handler",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black",tooltip=" "];
+  Node1 -> Node2 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node2 [label="DLR_TS::PlotLab::FigureStub\lFactory::createFigureStub",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classDLR__TS_1_1PlotLab_1_1FigureStubFactory.html#a842dc9d218e8433f3443a08d47cfd6cc",tooltip=" "];
+  Node1 -> Node3 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node3 [label="Handler::receive_x",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classHandler.html#a8002d213fcc25d6f08898126c6e55a3e",tooltip=" "];
+  Node1 -> Node4 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node4 [label="Handler::receive_y",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classHandler.html#a57f24c07db2aaf2cf072258b9718cda3",tooltip=" "];
+  Node4 -> Node5 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node5 [label="Handler::plot",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classHandler.html#a80e6be5a979317bdeb9bd706e5f2e00e",tooltip=" "];
+  Node5 -> Node6 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node6 [label="DLR_TS::PlotLab::AFigure\lStub::append",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classDLR__TS_1_1PlotLab_1_1AFigureStub.html#a4da398fda2c19ea3ca5b4b289d785942",tooltip=" "];
+  Node1 -> Node7 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node7 [label="DLR_TS::PlotLab::AFigure\lStub::show",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classDLR__TS_1_1PlotLab_1_1AFigureStub.html#aaf1a1edc084b34e18315896c3f248695",tooltip=" "];
+}

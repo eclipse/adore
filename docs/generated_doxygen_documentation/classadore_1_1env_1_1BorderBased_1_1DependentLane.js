@@ -1,0 +1,28 @@
+var classadore_1_1env_1_1BorderBased_1_1DependentLane =
+[
+    [ "DependentLane", "classadore_1_1env_1_1BorderBased_1_1DependentLane.html#a956ff68fda4a337cc2afcd73bff7630d", null ],
+    [ "boundNavigationCost", "classadore_1_1env_1_1BorderBased_1_1DependentLane.html#afe0bea1f44cc37033cc166113602a7ad", null ],
+    [ "getConflictSet", "classadore_1_1env_1_1BorderBased_1_1DependentLane.html#a63d0ab325dc893cd0c1d11808f0e8e68", null ],
+    [ "getCurvature", "classadore_1_1env_1_1BorderBased_1_1DependentLane.html#a129d43d0b10763a77b30f2a8116fc20d", null ],
+    [ "getHeading", "classadore_1_1env_1_1BorderBased_1_1DependentLane.html#a720a6daf67e51d6316b06b997ea5ec31", null ],
+    [ "getLeftIndicatorHint", "classadore_1_1env_1_1BorderBased_1_1DependentLane.html#a5c4c1489056d995c8f4dd3fcb179159d", null ],
+    [ "getNavigationCost", "classadore_1_1env_1_1BorderBased_1_1DependentLane.html#ae2f185a04d4c6126c3255f5dd5d84a11", null ],
+    [ "getOffsetOfLeftBorder", "classadore_1_1env_1_1BorderBased_1_1DependentLane.html#a51aa4513c8a33e935f2bdb18afdb2af8", null ],
+    [ "getOffsetOfRightBorder", "classadore_1_1env_1_1BorderBased_1_1DependentLane.html#ada3b54b284d7d49d27ca7910eb30d76e", null ],
+    [ "getOnLaneTraffic", "classadore_1_1env_1_1BorderBased_1_1DependentLane.html#af5157ee79a1c35de5e22aefe4565a5d8", null ],
+    [ "getProgressOfWidthClosed", "classadore_1_1env_1_1BorderBased_1_1DependentLane.html#a33b15386819e7092500e55e54e234289", null ],
+    [ "getProgressOfWidthOpen", "classadore_1_1env_1_1BorderBased_1_1DependentLane.html#a26616b3974caa66cfedc9c2053e98b3a", null ],
+    [ "getRightIndicatorHint", "classadore_1_1env_1_1BorderBased_1_1DependentLane.html#aabf542d5391dc2681f99b2d63509b105", null ],
+    [ "getSMax", "classadore_1_1env_1_1BorderBased_1_1DependentLane.html#ac1047c3ebc875b0000059a9a871da388", null ],
+    [ "getSMin", "classadore_1_1env_1_1BorderBased_1_1DependentLane.html#a2254ae22de1030b119a1c79b88c5a41e", null ],
+    [ "getSpeedLimit", "classadore_1_1env_1_1BorderBased_1_1DependentLane.html#a4170042227917c3401577962c755bf18", null ],
+    [ "getSpeedRecommendation", "classadore_1_1env_1_1BorderBased_1_1DependentLane.html#a0c7f82463425a7b1b0ed604d5d10eb36", null ],
+    [ "hasSpeedRecommendation", "classadore_1_1env_1_1BorderBased_1_1DependentLane.html#aa407e4f12754a5008c5f7f7179e7bf6f", null ],
+    [ "isValid", "classadore_1_1env_1_1BorderBased_1_1DependentLane.html#aee3e26a2dea798054dff8fe8192ec618", null ],
+    [ "toEucledianCoordinates", "classadore_1_1env_1_1BorderBased_1_1DependentLane.html#a9c77271c31c669339d756deb8ecfb629", null ],
+    [ "toRelativeCoordinates", "classadore_1_1env_1_1BorderBased_1_1DependentLane.html#aedfda727c68551a31896232cad61b58f", null ],
+    [ "cs_", "classadore_1_1env_1_1BorderBased_1_1DependentLane.html#a2bd85f8a04f3056a190bcc665883506e", null ],
+    [ "elt_", "classadore_1_1env_1_1BorderBased_1_1DependentLane.html#a4b5141450fb0c7261749befbef94ad6c", null ],
+    [ "lcg_", "classadore_1_1env_1_1BorderBased_1_1DependentLane.html#a7320965f5a03f65e7eb213f868c83e2b", null ],
+    [ "lfv_", "classadore_1_1env_1_1BorderBased_1_1DependentLane.html#a8b8ca43c4c07a549a7979fc99151295f", null ]
+];

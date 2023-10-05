@@ -1,0 +1,21 @@
+<map id="adore::fun::PlanarVehicleState10d::PlanarVehicleState10d" name="adore::fun::PlanarVehicleState10d::PlanarVehicleState10d">
+<area shape="rect" id="node1" title=" " alt="" coords="5,561,220,603"/>
+<area shape="rect" id="node2" href="$structadore_1_1env_1_1VehicleMotionState9d.html#a7a4bdd18cf6a76bb87ac80dd8cdc3e14" title="Get the longitudinal acceleration." alt="" coords="268,5,441,47"/>
+<area shape="rect" id="node3" href="$structadore_1_1env_1_1VehicleMotionState9d.html#aad1cd97fe5b255cdbea40f4dee602f8e" title="Get the steering angle." alt="" coords="268,71,441,112"/>
+<area shape="rect" id="node4" href="$structadore_1_1env_1_1VehicleMotionState9d.html#a39294f52e08a67b58a6beabec70d2d97" title="Get the yaw rate." alt="" coords="268,136,441,177"/>
+<area shape="rect" id="node5" href="$structadore_1_1env_1_1VehicleMotionState9d.html#a65ca6ea033cf05674de50b8996a586a3" title="Get the heading." alt="" coords="268,201,441,243"/>
+<area shape="rect" id="node6" href="$structadore_1_1env_1_1VehicleMotionState9d.html#a2547f79442e772d79fbf5051a2a08bfa" title="Get the longitudinal velocity." alt="" coords="268,267,441,308"/>
+<area shape="rect" id="node7" href="$structadore_1_1env_1_1VehicleMotionState9d.html#a96153986634c3718e2c8f3586e94cc6a" title="Get the lateral velocity." alt="" coords="268,332,441,373"/>
+<area shape="rect" id="node8" href="$structadore_1_1env_1_1VehicleMotionState9d.html#a16d6d61f5dfa1028ca97d8f1a8b6e8cf" title="Get the x&#45;coordinate." alt="" coords="268,397,441,439"/>
+<area shape="rect" id="node9" href="$structadore_1_1env_1_1VehicleMotionState9d.html#a51e8eed0ef10d909592edcb933c1b802" title="Get the y&#45;coordinate." alt="" coords="268,463,441,504"/>
+<area shape="rect" id="node10" href="$structadore_1_1fun_1_1PlanarVehicleState10d.html#ae3b7b97999aad277023c9d4007c62612" title=" " alt="" coords="271,528,439,569"/>
+<area shape="rect" id="node11" href="$structadore_1_1fun_1_1PlanarVehicleState10d.html#a1c08fee846dedbf65d4b7c028763fc19" title=" " alt="" coords="271,593,439,635"/>
+<area shape="rect" id="node12" href="$structadore_1_1fun_1_1PlanarVehicleState10d.html#a0e5072015ba4d95e8240b5f293e2ec09" title=" " alt="" coords="271,659,439,700"/>
+<area shape="rect" id="node13" href="$structadore_1_1fun_1_1PlanarVehicleState10d.html#ad5e4f667fedd7771b493a8b97535c60e" title=" " alt="" coords="271,724,439,765"/>
+<area shape="rect" id="node14" href="$structadore_1_1fun_1_1PlanarVehicleState10d.html#aa35fc03f1e34876505ee3fd205a1cd35" title=" " alt="" coords="271,789,439,831"/>
+<area shape="rect" id="node15" href="$structadore_1_1fun_1_1PlanarVehicleState10d.html#ae27f2a822e11535f51c7b80fef3c4711" title=" " alt="" coords="271,855,439,896"/>
+<area shape="rect" id="node16" href="$structadore_1_1fun_1_1PlanarVehicleState10d.html#a8f2d18d3f97cab094659458022ddcb5b" title=" " alt="" coords="271,920,439,961"/>
+<area shape="rect" id="node17" href="$structadore_1_1fun_1_1PlanarVehicleState10d.html#aaec90588a0f3a7fb562ce5d0f5140796" title=" " alt="" coords="271,985,439,1027"/>
+<area shape="rect" id="node18" href="$structadore_1_1fun_1_1PlanarVehicleState10d.html#ad34737d9db8c093ec22a53b2deb39256" title=" " alt="" coords="271,1051,439,1092"/>
+<area shape="rect" id="node19" href="$structadore_1_1fun_1_1PlanarVehicleState10d.html#a911755e3867b28f51059ce56be82f0ee" title=" " alt="" coords="271,1116,439,1157"/>
+</map>

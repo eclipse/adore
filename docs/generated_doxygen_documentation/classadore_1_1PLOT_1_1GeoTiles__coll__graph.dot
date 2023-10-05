@@ -1,0 +1,7 @@
+digraph "adore::PLOT::GeoTiles"
+{
+ // LATEX_PDF_SIZE
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  Node1 [label="{adore::PLOT::GeoTiles\n|- width_meters_\l- base_url_\l|+ GeoTiles()\l+ getWidthM()\l+ getURL()\l+ getURL()\l+ getURL()\l+ getCenterX()\l+ getCenterY()\l+ getTileID()\l+ overlapsBox()\l+ getVisibleRange()\l+ getPlotID()\l- overlaps()\l}",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black",tooltip="Class to help with handling of tile servers used for satellite image background tiles."];
+}

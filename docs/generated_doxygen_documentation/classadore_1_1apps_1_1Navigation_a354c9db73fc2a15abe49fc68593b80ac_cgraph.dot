@@ -1,0 +1,42 @@
+digraph "adore::apps::Navigation::plotGlobalNavigation"
+{
+ // LATEX_PDF_SIZE
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  rankdir="LR";
+  Node1 [label="adore::apps::Navigation\l::plotGlobalNavigation",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black",tooltip=" "];
+  Node1 -> Node2 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node2 [label="adore::env::BorderBased\l::BorderSet::getAllBorders",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classadore_1_1env_1_1BorderBased_1_1BorderSet.html#a5dea05943e2c9a960ba7cabc59f7ebb7",tooltip="get all borders in this"];
+  Node1 -> Node3 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node3 [label="adore::env::NavigationManagement\l::getBorderCost",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classadore_1_1env_1_1NavigationManagement.html#af18d96aa374d8f747dd2353d56d62e74",tooltip=" "];
+  Node3 -> Node4 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node4 [label="adore::mad::max",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$namespaceadore_1_1mad.html#adea062854ef0b105a3fdca8cf2aca945",tooltip=" "];
+  Node4 -> Node5 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node5 [label="adore::mad::max",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$namespaceadore_1_1mad.html#a618a8842fed7b9375957b1e393c58492",tooltip=" "];
+  Node1 -> Node6 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node6 [label="adore::env::NavigationManagement\l::getGlobalMap",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classadore_1_1env_1_1NavigationManagement.html#ab89b18770a51230b4952a8cc56eb86b9",tooltip=" "];
+  Node6 -> Node7 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node7 [label="adore::env::MapBorderManagement\l::getGlobalMap",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classadore_1_1env_1_1MapBorderManagement.html#ad55ac3dcd303753f82ccb86c67cc90d0",tooltip=" "];
+  Node1 -> Node8 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node8 [label="adore::env::NavigationManagement\l::getMaxCost",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classadore_1_1env_1_1NavigationManagement.html#ad31870f3e1b4c2b198d4a10a453c6fa4",tooltip=" "];
+  Node1 -> Node9 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node9 [label="adore::PLOT::plotBorderNavigation",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$namespaceadore_1_1PLOT.html#a1a0ee92347b1b14f1cfa73a043c0188c",tooltip=" "];
+  Node9 -> Node10 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node10 [label="adore::PLOT::plotBorder",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$namespaceadore_1_1PLOT.html#ac157afb98167a75b689e6ef5af6c2b71",tooltip=" "];
+  Node10 -> Node11 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node11 [label="adore::PLOT::plotBorderLine",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$namespaceadore_1_1PLOT.html#a3eef67b932118400091cf5fc1de87d5d",tooltip=" "];
+  Node11 -> Node12 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node12 [label="adore::mad::LLinearPiecewise\lFunctionM::getData",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classadore_1_1mad_1_1LLinearPiecewiseFunctionM.html#aa94d90c8643e2d6792f8594f3d666503",tooltip=" "];
+  Node11 -> Node13 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node13 [label="DLR_TS::PlotLab::AFigure\lStub::plot",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classDLR__TS_1_1PlotLab_1_1AFigureStub.html#accf20dccb771d2bad1fec053e187a327",tooltip=" "];
+  Node10 -> Node14 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node14 [label="DLR_TS::PlotLab::AFigure\lStub::tristrip",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classDLR__TS_1_1PlotLab_1_1AFigureStub.html#a84fc0797f960eca2c9aa911bc58292c1",tooltip=" "];
+  Node1 -> Node15 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node15 [label="DLR_TS::PlotLab::FigureStub\lZMQ::show",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classDLR__TS_1_1PlotLab_1_1FigureStubZMQ.html#a2a40beae222d594d6c4b9ee5e44286a4",tooltip=" "];
+  Node15 -> Node16 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node16 [label="DLR_TS::PlotLab::FigureStub\lZMQ::send_other",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classDLR__TS_1_1PlotLab_1_1FigureStubZMQ.html#adb0209daac07d5551c88c2e606d90588",tooltip=" "];
+  Node16 -> Node17 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node17 [label="adore::mad::min",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$namespaceadore_1_1mad.html#ab58ecb752f9bbfe27832e0a2c0e22c2b",tooltip=" "];
+  Node17 -> Node18 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node18 [label="adore::mad::min",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$namespaceadore_1_1mad.html#ac61b79c007d1859f93a10c04272095a1",tooltip=" "];
+}

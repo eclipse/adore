@@ -1,0 +1,12 @@
+<map id="adore::env::BorderBased::ConflictSet::mapParticipantsToConflictZones" name="adore::env::BorderBased::ConflictSet::mapParticipantsToConflictZones">
+<area shape="rect" id="node1" title=" " alt="" coords="5,210,203,266"/>
+<area shape="rect" id="node2" href="$structadore_1_1env_1_1traffic_1_1Participant.html#a42c1d1a4cf392269b62a8e4ef7aef8d2" title=" " alt="" coords="295,5,430,47"/>
+<area shape="rect" id="node3" href="$classadore_1_1env_1_1BorderBased_1_1BorderSet.html#a69802bccdc7cf3fa598283509808edc2" title="retrieve a border by ID" alt="" coords="279,71,446,112"/>
+<area shape="rect" id="node4" href="$classadore_1_1env_1_1BorderBased_1_1BorderSet.html#a6e5f07631d25c616de2e5b73781d78dd" title="Get distances of all paths that are possible with a given subset of allowed borders between two borde..." alt="" coords="251,137,475,193"/>
+<area shape="rect" id="node7" href="$classadore_1_1env_1_1traffic_1_1EgoLaneTraffic.html#a43bc79c8720279ea7d0d25a7fdd8d890" title="Get the traffic map." alt="" coords="259,217,466,259"/>
+<area shape="rect" id="node8" href="$structadore_1_1env_1_1traffic_1_1Participant.html#ae5cbd6230f3cce7707dcd12c59a5bf05" title=" " alt="" coords="295,283,430,324"/>
+<area shape="rect" id="node9" href="$classadore_1_1mad_1_1LLinearPiecewiseFunctionM.html#aaa496b8ceb3ed505f6450225c46a077a" title=" " alt="" coords="264,348,461,389"/>
+<area shape="rect" id="node10" href="$structadore_1_1view_1_1TrafficObject.html#a0f9a352611330be285427b3c9a9e3f37" title=" " alt="" coords="277,413,449,455"/>
+<area shape="rect" id="node5" href="$classadore_1_1env_1_1BorderBased_1_1BorderSet.html#abab006662472f1539c78fe4c53a82af7" title="check whether potentialSuccessor is a successor of b" alt="" coords="523,144,691,185"/>
+<area shape="rect" id="node6" href="$classadore_1_1env_1_1BorderBased_1_1BorderSet.html#a8af807fde181a20de55594592d752adc" title="Get left neighbor of a border." alt="" coords="739,144,927,185"/>
+</map>

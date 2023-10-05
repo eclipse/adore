@@ -1,0 +1,17 @@
+<map id="adore::env::BorderBased::BorderSet::isSimilar" name="adore::env::BorderBased::BorderSet::isSimilar">
+<area shape="rect" id="node1" title="checks whether two coordinates are similar based on certainties of this" alt="" coords="1704,94,1871,135"/>
+<area shape="rect" id="node2" href="$classadore_1_1env_1_1BorderBased_1_1BorderSet.html#a8d3569344e9e2fda17a55c39a0013970" title="check whether end of border a is beginning of border b" alt="" coords="1487,94,1656,135"/>
+<area shape="rect" id="node3" href="$classadore_1_1env_1_1BorderBased_1_1BASFollowStraight.html#a84602111513a391f491d175411a09083" title="Get the next border." alt="" coords="1244,119,1439,175"/>
+<area shape="rect" id="node4" href="$classadore_1_1env_1_1BorderBased_1_1BASFollowNavigation.html#a19152de0ccb0c37bb5f5a2edf5218961" title="Get the next border." alt="" coords="1029,53,1195,109"/>
+<area shape="rect" id="node11" href="$classadore_1_1env_1_1BorderBased_1_1LaneChangeGeometry.html#ada2e1c0aa77292509de1dbdda55c5dc9" title="update the road geometry" alt="" coords="1028,133,1196,189"/>
+<area shape="rect" id="node5" href="$classadore_1_1env_1_1BorderBased_1_1LaneChangeBorders.html#a324178919d6a3a2bea8dd4c04fc65cea" title="collects all borders relevant for lane change view in object&#45;variable vectors" alt="" coords="785,61,980,102"/>
+<area shape="rect" id="node6" href="$test__independentlanechangegeometry_8cpp.html#aa56a0bce9f9e760f59ceea11ad085348" title=" " alt="" coords="572,5,672,32"/>
+<area shape="rect" id="node7" href="$classadore_1_1env_1_1BorderBased_1_1IndependentLaneChangeGeometry.html#a821bde3f11a80bca977616edaff33587" title="constructs a lane change geometry if a gate is available" alt="" coords="507,56,737,112"/>
+<area shape="rect" id="node8" href="$classadore_1_1apps_1_1LaneViewProvider.html#a10c08893d16421f195ad2a597bfea8f8" title="update data, views and recompute maneuver" alt="" coords="229,28,459,55"/>
+<area shape="rect" id="node10" href="$test__independentlanechangegeometry_8cpp.html#a48baafb16e67cf190c9ac4a4a55d1c79" title=" " alt="" coords="294,79,394,105"/>
+<area shape="rect" id="node9" href="$classadore_1_1if__ROS_1_1LVProviderNode.html#ad35fdbfdaef8f2f89279dc08758bef3a" title=" " alt="" coords="5,21,181,62"/>
+<area shape="rect" id="node12" href="$classadore_1_1env_1_1BorderBased_1_1LaneChangeView.html#a83432efdfec3bb90153ec1c4ce9bcee9" title="Update the LaneChangeView." alt="" coords="793,141,972,182"/>
+<area shape="rect" id="node13" href="$classadore_1_1apps_1_1TestLCTrajectoryPlanner.html#ac2912d7058c947a47405a0ce64e5609f" title=" " alt="" coords="523,141,721,182"/>
+<area shape="rect" id="node14" href="$classadore_1_1if__ROS_1_1TestLCTrajectoryPlannerNode.html#aadf9b829e6afee6af3219321b72d4d3c" title=" " alt="" coords="237,141,451,182"/>
+<area shape="rect" id="node15" href="$test__lc__trajectory__planner__node_8cpp.html#a3c04138a5bfe5d72780bb7e82a18e627" title=" " alt="" coords="68,148,119,175"/>
+</map>

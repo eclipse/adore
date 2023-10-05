@@ -1,0 +1,11 @@
+digraph "adore::fun::LongitudinalAccelerationConstraint"
+{
+ // LATEX_PDF_SIZE
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  Node1 [label="{adore::fun::Longitudinal\lAccelerationConstraint\n|- ax_ub_\l- ax_lb_\l- ax_ub_slow_\l- v_ax_ub_slow_\l- ds0_\l- t0_\l- d_\l|+ LongitudinalAcceleration\lConstraint()\l+ getValue()\l+ update()\l+ getDirection()\l+ getDimension()\l+ getDerivative()\l}",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black",tooltip=" "];
+  Node2 -> Node1 [dir="back",color="midnightblue",fontsize="10",style="solid",arrowtail="onormal",fontname="Helvetica"];
+  Node2 [label="{adore::fun::ANominalConstraint\n||+ getValue()\l+ update()\l+ getDirection()\l+ getDimension()\l+ getDerivative()\l}",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classadore_1_1fun_1_1ANominalConstraint.html",tooltip=" "];
+  Node3 -> Node1 [color="grey25",fontsize="10",style="solid",label=" -plon_" ,arrowhead="odiamond",fontname="Helvetica"];
+  Node3 [label="{adore::params::APLongitudinal\lPlanner\n||+ getWeightPos()\l+ getWeightVel()\l+ getWeightAcc()\l+ getWeightJerk()\l+ getWeightEndPos()\l+ getWeightEndVel()\l+ getWeightEndAcc()\l+ getSlackPos()\l+ getSlackVel()\l+ getSlackAcc()\land 21 more...\l}",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classadore_1_1params_1_1APLongitudinalPlanner.html",tooltip="abstract class containing parameters related to configuring the longitudinal planner"];
+}

@@ -1,0 +1,5 @@
+<map id="adore::fun::LinearTrackingController" name="adore::fun::LinearTrackingController">
+<area shape="rect" id="node1" title=" " alt="" coords="104,307,287,545"/>
+<area shape="rect" id="node2" href="$classadore_1_1params_1_1APVehicle.html" title="abstract class for vehicle configuration related paremeters" alt="" coords="5,13,180,237"/>
+<area shape="rect" id="node3" href="$classadore_1_1params_1_1APTrajectoryTracking.html" title="abstract class containing parameters to configure the behaviour of the trajactory tracking controller" alt="" coords="205,5,394,244"/>
+</map>

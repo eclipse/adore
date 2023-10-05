@@ -1,0 +1,4 @@
+<map id="adore::env::BorderBased::BorderSet::clear" name="adore::env::BorderBased::BorderSet::clear">
+<area shape="rect" id="node1" title="remove all borders from this, delete object if this is owner" alt="" coords="5,5,172,47"/>
+<area shape="rect" id="node2" href="$classadore_1_1env_1_1BorderBased_1_1BorderSet.html#a5dea05943e2c9a960ba7cabc59f7ebb7" title="get all borders in this" alt="" coords="220,5,395,47"/>
+</map>

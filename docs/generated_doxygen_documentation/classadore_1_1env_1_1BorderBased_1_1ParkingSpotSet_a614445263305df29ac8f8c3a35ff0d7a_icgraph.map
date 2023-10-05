@@ -1,0 +1,5 @@
+<map id="adore::env::BorderBased::ParkingSpotSet::getParkingSpotsOutsideRegion" name="adore::env::BorderBased::ParkingSpotSet::getParkingSpotsOutsideRegion">
+<area shape="rect" id="node1" title=" " alt="" coords="269,43,460,99"/>
+<area shape="rect" id="node2" href="$classadore_1_1env_1_1BorderBased_1_1ParkingSpotSet.html#a4c5970b4aa2a9cd4326595ea519536a4" title=" " alt="" coords="5,5,221,61"/>
+<area shape="rect" id="node3" href="$classadore_1_1env_1_1MapParkingSpotManagement.html#a32efcf29e243dd5864cd9bb031e60129" title="get new and outdated parking spots based on vehicle position" alt="" coords="20,86,207,127"/>
+</map>

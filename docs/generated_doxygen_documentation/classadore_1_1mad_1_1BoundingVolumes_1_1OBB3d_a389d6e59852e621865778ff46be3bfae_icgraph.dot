@@ -1,0 +1,28 @@
+digraph "adore::mad::BoundingVolumes::OBB3d::getData"
+{
+ // LATEX_PDF_SIZE
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  rankdir="RL";
+  Node1 [label="adore::mad::BoundingVolumes\l::OBB3d::getData",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black",tooltip=" "];
+  Node1 -> Node2 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node2 [label="adore::mad::BoundingVolumes\l::OBBTree3d::copy",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classadore_1_1mad_1_1BoundingVolumes_1_1OBBTree3d.html#a2da5c031fd8d246cf7f5eee60ef736e4",tooltip=" "];
+  Node2 -> Node3 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node3 [label="adore::mad::BoundingVolumes\l::OBBTree3d::initChild",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classadore_1_1mad_1_1BoundingVolumes_1_1OBBTree3d.html#a413fe42139d6e029042175a1e5af63ca",tooltip=" "];
+  Node3 -> Node2 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node2 -> Node4 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node4 [label="adore::mad::BoundingVolumes\l::OBBTree3d::initSibling",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classadore_1_1mad_1_1BoundingVolumes_1_1OBBTree3d.html#ad905266cb7de3b7d52c9892c0de51a05",tooltip=" "];
+  Node4 -> Node2 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node1 -> Node5 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node5 [label="adore::mad::BoundingVolumes\l::PlaneSequence3d::generateBounding\lVolume",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classadore_1_1mad_1_1BoundingVolumes_1_1PlaneSequence3d.html#aec46d6bd4c320b092d7c68142016f31d",tooltip=" "];
+  Node5 -> Node6 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node6 [label="adore::mad::BoundingVolumes\l::PlaneSequence3d::initialize",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classadore_1_1mad_1_1BoundingVolumes_1_1PlaneSequence3d.html#a9a8ddf72673408b8bd9c3e1c21c67378",tooltip=" "];
+  Node6 -> Node7 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node7 [label="adore::mad::BoundingVolumes\l::PlaneSequence3d::PlaneSequence3d",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classadore_1_1mad_1_1BoundingVolumes_1_1PlaneSequence3d.html#ae435492f4329a3abbf7d009acfedf598",tooltip=" "];
+  Node1 -> Node8 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node8 [label="adore::mad::BoundingVolumes\l::PlaneSequence3d::isCollisionFree\l_detailedTest",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classadore_1_1mad_1_1BoundingVolumes_1_1PlaneSequence3d.html#a4bde2aa601a0d0a6d7b0ae2c2541cecd",tooltip=" "];
+  Node8 -> Node9 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node9 [label="adore::mad::BoundingVolumes\l::PlaneSequence3d::isCollisionFree",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classadore_1_1mad_1_1BoundingVolumes_1_1PlaneSequence3d.html#a6528b3ed4edeeca676c2f15fc3831f2b",tooltip=" "];
+  Node9 -> Node10 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node10 [label="adore::mad::BoundingVolumes\l::PlaneSequence3d::isCollisionFree",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classadore_1_1mad_1_1BoundingVolumes_1_1PlaneSequence3d.html#a009aa2f6a2676b40f447c2345925ebda",tooltip=" "];
+}

@@ -1,0 +1,10 @@
+digraph "Graphical Class Hierarchy"
+{
+ // LATEX_PDF_SIZE
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  rankdir="LR";
+  Node402 [label="std::ctype",height=0.2,width=0.4,color="grey75", fillcolor="white", style="filled",tooltip=" "];
+  Node402 -> Node0 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node0 [label="adore::mad::CsvReader\l::csv_reader_facet",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$structadore_1_1mad_1_1CsvReader_1_1csv__reader__facet.html",tooltip="a helper construct to facilitate reading csv files"];
+}

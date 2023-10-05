@@ -1,0 +1,11 @@
+<map id="adore::env::BorderBased::Node" name="adore::env::BorderBased::Node">
+<area shape="rect" id="node1" title=" " alt="" coords="409,1447,575,1729"/>
+<area shape="rect" id="node2" href="$structadore_1_1env_1_1BorderBased_1_1Border.html" title="The border struct contains data of the smallest." alt="" coords="409,1145,575,1384"/>
+<area shape="rect" id="node3" href="$classadore_1_1mad_1_1LLinearPiecewiseFunctionM.html" title=" " alt="" coords="216,778,413,1031"/>
+<area shape="rect" id="node6" href="$classadore_1_1mad_1_1LLinearPiecewiseFunctionM_1_1OneDimension.html" title=" " alt="" coords="98,1160,321,1369"/>
+<area shape="rect" id="node4" href="$classadore_1_1mad_1_1AScalarToN.html" title=" " alt="" coords="232,425,397,635"/>
+<area shape="rect" id="node5" href="$classadore_1_1mad_1_1ALFunction.html" title=" " alt="" coords="221,5,408,347"/>
+<area shape="rect" id="node7" href="$classadore_1_1mad_1_1ALFunction.html" title=" " alt="" coords="5,741,192,1068"/>
+<area shape="rect" id="node8" href="$structadore_1_1env_1_1BorderBased_1_1BorderID.html" title="This struct identifies a Border by the coordinates of the starting and the end point." alt="" coords="449,763,623,1046"/>
+<area shape="rect" id="node9" href="$structadore_1_1env_1_1BorderBased_1_1Coordinate.html" title="This struct represents 3&#45;dimensional coordines." alt="" coords="453,396,619,664"/>
+</map>

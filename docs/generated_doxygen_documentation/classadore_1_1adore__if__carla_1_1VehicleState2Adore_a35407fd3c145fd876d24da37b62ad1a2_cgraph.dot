@@ -1,0 +1,40 @@
+digraph "adore::adore_if_carla::VehicleState2Adore::initROSConnections"
+{
+ // LATEX_PDF_SIZE
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  rankdir="LR";
+  Node1 [label="adore::adore_if_carla\l::VehicleState2Adore\l::initROSConnections",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black",tooltip=" "];
+  Node1 -> Node2 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node2 [label="adore::adore_if_carla\l::VehicleState2Adore\l::getRosNodeHandle",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classadore_1_1adore__if__carla_1_1VehicleState2Adore.html#a84e1b7f0132a5301cd2af698e5fb0f6f",tooltip=" "];
+  Node1 -> Node3 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node3 [label="adore::adore_if_carla\l::VehicleState2Adore\l::receiveCarlaAutopilot",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classadore_1_1adore__if__carla_1_1VehicleState2Adore.html#a463b83406cc562b85b64c08b9c7fd52e",tooltip=" "];
+  Node3 -> Node4 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node4 [label="adore::adore_if_carla\l::VehicleState2Adore\l::publish_adore_automation_state",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classadore_1_1adore__if__carla_1_1VehicleState2Adore.html#ad8f6ceaa05836d0324bd03c4db2802fb",tooltip=" "];
+  Node1 -> Node5 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node5 [label="adore::adore_if_carla\l::VehicleState2Adore\l::receiveOdometry",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classadore_1_1adore__if__carla_1_1VehicleState2Adore.html#a048c61d266502500d3e4a6cec5315bc4",tooltip=" "];
+  Node5 -> Node6 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node6 [label="adore::mad::atan2",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$namespaceadore_1_1mad.html#a37d645f2d2b0aa8f1c7015ba4e502617",tooltip=" "];
+  Node5 -> Node7 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node7 [label="adore::mad::cos",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$namespaceadore_1_1mad.html#a70b9fe3efbb34c0f9621147e3456bfa8",tooltip=" "];
+  Node7 -> Node8 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node8 [label="adore::mad::sin",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$namespaceadore_1_1mad.html#acec540f9bf9b6eb0e027d332d3fe5577",tooltip=" "];
+  Node8 -> Node9 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node9 [label="adore::mad::max",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$namespaceadore_1_1mad.html#adea062854ef0b105a3fdca8cf2aca945",tooltip=" "];
+  Node9 -> Node10 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node10 [label="adore::mad::max",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$namespaceadore_1_1mad.html#a618a8842fed7b9375957b1e393c58492",tooltip=" "];
+  Node8 -> Node11 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node11 [label="adore::mad::min",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$namespaceadore_1_1mad.html#ab58ecb752f9bbfe27832e0a2c0e22c2b",tooltip=" "];
+  Node11 -> Node12 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node12 [label="adore::mad::min",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$namespaceadore_1_1mad.html#ac61b79c007d1859f93a10c04272095a1",tooltip=" "];
+  Node5 -> Node8 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node1 -> Node13 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node13 [label="adore::adore_if_carla\l::VehicleState2Adore\l::receiveVehicleImu",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classadore_1_1adore__if__carla_1_1VehicleState2Adore.html#a4bf2a55b73aa57ee886090a142f7017d",tooltip=" "];
+  Node1 -> Node14 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node14 [label="adore::adore_if_carla\l::VehicleState2Adore\l::receiveVehicleInfo",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classadore_1_1adore__if__carla_1_1VehicleState2Adore.html#ad06395fd0dd0b18d39680966793d25e4",tooltip=" "];
+  Node1 -> Node15 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node15 [label="adore::adore_if_carla\l::VehicleState2Adore\l::receiveVehicleStatus",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classadore_1_1adore__if__carla_1_1VehicleState2Adore.html#a4997965fb904cb2ee1287ab9c189cc1d",tooltip=" "];
+  Node15 -> Node6 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node15 -> Node7 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node15 -> Node8 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+}

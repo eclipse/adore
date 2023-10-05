@@ -1,0 +1,7 @@
+digraph "adore::if_r2s::R2S2BorderBasedConverter"
+{
+ // LATEX_PDF_SIZE
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  Node1 [label="{adore::if_r2s::R2S2Border\lBasedConverter\n|- extractOnlyReferenceLines_\l|+ R2S2BorderBasedConverter()\l+ toBorders()\l+ convert()\l+ convert()\l+ cleanup()\l+ setExtractOnlyReferenceLines()\l- group()\l- convertToBorder()\l- convertLaneBorderType()\l- sortFunctionsByDistance()\l- createBorders()\l- do_convert()\l}",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black",tooltip="input: 2 files, reference lines and borders output: border file"];
+}

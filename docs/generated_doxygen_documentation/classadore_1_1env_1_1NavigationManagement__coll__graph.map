@@ -1,0 +1,9 @@
+<map id="adore::env::NavigationManagement" name="adore::env::NavigationManagement">
+<area shape="rect" id="node1" title=" " alt="" coords="197,1265,425,1621"/>
+<area shape="rect" id="node2" href="$structadore_1_1env_1_1BorderBased_1_1Coordinate.html" title="This struct represents 3&#45;dimensional coordines." alt="" coords="5,935,172,1203"/>
+<area shape="rect" id="node3" href="$classadore_1_1env_1_1BorderBased_1_1NavigationBorderObserver.html" title=" " alt="" coords="197,986,426,1151"/>
+<area shape="rect" id="node4" href="$classadore_1_1env_1_1BorderBased_1_1BorderObserver.html" title=" " alt="" coords="227,483,395,619"/>
+<area shape="rect" id="node5" href="$classadore_1_1mad_1_1ALocalObserver.html" title=" " alt="" coords="175,137,363,259"/>
+<area shape="rect" id="node6" href="$classadore_1_1env_1_1BorderBased_1_1BorderSet.html" title="efficiently store borders in boost R&#45;tree" alt="" coords="387,5,561,391"/>
+<area shape="rect" id="node7" href="$classadore_1_1env_1_1MapBorderManagement.html" title="Automatically manage local map and necessary updates based on vehicle position and last state of obje..." alt="" coords="359,643,589,911"/>
+</map>

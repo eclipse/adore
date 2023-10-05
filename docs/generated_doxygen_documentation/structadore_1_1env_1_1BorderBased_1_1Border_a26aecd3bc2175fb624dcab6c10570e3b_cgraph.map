@@ -1,0 +1,4 @@
+<map id="adore::env::BorderBased::Border::isPredecessorOf" name="adore::env::BorderBased::Border::isPredecessorOf">
+<area shape="rect" id="node1" title="Check whether border is a direct predecessor of another border." alt="" coords="5,5,179,47"/>
+<area shape="rect" id="node2" href="$structadore_1_1env_1_1BorderBased_1_1Coordinate.html#a29c83e934340f40cfa66dab2e7982d20" title="Check whether the Coordinate is near to another Coordinate." alt="" coords="227,5,393,47"/>
+</map>

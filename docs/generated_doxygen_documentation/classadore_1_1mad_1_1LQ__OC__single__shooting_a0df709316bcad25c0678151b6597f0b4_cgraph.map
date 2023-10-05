@@ -1,0 +1,20 @@
+<map id="adore::mad::LQ_OC_single_shooting::compute_init" name="adore::mad::LQ_OC_single_shooting::compute_init">
+<area shape="rect" id="node1" title=" " alt="" coords="5,496,185,537"/>
+<area shape="rect" id="node2" href="$classadore_1_1mad_1_1LQ__OC__single__shooting.html#a8649c372059b939ec9bdee10b2fc3e14" title=" " alt="" coords="233,5,413,47"/>
+<area shape="rect" id="node3" href="$classadore_1_1mad_1_1LQ__OC__single__shooting.html#a13b713072fb891635ed92faf456168ce" title=" " alt="" coords="233,71,413,112"/>
+<area shape="rect" id="node4" href="$classadore_1_1mad_1_1LQ__OC__single__shooting.html#ab72f306eaf129fafaeecb843b62a40b0" title=" " alt="" coords="233,136,413,177"/>
+<area shape="rect" id="node5" href="$classadore_1_1mad_1_1LQ__OC__single__shooting.html#a184bb074c83943373bfc0bb6b95a4605" title=" " alt="" coords="233,201,413,243"/>
+<area shape="rect" id="node6" href="$classadore_1_1mad_1_1LQ__OC__single__shooting.html#a90c91c9e532d788684550b37374fd7bc" title=" " alt="" coords="233,267,413,308"/>
+<area shape="rect" id="node7" href="$classadore_1_1mad_1_1LQ__OC__single__shooting.html#a3df67db4836491fdd638b048e7880c57" title=" " alt="" coords="233,332,413,373"/>
+<area shape="rect" id="node8" href="$classadore_1_1mad_1_1LQ__OC__single__shooting.html#a2fd98c073f088e71ff51689f79c03c1b" title=" " alt="" coords="233,397,413,439"/>
+<area shape="rect" id="node9" href="$classadore_1_1mad_1_1LQ__OC__single__shooting.html#a4892597ea1faf7447de1025ed16d9ddc" title="Heps:=diag(weps);." alt="" coords="233,463,413,504"/>
+<area shape="rect" id="node10" href="$classadore_1_1mad_1_1LQ__OC__single__shooting.html#adc542eedd6294a7b081ed68bc90ffe89" title="Hu:=diag(wu)" alt="" coords="233,528,413,569"/>
+<area shape="rect" id="node11" href="$classadore_1_1mad_1_1LQ__OC__single__shooting.html#aada5c42fcc37d185822ed4dd8c78aff3" title="Hx:=diag(wx)" alt="" coords="233,593,413,635"/>
+<area shape="rect" id="node12" href="$classadore_1_1mad_1_1LQ__OC__single__shooting.html#abc8a4d46c8539e018da1431e7af74662" title=" " alt="" coords="233,659,413,700"/>
+<area shape="rect" id="node14" href="$classadore_1_1mad_1_1LQ__OC__single__shooting.html#a52aab2300f36dbd28eb03d0394f96af5" title=" " alt="" coords="233,724,413,765"/>
+<area shape="rect" id="node15" href="$classadore_1_1mad_1_1LQ__OC__single__shooting.html#aac8ebda91f24fb8b85c01a9c458f8023" title=" " alt="" coords="233,789,413,831"/>
+<area shape="rect" id="node16" href="$classadore_1_1mad_1_1LQ__OC__single__shooting.html#a247a14fe4a44fa03f1d9a6ceb4a678c4" title=" " alt="" coords="233,855,413,896"/>
+<area shape="rect" id="node17" href="$classadore_1_1mad_1_1LQ__OC__single__shooting.html#a95ec8f041adfa35ae34cce7378345398" title=" " alt="" coords="233,920,413,961"/>
+<area shape="rect" id="node18" href="$classadore_1_1mad_1_1LQ__OC__single__shooting.html#aacab1efe46df885913a9802032485f5c" title=" " alt="" coords="233,985,413,1027"/>
+<area shape="rect" id="node13" href="$classadore_1_1mad_1_1LQ__OC__single__shooting.html#a368be55ff6d8650a88d6ec620934a4fe" title=" " alt="" coords="461,724,641,765"/>
+</map>

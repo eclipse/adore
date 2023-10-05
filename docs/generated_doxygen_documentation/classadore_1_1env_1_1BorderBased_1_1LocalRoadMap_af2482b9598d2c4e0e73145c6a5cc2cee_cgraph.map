@@ -1,0 +1,16 @@
+<map id="adore::env::BorderBased::LocalRoadMap::updateData" name="adore::env::BorderBased::LocalRoadMap::updateData">
+<area shape="rect" id="node1" title="update the data of local road map" alt="" coords="5,169,197,211"/>
+<area shape="rect" id="node2" href="$classadore_1_1env_1_1BorderBased_1_1BorderSet.html#a8d10d29478d00f091a53f2197b85f1bd" title="erase border from this" alt="" coords="245,5,416,47"/>
+<area shape="rect" id="node9" href="$classadore_1_1env_1_1BorderBased_1_1BorderSet.html#a69802bccdc7cf3fa598283509808edc2" title="retrieve a border by ID" alt="" coords="247,136,414,177"/>
+<area shape="rect" id="node10" href="$classadore_1_1mad_1_1AReader.html#a46ab7520d828d1a574365eaf8b483e29" title=" " alt="" coords="257,201,404,243"/>
+<area shape="rect" id="node11" href="$classadore_1_1mad_1_1AFeed.html#a07f96a9edf1ca4a1a9b0c84aa2631bd0" title=" " alt="" coords="260,267,401,308"/>
+<area shape="rect" id="node12" href="$classadore_1_1mad_1_1AFeed.html#a2a96e59a3364f8fadb08624e38f7c40b" title=" " alt="" coords="260,332,401,373"/>
+<area shape="rect" id="node13" href="$classadore_1_1env_1_1BorderBased_1_1BorderSet.html#a5730d3e4fc938c9bd1e1146a8a61deec" title="insert new border into this" alt="" coords="245,71,416,112"/>
+<area shape="rect" id="node3" href="$structadore_1_1env_1_1BorderBased_1_1Border.html#a4b1e646e2c3d98b03e75f286611e0cda" title="Get a bounding box for the implicit lane object." alt="" coords="475,71,641,112"/>
+<area shape="rect" id="node8" href="$structadore_1_1env_1_1BorderBased_1_1Coordinate.html#abb34f84413225a9464afe389cb4f71a7" title="Get a boost_point that has the same coordinates as the Coordinate object." alt="" coords="467,5,649,47"/>
+<area shape="rect" id="node4" href="$namespaceadore_1_1mad.html#adea062854ef0b105a3fdca8cf2aca945" title=" " alt="" coords="700,53,820,79"/>
+<area shape="rect" id="node6" href="$namespaceadore_1_1mad.html#ab58ecb752f9bbfe27832e0a2c0e22c2b" title=" " alt="" coords="702,103,818,130"/>
+<area shape="rect" id="node5" href="$namespaceadore_1_1mad.html#a618a8842fed7b9375957b1e393c58492" title=" " alt="" coords="868,53,988,79"/>
+<area shape="rect" id="node7" href="$namespaceadore_1_1mad.html#ac61b79c007d1859f93a10c04272095a1" title=" " alt="" coords="870,103,986,130"/>
+<area shape="rect" id="node14" href="$classadore_1_1env_1_1BorderBased_1_1BorderSet.html#afb523effcee573e774147446ecc756ab" title="check whether border type is in allowed types of set" alt="" coords="464,136,652,177"/>
+</map>

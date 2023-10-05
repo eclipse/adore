@@ -1,0 +1,13 @@
+digraph "adore::apps::LocalizationModel"
+{
+ // LATEX_PDF_SIZE
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  Node1 [label="{adore::apps::Localization\lModel\n|- generator_\l- ndistribution_\l- udistribution_\l- eXdrift\l- eYdrift\l- eXjump\l- eYjump\l- ePSI\l- last_time_valid_\l- last_time_\l|+ LocalizationModel()\l+ nrand()\l+ rand()\l+ update()\l}",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black",tooltip="a model for localization adds errors to true vehicle state"];
+  Node2 -> Node1 [color="grey25",fontsize="10",style="solid",label=" -params_" ,arrowhead="odiamond",fontname="Helvetica"];
+  Node2 [label="{adore::params::APLocalization\lModel\n||+ get_drift_rate_pos()\l+ get_drift_deviation\l_pos()\l+ get_jump_deviation\l_pos()\l+ get_jump_threshold\l_pos()\l+ get_jump_deviation\l_heading()\l+ get_jump_threshold\l_heading()\l}",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classadore_1_1params_1_1APLocalizationModel.html",tooltip="abstract class containing parameters which configure localization state estimation model"];
+  Node3 -> Node1 [color="grey25",fontsize="10",style="solid",label=" -vehicle_model_input_" ,arrowhead="odiamond",fontname="Helvetica"];
+  Node3 [label="{adore::mad::AReader\l\< adore::env::VehicleMotion\lState9d \>\n||+ hasData()\l+ hasUpdate()\l+ getData()\l+ getDesc()\l}",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classadore_1_1mad_1_1AReader.html",tooltip=" "];
+  Node4 -> Node1 [color="grey25",fontsize="10",style="solid",label=" -localization_estimate\l_output_" ,arrowhead="odiamond",fontname="Helvetica"];
+  Node4 [label="{adore::mad::AWriter\l\< adore::env::VehicleMotion\lState9d \>\n||+ canWriteMore()\l+ write()\l+ getDesc()\l+ getNumberOfSubscribers()\l}",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classadore_1_1mad_1_1AWriter.html",tooltip=" "];
+}

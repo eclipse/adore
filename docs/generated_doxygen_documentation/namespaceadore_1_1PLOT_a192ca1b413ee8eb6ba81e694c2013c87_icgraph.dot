@@ -1,0 +1,12 @@
+digraph "adore::PLOT::plotArrow"
+{
+ // LATEX_PDF_SIZE
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  rankdir="RL";
+  Node1 [label="adore::PLOT::plotArrow",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black",tooltip=" "];
+  Node1 -> Node2 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node2 [label="adore::PLOT::plotArrow",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$namespaceadore_1_1PLOT.html#a0eb6eb08d7d2d214203a1c1d3e7259df",tooltip=" "];
+  Node1 -> Node3 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node3 [label="adore::PLOT::plotVectorField",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$namespaceadore_1_1PLOT.html#a12df6cebddeb4ffbe58e9cefbfc8a3c4",tooltip=" "];
+}

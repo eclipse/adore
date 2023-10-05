@@ -1,0 +1,6 @@
+<map id="adore::if_r2s::R2S2BorderBasedConverter::sortFunctionsByDistance" name="adore::if_r2s::R2S2BorderBasedConverter::sortFunctionsByDistance">
+<area shape="rect" id="node1" title="sort borders by their distance to base function which is required to be available through dist2functi..." alt="" coords="729,5,948,61"/>
+<area shape="rect" id="node2" href="$classadore_1_1if__r2s_1_1R2S2BorderBasedConverter.html#a6ef8e454c5140d4f40c2ee5c3f4ff38f" title="manage overall conversion process from sectionmap to borderset" alt="" coords="463,13,681,54"/>
+<area shape="rect" id="node3" href="$classadore_1_1if__r2s_1_1R2S2BorderBasedConverter.html#a6d12e18c673154c8c16fad4895b691c2" title="actual conversion" alt="" coords="227,13,415,54"/>
+<area shape="rect" id="node4" href="$classadore_1_1if__r2s_1_1R2S2BorderBasedConverter.html#aee4fa475a46a509943dbc0c7e26e3b8d" title="convert to borders and get sectionmap with base data" alt="" coords="5,13,179,54"/>
+</map>

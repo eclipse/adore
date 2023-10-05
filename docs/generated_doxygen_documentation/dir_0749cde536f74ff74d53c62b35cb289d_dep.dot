@@ -1,0 +1,15 @@
+digraph "/home/fascar/temp/adore/plotlablib/plotlablib" {
+  compound=true
+  node [ fontsize="10", fontname="Helvetica"];
+  edge [ labelfontsize="10", labelfontname="Helvetica"];
+  subgraph clusterdir_18b2dfb3931f9961b4b7423d99338341 {
+    graph [ bgcolor="#ddddee", pencolor="black", label="plotlablib" fontname="Helvetica", fontsize="10", URL="dir_18b2dfb3931f9961b4b7423d99338341.html"]
+  subgraph clusterdir_0749cde536f74ff74d53c62b35cb289d {
+    graph [ bgcolor="#eeeeff", pencolor="black", label="" URL="dir_0749cde536f74ff74d53c62b35cb289d.html"];
+    dir_0749cde536f74ff74d53c62b35cb289d [shape=plaintext label="plotlablib"];
+  dir_92f4c7fe514faa67ff867980a72c3d98 [shape=box label="include" fillcolor="white" style="filled" color="red" URL="dir_92f4c7fe514faa67ff867980a72c3d98.html"];
+  dir_74cd1acffb2602c1422117d145799533 [shape=box label="test" fillcolor="white" style="filled" URL="dir_74cd1acffb2602c1422117d145799533.html"];
+  }
+  }
+  dir_74cd1acffb2602c1422117d145799533->dir_92f4c7fe514faa67ff867980a72c3d98 [headlabel="1", labeldistance=1.5 headhref="dir_000103_000101.html"];
+}

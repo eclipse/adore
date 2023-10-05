@@ -1,0 +1,7 @@
+<map id="adore::env::MapBorderManagement::getBordersAtPoint" name="adore::env::MapBorderManagement::getBordersAtPoint">
+<area shape="rect" id="node1" title="Get borders at given point." alt="" coords="5,71,235,112"/>
+<area shape="rect" id="node2" href="$classadore_1_1env_1_1BorderBased_1_1BorderSet.html#a3a3da6cfdee8aa6e003079f7f53186b6" title="get all borders at the given point" alt="" coords="283,71,485,112"/>
+<area shape="rect" id="node3" href="$structadore_1_1env_1_1BorderBased_1_1itpair.html#a3746f6e3a03399eecb397f897f007562" title=" " alt="" coords="555,5,722,47"/>
+<area shape="rect" id="node4" href="$classadore_1_1env_1_1BorderBased_1_1BorderSet.html#a5b9a10acc8d477c1d27d5b39fb1f99f3" title="get all borders in this within region" alt="" coords="533,71,744,112"/>
+<area shape="rect" id="node5" href="$classadore_1_1env_1_1BorderBased_1_1BorderSet.html#a8af807fde181a20de55594592d752adc" title="Get left neighbor of a border." alt="" coords="545,136,733,177"/>
+</map>

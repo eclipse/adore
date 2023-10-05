@@ -1,0 +1,14 @@
+digraph "adore::if_r2s::ReferenceLine::getBorder"
+{
+ // LATEX_PDF_SIZE
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  rankdir="LR";
+  Node1 [label="adore::if_r2s::Reference\lLine::getBorder",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black",tooltip=" "];
+  Node1 -> Node2 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node2 [label="adore::if_r2s::Reference\lLine::getBorderID",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$structadore_1_1if__r2s_1_1ReferenceLine.html#ad6b60de4cd48aa391c4d354e12226576",tooltip=" "];
+  Node1 -> Node3 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node3 [label="adore::if_r2s::Reference\lLine::getBorderPath",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$structadore_1_1if__r2s_1_1ReferenceLine.html#a38f887906b05866018fd1d694d82f03b",tooltip=" "];
+  Node3 -> Node4 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node4 [label="adore::mad::LLinearPiecewise\lFunctionM::getData",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classadore_1_1mad_1_1LLinearPiecewiseFunctionM.html#aa94d90c8643e2d6792f8594f3d666503",tooltip=" "];
+}

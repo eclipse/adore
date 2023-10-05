@@ -1,0 +1,4 @@
+<map id="adore::env::BorderBased::BorderIDHasher" name="adore::env::BorderBased::BorderIDHasher">
+<area shape="rect" id="node1" title="a functor, which hashes a BorderID object &#45;&gt; std::unordered_set&lt;BorderID,BorderIDHasher&gt; amap(0);" alt="" coords="5,160,172,252"/>
+<area shape="rect" id="node2" href="$structadore_1_1env_1_1BorderBased_1_1CoordinateHasher.html" title="a functor, which hashes a Coordinate object &#45;&gt; std::unordered_set&lt;Coordinate,CoordinateHasher&gt; amap(0..." alt="" coords="5,5,172,97"/>
+</map>

@@ -1,0 +1,4 @@
+<map id="adore::params::DummyFactory" name="adore::params::DummyFactory">
+<area shape="rect" id="node1" title="a dummy implementation of the adore::params::afactory for testing purposes" alt="" coords="5,277,208,560"/>
+<area shape="rect" id="node2" href="$classadore_1_1params_1_1AFactory.html" title="abstract factory for adore::params classes" alt="" coords="14,5,199,229"/>
+</map>

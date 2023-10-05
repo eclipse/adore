@@ -1,0 +1,52 @@
+<map id="adore::mad::bound" name="adore::mad::bound">
+<area shape="rect" id="node1" title=" " alt="" coords="853,1548,984,1575"/>
+<area shape="rect" id="node2" href="$classadore_1_1fun_1_1SetPointRequestSwath.html#a25b8ab48b288e512953324e391bc946e" title=" " alt="" coords="564,191,805,233"/>
+<area shape="rect" id="node11" href="$namespaceadore_1_1mad.html#a3950e63dd81881b955e8e213a959e46b" title=" " alt="" coords="619,436,750,463"/>
+<area shape="rect" id="node12" href="$classadore_1_1fun_1_1MRMPlanner.html#aae8436fc85e3888af12e9e35559e3455" title=" " alt="" coords="315,406,479,447"/>
+<area shape="rect" id="node14" href="$classadore_1_1fun_1_1LinearTrackingController.html#a6dd536fe3c1648f267b882c1687f95ab" title=" " alt="" coords="576,487,793,529"/>
+<area shape="rect" id="node15" href="$classadore_1_1apps_1_1FeedbackController.html#a53938de6939b52cd8f61a3882cbd86e0" title=" " alt="" coords="279,527,516,553"/>
+<area shape="rect" id="node16" href="$classadore_1_1fun_1_1TerminalController.html#a833cfa688d4c838b1c4bbc3e4e2d2269" title=" " alt="" coords="588,605,781,646"/>
+<area shape="rect" id="node17" href="$classadore_1_1env_1_1LaneChangeGaps.html#add65c54915bf8c76c346fef8e68f14bc" title=" " alt="" coords="587,670,782,711"/>
+<area shape="rect" id="node19" href="$classadore_1_1if__xodr_1_1XODR2BorderBasedConverter.html#adf9ff05235f364296ad823c54ad22929" title="determine absolute coordinate and heading of non stop line headings" alt="" coords="565,736,804,792"/>
+<area shape="rect" id="node21" href="$namespaceadore_1_1mad.html#a9b37b72a4ab15b34bf4bba7583a34dee" title=" " alt="" coords="593,817,776,858"/>
+<area shape="rect" id="node23" href="$classadore_1_1env_1_1BorderBased_1_1LaneFollowingGeometry.html#ad186acfd36137d81b50ab523d9d2938f" title="Modify a lane boundary to exclude a given point." alt="" coords="599,883,770,939"/>
+<area shape="rect" id="node24" href="$classadore_1_1fun_1_1VLB__OpenLoop.html#a4cabed52bbea40a691433e5cad0891ae" title=" " alt="" coords="589,963,780,989"/>
+<area shape="rect" id="node25" href="$structadore_1_1env_1_1BorderBased_1_1BorderOverlap.html#a275703815047077c6ac3b75389105d2c" title="Get the corner points of the overlap." alt="" coords="577,1014,792,1055"/>
+<area shape="rect" id="node26" href="$classadore_1_1env_1_1BorderBased_1_1LaneFollowingGeometry.html#ad1a92624a2dd914dc135eca0309ef9a8" title="Get the curvature of the lane at a certain position." alt="" coords="599,1080,770,1136"/>
+<area shape="rect" id="node27" href="$classadore_1_1mad_1_1LLinearPiecewiseFunctionM.html#aa33105fe6aeb10a32eb188d84b3be890" title=" " alt="" coords="576,1161,793,1202"/>
+<area shape="rect" id="node28" href="$classadore_1_1env_1_1BorderBased_1_1LaneFollowingGeometry.html#a1720c305927de419daeb577fb3055630" title="Get the heading at a certain position." alt="" coords="599,1227,770,1283"/>
+<area shape="rect" id="node29" href="$structadore_1_1fun_1_1PlanningResult.html#a36a6fe94ff79083182756ac564459006" title=" " alt="" coords="597,1307,773,1349"/>
+<area shape="rect" id="node30" href="$classadore_1_1env_1_1BorderBased_1_1LaneChangeGeometry.html#afc7f7418aed3c6261dcd6f5b864cc229" title="Get the offset of the left border at a certain position." alt="" coords="601,1373,769,1429"/>
+<area shape="rect" id="node31" href="$classadore_1_1env_1_1BorderBased_1_1LaneFollowingGeometry.html#a06948f564268fcc8839d8f68264dd21c" title="Get the offset of the left border at a certain position." alt="" coords="599,1453,770,1509"/>
+<area shape="rect" id="node32" href="$classadore_1_1env_1_1BorderBased_1_1LaneChangeGeometry.html#a9b119a119b33546fde049def7e9478d5" title="Get the offset of the right border at a certain position." alt="" coords="601,1533,769,1589"/>
+<area shape="rect" id="node33" href="$classadore_1_1env_1_1BorderBased_1_1LaneFollowingGeometry.html#a9a5eb2a8767f13365d0e62fa024bc6a5" title="Get the offset of the right border at a certain position." alt="" coords="599,1613,770,1669"/>
+<area shape="rect" id="node34" href="$classadore_1_1mad_1_1LLinearPiecewiseFunctionM.html#af583aeb46e42f595578832e0869becf7" title="shifts s to be in between limitLo and limitHi" alt="" coords="586,1694,783,1735"/>
+<area shape="rect" id="node35" href="$classadore_1_1env_1_1BorderBased_1_1LaneFollowingViewProxy.html#af6812487d6f186eb764ce20b34ee9f8a" title=" " alt="" coords="597,1760,773,1816"/>
+<area shape="rect" id="node36" href="$classadore_1_1env_1_1ThreeLaneViewDecoupled_1_1LaneProxy.html#a685b3d49deb2efe36d5b36f9789f5575" title=" " alt="" coords="587,1841,782,1882"/>
+<area shape="rect" id="node37" href="$classadore_1_1fun_1_1SPRNavigationCostOnLane.html#a1b9b71f775b0630b647567144cd35f06" title="minimum cost of given lane, independent of trajectory" alt="" coords="582,1906,787,1947"/>
+<area shape="rect" id="node38" href="$classadore_1_1fun_1_1SPRNormalizedNavigationCost.html#a0d97ab593763f208e17053affdcb428e" title="simplified version of normalized_nav_cost: lane is given" alt="" coords="593,1972,776,2028"/>
+<area shape="rect" id="node39" href="$namespaceadore_1_1PLOT.html#a06e182f546ad1bb12ff78136e6318edd" title=" " alt="" coords="586,2052,783,2079"/>
+<area shape="rect" id="node40" href="$classadore_1_1env_1_1OCStraightLinePrediction.html#a98a7c5f4c101c7a917f8e5a3e984cd16" title=" " alt="" coords="595,2103,775,2145"/>
+<area shape="rect" id="node41" href="$classadore_1_1env_1_1OCRoadBasedPrediction.html#af6fda5b2a78669c5e19e222348665713" title=" " alt="" coords="566,2169,803,2210"/>
+<area shape="rect" id="node42" href="$classadore_1_1fun_1_1DecoupledLFLCPlanner.html#ae79c739be18dc79db3521eb2540fb678" title=" " alt="" coords="571,2234,798,2275"/>
+<area shape="rect" id="node43" href="$classadore_1_1fun_1_1LateralPlanner.html#a693509deea6464322cd6219ebced4b05" title=" " alt="" coords="589,2299,780,2341"/>
+<area shape="rect" id="node44" href="$classadore_1_1fun_1_1DecoupledLFLCPlanner.html#a1ed615f477f8ccb4b64217e7690563c2" title=" " alt="" coords="571,2365,798,2406"/>
+<area shape="rect" id="node45" href="$classadore_1_1env_1_1GapRating__NearEgo.html#a85bf9cc9e77eaece44563ef5382a0b87" title=" " alt="" coords="608,2430,761,2471"/>
+<area shape="rect" id="node46" href="$classadore_1_1if__ROS_1_1setpointrequest__to__mcm.html#acfc54ebf23396c9a4a012b0ef185556c" title=" " alt="" coords="581,2495,789,2537"/>
+<area shape="rect" id="node47" href="$classadore_1_1env_1_1BorderBased_1_1LaneFollowingGeometry.html#a9bbf6e74ae3889713c5047a0d28d3b4f" title="Transform from relative to euclidian coordinates." alt="" coords="599,2561,770,2617"/>
+<area shape="rect" id="node48" href="$classadore_1_1apps_1_1LocalizationModel.html#a4b0b280b821ef650bead639c9f17b271" title="simulation step of the odometry estimate model" alt="" coords="601,2642,768,2683"/>
+<area shape="rect" id="node49" href="$classadore_1_1apps_1_1OdometryModel.html#a2b8a8009f336999f7768a9eba0590c75" title="simulation step of the odometry estimate model" alt="" coords="589,2707,780,2749"/>
+<area shape="rect" id="node50" href="$classadore_1_1env_1_1BorderBased_1_1Baseline.html#a09c90ecc7b472770bc2ec35de280ae3c" title="compute fit for borderSequence" alt="" coords="601,2773,768,2814"/>
+<area shape="rect" id="node3" href="$classadore_1_1apps_1_1TrajectoryPlannerALC.html#ac8684dc66c076b07b57f3bb67328314e" title="update data, views and recompute maneuver" alt="" coords="18,158,218,199"/>
+<area shape="rect" id="node4" href="$classadore_1_1apps_1_1TrajectoryPlannerLC.html#accad9246ad8f7ab9c45b648c3a70f18a" title="update data, views and recompute maneuver" alt="" coords="18,223,218,265"/>
+<area shape="rect" id="node5" href="$classadore_1_1apps_1_1TrajectoryPlannerLF.html#a0f66455260fa8707f58fd45668328d6f" title="update data, views and recompute maneuver" alt="" coords="18,289,218,330"/>
+<area shape="rect" id="node6" href="$classadore_1_1fun_1_1SPRTTCNominal.html#a3dd890ed9b2a63e8e0d5c76f90b9efbb" title=" " alt="" coords="302,223,493,265"/>
+<area shape="rect" id="node7" href="$classadore_1_1fun_1_1SPRInvariantCollisionFreedom.html#af502cdc82e44335176f0db4a212aad3e" title=" " alt="" coords="313,289,482,330"/>
+<area shape="rect" id="node9" href="$classadore_1_1fun_1_1SPRNonCoercive.html#aadb12128ed9636e011c7f486769dc6f0" title=" " alt="" coords="301,158,493,199"/>
+<area shape="rect" id="node10" href="$test__setpointrequestswath_8cpp.html#af74c60edc79104c2531dc56cd9c9a3ef" title=" " alt="" coords="347,5,447,32"/>
+<area shape="rect" id="node8" href="$classadore_1_1apps_1_1TrajectoryPlannerLM.html#ab9d92ef8076c4374d81144bda2a81b90" title="update data, views and recompute maneuver" alt="" coords="18,354,218,395"/>
+<area shape="rect" id="node13" href="$classadore_1_1apps_1_1TestMRMPlanner.html#aa437a755996db26933e8c1b63576fff7" title="update function of the trajectory planner" alt="" coords="5,420,231,447"/>
+<area shape="rect" id="node18" href="$classadore_1_1apps_1_1GapProvider.html#a9473de599ded969161b0e8dc87b60a65" title=" " alt="" coords="312,670,483,711"/>
+<area shape="rect" id="node20" href="$classadore_1_1if__xodr_1_1XODR2BorderBasedConverter.html#a7f2969e95bacb9b0e03d244d4f57ac89" title="convert road geometry to borders and also extract traffic control devices and stop lines" alt="" coords="298,743,497,785"/>
+<area shape="rect" id="node22" href="$classadore_1_1env_1_1BorderBased_1_1LaneChangeGeometry.html#ada2e1c0aa77292509de1dbdda55c5dc9" title="update the road geometry" alt="" coords="313,809,481,865"/>
+</map>

@@ -1,0 +1,12 @@
+digraph "/home/fascar/temp/adore/adore_if_carla" {
+  compound=true
+  node [ fontsize="10", fontname="Helvetica"];
+  edge [ labelfontsize="10", labelfontname="Helvetica"];
+  subgraph clusterdir_e6d1007cb044c7f6c431c79ed555168c {
+    graph [ bgcolor="#eeeeff", pencolor="black", label="" URL="dir_e6d1007cb044c7f6c431c79ed555168c.html"];
+    dir_e6d1007cb044c7f6c431c79ed555168c [shape=plaintext label="adore_if_carla"];
+  dir_bc9eb8dd7c1cb1d8b342adad0984f271 [shape=box label="adore_if_carla" fillcolor="white" style="filled" color="red" URL="dir_bc9eb8dd7c1cb1d8b342adad0984f271.html"];
+  }
+  dir_18b2dfb3931f9961b4b7423d99338341 [shape=box label="plotlablib" fillcolor="white" style="filled" color="red" URL="dir_18b2dfb3931f9961b4b7423d99338341.html"];
+  dir_bc9eb8dd7c1cb1d8b342adad0984f271->dir_18b2dfb3931f9961b4b7423d99338341 [headlabel="1", labeldistance=1.5 headhref="dir_000001_000099.html"];
+}

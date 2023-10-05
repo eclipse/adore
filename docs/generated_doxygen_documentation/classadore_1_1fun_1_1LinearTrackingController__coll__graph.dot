@@ -1,0 +1,11 @@
+digraph "adore::fun::LinearTrackingController"
+{
+ // LATEX_PDF_SIZE
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  Node1 [label="{adore::fun::LinearTracking\lController\n|- m_ex\l- m_ey\l- m_Ix\l- m_Iy\l- m_use_integrator\l- m_reset_integrator\l|+ LinearTrackingController()\l+ get_ex()\l+ get_ey()\l+ setUseIntegrator()\l+ resetIntegrator()\l+ compute_control_input()\l}",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black",tooltip=" "];
+  Node2 -> Node1 [color="grey25",fontsize="10",style="solid",label=" -m_pVehParameters" ,arrowhead="odiamond",fontname="Helvetica"];
+  Node2 [label="{adore::params::APVehicle\n||+ get_vehicle_id()\l+ get_a()\l+ get_b()\l+ get_c()\l+ get_d()\l+ get_m()\l+ get_mu()\l+ get_g()\l+ get_h()\l+ get_cf()\land 17 more...\l}",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classadore_1_1params_1_1APVehicle.html",tooltip="abstract class for vehicle configuration related paremeters"];
+  Node3 -> Node1 [color="grey25",fontsize="10",style="solid",label=" -m_pCtrlParameters" ,arrowhead="odiamond",fontname="Helvetica"];
+  Node3 [label="{adore::params::APTrajectory\lTracking\n||+ getKey()\l+ getKepsi()\l+ getKeomega()\l+ getKIy()\l+ getKIx()\l+ getK0x()\l+ getK1x()\l+ getMuCtrlMax()\l+ getAxMax()\l+ getAxMin()\land 15 more...\l}",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classadore_1_1params_1_1APTrajectoryTracking.html",tooltip="abstract class containing parameters to configure the behaviour of the trajactory tracking controller"];
+}

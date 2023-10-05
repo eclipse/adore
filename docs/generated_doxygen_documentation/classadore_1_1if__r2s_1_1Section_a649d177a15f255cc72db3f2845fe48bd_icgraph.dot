@@ -1,0 +1,18 @@
+digraph "adore::if_r2s::Section::geometry2function"
+{
+ // LATEX_PDF_SIZE
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  rankdir="RL";
+  Node1 [label="adore::if_r2s::Section\l::geometry2function",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black",tooltip="easy conversion from a coordinate vector to a LLinearPiecewiseFunction"];
+  Node1 -> Node2 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node2 [label="adore::if_r2s::Section\l::addLaneBorder",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classadore_1_1if__r2s_1_1Section.html#ac2a79bd477919d85ff70b4721939c0e7",tooltip="add lane border to section, determine its valid range"];
+  Node1 -> Node3 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node3 [label="adore::if_r2s::Section\l::setReferenceLine",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classadore_1_1if__r2s_1_1Section.html#aeb9ff1c7a938eda9bffc89888ee103aa",tooltip="setter"];
+  Node3 -> Node4 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node4 [label="adore::if_r2s::R2S2Border\lBasedConverter::group",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classadore_1_1if__r2s_1_1R2S2BorderBasedConverter.html#adebe8bbc518d9ca4d447230e3c4f900f",tooltip=" "];
+  Node4 -> Node5 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node5 [label="adore::if_r2s::R2S2Border\lBasedConverter::do_convert",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classadore_1_1if__r2s_1_1R2S2BorderBasedConverter.html#a6d12e18c673154c8c16fad4895b691c2",tooltip="actual conversion"];
+  Node5 -> Node6 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node6 [label="adore::if_r2s::R2S2Border\lBasedConverter::convert",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classadore_1_1if__r2s_1_1R2S2BorderBasedConverter.html#aee4fa475a46a509943dbc0c7e26e3b8d",tooltip="convert to borders and get sectionmap with base data"];
+}

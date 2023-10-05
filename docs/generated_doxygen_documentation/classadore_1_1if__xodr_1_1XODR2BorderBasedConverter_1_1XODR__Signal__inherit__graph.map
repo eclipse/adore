@@ -1,0 +1,4 @@
+<map id="adore::if_xodr::XODR2BorderBasedConverter::XODR_Signal" name="adore::if_xodr::XODR2BorderBasedConverter::XODR_Signal">
+<area shape="rect" id="node1" title="internal signal representation for conversion" alt="" coords="5,160,212,399"/>
+<area shape="rect" id="node2" href="$classadore_1_1env_1_1BorderBased_1_1ALanePositionedObject.html" title="Abstract class for Objects that are positioned by a connection to a certain lane." alt="" coords="15,5,202,112"/>
+</map>

@@ -1,0 +1,10 @@
+<map id="adore::apps::OdometryModel" name="adore::apps::OdometryModel">
+<area shape="rect" id="node1" title="a model for odometry sensor integrates velocities as measured with errors" alt="" coords="506,507,697,687"/>
+<area shape="rect" id="node2" href="$classadore_1_1mad_1_1OdeRK4.html" title=" " alt="" coords="31,235,177,371"/>
+<area shape="rect" id="node3" href="$classadore_1_1mad_1_1AOdeSolver.html" title=" " alt="" coords="5,5,203,127"/>
+<area shape="rect" id="node4" href="$classadore_1_1mad_1_1AReader.html" title=" " alt="" coords="202,227,387,378"/>
+<area shape="rect" id="node5" href="$structadore_1_1env_1_1VehicleMotionState9d.html" title="This struct holds the motion state of the vehicle in 9d." alt="" coords="412,176,585,429"/>
+<area shape="rect" id="node6" href="$classadore_1_1params_1_1APOdometryModel.html" title="abstract class containing parameters which configure odometry state estimation model" alt="" coords="610,235,798,371"/>
+<area shape="rect" id="node7" href="$classadore_1_1mad_1_1AWriter.html" title=" " alt="" coords="823,227,1012,378"/>
+<area shape="rect" id="node8" href="$classadore_1_1mad_1_1AFeed.html" title=" " alt="" coords="1037,242,1251,363"/>
+</map>

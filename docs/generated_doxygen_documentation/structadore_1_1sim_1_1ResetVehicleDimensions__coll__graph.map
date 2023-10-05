@@ -1,0 +1,3 @@
+<map id="adore::sim::ResetVehicleDimensions" name="adore::sim::ResetVehicleDimensions">
+<area shape="rect" id="node1" title="provides encapsulation of values needed to reset the vehicle dimensions in a simulation" alt="" coords="5,5,195,405"/>
+</map>

@@ -1,0 +1,9 @@
+<map id="adore::if_r2s::LaneBorder::sortingDistance" name="adore::if_r2s::LaneBorder::sortingDistance">
+<area shape="rect" id="node1" title=" " alt="" coords="5,112,173,153"/>
+<area shape="rect" id="node2" href="$structadore_1_1env_1_1BorderBased_1_1BorderID.html#a167fd45e0f4515809ccff2b9ac64e078" title="returns sum of distance between this.m_first and other.m_first and distance between this...." alt="" coords="438,5,605,47"/>
+<area shape="rect" id="node4" href="$structadore_1_1if__r2s_1_1ReferenceLine.html#ad6b60de4cd48aa391c4d354e12226576" title=" " alt="" coords="440,72,603,113"/>
+<area shape="rect" id="node5" href="$structadore_1_1if__r2s_1_1LaneBorder.html#a05ef83a8b56c8663ea3fff7abeda95cf" title=" " alt="" coords="437,140,605,181"/>
+<area shape="rect" id="node6" href="$structadore_1_1if__r2s_1_1ReferenceLine.html#a02d4f07c431955ac5b8a35f0123ca8d3" title=" " alt="" coords="438,211,605,252"/>
+<area shape="rect" id="node7" href="$structadore_1_1if__r2s_1_1LaneBorder.html#a5dd3982bfd785d95530bf91ea81de9fa" title=" " alt="" coords="221,112,389,153"/>
+<area shape="rect" id="node3" href="$structadore_1_1env_1_1BorderBased_1_1Coordinate.html#a9b30e3a45ea26742bb9dafc844377861" title="Calculate the distance between two Coordinates." alt="" coords="653,5,820,47"/>
+</map>

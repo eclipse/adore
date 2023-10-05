@@ -1,0 +1,7 @@
+digraph "adore::if_r2s::LaneBorder"
+{
+ // LATEX_PDF_SIZE
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  Node1 [label="{adore::if_r2s::LaneBorder\n|+ id_\l+ parent_id_\l+ geometry_\l+ type_\l|+ LaneBorder()\l+ isSane()\l+ getBorderID()\l+ isOnRightHandSide()\l+ sortingDistance()\l+ distance()\l+ getBorderPath()\l+ getBorder()\l}",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black",tooltip="basic storage struct for lane borders from file"];
+}

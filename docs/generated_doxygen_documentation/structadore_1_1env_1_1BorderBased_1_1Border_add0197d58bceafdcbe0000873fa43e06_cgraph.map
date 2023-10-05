@@ -1,0 +1,5 @@
+<map id="adore::env::BorderBased::Border::isCenterLine" name="adore::env::BorderBased::Border::isCenterLine">
+<area shape="rect" id="node1" title="returns true if border has its own inverse as left neighbor" alt="" coords="5,5,172,47"/>
+<area shape="rect" id="node2" href="$structadore_1_1env_1_1BorderBased_1_1BorderID.html#a1f453e5f4512137604adbac69102bd5a" title="returns the inverse of this" alt="" coords="220,5,387,47"/>
+<area shape="rect" id="node3" href="$structadore_1_1env_1_1BorderBased_1_1BorderID.html#a80f6fc4b2aad2662eba5012cf3131df3" title=" " alt="" coords="435,5,601,47"/>
+</map>

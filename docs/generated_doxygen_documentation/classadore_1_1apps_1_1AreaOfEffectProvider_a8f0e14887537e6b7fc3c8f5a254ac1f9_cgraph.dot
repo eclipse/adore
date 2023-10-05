@@ -1,0 +1,14 @@
+digraph "adore::apps::AreaOfEffectProvider::sampleLane"
+{
+ // LATEX_PDF_SIZE
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  rankdir="LR";
+  Node1 [label="adore::apps::AreaOfEffect\lProvider::sampleLane",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black",tooltip=" "];
+  Node1 -> Node2 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node2 [label="adore::view::ALane\l::getOffsetOfLeftBorder",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classadore_1_1view_1_1ALane.html#aa616301e757098205950bc7d1cee4586",tooltip=" "];
+  Node1 -> Node3 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node3 [label="adore::view::ALane\l::getOffsetOfRightBorder",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classadore_1_1view_1_1ALane.html#a2b7143f0fd31d7c9dd447f5cfeb3f059",tooltip=" "];
+  Node1 -> Node4 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node4 [label="adore::view::ALane\l::toEucledianCoordinates",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classadore_1_1view_1_1ALane.html#a776918d9531af91a3317d7c6ec766a46",tooltip=" "];
+}

@@ -1,0 +1,10 @@
+<map id="adore::fun::LaneChangePhaseEstimator" name="adore::fun::LaneChangePhaseEstimator">
+<area shape="rect" id="node1" title=" " alt="" coords="696,307,904,545"/>
+<area shape="rect" id="node2" href="$classadore_1_1fun_1_1ANominalReference.html" title=" " alt="" coords="5,64,211,185"/>
+<area shape="rect" id="node3" href="$classadore_1_1params_1_1APTrajectoryGeneration.html" title="abstract class containing parameters to configure the behaviour of trajectory generation" alt="" coords="235,49,453,200"/>
+<area shape="rect" id="node4" href="$classadore_1_1view_1_1ALaneChangeView.html" title=" " alt="" coords="477,20,688,229"/>
+<area shape="rect" id="node5" href="$classadore_1_1params_1_1APVehicle.html" title="abstract class for vehicle configuration related paremeters" alt="" coords="713,13,887,237"/>
+<area shape="rect" id="node6" href="$classadore_1_1params_1_1APTacticalPlanner.html" title="abstract classs containing parameters to configure aspects and constraints of the tactical planner" alt="" coords="912,5,1141,244"/>
+<area shape="rect" id="node7" href="$classadore_1_1params_1_1APLateralPlanner.html" title="abstract class containing parameters related to configuring the lateral planner" alt="" coords="1165,5,1336,244"/>
+<area shape="rect" id="node8" href="$classadore_1_1view_1_1AGap.html" title="defines a gap in traffic, into which a merge may be planned" alt="" coords="1361,71,1511,178"/>
+</map>

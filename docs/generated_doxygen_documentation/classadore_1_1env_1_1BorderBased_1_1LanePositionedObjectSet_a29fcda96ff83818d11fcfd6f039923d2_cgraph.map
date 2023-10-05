@@ -1,0 +1,5 @@
+<map id="adore::env::BorderBased::LanePositionedObjectSet::insert_object" name="adore::env::BorderBased::LanePositionedObjectSet::insert_object">
+<area shape="rect" id="node1" title="Insert a new object." alt="" coords="5,45,183,101"/>
+<area shape="rect" id="node2" href="$classadore_1_1env_1_1BorderBased_1_1LanePositionedObjectSet.html#addbf17050f8673f2e6b56d7119eec2f3" title="Erase objects on a certain LanePosition." alt="" coords="231,5,408,61"/>
+<area shape="rect" id="node3" href="$classadore_1_1env_1_1BorderBased_1_1ALanePositionedObject.html#a0dc7e0c282bcd5a1face09d3eb0a61ac" title="Get the LanePosition of the Object." alt="" coords="236,85,403,141"/>
+</map>

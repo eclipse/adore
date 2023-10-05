@@ -1,0 +1,12 @@
+<map id="adore::env::PrecedenceSet::refocus" name="adore::env::PrecedenceSet::refocus">
+<area shape="rect" id="node1" title="removes all rules outside of a region" alt="" coords="5,71,185,112"/>
+<area shape="rect" id="node2" href="$structadore_1_1env_1_1PrecedenceSet_1_1itpair.html#a9198368143cbe275310f07e13b92a8c4" title=" " alt="" coords="233,5,413,47"/>
+<area shape="rect" id="node3" href="$classadore_1_1env_1_1PrecedenceSet.html#a2e8850943aa4a80058550a0f4e7a1da6" title="removes a rule from the container" alt="" coords="233,71,413,112"/>
+<area shape="rect" id="node10" href="$classadore_1_1env_1_1PrecedenceSet.html#a77fae248cf61133063d6b0900be64848" title="returns a subset of rules outside of a region" alt="" coords="233,136,413,177"/>
+<area shape="rect" id="node4" href="$structadore_1_1env_1_1PrecedenceRule.html#acfb2539d435e02ade68044f01a42771f" title=" " alt="" coords="461,71,648,112"/>
+<area shape="rect" id="node5" href="$structadore_1_1env_1_1PriorityRoute.html#ae283e45b1476bc42151905dc7aa35b95" title="returns a box in boost format, which encompasses start/end points" alt="" coords="696,71,863,112"/>
+<area shape="rect" id="node6" href="$namespaceadore_1_1mad.html#adea062854ef0b105a3fdca8cf2aca945" title=" " alt="" coords="911,51,1031,78"/>
+<area shape="rect" id="node8" href="$namespaceadore_1_1mad.html#ab58ecb752f9bbfe27832e0a2c0e22c2b" title=" " alt="" coords="913,106,1029,133"/>
+<area shape="rect" id="node7" href="$namespaceadore_1_1mad.html#a618a8842fed7b9375957b1e393c58492" title=" " alt="" coords="1079,51,1199,78"/>
+<area shape="rect" id="node9" href="$namespaceadore_1_1mad.html#ac61b79c007d1859f93a10c04272095a1" title=" " alt="" coords="1081,106,1197,133"/>
+</map>

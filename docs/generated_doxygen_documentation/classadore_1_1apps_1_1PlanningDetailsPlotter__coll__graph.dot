@@ -1,0 +1,16 @@
+digraph "adore::apps::PlanningDetailsPlotter"
+{
+ // LATEX_PDF_SIZE
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  Node1 [label="{adore::apps::PlanningDetails\lPlotter\n|- plot_longitudinal_\l- plot_lateral_\l- s_upper_bound_clipped_\l- s_lower_bound_clipped_\l- n_upper_bound_clipped_\l- n_lower_bound_clipped_\l- filter_\l|+ PlanningDetailsPlotter()\l+ ~PlanningDetailsPlotter()\l+ initialize_plot()\l+ terminate_plot()\l+ plot_longitudinal_planning\l_information()\l+ plot_lateral_planning\l_information()\l+ run()\l}",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black",tooltip="test bench implementation for minimum risk maneuver planner"];
+  Node2 -> Node1 [color="grey25",fontsize="10",style="solid",label=" -figure_lat1_\n-figure_lat2_\n-figure_lon1_\n-figure_lon2_" ,arrowhead="odiamond",fontname="Helvetica"];
+  Node2 [label="{DLR_TS::PlotLab::AFigureStub\n||+ ~AFigureStub()\l+ circlestrip()\l+ tristrip()\l+ tristrip()\l+ tristrip()\l+ patch()\l+ patch()\l+ patch()\l+ plot()\l+ plot()\land 27 more...\l}",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classDLR__TS_1_1PlotLab_1_1AFigureStub.html",tooltip=" "];
+  Node3 -> Node1 [color="grey25",fontsize="10",style="solid",label=" -fig_factory_" ,arrowhead="odiamond",fontname="Helvetica"];
+  Node3 [label="{DLR_TS::PlotLab::FigureStub\lFactory\n|- m_context\l- m_url\l|+ FigureStubFactory()\l+ FigureStubFactory()\l+ createFigureStub()\l+ getDummy()\l+ parseCommandLine()\l}",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classDLR__TS_1_1PlotLab_1_1FigureStubFactory.html",tooltip=" "];
+  Node4 -> Node3 [color="grey25",fontsize="10",style="solid",label=" -dummy" ,arrowhead="odiamond",fontname="Helvetica"];
+  Node4 [label="{DLR_TS::PlotLab::DummyFigure\n||+ ~DummyFigure()\l+ circlestrip()\l+ tristrip()\l+ tristrip()\l+ tristrip()\l+ patch()\l+ patch()\l+ patch()\l+ plot()\l+ plot()\land 27 more...\l}",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classDLR__TS_1_1PlotLab_1_1DummyFigure.html",tooltip=" "];
+  Node2 -> Node4 [dir="back",color="midnightblue",fontsize="10",style="solid",arrowtail="onormal",fontname="Helvetica"];
+  Node5 -> Node1 [color="grey25",fontsize="10",style="solid",label=" -planning_result_feed_" ,arrowhead="odiamond",fontname="Helvetica"];
+  Node5 [label="{adore::mad::AFeed\<\l adore::fun::PlanningResult \>\n||+ hasNext()\l+ getNext()\l+ getLatest()\l}",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classadore_1_1mad_1_1AFeed.html",tooltip=" "];
+}

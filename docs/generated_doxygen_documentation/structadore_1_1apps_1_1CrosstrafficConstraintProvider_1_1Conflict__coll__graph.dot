@@ -1,0 +1,7 @@
+digraph "adore::apps::CrosstrafficConstraintProvider::Conflict"
+{
+ // LATEX_PDF_SIZE
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  Node1 [label="{adore::apps::Crosstraffic\lConstraintProvider::Conflict\n|+ x\l+ y\l+ s\l+ n\l+ t0\l+ t1\l+ rxy\l+ id\l|+ Conflict()\l}",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black",tooltip=" "];
+}

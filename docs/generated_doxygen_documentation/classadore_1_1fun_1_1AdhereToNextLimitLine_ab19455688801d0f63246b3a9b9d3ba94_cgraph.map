@@ -1,0 +1,15 @@
+<map id="adore::fun::AdhereToNextLimitLine::update" name="adore::fun::AdhereToNextLimitLine::update">
+<area shape="rect" id="node1" title=" " alt="" coords="5,332,176,373"/>
+<area shape="rect" id="node2" href="$classadore_1_1params_1_1APVehicle.html#ae446997786812ff17a5c3f6bfa575ce5" title="cog to front axle" alt="" coords="237,5,411,47"/>
+<area shape="rect" id="node3" href="$classadore_1_1params_1_1APVehicle.html#a5cc38023fb9f3142348dc9ac22402288" title="rear axle to cog" alt="" coords="237,71,411,112"/>
+<area shape="rect" id="node4" href="$classadore_1_1params_1_1APVehicle.html#aec64e74619601401d6d3d81ebf5fdacd" title="front axle to front border" alt="" coords="237,136,411,177"/>
+<area shape="rect" id="node5" href="$classadore_1_1params_1_1APVehicle.html#ad8a4b0411e6d030aeace5bd44ab8876e" title="rear border to rear axle" alt="" coords="237,201,411,243"/>
+<area shape="rect" id="node6" href="$classadore_1_1params_1_1APTrajectoryGeneration.html#a936967cd56f49dba2525921b9160cb1f" title="cor to planning point: movement of planning point shall planned by the trajectory planner" alt="" coords="229,267,419,308"/>
+<area shape="rect" id="node7" href="$classadore_1_1params_1_1APLongitudinalPlanner.html#ae75a542708d6c9aa50f21a76bca7459f" title="getAccLB returns longitudinal acceleration lower bound" alt="" coords="224,332,424,373"/>
+<area shape="rect" id="node8" href="$classadore_1_1view_1_1ALimitLineEnRoute.html#ac3a8d4f0de03098b365e156d7ffe20ed" title=" " alt="" coords="237,397,411,439"/>
+<area shape="rect" id="node9" href="$classadore_1_1view_1_1ALimitLineEnRoute.html#a6e3ca3664d33eeb52eff6cdcd786804d" title=" " alt="" coords="237,463,411,504"/>
+<area shape="rect" id="node10" href="$namespaceadore_1_1mad.html#adea062854ef0b105a3fdca8cf2aca945" title=" " alt="" coords="264,529,384,555"/>
+<area shape="rect" id="node12" href="$classadore_1_1params_1_1APLongitudinalPlanner.html#a6426cf3fa12e894a1bfdd568432dccb3" title="determin stop mode for red lights: true &#45; always before red light, continue driving after; false &#45; ba..." alt="" coords="224,579,424,635"/>
+<area shape="rect" id="node13" href="$classadore_1_1params_1_1APLongitudinalPlanner.html#a635174c588c76c9ba26a006b93ebe603" title="stopAtRedLights_max_connection_length returns the maximum length for which clearance based on tcd sta..." alt="" coords="224,659,424,715"/>
+<area shape="rect" id="node11" href="$namespaceadore_1_1mad.html#a618a8842fed7b9375957b1e393c58492" title=" " alt="" coords="472,529,592,555"/>
+</map>

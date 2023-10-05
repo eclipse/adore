@@ -1,0 +1,6 @@
+<map id="adore::env::BorderBased::BorderGraph::getPredecessors" name="adore::env::BorderBased::BorderGraph::getPredecessors">
+<area shape="rect" id="node1" title=" " alt="" coords="5,71,215,112"/>
+<area shape="rect" id="node2" href="$classadore_1_1env_1_1BorderBased_1_1BorderSet.html#a8af807fde181a20de55594592d752adc" title="Get left neighbor of a border." alt="" coords="267,5,455,47"/>
+<area shape="rect" id="node3" href="$classadore_1_1env_1_1BorderBased_1_1BorderSet.html#acc68b8957d3092bf9e53a75ffa433b6f" title="get an interator pair for all borders which lead to b" alt="" coords="264,71,459,112"/>
+<area shape="rect" id="node4" href="$classadore_1_1env_1_1BorderBased_1_1BorderSet.html#a49e8f6a0309cd0c2c2afa28412435f4f" title="get the right neighbor of a border" alt="" coords="263,136,460,177"/>
+</map>

@@ -1,0 +1,14 @@
+digraph "Handler"
+{
+ // LATEX_PDF_SIZE
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  Node1 [label="{Handler\n|- x_plot_\l- y_plot_\l- x_\l- y_\l- x_valid_\l- y_valid_\l- x_subscriber_\l- y_subscriber_\l- tag_\l- options_\l|+ plot()\l+ receive_x()\l+ receive_y()\l+ Handler()\l}",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black",tooltip=" "];
+  Node2 -> Node1 [color="grey25",fontsize="10",style="solid",label=" -figure_" ,arrowhead="odiamond",fontname="Helvetica"];
+  Node2 [label="{DLR_TS::PlotLab::AFigureStub\n||+ ~AFigureStub()\l+ circlestrip()\l+ tristrip()\l+ tristrip()\l+ tristrip()\l+ patch()\l+ patch()\l+ patch()\l+ plot()\l+ plot()\land 27 more...\l}",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classDLR__TS_1_1PlotLab_1_1AFigureStub.html",tooltip=" "];
+  Node3 -> Node1 [color="grey25",fontsize="10",style="solid",label=" -fig_factory_" ,arrowhead="odiamond",fontname="Helvetica"];
+  Node3 [label="{DLR_TS::PlotLab::FigureStub\lFactory\n|- m_context\l- m_url\l|+ FigureStubFactory()\l+ FigureStubFactory()\l+ createFigureStub()\l+ getDummy()\l+ parseCommandLine()\l}",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classDLR__TS_1_1PlotLab_1_1FigureStubFactory.html",tooltip=" "];
+  Node4 -> Node3 [color="grey25",fontsize="10",style="solid",label=" -dummy" ,arrowhead="odiamond",fontname="Helvetica"];
+  Node4 [label="{DLR_TS::PlotLab::DummyFigure\n||+ ~DummyFigure()\l+ circlestrip()\l+ tristrip()\l+ tristrip()\l+ tristrip()\l+ patch()\l+ patch()\l+ patch()\l+ plot()\l+ plot()\land 27 more...\l}",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classDLR__TS_1_1PlotLab_1_1DummyFigure.html",tooltip=" "];
+  Node2 -> Node4 [dir="back",color="midnightblue",fontsize="10",style="solid",arrowtail="onormal",fontname="Helvetica"];
+}

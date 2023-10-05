@@ -1,0 +1,5 @@
+<map id="adore::env::BorderBased::IndependentLaneChangeGeometry::collectTargetOuterBorders" name="adore::env::BorderBased::IndependentLaneChangeGeometry::collectTargetOuterBorders">
+<area shape="rect" id="node1" title="collects points describing the target&#45;side outer border" alt="" coords="5,31,236,87"/>
+<area shape="rect" id="node2" href="$classadore_1_1env_1_1BorderBased_1_1BorderSet.html#a8af807fde181a20de55594592d752adc" title="Get left neighbor of a border." alt="" coords="319,5,507,47"/>
+<area shape="rect" id="node3" href="$classadore_1_1env_1_1BorderBased_1_1LaneChangeBorders.html#a47633cc3c94ab462740891cc7ad9ede5" title=" " alt="" coords="284,71,541,112"/>
+</map>

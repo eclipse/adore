@@ -1,0 +1,7 @@
+digraph "adore::fun::VehicleExtendedState"
+{
+ // LATEX_PDF_SIZE
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  Node1 [label="{adore::fun::VehicleExtended\lState\n|- gearState_\l- indicatorLeftOn_\l- indicatorRightOn_\l- automaticControlAccelerationOn_\l- automaticControlAcceleration\lActive_\l- automaticControlSteeringOn_\l- checkpointClearance_\l|+ VehicleExtendedState()\l+ getGearState()\l+ setGearState()\l+ getIndicatorLeftOn()\l+ setIndicatorLeftOn()\l+ getIndicatorRightOn()\l+ setIndicatorRightOn()\l+ getAutomaticControlAccelerationOn()\l+ setAutomaticControlAccelerationOn()\l+ getAutomaticControlAcceleration\lActive()\land 6 more...\l}",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black",tooltip=" "];
+}

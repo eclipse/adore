@@ -1,0 +1,5 @@
+<map id="adore::params::APLaneFollowingView" name="adore::params::APLaneFollowingView">
+<area shape="rect" id="node1" title="abstract class containing parameters for a lane following view" alt="" coords="98,5,341,127"/>
+<area shape="rect" id="node2" href="$classadore_1_1if__ROS_1_1params_1_1PLaneFollowingView.html" title=" " alt="" coords="5,175,204,325"/>
+<area shape="rect" id="node3" href="$classadore_1_1params_1_1APLaneFollowingViewDummy.html" title="a dummy implementation for testing purposes" alt="" coords="228,182,443,318"/>
+</map>

@@ -1,0 +1,9 @@
+digraph "adore::env::PrecedenceRule"
+{
+ // LATEX_PDF_SIZE
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  Node1 [label="{adore::env::PrecedenceRule\n|+ unary_\l|+ PrecedenceRule()\l+ set()\l+ equals()\l+ getBoostBox()\l}",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black",tooltip="The PrecedenceRule defines a precedence relationship between two routes. Vehicles on the low_ priorit..."];
+  Node2 -> Node1 [color="grey25",fontsize="10",style="solid",label=" +high_\n+low_" ,arrowhead="odiamond",fontname="Helvetica"];
+  Node2 [label="{adore::env::PriorityRoute\n|+ from_\l+ to_\l+ coordinates_in_UTM_\l|+ PriorityRoute()\l+ set()\l+ set()\l+ getBoostBox()\l+ equals()\l}",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$structadore_1_1env_1_1PriorityRoute.html",tooltip="PriorityRoute implicitly references a route between two coordinates. The coordinates should be chosen..."];
+}

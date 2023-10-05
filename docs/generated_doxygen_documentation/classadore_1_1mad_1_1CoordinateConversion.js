@@ -1,0 +1,25 @@
+var classadore_1_1mad_1_1CoordinateConversion =
+[
+    [ "ArcLengthOfMeridian", "classadore_1_1mad_1_1CoordinateConversion.html#ae23d1d683ba4f658e6d33861e1852116", null ],
+    [ "ArcLengthOfMeridian", "classadore_1_1mad_1_1CoordinateConversion.html#a50d656748ad409ee3b7e5e6a51d04681", null ],
+    [ "DegToRad", "classadore_1_1mad_1_1CoordinateConversion.html#a9dc1586dbbb9e0d1f2ec0db5795f76e4", null ],
+    [ "DegToRad", "classadore_1_1mad_1_1CoordinateConversion.html#ab9b71eace7e6bb4e4d20a1c14990ffb5", null ],
+    [ "FootpointLatitude", "classadore_1_1mad_1_1CoordinateConversion.html#a096c4631fb6f67dbe8419b14769e3918", null ],
+    [ "FootpointLatitude", "classadore_1_1mad_1_1CoordinateConversion.html#aadb96d5d82c616d68f0e01826a28667a", null ],
+    [ "LatLonToUTMXY", "classadore_1_1mad_1_1CoordinateConversion.html#abaab1f6b2d99f38436c68e0fda2c4ecc", null ],
+    [ "LatLonToUTMXY", "classadore_1_1mad_1_1CoordinateConversion.html#a899663416db835e4d479d05a72dbd990", null ],
+    [ "MapLatLonToXY", "classadore_1_1mad_1_1CoordinateConversion.html#a20f6778a572f700de3de905053b669a9", null ],
+    [ "MapLatLonToXY", "classadore_1_1mad_1_1CoordinateConversion.html#a0641f887c7240a36737b3a629918e8ed", null ],
+    [ "MapXYToLatLon", "classadore_1_1mad_1_1CoordinateConversion.html#a60bcb5f8beb7766bbd1b7c47ea76f6d8", null ],
+    [ "MapXYToLatLon", "classadore_1_1mad_1_1CoordinateConversion.html#afbc1a4122fdf80ad051366ebbe7c1a30", null ],
+    [ "RadToDeg", "classadore_1_1mad_1_1CoordinateConversion.html#a8838a0d6650dc8c6ff7f43fbef3770db", null ],
+    [ "RadToDeg", "classadore_1_1mad_1_1CoordinateConversion.html#af2cf2e9ebc063c69cb313d77378c2bd7", null ],
+    [ "twoPIrange", "classadore_1_1mad_1_1CoordinateConversion.html#a4aee7587a95669a1e7479e7a31666fd0", null ],
+    [ "twoPIrange", "classadore_1_1mad_1_1CoordinateConversion.html#a17dc0ceb7f2f2b813f3481732885a166", null ],
+    [ "UTMCentralMeridian", "classadore_1_1mad_1_1CoordinateConversion.html#a69fe947c779a6bc4b605b8bd39df0da2", null ],
+    [ "UTMCentralMeridian", "classadore_1_1mad_1_1CoordinateConversion.html#a5e7200c1eb2c6de7c428c73e7aba116b", null ],
+    [ "UTMXYToLatLon", "classadore_1_1mad_1_1CoordinateConversion.html#a84ce60d3e1c86b3c7d63f54b1da79bec", null ],
+    [ "UTMXYToLatLon", "classadore_1_1mad_1_1CoordinateConversion.html#a3d56009d5252105df32cabb6e8341d99", null ],
+    [ "UTMXYToLatLonDegree", "classadore_1_1mad_1_1CoordinateConversion.html#af0641b219b8f9fe6f0901be80828dd91", null ],
+    [ "UTMXYToLatLonDegree", "classadore_1_1mad_1_1CoordinateConversion.html#a3055bd48ffcee8c229d2097b8752dbb2", null ]
+];

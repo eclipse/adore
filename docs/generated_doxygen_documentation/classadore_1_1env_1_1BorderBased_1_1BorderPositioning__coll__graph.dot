@@ -1,0 +1,7 @@
+digraph "adore::env::BorderBased::BorderPositioning&lt; N &gt;"
+{
+ // LATEX_PDF_SIZE
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  Node1 [label="{adore::env::BorderBased\l::BorderPositioning\< N \>\n|+ m_isPointInside\l+ m_isReferenceInside\l+ s\l+ soff\l+ noff\l|+ BorderPositioning()\l+ BorderPositioning()\l+ anyInside()\l+ allInside()\l+ isReferenceInside()\l}",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black",tooltip=" "];
+}

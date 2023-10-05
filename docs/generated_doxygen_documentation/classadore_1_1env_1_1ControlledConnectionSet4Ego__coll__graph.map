@@ -1,0 +1,9 @@
+<map id="adore::env::ControlledConnectionSet4Ego" name="adore::env::ControlledConnectionSet4Ego">
+<area shape="rect" id="node1" title="Specialization of ControlledConnectionSet: Filters connections in range of ego." alt="" coords="357,748,573,869"/>
+<area shape="rect" id="node2" href="$classadore_1_1env_1_1ControlledConnectionSet.html" title=" " alt="" coords="115,476,351,641"/>
+<area shape="rect" id="node3" href="$classadore_1_1env_1_1LocalBoxSet.html" title=" " alt="" coords="138,160,329,369"/>
+<area shape="rect" id="node4" href="$structadore_1_1env_1_1ControlledConnectionSet_1_1Comparator.html" title=" " alt="" coords="5,5,221,97"/>
+<area shape="rect" id="node5" href="$structadore_1_1env_1_1ControlledConnectionSet_1_1BoxGen.html" title=" " alt="" coords="245,5,461,97"/>
+<area shape="rect" id="node6" href="$classadore_1_1mad_1_1AReader.html" title=" " alt="" coords="376,498,555,619"/>
+<area shape="rect" id="node7" href="$structadore_1_1env_1_1VehicleMotionState9d.html" title="This struct holds the motion state of the vehicle in 9d." alt="" coords="579,432,752,685"/>
+</map>

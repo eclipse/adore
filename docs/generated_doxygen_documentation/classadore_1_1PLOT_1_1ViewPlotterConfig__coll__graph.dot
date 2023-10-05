@@ -1,0 +1,7 @@
+digraph "adore::PLOT::ViewPlotterConfig"
+{
+ // LATEX_PDF_SIZE
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  Node1 [label="{adore::PLOT::ViewPlotter\lConfig\n|+ lf_geometry_plotoptions\l+ lc_geometry_plotoptions\l+ lc_gate_plotoptions\l+ lc_sufficient_width\l_plotoptions\l+ lc_geometry_narrowing\l+ lf_geometry_narrowing\l+ number_of_samples_per\l_boundary\l+ plot_lf_geometry\l+ plot_lc_geometry\l|+ ViewPlotterConfig()\l+ ~ViewPlotterConfig()\l}",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black",tooltip=" "];
+}

@@ -1,0 +1,20 @@
+<map id="adore::env::BorderBased::LaneFollowingGeometry::getBestMatchingBorder" name="adore::env::BorderBased::LaneFollowingGeometry::getBestMatchingBorder">
+<area shape="rect" id="node1" title="Get the best matching border for a given ego position." alt="" coords="5,265,176,321"/>
+<area shape="rect" id="node2" href="$classadore_1_1env_1_1BorderBased_1_1BorderAccumulator.html#ad795032b11d319a4065e8e87f0bc7974" title="Get the Accumulated Borders." alt="" coords="224,5,436,47"/>
+<area shape="rect" id="node3" href="$classadore_1_1env_1_1BorderBased_1_1LaneFollowingGeometry.html#a06948f564268fcc8839d8f68264dd21c" title="Get the offset of the left border at a certain position." alt="" coords="245,71,415,127"/>
+<area shape="rect" id="node7" href="$classadore_1_1env_1_1BorderBased_1_1LaneFollowingGeometry.html#a9a5eb2a8767f13365d0e62fa024bc6a5" title="Get the offset of the right border at a certain position." alt="" coords="245,151,415,207"/>
+<area shape="rect" id="node8" href="$classadore_1_1env_1_1BorderBased_1_1LaneFollowingGeometry.html#a0aef7b4db2039cfd07b543a06403d823" title="Get the viewing distance." alt="" coords="245,545,415,601"/>
+<area shape="rect" id="node9" href="$namespaceadore_1_1mad.html#adea062854ef0b105a3fdca8cf2aca945" title=" " alt="" coords="785,246,905,273"/>
+<area shape="rect" id="node10" href="$namespaceadore_1_1mad.html#ab58ecb752f9bbfe27832e0a2c0e22c2b" title=" " alt="" coords="787,494,903,521"/>
+<area shape="rect" id="node11" href="$classadore_1_1env_1_1BorderBased_1_1LaneFollowingGeometry.html#a9bbf6e74ae3889713c5047a0d28d3b4f" title="Transform from relative to euclidian coordinates." alt="" coords="245,231,415,287"/>
+<area shape="rect" id="node13" href="$classadore_1_1env_1_1BorderBased_1_1LaneFollowingGeometry.html#a0313fa463e2ee26a0981fb9fc0bbc900" title="Transform from euclidian to relative coordinates." alt="" coords="245,362,415,418"/>
+<area shape="rect" id="node4" href="$namespaceadore_1_1mad.html#a927f4883d4edcec4dcfd9bb1f09d4f62" title=" " alt="" coords="526,166,657,193"/>
+<area shape="rect" id="node5" href="$namespaceadore_1_1mad.html#a618a8842fed7b9375957b1e393c58492" title=" " alt="" coords="992,195,1112,222"/>
+<area shape="rect" id="node6" href="$namespaceadore_1_1mad.html#ac61b79c007d1859f93a10c04272095a1" title=" " alt="" coords="994,345,1110,371"/>
+<area shape="rect" id="node12" href="$namespaceadore_1_1mad.html#af94af4a69ee6bebfb81f9dd81f99d307" title="Transform from relative coordinates to Euclidean coordinates." alt="" coords="507,246,676,273"/>
+<area shape="rect" id="node14" href="$classadore_1_1mad_1_1LLinearPiecewiseFunctionM.html#a21c464e587889f52d3b5aba703d80ccd" title=" " alt="" coords="484,363,699,404"/>
+<area shape="rect" id="node18" href="$namespaceadore_1_1mad.html#aa1564df2fc7ee50aa41f61a67be1760c" title="Transformation from Euclidean coordinate system to a relative coordinate system represented by linear..." alt="" coords="501,428,682,469"/>
+<area shape="rect" id="node15" href="$namespaceadore_1_1mad.html#ad4afe3dd742448995d7c56d1e4de5019" title=" " alt="" coords="748,428,943,469"/>
+<area shape="rect" id="node16" href="$classadore_1_1mad_1_1LLinearPiecewiseFunctionM.html#aaa496b8ceb3ed505f6450225c46a077a" title=" " alt="" coords="747,297,944,339"/>
+<area shape="rect" id="node17" href="$classadore_1_1mad_1_1LLinearPiecewiseFunctionM.html#a682841e9bc82a0653745dce6f908bfa6" title=" " alt="" coords="747,363,944,404"/>
+</map>

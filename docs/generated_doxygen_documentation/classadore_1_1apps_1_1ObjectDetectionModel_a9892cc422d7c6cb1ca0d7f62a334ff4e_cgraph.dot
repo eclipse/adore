@@ -1,0 +1,32 @@
+digraph "adore::apps::ObjectDetectionModel::ObjectDetectionModel"
+{
+ // LATEX_PDF_SIZE
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  rankdir="LR";
+  Node1 [label="adore::apps::ObjectDetection\lModel::ObjectDetectionModel",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black",tooltip=" "];
+  Node1 -> Node2 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node2 [label="adore::env::EnvFactoryInstance::get",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classadore_1_1env_1_1EnvFactoryInstance.html#a069fadea20089ddf252a244864f305c1",tooltip=" "];
+  Node2 -> Node3 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node3 [label="adore::env::EnvFactoryInstance\l::getInstance",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classadore_1_1env_1_1EnvFactoryInstance.html#a14835a4420fb827ba3809b94a96a7660",tooltip="Function to access singleton instance of the envFactory using magic static."];
+  Node1 -> Node4 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node4 [label="adore::params::ParamsFactory\lInstance::get",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classadore_1_1params_1_1ParamsFactoryInstance.html#ae4d79d6130cebb47d90a82b6edb7660d",tooltip=" "];
+  Node4 -> Node5 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node5 [label="adore::params::ParamsFactory\lInstance::getInstance",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classadore_1_1params_1_1ParamsFactoryInstance.html#a59eae0e003d40b03f9db2d814ec2a3bf",tooltip="Function to access singleton instance of the AllFactory using magic static."];
+  Node1 -> Node6 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node6 [label="adore::sim::SimFactoryInstance::get",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classadore_1_1sim_1_1SimFactoryInstance.html#a28016f33b8e8c8f3079aafdae6198a03",tooltip=" "];
+  Node6 -> Node7 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node7 [label="adore::sim::SimFactoryInstance\l::getInstance",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classadore_1_1sim_1_1SimFactoryInstance.html#a177ce78bb1c9675c9dd0370e5f31f749",tooltip="Function to access singleton instance of the AllFactory using magic static."];
+  Node1 -> Node8 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node8 [label="adore::sim::AFactory\l::getParticipantFeed",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classadore_1_1sim_1_1AFactory.html#a99660c5f6987cea2b39e1f6456c226f0",tooltip="get state updates from all vehicles"];
+  Node1 -> Node9 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node9 [label="adore::sim::AFactory\l::getParticipantSetWriter",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classadore_1_1sim_1_1AFactory.html#ab222d42cac8f949fa0d966c4549df9bb",tooltip="send simulated sensor data"];
+  Node1 -> Node10 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node10 [label="adore::params::AFactory\l::getSensorModel",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classadore_1_1params_1_1AFactory.html#a8a34a192a9a0acae950ae622d61baa09",tooltip=" "];
+  Node1 -> Node11 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node11 [label="adore::sim::AFactory\l::getSimulationTimeReader",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classadore_1_1sim_1_1AFactory.html#ac9e1883bcd8109e72dd8781ca01f1c72",tooltip="read the simulation time"];
+  Node1 -> Node12 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node12 [label="adore::env::AFactory\l::getVehicleMotionStateReader",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classadore_1_1env_1_1AFactory.html#a81f661c576816461f1914436620ac208",tooltip=" "];
+  Node1 -> Node13 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node13 [label="adore::sim::AFactory\l::getVehicleMotionStateReader",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classadore_1_1sim_1_1AFactory.html#a1b0366f9fe62ea1336b8e58b465590d9",tooltip="read updates on the true vehicle motion state"];
+}

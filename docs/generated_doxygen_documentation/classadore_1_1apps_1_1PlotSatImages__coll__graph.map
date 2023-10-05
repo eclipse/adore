@@ -1,0 +1,7 @@
+<map id="adore::apps::PlotSatImages" name="adore::apps::PlotSatImages">
+<area shape="rect" id="node1" title="a optimzed plotting application to display satellite images in the background" alt="" coords="331,336,515,619"/>
+<area shape="rect" id="node2" href="$classDLR__TS_1_1PlotLab_1_1AFigureStub.html" title=" " alt="" coords="5,20,211,244"/>
+<area shape="rect" id="node3" href="$structadore_1_1env_1_1VehicleMotionState9d.html" title="This struct holds the motion state of the vehicle in 9d." alt="" coords="235,5,408,259"/>
+<area shape="rect" id="node4" href="$classadore_1_1mad_1_1AReader.html" title=" " alt="" coords="433,57,618,207"/>
+<area shape="rect" id="node5" href="$classadore_1_1PLOT_1_1GeoTiles.html" title="Class to help with handling of tile servers used for satellite image background tiles." alt="" coords="643,5,797,259"/>
+</map>

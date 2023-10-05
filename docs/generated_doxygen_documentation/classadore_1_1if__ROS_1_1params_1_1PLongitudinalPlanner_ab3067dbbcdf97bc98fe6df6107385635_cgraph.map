@@ -1,0 +1,4 @@
+<map id="adore::if_ROS::params::PLongitudinalPlanner::stopAtRedLights_always_before" name="adore::if_ROS::params::PLongitudinalPlanner::stopAtRedLights_always_before">
+<area shape="rect" id="node1" title="determin stop mode for red lights: true &#45; always before red light, continue driving after; false &#45; ba..." alt="" coords="5,5,224,61"/>
+<area shape="rect" id="node2" href="$classadore_1_1if__ROS_1_1ROSParam.html#adf480c94fa5b1368850b0a491791e4e6" title=" " alt="" coords="272,20,479,47"/>
+</map>

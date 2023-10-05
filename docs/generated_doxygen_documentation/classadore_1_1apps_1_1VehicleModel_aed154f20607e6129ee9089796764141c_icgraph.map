@@ -1,0 +1,6 @@
+<map id="adore::apps::VehicleModel::setAutomaticControl" name="adore::apps::VehicleModel::setAutomaticControl">
+<area shape="rect" id="node1" title="switches between manual and automatic control input" alt="" coords="455,23,631,65"/>
+<area shape="rect" id="node2" href="$classadore_1_1if__ROS_1_1VehicleModelNode.html#a51fe532236fd4445926631ef93be415e" title=" " alt="" coords="216,23,407,65"/>
+<area shape="rect" id="node3" href="$adore__vehiclemodel__node_8cpp.html#a1ae39fdc2e2fbbe41c16516273eae1ff" title=" " alt="" coords="104,5,168,32"/>
+<area shape="rect" id="node4" href="$adore__vehiclemodel__node_8cpp.html#a3c04138a5bfe5d72780bb7e82a18e627" title=" " alt="" coords="5,31,56,57"/>
+</map>

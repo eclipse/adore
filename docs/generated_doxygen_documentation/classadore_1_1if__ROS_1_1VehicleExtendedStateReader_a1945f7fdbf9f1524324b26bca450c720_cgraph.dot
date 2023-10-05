@@ -1,0 +1,36 @@
+digraph "adore::if_ROS::VehicleExtendedStateReader::VehicleExtendedStateReader"
+{
+ // LATEX_PDF_SIZE
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  rankdir="LR";
+  Node1 [label="adore::if_ROS::VehicleExtended\lStateReader::VehicleExtendedState\lReader",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black",tooltip=" "];
+  Node1 -> Node2 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node2 [label="adore::if_ROS::VehicleExtended\lStateReader::receive_acceleration",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classadore_1_1if__ROS_1_1VehicleExtendedStateReader.html#a07ccd2fd0b8f2120bf204a7a57b30db4",tooltip=" "];
+  Node2 -> Node3 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node3 [label="adore::fun::VehicleExtended\lState::setAutomaticControlAccelerationOn",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classadore_1_1fun_1_1VehicleExtendedState.html#aa4b19e7be78043b45b54f3e680c7c8ed",tooltip=" "];
+  Node1 -> Node4 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node4 [label="adore::if_ROS::VehicleExtended\lStateReader::receive_acceleration\lActive",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classadore_1_1if__ROS_1_1VehicleExtendedStateReader.html#a8e3ea7a2bbd250bfa9b352115f65fece",tooltip=" "];
+  Node4 -> Node5 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node5 [label="adore::fun::VehicleExtended\lState::setAutomaticControlAcceleration\lActive",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classadore_1_1fun_1_1VehicleExtendedState.html#a59d71d80d70e4979524fd08ffa336924",tooltip=" "];
+  Node1 -> Node6 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node6 [label="adore::if_ROS::VehicleExtended\lStateReader::receive_checkpointClearance",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classadore_1_1if__ROS_1_1VehicleExtendedStateReader.html#a31160cc1d6a2b3945184621775ff8eb4",tooltip=" "];
+  Node6 -> Node7 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node7 [label="adore::fun::VehicleExtended\lState::setCheckpointClearance",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classadore_1_1fun_1_1VehicleExtendedState.html#a502f00b277e9de933a5406180c90a744",tooltip=" "];
+  Node1 -> Node8 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node8 [label="adore::if_ROS::VehicleExtended\lStateReader::receive_gear",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classadore_1_1if__ROS_1_1VehicleExtendedStateReader.html#aa4eb4b788f03090ca8f6ff28da10277f",tooltip=" "];
+  Node8 -> Node9 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node9 [label="adore::fun::VehicleExtended\lState::setGearState",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classadore_1_1fun_1_1VehicleExtendedState.html#a3aaf644a4b692e49f66fa289091851e7",tooltip=" "];
+  Node1 -> Node10 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node10 [label="adore::if_ROS::VehicleExtended\lStateReader::receive_left\l_indicator",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classadore_1_1if__ROS_1_1VehicleExtendedStateReader.html#ac50477d25b4e1fbc0726f3aaf2197041",tooltip=" "];
+  Node10 -> Node11 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node11 [label="adore::fun::VehicleExtended\lState::setIndicatorLeftOn",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classadore_1_1fun_1_1VehicleExtendedState.html#aaa7f9991fae10df770a6fd9d49bd387c",tooltip=" "];
+  Node1 -> Node12 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node12 [label="adore::if_ROS::VehicleExtended\lStateReader::receive_right\l_indicator",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classadore_1_1if__ROS_1_1VehicleExtendedStateReader.html#af48d1e42b1aa20c50a59aa6bae726f21",tooltip=" "];
+  Node12 -> Node13 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node13 [label="adore::fun::VehicleExtended\lState::setIndicatorRightOn",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classadore_1_1fun_1_1VehicleExtendedState.html#a94b8fe42011883b4bbaf0bae1590603b",tooltip=" "];
+  Node1 -> Node14 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node14 [label="adore::if_ROS::VehicleExtended\lStateReader::receive_steering",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classadore_1_1if__ROS_1_1VehicleExtendedStateReader.html#a484f64fb23d59ce2282ae0fcfd0b75f7",tooltip=" "];
+  Node14 -> Node15 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node15 [label="adore::fun::VehicleExtended\lState::setAutomaticControlSteeringOn",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classadore_1_1fun_1_1VehicleExtendedState.html#abdc7a07b90de79066d8751ed4419d892",tooltip=" "];
+}

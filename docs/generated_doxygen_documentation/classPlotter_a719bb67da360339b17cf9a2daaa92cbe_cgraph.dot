@@ -1,0 +1,12 @@
+digraph "Plotter::receive_spr_odom"
+{
+ // LATEX_PDF_SIZE
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  rankdir="LR";
+  Node1 [label="Plotter::receive_spr_odom",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black",tooltip=" "];
+  Node1 -> Node2 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node2 [label="Plotter::plotSPR",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classPlotter.html#ad410199b48fb1577f5e8169d53321534",tooltip=" "];
+  Node2 -> Node3 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node3 [label="DLR_TS::PlotLab::AFigure\lStub::plot",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classDLR__TS_1_1PlotLab_1_1AFigureStub.html#accf20dccb771d2bad1fec053e187a327",tooltip=" "];
+}

@@ -1,0 +1,5 @@
+<map id="adore::params::APLongitudinalPlanner::getMinWidthStop" name="adore::params::APLongitudinalPlanner::getMinWidthStop">
+<area shape="rect" id="node1" title="getMinWidthStop returns the minimum lane width, below/at which vehicle stops: Should be greater or eq..." alt="" coords="244,39,444,80"/>
+<area shape="rect" id="node2" href="$classadore_1_1fun_1_1LaneWidthSpeedLimitLFV.html#a7a4912c6a8885b475079422ba8bd8f88" title=" " alt="" coords="7,5,194,47"/>
+<area shape="rect" id="node3" href="$classadore_1_1fun_1_1StopAtBottleneckLFV.html#af0508fecb8d23a064f6e4277907f786d" title=" " alt="" coords="5,71,196,112"/>
+</map>

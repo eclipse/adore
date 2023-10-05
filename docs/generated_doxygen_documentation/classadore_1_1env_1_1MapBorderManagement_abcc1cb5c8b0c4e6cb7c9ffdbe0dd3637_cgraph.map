@@ -1,0 +1,4 @@
+<map id="adore::env::MapBorderManagement::getSuccessors" name="adore::env::MapBorderManagement::getSuccessors">
+<area shape="rect" id="node1" title="Get successors of a given border from global set." alt="" coords="5,5,235,47"/>
+<area shape="rect" id="node2" href="$classadore_1_1env_1_1BorderBased_1_1BorderSet.html#a4a75adfc507696182edc2514b86f5d24" title="get an interator pair for all borders which follow after b" alt="" coords="283,5,465,47"/>
+</map>

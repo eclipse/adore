@@ -1,0 +1,15 @@
+digraph "adore::apps::PlotGaps"
+{
+ // LATEX_PDF_SIZE
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  Node1 [label="{adore::apps::PlotGaps\n|- prefix_\l|+ PlotGaps()\l+ ~PlotGaps()\l+ update()\l}",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black",tooltip="plots markers for traffic gaps"];
+  Node2 -> Node1 [color="grey25",fontsize="10",style="solid",label=" -figure_" ,arrowhead="odiamond",fontname="Helvetica"];
+  Node2 [label="{DLR_TS::PlotLab::AFigureStub\n||+ ~AFigureStub()\l+ circlestrip()\l+ tristrip()\l+ tristrip()\l+ tristrip()\l+ patch()\l+ patch()\l+ patch()\l+ plot()\l+ plot()\land 27 more...\l}",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classDLR__TS_1_1PlotLab_1_1AFigureStub.html",tooltip=" "];
+  Node3 -> Node1 [color="grey25",fontsize="10",style="solid",label=" -rightGapsReader_" ,arrowhead="odiamond",fontname="Helvetica"];
+  Node3 [label="{adore::mad::AReader\< T \>\n||+ hasData()\l+ hasUpdate()\l+ getData()\l+ getDesc()\l}",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classadore_1_1mad_1_1AReader.html",tooltip=" "];
+  Node4 -> Node1 [color="grey25",fontsize="10",style="solid",label=" -leftPlotter_\n-rightPlotter_" ,arrowhead="odiamond",fontname="Helvetica"];
+  Node4 [label="{adore::apps::GapQueuePlotter\n|- current_tags_\l- last_tags_\l- prefix_\l|+ GapQueuePlotter()\l+ update()\l+ plot()\l}",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classadore_1_1apps_1_1GapQueuePlotter.html",tooltip=" "];
+  Node2 -> Node4 [color="grey25",fontsize="10",style="solid",label=" -figure_" ,arrowhead="odiamond",fontname="Helvetica"];
+  Node3 -> Node4 [color="grey25",fontsize="10",style="solid",label=" -egoStateReader_\n-gapReader_" ,arrowhead="odiamond",fontname="Helvetica"];
+}

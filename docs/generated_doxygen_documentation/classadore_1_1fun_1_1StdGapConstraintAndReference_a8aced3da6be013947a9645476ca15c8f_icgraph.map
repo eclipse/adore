@@ -1,0 +1,7 @@
+<map id="adore::fun::StdGapConstraintAndReference::getChaseBound" name="adore::fun::StdGapConstraintAndReference::getChaseBound">
+<area shape="rect" id="node1" title=" " alt="" coords="545,88,752,129"/>
+<area shape="rect" id="node2" href="$classadore_1_1fun_1_1StdGapConstraintAndReference.html#aa88f1efd01a8f8bdc62518b231c58775" title=" " alt="" coords="305,59,497,100"/>
+<area shape="rect" id="node3" href="$classadore_1_1fun_1_1StdGapConstraintAndReference.html#a565fb89dfd8981fd3d0d5aeb56a12054" title="getLB returns the lower bound for the offset&#39;s der&#39;s derivative in dimension dim" alt="" coords="35,5,227,47"/>
+<area shape="rect" id="node4" href="$classadore_1_1fun_1_1StdGapConstraintAndReference.html#a8451fac1bd6a001fb219340a3d3f8200" title="getReferenceIfAvailable returns true if the reference for the dimension and derivative is available a..." alt="" coords="5,75,257,116"/>
+<area shape="rect" id="node5" href="$classadore_1_1fun_1_1StdGapConstraintAndReference.html#a1a7fbeb881ac51fb0037439fb16ee44b" title="getUB returns the upper bound for the offset&#39;s der&#39;s derivative in dimension dim" alt="" coords="35,149,227,191"/>
+</map>

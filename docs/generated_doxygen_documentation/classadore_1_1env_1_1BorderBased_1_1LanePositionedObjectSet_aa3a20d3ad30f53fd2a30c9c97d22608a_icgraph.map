@@ -1,0 +1,5 @@
+<map id="adore::env::BorderBased::LanePositionedObjectSet::setIsOwner" name="adore::env::BorderBased::LanePositionedObjectSet::setIsOwner">
+<area shape="rect" id="node1" title="Set the owner flag." alt="" coords="296,31,473,87"/>
+<area shape="rect" id="node2" href="$classadore_1_1env_1_1MapStopLineManagement.html#a616d4b2df2e12ba63ac2bb22f9fc11db" title="initialization routine" alt="" coords="5,5,248,47"/>
+<area shape="rect" id="node3" href="$classadore_1_1env_1_1MapStopLineManagement.html#a51a888c84c739e7a6a6d4ad69b7eb287" title="Construct a new Map Stop Line Management object." alt="" coords="5,71,248,112"/>
+</map>

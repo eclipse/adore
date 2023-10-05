@@ -1,0 +1,12 @@
+digraph "adore_v2x_sim::ChannelToStation&lt; TChannelMsg, TChannelMsgConstPtr, TStationMsg, TStationMsgConstPtr &gt;"
+{
+ // LATEX_PDF_SIZE
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  Node1 [label="{adore_v2x_sim::ChannelTo\lStation\< TChannelMsg,\l TChannelMsgConstPtr, TStation\lMsg, TStationMsgConstPtr \>\n|- to_channel_publisher_\l- to_station_publisher_\l- from_channel_subscriber_\l- from_station_subscriber_\l|+ ChannelToStation()\l- station_receive()\l- channel_receive()\l}",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black",tooltip=" "];
+  Node2 -> Node1 [color="grey25",fontsize="10",style="solid",label=" -channel_" ,arrowhead="odiamond",fontname="Helvetica"];
+  Node2 [label="{adore_v2x_sim::Channel\n|- n_\l- event_list_\l- generator\l- t_agg_\l- msgs_per_second_\l- bytes_per_second_\l- cutoff_distance_\l- height_antenna_a\l- height_antenna_b\l- center_frequency\l- c0\l- tx_power\l- rx_sensivity\l- fading_std\l|+ Channel()\l+ notify()\l- update_event_list()\l}",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classadore__v2x__sim_1_1Channel.html",tooltip=" "];
+  Node3 -> Node2 [color="grey25",fontsize="10",style="solid",label=" -station_" ,arrowhead="odiamond",fontname="Helvetica"];
+  Node3 [label="{adore_v2x_sim::Station\n|- X_\l- Y_\l- Z_\l- t_\l- odom_subscriber_\l|+ Station()\l+ setPosition()\l+ setTime()\l+ getX()\l+ getY()\l+ getZ()\l+ getT()\l- odom_receive()\l}",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classadore__v2x__sim_1_1Station.html",tooltip=" "];
+  Node3 -> Node1 [color="grey25",fontsize="10",style="solid",label=" -station_" ,arrowhead="odiamond",fontname="Helvetica"];
+}

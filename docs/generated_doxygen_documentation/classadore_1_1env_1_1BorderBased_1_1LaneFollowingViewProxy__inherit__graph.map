@@ -1,0 +1,4 @@
+<map id="adore::env::BorderBased::LaneFollowingViewProxy" name="adore::env::BorderBased::LaneFollowingViewProxy">
+<area shape="rect" id="node1" title="Proxy class to access ALane interfaces from preprocessed lane geometry received as data object." alt="" coords="5,277,207,531"/>
+<area shape="rect" id="node2" href="$classadore_1_1view_1_1ALane.html" title=" " alt="" coords="5,5,207,229"/>
+</map>

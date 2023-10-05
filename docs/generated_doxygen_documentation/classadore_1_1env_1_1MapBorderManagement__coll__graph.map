@@ -1,0 +1,4 @@
+<map id="adore::env::MapBorderManagement" name="adore::env::MapBorderManagement">
+<area shape="rect" id="node1" title="Automatically manage local map and necessary updates based on vehicle position and last state of obje..." alt="" coords="5,483,235,751"/>
+<area shape="rect" id="node2" href="$classadore_1_1env_1_1BorderBased_1_1BorderSet.html" title="efficiently store borders in boost R&#45;tree" alt="" coords="33,5,207,391"/>
+</map>

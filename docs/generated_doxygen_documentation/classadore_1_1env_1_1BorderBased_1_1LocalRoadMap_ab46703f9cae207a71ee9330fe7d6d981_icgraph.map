@@ -1,0 +1,17 @@
+<map id="adore::env::BorderBased::LocalRoadMap::getBorderSet" name="adore::env::BorderBased::LocalRoadMap::getBorderSet">
+<area shape="rect" id="node1" title="Get the BorderSet object." alt="" coords="916,165,1117,207"/>
+<area shape="rect" id="node2" href="$classadore_1_1apps_1_1LaneViewProvider.html#aae1837a3ab74a2815daf93dd210e9aa6" title=" " alt="" coords="652,5,855,47"/>
+<area shape="rect" id="node3" href="$classadore_1_1apps_1_1TestLCTrajectoryPlanner.html#a364f82eba5a19cd4bfeb95f7fd29cd7e" title=" " alt="" coords="654,71,853,112"/>
+<area shape="rect" id="node4" href="$classadore_1_1apps_1_1TestLCTrajectoryPlanner.html#a009d63a8cbbef7168d170df02c69d34d" title=" " alt="" coords="654,136,853,177"/>
+<area shape="rect" id="node5" href="$classadore_1_1apps_1_1LaneViewProvider.html#a10c08893d16421f195ad2a597bfea8f8" title="update data, views and recompute maneuver" alt="" coords="639,202,868,229"/>
+<area shape="rect" id="node7" href="$classadore_1_1env_1_1BorderBased_1_1LaneFollowingView.html#a7cf867a70cca073393e6ff7320e00244" title="update the LaneFollowingView" alt="" coords="659,319,848,360"/>
+<area shape="rect" id="node15" href="$classadore_1_1env_1_1BorderBased_1_1LaneChangeView.html#a83432efdfec3bb90153ec1c4ce9bcee9" title="Update the LaneChangeView." alt="" coords="664,253,843,295"/>
+<area shape="rect" id="node6" href="$classadore_1_1if__ROS_1_1LVProviderNode.html#ad35fdbfdaef8f2f89279dc08758bef3a" title=" " alt="" coords="390,195,566,236"/>
+<area shape="rect" id="node8" href="$classadore_1_1apps_1_1TestLCTrajectoryPlanner.html#ac2912d7058c947a47405a0ce64e5609f" title=" " alt="" coords="379,260,577,301"/>
+<area shape="rect" id="node11" href="$classadore_1_1apps_1_1TestMRMPlanner.html#aa437a755996db26933e8c1b63576fff7" title="update function of the trajectory planner" alt="" coords="365,326,591,353"/>
+<area shape="rect" id="node13" href="$classadore_1_1apps_1_1TestTrajectoryPlanner.html#a49e0ba2cac6b0f9253e607ffdf7c7798" title="update function of the trajectory planner" alt="" coords="387,377,569,419"/>
+<area shape="rect" id="node9" href="$classadore_1_1if__ROS_1_1TestLCTrajectoryPlannerNode.html#aadf9b829e6afee6af3219321b72d4d3c" title=" " alt="" coords="104,260,317,301"/>
+<area shape="rect" id="node10" href="$test__lc__trajectory__planner__node_8cpp.html#a3c04138a5bfe5d72780bb7e82a18e627" title=" " alt="" coords="5,267,56,294"/>
+<area shape="rect" id="node12" href="$test__mrm__planner__node_8cpp.html#a3c04138a5bfe5d72780bb7e82a18e627" title=" " alt="" coords="185,326,236,353"/>
+<area shape="rect" id="node14" href="$test__trajectory__planner__node_8cpp.html#a3c04138a5bfe5d72780bb7e82a18e627" title=" " alt="" coords="185,385,236,411"/>
+</map>

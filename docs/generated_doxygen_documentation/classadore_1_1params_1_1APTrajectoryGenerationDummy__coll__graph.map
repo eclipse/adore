@@ -1,0 +1,4 @@
+<map id="adore::params::APTrajectoryGenerationDummy" name="adore::params::APTrajectoryGenerationDummy">
+<area shape="rect" id="node1" title="a dummy implementation for testing purposes" alt="" coords="5,204,223,355"/>
+<area shape="rect" id="node2" href="$classadore_1_1params_1_1APTrajectoryGeneration.html" title="abstract class containing parameters to configure the behaviour of trajectory generation" alt="" coords="5,5,223,156"/>
+</map>

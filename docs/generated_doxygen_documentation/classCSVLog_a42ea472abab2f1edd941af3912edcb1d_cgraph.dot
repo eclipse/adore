@@ -1,0 +1,10 @@
+digraph "CSVLog::writeLogToBuffer"
+{
+ // LATEX_PDF_SIZE
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  rankdir="LR";
+  Node1 [label="CSVLog::writeLogToBuffer",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black",tooltip="general log generator for buffer"];
+  Node1 -> Node2 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node2 [label="CSVLog::lvlToString",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classCSVLog.html#aac8cc94d98c714221aca42f9c4c14441",tooltip="get string for log level"];
+}

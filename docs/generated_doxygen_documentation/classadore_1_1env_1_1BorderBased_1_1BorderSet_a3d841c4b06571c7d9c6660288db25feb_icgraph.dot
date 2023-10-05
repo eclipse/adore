@@ -1,0 +1,10 @@
+digraph "adore::env::BorderBased::BorderSet::findPathBetweenBorders"
+{
+ // LATEX_PDF_SIZE
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  rankdir="RL";
+  Node1 [label="adore::env::BorderBased\l::BorderSet::findPathBetween\lBorders",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black",tooltip="find path between a starting border and a list of possible target borders in a recursive manner"];
+  Node1 -> Node2 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node2 [label="adore::env::MapBorderManagement\l::changeBorderType",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classadore_1_1env_1_1MapBorderManagement.html#abeff1a09f45801fbc4982f6b3e8d3b20",tooltip="change border type based on BorderTypeChangeProfile struct"];
+}

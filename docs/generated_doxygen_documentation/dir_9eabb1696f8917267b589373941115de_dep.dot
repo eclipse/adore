@@ -1,0 +1,18 @@
+digraph "/home/fascar/temp/adore/libadore/libadore/adore/if_r2s/include" {
+  compound=true
+  node [ fontsize="10", fontname="Helvetica"];
+  edge [ labelfontsize="10", labelfontname="Helvetica"];
+  subgraph clusterdir_1ce38c874db9fadeb52a998cdc994e45 {
+    graph [ bgcolor="#ddddee", pencolor="black", label="if_r2s" fontname="Helvetica", fontsize="10", URL="dir_1ce38c874db9fadeb52a998cdc994e45.html"]
+  subgraph clusterdir_9eabb1696f8917267b589373941115de {
+    graph [ bgcolor="#eeeeff", pencolor="black", label="" URL="dir_9eabb1696f8917267b589373941115de.html"];
+    dir_9eabb1696f8917267b589373941115de [shape=plaintext label="include"];
+  dir_6f6c8804f42f2306928b61c02107f7af [shape=box label="adore" fillcolor="white" style="filled" color="red" URL="dir_6f6c8804f42f2306928b61c02107f7af.html"];
+  }
+  }
+  dir_dd24209da890e557508ac1b6831a5bf7 [shape=box label="mad" fillcolor="white" style="filled" color="red" URL="dir_dd24209da890e557508ac1b6831a5bf7.html"];
+  dir_e67924bcc0fa25173e6cb07f4c4f7f25 [shape=box label="env" fillcolor="white" style="filled" color="red" URL="dir_e67924bcc0fa25173e6cb07f4c4f7f25.html"];
+  dir_6f6c8804f42f2306928b61c02107f7af->dir_e67924bcc0fa25173e6cb07f4c4f7f25 [headlabel="3", labeldistance=1.5 headhref="dir_000083_000044.html"];
+  dir_6f6c8804f42f2306928b61c02107f7af->dir_dd24209da890e557508ac1b6831a5bf7 [headlabel="2", labeldistance=1.5 headhref="dir_000083_000092.html"];
+  dir_e67924bcc0fa25173e6cb07f4c4f7f25->dir_dd24209da890e557508ac1b6831a5bf7 [headlabel="47", labeldistance=1.5 headhref="dir_000044_000092.html"];
+}

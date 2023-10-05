@@ -1,0 +1,13 @@
+<map id="adore::view::ALaneChangeView::getSourceLane" name="adore::view::ALaneChangeView::getSourceLane">
+<area shape="rect" id="node1" title=" " alt="" coords="797,188,976,229"/>
+<area shape="rect" id="node2" href="$classadore_1_1env_1_1LaneChangeGaps.html#add65c54915bf8c76c346fef8e68f14bc" title=" " alt="" coords="545,5,739,47"/>
+<area shape="rect" id="node5" href="$classadore_1_1apps_1_1TrajectoryPlannerLM.html#ab9d92ef8076c4374d81144bda2a81b90" title="update data, views and recompute maneuver" alt="" coords="542,71,742,112"/>
+<area shape="rect" id="node6" href="$classadore_1_1fun_1_1LaneChangePhaseEstimator.html#ae0d020ec9a2414dc64b9ca3c0c354046" title=" " alt="" coords="535,188,749,229"/>
+<area shape="rect" id="node7" href="$classadore_1_1fun_1_1AdvancedLateralOffsetConstraintLC.html#ac062d58126ab5b8d3a3ad38570bb2343" title=" " alt="" coords="266,129,459,171"/>
+<area shape="rect" id="node9" href="$classadore_1_1fun_1_1LateralOffsetConstraintLC.html#a6c66332f5af0aecb945b89e3d2d7a03f" title=" " alt="" coords="561,253,723,295"/>
+<area shape="rect" id="node10" href="$classadore_1_1fun_1_1LateralOffsetConstraintLM.html#a3d2e84bdda56c88f3beaedb8a50d3cdf" title=" " alt="" coords="561,319,723,360"/>
+<area shape="rect" id="node11" href="$classadore_1_1fun_1_1LaneChangePhaseEstimator.html#a241ca4c1f1cafe5cceb867b7304c0061" title=" " alt="" coords="543,384,741,425"/>
+<area shape="rect" id="node3" href="$classadore_1_1apps_1_1GapProvider.html#a9473de599ded969161b0e8dc87b60a65" title=" " alt="" coords="277,5,448,47"/>
+<area shape="rect" id="node4" href="$classadore_1_1if__ROS_1_1GapProviderNode.html#a0401f80cea2b23b6e9dcd5a272116bae" title=" " alt="" coords="5,5,191,47"/>
+<area shape="rect" id="node8" href="$classadore_1_1fun_1_1FollowPrecedingVehicleOnLaneToBeLeft__BrakingCurve.html#ad476f6086d29fa74d207a1b345a172c0" title=" " alt="" coords="239,195,487,251"/>
+</map>

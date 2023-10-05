@@ -1,0 +1,7 @@
+digraph "adore::env::LocalBoxSet&lt; TObject, TBoxGen, TComparator &gt;"
+{
+ // LATEX_PDF_SIZE
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  Node1 [label="{adore::env::LocalBoxSet\l\< TObject, TBoxGen, TComparator \>\n|- data_\l- boxgen_\l- compare_\l|+ insert()\l+ find()\l+ contains()\l+ remove()\l+ size()\l+ getObjectsInRegion()\l+ getObjectsOutsideRegion()\l+ refocus()\l}",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black",tooltip=" "];
+}

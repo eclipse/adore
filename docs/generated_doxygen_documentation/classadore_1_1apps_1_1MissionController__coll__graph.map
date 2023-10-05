@@ -1,0 +1,13 @@
+<map id="adore::apps::MissionController" name="adore::apps::MissionController">
+<area shape="rect" id="node1" title="Simple state machine for mission controlling." alt="" coords="820,593,1019,700"/>
+<area shape="rect" id="node2" href="$classadore_1_1fun_1_1MissionData.html" title=" " alt="" coords="5,299,167,406"/>
+<area shape="rect" id="node3" href="$classadore_1_1mad_1_1AWriter.html" title=" " alt="" coords="191,285,381,421"/>
+<area shape="rect" id="node4" href="$classadore_1_1mad_1_1AReader.html" title=" " alt="" coords="405,285,607,421"/>
+<area shape="rect" id="node5" href="$structadore_1_1fun_1_1NavigationGoal.html" title=" " alt="" coords="631,314,808,391"/>
+<area shape="rect" id="node6" href="$structadore_1_1mad_1_1GlobalPosition.html" title=" " alt="" coords="630,5,809,112"/>
+<area shape="rect" id="node7" href="$structadore_1_1env_1_1VehicleMotionState9d.html" title="This struct holds the motion state of the vehicle in 9d." alt="" coords="833,226,1006,479"/>
+<area shape="rect" id="node8" href="$classadore_1_1mad_1_1AReader.html" title=" " alt="" coords="1031,277,1216,428"/>
+<area shape="rect" id="node9" href="$classadore_1_1fun_1_1VehicleExtendedState.html" title=" " alt="" coords="1241,175,1491,531"/>
+<area shape="rect" id="node10" href="$classadore_1_1mad_1_1AReader.html" title=" " alt="" coords="1516,277,1715,428"/>
+<area shape="rect" id="node11" href="$classadore_1_1params_1_1APMissionControl.html" title="abstract class containing parameters for mission controller configuration" alt="" coords="1738,299,1938,406"/>
+</map>

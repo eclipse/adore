@@ -1,0 +1,3 @@
+<map id="CSVLog" name="CSVLog">
+<area shape="rect" id="node1" title="singleton class for logging on the console and in a file, only interact with it via the defined macro..." alt="" coords="5,5,208,640"/>
+</map>

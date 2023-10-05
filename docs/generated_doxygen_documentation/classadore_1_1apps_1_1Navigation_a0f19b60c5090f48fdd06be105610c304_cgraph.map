@@ -1,0 +1,52 @@
+<map id="adore::apps::Navigation::Navigation" name="adore::apps::Navigation::Navigation">
+<area shape="rect" id="node1" title=" " alt="" coords="5,332,165,373"/>
+<area shape="rect" id="node2" href="$classadore_1_1env_1_1NavigationManagement.html#a1bef461ced276bbe01b73ab8b96a3253" title=" " alt="" coords="213,5,441,47"/>
+<area shape="rect" id="node4" href="$classDLR__TS_1_1PlotLab_1_1FigureStubFactory.html#a842dc9d218e8433f3443a08d47cfd6cc" title=" " alt="" coords="229,71,425,112"/>
+<area shape="rect" id="node5" href="$classadore_1_1env_1_1AFactory.html#afb19e5e8e56a0011a5a0a4974548c9ad" title=" " alt="" coords="255,136,399,177"/>
+<area shape="rect" id="node6" href="$classadore_1_1params_1_1AFactory.html#abba5210011cba65d551709808cc5929b" title=" " alt="" coords="244,201,411,243"/>
+<area shape="rect" id="node7" href="$classadore_1_1params_1_1AFactory.html#a72b749ed2e34c379c620d7d729cf8d92" title=" " alt="" coords="244,267,411,308"/>
+<area shape="rect" id="node8" href="$classadore_1_1env_1_1AFactory.html#af862053809d472defbcd9b690c16c0d7" title=" " alt="" coords="241,332,413,373"/>
+<area shape="rect" id="node9" href="$classadore_1_1env_1_1AFactory.html#a32a2e8fb3f28143aa8ffb86f3e20c6fc" title=" " alt="" coords="238,397,417,439"/>
+<area shape="rect" id="node10" href="$classadore_1_1env_1_1AFactory.html#a81f661c576816461f1914436620ac208" title=" " alt="" coords="226,463,429,504"/>
+<area shape="rect" id="node11" href="$classadore_1_1env_1_1NavigationManagement.html#a6ef6488ee2fc558da1536b4d00a7fa1a" title=" " alt="" coords="213,631,441,672"/>
+<area shape="rect" id="node27" href="$namespaceadore_1_1mad.html#ac5aeccec5e3cf50a2bc9492d95a49779" title=" " alt="" coords="825,579,938,606"/>
+<area shape="rect" id="node28" href="$classadore_1_1apps_1_1Navigation.html#a77e0f4a96b663ca6ec5287af1965822f" title=" " alt="" coords="801,900,961,941"/>
+<area shape="rect" id="node3" href="$classadore_1_1env_1_1BorderBased_1_1BorderObserver.html#a690fb0e17aba0b2373557a784afb5105" title=" " alt="" coords="515,5,693,47"/>
+<area shape="rect" id="node12" href="$classadore_1_1env_1_1MapBorderManagement.html#ad55ac3dcd303753f82ccb86c67cc90d0" title=" " alt="" coords="489,631,719,672"/>
+<area shape="rect" id="node13" href="$classadore_1_1env_1_1MapBorderManagement.html#a13b26d2d811b62a087fc50faf0e4c0b9" title="initialization routine with base map" alt="" coords="489,761,719,803"/>
+<area shape="rect" id="node26" href="$classadore_1_1env_1_1BorderBased_1_1NavigationBorderObserver.html#a200d71dccebca07c1f3c2eb68e961bfb" title=" " alt="" coords="500,696,708,737"/>
+<area shape="rect" id="node14" href="$classadore_1_1env_1_1MapBorderManagement.html#a25784909ff107901436e24176dae605e" title="initialization of internal sets" alt="" coords="767,736,996,777"/>
+<area shape="rect" id="node15" href="$classadore_1_1env_1_1BorderBased_1_1BorderSet.html#ad538d9d8b611445d662b1e11791b6f95" title="generate a complete copy including copies of objects the pointers point to" alt="" coords="1321,677,1515,719"/>
+<area shape="rect" id="node25" href="$classadore_1_1env_1_1MapBorderManagement.html#ac6242acbd87511c8b40182aa60cd7489" title="initialization of global set" alt="" coords="1044,736,1273,777"/>
+<area shape="rect" id="node16" href="$classadore_1_1env_1_1BorderBased_1_1BorderSet.html#a0a97ab737730be2bda5deb80c8aaf4dd" title="remove all borders from this, delete object if this is owner" alt="" coords="1599,677,1766,719"/>
+<area shape="rect" id="node17" href="$classadore_1_1env_1_1BorderBased_1_1BorderSet.html#a5dea05943e2c9a960ba7cabc59f7ebb7" title="get all borders in this" alt="" coords="1893,739,2067,780"/>
+<area shape="rect" id="node18" href="$classadore_1_1env_1_1BorderBased_1_1BorderSet.html#a5730d3e4fc938c9bd1e1146a8a61deec" title="insert new border into this" alt="" coords="2181,1141,2352,1183"/>
+<area shape="rect" id="node24" href="$classadore_1_1env_1_1BorderBased_1_1BorderSet.html#ac7fdae2e42da82d8c2239e939d21da96" title="set whether this owns objects in pointers" alt="" coords="1599,743,1766,784"/>
+<area shape="rect" id="node19" href="$classadore_1_1env_1_1BorderBased_1_1BorderSet.html#afb523effcee573e774147446ecc756ab" title="check whether border type is in allowed types of set" alt="" coords="2424,1175,2612,1216"/>
+<area shape="rect" id="node20" href="$structadore_1_1env_1_1BorderBased_1_1Border.html#a4b1e646e2c3d98b03e75f286611e0cda" title="Get a bounding box for the implicit lane object." alt="" coords="2435,1240,2601,1281"/>
+<area shape="rect" id="node23" href="$structadore_1_1env_1_1BorderBased_1_1Coordinate.html#abb34f84413225a9464afe389cb4f71a7" title="Get a boost_point that has the same coordinates as the Coordinate object." alt="" coords="2427,1109,2609,1151"/>
+<area shape="rect" id="node21" href="$namespaceadore_1_1mad.html#adea062854ef0b105a3fdca8cf2aca945" title=" " alt="" coords="2660,1153,2780,1179"/>
+<area shape="rect" id="node22" href="$namespaceadore_1_1mad.html#ab58ecb752f9bbfe27832e0a2c0e22c2b" title=" " alt="" coords="2662,1306,2778,1333"/>
+<area shape="rect" id="node29" href="$classadore_1_1if__xodr_1_1XODR2BorderBasedConverter.html#afb43456b1cc2ee1c30ca4f5a8278f1ba" title="full conversion of OpenDRIVE map to object representations" alt="" coords="1062,1032,1255,1073"/>
+<area shape="rect" id="node42" href="$classadore_1_1if__r2s_1_1R2S2BorderBasedConverter.html#a182c7ba85fdda1f8985c20f68c8abb14" title="convert to borders" alt="" coords="1331,1412,1505,1453"/>
+<area shape="rect" id="node50" href="$classadore_1_1params_1_1APMapProvider.html#afa89f3d7a5d1b35371f1b3139cd77bf9" title=" " alt="" coords="1048,959,1269,1000"/>
+<area shape="rect" id="node30" href="$classadore_1_1if__xodr_1_1XODR2BorderBasedConverter.html#a6ca6d0c42c07f37d316e7003676fb297" title="Fills data sets of BorderBased map data representation with data from openDrive xml file." alt="" coords="1321,1035,1515,1076"/>
+<area shape="rect" id="node31" href="$classadore_1_1if__xodr_1_1XODR2BorderBasedConverter.html#ae80a52c9376f7e5942d11506170ab3e8" title="determine controller and junction id of traffic lights" alt="" coords="1563,947,1803,1003"/>
+<area shape="rect" id="node34" href="$classadore_1_1if__xodr_1_1XODR2BorderBasedConverter.html#a7f2969e95bacb9b0e03d244d4f57ac89" title="convert road geometry to borders and also extract traffic control devices and stop lines" alt="" coords="1583,1269,1782,1311"/>
+<area shape="rect" id="node40" href="$classadore_1_1if__xodr_1_1BorderIDTranslation.html#a94bd6f3b65b57ad15ed1a3e8898c13da" title=" " alt="" coords="1867,1105,2093,1147"/>
+<area shape="rect" id="node41" href="$classadore_1_1if__xodr_1_1XODR2BorderBasedConverter.html#ad8da0acb9efcc6cfc38ba2772d2f5840" title="change position of all objects via translation" alt="" coords="1586,1027,1779,1083"/>
+<area shape="rect" id="node32" href="$classadore_1_1env_1_1TCDSet.html#a6cd521ab33cb98dbc798bd9fbc67dcb1" title=" " alt="" coords="1911,923,2049,964"/>
+<area shape="rect" id="node33" href="$classadore_1_1env_1_1TCDSet.html#a11f13325173c449519d5ec0de2c198a3" title=" " alt="" coords="1911,988,2049,1029"/>
+<area shape="rect" id="node35" href="$classadore_1_1if__xodr_1_1XODR2BorderBasedConverter.html#ad99dc004f965ab677ab578b4f678ef13" title="convert function representation of road to border representation, determine absolute stop line positi..." alt="" coords="1874,1236,2086,1277"/>
+<area shape="rect" id="node36" href="$classadore_1_1if__xodr_1_1XODR2BorderBasedConverter.html#adf9ff05235f364296ad823c54ad22929" title="determine absolute coordinate and heading of non stop line headings" alt="" coords="1861,1485,2099,1541"/>
+<area shape="rect" id="node37" href="$namespaceadore_1_1mad.html#a70b9fe3efbb34c0f9621147e3456bfa8" title=" " alt="" coords="2209,1434,2325,1461"/>
+<area shape="rect" id="node38" href="$classadore_1_1if__xodr_1_1XODR2BorderBasedConverter.html#a4f146e126a7509b4d135f20d8daf1c26" title="extract road center line geometry to center and center heading functions" alt="" coords="1851,1301,2109,1343"/>
+<area shape="rect" id="node39" href="$classadore_1_1if__xodr_1_1XODR2BorderBasedConverter.html#ad44ad78fc703b6119dc78513b650b015" title="combine lanes and center line to function representation of road section" alt="" coords="1861,1171,2099,1212"/>
+<area shape="rect" id="node43" href="$classadore_1_1if__r2s_1_1R2S2BorderBasedConverter.html#a209974cbd56a95df8980f92b4809b888" title="cleanup leftover functions in sectionmap" alt="" coords="1596,1412,1769,1453"/>
+<area shape="rect" id="node44" href="$classadore_1_1if__r2s_1_1R2S2BorderBasedConverter.html#a6d12e18c673154c8c16fad4895b691c2" title="actual conversion" alt="" coords="1589,1587,1777,1628"/>
+<area shape="rect" id="node45" href="$classadore_1_1if__r2s_1_1R2S2BorderBasedConverter.html#a6ef8e454c5140d4f40c2ee5c3f4ff38f" title="manage overall conversion process from sectionmap to borderset" alt="" coords="2157,1488,2376,1529"/>
+<area shape="rect" id="node46" href="$classadore_1_1if__r2s_1_1R2S2BorderBasedConverter.html#adebe8bbc518d9ca4d447230e3c4f900f" title=" " alt="" coords="1893,1747,2067,1788"/>
+<area shape="rect" id="node47" href="$classadore_1_1if__r2s_1_1R2SFileReader.html#ae1c7cf6cf090a9689f1fddbf24fbc6bd" title=" " alt="" coords="1885,1616,2075,1657"/>
+<area shape="rect" id="node48" href="$classadore_1_1if__r2s_1_1R2SFileReader.html#ab699d9e61a6981489eb90d8e0ac4e1c3" title=" " alt="" coords="1885,1681,2075,1723"/>
+<area shape="rect" id="node49" href="$classadore_1_1if__r2s_1_1R2S2BorderBasedConverter.html#a2365e79e186f711b21dc93532ac4376b" title="converts sets of ReferenceLine and LaneBorder structs into adore borders" alt="" coords="1890,1419,2070,1460"/>
+</map>

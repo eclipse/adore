@@ -1,0 +1,26 @@
+var classadore_1_1if__xodr_1_1BorderIDTranslation =
+[
+    [ "BorderID", "classadore_1_1if__xodr_1_1BorderIDTranslation.html#a379a0e817d3ab3e695e9c8315cec63c6", null ],
+    [ "BorderID2TID", "classadore_1_1if__xodr_1_1BorderIDTranslation.html#ada6f10e510bd16c88336716c2577d633", null ],
+    [ "BorderIDHasher", "classadore_1_1if__xodr_1_1BorderIDTranslation.html#a8a546f31073c22f4041e12d6ed029a1f", null ],
+    [ "BorderIDVector", "classadore_1_1if__xodr_1_1BorderIDTranslation.html#a2a4a14771e4549b2aa0b4c36cd196a55", null ],
+    [ "Iterator", "classadore_1_1if__xodr_1_1BorderIDTranslation.html#a905aec47761c824d409fba85f26b0417", null ],
+    [ "IteratorPair", "classadore_1_1if__xodr_1_1BorderIDTranslation.html#ad90a30e9cb2e1a75a07d76f47e46cb96", null ],
+    [ "TID", "classadore_1_1if__xodr_1_1BorderIDTranslation.html#aad941bed8c31fafa402357d64b20d9e0", null ],
+    [ "TID2MultiBorderID", "classadore_1_1if__xodr_1_1BorderIDTranslation.html#a484833c5b0140eb0f001dc8a810ffac0", null ],
+    [ "TIDmap", "classadore_1_1if__xodr_1_1BorderIDTranslation.html#a2354ffae2b787d337ecd1a387e62e8de", null ],
+    [ "TIDmultimap", "classadore_1_1if__xodr_1_1BorderIDTranslation.html#a08c8c56559afab7184e4422366ab77bc", null ],
+    [ "getBorderIDsOfJunction", "classadore_1_1if__xodr_1_1BorderIDTranslation.html#a0e9c67eb93787641882a929d26a1924a", null ],
+    [ "getBorderIDsOfRoad", "classadore_1_1if__xodr_1_1BorderIDTranslation.html#a6456a677bb9e32310406bd9351b3df1e", null ],
+    [ "getJunctionID", "classadore_1_1if__xodr_1_1BorderIDTranslation.html#ab45ed1ff084a265a9e38147a9daee981", null ],
+    [ "getRoadID", "classadore_1_1if__xodr_1_1BorderIDTranslation.html#aa7e947191efc971d774c45342356aa3d", null ],
+    [ "insert", "classadore_1_1if__xodr_1_1BorderIDTranslation.html#a94bd6f3b65b57ad15ed1a3e8898c13da", null ],
+    [ "insert", "classadore_1_1if__xodr_1_1BorderIDTranslation.html#adc9d1da51b4dab09143e07016283b8a2", null ],
+    [ "isInJunction", "classadore_1_1if__xodr_1_1BorderIDTranslation.html#ae0ce86bddb51424a57b5df14bb3d83f5", null ],
+    [ "isInJunction", "classadore_1_1if__xodr_1_1BorderIDTranslation.html#abe0cf6f4f0ccd9da8b7f8558999b1df3", null ],
+    [ "borderID2roadID_", "classadore_1_1if__xodr_1_1BorderIDTranslation.html#a3af7ef0583b37a07c18ccc9b921c59d4", null ],
+    [ "default_empty_id_", "classadore_1_1if__xodr_1_1BorderIDTranslation.html#aa85bbd1bc48254289faa4f770a468afc", null ],
+    [ "junctionID2roadID_", "classadore_1_1if__xodr_1_1BorderIDTranslation.html#afbabcfa08c557d5cfbdcdf7cc542aefe", null ],
+    [ "roadID2borderID_", "classadore_1_1if__xodr_1_1BorderIDTranslation.html#a4092dff70026768d01950d9ca14fd642", null ],
+    [ "roadID2junctionID_", "classadore_1_1if__xodr_1_1BorderIDTranslation.html#a3cbfa8b556178e038b5f1ca5dceadef9", null ]
+];

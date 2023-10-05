@@ -1,0 +1,4 @@
+<map id="adore::params::APMapProviderDummy" name="adore::params::APMapProviderDummy">
+<area shape="rect" id="node1" title="a dummy implementation for testing purposes" alt="" coords="7,204,237,369"/>
+<area shape="rect" id="node2" href="$classadore_1_1params_1_1APMapProvider.html" title="abstract class containing parameters to configure aspects of the map provider" alt="" coords="5,5,239,156"/>
+</map>

@@ -1,0 +1,6 @@
+<map id="adore::apps::LocalizationModel" name="adore::apps::LocalizationModel">
+<area shape="rect" id="node1" title="a model for localization adds errors to true vehicle state" alt="" coords="239,321,406,589"/>
+<area shape="rect" id="node2" href="$classadore_1_1params_1_1APLocalizationModel.html" title="abstract class containing parameters which configure localization state estimation model" alt="" coords="5,5,205,244"/>
+<area shape="rect" id="node3" href="$classadore_1_1mad_1_1AReader.html" title=" " alt="" coords="230,49,415,200"/>
+<area shape="rect" id="node4" href="$classadore_1_1mad_1_1AWriter.html" title=" " alt="" coords="440,49,629,200"/>
+</map>

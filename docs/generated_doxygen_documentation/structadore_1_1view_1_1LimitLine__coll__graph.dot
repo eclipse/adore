@@ -1,0 +1,7 @@
+digraph "adore::view::LimitLine"
+{
+ // LATEX_PDF_SIZE
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  Node1 [label="{adore::view::LimitLine\n|- current_state_\l- next_state_\l- t_next_\l- s_\l|+ LimitLine()\l+ setCurrentState()\l+ setNextState()\l+ setTimeToNextState()\l+ setProgress()\l+ getCurrentState()\l+ getNextState()\l+ getTimeToNextState()\l+ getProgress()\l}",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black",tooltip=" "];
+}

@@ -1,0 +1,7 @@
+<map id="adore::fun::LateralAccelerationConstraint::update" name="adore::fun::LateralAccelerationConstraint::update">
+<area shape="rect" id="node1" title=" " alt="" coords="5,104,204,145"/>
+<area shape="rect" id="node2" href="$classadore_1_1params_1_1APLateralPlanner.html#a414c193e17d956759d4cf61c02f19a65" title="getAccLB returns lateral acceleration lower bound" alt="" coords="252,5,423,47"/>
+<area shape="rect" id="node3" href="$classadore_1_1params_1_1APLateralPlanner.html#a47b3725283c778466d7bef12afaeb631" title="getAccUB returns lateral acceleration upper bound" alt="" coords="252,71,423,112"/>
+<area shape="rect" id="node4" href="$classadore_1_1params_1_1APLateralPlanner.html#a95ceeef0285b228c108dad47dab46310" title="getCurvatureLB returns minimum curvature of path (relevant at low speeds)" alt="" coords="252,136,423,177"/>
+<area shape="rect" id="node5" href="$classadore_1_1params_1_1APLateralPlanner.html#a95794882fce66d33263854701157cb43" title="getCurvatureUB returns maximum curvature of path (relevant at low speeds)" alt="" coords="252,201,423,243"/>
+</map>

@@ -1,0 +1,16 @@
+<map id="adore::fun::RoadCoordinateConverter::RoadCoordinateConverter" name="adore::fun::RoadCoordinateConverter::RoadCoordinateConverter">
+<area shape="rect" id="node1" title=" " alt="" coords="5,365,244,407"/>
+<area shape="rect" id="node2" href="$classadore_1_1fun_1_1RoadCoordinateConverter.html#a4158e6c9bf1b188714befc36f3d570b9" title=" " alt="" coords="292,365,485,407"/>
+<area shape="rect" id="node3" href="$classadore_1_1params_1_1APVehicle.html#ae446997786812ff17a5c3f6bfa575ce5" title="cog to front axle" alt="" coords="771,5,945,47"/>
+<area shape="rect" id="node4" href="$classadore_1_1params_1_1APVehicle.html#a5cc38023fb9f3142348dc9ac22402288" title="rear axle to cog" alt="" coords="771,71,945,112"/>
+<area shape="rect" id="node5" href="$classadore_1_1params_1_1APVehicle.html#af95a31b91ceabe9a02cfd728e4502cfa" title="front normalized tire stiffness for bicycle model" alt="" coords="771,136,945,177"/>
+<area shape="rect" id="node6" href="$classadore_1_1params_1_1APVehicle.html#a41fcecc0bda7794736a06b660b172a6c" title="rear normalized tire stiffness for bicycle model" alt="" coords="771,332,945,373"/>
+<area shape="rect" id="node7" href="$classadore_1_1params_1_1APVehicle.html#aff1c5efcd97b43b9888c6c1742db70bf" title="gravitational constant" alt="" coords="771,397,945,439"/>
+<area shape="rect" id="node8" href="$classadore_1_1params_1_1APVehicle.html#a1469c68f7b8db6bd77bf7e236faa51a5" title="cog height above ground" alt="" coords="771,463,945,504"/>
+<area shape="rect" id="node9" href="$classadore_1_1params_1_1APVehicle.html#a5ad76a85226dd133c8827ec9eb75dc7b" title="rotational inertia around up axis devided by mass" alt="" coords="771,528,945,569"/>
+<area shape="rect" id="node10" href="$classadore_1_1params_1_1APVehicle.html#a2edbca64008d9314eea78012d41f7d18" title="friction coefficient" alt="" coords="771,593,945,635"/>
+<area shape="rect" id="node11" href="$classadore_1_1params_1_1APTrajectoryGeneration.html#a936967cd56f49dba2525921b9160cb1f" title="cor to planning point: movement of planning point shall planned by the trajectory planner" alt="" coords="533,601,723,643"/>
+<area shape="rect" id="node12" href="$classadore_1_1fun_1_1VLB__OpenLoop.html#aa44cc154414dbb4dad1ffc66da9a2a56" title=" " alt="" coords="539,281,717,323"/>
+<area shape="rect" id="node13" href="$classadore_1_1params_1_1APVehicle.html#ad99abb1ed1083bde48dc73a1af8766b9" title=" " alt="" coords="771,201,945,243"/>
+<area shape="rect" id="node14" href="$classadore_1_1params_1_1APVehicle.html#a14cb93ac0a89ef10df2954c3544773bf" title=" " alt="" coords="771,267,945,308"/>
+</map>

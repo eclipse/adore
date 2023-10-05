@@ -1,0 +1,55 @@
+digraph "TEST_CASE"
+{
+ // LATEX_PDF_SIZE
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  rankdir="LR";
+  Node1 [label="TEST_CASE",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black",tooltip=" "];
+  Node1 -> Node2 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node2 [label="adore::mad::CubicPiecewise\lFunction::BreaksGenerator",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classadore_1_1mad_1_1CubicPiecewiseFunction.html#a15eb9d7e521de072c1201a99a0431c59",tooltip=" "];
+  Node1 -> Node3 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node3 [label="adore::mad::CubicPiecewise\lFunction::fit",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classadore_1_1mad_1_1CubicPiecewiseFunction.html#ab318a2fc87bc4bc93ea8b32efaf8080e",tooltip=" "];
+  Node3 -> Node4 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node4 [label="adore::mad::CubicPiecewise\lFunction::smoothingSpline",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classadore_1_1mad_1_1CubicPiecewiseFunction.html#accdb0c66b37efa161b8c2d39ce6f210b",tooltip=" "];
+  Node4 -> Node5 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node5 [label="adore::mad::ArrayMatrixTools\l::diff",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classadore_1_1mad_1_1ArrayMatrixTools.html#a87952b138b50238e57277b8fb48bc573",tooltip=" "];
+  Node4 -> Node6 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node6 [label="adore::mad::ArrayMatrixTools\l::matrixMultiplication",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classadore_1_1mad_1_1ArrayMatrixTools.html#acd8f7b789b1292e5f557200e5731a645",tooltip=" "];
+  Node4 -> Node7 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node7 [label="adore::mad::ArrayMatrixTools\l::pieceOfArray",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classadore_1_1mad_1_1ArrayMatrixTools.html#a2018137151c771080cbccb3e4fc85e03",tooltip=" "];
+  Node4 -> Node8 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node8 [label="adore::mad::ArrayMatrixTools\l::pointwise_multiply",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classadore_1_1mad_1_1ArrayMatrixTools.html#a42a3ef4abb19681deb186569c914419f",tooltip=" "];
+  Node4 -> Node9 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node9 [label="adore::mad::CubicPiecewise\lFunction::repeatedValueInterpolation",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classadore_1_1mad_1_1CubicPiecewiseFunction.html#ae14457f436ac4a14bc5ddd4c4260817c",tooltip=" "];
+  Node9 -> Node10 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node10 [label="adore::mad::ArrayMatrixTools::any",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classadore_1_1mad_1_1ArrayMatrixTools.html#aee2dc19c928c51a52aff3e31f3081363",tooltip=" "];
+  Node10 -> Node11 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node11 [label="adore::mad::ArrayMatrixTools\l::hashit",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classadore_1_1mad_1_1ArrayMatrixTools.html#a359a7959f40373c48aac3e76f0a37d5f",tooltip=" "];
+  Node9 -> Node5 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node9 -> Node12 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node12 [label="adore::mad::ArrayMatrixTools\l::find",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classadore_1_1mad_1_1ArrayMatrixTools.html#a3e7dc6bbc349b44d883c85d47dbc353e",tooltip=" "];
+  Node12 -> Node11 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node9 -> Node13 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node13 [label="adore::mad::ArrayMatrixTools\l::sort",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classadore_1_1mad_1_1ArrayMatrixTools.html#a50ed2955f2cb4e51e92f8d0569213b95",tooltip=" "];
+  Node4 -> Node14 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node14 [label="adore::mad::ArrayMatrixTools\l::sparseDiagonalMatrix",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classadore_1_1mad_1_1ArrayMatrixTools.html#a8ffe1f2d13cf145f00ec39e89395da8d",tooltip=" "];
+  Node14 -> Node15 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node15 [label="adore::mad::min",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$namespaceadore_1_1mad.html#ab58ecb752f9bbfe27832e0a2c0e22c2b",tooltip=" "];
+  Node15 -> Node16 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node16 [label="adore::mad::min",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$namespaceadore_1_1mad.html#ac61b79c007d1859f93a10c04272095a1",tooltip=" "];
+  Node4 -> Node17 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node17 [label="adore::mad::CubicPiecewise\lFunction::toPolynomialFrom",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classadore_1_1mad_1_1CubicPiecewiseFunction.html#ad3e25ba798fd4d78f7b102689d1790c2",tooltip=" "];
+  Node4 -> Node18 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node18 [label="adore::mad::ArrayMatrixTools\l::transpose",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classadore_1_1mad_1_1ArrayMatrixTools.html#a233d63766075adc66449f4d73ccdf975",tooltip=" "];
+  Node1 -> Node19 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node19 [label="REQUIRE",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$test__lpiecewiseconst_8cpp.html#a896996220e0b1a182667751c424e1bd9",tooltip=" "];
+  Node1 -> Node20 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node20 [label="adore::mad::sin",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$namespaceadore_1_1mad.html#acec540f9bf9b6eb0e027d332d3fe5577",tooltip=" "];
+  Node20 -> Node21 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node21 [label="adore::mad::max",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$namespaceadore_1_1mad.html#adea062854ef0b105a3fdca8cf2aca945",tooltip=" "];
+  Node21 -> Node22 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node22 [label="adore::mad::max",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$namespaceadore_1_1mad.html#a618a8842fed7b9375957b1e393c58492",tooltip=" "];
+  Node20 -> Node15 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node1 -> Node23 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node23 [label="adore::mad::ArrayMatrixTools::sum",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classadore_1_1mad_1_1ArrayMatrixTools.html#a38509c630fbb061d0744644f11e0e5c6",tooltip=" "];
+}

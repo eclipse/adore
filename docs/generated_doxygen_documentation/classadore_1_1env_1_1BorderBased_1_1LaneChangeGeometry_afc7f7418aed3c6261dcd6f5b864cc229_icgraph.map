@@ -1,0 +1,5 @@
+<map id="adore::env::BorderBased::LaneChangeGeometry::getOffsetOfLeftBorder" name="adore::env::BorderBased::LaneChangeGeometry::getOffsetOfLeftBorder">
+<area shape="rect" id="node1" title="Get the offset of the left border at a certain position." alt="" coords="261,45,429,101"/>
+<area shape="rect" id="node2" href="$classadore_1_1env_1_1BorderBased_1_1LaneChangeView.html#a069afc30e0bf5958c8633b5bcd2f4384" title=" " alt="" coords="5,5,213,61"/>
+<area shape="rect" id="node3" href="$classadore_1_1env_1_1BorderBased_1_1DependentLane.html#a51aa4513c8a33e935f2bdb18afdb2af8" title=" " alt="" coords="11,85,208,141"/>
+</map>

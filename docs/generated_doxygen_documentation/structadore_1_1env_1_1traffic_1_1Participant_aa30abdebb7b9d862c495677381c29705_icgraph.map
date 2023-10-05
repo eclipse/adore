@@ -1,0 +1,11 @@
+<map id="adore::env::traffic::Participant::getWidth" name="adore::env::traffic::Participant::getWidth">
+<area shape="rect" id="node1" title=" " alt="" coords="800,97,952,139"/>
+<area shape="rect" id="node2" href="$classadore_1_1env_1_1OCStraightLinePrediction.html#a98a7c5f4c101c7a917f8e5a3e984cd16" title=" " alt="" coords="543,64,723,105"/>
+<area shape="rect" id="node8" href="$classadore_1_1env_1_1OCRoadBasedPrediction.html#af6fda5b2a78669c5e19e222348665713" title=" " alt="" coords="515,129,752,171"/>
+<area shape="rect" id="node3" href="$classadore_1_1apps_1_1PredictionProvider.html#a2cbc8dae07b19988248bcc37aee7fbb5" title=" " alt="" coords="236,122,467,149"/>
+<area shape="rect" id="node5" href="$classadore_1_1apps_1_1TestStraightLinePredictor.html#aa71ca18f57785e13aee86eb2cf74c48e" title=" " alt="" coords="267,5,435,47"/>
+<area shape="rect" id="node7" href="$test__occupancycylinderprediction_8cpp.html#a4244042923311f990ea106ba12c487a7" title=" " alt="" coords="301,71,401,98"/>
+<area shape="rect" id="node4" href="$classadore_1_1if__ROS_1_1PredictionProviderNode.html#a2bd0137f5108911b604d344cec08231b" title=" " alt="" coords="11,115,182,156"/>
+<area shape="rect" id="node6" href="$classadore_1_1if__ROS_1_1TestStraightLinePredictionNode.html#ac93000d1f2b42f5ec29bae22e12803f1" title=" " alt="" coords="5,5,188,47"/>
+<area shape="rect" id="node9" href="$test__ocroadbasedprediction_8cpp.html#a8a83239243952bcc807580ed96244f28" title=" " alt="" coords="301,173,401,199"/>
+</map>

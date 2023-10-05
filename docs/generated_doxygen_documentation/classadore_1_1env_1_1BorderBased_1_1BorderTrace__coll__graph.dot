@@ -1,0 +1,7 @@
+digraph "adore::env::BorderBased::BorderTrace"
+{
+ // LATEX_PDF_SIZE
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  Node1 [label="{adore::env::BorderBased\l::BorderTrace\n|- m_trace\l- m_distance_limit\l- m_length\l|+ BorderTrace()\l+ BorderTrace()\l+ setDistanceLimit()\l+ getDistanceLimit()\l+ insert()\l+ begin()\l+ end()\l+ rbegin()\l+ rend()\l+ clear()\l+ front()\l+ back()\l}",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black",tooltip=" "];
+}

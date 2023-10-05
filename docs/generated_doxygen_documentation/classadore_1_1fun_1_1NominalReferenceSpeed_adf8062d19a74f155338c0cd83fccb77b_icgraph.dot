@@ -1,0 +1,32 @@
+digraph "adore::fun::NominalReferenceSpeed::setSpeedScale"
+{
+ // LATEX_PDF_SIZE
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  rankdir="RL";
+  Node1 [label="adore::fun::NominalReference\lSpeed::setSpeedScale",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black",tooltip=" "];
+  Node1 -> Node2 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node2 [label="adore::fun::AdvancedLane\lChangePlanner::setSpeedScale",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classadore_1_1fun_1_1AdvancedLaneChangePlanner.html#a4ca6d81de78cb71e499ac06c0e99b6d7",tooltip=" "];
+  Node2 -> Node3 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node3 [label="adore::apps::TrajectoryPlanner\lALC::setSpeedScale",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classadore_1_1apps_1_1TrajectoryPlannerALC.html#a025c3d06baec90e6c7a6b774648c5b49",tooltip=" "];
+  Node3 -> Node4 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node4 [label="adore::if_ROS::Trajectory\lPlannerALCNode::init",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classadore_1_1if__ROS_1_1TrajectoryPlannerALCNode.html#a8bc30320ea121a6a2103d29e4ddd8293",tooltip=" "];
+  Node4 -> Node5 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node5 [label="main",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$adore__trajectory__planner__alc__node_8cpp.html#a3c04138a5bfe5d72780bb7e82a18e627",tooltip=" "];
+  Node1 -> Node6 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node6 [label="adore::fun::BasicLaneChange\lPlanner::setSpeedScale",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classadore_1_1fun_1_1BasicLaneChangePlanner.html#a5acd86f2f4da79a3f354242a6d045a32",tooltip=" "];
+  Node6 -> Node7 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node7 [label="adore::apps::TrajectoryPlanner\lLC::setSpeedScale",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classadore_1_1apps_1_1TrajectoryPlannerLC.html#a660772c5b2b566021b65de4b5e77a12f",tooltip=" "];
+  Node7 -> Node8 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node8 [label="adore::if_ROS::Trajectory\lPlannerLCNode::init",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classadore_1_1if__ROS_1_1TrajectoryPlannerLCNode.html#ae4ff0edb201e86e97bf946ed685566f1",tooltip=" "];
+  Node8 -> Node9 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node9 [label="main",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$adore__trajectory__planner__lc__node_8cpp.html#a3c04138a5bfe5d72780bb7e82a18e627",tooltip=" "];
+  Node1 -> Node10 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node10 [label="adore::fun::BasicLaneFollowing\lPlanner::setSpeedScale",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classadore_1_1fun_1_1BasicLaneFollowingPlanner.html#ab8ffbde3f8125ecd840ed3065454a4e9",tooltip=" "];
+  Node10 -> Node11 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node11 [label="adore::apps::TrajectoryPlanner\lLF::setSpeedScale",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classadore_1_1apps_1_1TrajectoryPlannerLF.html#af4ca12acfabb023477e271e3dc946359",tooltip=" "];
+  Node11 -> Node12 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node12 [label="adore::if_ROS::Trajectory\lPlannerLFNode::init",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classadore_1_1if__ROS_1_1TrajectoryPlannerLFNode.html#ad8f8a22a8312a75ae4eef6a2182c4f2a",tooltip=" "];
+  Node12 -> Node13 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node13 [label="main",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$adore__trajectory__planner__lf__node_8cpp.html#a3c04138a5bfe5d72780bb7e82a18e627",tooltip=" "];
+}

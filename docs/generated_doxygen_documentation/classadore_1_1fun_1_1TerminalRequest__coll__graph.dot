@@ -1,0 +1,7 @@
+digraph "adore::fun::TerminalRequest"
+{
+ // LATEX_PDF_SIZE
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  Node1 [label="{adore::fun::TerminalRequest\n|- X\l- Y\l- psi\l- t\l- valid\l|+ set()\l+ getX()\l+ getY()\l+ getPSI()\l+ getT()\l+ isValid()\l+ isActive()\l+ getStateVector()\l+ relocate()\l+ setStartTime()\l+ TerminalRequest()\l+ TerminalRequest()\l}",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black",tooltip=" "];
+}

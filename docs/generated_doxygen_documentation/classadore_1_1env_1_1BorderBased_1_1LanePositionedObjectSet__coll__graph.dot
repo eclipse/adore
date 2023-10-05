@@ -1,0 +1,7 @@
+digraph "adore::env::BorderBased::LanePositionedObjectSet"
+{
+ // LATEX_PDF_SIZE
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  Node1 [label="{adore::env::BorderBased\l::LanePositionedObjectSet\n|- borderId2Object\l- m_isOwner\l|+ LanePositionedObjectSet()\l+ ~LanePositionedObjectSet()\l+ setIsOwner()\l+ clear()\l+ discard_distant_objects()\l+ discard_distant_objects()\l+ insert_object()\l+ erase_object()\l+ eraseObjectsBorderBased()\l+ eraseObjectsBorderBased()\land 6 more...\l}",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black",tooltip="This class represents a set of objects that are positioned by LanePosition."];
+}

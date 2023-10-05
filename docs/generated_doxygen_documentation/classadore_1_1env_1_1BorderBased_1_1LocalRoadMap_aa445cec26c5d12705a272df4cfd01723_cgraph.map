@@ -1,0 +1,9 @@
+<map id="adore::env::BorderBased::LocalRoadMap::getNavigationCost" name="adore::env::BorderBased::LocalRoadMap::getNavigationCost">
+<area shape="rect" id="node1" title="Get the navigation cost for border on a certain point." alt="" coords="5,93,239,135"/>
+<area shape="rect" id="node2" href="$classadore_1_1env_1_1BorderBased_1_1BorderSet.html#afb523effcee573e774147446ecc756ab" title="check whether border type is in allowed types of set" alt="" coords="294,5,482,47"/>
+<area shape="rect" id="node3" href="$structadore_1_1env_1_1BorderBased_1_1itpair.html#a3746f6e3a03399eecb397f897f007562" title=" " alt="" coords="559,60,726,101"/>
+<area shape="rect" id="node4" href="$classadore_1_1env_1_1BorderBased_1_1BorderSet.html#a3a3da6cfdee8aa6e003079f7f53186b6" title="get all borders at the given point" alt="" coords="287,123,489,164"/>
+<area shape="rect" id="node7" href="$classadore_1_1env_1_1BorderBased_1_1BorderSet.html#a4a75adfc507696182edc2514b86f5d24" title="get an interator pair for all borders which follow after b" alt="" coords="297,188,479,229"/>
+<area shape="rect" id="node5" href="$classadore_1_1env_1_1BorderBased_1_1BorderSet.html#a5b9a10acc8d477c1d27d5b39fb1f99f3" title="get all borders in this within region" alt="" coords="537,125,748,167"/>
+<area shape="rect" id="node6" href="$classadore_1_1env_1_1BorderBased_1_1BorderSet.html#a8af807fde181a20de55594592d752adc" title="Get left neighbor of a border." alt="" coords="549,191,737,232"/>
+</map>

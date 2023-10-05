@@ -1,0 +1,11 @@
+<map id="Graphical Class Hierarchy" name="Graphical Class Hierarchy">
+<area shape="rect" id="node1" title=" " alt="" coords="5,235,133,276"/>
+<area shape="rect" id="node2" href="$structadore_1_1fun_1_1logic_1_1GAP__DISTANCE.html" title=" " alt="" coords="210,5,335,47"/>
+<area shape="rect" id="node3" href="$structadore_1_1fun_1_1logic_1_1IN__PLATOON.html" title=" " alt="" coords="211,71,334,112"/>
+<area shape="rect" id="node4" href="$structadore_1_1fun_1_1logic_1_1JOINING.html" title=" " alt="" coords="211,136,334,177"/>
+<area shape="rect" id="node5" href="$structadore_1_1fun_1_1logic_1_1LEAVING.html" title=" " alt="" coords="211,201,334,243"/>
+<area shape="rect" id="node6" href="$structadore_1_1fun_1_1logic_1_1NORMAL__DISTANCE.html" title="NORMAL_DISTANCE is defined as an entry state of the state machine" alt="" coords="195,267,350,308"/>
+<area shape="rect" id="node7" href="$structadore_1_1fun_1_1logic_1_1NOT__ABLE.html" title=" " alt="" coords="211,332,334,373"/>
+<area shape="rect" id="node8" href="$structadore_1_1fun_1_1logic_1_1PLATOONING__DISTANCE.html" title=" " alt="" coords="181,397,364,439"/>
+<area shape="rect" id="node9" href="$structadore_1_1fun_1_1logic_1_1WANT__TO__FORM.html" title="WANT_TO_FORM is defined as an entry state of the state machine" alt="" coords="207,463,339,504"/>
+</map>

@@ -1,0 +1,22 @@
+digraph "adore::fun::NominalReferenceSpeed::update"
+{
+ // LATEX_PDF_SIZE
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  rankdir="LR";
+  Node1 [label="adore::fun::NominalReference\lSpeed::update",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black",tooltip=" "];
+  Node1 -> Node2 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node2 [label="adore::params::APLongitudinal\lPlanner::getConstraintClearanceVel",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classadore_1_1params_1_1APLongitudinalPlanner.html#a6cf09148c799ba24cd77043b705299db",tooltip="getConstraintClearanceVel returns the offset of the reference from the velocity constraints"];
+  Node1 -> Node3 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node3 [label="adore::fun::CurvatureSpeed\lLimit::update",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classadore_1_1fun_1_1CurvatureSpeedLimit.html#a8c20f0b183aa9fea46c54637350ae706",tooltip=" "];
+  Node3 -> Node4 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node4 [label="adore::params::APLongitudinal\lPlanner::getAccLatUB",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classadore_1_1params_1_1APLongitudinalPlanner.html#a107c8d434c01a9944d8434b289781776",tooltip="getAccLatUB returns the absolute lateral acceleration bound which has to be maintained by reducing sp..."];
+  Node3 -> Node5 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node5 [label="adore::params::APLongitudinal\lPlanner::getAccLatUB_minVelocity",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classadore_1_1params_1_1APLongitudinalPlanner.html#a436db3b2faf5aa2826d8ea0213c0ef6e",tooltip="getAccLatUB_minVelocity returns the minimum velocity, which is always feasible despite getAccLatUB"];
+  Node1 -> Node6 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node6 [label="adore::fun::LFVSpeedLimit\l::update",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classadore_1_1fun_1_1LFVSpeedLimit.html#a3430553d0d85ee7fdb47034dfa3cdbb7",tooltip=" "];
+  Node6 -> Node7 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node7 [label="adore::params::APLongitudinal\lPlanner::getComfortAccLB",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classadore_1_1params_1_1APLongitudinalPlanner.html#ac391000600a4fc20222d358eaa627021",tooltip="getAccLB returns longitudinal acceleration lower bound"];
+  Node6 -> Node8 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node8 [label="adore::params::APTactical\lPlanner::getGlobalSpeedLimit",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classadore_1_1params_1_1APTacticalPlanner.html#a460ea5d1ffedca767a3644ec27fbb30d",tooltip=" "];
+}

@@ -1,0 +1,4 @@
+<map id="adore::env::BorderBased::ParkingSpot" name="adore::env::BorderBased::ParkingSpot">
+<area shape="rect" id="node1" title="This class definition is to represent parking spots." alt="" coords="5,336,172,501"/>
+<area shape="rect" id="node2" href="$structadore_1_1env_1_1BorderBased_1_1Coordinate.html" title="This struct represents 3&#45;dimensional coordines." alt="" coords="5,5,172,273"/>
+</map>

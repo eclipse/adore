@@ -1,0 +1,6 @@
+<map id="adore::params::APLongitudinalPlanner::getComfortAccLB" name="adore::params::APLongitudinalPlanner::getComfortAccLB">
+<area shape="rect" id="node1" title="getAccLB returns longitudinal acceleration lower bound" alt="" coords="480,39,680,80"/>
+<area shape="rect" id="node2" href="$classadore_1_1fun_1_1CurvatureSpeedLimitPredict.html#a9860052b90355a1467c6729bf402d935" title=" " alt="" coords="249,5,432,47"/>
+<area shape="rect" id="node3" href="$classadore_1_1fun_1_1LFVSpeedLimit.html#a3430553d0d85ee7fdb47034dfa3cdbb7" title=" " alt="" coords="252,71,429,112"/>
+<area shape="rect" id="node4" href="$classadore_1_1fun_1_1NominalReferenceSpeed.html#a8d4b3f3840611b38035375e6c18bcc6f" title=" " alt="" coords="5,71,201,112"/>
+</map>

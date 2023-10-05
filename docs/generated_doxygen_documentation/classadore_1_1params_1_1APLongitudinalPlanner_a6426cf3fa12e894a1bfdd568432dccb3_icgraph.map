@@ -1,0 +1,4 @@
+<map id="adore::params::APLongitudinalPlanner::stopAtRedLights_always_before" name="adore::params::APLongitudinalPlanner::stopAtRedLights_always_before">
+<area shape="rect" id="node1" title="determin stop mode for red lights: true &#45; always before red light, continue driving after; false &#45; ba..." alt="" coords="224,5,424,61"/>
+<area shape="rect" id="node2" href="$classadore_1_1fun_1_1AdhereToNextLimitLine.html#ab19455688801d0f63246b3a9b9d3ba94" title=" " alt="" coords="5,13,176,54"/>
+</map>

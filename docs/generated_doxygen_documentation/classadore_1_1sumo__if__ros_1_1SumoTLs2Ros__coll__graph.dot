@@ -1,0 +1,7 @@
+digraph "adore::sumo_if_ros::SumoTLs2Ros"
+{
+ // LATEX_PDF_SIZE
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  Node1 [label="{adore::sumo_if_ros\l::SumoTLs2Ros\n|+ utm_zone_\l+ is_south_hemi_\l+ _use_system_time\l+ _generate_spat_timing\l- sumo_lane_id_mapping_\l- sumo_intersection_id\l_mapping_\l- intersections_\l- _MAPEM\l- sumo_signal_group_id\l_mapping_\l|+ getMAPEMFromSUMO()\l+ getSPATEMFromSUMO()\l+ getIntersectionIDForSUMOString()\l+ getSUMOStringFromIntersectionID()\l+ SumoTLs2Ros()\l- getNodesFromSUMOLane()\l- getGeoreferencedLinks()\l- autofill_bit_string()\l- generateMAPEMFromSUMO()\l- convertToROSMsg()\l- wgs84_distance()\l- getSystemTime()\l- getMOY()\l- getLeapYearSeconds()\l- getSecondOfYearFromUTC()\l}",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black",tooltip=" "];
+}

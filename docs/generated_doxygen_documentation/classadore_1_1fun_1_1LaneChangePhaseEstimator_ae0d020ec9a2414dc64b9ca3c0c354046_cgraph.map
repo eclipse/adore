@@ -1,0 +1,7 @@
+<map id="adore::fun::LaneChangePhaseEstimator::getLaneChangePhase" name="adore::fun::LaneChangePhaseEstimator::getLaneChangePhase">
+<area shape="rect" id="node1" title=" " alt="" coords="5,104,220,145"/>
+<area shape="rect" id="node2" href="$classadore_1_1view_1_1ALaneChangeView.html#af9a6da34e4964f7737c839eb980f0f69" title=" " alt="" coords="268,5,447,47"/>
+<area shape="rect" id="node3" href="$classadore_1_1view_1_1AGap.html#a591ae9d2ea5c9fb69cfcc5eba5393624" title="get the state of the gap at a certain time, depending on ego position" alt="" coords="288,71,427,112"/>
+<area shape="rect" id="node4" href="$classadore_1_1view_1_1ALaneChangeView.html#a843001a04d0823731b89ff25f75501d5" title=" " alt="" coords="268,136,447,177"/>
+<area shape="rect" id="node5" href="$classadore_1_1view_1_1ALane.html#a7995d6c08470c31414ecd7891ec16f05" title=" " alt="" coords="290,201,425,243"/>
+</map>

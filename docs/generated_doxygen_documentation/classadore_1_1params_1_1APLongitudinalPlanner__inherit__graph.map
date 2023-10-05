@@ -1,0 +1,5 @@
+<map id="adore::params::APLongitudinalPlanner" name="adore::params::APLongitudinalPlanner">
+<area shape="rect" id="node1" title="abstract class containing parameters related to configuring the longitudinal planner" alt="" coords="90,5,290,244"/>
+<area shape="rect" id="node2" href="$classadore_1_1if__ROS_1_1params_1_1PLongitudinalPlanner.html" title=" " alt="" coords="5,292,169,531"/>
+<area shape="rect" id="node3" href="$classadore_1_1params_1_1APLongitudinalPlannerDummy.html" title="a dummy implementation for testing purposes" alt="" coords="194,292,394,531"/>
+</map>

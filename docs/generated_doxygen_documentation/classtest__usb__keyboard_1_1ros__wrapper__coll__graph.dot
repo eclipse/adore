@@ -1,0 +1,7 @@
+digraph "test_usb_keyboard.ros_wrapper"
+{
+ // LATEX_PDF_SIZE
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  Node1 [label="{test_usb_keyboard.ros\l_wrapper\n|+ device\l+ config\l+ pub\l|+ __init__()\l+ write_msg()\l+ get_key_on_down_or_up()\l+ rospy_loop()\l+ run()\l}",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black",tooltip=" "];
+}

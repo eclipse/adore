@@ -1,0 +1,9 @@
+digraph "adore::env::BorderBased::LaneFollowingViewProxy"
+{
+ // LATEX_PDF_SIZE
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  Node1 [label="{adore::env::BorderBased\l::LaneFollowingViewProxy\n|- lane_\l|+ LaneFollowingViewProxy()\l+ isValid()\l+ getSMin()\l+ getSMax()\l+ getProgressOfWidthOpen()\l+ getProgressOfWidthClosed()\l+ getOnLaneTraffic()\l+ getConflictSet()\l+ getSpeedLimit()\l+ getLeftIndicatorHint()\land 11 more...\l- limitS()\l}",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black",tooltip="Proxy class to access ALane interfaces from preprocessed lane geometry received as data object."];
+  Node2 -> Node1 [dir="back",color="midnightblue",fontsize="10",style="solid",arrowtail="onormal",fontname="Helvetica"];
+  Node2 [label="{adore::view::ALane\n||+ isValid()\l+ getSMax()\l+ getSMin()\l+ inSRange()\l+ getProgressOfWidthOpen()\l+ getProgressOfWidthClosed()\l+ getOnLaneTraffic()\l+ getConflictSet()\l+ getSpeedLimit()\l+ getLeftIndicatorHint()\land 11 more...\l}",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classadore_1_1view_1_1ALane.html",tooltip=" "];
+}

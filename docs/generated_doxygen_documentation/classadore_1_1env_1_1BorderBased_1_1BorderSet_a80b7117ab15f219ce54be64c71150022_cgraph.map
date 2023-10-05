@@ -1,0 +1,8 @@
+<map id="adore::env::BorderBased::BorderSet::getAllPredecessorsUpToDistance" name="adore::env::BorderBased::BorderSet::getAllPredecessorsUpToDistance">
+<area shape="rect" id="node1" title="adds all predecessors existant in BorderSet for a given Border to the vector of borders" alt="" coords="5,97,215,153"/>
+<area shape="rect" id="node2" href="$classadore_1_1env_1_1BorderBased_1_1BorderSet.html#a69802bccdc7cf3fa598283509808edc2" title="retrieve a border by ID" alt="" coords="277,5,443,47"/>
+<area shape="rect" id="node3" href="$classadore_1_1env_1_1BorderBased_1_1BorderSet.html#acc68b8957d3092bf9e53a75ffa433b6f" title="get an interator pair for all borders which lead to b" alt="" coords="263,71,457,112"/>
+<area shape="rect" id="node4" href="$classadore_1_1env_1_1BorderBased_1_1BorderSet.html#aaaefbe5fddb5e25a212e970734025a81" title="checks whether left border exists for a border" alt="" coords="265,136,455,177"/>
+<area shape="rect" id="node5" href="$classadore_1_1env_1_1BorderBased_1_1BorderSet.html#a0fc05f9ae15ed0653220677b7910a10f" title="check whether potentialPredecessor is a predecessor of b" alt="" coords="271,201,449,243"/>
+<area shape="rect" id="node6" href="$classadore_1_1env_1_1BorderBased_1_1BorderSet.html#a8af807fde181a20de55594592d752adc" title="Get left neighbor of a border." alt="" coords="505,201,693,243"/>
+</map>

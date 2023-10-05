@@ -1,0 +1,4 @@
+<map id="adore::env::MapStopLineManagement::reset" name="adore::env::MapStopLineManagement::reset">
+<area shape="rect" id="node1" title="clear local sets and pending updates" alt="" coords="5,13,248,54"/>
+<area shape="rect" id="node2" href="$classadore_1_1env_1_1BorderBased_1_1LanePositionedObjectSet.html#ad117a1d326b72a199caf227a2121e7ef" title="Clear the LanePositionedObjectSet." alt="" coords="296,5,473,61"/>
+</map>

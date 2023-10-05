@@ -1,0 +1,12 @@
+<map id="adore::env::BorderBased::LaneChangeGeometry" name="adore::env::BorderBased::LaneChangeGeometry">
+<area shape="rect" id="node1" title="A class with a geometry description of a lane next to the current lane." alt="" coords="405,1939,581,2353"/>
+<area shape="rect" id="node2" href="$structadore_1_1env_1_1BorderBased_1_1Node.html" title=" " alt="" coords="410,1579,577,1861"/>
+<area shape="rect" id="node3" href="$structadore_1_1env_1_1BorderBased_1_1Border.html" title="The border struct contains data of the smallest." alt="" coords="477,1145,643,1384"/>
+<area shape="rect" id="node4" href="$classadore_1_1mad_1_1LLinearPiecewiseFunctionM.html" title=" " alt="" coords="233,778,431,1031"/>
+<area shape="rect" id="node7" href="$classadore_1_1mad_1_1LLinearPiecewiseFunctionM_1_1OneDimension.html" title=" " alt="" coords="31,1160,254,1369"/>
+<area shape="rect" id="node5" href="$classadore_1_1mad_1_1AScalarToN.html" title=" " alt="" coords="249,425,415,635"/>
+<area shape="rect" id="node6" href="$classadore_1_1mad_1_1ALFunction.html" title=" " alt="" coords="239,5,425,347"/>
+<area shape="rect" id="node8" href="$classadore_1_1mad_1_1ALFunction.html" title=" " alt="" coords="5,741,192,1068"/>
+<area shape="rect" id="node9" href="$structadore_1_1env_1_1BorderBased_1_1BorderID.html" title="This struct identifies a Border by the coordinates of the starting and the end point." alt="" coords="473,763,647,1046"/>
+<area shape="rect" id="node10" href="$structadore_1_1env_1_1BorderBased_1_1Coordinate.html" title="This struct represents 3&#45;dimensional coordines." alt="" coords="477,396,643,664"/>
+</map>

@@ -1,0 +1,29 @@
+digraph "adore::env::ControlledConnectionSet4Ego::update"
+{
+ // LATEX_PDF_SIZE
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  rankdir="LR";
+  Node1 [label="adore::env::ControlledConnection\lSet4Ego::update",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black",tooltip=" "];
+  Node1 -> Node2 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node2 [label="adore::mad::AReader\l::getData",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classadore_1_1mad_1_1AReader.html#a46ab7520d828d1a574365eaf8b483e29",tooltip=" "];
+  Node1 -> Node3 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node3 [label="adore::env::VehicleMotion\lState9d::getX",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$structadore_1_1env_1_1VehicleMotionState9d.html#a16d6d61f5dfa1028ca97d8f1a8b6e8cf",tooltip="Get the x-coordinate."];
+  Node1 -> Node4 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node4 [label="adore::env::VehicleMotion\lState9d::getY",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$structadore_1_1env_1_1VehicleMotionState9d.html#a51e8eed0ef10d909592edcb933c1b802",tooltip="Get the y-coordinate."];
+  Node1 -> Node5 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node5 [label="adore::env::ControlledConnection\lSet::update",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classadore_1_1env_1_1ControlledConnectionSet.html#a1078b652e19657d3d8498b45fdc6876a",tooltip=" "];
+  Node5 -> Node6 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node6 [label="adore::env::LocalBoxSet\l::insert",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classadore_1_1env_1_1LocalBoxSet.html#a4a346cba80ffc45aae88b5f5e652b0d1",tooltip=" "];
+  Node6 -> Node7 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node7 [label="adore::env::LocalBoxSet\l::find",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classadore_1_1env_1_1LocalBoxSet.html#acf979fc4cd56a7d719fc54ed30ed09a0",tooltip=" "];
+  Node6 -> Node8 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node8 [label="adore::env::LocalBoxSet\l::remove",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classadore_1_1env_1_1LocalBoxSet.html#aec75962f7db2802377bca2bb08e54c51",tooltip=" "];
+  Node5 -> Node9 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node9 [label="adore::env::LocalBoxSet\l::refocus",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classadore_1_1env_1_1LocalBoxSet.html#a937284b0b448e9b47cfa014e97856244",tooltip=" "];
+  Node9 -> Node10 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node10 [label="adore::env::LocalBoxSet\l::itpair::current",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$structadore_1_1env_1_1LocalBoxSet_1_1itpair.html#afb1837edffbf5a8d51eb137c6eafb522",tooltip=" "];
+  Node9 -> Node11 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node11 [label="adore::env::LocalBoxSet\l::getObjectsOutsideRegion",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classadore_1_1env_1_1LocalBoxSet.html#a988227c615f25bab5c2f75024cdcf8f9",tooltip=" "];
+  Node9 -> Node8 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+}

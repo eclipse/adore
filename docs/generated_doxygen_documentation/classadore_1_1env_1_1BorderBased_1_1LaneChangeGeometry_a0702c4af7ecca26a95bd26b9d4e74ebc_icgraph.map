@@ -1,0 +1,4 @@
+<map id="adore::env::BorderBased::LaneChangeGeometry::isValid" name="adore::env::BorderBased::LaneChangeGeometry::isValid">
+<area shape="rect" id="node1" title="Check whether the LaneChangeGeometry is valid." alt="" coords="220,5,388,61"/>
+<area shape="rect" id="node2" href="$classadore_1_1env_1_1BorderBased_1_1DependentLane.html#aee3e26a2dea798054dff8fe8192ec618" title="Check whether LaneChangeView is valid." alt="" coords="5,13,172,54"/>
+</map>

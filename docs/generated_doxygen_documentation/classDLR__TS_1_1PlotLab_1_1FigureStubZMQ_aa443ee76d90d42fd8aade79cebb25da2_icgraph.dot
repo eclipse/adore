@@ -1,0 +1,28 @@
+digraph "DLR_TS::PlotLab::FigureStubZMQ::send_paint"
+{
+ // LATEX_PDF_SIZE
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  rankdir="RL";
+  Node1 [label="DLR_TS::PlotLab::FigureStub\lZMQ::send_paint",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black",tooltip=" "];
+  Node1 -> Node2 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node2 [label="DLR_TS::PlotLab::FigureStub\lZMQ::append",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classDLR__TS_1_1PlotLab_1_1FigureStubZMQ.html#a6499d3aa62f49dad8a93f5bef1cb61bf",tooltip=" "];
+  Node1 -> Node3 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node3 [label="DLR_TS::PlotLab::FigureStub\lZMQ::circlestrip",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classDLR__TS_1_1PlotLab_1_1FigureStubZMQ.html#a9356509efccff79408c4557cfe398b6e",tooltip=" "];
+  Node1 -> Node4 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node4 [label="DLR_TS::PlotLab::FigureStub\lZMQ::patch",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classDLR__TS_1_1PlotLab_1_1FigureStubZMQ.html#aa1f50d702aae5c9bf4dd293d24814c49",tooltip=" "];
+  Node1 -> Node5 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node5 [label="DLR_TS::PlotLab::FigureStub\lZMQ::plot",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classDLR__TS_1_1PlotLab_1_1FigureStubZMQ.html#a6bf741b7f5831d68d614e0bbc58c100b",tooltip=" "];
+  Node5 -> Node6 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node6 [label="adore::apps::PlainXMLExporter::run",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classadore_1_1apps_1_1PlainXMLExporter.html#acd64af468d0194ac614c575d91df877e",tooltip=" "];
+  Node6 -> Node7 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node7 [label="main",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$plainxmlexporter_8cpp.html#a3c04138a5bfe5d72780bb7e82a18e627",tooltip=" "];
+  Node1 -> Node8 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node8 [label="DLR_TS::PlotLab::FigureStub\lZMQ::plotText",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classDLR__TS_1_1PlotLab_1_1FigureStubZMQ.html#af3f65bfa2ca6999df126bfb4991a1e5f",tooltip=" "];
+  Node1 -> Node9 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node9 [label="DLR_TS::PlotLab::FigureStub\lZMQ::plotVehicle",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classDLR__TS_1_1PlotLab_1_1FigureStubZMQ.html#a53eb3ced552e5ca5646550a3488d3d05",tooltip=" "];
+  Node9 -> Node10 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node10 [label="DLR_TS::PlotLab::FigureStub\lZMQ::plotVehicle",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classDLR__TS_1_1PlotLab_1_1FigureStubZMQ.html#a0beac7c2d3ee3e94d996b1ce643c73ba",tooltip=" "];
+  Node1 -> Node11 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node11 [label="DLR_TS::PlotLab::FigureStub\lZMQ::tristrip",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classDLR__TS_1_1PlotLab_1_1FigureStubZMQ.html#a44cdd8847bbbae1a1e16eda0b50e864d",tooltip=" "];
+}

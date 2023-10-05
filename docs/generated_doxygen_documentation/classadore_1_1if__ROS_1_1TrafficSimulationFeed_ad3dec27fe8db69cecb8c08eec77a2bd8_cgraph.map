@@ -1,0 +1,5 @@
+<map id="adore::if_ROS::TrafficSimulationFeed::TrafficSimulationFeed" name="adore::if_ROS::TrafficSimulationFeed::TrafficSimulationFeed">
+<area shape="rect" id="node1" title=" " alt="" coords="5,39,216,80"/>
+<area shape="rect" id="node2" href="$classadore_1_1if__ROS_1_1TrafficSimulationFeed.html#a86639b01430677cec4939a2f807eb8bb" title="receives aggregates and unpacks into data_ queue" alt="" coords="264,5,475,47"/>
+<area shape="rect" id="node3" href="$classadore_1_1if__ROS_1_1TrafficSimulationFeed.html#a0f2095ca44058370f2bd9b2a0d982621" title="receives single message and puts data element in data_queue" alt="" coords="264,71,475,112"/>
+</map>

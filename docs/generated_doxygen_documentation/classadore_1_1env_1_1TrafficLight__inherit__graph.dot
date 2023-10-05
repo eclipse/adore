@@ -1,0 +1,11 @@
+digraph "adore::env::TrafficLight"
+{
+ // LATEX_PDF_SIZE
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  Node1 [label="{adore::env::TrafficLight\n|+ movement_id_\l+ intersection_id_\l- status_\l|+ TrafficLight()\l+ getStatus()\l+ getStatus()\l+ operator==()\l}",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black",tooltip=" "];
+  Node2 -> Node1 [dir="back",color="midnightblue",fontsize="10",style="solid",arrowtail="onormal",fontname="Helvetica"];
+  Node2 [label="{adore::env::TrafficControl\lDevice\n|- type_\l- id_\l- orientation_\l- coordinate_\l|+ getTCDClass()\l+ getNumericValue1()\l+ TrafficControlDevice()\l+ TrafficControlDevice()\l+ translate()\l+ rotate()\l+ getID()\l+ setID()\l+ setType()\l+ getType()\l+ setOrientation()\l+ getOrientation()\l+ setCoordinate()\l+ getCoordinate()\l}",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classadore_1_1env_1_1TrafficControlDevice.html",tooltip=" "];
+  Node1 -> Node3 [dir="back",color="midnightblue",fontsize="10",style="solid",arrowtail="onormal",fontname="Helvetica"];
+  Node3 [label="{adore::env::SimTrafficLight\n|+ red_duration_\l+ yellow_duration_\l+ green_duration_\l+ yellow_red_duration_\l+ start_state_\l+ time_to_red_\l+ time_to_red_yellow_\l+ time_to_yellow_\l+ time_to_green_\l|+ SimTrafficLight()\l}",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classadore_1_1env_1_1SimTrafficLight.html",tooltip=" "];
+}

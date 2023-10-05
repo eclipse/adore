@@ -1,0 +1,6 @@
+<map id="adore::env::BorderBased::Border::translate" name="adore::env::BorderBased::Border::translate">
+<area shape="rect" id="node1" title="Translate the border." alt="" coords="5,39,172,80"/>
+<area shape="rect" id="node2" href="$classadore_1_1mad_1_1LLinearPiecewiseFunctionM.html#a933bab22ae375c790af2a9bf3aaadba4" title=" " alt="" coords="220,5,417,47"/>
+<area shape="rect" id="node3" href="$structadore_1_1env_1_1BorderBased_1_1BorderID.html#a9b2a0fab766b39977b547fc4fce8a3c1" title="Translate a border." alt="" coords="235,71,402,112"/>
+<area shape="rect" id="node4" href="$structadore_1_1env_1_1BorderBased_1_1Coordinate.html#a89c101904eb4d7a7a601fa5758dd5437" title="Translate a coordinate object." alt="" coords="465,71,632,112"/>
+</map>

@@ -1,0 +1,19 @@
+digraph "CSVLog::logFile"
+{
+ // LATEX_PDF_SIZE
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  rankdir="LR";
+  Node1 [label="CSVLog::logFile",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black",tooltip="generate log entry in file"];
+  Node1 -> Node2 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node2 [label="CSVLog::getCurrentTime",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classCSVLog.html#a668001de9868bbc7f605cd7252df9d2f",tooltip="get time of day as string"];
+  Node1 -> Node3 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node3 [label="CSVLog::getCurrentTimeEpoch",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classCSVLog.html#ad6cab441e362a65b4c60aaf223811b42",tooltip="get epoch as string"];
+  Node1 -> Node4 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node4 [label="CSVLog::writeBufferToFile",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classCSVLog.html#a3c428d922317879c1aa99204fa32bf61",tooltip="writes content of buffer to file"];
+  Node4 -> Node3 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node1 -> Node5 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node5 [label="CSVLog::writeLogToBuffer",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classCSVLog.html#a42ea472abab2f1edd941af3912edcb1d",tooltip="general log generator for buffer"];
+  Node5 -> Node6 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node6 [label="CSVLog::lvlToString",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classCSVLog.html#aac8cc94d98c714221aca42f9c4c14441",tooltip="get string for log level"];
+}

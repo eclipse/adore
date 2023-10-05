@@ -1,0 +1,6 @@
+<map id="adore::env::BorderBased::BorderSet::getIndexableNeighbors" name="adore::env::BorderBased::BorderSet::getIndexableNeighbors">
+<area shape="rect" id="node1" title="returns the given border and all parallel borders with a changeable type, ordered from leftmost to ri..." alt="" coords="5,71,235,112"/>
+<area shape="rect" id="node2" href="$classadore_1_1env_1_1BorderBased_1_1BorderSet.html#a8af807fde181a20de55594592d752adc" title="Get left neighbor of a border." alt="" coords="287,5,475,47"/>
+<area shape="rect" id="node3" href="$classadore_1_1env_1_1BorderBased_1_1BorderSet.html#a49e8f6a0309cd0c2c2afa28412435f4f" title="get the right neighbor of a border" alt="" coords="283,71,480,112"/>
+<area shape="rect" id="node4" href="$structadore_1_1env_1_1BorderBased_1_1Border.html#a6aef4b2d46c09542a7e792dd27770365" title="Check whether type is Changeable." alt="" coords="291,136,472,177"/>
+</map>

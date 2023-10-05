@@ -1,0 +1,7 @@
+digraph "adore::view::ALane"
+{
+ // LATEX_PDF_SIZE
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  Node1 [label="{adore::view::ALane\n||+ isValid()\l+ getSMax()\l+ getSMin()\l+ inSRange()\l+ getProgressOfWidthOpen()\l+ getProgressOfWidthClosed()\l+ getOnLaneTraffic()\l+ getConflictSet()\l+ getSpeedLimit()\l+ getLeftIndicatorHint()\land 11 more...\l}",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black",tooltip=" "];
+}

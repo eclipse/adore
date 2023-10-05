@@ -1,0 +1,958 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+      
+      
+      <link rel="icon" href="../../../img/favicon.ico">
+      <meta name="generator" content="mkdocs-1.5.3, mkdocs-material-9.4.3">
+    
+    
+      
+        <title>apt_cacher_ng_docker - ADORe Documentation</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.79e020e9.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    <body dir="ltr">
+  
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&"object"==typeof palette.color)for(var key of Object.keys(palette.color))document.body.setAttribute("data-md-color-"+key,palette.color[key])</script>
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#apt_cacher_ng_docker" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="ADORe Documentation" class="md-header__button md-logo" aria-label="ADORe Documentation" data-md-component="logo">
+      
+  <img src="../../../img/logo.png" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            ADORe Documentation
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              apt_cacher_ng_docker
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="ADORe Documentation" class="md-nav__button md-logo" aria-label="ADORe Documentation" data-md-component="logo">
+      
+  <img src="../../../img/logo.png" alt="logo">
+
+    </a>
+    ADORe Documentation
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../about_adore/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Home
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../quick_start/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Quick Start
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Setup
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            Setup
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../setup/system_requirements/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    System Requirements
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../setup/prerequisites/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Prerequisites
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../setup/installing_docker/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Installing Docker
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../setup/getting_started/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Getting Started
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Basic Usage
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            Basic Usage
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../basic_usage/first_scenario/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Running Your First Scenario
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Technical Reference Manual
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            Technical Reference Manual
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../system_and_development/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    System and Development
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../control_system/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Control System
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../interfaces/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Interfaces
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../system_and_development/doxygen_documentation/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Doxygen Documentation
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Module Quick Reference
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../questions_and_answers/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Questions and Answers
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../problems_and_solutions/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Problems and Solutions
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../getting_help/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Getting Help
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../adore_status/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    ADORe Status
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../contact/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Contact
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#background" class="md-nav__link">
+    Background
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#prerequisites" class="md-nav__link">
+    Prerequisites
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#usage" class="md-nav__link">
+    Usage
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#setting-up-consumers" class="md-nav__link">
+    Setting Up Consumers
+  </a>
+  
+    <nav class="md-nav" aria-label="Setting Up Consumers">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#consumer-option-recommended-approach" class="md-nav__link">
+    Consumer Option (Recommended Approach)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#consumer-option-1" class="md-nav__link">
+    Consumer Option 1
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#option-2" class="md-nav__link">
+    Option 2
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#apt-cacher-ng-statistics-dashboard" class="md-nav__link">
+    Apt-Cacher NG Statistics Dashboard
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cache-directory" class="md-nav__link">
+    Cache Directory
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#proxy-configuration" class="md-nav__link">
+    Proxy Configuration
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#disabling-apt-cacher-ng-ad-hoc" class="md-nav__link">
+    Disabling Apt Cacher Ng ad hoc
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+<h1 id="apt_cacher_ng_docker">apt_cacher_ng_docker</h1>
+<p>This project provides an APT caching service for docker saving network resources.</p>
+<p>apt_cacher_ng_docker provides a mechanism for running <a href="https://help.ubuntu.com/community/Apt-Cacher%20NG">apt-cacher ng</a>
+along side docker build and run.  </p>
+<h2 id="background">Background</h2>
+<p>Repeated docker builds of large contexts can be time consuming and waste network
+resources. The APT package management tool can be a significant offender of this
+waste.  This project allows you to run an apt cacher ng service along side 
+your docker builds to save network resources from repeated download of apt
+packages resulting on significant speedup with subsequent docker builds.</p>
+<h2 id="prerequisites">Prerequisites</h2>
+<p>requires docker, docker compose, and make installed and configured for your user.</p>
+<h2 id="usage">Usage</h2>
+<p>Simply call the provided up target to start the apt cacher ng service:</p>
+<pre><code class="language-bash">make up
+</code></pre>
+<h2 id="setting-up-consumers">Setting Up Consumers</h2>
+<p>There are a number of strategies for setting up a client to take advantage of
+this apt cacher ng service.  This section offers several consumer examples. </p>
+<h3 id="consumer-option-recommended-approach">Consumer Option (<strong>Recommended Approach</strong>)</h3>
+<p>This is the best and recommended approach for consuming this apt cacher ng service.
+The result of this method will be reproducible builds e.g., regardless of weather
+the apt cacher ng service is used or not docker build cache will not be invalidated.</p>
+<ol>
+<li>Use  provided make target to start up the apt cacher ng service:</li>
+</ol>
+<pre><code class="language-bash">make up
+</code></pre>
+<ol>
+<li>Build you docker image sourcing the provided docker config in this directory(config.json):</li>
+</ol>
+<pre><code class="language-bash">DOCKER_CONFIG=. docker build --network host --file Dockerfile.apt_cacher_ng_consumer_recommended .
+</code></pre>
+<h3 id="consumer-option-1">Consumer Option 1</h3>
+<p>This option requires modifying the consumer Dockerfile.  This will invalidate 
+your docker cache if the HTTP_PROXY variable changes. This is generally a bad 
+option.</p>
+<ol>
+<li>Add the following to any consumer docker containers that wish to take advantage
+of apt caching:</li>
+</ol>
+<pre><code class="language-Dockerfile">...
+RUN echo 'Acquire::http { Proxy &quot;http://127.0.0.1:3142&quot;; };' &gt;&gt; /etc/apt/apt.conf.d/01proxy
+RUN apt-get update
+...
+RUN apt-get install -y somepackage
+...
+
+</code></pre>
+<ol>
+<li>Before building the consumer image start the apt cacher ng service with the provided make target:</li>
+</ol>
+<pre><code class="language-bash">make start_apt_cacher_ng
+</code></pre>
+<ol>
+<li>Build your docker image with the --network flag provided as follows:</li>
+</ol>
+<pre><code class="language-bash">docker build --network host .
+</code></pre>
+<p>or try the example Dockerfile consumer provided with the project:</p>
+<pre><code class="language-bash">docker build --network host --file Dockerfile.apt_cacher_ng_consumer1 .
+</code></pre>
+<ol>
+<li>Stop the apt-cacher ng service after your container is build with the provided make target:</li>
+</ol>
+<pre><code class="language-bash">make stop_apt_cacher_ng
+</code></pre>
+<p>A complete dockerfile is provided in this project for this example (Dockerfile.apt_cacher_ng_consumer1)</p>
+<h3 id="option-2">Option 2</h3>
+<p>This option requires modifying the consumer Dockerfile.  This will invalidate 
+your docker cache if the HTTP_PROXY variable changes. This is generally a bad 
+option.</p>
+<ol>
+<li>Add the following to any consumer docker containers that wish to take advantage
+of apt caching:</li>
+</ol>
+<pre><code class="language-Dockerfile">...
+ARG HTTP_PROXY
+ARG HTTPS_PROXY
+ARG NO_PROXY
+
+ENV http_proxy &quot;$HTTP_PROXY&quot;
+ENV https_proxy &quot;$HTTPS_PROXY&quot;
+ENV no_proxy &quot;$NO_PROXY&quot;
+...
+RUN apt-get update
+...
+RUN apt-get install -y somepackage
+...
+</code></pre>
+<ol>
+<li>Before building the consumer image start the apt cacher ng service with the provided make target:</li>
+</ol>
+<pre><code class="language-bash">make start_apt_cacher_ng
+</code></pre>
+<ol>
+<li>Build your docker image with the --network flag and --build-arg flags provided as follows:</li>
+</ol>
+<pre><code class="language-bash">docker build --network host --build-arg HTTP_PROXY=http://127.0.0.1:3142 --build-arg HTTPS_PROXY=&quot;http://127.0.0.1:3142&quot; .
+</code></pre>
+<p>or try the example Dockerfile consumer provided with the project:</p>
+<pre><code class="language-bash">docker build --network host --file Dockerfile.apt_cacher_ng_consumer2 .
+</code></pre>
+<ol>
+<li>Stop the apt-cacher ng service after your container is build with the provided make target:</li>
+</ol>
+<pre><code class="language-bash">make stop_apt_cacher_ng
+</code></pre>
+<p>A complete dockerfile is provided in this project for this example (Dockerfile.apt_cacher_ng_consumer1)</p>
+<h3 id="apt-cacher-ng-statistics-dashboard">Apt-Cacher NG Statistics Dashboard</h3>
+<p>While Apt-Cacher is running caching statistics can be found via the web interface at: http://127.0.0.1:3142/acng-report.html</p>
+<h3 id="cache-directory">Cache Directory</h3>
+<p>when you execute "make up" a docker volume is created for apt cache located in the current directory and called ".cache".
+This directory cache directory is preserved regardless of the state docker on the host system.  To manually wipe this
+cache you can run:</p>
+<pre><code class="language-bash">make clean
+</code></pre>
+<h2 id="proxy-configuration">Proxy Configuration</h2>
+<p>The provide apt cacher ng service works behind a proxy. To enable a proxy
+set the HTTP_PROXY environmental variable to your desired proxy example:</p>
+<pre><code class="language-bash">HTTP_PROXY=http://someproxy:3124 make build_apt_cacher_ng &amp;&amp; make start_apt_cacher_ng
+</code></pre>
+<p>The environmental variable can also be set for persistence via your preferred shell or with the following:</p>
+<pre><code class="language-bash">export HTTP_PROXY=http://someproxy:3124
+...
+...
+make build_apt_cacher_ng &amp;&amp; make start_apt_cacher_ng
+</code></pre>
+<h2 id="disabling-apt-cacher-ng-ad-hoc">Disabling Apt Cacher Ng ad hoc</h2>
+<p>Sometimes it may be necessary to disable Apt Cacher Ng. This can be done by 
+setting the environmental variable <code>APT_CACHER_NG_ENABLED</code> to false.
+One-off disabling apt-cacher-ng:</p>
+<pre><code class="language-bash">APT_CACHER_NG_ENABLED=false make up
+</code></pre>
+<p>Sometimes it may be necessary to disable apt-cacher-ng persistently in the case
+when it is causing issues or during CI processes. This can be done by sourcing
+the provided environment file:</p>
+<pre><code class="language-bash">source disable_apt_cacher_ng.env
+</code></pre>
+<blockquote>
+<p><strong>⚠️ WARNING:</strong>
+This will only work with the recommended consumer approach with the DOCKER_CONFIG env var.</p>
+</blockquote>
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    <script id="__config" type="application/json">{"base": "../..", "features": ["content.code.copy"], "search": "../../assets/javascripts/workers/search.a264c092.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.6eac0284.min.js"></script>
+      
+    
+  </body>
+</html>

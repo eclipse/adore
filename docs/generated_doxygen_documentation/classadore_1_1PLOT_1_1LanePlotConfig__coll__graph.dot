@@ -1,0 +1,7 @@
+digraph "adore::PLOT::LanePlotConfig"
+{
+ // LATEX_PDF_SIZE
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  Node1 [label="{adore::PLOT::LanePlotConfig\n|+ border_outer_left_plotoptions\l+ border_outer_right\l_plotoptions\l+ lane_fill_driveable\l_plotoptions\l+ lane_fill_emergency\l_plotoptions\l+ lane_fill_other_plotoptions\l+ lane_fill_default_plotoptions\l+ setpoint_plotoptions\l+ plot_emergency_lane\l+ plot_other_lane\l+ plot_drive_lane\l+ plot_traffic_lights\l|+ LanePlotConfig()\l}",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black",tooltip=" "];
+}

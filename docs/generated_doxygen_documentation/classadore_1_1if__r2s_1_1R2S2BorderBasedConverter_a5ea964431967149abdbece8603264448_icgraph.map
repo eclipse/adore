@@ -1,0 +1,7 @@
+<map id="adore::if_r2s::R2S2BorderBasedConverter::convertLaneBorderType" name="adore::if_r2s::R2S2BorderBasedConverter::convertLaneBorderType">
+<area shape="rect" id="node1" title="converts from LaneBorder::TYPE to BorderType::TYPE" alt="" coords="983,5,1244,47"/>
+<area shape="rect" id="node2" href="$classadore_1_1if__r2s_1_1R2S2BorderBasedConverter.html#a574dcb4e602dbb3c8fd548909f9563a5" title="borders for functions in dist2function from s0 to s1" alt="" coords="729,5,935,47"/>
+<area shape="rect" id="node3" href="$classadore_1_1if__r2s_1_1R2S2BorderBasedConverter.html#a6ef8e454c5140d4f40c2ee5c3f4ff38f" title="manage overall conversion process from sectionmap to borderset" alt="" coords="463,5,681,47"/>
+<area shape="rect" id="node4" href="$classadore_1_1if__r2s_1_1R2S2BorderBasedConverter.html#a6d12e18c673154c8c16fad4895b691c2" title="actual conversion" alt="" coords="227,5,415,47"/>
+<area shape="rect" id="node5" href="$classadore_1_1if__r2s_1_1R2S2BorderBasedConverter.html#aee4fa475a46a509943dbc0c7e26e3b8d" title="convert to borders and get sectionmap with base data" alt="" coords="5,5,179,47"/>
+</map>

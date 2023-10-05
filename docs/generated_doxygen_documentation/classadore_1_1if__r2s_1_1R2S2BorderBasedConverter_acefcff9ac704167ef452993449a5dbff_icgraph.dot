@@ -1,0 +1,14 @@
+digraph "adore::if_r2s::R2S2BorderBasedConverter::sortFunctionsByDistance"
+{
+ // LATEX_PDF_SIZE
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  rankdir="RL";
+  Node1 [label="adore::if_r2s::R2S2Border\lBasedConverter::sortFunctionsBy\lDistance",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black",tooltip="sort borders by their distance to base function which is required to be available through dist2functi..."];
+  Node1 -> Node2 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node2 [label="adore::if_r2s::R2S2Border\lBasedConverter::convertToBorder",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classadore_1_1if__r2s_1_1R2S2BorderBasedConverter.html#a6ef8e454c5140d4f40c2ee5c3f4ff38f",tooltip="manage overall conversion process from sectionmap to borderset"];
+  Node2 -> Node3 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node3 [label="adore::if_r2s::R2S2Border\lBasedConverter::do_convert",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classadore_1_1if__r2s_1_1R2S2BorderBasedConverter.html#a6d12e18c673154c8c16fad4895b691c2",tooltip="actual conversion"];
+  Node3 -> Node4 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node4 [label="adore::if_r2s::R2S2Border\lBasedConverter::convert",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classadore_1_1if__r2s_1_1R2S2BorderBasedConverter.html#aee4fa475a46a509943dbc0c7e26e3b8d",tooltip="convert to borders and get sectionmap with base data"];
+}

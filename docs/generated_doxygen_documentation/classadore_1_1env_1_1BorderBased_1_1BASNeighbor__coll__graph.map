@@ -1,0 +1,5 @@
+<map id="adore::env::BorderBased::BASNeighbor" name="adore::env::BorderBased::BASNeighbor">
+<area shape="rect" id="node1" title="This class choses the left/right neighbors of a border sequence." alt="" coords="26,624,193,760"/>
+<area shape="rect" id="node2" href="$classadore_1_1env_1_1BorderBased_1_1BorderAccumulationStrategy.html" title="This class defines how successors of a border should be chosen." alt="" coords="5,453,213,575"/>
+<area shape="rect" id="node3" href="$classadore_1_1env_1_1BorderBased_1_1BorderSet.html" title="efficiently store borders in boost R&#45;tree" alt="" coords="22,5,197,391"/>
+</map>

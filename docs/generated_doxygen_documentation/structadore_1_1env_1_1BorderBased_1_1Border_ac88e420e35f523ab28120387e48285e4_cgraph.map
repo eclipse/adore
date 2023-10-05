@@ -1,0 +1,4 @@
+<map id="adore::env::BorderBased::Border::isMergeNeighborOf" name="adore::env::BorderBased::Border::isMergeNeighborOf">
+<area shape="rect" id="node1" title="Check whether the border and its left neighbor end at the same point as the potential merge neighbor." alt="" coords="5,5,193,47"/>
+<area shape="rect" id="node2" href="$structadore_1_1env_1_1BorderBased_1_1Coordinate.html#a29c83e934340f40cfa66dab2e7982d20" title="Check whether the Coordinate is near to another Coordinate." alt="" coords="241,5,408,47"/>
+</map>

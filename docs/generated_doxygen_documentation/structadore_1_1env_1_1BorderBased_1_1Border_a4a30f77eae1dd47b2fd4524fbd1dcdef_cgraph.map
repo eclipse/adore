@@ -1,0 +1,4 @@
+<map id="adore::env::BorderBased::Border::isLaneChangeNeighborOf" name="adore::env::BorderBased::Border::isLaneChangeNeighborOf">
+<area shape="rect" id="node1" title="Check whether the border is a lane&#45;change&#45;neighbor of another border." alt="" coords="5,5,231,47"/>
+<area shape="rect" id="node2" href="$structadore_1_1env_1_1BorderBased_1_1Border.html#a4673c950e7cbca452b3b763dcda9b02b" title="Get the direction of the left neighbor." alt="" coords="279,5,477,47"/>
+</map>

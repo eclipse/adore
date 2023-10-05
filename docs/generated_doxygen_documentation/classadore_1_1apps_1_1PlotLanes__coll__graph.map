@@ -1,0 +1,11 @@
+<map id="adore::apps::PlotLanes" name="adore::apps::PlotLanes">
+<area shape="rect" id="node1" title="a optimzed plotting application to plot map borders, vehicles and environment information and backgro..." alt="" coords="747,453,903,692"/>
+<area shape="rect" id="node2" href="$classDLR__TS_1_1PlotLab_1_1AFigureStub.html" title=" " alt="" coords="5,86,211,310"/>
+<area shape="rect" id="node3" href="$structadore_1_1env_1_1VehicleMotionState9d.html" title="This struct holds the motion state of the vehicle in 9d." alt="" coords="235,71,408,325"/>
+<area shape="rect" id="node4" href="$classadore_1_1env_1_1BorderBased_1_1BorderSet.html" title="efficiently store borders in boost R&#45;tree" alt="" coords="433,5,607,391"/>
+<area shape="rect" id="node5" href="$classadore_1_1mad_1_1AReader.html" title=" " alt="" coords="631,123,817,273"/>
+<area shape="rect" id="node6" href="$classadore_1_1params_1_1APVehicle.html" title="abstract class for vehicle configuration related paremeters" alt="" coords="841,86,1015,310"/>
+<area shape="rect" id="node7" href="$classadore_1_1PLOT_1_1LanePlotConfig.html" title=" " alt="" coords="1039,64,1241,332"/>
+<area shape="rect" id="node8" href="$classadore_1_1params_1_1APMapProvider.html" title="abstract class containing parameters to configure aspects of the map provider" alt="" coords="1265,123,1498,273"/>
+<area shape="rect" id="node9" href="$classadore_1_1mad_1_1AFeed.html" title=" " alt="" coords="1523,130,1693,266"/>
+</map>

@@ -1,0 +1,14 @@
+<map id="adore::env::BorderBased::BorderSet::deepBorderCopy" name="adore::env::BorderBased::BorderSet::deepBorderCopy">
+<area shape="rect" id="node1" title="generate a complete copy including copies of objects the pointers point to" alt="" coords="5,93,199,135"/>
+<area shape="rect" id="node2" href="$classadore_1_1env_1_1BorderBased_1_1BorderSet.html#a0a97ab737730be2bda5deb80c8aaf4dd" title="remove all borders from this, delete object if this is owner" alt="" coords="249,5,415,47"/>
+<area shape="rect" id="node3" href="$classadore_1_1env_1_1BorderBased_1_1BorderSet.html#a5dea05943e2c9a960ba7cabc59f7ebb7" title="get all borders in this" alt="" coords="472,5,647,47"/>
+<area shape="rect" id="node4" href="$classadore_1_1env_1_1BorderBased_1_1BorderSet.html#a5730d3e4fc938c9bd1e1146a8a61deec" title="insert new border into this" alt="" coords="247,123,417,164"/>
+<area shape="rect" id="node12" href="$classadore_1_1env_1_1BorderBased_1_1BorderSet.html#ac7fdae2e42da82d8c2239e939d21da96" title="set whether this owns objects in pointers" alt="" coords="249,188,415,229"/>
+<area shape="rect" id="node5" href="$classadore_1_1env_1_1BorderBased_1_1BorderSet.html#afb523effcee573e774147446ecc756ab" title="check whether border type is in allowed types of set" alt="" coords="465,71,653,112"/>
+<area shape="rect" id="node6" href="$structadore_1_1env_1_1BorderBased_1_1Border.html#a4b1e646e2c3d98b03e75f286611e0cda" title="Get a bounding box for the implicit lane object." alt="" coords="476,136,643,177"/>
+<area shape="rect" id="node11" href="$structadore_1_1env_1_1BorderBased_1_1Coordinate.html#abb34f84413225a9464afe389cb4f71a7" title="Get a boost_point that has the same coordinates as the Coordinate object." alt="" coords="468,201,651,243"/>
+<area shape="rect" id="node7" href="$namespaceadore_1_1mad.html#adea062854ef0b105a3fdca8cf2aca945" title=" " alt="" coords="701,118,821,145"/>
+<area shape="rect" id="node9" href="$namespaceadore_1_1mad.html#ab58ecb752f9bbfe27832e0a2c0e22c2b" title=" " alt="" coords="703,169,819,195"/>
+<area shape="rect" id="node8" href="$namespaceadore_1_1mad.html#a618a8842fed7b9375957b1e393c58492" title=" " alt="" coords="869,118,989,145"/>
+<area shape="rect" id="node10" href="$namespaceadore_1_1mad.html#ac61b79c007d1859f93a10c04272095a1" title=" " alt="" coords="871,169,987,195"/>
+</map>

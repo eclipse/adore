@@ -1,0 +1,11 @@
+digraph "adore::fun::MergeMRMPlanner&lt; K, P &gt;"
+{
+ // LATEX_PDF_SIZE
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  Node1 [label="{adore::fun::MergeMRMPlanner\l\< K, P \>\n|- lateralReference_\l- lateralAccelerationReference_\l- lateralJerkReference_\l- lateralOffsetConstraint\l_left_\l- lateralOffsetConstraint\l_right_\l- headingConstraintUB_\l- headingConstraintLB_\l- lateralAccelerationConstraintUB_\l- lateralAccelerationConstraintLB_\l|+ MergeMRMPlanner()\l+ addConstraint()\l+ addReference()\l}",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black",tooltip="Plans minimum risk maneuver to cancel lane change."];
+  Node2 -> Node1 [dir="back",color="midnightblue",fontsize="10",style="solid",arrowtail="onormal",fontname="Helvetica"];
+  Node2 [label="{adore::fun::MRMPlanner\l\< K, P \>\n|+ N\l+ R\l- lateralPlanner_\l- longitudinal_plan_\l- postproc_\l- roadCoordinates_\l- aptraj_\l- apvehicle_\l- jmax_\l- tstall_\l- astall_\l- amin_\l- second_attempt_\l- longitudinal_plan_valid_\l|+ setJMax()\l+ setTStall()\l+ setAStall()\l+ setAMin()\l+ setSecondAttempt()\l+ MRMPlanner()\l+ getInformationSet()\l+ amin_medium_brake_trapezoidal()\l+ t_short_brake_trapezoidal()\l+ t_medium_brake_trapezoidal()\land 12 more...\l}",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classadore_1_1fun_1_1MRMPlanner.html",tooltip=" "];
+  Node3 -> Node2 [dir="back",color="midnightblue",fontsize="10",style="solid",arrowtail="onormal",fontname="Helvetica"];
+  Node3 [label="{adore::fun::ANominalPlanner\n||+ compute()\l+ hasValidPlan()\l+ getSetPointRequest()\l+ getCPUTime()\l}",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classadore_1_1fun_1_1ANominalPlanner.html",tooltip=" "];
+}

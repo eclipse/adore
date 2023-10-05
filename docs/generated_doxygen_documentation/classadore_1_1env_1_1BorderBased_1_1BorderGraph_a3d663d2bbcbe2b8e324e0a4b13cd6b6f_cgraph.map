@@ -1,0 +1,10 @@
+<map id="adore::env::BorderBased::BorderGraph::djikstra" name="adore::env::BorderBased::BorderGraph::djikstra">
+<area shape="rect" id="node1" title=" " alt="" coords="5,136,172,177"/>
+<area shape="rect" id="node2" href="$classadore_1_1env_1_1BorderBased_1_1BorderGraph.html#a0d904d7d08d77fb689b03f63a9c50672" title=" " alt="" coords="234,71,443,112"/>
+<area shape="rect" id="node6" href="$classadore_1_1env_1_1BorderBased_1_1ABorderGraphCost.html#a76140f47356ca4f3cfa6079af0a6b8ee" title=" " alt="" coords="220,136,457,177"/>
+<area shape="rect" id="node7" href="$structadore_1_1env_1_1BorderBased_1_1Node.html#a55d96ad2ec7ee5f11c92056b8cc37f3d" title=" " alt="" coords="255,201,422,243"/>
+<area shape="rect" id="node3" href="$classadore_1_1env_1_1BorderBased_1_1BorderSet.html#a8af807fde181a20de55594592d752adc" title="Get left neighbor of a border." alt="" coords="510,5,698,47"/>
+<area shape="rect" id="node4" href="$classadore_1_1env_1_1BorderBased_1_1BorderSet.html#acc68b8957d3092bf9e53a75ffa433b6f" title="get an interator pair for all borders which lead to b" alt="" coords="507,71,701,112"/>
+<area shape="rect" id="node5" href="$classadore_1_1env_1_1BorderBased_1_1BorderSet.html#a49e8f6a0309cd0c2c2afa28412435f4f" title="get the right neighbor of a border" alt="" coords="505,136,703,177"/>
+<area shape="rect" id="node8" href="$structadore_1_1env_1_1BorderBased_1_1Node.html#a9a64a10fffc6765e7655259fa4ba3f84" title=" " alt="" coords="521,201,687,243"/>
+</map>

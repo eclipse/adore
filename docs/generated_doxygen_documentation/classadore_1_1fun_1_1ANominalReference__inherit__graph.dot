@@ -1,0 +1,23 @@
+digraph "adore::fun::ANominalReference"
+{
+ // LATEX_PDF_SIZE
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  Node1 [label="{adore::fun::ANominalReference\n||+ getValueIfAvailable()\l+ update()\l+ getDimension()\l+ getDerivative()\l}",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black",tooltip=" "];
+  Node1 -> Node2 [dir="back",color="midnightblue",fontsize="10",style="solid",arrowtail="onormal",fontname="Helvetica"];
+  Node2 [label="{adore::fun::CancelMergeReference\n|- lcv_\l|+ CancelMergeReference()\l+ getValueIfAvailable()\l+ update()\l+ getDimension()\l+ getDerivative()\l}",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classadore_1_1fun_1_1CancelMergeReference.html",tooltip=" "];
+  Node1 -> Node3 [dir="back",color="midnightblue",fontsize="10",style="solid",arrowtail="onormal",fontname="Helvetica"];
+  Node3 [label="{adore::fun::ContinueLCReference\n|- lcv_\l|+ ContinueLCReference()\l+ getValueIfAvailable()\l+ update()\l+ getDimension()\l+ getDerivative()\l}",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classadore_1_1fun_1_1ContinueLCReference.html",tooltip=" "];
+  Node1 -> Node4 [dir="back",color="midnightblue",fontsize="10",style="solid",arrowtail="onormal",fontname="Helvetica"];
+  Node4 [label="{adore::fun::FollowCenterline\lReference\n|- lfv_\l- p_lat_\l- p_veh_\l- d_\l- dmax_\l- w_\l- i_grid_\l|+ FollowCenterlineReference()\l+ getValueIfAvailable()\l+ update()\l+ getDimension()\l+ getDerivative()\l}",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classadore_1_1fun_1_1FollowCenterlineReference.html",tooltip=" "];
+  Node1 -> Node5 [dir="back",color="midnightblue",fontsize="10",style="solid",arrowtail="onormal",fontname="Helvetica"];
+  Node5 [label="{adore::fun::LaneChangeInto\lGapReference\n|- lcv_\l- pv_\l- plat_\l- gap_\l- width_\l- hard_safety_distance_\l- soft_safety_distance_\l- min_control_space_\l- d_\l- i_grid_\l|+ LaneChangeIntoGapReference()\l+ setGap()\l+ getValueIfAvailable()\l+ update()\l+ getDimension()\l+ getDerivative()\l}",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classadore_1_1fun_1_1LaneChangeIntoGapReference.html",tooltip=" "];
+  Node1 -> Node6 [dir="back",color="midnightblue",fontsize="10",style="solid",arrowtail="onormal",fontname="Helvetica"];
+  Node6 [label="{adore::fun::LaneChangePhase\lEstimator\n|- lcv_\l- pveh_\l- plat_\l- pgen_\l- ptac_\l- gap_\l- width_\l- s_front_t0_\l- v_front_t0_\l- sgap_\l- t0_\l|+ LaneChangePhaseEstimator()\l+ setGap()\l+ getLaneChangePhase()\l+ getValueIfAvailable()\l+ update()\l+ getDimension()\l+ getDerivative()\l}",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classadore_1_1fun_1_1LaneChangePhaseEstimator.html",tooltip=" "];
+  Node1 -> Node7 [dir="back",color="midnightblue",fontsize="10",style="solid",arrowtail="onormal",fontname="Helvetica"];
+  Node7 [label="{adore::fun::LateralAcceleration\lReference\n|- lfv_\l|+ LateralAccelerationReference()\l+ getValueIfAvailable()\l+ update()\l+ getDimension()\l+ getDerivative()\l}",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classadore_1_1fun_1_1LateralAccelerationReference.html",tooltip=" "];
+  Node1 -> Node8 [dir="back",color="midnightblue",fontsize="10",style="solid",arrowtail="onormal",fontname="Helvetica"];
+  Node8 [label="{adore::fun::LateralJerkReference\n|- lfv_\l|+ LateralJerkReference()\l+ getValueIfAvailable()\l+ update()\l+ getDimension()\l+ getDerivative()\l}",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classadore_1_1fun_1_1LateralJerkReference.html",tooltip=" "];
+  Node1 -> Node9 [dir="back",color="midnightblue",fontsize="10",style="solid",arrowtail="onormal",fontname="Helvetica"];
+  Node9 [label="{adore::fun::NominalReference\lSpeed\n|- lfv_\l- lFVSpeedLimit_\l- curvatureSpeedLimit_\l- plon_\l- constraintClearance_\l- speed_scale_\l|+ NominalReferenceSpeed()\l+ getValueIfAvailable()\l+ setSpeedScale()\l+ update()\l+ getDimension()\l+ getDerivative()\l}",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classadore_1_1fun_1_1NominalReferenceSpeed.html",tooltip=" "];
+}

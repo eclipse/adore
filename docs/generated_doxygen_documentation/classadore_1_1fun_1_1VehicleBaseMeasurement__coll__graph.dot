@@ -1,0 +1,7 @@
+digraph "adore::fun::VehicleBaseMeasurement"
+{
+ // LATEX_PDF_SIZE
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  Node1 [label="{adore::fun::VehicleBaseMeasurement\n|- steering_angle_\l- wheel_speeds_\l- yaw_rate_\l- esp_ax_\l- esp_ay_\l|+ setSteeringAngle()\l+ getSteeringAngle()\l+ setWheelSpeeds()\l+ getWheelSpeeds()\l+ setYawRate()\l+ getYawRate()\l+ setEspAx()\l+ getEspAx()\l+ setEspAy()\l+ getEspAy()\l}",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black",tooltip=" "];
+}

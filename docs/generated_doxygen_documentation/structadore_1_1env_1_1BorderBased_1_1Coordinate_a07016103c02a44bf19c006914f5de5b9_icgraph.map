@@ -1,0 +1,4 @@
+<map id="adore::env::BorderBased::Coordinate::isInArea" name="adore::env::BorderBased::Coordinate::isInArea">
+<area shape="rect" id="node1" title="Check whether a Coordinate is in a certain area." alt="" coords="220,5,387,47"/>
+<area shape="rect" id="node2" href="$structadore_1_1env_1_1BorderBased_1_1BorderID.html#a3e70b48ded3ce88d6fc85dee547fd716" title="Check whether the starting point and the end point of the BorderID are in a certain area." alt="" coords="5,5,172,47"/>
+</map>

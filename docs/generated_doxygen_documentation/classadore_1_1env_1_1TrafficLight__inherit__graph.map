@@ -1,0 +1,5 @@
+<map id="adore::env::TrafficLight" name="adore::env::TrafficLight">
+<area shape="rect" id="node1" title=" " alt="" coords="17,380,173,531"/>
+<area shape="rect" id="node3" href="$classadore_1_1env_1_1SimTrafficLight.html" title=" " alt="" coords="5,579,184,773"/>
+<area shape="rect" id="node2" href="$classadore_1_1env_1_1TrafficControlDevice.html" title=" " alt="" coords="9,5,180,332"/>
+</map>

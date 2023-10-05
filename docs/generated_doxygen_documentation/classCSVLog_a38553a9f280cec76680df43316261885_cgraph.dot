@@ -1,0 +1,20 @@
+digraph "CSVLog::logWarningConsole"
+{
+ // LATEX_PDF_SIZE
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  rankdir="LR";
+  Node1 [label="CSVLog::logWarningConsole",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black",tooltip="log on warning level in console"];
+  Node1 -> Node2 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node2 [label="CSVLog::logConsole",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classCSVLog.html#a2334ba89101b21b6548d412643a22ec3",tooltip="generate log entry in console"];
+  Node2 -> Node3 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node3 [label="CSVLog::getCurrentTime",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classCSVLog.html#a668001de9868bbc7f605cd7252df9d2f",tooltip="get time of day as string"];
+  Node2 -> Node4 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node4 [label="CSVLog::getCurrentTimeEpoch",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classCSVLog.html#ad6cab441e362a65b4c60aaf223811b42",tooltip="get epoch as string"];
+  Node2 -> Node5 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node5 [label="CSVLog::writeLogToConsole",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classCSVLog.html#aaf9a8935942eaca9839f0392a2815535",tooltip="general log generator for console"];
+  Node5 -> Node6 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node6 [label="CSVLog::lvlToConsoleColor\lLinux",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classCSVLog.html#a18c9b756df7e7f4a95a117d7b29e4c5b",tooltip="get console color from log level on linux"];
+  Node5 -> Node7 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node7 [label="CSVLog::lvlToString",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classCSVLog.html#aac8cc94d98c714221aca42f9c4c14441",tooltip="get string for log level"];
+}

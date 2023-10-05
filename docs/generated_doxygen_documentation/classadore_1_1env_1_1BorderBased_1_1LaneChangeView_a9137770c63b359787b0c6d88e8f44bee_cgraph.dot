@@ -1,0 +1,10 @@
+digraph "adore::env::BorderBased::LaneChangeView::getProgressOfGateOpen"
+{
+ // LATEX_PDF_SIZE
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  rankdir="LR";
+  Node1 [label="adore::env::BorderBased\l::LaneChangeView::getProgress\lOfGateOpen",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black",tooltip=" "];
+  Node1 -> Node2 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node2 [label="adore::env::BorderBased\l::LaneChangeGeometry::\lgetProgressOfGateOpen",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classadore_1_1env_1_1BorderBased_1_1LaneChangeGeometry.html#a6bd6dad2753d6523a48cd02ebf3579b1",tooltip="Get the s-coordinate where the lane starts to be in direct adjacency to the LaneFollowingGeometry whi..."];
+}

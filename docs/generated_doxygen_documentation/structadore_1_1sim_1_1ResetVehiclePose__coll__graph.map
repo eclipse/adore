@@ -1,0 +1,3 @@
+<map id="adore::sim::ResetVehiclePose" name="adore::sim::ResetVehiclePose">
+<area shape="rect" id="node1" title="provides encapsulation of values needed to reset the vehicle pose in a simulation" alt="" coords="5,5,204,229"/>
+</map>

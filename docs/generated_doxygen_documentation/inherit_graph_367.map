@@ -1,0 +1,6 @@
+<map id="Graphical Class Hierarchy" name="Graphical Class Hierarchy">
+<area shape="rect" id="node1" href="$classadore_1_1view_1_1ALaneChangeView.html" title=" " alt="" coords="5,78,213,105"/>
+<area shape="rect" id="node2" href="$classadore_1_1env_1_1BorderBased_1_1LaneChangeView.html" title="LaneChangeView provides traffic related information for an adjacent lane." alt="" coords="292,5,459,47"/>
+<area shape="rect" id="node3" href="$classadore_1_1env_1_1BorderBased_1_1LaneChangeViewProxy.html" title="Proxy class to access ALane interfaces from preprocessed lane geometry received as data object." alt="" coords="292,71,459,112"/>
+<area shape="rect" id="node4" href="$classadore_1_1env_1_1ThreeLaneViewDecoupled_1_1LaneChangeViewProxy.html" title=" " alt="" coords="261,136,489,177"/>
+</map>

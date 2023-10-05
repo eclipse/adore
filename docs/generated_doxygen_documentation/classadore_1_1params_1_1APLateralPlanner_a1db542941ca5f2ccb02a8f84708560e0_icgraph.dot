@@ -1,0 +1,10 @@
+digraph "adore::params::APLateralPlanner::getRelativeHeadingUB"
+{
+ // LATEX_PDF_SIZE
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  rankdir="RL";
+  Node1 [label="adore::params::APLateral\lPlanner::getRelativeHeadingUB",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black",tooltip="getRelativeHeadingUB returns upper bound on heading deviation from current lane's coordinate system"];
+  Node1 -> Node2 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node2 [label="adore::fun::HeadingConstraint\l::update",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classadore_1_1fun_1_1HeadingConstraint.html#ac20cd9a88f1cb13ad40be18549e91381",tooltip=" "];
+}

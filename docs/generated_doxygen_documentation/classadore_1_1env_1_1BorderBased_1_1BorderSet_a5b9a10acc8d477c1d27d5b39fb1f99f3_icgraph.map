@@ -1,0 +1,52 @@
+<map id="adore::env::BorderBased::BorderSet::getBordersInRegion" name="adore::env::BorderBased::BorderSet::getBordersInRegion">
+<area shape="rect" id="node1" title="get all borders in this within region" alt="" coords="1803,361,2013,403"/>
+<area shape="rect" id="node2" href="$classadore_1_1env_1_1MapBorderManagement.html#ac1c6dded58e753c1b6b0cf2ec64edbda" title="add formerly deleted borders in a given region into global map from base map" alt="" coords="1525,71,1755,112"/>
+<area shape="rect" id="node3" href="$classadore_1_1env_1_1MapBorderManagement.html#a6a2d36b55d2d3fd930b8b0c9044005c2" title="change border type of borders in region to given type" alt="" coords="1525,136,1755,177"/>
+<area shape="rect" id="node4" href="$classadore_1_1env_1_1MapBorderManagement.html#a0b31d3c019e9aae9dda033896670d5e0" title="removes borders in region from global and local map" alt="" coords="1525,201,1755,243"/>
+<area shape="rect" id="node5" href="$classadore_1_1env_1_1MapBorderManagement.html#ad32f8ceaf27f6d7ebff2868d1f99e307" title=" " alt="" coords="1525,332,1755,373"/>
+<area shape="rect" id="node12" href="$classadore_1_1env_1_1NavigationManagement.html#ac0875ea2361d75f63ac18b68c8a7bafb" title=" " alt="" coords="1236,449,1464,491"/>
+<area shape="rect" id="node15" href="$classadore_1_1env_1_1BorderBased_1_1BorderSet.html#a3a3da6cfdee8aa6e003079f7f53186b6" title="get all borders at the given point" alt="" coords="1539,267,1741,308"/>
+<area shape="rect" id="node37" href="$classadore_1_1env_1_1BorderBased_1_1BorderSet.html#a38f9f1128903d1aa8a97d7c1c8338520" title="get all borders in this within radius around center point" alt="" coords="1535,449,1745,491"/>
+<area shape="rect" id="node38" href="$classadore_1_1env_1_1traffic_1_1TrafficMap.html#aa5210545ab067b99b8f97d3500bc9e61" title="Match traffic to borders." alt="" coords="957,515,1138,556"/>
+<area shape="rect" id="node43" href="$classadore_1_1env_1_1BorderBased_1_1BorderSet.html#af804d0917de35b620351d3b51c3ae229" title="find all borders that (even without a left neighbor) within the specified area." alt="" coords="1525,567,1755,608"/>
+<area shape="rect" id="node44" href="$classadore_1_1env_1_1BorderBased_1_1BorderSet.html#a5d3ffee92b0f0ad808f57dface51f54c" title="get a vector of borders, which describe lanes that match the specified region" alt="" coords="1531,632,1749,673"/>
+<area shape="rect" id="node6" href="$classadore_1_1env_1_1MapBorderManagement.html#af7001220d32d8fc206ba891ba73f117b" title=" " alt="" coords="1223,333,1477,359"/>
+<area shape="rect" id="node7" href="$classadore_1_1apps_1_1MapProvider.html#acf95a64b3622a78f235223fe70bd15ff" title="update function" alt="" coords="949,173,1146,199"/>
+<area shape="rect" id="node10" href="$classadore_1_1env_1_1NavigationManagement.html#ac2345454e2a9d43b55106a60495f3c71" title=" " alt="" coords="920,267,1175,294"/>
+<area shape="rect" id="node8" href="$classadore_1_1if__ROS_1_1MapProviderNode.html#a2dd3f906b4d4fe4ac67e415a6812d525" title=" " alt="" coords="665,165,851,207"/>
+<area shape="rect" id="node9" href="$adore__mapprovider__node_8cpp.html#a3c04138a5bfe5d72780bb7e82a18e627" title=" " alt="" coords="455,173,506,199"/>
+<area shape="rect" id="node11" href="$classadore_1_1apps_1_1Navigation.html#a4be14a35fd450f46452afc37e44d15a6" title=" " alt="" coords="387,297,574,323"/>
+<area shape="rect" id="node13" href="$classadore_1_1env_1_1NavigationManagement.html#a6d5222f9cd198839ab044b164f2cc011" title=" " alt="" coords="933,319,1161,360"/>
+<area shape="rect" id="node14" href="$classadore_1_1env_1_1NavigationManagement.html#a4106ef1a330c91758e3fdb995e9723de" title=" " alt="" coords="644,319,872,360"/>
+<area shape="rect" id="node16" href="$classadore_1_1env_1_1BorderBased_1_1ConflictSet.html#a0ccefac65a9dcd4137c9643bc9ce5c4d" title=" " alt="" coords="1230,384,1470,425"/>
+<area shape="rect" id="node27" href="$classadore_1_1env_1_1MapBorderManagement.html#a898cbcb7d2f6cc756a3cc17d62aafc79" title="change border type of border at exactly the given position" alt="" coords="1235,71,1465,112"/>
+<area shape="rect" id="node29" href="$classadore_1_1env_1_1BorderBased_1_1BorderSet.html#a61508e7317028151f4a85f6c56020a17" title="overload for getBordersAtPoint" alt="" coords="1249,136,1451,177"/>
+<area shape="rect" id="node30" href="$classadore_1_1env_1_1MapBorderManagement.html#a6a5e8a98eb003589d297408a64b6cb5d" title="Get borders at given point." alt="" coords="1235,201,1465,243"/>
+<area shape="rect" id="node31" href="$classadore_1_1apps_1_1PlotTrafficLights.html#adfb485a3bea5ee43f6a59f6042d27809" title=" " alt="" coords="1257,5,1443,47"/>
+<area shape="rect" id="node36" href="$classadore_1_1env_1_1BorderBased_1_1LocalRoadMap.html#aa445cec26c5d12705a272df4cfd01723" title="Get the navigation cost for border on a certain point." alt="" coords="1233,267,1467,308"/>
+<area shape="rect" id="node17" href="$classadore_1_1env_1_1BorderBased_1_1ConflictSet.html#a94cb06c4ec33f8bcb6fad237cd01a15d" title=" " alt="" coords="964,384,1131,425"/>
+<area shape="rect" id="node18" href="$classadore_1_1env_1_1BorderBased_1_1LaneFollowingView.html#a7cf867a70cca073393e6ff7320e00244" title="update the LaneFollowingView" alt="" coords="663,449,853,491"/>
+<area shape="rect" id="node26" href="$classadore_1_1env_1_1BorderBased_1_1LaneChangeView.html#a83432efdfec3bb90153ec1c4ce9bcee9" title="Update the LaneChangeView." alt="" coords="669,384,847,425"/>
+<area shape="rect" id="node19" href="$classadore_1_1apps_1_1TestLCTrajectoryPlanner.html#ac2912d7058c947a47405a0ce64e5609f" title=" " alt="" coords="381,399,580,440"/>
+<area shape="rect" id="node22" href="$classadore_1_1apps_1_1TestMRMPlanner.html#aa437a755996db26933e8c1b63576fff7" title="update function of the trajectory planner" alt="" coords="368,465,593,491"/>
+<area shape="rect" id="node24" href="$classadore_1_1apps_1_1TestTrajectoryPlanner.html#a49e0ba2cac6b0f9253e607ffdf7c7798" title="update function of the trajectory planner" alt="" coords="390,516,571,557"/>
+<area shape="rect" id="node20" href="$classadore_1_1if__ROS_1_1TestLCTrajectoryPlannerNode.html#aadf9b829e6afee6af3219321b72d4d3c" title=" " alt="" coords="104,399,317,440"/>
+<area shape="rect" id="node21" href="$test__lc__trajectory__planner__node_8cpp.html#a3c04138a5bfe5d72780bb7e82a18e627" title=" " alt="" coords="5,406,56,433"/>
+<area shape="rect" id="node23" href="$test__mrm__planner__node_8cpp.html#a3c04138a5bfe5d72780bb7e82a18e627" title=" " alt="" coords="185,465,236,491"/>
+<area shape="rect" id="node25" href="$test__trajectory__planner__node_8cpp.html#a3c04138a5bfe5d72780bb7e82a18e627" title=" " alt="" coords="185,521,236,547"/>
+<area shape="rect" id="node28" href="$classadore_1_1env_1_1MapBorderManagement.html#abeff1a09f45801fbc4982f6b3e8d3b20" title="change border type based on BorderTypeChangeProfile struct" alt="" coords="933,71,1162,112"/>
+<area shape="rect" id="node32" href="$classadore_1_1apps_1_1PlotTrafficLights.html#a5a847f40f3b094984863dd28f1d49a79" title=" " alt="" coords="960,5,1135,47"/>
+<area shape="rect" id="node33" href="$classadore_1_1apps_1_1PlotTrafficLights.html#a96207460e21be12289b28245e4fab4fb" title=" " alt="" coords="679,5,837,47"/>
+<area shape="rect" id="node34" href="$classadore_1_1if__ROS_1_1PlotTrafficLightsNode.html#ae938edd4484124c50652f63134ea3d1f" title=" " alt="" coords="394,5,567,47"/>
+<area shape="rect" id="node35" href="$plot__trafficlights__node_8cpp.html#a3c04138a5bfe5d72780bb7e82a18e627" title=" " alt="" coords="185,13,236,39"/>
+<area shape="rect" id="node39" href="$test__ocroadbasedprediction_8cpp.html#a8a83239243952bcc807580ed96244f28" title=" " alt="" coords="708,581,808,607"/>
+<area shape="rect" id="node40" href="$classadore_1_1env_1_1traffic_1_1TrafficMap.html#a20192db128a9de37dd38eea74ef1bf77" title="Update the TrafficMap." alt="" coords="689,515,827,556"/>
+<area shape="rect" id="node41" href="$classadore_1_1apps_1_1PredictionProvider.html#a2cbc8dae07b19988248bcc37aee7fbb5" title=" " alt="" coords="365,582,596,609"/>
+<area shape="rect" id="node42" href="$classadore_1_1if__ROS_1_1PredictionProviderNode.html#a2bd0137f5108911b604d344cec08231b" title=" " alt="" coords="125,572,296,613"/>
+<area shape="rect" id="node45" href="$classadore_1_1env_1_1BorderBased_1_1BorderSet.html#aa75a723e13eecff08d7ea36c81fe7146" title="get a vector of borders, which describe lanes that match the specified region" alt="" coords="1241,691,1459,732"/>
+<area shape="rect" id="node46" href="$classadore_1_1env_1_1BorderBased_1_1LocalRoadMap.html#a1c5abe938454e1534e406cce82b8c452" title="update the local road map" alt="" coords="675,632,841,673"/>
+<area shape="rect" id="node47" href="$classadore_1_1apps_1_1LaneViewProvider.html#a10c08893d16421f195ad2a597bfea8f8" title="update data, views and recompute maneuver" alt="" coords="366,699,595,726"/>
+<area shape="rect" id="node49" href="$classadore_1_1apps_1_1PredictionFilter.html#a6e896ea561719d45d17a865e4340d750" title=" " alt="" coords="375,642,586,669"/>
+<area shape="rect" id="node48" href="$classadore_1_1if__ROS_1_1LVProviderNode.html#ad35fdbfdaef8f2f89279dc08758bef3a" title=" " alt="" coords="123,703,299,744"/>
+<area shape="rect" id="node50" href="$classadore_1_1if__ROS_1_1PredictionFilterNode.html#aa02efa8210b0a8d64b5e66f25ee9b72a" title=" " alt="" coords="125,637,296,679"/>
+</map>

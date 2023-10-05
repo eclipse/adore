@@ -1,0 +1,6 @@
+<map id="adore::fun::LFVSpeedLimit::LFVSpeedLimit" name="adore::fun::LFVSpeedLimit::LFVSpeedLimit">
+<area shape="rect" id="node1" title=" " alt="" coords="5,39,183,80"/>
+<area shape="rect" id="node2" href="$classadore_1_1params_1_1ParamsFactoryInstance.html#ae4d79d6130cebb47d90a82b6edb7660d" title=" " alt="" coords="231,5,433,47"/>
+<area shape="rect" id="node4" href="$classadore_1_1params_1_1AFactory.html#ad732c94d142781ff7b2df2612d9c4b18" title=" " alt="" coords="249,71,415,112"/>
+<area shape="rect" id="node3" href="$classadore_1_1params_1_1ParamsFactoryInstance.html#a59eae0e003d40b03f9db2d814ec2a3bf" title="Function to access singleton instance of the AllFactory using magic static." alt="" coords="481,5,684,47"/>
+</map>

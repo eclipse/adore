@@ -1,0 +1,9 @@
+digraph "adore::params::DummyFactory"
+{
+ // LATEX_PDF_SIZE
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  Node1 [label="{adore::params::DummyFactory\n||+ getVehicle()\l+ getTrajectoryGeneration()\l+ getTrajectoryTracking()\l+ getTacticalPlanner()\l+ getMapProvider()\l+ getNavigation()\l+ getCooperation()\l+ getEmergencyOperation()\l+ getFunctionmanagement()\l+ getLaneChangeView()\l+ getLaneFollowingView()\l+ getLocalRoadMap()\l+ getLongitudinalPlanner()\l+ getLateralPlanner()\l+ getTrafficLightSim()\l}",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black",tooltip="a dummy implementation of the adore::params::afactory for testing purposes"];
+  Node2 -> Node1 [dir="back",color="midnightblue",fontsize="10",style="solid",arrowtail="onormal",fontname="Helvetica"];
+  Node2 [label="{adore::params::AFactory\n||+ getVehicle()\l+ getTrajectoryGeneration()\l+ getTrajectoryTracking()\l+ getTacticalPlanner()\l+ getMapProvider()\l+ getTrafficLightSim()\l+ getNavigation()\l+ getCooperation()\l+ getEmergencyOperation()\l+ getFunctionmanagement()\land 11 more...\l}",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classadore_1_1params_1_1AFactory.html",tooltip="abstract factory for adore::params classes"];
+}

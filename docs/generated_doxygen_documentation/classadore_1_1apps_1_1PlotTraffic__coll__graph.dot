@@ -1,0 +1,11 @@
+digraph "adore::apps::PlotTraffic"
+{
+ // LATEX_PDF_SIZE
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  Node1 [label="{adore::apps::PlotTraffic\n|- debug_plot_ids_\l- plot_tags_old_\l- plot_tags_current_\l- prefix_\l- app_tag_\l|+ PlotTraffic()\l+ ~PlotTraffic()\l+ run()\l+ plotPosition()\l}",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black",tooltip="a optimzed plotting application to plot other traffic"];
+  Node2 -> Node1 [color="grey25",fontsize="10",style="solid",label=" -figure_" ,arrowhead="odiamond",fontname="Helvetica"];
+  Node2 [label="{DLR_TS::PlotLab::AFigureStub\n||+ ~AFigureStub()\l+ circlestrip()\l+ tristrip()\l+ tristrip()\l+ tristrip()\l+ patch()\l+ patch()\l+ patch()\l+ plot()\l+ plot()\land 27 more...\l}",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classDLR__TS_1_1PlotLab_1_1AFigureStub.html",tooltip=" "];
+  Node3 -> Node1 [color="grey25",fontsize="10",style="solid",label=" -trafficReader_" ,arrowhead="odiamond",fontname="Helvetica"];
+  Node3 [label="{adore::mad::AReader\< T \>\n||+ hasData()\l+ hasUpdate()\l+ getData()\l+ getDesc()\l}",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classadore_1_1mad_1_1AReader.html",tooltip=" "];
+}

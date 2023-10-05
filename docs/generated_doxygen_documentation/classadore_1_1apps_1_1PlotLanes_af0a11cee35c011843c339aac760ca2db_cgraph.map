@@ -1,0 +1,28 @@
+<map id="adore::apps::PlotLanes::run" name="adore::apps::PlotLanes::run">
+<area shape="rect" id="node1" title=" " alt="" coords="5,438,188,465"/>
+<area shape="rect" id="node2" href="$classDLR__TS_1_1PlotLab_1_1AFigureStub.html#ae5d9d5c708d325610574a002e53501c8" title=" " alt="" coords="247,5,425,47"/>
+<area shape="rect" id="node3" href="$classadore_1_1env_1_1BorderBased_1_1BorderSet.html#a5dea05943e2c9a960ba7cabc59f7ebb7" title="get all borders in this" alt="" coords="249,71,423,112"/>
+<area shape="rect" id="node4" href="$classadore_1_1env_1_1BorderBased_1_1BorderSet.html#a69802bccdc7cf3fa598283509808edc2" title="retrieve a border by ID" alt="" coords="253,136,419,177"/>
+<area shape="rect" id="node5" href="$classadore_1_1mad_1_1AReader.html#a46ab7520d828d1a574365eaf8b483e29" title=" " alt="" coords="263,201,409,243"/>
+<area shape="rect" id="node6" href="$classadore_1_1mad_1_1AFeed.html#a07f96a9edf1ca4a1a9b0c84aa2631bd0" title=" " alt="" coords="265,267,407,308"/>
+<area shape="rect" id="node7" href="$classadore_1_1env_1_1BorderBased_1_1BorderSet.html#a49e8f6a0309cd0c2c2afa28412435f4f" title="get the right neighbor of a border" alt="" coords="237,332,435,373"/>
+<area shape="rect" id="node8" href="$classadore_1_1env_1_1BorderBased_1_1BorderSet.html#aaaefbe5fddb5e25a212e970734025a81" title="checks whether left border exists for a border" alt="" coords="241,397,431,439"/>
+<area shape="rect" id="node9" href="$classadore_1_1mad_1_1AFeed.html#a2a96e59a3364f8fadb08624e38f7c40b" title=" " alt="" coords="265,463,407,504"/>
+<area shape="rect" id="node10" href="$classadore_1_1env_1_1BorderBased_1_1BorderSet.html#a52ffd9481fb99ca14a9efd261e5310ad" title="checks whether right neighbor exists for a border" alt="" coords="236,528,436,569"/>
+<area shape="rect" id="node11" href="$classadore_1_1mad_1_1AReader.html#a7a8e6d43dcd1129c47d7231e828fb111" title=" " alt="" coords="263,593,409,635"/>
+<area shape="rect" id="node12" href="$classadore_1_1env_1_1BorderBased_1_1BorderSet.html#a5730d3e4fc938c9bd1e1146a8a61deec" title="insert new border into this" alt="" coords="251,659,421,700"/>
+<area shape="rect" id="node20" href="$classadore_1_1apps_1_1PlotLanes.html#aac45bf515b59e6f1e6c96a71cfd148b3" title=" " alt="" coords="258,724,414,765"/>
+<area shape="rect" id="node21" href="$namespaceadore_1_1PLOT.html#ac157afb98167a75b689e6ef5af6c2b71" title=" " alt="" coords="255,790,417,817"/>
+<area shape="rect" id="node26" href="$classadore_1_1apps_1_1PlotLanes.html#a1263a22441f2c480c8cba3b284b6a16c" title=" " alt="" coords="258,841,414,883"/>
+<area shape="rect" id="node13" href="$classadore_1_1env_1_1BorderBased_1_1BorderSet.html#afb523effcee573e774147446ecc756ab" title="check whether border type is in allowed types of set" alt="" coords="484,593,672,635"/>
+<area shape="rect" id="node14" href="$structadore_1_1env_1_1BorderBased_1_1Border.html#a4b1e646e2c3d98b03e75f286611e0cda" title="Get a bounding box for the implicit lane object." alt="" coords="495,659,661,700"/>
+<area shape="rect" id="node19" href="$structadore_1_1env_1_1BorderBased_1_1Coordinate.html#abb34f84413225a9464afe389cb4f71a7" title="Get a boost_point that has the same coordinates as the Coordinate object." alt="" coords="487,724,669,765"/>
+<area shape="rect" id="node15" href="$namespaceadore_1_1mad.html#adea062854ef0b105a3fdca8cf2aca945" title=" " alt="" coords="759,631,879,658"/>
+<area shape="rect" id="node17" href="$namespaceadore_1_1mad.html#ab58ecb752f9bbfe27832e0a2c0e22c2b" title=" " alt="" coords="761,682,877,709"/>
+<area shape="rect" id="node16" href="$namespaceadore_1_1mad.html#a618a8842fed7b9375957b1e393c58492" title=" " alt="" coords="965,631,1085,658"/>
+<area shape="rect" id="node18" href="$namespaceadore_1_1mad.html#ac61b79c007d1859f93a10c04272095a1" title=" " alt="" coords="967,682,1083,709"/>
+<area shape="rect" id="node22" href="$namespaceadore_1_1PLOT.html#a3eef67b932118400091cf5fc1de87d5d" title=" " alt="" coords="485,790,671,817"/>
+<area shape="rect" id="node25" href="$classDLR__TS_1_1PlotLab_1_1AFigureStub.html#a84fc0797f960eca2c9aa911bc58292c1" title=" " alt="" coords="489,841,667,883"/>
+<area shape="rect" id="node23" href="$classadore_1_1mad_1_1LLinearPiecewiseFunctionM.html#aa94d90c8643e2d6792f8594f3d666503" title=" " alt="" coords="720,765,917,807"/>
+<area shape="rect" id="node24" href="$classDLR__TS_1_1PlotLab_1_1AFigureStub.html#accf20dccb771d2bad1fec053e187a327" title=" " alt="" coords="729,831,908,872"/>
+</map>

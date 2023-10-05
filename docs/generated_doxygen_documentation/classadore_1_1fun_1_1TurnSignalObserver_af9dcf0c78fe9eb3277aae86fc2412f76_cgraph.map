@@ -1,0 +1,5 @@
+<map id="adore::fun::TurnSignalObserver::TurnSignalObserver" name="adore::fun::TurnSignalObserver::TurnSignalObserver">
+<area shape="rect" id="node1" title=" " alt="" coords="5,5,208,47"/>
+<area shape="rect" id="node2" href="$classadore_1_1fun_1_1FunFactoryInstance.html#a3d8e318e1ad87251caef9bad22a99b40" title=" " alt="" coords="256,13,487,39"/>
+<area shape="rect" id="node3" href="$classadore_1_1fun_1_1FunFactoryInstance.html#a0826e9a7ea3c70a3780115e6effbf746" title="Function to access singleton instance of the funFactory using magic static." alt="" coords="535,5,739,47"/>
+</map>

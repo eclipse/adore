@@ -1,0 +1,5 @@
+<map id="CSVLog::setLogLevel" name="CSVLog::setLogLevel">
+<area shape="rect" id="node1" title="set the log level for file and console" alt="" coords="5,42,155,69"/>
+<area shape="rect" id="node2" href="$classCSVLog.html#a47d43c15cebd3ca90ea42c40a6ca2dd9" title="get current log level for console log" alt="" coords="213,5,405,47"/>
+<area shape="rect" id="node3" href="$classCSVLog.html#ac9faed595c22a53a685b23b3cc3714a1" title="get current log level for file log" alt="" coords="203,71,416,98"/>
+</map>

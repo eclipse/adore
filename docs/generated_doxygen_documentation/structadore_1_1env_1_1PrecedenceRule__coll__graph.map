@@ -1,0 +1,4 @@
+<map id="adore::env::PrecedenceRule" name="adore::env::PrecedenceRule">
+<area shape="rect" id="node1" title="The PrecedenceRule defines a precedence relationship between two routes. Vehicles on the low_ priorit..." alt="" coords="5,248,192,369"/>
+<area shape="rect" id="node2" href="$structadore_1_1env_1_1PriorityRoute.html" title="PriorityRoute implicitly references a route between two coordinates. The coordinates should be chosen..." alt="" coords="15,5,182,171"/>
+</map>

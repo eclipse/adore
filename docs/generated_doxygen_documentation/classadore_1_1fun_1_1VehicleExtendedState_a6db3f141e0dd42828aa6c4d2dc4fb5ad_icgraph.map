@@ -1,0 +1,6 @@
+<map id="adore::fun::VehicleExtendedState::getCheckpointClearance" name="adore::fun::VehicleExtendedState::getCheckpointClearance">
+<area shape="rect" id="node1" title=" " alt="" coords="527,35,731,76"/>
+<area shape="rect" id="node2" href="$classadore_1_1apps_1_1CheckpointController.html#a8836d7b78ad0a3d0e7bbda81a18fbee3" title=" " alt="" coords="232,13,479,39"/>
+<area shape="rect" id="node4" href="$classadore_1_1if__ROS_1_1VehicleExtendedStateWriter.html#a4298902fd92e5043212bad7287471343" title="write sends out data value" alt="" coords="250,64,461,105"/>
+<area shape="rect" id="node3" href="$classadore_1_1if__ROS_1_1CheckpointControllerNode.html#a5d71fbe87caca52f85b90552024aca2f" title=" " alt="" coords="5,5,184,47"/>
+</map>

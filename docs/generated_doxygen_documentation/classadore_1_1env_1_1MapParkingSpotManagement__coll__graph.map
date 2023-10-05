@@ -1,0 +1,4 @@
+<map id="adore::env::MapParkingSpotManagement" name="adore::env::MapParkingSpotManagement">
+<area shape="rect" id="node1" title="automatically manage parking spot based on current vehicle position and last state of object" alt="" coords="24,395,211,516"/>
+<area shape="rect" id="node2" href="$classadore_1_1env_1_1BorderBased_1_1ParkingSpotSet.html" title=" " alt="" coords="5,5,229,317"/>
+</map>

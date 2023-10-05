@@ -1,0 +1,8 @@
+<map id="adore::env::BorderBased::Coordinate::rotate" name="adore::env::BorderBased::Coordinate::rotate">
+<area shape="rect" id="node1" title="rotate around x0,y0" alt="" coords="653,39,820,80"/>
+<area shape="rect" id="node2" href="$classadore_1_1env_1_1TrafficControlDevice.html#aefa400ccd2216429a8a67dda3171be7d" title=" " alt="" coords="435,5,605,47"/>
+<area shape="rect" id="node3" href="$structadore_1_1env_1_1BorderBased_1_1BorderID.html#aad1a3cc7d55eb05fcf92e546dd48711d" title=" " alt="" coords="437,71,603,112"/>
+<area shape="rect" id="node4" href="$structadore_1_1env_1_1BorderBased_1_1LanePosition.html#a7f7855f734bcd33aa82f4c341b0e28cd" title=" " alt="" coords="220,37,387,79"/>
+<area shape="rect" id="node6" href="$structadore_1_1env_1_1BorderBased_1_1Border.html#ae42fc0eb67cd342c2f091b299e385bf0" title=" " alt="" coords="220,103,387,144"/>
+<area shape="rect" id="node5" href="$classadore_1_1env_1_1BorderBased_1_1StopLine.html#a7aac4c2cd5ed4e05ec2c918cbb0342cb" title=" " alt="" coords="5,37,172,79"/>
+</map>

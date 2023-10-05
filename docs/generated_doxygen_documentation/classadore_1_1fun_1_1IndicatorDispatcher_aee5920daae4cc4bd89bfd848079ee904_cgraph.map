@@ -1,0 +1,6 @@
+<map id="adore::fun::IndicatorDispatcher::IndicatorDispatcher" name="adore::fun::IndicatorDispatcher::IndicatorDispatcher">
+<area shape="rect" id="node1" title=" " alt="" coords="5,35,207,76"/>
+<area shape="rect" id="node2" href="$classadore_1_1fun_1_1FunFactoryInstance.html#a3d8e318e1ad87251caef9bad22a99b40" title=" " alt="" coords="255,13,485,39"/>
+<area shape="rect" id="node4" href="$classadore_1_1env_1_1AFactory.html#a81f661c576816461f1914436620ac208" title=" " alt="" coords="269,64,471,105"/>
+<area shape="rect" id="node3" href="$classadore_1_1fun_1_1FunFactoryInstance.html#a0826e9a7ea3c70a3780115e6effbf746" title="Function to access singleton instance of the funFactory using magic static." alt="" coords="533,5,737,47"/>
+</map>

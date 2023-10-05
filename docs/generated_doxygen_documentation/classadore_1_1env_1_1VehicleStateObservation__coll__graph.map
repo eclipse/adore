@@ -1,0 +1,4 @@
+<map id="adore::env::VehicleStateObservation" name="adore::env::VehicleStateObservation">
+<area shape="rect" id="node1" title="Class to observe the vehicle state." alt="" coords="16,292,181,399"/>
+<area shape="rect" id="node2" href="$classadore_1_1env_1_1VehicleState10d.html" title="This struct holds the state of the vehicle in 10d." alt="" coords="5,5,192,229"/>
+</map>

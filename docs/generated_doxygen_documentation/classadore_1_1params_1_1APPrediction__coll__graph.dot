@@ -1,0 +1,7 @@
+digraph "adore::params::APPrediction"
+{
+ // LATEX_PDF_SIZE
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  Node1 [label="{adore::params::APPrediction\n||+ get_roadbased_prediction\l_duration()\l+ get_roadbased_expected\l_acc_ub()\l+ get_roadbased_expected\l_acc_ub_delay()\l+ get_roadbased_expected\l_acc_lb()\l+ get_roadbased_expected\l_vel_ub()\l+ get_roadbased_worstcase\l_acc_ub()\l+ get_roadbased_worstcase\l_acc_ub_delay()\l+ get_roadbased_worstcase\l_acc_lb()\l+ get_roadbased_worstcase\l_vel_ub()\l+ get_roadbased_heading\l_deviation_ub()\land 25 more...\l}",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black",tooltip="parameter interface for parameters related to prediction"];
+}

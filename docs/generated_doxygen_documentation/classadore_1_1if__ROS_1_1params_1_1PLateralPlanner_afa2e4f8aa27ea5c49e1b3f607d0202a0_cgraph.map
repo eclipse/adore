@@ -1,0 +1,4 @@
+<map id="adore::if_ROS::params::PLateralPlanner::getSlackVel" name="adore::if_ROS::params::PLateralPlanner::getSlackVel">
+<area shape="rect" id="node1" title="getSlackVel returns maximum slack of soft&#45;constraints for velocity" alt="" coords="5,5,205,47"/>
+<area shape="rect" id="node2" href="$classadore_1_1if__ROS_1_1ROSParam.html#adf480c94fa5b1368850b0a491791e4e6" title=" " alt="" coords="253,13,460,39"/>
+</map>

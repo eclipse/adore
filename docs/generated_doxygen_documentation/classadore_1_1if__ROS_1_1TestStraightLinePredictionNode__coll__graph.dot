@@ -1,0 +1,29 @@
+digraph "adore::if_ROS::TestStraightLinePredictionNode"
+{
+ // LATEX_PDF_SIZE
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  Node1 [label="{adore::if_ROS::TestStraight\lLinePredictionNode\n||+ TestStraightLinePrediction\lNode()\l+ init()\l}",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black",tooltip=" "];
+  Node2 -> Node1 [dir="back",color="midnightblue",fontsize="10",style="solid",arrowtail="onormal",fontname="Helvetica"];
+  Node2 [label="{adore::if_ROS::FactoryCollection\n|- nh_\l|+ FactoryCollection()\l+ init()\l+ getFactory()\l+ getParamsFactory()\l}",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classadore_1_1if__ROS_1_1FactoryCollection.html",tooltip=" "];
+  Node3 -> Node1 [dir="back",color="midnightblue",fontsize="10",style="solid",arrowtail="onormal",fontname="Helvetica"];
+  Node3 [label="{adore_if_ros_scheduling\l::Baseapp\n|- timers_\l- useScheduler_\l- rate_\l- m_pN\l|+ Baseapp()\l+ init()\l+ initSim()\l+ resume()\l+ pause()\l+ run()\l+ addTimerCallback()\l+ getParam()\l+ getParam()\l+ schedulerCallback()\l+ getRosNodeHandle()\l+ func()\l}",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classadore__if__ros__scheduling_1_1Baseapp.html",tooltip=" "];
+  Node4 -> Node3 [color="grey25",fontsize="10",style="solid",label=" -snm_" ,arrowhead="odiamond",fontname="Helvetica"];
+  Node4 [label="{adore_if_ros_scheduling\l::SchedulerNotificationManager\n|- m_pN\l- m_notificationWriter\l- m_clientNameWriter\l|+ SchedulerNotificationManager()\l+ publishClientName()\l+ registerAtScheduler()\l+ notifyScheduler()\l+ pause()\l+ resume()\l}",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classadore__if__ros__scheduling_1_1SchedulerNotificationManager.html",tooltip=" "];
+  Node5 -> Node4 [dir="back",color="firebrick4",fontsize="10",style="solid",arrowtail="onormal",fontname="Helvetica"];
+  Node5 [label="{adore_scheduling::AScheduler\lNotificationManager\n|# m_duration\l# m_pause\l|+ ASchedulerNotificationManager()\l+ publishClientName()\l+ registerAtScheduler()\l+ notifyScheduler()\l+ pause()\l+ resume()\l}",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classadore__scheduling_1_1ASchedulerNotificationManager.html",tooltip=" "];
+  Node6 -> Node5 [color="grey25",fontsize="10",style="solid",label=" #m_sn" ,arrowhead="odiamond",fontname="Helvetica"];
+  Node6 [label="{adore_scheduling::Scheduler\lNotification\n|- m_identifier\l- m_upperTimeLimitSec\l- m_upperTimeLimitNsec\l|+ SchedulerNotification()\l+ SchedulerNotification()\l+ getUpperTimeLimitSec()\l+ getUpperTimeLimitNsec()\l+ getUpperTimeLimitPair()\l+ setUpperTimeLimit()\l+ setZero()\l+ getID()\l+ setID()\l}",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classadore__scheduling_1_1SchedulerNotification.html",tooltip=" "];
+  Node7 -> Node4 [color="grey25",fontsize="10",style="solid",label=" -m_schedulerNotification\lConversion" ,arrowhead="odiamond",fontname="Helvetica"];
+  Node7 [label="{adore_if_ros_scheduling\l::SchedulerNotificationConversion\n||+ operator()()\l+ operator()()\l}",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classadore__if__ros__scheduling_1_1SchedulerNotificationConversion.html",tooltip=" "];
+  Node8 -> Node1 [color="grey25",fontsize="10",style="solid",label=" +app_" ,arrowhead="odiamond",fontname="Helvetica"];
+  Node8 [label="{adore::apps::TestStraight\lLinePredictor\n|- participantSet_\l- predictionSet_\l|+ TestStraightLinePredictor()\l+ run()\l}",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classadore_1_1apps_1_1TestStraightLinePredictor.html",tooltip=" "];
+  Node9 -> Node8 [color="grey25",fontsize="10",style="solid",label=" -predictor_" ,arrowhead="odiamond",fontname="Helvetica"];
+  Node9 [label="{adore::env::OCStraightLine\lPrediction\n|- t_max_utc_\l- lat_precision_\l- lat_error_\l- lon_error_\l- v_max_\l- a_max_\l- a_min_\l- time_headway_\l- time_leeway_\l- width_ub_\l- width_lb_\l|+ setTMaxUTC()\l+ setLatPrecision()\l+ setLatError()\l+ setLonError()\l+ setVMax()\l+ setAMax()\l+ setAMin()\l+ setTimeHeadway()\l+ setTimeLeeway()\l+ setWidthUB()\l+ setWidthLB()\l+ OCStraightLinePrediction()\l+ predict()\l}",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classadore_1_1env_1_1OCStraightLinePrediction.html",tooltip=" "];
+  Node10 -> Node9 [dir="back",color="midnightblue",fontsize="10",style="solid",arrowtail="onormal",fontname="Helvetica"];
+  Node10 [label="{adore::env::OCPrediction\lStrategy\< traffic::Participant \>\n||+ predict()\l}",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classadore_1_1env_1_1OCPredictionStrategy.html",tooltip=" "];
+  Node11 -> Node8 [color="grey25",fontsize="10",style="solid",label=" -tpsetReader_" ,arrowhead="odiamond",fontname="Helvetica"];
+  Node11 [label="{adore::mad::AReader\< T \>\n||+ hasData()\l+ hasUpdate()\l+ getData()\l+ getDesc()\l}",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classadore_1_1mad_1_1AReader.html",tooltip=" "];
+  Node12 -> Node8 [color="grey25",fontsize="10",style="solid",label=" -prediction_writer_" ,arrowhead="odiamond",fontname="Helvetica"];
+  Node12 [label="{adore::mad::AWriter\< T \>\n||+ canWriteMore()\l+ write()\l+ getDesc()\l+ getNumberOfSubscribers()\l}",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classadore_1_1mad_1_1AWriter.html",tooltip=" "];
+}

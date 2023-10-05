@@ -1,0 +1,7 @@
+<map id="adore::apps::PlotTrafficLights::removeDistanceBased" name="adore::apps::PlotTrafficLights::removeDistanceBased">
+<area shape="rect" id="node1" title=" " alt="" coords="5,39,203,80"/>
+<area shape="rect" id="node2" href="$classDLR__TS_1_1PlotLab_1_1AFigureStub.html#ae5d9d5c708d325610574a002e53501c8" title=" " alt="" coords="251,5,429,47"/>
+<area shape="rect" id="node3" href="$classadore_1_1apps_1_1PlotTrafficLights.html#aa70ee2af8959077917ccacbdddcb8fa1" title=" " alt="" coords="251,71,429,112"/>
+<area shape="rect" id="node4" href="$structadore_1_1env_1_1VehicleMotionState9d.html#a16d6d61f5dfa1028ca97d8f1a8b6e8cf" title="Get the x&#45;coordinate." alt="" coords="477,37,651,79"/>
+<area shape="rect" id="node5" href="$structadore_1_1env_1_1VehicleMotionState9d.html#a51e8eed0ef10d909592edcb933c1b802" title="Get the y&#45;coordinate." alt="" coords="477,103,651,144"/>
+</map>

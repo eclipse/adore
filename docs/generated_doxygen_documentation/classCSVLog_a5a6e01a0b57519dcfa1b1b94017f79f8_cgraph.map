@@ -1,0 +1,13 @@
+<map id="CSVLog::logInfo" name="CSVLog::logInfo">
+<area shape="rect" id="node1" title="general log on info level" alt="" coords="5,173,124,199"/>
+<area shape="rect" id="node2" href="$classCSVLog.html#a483aac07b38a517ad8f045a34cffdcf9" title="general log generator method" alt="" coords="172,173,300,199"/>
+<area shape="rect" id="node3" href="$classCSVLog.html#a47d43c15cebd3ca90ea42c40a6ca2dd9" title="get current log level for console log" alt="" coords="359,5,551,47"/>
+<area shape="rect" id="node4" href="$classCSVLog.html#ac9faed595c22a53a685b23b3cc3714a1" title="get current log level for file log" alt="" coords="348,71,561,98"/>
+<area shape="rect" id="node5" href="$classCSVLog.html#a668001de9868bbc7f605cd7252df9d2f" title="get time of day as string" alt="" coords="370,122,539,149"/>
+<area shape="rect" id="node6" href="$classCSVLog.html#ad6cab441e362a65b4c60aaf223811b42" title="get epoch as string" alt="" coords="609,198,816,225"/>
+<area shape="rect" id="node7" href="$classCSVLog.html#a3c428d922317879c1aa99204fa32bf61" title="writes content of buffer to file" alt="" coords="366,223,543,250"/>
+<area shape="rect" id="node8" href="$classCSVLog.html#a42ea472abab2f1edd941af3912edcb1d" title="general log generator for buffer" alt="" coords="366,274,543,301"/>
+<area shape="rect" id="node10" href="$classCSVLog.html#aaf9a8935942eaca9839f0392a2815535" title="general log generator for console" alt="" coords="359,325,550,351"/>
+<area shape="rect" id="node9" href="$classCSVLog.html#aac8cc94d98c714221aca42f9c4c14441" title="get string for log level" alt="" coords="643,274,783,301"/>
+<area shape="rect" id="node11" href="$classCSVLog.html#a18c9b756df7e7f4a95a117d7b29e4c5b" title="get console color from log level on linux" alt="" coords="620,325,805,367"/>
+</map>

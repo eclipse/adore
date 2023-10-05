@@ -1,0 +1,11 @@
+digraph "/home/fascar/temp/adore/sumo_if_ros/sumo_if_ros/src" {
+  compound=true
+  node [ fontsize="10", fontname="Helvetica"];
+  edge [ labelfontsize="10", labelfontname="Helvetica"];
+  subgraph clusterdir_6ad3402a3314634d0bf487207d6c5f3c {
+    graph [ bgcolor="#ddddee", pencolor="black", label="sumo_if_ros" fontname="Helvetica", fontsize="10", URL="dir_6ad3402a3314634d0bf487207d6c5f3c.html"]
+  dir_f7055195b0bc3fd15fd6aad1b47f18a9 [shape=box label="include" fillcolor="white" style="filled" color="red" URL="dir_f7055195b0bc3fd15fd6aad1b47f18a9.html"];
+  dir_ad323940fc46dbc3518d4e615e2fadb0 [shape=box, label="src", style="filled", fillcolor="#eeeeff", pencolor="black", URL="dir_ad323940fc46dbc3518d4e615e2fadb0.html"];
+  }
+  dir_ad323940fc46dbc3518d4e615e2fadb0->dir_f7055195b0bc3fd15fd6aad1b47f18a9 [headlabel="2", labeldistance=1.5 headhref="dir_000105_000067.html"];
+}

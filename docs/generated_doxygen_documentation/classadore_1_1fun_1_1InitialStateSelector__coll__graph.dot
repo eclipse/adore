@@ -1,0 +1,19 @@
+digraph "adore::fun::InitialStateSelector"
+{
+ // LATEX_PDF_SIZE
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  Node1 [label="{adore::fun::InitialState\lSelector\n|- hasValidInitialState_\l|+ InitialStateSelector()\l+ ~InitialStateSelector()\l+ setExecutedTrajectory()\l+ update()\l}",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black",tooltip="Helps to select initial state for motion planning. Considers previous plan, current vehicle state,..."];
+  Node2 -> Node1 [color="grey25",fontsize="10",style="solid",label=" -xreader_" ,arrowhead="odiamond",fontname="Helvetica"];
+  Node2 [label="{adore::mad::AReader\l\< adore::env::VehicleMotion\lState9d \>\n||+ hasData()\l+ hasUpdate()\l+ getData()\l+ getDesc()\l}",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classadore_1_1mad_1_1AReader.html",tooltip=" "];
+  Node3 -> Node1 [color="grey25",fontsize="10",style="solid",label=" -x_\n-x_replan_" ,arrowhead="odiamond",fontname="Helvetica"];
+  Node3 [label="{adore::env::VehicleMotion\lState9d\n|+ time_\l+ data_\l|+ getTime()\l+ getX()\l+ getY()\l+ getZ()\l+ getPSI()\l+ getvx()\l+ getvy()\l+ getOmega()\l+ getAx()\l+ getDelta()\land 10 more...\l}",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$structadore_1_1env_1_1VehicleMotionState9d.html",tooltip="This struct holds the motion state of the vehicle in 9d."];
+  Node4 -> Node1 [color="grey25",fontsize="10",style="solid",label=" -pTacticalPlanner_" ,arrowhead="odiamond",fontname="Helvetica"];
+  Node4 [label="{adore::params::APTactical\lPlanner\n||+ getGlobalSpeedLimit()\l+ getResetRadius()\l+ getAccLatUB()\l+ getAccLatUB_minVelocity()\l+ getAccLonUB()\l+ getAccLonLB()\l+ getFrontTimeGap()\l+ getRearTimeGap()\l+ getFrontSGap()\l+ getLowerBoundFrontSGapForLF()\land 20 more...\l}",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classadore_1_1params_1_1APTacticalPlanner.html",tooltip="abstract classs containing parameters to configure aspects and constraints of the tactical planner"];
+  Node5 -> Node1 [color="grey25",fontsize="10",style="solid",label=" -spr_" ,arrowhead="odiamond",fontname="Helvetica"];
+  Node5 [label="{adore::fun::SetPointRequest\n|+ setPoints\l+ setPointRequestID\l|+ SetPointRequest()\l+ ~SetPointRequest()\l+ push_back()\l+ append()\l+ setStartTime()\l+ getDuration()\l+ interpolateReference()\l+ interpolateSetPoint()\l+ relocate()\l+ relocateTo()\land 13 more...\l}",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classadore_1_1fun_1_1SetPointRequest.html",tooltip=" "];
+  Node6 -> Node1 [color="grey25",fontsize="10",style="solid",label=" -xx_" ,arrowhead="odiamond",fontname="Helvetica"];
+  Node6 [label="{adore::fun::VehicleExtended\lState\n|- gearState_\l- indicatorLeftOn_\l- indicatorRightOn_\l- automaticControlAccelerationOn_\l- automaticControlAcceleration\lActive_\l- automaticControlSteeringOn_\l- checkpointClearance_\l|+ VehicleExtendedState()\l+ getGearState()\l+ setGearState()\l+ getIndicatorLeftOn()\l+ setIndicatorLeftOn()\l+ getIndicatorRightOn()\l+ setIndicatorRightOn()\l+ getAutomaticControlAccelerationOn()\l+ setAutomaticControlAccelerationOn()\l+ getAutomaticControlAcceleration\lActive()\land 6 more...\l}",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classadore_1_1fun_1_1VehicleExtendedState.html",tooltip=" "];
+  Node7 -> Node1 [color="grey25",fontsize="10",style="solid",label=" -xxreader_" ,arrowhead="odiamond",fontname="Helvetica"];
+  Node7 [label="{adore::mad::AReader\l\< adore::fun::VehicleExtended\lState \>\n||+ hasData()\l+ hasUpdate()\l+ getData()\l+ getDesc()\l}",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classadore_1_1mad_1_1AReader.html",tooltip=" "];
+}

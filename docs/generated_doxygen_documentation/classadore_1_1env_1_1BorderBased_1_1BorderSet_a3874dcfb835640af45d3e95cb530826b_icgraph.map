@@ -1,0 +1,9 @@
+<map id="adore::env::BorderBased::BorderSet::getCenterline" name="adore::env::BorderBased::BorderSet::getCenterline">
+<area shape="rect" id="node1" title="get the linear piecewise description of the centerline:" alt="" coords="788,71,961,112"/>
+<area shape="rect" id="node2" href="$classadore_1_1apps_1_1TestLCTrajectoryPlanner.html#a364f82eba5a19cd4bfeb95f7fd29cd7e" title=" " alt="" coords="522,5,721,47"/>
+<area shape="rect" id="node3" href="$classadore_1_1apps_1_1TestLCTrajectoryPlanner.html#a009d63a8cbbef7168d170df02c69d34d" title=" " alt="" coords="522,71,721,112"/>
+<area shape="rect" id="node4" href="$classadore_1_1env_1_1OCRoadBasedPrediction.html#af6fda5b2a78669c5e19e222348665713" title=" " alt="" coords="503,136,740,177"/>
+<area shape="rect" id="node5" href="$classadore_1_1apps_1_1PredictionProvider.html#a2cbc8dae07b19988248bcc37aee7fbb5" title=" " alt="" coords="224,118,455,145"/>
+<area shape="rect" id="node7" href="$test__ocroadbasedprediction_8cpp.html#a8a83239243952bcc807580ed96244f28" title=" " alt="" coords="289,169,389,195"/>
+<area shape="rect" id="node6" href="$classadore_1_1if__ROS_1_1PredictionProviderNode.html#a2bd0137f5108911b604d344cec08231b" title=" " alt="" coords="5,111,176,152"/>
+</map>

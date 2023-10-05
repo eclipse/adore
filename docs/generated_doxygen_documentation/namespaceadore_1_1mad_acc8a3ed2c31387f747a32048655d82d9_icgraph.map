@@ -1,0 +1,9 @@
+<map id="adore::mad::overlaps" name="adore::mad::overlaps">
+<area shape="rect" id="node1" title=" " alt="" coords="267,167,411,193"/>
+<area shape="rect" id="node2" href="$namespaceadore_1_1mad.html#a6530e320585b575645c2b48573ae43ba" title=" " alt="" coords="7,5,217,32"/>
+<area shape="rect" id="node3" href="$structadore_1_1env_1_1BorderBased_1_1Border.html#a79c4e276037630ab14288f30a9cd11e1" title="Check whether the bounding boxes of two lane objects overlap." alt="" coords="29,57,195,98"/>
+<area shape="rect" id="node4" href="$structadore_1_1mad_1_1OccupancyCylinder.html#add62115dacc99a8b1efcb72341282441" title=" " alt="" coords="7,122,217,163"/>
+<area shape="rect" id="node5" href="$structadore_1_1mad_1_1OccupancyCylinderTree_1_1XYIntrusionFunctor.html#a8ca5526a6ad6694d5bd39f2c8e86864d" title=" " alt="" coords="7,188,217,244"/>
+<area shape="rect" id="node6" href="$structadore_1_1mad_1_1OccupancyCylinderTree_1_1EarliestOverlapFunctor.html#a6535f19de24edc3d75798ac7f1e1a67f" title=" " alt="" coords="7,268,217,324"/>
+<area shape="rect" id="node7" href="$structadore_1_1mad_1_1OccupancyCylinderTree_1_1TimeEncroachmentFunctor.html#a16eba25cae0bdc597f789fe8e6b24e28" title=" " alt="" coords="5,348,219,404"/>
+</map>

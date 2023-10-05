@@ -1,0 +1,40 @@
+digraph "adore::fun::RoadCoordinateConverter::updateParameters"
+{
+ // LATEX_PDF_SIZE
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  rankdir="LR";
+  Node1 [label="adore::fun::RoadCoordinate\lConverter::updateParameters",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black",tooltip=" "];
+  Node1 -> Node2 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node2 [label="adore::params::APVehicle\l::get_a",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classadore_1_1params_1_1APVehicle.html#ae446997786812ff17a5c3f6bfa575ce5",tooltip="cog to front axle"];
+  Node1 -> Node3 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node3 [label="adore::params::APVehicle\l::get_b",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classadore_1_1params_1_1APVehicle.html#a5cc38023fb9f3142348dc9ac22402288",tooltip="rear axle to cog"];
+  Node1 -> Node4 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node4 [label="adore::params::APVehicle\l::get_cf",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classadore_1_1params_1_1APVehicle.html#af95a31b91ceabe9a02cfd728e4502cfa",tooltip="front normalized tire stiffness for bicycle model"];
+  Node1 -> Node5 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node5 [label="adore::params::APVehicle\l::get_cr",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classadore_1_1params_1_1APVehicle.html#a41fcecc0bda7794736a06b660b172a6c",tooltip="rear normalized tire stiffness for bicycle model"];
+  Node1 -> Node6 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node6 [label="adore::params::APVehicle\l::get_g",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classadore_1_1params_1_1APVehicle.html#aff1c5efcd97b43b9888c6c1742db70bf",tooltip="gravitational constant"];
+  Node1 -> Node7 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node7 [label="adore::params::APVehicle\l::get_h",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classadore_1_1params_1_1APVehicle.html#a1469c68f7b8db6bd77bf7e236faa51a5",tooltip="cog height above ground"];
+  Node1 -> Node8 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node8 [label="adore::params::APVehicle\l::get_Iz_m",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classadore_1_1params_1_1APVehicle.html#a5ad76a85226dd133c8827ec9eb75dc7b",tooltip="rotational inertia around up axis devided by mass"];
+  Node1 -> Node9 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node9 [label="adore::params::APVehicle\l::get_mu",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classadore_1_1params_1_1APVehicle.html#a2edbca64008d9314eea78012d41f7d18",tooltip="friction coefficient"];
+  Node1 -> Node10 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node10 [label="adore::params::APTrajectory\lGeneration::get_rho",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classadore_1_1params_1_1APTrajectoryGeneration.html#a936967cd56f49dba2525921b9160cb1f",tooltip="cor to planning point: movement of planning point shall planned by the trajectory planner"];
+  Node1 -> Node11 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node11 [label="adore::fun::VLB_OpenLoop\l::updateParameters",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classadore_1_1fun_1_1VLB__OpenLoop.html#aa44cc154414dbb4dad1ffc66da9a2a56",tooltip=" "];
+  Node11 -> Node2 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node11 -> Node3 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node11 -> Node4 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node11 -> Node5 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node11 -> Node6 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node11 -> Node7 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node11 -> Node8 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node11 -> Node9 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node11 -> Node12 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node12 [label="adore::params::APVehicle\l::get_steeringAngleMax",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classadore_1_1params_1_1APVehicle.html#ad99abb1ed1083bde48dc73a1af8766b9",tooltip=" "];
+  Node11 -> Node13 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node13 [label="adore::params::APVehicle\l::get_steeringAngleMin",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classadore_1_1params_1_1APVehicle.html#a14cb93ac0a89ef10df2954c3544773bf",tooltip=" "];
+}

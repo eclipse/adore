@@ -1,0 +1,18 @@
+digraph "adore::fun::LaneWidthSpeedLimitLFV::update"
+{
+ // LATEX_PDF_SIZE
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  rankdir="LR";
+  Node1 [label="adore::fun::LaneWidthSpeed\lLimitLFV::update",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black",tooltip=" "];
+  Node1 -> Node2 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node2 [label="adore::params::APLongitudinal\lPlanner::getMinWidthFast",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classadore_1_1params_1_1APLongitudinalPlanner.html#ac9d706c897a153f6d3fd34172fc758dc",tooltip="getMinWidthFast returns the minimum lane width, below/at which vehicle moves fast: Should be greater ..."];
+  Node1 -> Node3 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node3 [label="adore::params::APLongitudinal\lPlanner::getMinWidthFastSpeed",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classadore_1_1params_1_1APLongitudinalPlanner.html#a5c5e4a247575b6b120989ab3e05d6b41",tooltip="getMinWidthFastSpeed returns the fast speed to be applied, if lane width equals minWidthFast: Should ..."];
+  Node1 -> Node4 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node4 [label="adore::params::APLongitudinal\lPlanner::getMinWidthSlow",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classadore_1_1params_1_1APLongitudinalPlanner.html#a8bb4ab95782ab90f03165c0d599eb99d",tooltip="getMinWidthSlow returns the minimum lane width, below/at which vehicle moves slowly: Should be greate..."];
+  Node1 -> Node5 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node5 [label="adore::params::APLongitudinal\lPlanner::getMinWidthSlowSpeed",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classadore_1_1params_1_1APLongitudinalPlanner.html#afd1c5525867e31abff0ac5907c37652d",tooltip="getMinWidthSlowSpeed returns the slow speed to be applied, if lane width equals minWidthSlow: Should ..."];
+  Node1 -> Node6 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node6 [label="adore::params::APLongitudinal\lPlanner::getMinWidthStop",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classadore_1_1params_1_1APLongitudinalPlanner.html#a6454207bb0e87670a6efc7c02c712101",tooltip="getMinWidthStop returns the minimum lane width, below/at which vehicle stops: Should be greater or eq..."];
+}

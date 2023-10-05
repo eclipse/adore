@@ -1,0 +1,18 @@
+digraph "adore::view::AGap::getState"
+{
+ // LATEX_PDF_SIZE
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  rankdir="RL";
+  Node1 [label="adore::view::AGap::\lgetState",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black",tooltip="get the state of the gap at a certain time, depending on ego position"];
+  Node1 -> Node2 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node2 [label="adore::fun::LaneChangePhase\lEstimator::getLaneChangePhase",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classadore_1_1fun_1_1LaneChangePhaseEstimator.html#ae0d020ec9a2414dc64b9ca3c0c354046",tooltip=" "];
+  Node2 -> Node3 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node3 [label="adore::fun::AdvancedLateral\lOffsetConstraintLC::getValue",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classadore_1_1fun_1_1AdvancedLateralOffsetConstraintLC.html#ac062d58126ab5b8d3a3ad38570bb2343",tooltip=" "];
+  Node2 -> Node4 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node4 [label="adore::fun::FollowPreceding\lVehicleOnLaneToBeLeft_BrakingCurve\l::getValue",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classadore_1_1fun_1_1FollowPrecedingVehicleOnLaneToBeLeft__BrakingCurve.html#ad476f6086d29fa74d207a1b345a172c0",tooltip=" "];
+  Node1 -> Node5 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node5 [label="adore::fun::LateralOffset\lConstraintLC::getValue",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classadore_1_1fun_1_1LateralOffsetConstraintLC.html#a6c66332f5af0aecb945b89e3d2d7a03f",tooltip=" "];
+  Node1 -> Node6 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node6 [label="adore::fun::LaneChangeInto\lGapReference::getValueIfAvailable",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classadore_1_1fun_1_1LaneChangeIntoGapReference.html#af9922af49844a6601b5bea0ddf15825b",tooltip=" "];
+}

@@ -1,0 +1,9 @@
+<map id="adore::env::MapStopLineManagement::run" name="adore::env::MapStopLineManagement::run">
+<area shape="rect" id="node1" title="receive newly visible or newly outdated stop lines based on new and outdated borders" alt="" coords="5,140,273,167"/>
+<area shape="rect" id="node2" href="$classadore_1_1env_1_1BorderBased_1_1LanePositionedObjectSet.html#a23392ee89340a6f8143ced324bbf510c" title="Erase Objects that are positioned on certain borders." alt="" coords="321,5,504,61"/>
+<area shape="rect" id="node3" href="$classadore_1_1env_1_1BorderBased_1_1LanePositionedObjectSet.html#a4df9d1530e5806e34f5eaf450301ff25" title="Get the begin()&#45; and end()&#45;iterator for objects that are positioned on a certain border." alt="" coords="324,85,501,141"/>
+<area shape="rect" id="node4" href="$classadore_1_1env_1_1BorderBased_1_1LanePositionedObjectSet.html#a84d2a34caaa36e2e303c48fe7c052e3e" title="Check whether at least one object is contained that is positioned on a certain Border." alt="" coords="324,165,501,221"/>
+<area shape="rect" id="node5" href="$classadore_1_1env_1_1BorderBased_1_1LanePositionedObjectSet.html#a29fcda96ff83818d11fcfd6f039923d2" title="Insert a new object." alt="" coords="324,245,501,301"/>
+<area shape="rect" id="node6" href="$classadore_1_1env_1_1BorderBased_1_1LanePositionedObjectSet.html#addbf17050f8673f2e6b56d7119eec2f3" title="Erase objects on a certain LanePosition." alt="" coords="552,205,729,261"/>
+<area shape="rect" id="node7" href="$classadore_1_1env_1_1BorderBased_1_1ALanePositionedObject.html#a0dc7e0c282bcd5a1face09d3eb0a61ac" title="Get the LanePosition of the Object." alt="" coords="557,285,724,341"/>
+</map>

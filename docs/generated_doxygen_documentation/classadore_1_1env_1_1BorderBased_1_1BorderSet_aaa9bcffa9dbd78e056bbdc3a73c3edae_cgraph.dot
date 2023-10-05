@@ -1,0 +1,49 @@
+digraph "adore::env::BorderBased::BorderSet::getOverlappingBorders"
+{
+ // LATEX_PDF_SIZE
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  rankdir="LR";
+  Node1 [label="adore::env::BorderBased\l::BorderSet::getOverlappingBorders",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black",tooltip="computes the set of borders, which overlap with base and are thus potential points of conflict"];
+  Node1 -> Node2 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node2 [label="adore::env::BorderBased\l::Border::getBoostBox",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$structadore_1_1env_1_1BorderBased_1_1Border.html#a4b1e646e2c3d98b03e75f286611e0cda",tooltip="Get a bounding box for the implicit lane object."];
+  Node2 -> Node3 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node3 [label="adore::mad::max",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$namespaceadore_1_1mad.html#adea062854ef0b105a3fdca8cf2aca945",tooltip=" "];
+  Node3 -> Node4 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node4 [label="adore::mad::max",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$namespaceadore_1_1mad.html#a618a8842fed7b9375957b1e393c58492",tooltip=" "];
+  Node2 -> Node5 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node5 [label="adore::mad::min",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$namespaceadore_1_1mad.html#ab58ecb752f9bbfe27832e0a2c0e22c2b",tooltip=" "];
+  Node5 -> Node6 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node6 [label="adore::mad::min",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$namespaceadore_1_1mad.html#ac61b79c007d1859f93a10c04272095a1",tooltip=" "];
+  Node1 -> Node7 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node7 [label="adore::env::BorderBased\l::BorderSet::getBorder",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classadore_1_1env_1_1BorderBased_1_1BorderSet.html#a69802bccdc7cf3fa598283509808edc2",tooltip="retrieve a border by ID"];
+  Node1 -> Node8 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node8 [label="adore::env::BorderBased\l::BorderSet::getLeftNeighbor",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classadore_1_1env_1_1BorderBased_1_1BorderSet.html#a8af807fde181a20de55594592d752adc",tooltip="Get left neighbor of a border."];
+  Node1 -> Node9 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node9 [label="adore::env::BorderBased\l::BorderSet::getRightNeighbor",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classadore_1_1env_1_1BorderBased_1_1BorderSet.html#a49e8f6a0309cd0c2c2afa28412435f4f",tooltip="get the right neighbor of a border"];
+  Node1 -> Node10 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node10 [label="adore::env::BorderBased\l::BorderOverlap::hasAnyOverlap",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$structadore_1_1env_1_1BorderBased_1_1BorderOverlap.html#a7aa72a9829c864a13fae139782e6447c",tooltip="Check for any overlap."];
+  Node1 -> Node11 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node11 [label="adore::env::BorderBased\l::Border::isContinuousPredecessorOf",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$structadore_1_1env_1_1BorderBased_1_1Border.html#a441b9f3124fd611e074d0337ded96dce",tooltip="Check whether the border is a continuous predecessor of another border."];
+  Node11 -> Node12 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node12 [label="adore::env::BorderBased\l::Coordinate::isNear",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$structadore_1_1env_1_1BorderBased_1_1Coordinate.html#a29c83e934340f40cfa66dab2e7982d20",tooltip="Check whether the Coordinate is near to another Coordinate."];
+  Node11 -> Node13 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node13 [label="adore::env::BorderBased\l::Border::isPredecessorOf",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$structadore_1_1env_1_1BorderBased_1_1Border.html#a26aecd3bc2175fb624dcab6c10570e3b",tooltip="Check whether border is a direct predecessor of another border."];
+  Node13 -> Node12 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node1 -> Node14 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node14 [label="adore::env::BorderBased\l::Border::isContinuousSuccessorOf",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$structadore_1_1env_1_1BorderBased_1_1Border.html#ade619eed462fc686ec91a805e0a78fc7",tooltip="Check whether the border is a continuous successor of another border."];
+  Node14 -> Node12 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node14 -> Node15 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node15 [label="adore::env::BorderBased\l::Border::isSuccessorOf",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$structadore_1_1env_1_1BorderBased_1_1Border.html#a7fb76c709876c81971c00f99e327c2bf",tooltip="Check whether border is a direct successors of another border."];
+  Node15 -> Node12 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node1 -> Node16 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node16 [label="adore::env::BorderBased\l::Border::isNeighborOf",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$structadore_1_1env_1_1BorderBased_1_1Border.html#af9d03be580d939ff4ffcb2dd4ab9541b",tooltip="Check whether the border is a neighbor of another border."];
+  Node16 -> Node17 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node17 [label="adore::env::BorderBased\l::Border::isRightOf",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$structadore_1_1env_1_1BorderBased_1_1Border.html#a84b452c791b046ce6bc4b7ddc42d28f1",tooltip="Check whether the border is right of another border."];
+  Node17 -> Node18 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node18 [label="adore::env::BorderBased\l::Border::getNeighborDirection",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$structadore_1_1env_1_1BorderBased_1_1Border.html#a4673c950e7cbca452b3b763dcda9b02b",tooltip="Get the direction of the left neighbor."];
+  Node17 -> Node12 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node1 -> Node19 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node19 [label="adore::env::BorderBased\l::Border::isSplitNeighborOf",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$structadore_1_1env_1_1BorderBased_1_1Border.html#a41a812371db6611563f39b1577f7433e",tooltip="Check whether the border and its left neighbor start at the same point as the potential split neighbo..."];
+  Node19 -> Node12 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+}

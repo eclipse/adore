@@ -1,0 +1,7 @@
+digraph "adore::fun::PlatooningInformation"
+{
+ // LATEX_PDF_SIZE
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  Node1 [label="{adore::fun::PlatooningInformation\n|- ToleratedDistanceAhead\l- ToleratedDistanceBehind\l- TargetAutomationLevel\l- LanePosition\l- id\l|+ set()\l+ setToleratedDistanceAhead()\l+ setToleratedDistanceBehind()\l+ setTargetAutomationLevel()\l+ setLanePosition()\l+ setId()\l+ getToleratedDistanceAhead()\l+ getToleratedDistanceBehind()\l+ getTargetAutomationLevel()\l+ getLanePosition()\l+ getId()\l+ PlatooningInformation()\l+ PlatooningInformation()\l}",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black",tooltip=" "];
+}

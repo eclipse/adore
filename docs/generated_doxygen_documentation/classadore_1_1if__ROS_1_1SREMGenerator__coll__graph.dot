@@ -1,0 +1,7 @@
+digraph "adore::if_ROS::SREMGenerator"
+{
+ // LATEX_PDF_SIZE
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  Node1 [label="{adore::if_ROS::SREMGenerator\n|- srem_publisher_\l- state_subscriber_\l- nh_\l- srem_\l- srem_zones_\l- request_counter_\l- debug_mode_\l- last_debug_mode_\l- rate_\l- x_\l- y_\l- z_\l- t_\l- position_initialized_\l|+ receive_position()\l+ init()\l+ isInArea()\l+ send_srem()\l+ run()\l+ getTime()\l+ getSecondOfYearFromUTC()\l+ getDSecond()\l+ setDebugMode()\l+ getDebugMode()\l}",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black",tooltip=" "];
+}

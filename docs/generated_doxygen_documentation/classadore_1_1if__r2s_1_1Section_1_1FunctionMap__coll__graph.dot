@@ -1,0 +1,7 @@
+digraph "adore::if_r2s::Section::FunctionMap"
+{
+ // LATEX_PDF_SIZE
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  Node1 [label="{adore::if_r2s::Section\l::FunctionMap\n|- functions_\l|+ addFunction()\l+ getFunctionsAtParameter()\l+ getFunctions()\l+ mend()\l+ deleteFunctions()\l- getFunctionsStartingAtPoint()\l- getFunctionsEndingAtPoint()\l- resetSParameter()\l}",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black",tooltip="storage class to access different functions by their domain intervals"];
+}

@@ -1,0 +1,52 @@
+<map id="Dashboard::Dashboard" name="Dashboard::Dashboard">
+<area shape="rect" id="node1" title=" " alt="" coords="5,1445,161,1471"/>
+<area shape="rect" id="node2" href="$classDLR__TS_1_1PlotLab_1_1FigureStubFactory.html#a842dc9d218e8433f3443a08d47cfd6cc" title=" " alt="" coords="209,881,405,923"/>
+<area shape="rect" id="node3" href="$classadore_1_1if__ROS_1_1PARAMS__Factory.html#a29eb2d97b247b386086d336c1a4f1782" title=" " alt="" coords="223,947,391,988"/>
+<area shape="rect" id="node4" href="$classDashboard.html#a2cba922f11ec7e36280bc86fda11f38a" title=" " alt="" coords="240,1012,375,1053"/>
+<area shape="rect" id="node6" href="$classDashboard.html#a59ed626bc82b668ec1359f7cd2a53a31" title=" " alt="" coords="233,1077,381,1119"/>
+<area shape="rect" id="node7" href="$classDashboard.html#aa5ec1adc6b9b6530344249bc049792e5" title=" " alt="" coords="220,1143,395,1170"/>
+<area shape="rect" id="node40" href="$classDashboard.html#aa255608d58054f68cf8370f12de688bd" title=" " alt="" coords="227,1365,387,1391"/>
+<area shape="rect" id="node42" href="$classDLR__TS_1_1PlotLab_1_1AFigureStub.html#a37cf8aa86c60d57085968099c250e4ea" title=" " alt="" coords="711,1415,889,1456"/>
+<area shape="rect" id="node43" href="$classDashboard.html#adf8c255f8746c110b3df964c908678c0" title=" " alt="" coords="240,1467,375,1508"/>
+<area shape="rect" id="node45" href="$classDashboard.html#a684718a6fbfcbd9a83e3b33ae3a8bf5b" title=" " alt="" coords="240,1532,375,1573"/>
+<area shape="rect" id="node46" href="$classDLR__TS_1_1PlotLab_1_1AFigureStub.html#a3994095bb7e5a790101141b2ff6afaa2" title=" " alt="" coords="218,1597,397,1639"/>
+<area shape="rect" id="node47" href="$classDLR__TS_1_1PlotLab_1_1AFigureStub.html#a87aa4facd550c9fd8c13ef81180b7aa3" title=" " alt="" coords="218,1663,397,1704"/>
+<area shape="rect" id="node48" href="$classDLR__TS_1_1PlotLab_1_1AFigureStub.html#aaf1a1edc084b34e18315896c3f248695" title=" " alt="" coords="218,1728,397,1769"/>
+<area shape="rect" id="node49" href="$classDLR__TS_1_1PlotLab_1_1AFigureStub.html#a5dfd916c9ea11459ee05d73d4d37744d" title=" " alt="" coords="218,1793,397,1835"/>
+<area shape="rect" id="node50" href="$classDLR__TS_1_1PlotLab_1_1AFigureStub.html#a6a1df8146daff2b1a7003d85c4d2caaf" title=" " alt="" coords="218,1859,397,1900"/>
+<area shape="rect" id="node5" href="$structadore_1_1env_1_1VehicleMotionState9d.html#a386b3340baca41b2837ce151d0723a34" title="Set the longitudinal acceleration." alt="" coords="471,645,645,687"/>
+<area shape="rect" id="node8" href="$classDashboard.html#a809cd76a08281e6206d53a226463e663" title=" " alt="" coords="494,711,622,738"/>
+<area shape="rect" id="node31" href="$structadore_1_1if__ROS_1_1QuaternionConverter.html#ab4dba6ab02bc42e99cb6dac9effa1656" title="convert quaternion to heading" alt="" coords="453,776,663,817"/>
+<area shape="rect" id="node32" href="$structadore_1_1env_1_1VehicleMotionState9d.html#a88c3073bde99b03a8431e0ad0ddf110a" title="Set the yaw rate." alt="" coords="471,841,645,883"/>
+<area shape="rect" id="node33" href="$structadore_1_1env_1_1VehicleMotionState9d.html#ab86b791bc6990e970e9fb6e0e5a4007b" title="set the heading" alt="" coords="471,907,645,948"/>
+<area shape="rect" id="node34" href="$structadore_1_1env_1_1VehicleMotionState9d.html#ae567103c42e2b947fe4655e8bff22cfc" title="Set the time." alt="" coords="471,972,645,1013"/>
+<area shape="rect" id="node35" href="$structadore_1_1env_1_1VehicleMotionState9d.html#a467c0270b93452680cc6c2cfdb78d2f0" title="set the longitudinal velocity" alt="" coords="471,1037,645,1079"/>
+<area shape="rect" id="node36" href="$structadore_1_1env_1_1VehicleMotionState9d.html#aba1577c93d3804f2271db465e8487007" title="set the lateral velocity" alt="" coords="471,1103,645,1144"/>
+<area shape="rect" id="node37" href="$structadore_1_1env_1_1VehicleMotionState9d.html#a9c0059501475287069f2c66f81bccbe0" title="Set the x&#45;coordinate." alt="" coords="471,1168,645,1209"/>
+<area shape="rect" id="node38" href="$structadore_1_1env_1_1VehicleMotionState9d.html#a14d7aaf7687a0d1d133fb1d0ff186a77" title="Set the y&#45;coordinate." alt="" coords="471,1233,645,1275"/>
+<area shape="rect" id="node39" href="$structadore_1_1env_1_1VehicleMotionState9d.html#a00563022c6911fc985e8fd60ac0ad946" title="Set the z&#45;coordinate." alt="" coords="471,1299,645,1340"/>
+<area shape="rect" id="node9" href="$classDLR__TS_1_1PlotLab_1_1AFigureStub.html#a4da398fda2c19ea3ca5b4b289d785942" title=" " alt="" coords="711,5,889,47"/>
+<area shape="rect" id="node10" href="$namespaceadore_1_1mad.html#a37d645f2d2b0aa8f1c7015ba4e502617" title=" " alt="" coords="737,71,863,98"/>
+<area shape="rect" id="node11" href="$namespaceadore_1_1mad.html#a70b9fe3efbb34c0f9621147e3456bfa8" title=" " alt="" coords="742,122,858,149"/>
+<area shape="rect" id="node12" href="$classadore_1_1params_1_1APVehicle.html#ae446997786812ff17a5c3f6bfa575ce5" title="cog to front axle" alt="" coords="713,173,887,215"/>
+<area shape="rect" id="node13" href="$classadore_1_1params_1_1APVehicle.html#a5cc38023fb9f3142348dc9ac22402288" title="rear axle to cog" alt="" coords="713,239,887,280"/>
+<area shape="rect" id="node14" href="$classadore_1_1params_1_1APVehicle.html#aec64e74619601401d6d3d81ebf5fdacd" title="front axle to front border" alt="" coords="713,304,887,345"/>
+<area shape="rect" id="node15" href="$classadore_1_1params_1_1APVehicle.html#ad8a4b0411e6d030aeace5bd44ab8876e" title="rear border to rear axle" alt="" coords="713,369,887,411"/>
+<area shape="rect" id="node16" href="$classadore_1_1params_1_1APVehicle.html#ac67acb30ee133526e87d8ae1932f7db2" title=" " alt="" coords="713,435,887,476"/>
+<area shape="rect" id="node17" href="$classadore_1_1params_1_1APVehicle.html#a2c656e2251849de603eb1b2a9ae045c1" title="track width front" alt="" coords="713,500,887,541"/>
+<area shape="rect" id="node18" href="$classadore_1_1params_1_1APVehicle.html#a456244240ad38f06621e1924ba1076cf" title="track width rear" alt="" coords="713,565,887,607"/>
+<area shape="rect" id="node19" href="$structadore_1_1env_1_1VehicleMotionState9d.html#a7a4bdd18cf6a76bb87ac80dd8cdc3e14" title="Get the longitudinal acceleration." alt="" coords="713,631,887,672"/>
+<area shape="rect" id="node20" href="$structadore_1_1fun_1_1PlanarVehicleState10d.html#ad55dd30212ca0581ae920a466da42829" title=" " alt="" coords="716,696,884,737"/>
+<area shape="rect" id="node21" href="$structadore_1_1env_1_1VehicleMotionState9d.html#aad1cd97fe5b255cdbea40f4dee602f8e" title="Get the steering angle." alt="" coords="713,761,887,803"/>
+<area shape="rect" id="node22" href="$structadore_1_1fun_1_1PlanarVehicleState10d.html#a155bd17bc48523159a9db97899bf93b5" title=" " alt="" coords="716,827,884,868"/>
+<area shape="rect" id="node23" href="$structadore_1_1env_1_1VehicleMotionState9d.html#a39294f52e08a67b58a6beabec70d2d97" title="Get the yaw rate." alt="" coords="713,892,887,933"/>
+<area shape="rect" id="node24" href="$structadore_1_1fun_1_1PlanarVehicleState10d.html#a80382473710b306857f373525e8f752f" title=" " alt="" coords="716,957,884,999"/>
+<area shape="rect" id="node25" href="$structadore_1_1env_1_1VehicleMotionState9d.html#a65ca6ea033cf05674de50b8996a586a3" title="Get the heading." alt="" coords="713,1023,887,1064"/>
+<area shape="rect" id="node26" href="$structadore_1_1fun_1_1PlanarVehicleState10d.html#a30935f2ed6f97cfc0cd2c565bb5c980c" title=" " alt="" coords="716,1088,884,1129"/>
+<area shape="rect" id="node27" href="$structadore_1_1env_1_1VehicleMotionState9d.html#ae7d75a3f7d52a946f075e669832caa17" title="Get the time." alt="" coords="713,1153,887,1195"/>
+<area shape="rect" id="node28" href="$structadore_1_1env_1_1VehicleMotionState9d.html#a2547f79442e772d79fbf5051a2a08bfa" title="Get the longitudinal velocity." alt="" coords="713,1219,887,1260"/>
+<area shape="rect" id="node29" href="$structadore_1_1fun_1_1PlanarVehicleState10d.html#a025278bb96195126dc8c41e66c201436" title=" " alt="" coords="716,1284,884,1325"/>
+<area shape="rect" id="node30" href="$structadore_1_1env_1_1VehicleMotionState9d.html#a96153986634c3718e2c8f3586e94cc6a" title="Get the lateral velocity." alt="" coords="713,1349,887,1391"/>
+<area shape="rect" id="node41" href="$classDashboard.html#a706267b562854b57076eefada411205f" title=" " alt="" coords="489,1365,627,1391"/>
+<area shape="rect" id="node44" href="$structadore_1_1env_1_1VehicleMotionState9d.html#ac1ead2ba99a3e67f90d81a9de1f26dea" title="Set the steering angle." alt="" coords="471,1467,645,1508"/>
+</map>

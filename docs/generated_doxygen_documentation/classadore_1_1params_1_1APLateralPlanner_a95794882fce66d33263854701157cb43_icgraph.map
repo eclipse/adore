@@ -1,0 +1,4 @@
+<map id="adore::params::APLateralPlanner::getCurvatureUB" name="adore::params::APLateralPlanner::getCurvatureUB">
+<area shape="rect" id="node1" title="getCurvatureUB returns maximum curvature of path (relevant at low speeds)" alt="" coords="252,5,423,47"/>
+<area shape="rect" id="node2" href="$classadore_1_1fun_1_1LateralAccelerationConstraint.html#a222575ffe13257c190244a1324cc001c" title=" " alt="" coords="5,5,204,47"/>
+</map>

@@ -1,0 +1,10 @@
+<map id="CSVLog::getCurrentLogLevelFile" name="CSVLog::getCurrentLogLevelFile">
+<area shape="rect" id="node1" title="get current log level for file log" alt="" coords="415,56,628,83"/>
+<area shape="rect" id="node2" href="$classCSVLog.html#a79823829d8323a15970b5faea8a1a247" title="set the log level for file and console" alt="" coords="207,5,356,32"/>
+<area shape="rect" id="node3" href="$classCSVLog.html#aba1abb6e18ffbe83b6d4f3f5f2a1fa8c" title="set log level only for file" alt="" coords="196,56,367,83"/>
+<area shape="rect" id="node4" href="$classCSVLog.html#a483aac07b38a517ad8f045a34cffdcf9" title="general log generator method" alt="" coords="217,107,345,133"/>
+<area shape="rect" id="node5" href="$classCSVLog.html#a99f056783f1903b0332a39732b79a014" title="general log on error level" alt="" coords="15,31,139,57"/>
+<area shape="rect" id="node6" href="$classCSVLog.html#a5a6e01a0b57519dcfa1b1b94017f79f8" title="general log on info level" alt="" coords="17,81,136,108"/>
+<area shape="rect" id="node7" href="$classCSVLog.html#a43fd60ab05f615aefdd0af7d3f93840e" title="general log on trace level" alt="" coords="12,132,141,159"/>
+<area shape="rect" id="node8" href="$classCSVLog.html#a259cf3f2a38398a047342ec4c2820f5c" title="general log on warning level" alt="" coords="5,183,148,209"/>
+</map>

@@ -1,0 +1,10 @@
+<map id="adore::apps::PlotEgo" name="adore::apps::PlotEgo">
+<area shape="rect" id="node1" title="a optimzed plotting application to plot map borders, vehicles and environment information and backgro..." alt="" coords="641,439,815,721"/>
+<area shape="rect" id="node2" href="$classDLR__TS_1_1PlotLab_1_1AFigureStub.html" title=" " alt="" coords="5,71,211,295"/>
+<area shape="rect" id="node3" href="$classadore_1_1mad_1_1AReader.html" title=" " alt="" coords="235,123,413,244"/>
+<area shape="rect" id="node4" href="$structadore_1_1env_1_1VehicleMotionState9d.html" title="This struct holds the motion state of the vehicle in 9d." alt="" coords="437,57,611,310"/>
+<area shape="rect" id="node5" href="$classadore_1_1mad_1_1AReader.html" title=" " alt="" coords="635,108,821,259"/>
+<area shape="rect" id="node6" href="$classadore_1_1params_1_1APVehicle.html" title="abstract class for vehicle configuration related paremeters" alt="" coords="845,71,1019,295"/>
+<area shape="rect" id="node7" href="$classadore_1_1fun_1_1VehicleExtendedState.html" title=" " alt="" coords="1044,5,1295,361"/>
+<area shape="rect" id="node8" href="$classadore_1_1mad_1_1AReader.html" title=" " alt="" coords="1319,108,1518,259"/>
+</map>

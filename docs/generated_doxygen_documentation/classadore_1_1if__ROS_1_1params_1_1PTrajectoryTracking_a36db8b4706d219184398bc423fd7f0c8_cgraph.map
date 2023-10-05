@@ -1,0 +1,4 @@
+<map id="adore::if_ROS::params::PTrajectoryTracking::getBrakingTorqueGain" name="adore::if_ROS::params::PTrajectoryTracking::getBrakingTorqueGain">
+<area shape="rect" id="node1" title="returns gain for braking torque calculation" alt="" coords="5,5,164,61"/>
+<area shape="rect" id="node2" href="$classadore_1_1if__ROS_1_1ROSParam.html#adf480c94fa5b1368850b0a491791e4e6" title=" " alt="" coords="212,20,419,47"/>
+</map>

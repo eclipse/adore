@@ -1,0 +1,4 @@
+<map id="adore::env::BorderBased::LaneFollowingGeometry::end" name="adore::env::BorderBased::LaneFollowingGeometry::end">
+<area shape="rect" id="node1" title="Get the end()&#45;iterator of the BAContainer of the right borders." alt="" coords="5,5,204,47"/>
+<area shape="rect" id="node2" href="$classadore_1_1env_1_1BorderBased_1_1BorderAccumulator.html#ad795032b11d319a4065e8e87f0bc7974" title="Get the Accumulated Borders." alt="" coords="252,5,464,47"/>
+</map>

@@ -1,0 +1,10 @@
+<map id="adore::env::BorderBased::BorderSet::matchLanesInRegion" name="adore::env::BorderBased::BorderSet::matchLanesInRegion">
+<area shape="rect" id="node1" title="get a vector of borders, which describe lanes that match the specified region" alt="" coords="5,136,224,177"/>
+<area shape="rect" id="node2" href="$structadore_1_1env_1_1BorderBased_1_1itpair.html#a3746f6e3a03399eecb397f897f007562" title=" " alt="" coords="294,5,461,47"/>
+<area shape="rect" id="node3" href="$classadore_1_1env_1_1BorderBased_1_1BorderSet.html#a69802bccdc7cf3fa598283509808edc2" title="retrieve a border by ID" alt="" coords="294,71,461,112"/>
+<area shape="rect" id="node4" href="$classadore_1_1env_1_1BorderBased_1_1BorderSet.html#a5b9a10acc8d477c1d27d5b39fb1f99f3" title="get all borders in this within region" alt="" coords="272,136,483,177"/>
+<area shape="rect" id="node5" href="$namespaceadore_1_1mad.html#adea062854ef0b105a3fdca8cf2aca945" title=" " alt="" coords="317,202,437,229"/>
+<area shape="rect" id="node7" href="$namespaceadore_1_1mad.html#ab58ecb752f9bbfe27832e0a2c0e22c2b" title=" " alt="" coords="319,253,435,279"/>
+<area shape="rect" id="node6" href="$namespaceadore_1_1mad.html#a618a8842fed7b9375957b1e393c58492" title=" " alt="" coords="531,202,651,229"/>
+<area shape="rect" id="node8" href="$namespaceadore_1_1mad.html#ac61b79c007d1859f93a10c04272095a1" title=" " alt="" coords="533,253,649,279"/>
+</map>

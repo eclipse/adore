@@ -1,0 +1,30 @@
+<map id="adore::env::BorderBased::LaneChangeBorders::update" name="adore::env::BorderBased::LaneChangeBorders::update">
+<area shape="rect" id="node1" title="collects all borders relevant for lane change view in object&#45;variable vectors" alt="" coords="5,251,200,293"/>
+<area shape="rect" id="node2" href="$classadore_1_1env_1_1BorderBased_1_1LaneChangeBorders.html#a00acf7067a9281d0694b63d41ad62b69" title="computes the gate region for a lane change Supply iterators for a list or vector of Border*,..." alt="" coords="249,131,452,187"/>
+<area shape="rect" id="node4" href="$classadore_1_1env_1_1BorderBased_1_1BorderSet.html#a700919ecaf9ca494242a44f5eb40a29b" title="computes a pair of borders (left,right) suitable for lane&#45;changing from given source lane" alt="" coords="501,138,724,179"/>
+<area shape="rect" id="node7" href="$structadore_1_1env_1_1BorderBased_1_1Border.html#a522c4ebdb7a16e0aa89b507f554a4fa6" title="Get the length of the border." alt="" coords="1303,369,1470,410"/>
+<area shape="rect" id="node11" href="$classadore_1_1env_1_1BorderBased_1_1BASFollowNavigation.html#a19152de0ccb0c37bb5f5a2edf5218961" title="Get the next border." alt="" coords="267,291,434,347"/>
+<area shape="rect" id="node26" href="$namespaceadore_1_1mad.html#adea062854ef0b105a3fdca8cf2aca945" title=" " alt="" coords="291,371,411,397"/>
+<area shape="rect" id="node28" href="$classadore_1_1env_1_1BorderBased_1_1BASFollowNavigation.html#a68914de044403449eeae1a65e1cdd930" title="set continuation on increasing cost" alt="" coords="248,421,453,477"/>
+<area shape="rect" id="node3" href="$classadore_1_1env_1_1BorderBased_1_1BorderSet.html#afb523effcee573e774147446ecc756ab" title="check whether border type is in allowed types of set" alt="" coords="1035,138,1223,179"/>
+<area shape="rect" id="node5" href="$classadore_1_1env_1_1BorderBased_1_1BorderSet.html#a8af807fde181a20de55594592d752adc" title="Get left neighbor of a border." alt="" coords="777,159,965,201"/>
+<area shape="rect" id="node6" href="$classadore_1_1env_1_1BorderBased_1_1BorderSet.html#a49e8f6a0309cd0c2c2afa28412435f4f" title="get the right neighbor of a border" alt="" coords="772,94,969,135"/>
+<area shape="rect" id="node8" href="$structadore_1_1env_1_1BorderBased_1_1BorderID.html#a21f63cc4e5239a964b37d089d54d2418" title=" " alt="" coords="1549,318,1715,359"/>
+<area shape="rect" id="node9" href="$classadore_1_1mad_1_1LLinearPiecewiseFunctionM.html#aaa496b8ceb3ed505f6450225c46a077a" title=" " alt="" coords="1779,545,1976,586"/>
+<area shape="rect" id="node10" href="$classadore_1_1mad_1_1LLinearPiecewiseFunctionM.html#a682841e9bc82a0653745dce6f908bfa6" title=" " alt="" coords="1779,427,1976,469"/>
+<area shape="rect" id="node12" href="$classadore_1_1env_1_1BorderBased_1_1BorderAccumulationStrategy.html#aa57611b5570594d8998f3b0c7d8ccf16" title="Check whether a border is valid." alt="" coords="773,225,969,281"/>
+<area shape="rect" id="node13" href="$structadore_1_1env_1_1BorderBased_1_1itpair.html#a3746f6e3a03399eecb397f897f007562" title=" " alt="" coords="787,357,954,398"/>
+<area shape="rect" id="node14" href="$classadore_1_1env_1_1BorderBased_1_1BASFollowStraight.html#a84602111513a391f491d175411a09083" title="Get the next border." alt="" coords="515,407,710,463"/>
+<area shape="rect" id="node23" href="$classadore_1_1env_1_1BorderBased_1_1BorderSet.html#a4a75adfc507696182edc2514b86f5d24" title="get an interator pair for all borders which follow after b" alt="" coords="779,539,962,581"/>
+<area shape="rect" id="node24" href="$classadore_1_1env_1_1BorderBased_1_1BorderSet.html#a8d3569344e9e2fda17a55c39a0013970" title="check whether end of border a is beginning of border b" alt="" coords="786,605,955,646"/>
+<area shape="rect" id="node15" href="$structadore_1_1env_1_1BorderBased_1_1Border.html#aebfb6180e67e4736c017b07d49cf15b3" title="Get the continuity rating." alt="" coords="775,474,966,515"/>
+<area shape="rect" id="node16" href="$structadore_1_1env_1_1BorderBased_1_1Border.html#ae3dcfe00a8d867de3b816c6dd04e90bf" title="Get the distance to successor." alt="" coords="1017,474,1240,515"/>
+<area shape="rect" id="node17" href="$structadore_1_1env_1_1BorderBased_1_1Border.html#a30a1b88f91492f3e88fdaa5aa535d657" title="Get the heading change at transition of two borders." alt="" coords="1029,540,1229,596"/>
+<area shape="rect" id="node18" href="$namespaceadore_1_1mad.html#a37d645f2d2b0aa8f1c7015ba4e502617" title=" " alt="" coords="1323,653,1450,680"/>
+<area shape="rect" id="node19" href="$classadore_1_1mad_1_1LLinearPiecewiseFunctionM.html#a79ddff693ffc1b6fe2b72c6b025fa72f" title=" " alt="" coords="1288,493,1485,534"/>
+<area shape="rect" id="node20" href="$classadore_1_1mad_1_1LLinearPiecewiseFunctionM.html#a92f9ea09083d587aa2ffa1ec600be3b5" title=" " alt="" coords="1533,486,1731,527"/>
+<area shape="rect" id="node21" href="$namespaceadore_1_1mad.html#ab58ecb752f9bbfe27832e0a2c0e22c2b" title=" " alt="" coords="1819,493,1935,520"/>
+<area shape="rect" id="node22" href="$namespaceadore_1_1mad.html#ac61b79c007d1859f93a10c04272095a1" title=" " alt="" coords="2024,493,2140,520"/>
+<area shape="rect" id="node25" href="$classadore_1_1env_1_1BorderBased_1_1BorderSet.html#aab9bddfc9a6e9e93e3bb94806e98e0c8" title="checks whether two coordinates are similar based on certainties of this" alt="" coords="1045,621,1212,662"/>
+<area shape="rect" id="node27" href="$namespaceadore_1_1mad.html#a618a8842fed7b9375957b1e393c58492" title=" " alt="" coords="553,588,673,615"/>
+</map>

@@ -1,0 +1,7 @@
+digraph "adore::mad::VectorBasedVolumeTree&lt; VolumeType, BoundingFunctor &gt;"
+{
+ // LATEX_PDF_SIZE
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  Node1 [label="{adore::mad::VectorBasedVolume\lTree\< VolumeType, BoundingFunctor \>\n|- bound_\l- levels_\l- branching_factor_\l- levels_ok_\l|+ VectorBasedVolumeTree()\l+ getLevel()\l+ getLevel()\l+ getOccupancyCount()\l+ getOccupancyCount()\l+ setPreferredBranchingFactor()\l+ insert()\l+ getLevelCount()\l+ remove_all_levels()\l+ compute_all_levels()\l+ recompute_levels()\l+ setLevelCount()\l+ compute_min()\l}",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black",tooltip=" "];
+}

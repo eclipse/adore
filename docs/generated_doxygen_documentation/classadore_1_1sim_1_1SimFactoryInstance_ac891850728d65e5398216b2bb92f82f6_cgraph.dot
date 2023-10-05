@@ -1,0 +1,10 @@
+digraph "adore::sim::SimFactoryInstance::init"
+{
+ // LATEX_PDF_SIZE
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  rankdir="LR";
+  Node1 [label="adore::sim::SimFactoryInstance\l::init",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black",tooltip="Initialize private members of AllFactory."];
+  Node1 -> Node2 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node2 [label="adore::sim::SimFactoryInstance\l::getInstance",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classadore_1_1sim_1_1SimFactoryInstance.html#a177ce78bb1c9675c9dd0370e5f31f749",tooltip="Function to access singleton instance of the AllFactory using magic static."];
+}

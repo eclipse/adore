@@ -1,0 +1,7 @@
+<map id="adore::apps::PlotConflicts::PlotConflicts" name="adore::apps::PlotConflicts::PlotConflicts">
+<area shape="rect" id="node1" title=" " alt="" coords="5,64,179,105"/>
+<area shape="rect" id="node2" href="$classadore_1_1env_1_1EnvFactoryInstance.html#a069fadea20089ddf252a244864f305c1" title=" " alt="" coords="227,13,461,39"/>
+<area shape="rect" id="node4" href="$classadore_1_1env_1_1AFactory.html#a9b0c3d168476190310f2721e604f7a47" title=" " alt="" coords="267,64,421,105"/>
+<area shape="rect" id="node5" href="$classadore_1_1env_1_1AFactory.html#a81f661c576816461f1914436620ac208" title=" " alt="" coords="243,129,445,171"/>
+<area shape="rect" id="node3" href="$classadore_1_1env_1_1EnvFactoryInstance.html#a14835a4420fb827ba3809b94a96a7660" title="Function to access singleton instance of the envFactory using magic static." alt="" coords="509,5,717,47"/>
+</map>

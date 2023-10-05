@@ -1,0 +1,11 @@
+<map id="adore::env::SpeedLimitManagement::isOnLane" name="adore::env::SpeedLimitManagement::isOnLane">
+<area shape="rect" id="node1" title="helper function to determine if a eucledian (x,y) point is on the lane or outside,..." alt="" coords="5,129,236,171"/>
+<area shape="rect" id="node2" href="$classadore_1_1mad_1_1LLinearPiecewiseFunctionM.html#a21c464e587889f52d3b5aba703d80ccd" title=" " alt="" coords="284,129,499,171"/>
+<area shape="rect" id="node4" href="$classadore_1_1mad_1_1LLinearPiecewiseFunctionM.html#aaa496b8ceb3ed505f6450225c46a077a" title=" " alt="" coords="547,5,744,47"/>
+<area shape="rect" id="node5" href="$classadore_1_1mad_1_1LLinearPiecewiseFunctionM.html#a682841e9bc82a0653745dce6f908bfa6" title=" " alt="" coords="547,239,744,280"/>
+<area shape="rect" id="node3" href="$namespaceadore_1_1mad.html#ad4afe3dd742448995d7c56d1e4de5019" title=" " alt="" coords="548,71,743,112"/>
+<area shape="rect" id="node6" href="$namespaceadore_1_1mad.html#adea062854ef0b105a3fdca8cf2aca945" title=" " alt="" coords="585,137,705,163"/>
+<area shape="rect" id="node8" href="$namespaceadore_1_1mad.html#ab58ecb752f9bbfe27832e0a2c0e22c2b" title=" " alt="" coords="587,187,703,214"/>
+<area shape="rect" id="node7" href="$namespaceadore_1_1mad.html#a618a8842fed7b9375957b1e393c58492" title=" " alt="" coords="792,137,912,163"/>
+<area shape="rect" id="node9" href="$namespaceadore_1_1mad.html#ac61b79c007d1859f93a10c04272095a1" title=" " alt="" coords="794,187,910,214"/>
+</map>

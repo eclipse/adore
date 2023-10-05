@@ -1,0 +1,7 @@
+<map id="adore::env::BorderBased::StopLine" name="adore::env::BorderBased::StopLine">
+<area shape="rect" id="node1" title="This class provide information about stoplines." alt="" coords="37,939,203,1192"/>
+<area shape="rect" id="node2" href="$classadore_1_1env_1_1BorderBased_1_1ALanePositionedObject.html" title="Abstract class for Objects that are positioned by a connection to a certain lane." alt="" coords="5,733,192,839"/>
+<area shape="rect" id="node3" href="$structadore_1_1env_1_1BorderBased_1_1LanePosition.html" title="This is a struct that contains a position defined by a BorderID and a progress on that border." alt="" coords="217,696,383,876"/>
+<area shape="rect" id="node4" href="$structadore_1_1env_1_1BorderBased_1_1BorderID.html" title="This struct identifies a Border by the coordinates of the starting and the end point." alt="" coords="213,351,387,633"/>
+<area shape="rect" id="node5" href="$structadore_1_1env_1_1BorderBased_1_1Coordinate.html" title="This struct represents 3&#45;dimensional coordines." alt="" coords="217,5,383,273"/>
+</map>

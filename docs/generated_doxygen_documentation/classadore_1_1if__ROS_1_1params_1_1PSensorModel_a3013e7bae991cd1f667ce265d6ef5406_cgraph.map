@@ -1,0 +1,4 @@
+<map id="adore::if_ROS::params::PSensorModel::get_objectDiscardAge" name="adore::if_ROS::params::PSensorModel::get_objectDiscardAge">
+<area shape="rect" id="node1" title="time after which object detections are discarded" alt="" coords="5,5,256,47"/>
+<area shape="rect" id="node2" href="$classadore_1_1if__ROS_1_1ROSParam.html#adf480c94fa5b1368850b0a491791e4e6" title=" " alt="" coords="304,13,511,39"/>
+</map>

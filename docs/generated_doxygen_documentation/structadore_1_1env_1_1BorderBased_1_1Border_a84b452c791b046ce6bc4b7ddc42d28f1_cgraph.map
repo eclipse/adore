@@ -1,0 +1,5 @@
+<map id="adore::env::BorderBased::Border::isRightOf" name="adore::env::BorderBased::Border::isRightOf">
+<area shape="rect" id="node1" title="Check whether the border is right of another border." alt="" coords="5,39,172,80"/>
+<area shape="rect" id="node2" href="$structadore_1_1env_1_1BorderBased_1_1Border.html#a4673c950e7cbca452b3b763dcda9b02b" title="Get the direction of the left neighbor." alt="" coords="220,5,419,47"/>
+<area shape="rect" id="node3" href="$structadore_1_1env_1_1BorderBased_1_1Coordinate.html#a29c83e934340f40cfa66dab2e7982d20" title="Check whether the Coordinate is near to another Coordinate." alt="" coords="236,71,403,112"/>
+</map>

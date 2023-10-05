@@ -1,0 +1,15 @@
+digraph "adore::apps::TestStraightLinePredictor"
+{
+ // LATEX_PDF_SIZE
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  Node1 [label="{adore::apps::TestStraight\lLinePredictor\n|- participantSet_\l- predictionSet_\l|+ TestStraightLinePredictor()\l+ run()\l}",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black",tooltip=" "];
+  Node2 -> Node1 [color="grey25",fontsize="10",style="solid",label=" -predictor_" ,arrowhead="odiamond",fontname="Helvetica"];
+  Node2 [label="{adore::env::OCStraightLine\lPrediction\n|- t_max_utc_\l- lat_precision_\l- lat_error_\l- lon_error_\l- v_max_\l- a_max_\l- a_min_\l- time_headway_\l- time_leeway_\l- width_ub_\l- width_lb_\l|+ setTMaxUTC()\l+ setLatPrecision()\l+ setLatError()\l+ setLonError()\l+ setVMax()\l+ setAMax()\l+ setAMin()\l+ setTimeHeadway()\l+ setTimeLeeway()\l+ setWidthUB()\l+ setWidthLB()\l+ OCStraightLinePrediction()\l+ predict()\l}",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classadore_1_1env_1_1OCStraightLinePrediction.html",tooltip=" "];
+  Node3 -> Node2 [dir="back",color="midnightblue",fontsize="10",style="solid",arrowtail="onormal",fontname="Helvetica"];
+  Node3 [label="{adore::env::OCPrediction\lStrategy\< traffic::Participant \>\n||+ predict()\l}",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classadore_1_1env_1_1OCPredictionStrategy.html",tooltip=" "];
+  Node4 -> Node1 [color="grey25",fontsize="10",style="solid",label=" -tpsetReader_" ,arrowhead="odiamond",fontname="Helvetica"];
+  Node4 [label="{adore::mad::AReader\< T \>\n||+ hasData()\l+ hasUpdate()\l+ getData()\l+ getDesc()\l}",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classadore_1_1mad_1_1AReader.html",tooltip=" "];
+  Node5 -> Node1 [color="grey25",fontsize="10",style="solid",label=" -prediction_writer_" ,arrowhead="odiamond",fontname="Helvetica"];
+  Node5 [label="{adore::mad::AWriter\< T \>\n||+ canWriteMore()\l+ write()\l+ getDesc()\l+ getNumberOfSubscribers()\l}",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classadore_1_1mad_1_1AWriter.html",tooltip=" "];
+}

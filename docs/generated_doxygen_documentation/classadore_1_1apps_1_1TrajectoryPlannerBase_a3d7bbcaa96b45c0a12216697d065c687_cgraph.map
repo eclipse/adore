@@ -1,0 +1,5 @@
+<map id="adore::apps::TrajectoryPlannerBase::TrajectoryPlannerBase" name="adore::apps::TrajectoryPlannerBase::TrajectoryPlannerBase">
+<area shape="rect" id="node1" title=" " alt="" coords="5,5,205,47"/>
+<area shape="rect" id="node2" href="$classadore_1_1fun_1_1FunFactoryInstance.html#a3d8e318e1ad87251caef9bad22a99b40" title=" " alt="" coords="253,13,484,39"/>
+<area shape="rect" id="node3" href="$classadore_1_1fun_1_1FunFactoryInstance.html#a0826e9a7ea3c70a3780115e6effbf746" title="Function to access singleton instance of the funFactory using magic static." alt="" coords="532,5,736,47"/>
+</map>

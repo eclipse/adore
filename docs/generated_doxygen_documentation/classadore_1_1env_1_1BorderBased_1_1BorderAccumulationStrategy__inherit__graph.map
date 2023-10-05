@@ -1,0 +1,6 @@
+<map id="adore::env::BorderBased::BorderAccumulationStrategy" name="adore::env::BorderBased::BorderAccumulationStrategy">
+<area shape="rect" id="node1" title="This class defines how successors of a border should be chosen." alt="" coords="226,5,434,127"/>
+<area shape="rect" id="node2" href="$classadore_1_1env_1_1BorderBased_1_1BASFollowNavigation.html" title="This class chooses the successor with the lowest cost until an upper limit on distance is reached." alt="" coords="5,175,223,340"/>
+<area shape="rect" id="node3" href="$classadore_1_1env_1_1BorderBased_1_1BASFollowStraight.html" title="This class chooses the straightest successor of a border until an upper limit on distance is reached." alt="" coords="247,197,413,318"/>
+<area shape="rect" id="node4" href="$classadore_1_1env_1_1BorderBased_1_1BASNeighbor.html" title="This class choses the left/right neighbors of a border sequence." alt="" coords="437,189,604,325"/>
+</map>

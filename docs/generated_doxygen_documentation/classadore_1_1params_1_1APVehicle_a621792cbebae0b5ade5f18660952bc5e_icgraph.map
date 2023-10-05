@@ -1,0 +1,6 @@
+<map id="adore::params::APVehicle::get_vehicle_id" name="adore::params::APVehicle::get_vehicle_id">
+<area shape="rect" id="node1" title="ID of current vehicle." alt="" coords="561,5,736,47"/>
+<area shape="rect" id="node2" href="$classadore_1_1apps_1_1PlotEgo.html#a9694e6cb6541efadc64fc8bf146168f7" title=" " alt="" coords="343,13,513,39"/>
+<area shape="rect" id="node3" href="$classadore_1_1if__ROS_1_1PlotEgoNode.html#a711abb35ea3afc045103c0f17a41713e" title=" " alt="" coords="104,5,295,47"/>
+<area shape="rect" id="node4" href="$plot__ego__node_8cpp.html#a3c04138a5bfe5d72780bb7e82a18e627" title=" " alt="" coords="5,13,56,39"/>
+</map>

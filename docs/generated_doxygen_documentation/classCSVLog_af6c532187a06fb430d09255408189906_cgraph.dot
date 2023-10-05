@@ -1,0 +1,21 @@
+digraph "CSVLog::logWarningFile"
+{
+ // LATEX_PDF_SIZE
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  rankdir="LR";
+  Node1 [label="CSVLog::logWarningFile",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black",tooltip="log on warning level in file"];
+  Node1 -> Node2 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node2 [label="CSVLog::logFile",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classCSVLog.html#abf2187c78e4eb54e1724438a1074aaad",tooltip="generate log entry in file"];
+  Node2 -> Node3 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node3 [label="CSVLog::getCurrentTime",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classCSVLog.html#a668001de9868bbc7f605cd7252df9d2f",tooltip="get time of day as string"];
+  Node2 -> Node4 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node4 [label="CSVLog::getCurrentTimeEpoch",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classCSVLog.html#ad6cab441e362a65b4c60aaf223811b42",tooltip="get epoch as string"];
+  Node2 -> Node5 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node5 [label="CSVLog::writeBufferToFile",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classCSVLog.html#a3c428d922317879c1aa99204fa32bf61",tooltip="writes content of buffer to file"];
+  Node5 -> Node4 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node2 -> Node6 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node6 [label="CSVLog::writeLogToBuffer",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classCSVLog.html#a42ea472abab2f1edd941af3912edcb1d",tooltip="general log generator for buffer"];
+  Node6 -> Node7 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node7 [label="CSVLog::lvlToString",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classCSVLog.html#aac8cc94d98c714221aca42f9c4c14441",tooltip="get string for log level"];
+}

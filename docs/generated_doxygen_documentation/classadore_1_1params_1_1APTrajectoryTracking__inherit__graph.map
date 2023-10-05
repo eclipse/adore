@@ -1,0 +1,5 @@
+<map id="adore::params::APTrajectoryTracking" name="adore::params::APTrajectoryTracking">
+<area shape="rect" id="node1" title="abstract class containing parameters to configure the behaviour of the trajactory tracking controller" alt="" coords="89,5,278,244"/>
+<area shape="rect" id="node2" href="$classadore_1_1if__ROS_1_1params_1_1PTrajectoryTracking.html" title=" " alt="" coords="5,292,164,531"/>
+<area shape="rect" id="node3" href="$classadore_1_1params_1_1APTrajectoryTrackingDummy.html" title="a dummy implementation for testing purposes" alt="" coords="189,292,378,531"/>
+</map>

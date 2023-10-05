@@ -1,0 +1,4 @@
+<map id="adore::env::BorderBased::BorderSet::findPathBetweenBorders" name="adore::env::BorderBased::BorderSet::findPathBetweenBorders">
+<area shape="rect" id="node1" title="find path between a starting border and a list of possible target borders in a recursive manner" alt="" coords="283,5,477,61"/>
+<area shape="rect" id="node2" href="$classadore_1_1env_1_1MapBorderManagement.html#abeff1a09f45801fbc4982f6b3e8d3b20" title="change border type based on BorderTypeChangeProfile struct" alt="" coords="5,13,235,54"/>
+</map>

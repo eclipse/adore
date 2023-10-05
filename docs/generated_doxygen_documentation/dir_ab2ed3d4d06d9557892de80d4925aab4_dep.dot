@@ -1,0 +1,19 @@
+digraph "/home/fascar/temp/adore/adore_if_ros/adore_if_ros/src" {
+  compound=true
+  node [ fontsize="10", fontname="Helvetica"];
+  edge [ labelfontsize="10", labelfontname="Helvetica"];
+  subgraph clusterdir_7513d58817f953f5027249008b56698c {
+    graph [ bgcolor="#ddddee", pencolor="black", label="adore_if_ros" fontname="Helvetica", fontsize="10", URL="dir_7513d58817f953f5027249008b56698c.html"]
+  dir_625ffa8329c404357c1c2868431d6db5 [shape=box label="include" fillcolor="white" style="filled" color="red" URL="dir_625ffa8329c404357c1c2868431d6db5.html"];
+  dir_ab2ed3d4d06d9557892de80d4925aab4 [shape=box, label="src", style="filled", fillcolor="#eeeeff", pencolor="black", URL="dir_ab2ed3d4d06d9557892de80d4925aab4.html"];
+  }
+  dir_00929dca45ec76ed6859584482da2a34 [shape=box label="libadore" fillcolor="white" style="filled" color="red" URL="dir_00929dca45ec76ed6859584482da2a34.html"];
+  dir_18b2dfb3931f9961b4b7423d99338341 [shape=box label="plotlablib" fillcolor="white" style="filled" color="red" URL="dir_18b2dfb3931f9961b4b7423d99338341.html"];
+  dir_7138404cf228e46fcedf986e3a17d1a6 [shape=box label="adore_scheduling" fillcolor="white" style="filled" color="red" URL="dir_7138404cf228e46fcedf986e3a17d1a6.html"];
+  dir_00929dca45ec76ed6859584482da2a34->dir_18b2dfb3931f9961b4b7423d99338341 [headlabel="26", labeldistance=1.5 headhref="dir_000036_000099.html"];
+  dir_625ffa8329c404357c1c2868431d6db5->dir_00929dca45ec76ed6859584482da2a34 [headlabel="64", labeldistance=1.5 headhref="dir_000005_000036.html"];
+  dir_ab2ed3d4d06d9557892de80d4925aab4->dir_00929dca45ec76ed6859584482da2a34 [headlabel="52", labeldistance=1.5 headhref="dir_000009_000036.html"];
+  dir_ab2ed3d4d06d9557892de80d4925aab4->dir_18b2dfb3931f9961b4b7423d99338341 [headlabel="20", labeldistance=1.5 headhref="dir_000009_000099.html"];
+  dir_ab2ed3d4d06d9557892de80d4925aab4->dir_625ffa8329c404357c1c2868431d6db5 [headlabel="52", labeldistance=1.5 headhref="dir_000009_000005.html"];
+  dir_ab2ed3d4d06d9557892de80d4925aab4->dir_7138404cf228e46fcedf986e3a17d1a6 [headlabel="38", labeldistance=1.5 headhref="dir_000009_000013.html"];
+}

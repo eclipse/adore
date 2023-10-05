@@ -1,0 +1,4 @@
+<map id="adore::env::BorderBased::BorderID" name="adore::env::BorderBased::BorderID">
+<area shape="rect" id="node1" title="This struct identifies a Border by the coordinates of the starting and the end point." alt="" coords="5,351,180,633"/>
+<area shape="rect" id="node2" href="$structadore_1_1env_1_1BorderBased_1_1Coordinate.html" title="This struct represents 3&#45;dimensional coordines." alt="" coords="9,5,176,273"/>
+</map>

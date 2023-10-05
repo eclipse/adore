@@ -1,0 +1,6 @@
+<map id="adore::view::ALaneChangeView" name="adore::view::ALaneChangeView">
+<area shape="rect" id="node1" title=" " alt="" coords="240,5,451,215"/>
+<area shape="rect" id="node2" href="$classadore_1_1env_1_1BorderBased_1_1LaneChangeView.html" title="LaneChangeView provides traffic related information for an adjacent lane." alt="" coords="5,263,216,633"/>
+<area shape="rect" id="node3" href="$classadore_1_1env_1_1BorderBased_1_1LaneChangeViewProxy.html" title="Proxy class to access ALane interfaces from preprocessed lane geometry received as data object." alt="" coords="240,314,451,582"/>
+<area shape="rect" id="node4" href="$classadore_1_1env_1_1ThreeLaneViewDecoupled_1_1LaneChangeViewProxy.html" title=" " alt="" coords="475,299,703,597"/>
+</map>

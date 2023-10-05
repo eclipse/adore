@@ -1,0 +1,11 @@
+<map id="adore::apps::PlotTrafficLights::getHeadingFromMap" name="adore::apps::PlotTrafficLights::getHeadingFromMap">
+<area shape="rect" id="node1" title=" " alt="" coords="5,169,192,211"/>
+<area shape="rect" id="node2" href="$classadore_1_1env_1_1BorderBased_1_1BorderSet.html#a3a3da6cfdee8aa6e003079f7f53186b6" title="get all borders at the given point" alt="" coords="240,71,443,112"/>
+<area shape="rect" id="node6" href="$classadore_1_1mad_1_1LLinearPiecewiseFunctionM.html#aa94d90c8643e2d6792f8594f3d666503" title=" " alt="" coords="243,136,440,177"/>
+<area shape="rect" id="node7" href="$classadore_1_1apps_1_1PlotTrafficLights.html#ae0dde5536314102d0be3152608fdb0ff" title=" " alt="" coords="257,201,426,243"/>
+<area shape="rect" id="node9" href="$classadore_1_1env_1_1BorderBased_1_1BorderSet.html#aaab8f67e5d8b624225085c44bbd58655" title="number of borders in this" alt="" coords="258,267,425,308"/>
+<area shape="rect" id="node3" href="$structadore_1_1env_1_1BorderBased_1_1itpair.html#a3746f6e3a03399eecb397f897f007562" title=" " alt="" coords="513,5,679,47"/>
+<area shape="rect" id="node4" href="$classadore_1_1env_1_1BorderBased_1_1BorderSet.html#a5b9a10acc8d477c1d27d5b39fb1f99f3" title="get all borders in this within region" alt="" coords="491,71,701,112"/>
+<area shape="rect" id="node5" href="$classadore_1_1env_1_1BorderBased_1_1BorderSet.html#a8af807fde181a20de55594592d752adc" title="Get left neighbor of a border." alt="" coords="502,136,690,177"/>
+<area shape="rect" id="node8" href="$namespaceadore_1_1mad.html#a37d645f2d2b0aa8f1c7015ba4e502617" title=" " alt="" coords="533,209,659,235"/>
+</map>

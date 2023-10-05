@@ -1,0 +1,28 @@
+<map id="adore::apps::PlotTrafficLights::plotTLConnections" name="adore::apps::PlotTrafficLights::plotTLConnections">
+<area shape="rect" id="node1" title=" " alt="" coords="5,481,180,523"/>
+<area shape="rect" id="node2" href="$classadore_1_1apps_1_1PlotTrafficLights.html#aa70ee2af8959077917ccacbdddcb8fa1" title=" " alt="" coords="504,797,683,839"/>
+<area shape="rect" id="node5" href="$structadore_1_1env_1_1VectorIdentifier.html#a9fd66cfaa57a670b73c3e3f6540486f8" title=" " alt="" coords="247,149,425,191"/>
+<area shape="rect" id="node6" href="$classadore_1_1apps_1_1PlotTrafficLights.html#adfb485a3bea5ee43f6a59f6042d27809" title=" " alt="" coords="243,84,429,125"/>
+<area shape="rect" id="node12" href="$classadore_1_1apps_1_1PlotTrafficLights.html#ae0dde5536314102d0be3152608fdb0ff" title=" " alt="" coords="509,201,678,243"/>
+<area shape="rect" id="node15" href="$classadore_1_1env_1_1ControlledConnection.html#a5691ab0eff0709472460d73009b71923" title=" " alt="" coords="228,317,444,359"/>
+<area shape="rect" id="node16" href="$classadore_1_1mad_1_1AFeed.html#a07f96a9edf1ca4a1a9b0c84aa2631bd0" title=" " alt="" coords="265,383,407,424"/>
+<area shape="rect" id="node17" href="$classadore_1_1env_1_1ControlledConnection.html#a9ddc7ad9dbb1485969406d232bf7c047" title=" " alt="" coords="228,448,444,489"/>
+<area shape="rect" id="node18" href="$structadore_1_1env_1_1VehicleMotionState9d.html#ae7d75a3f7d52a946f075e669832caa17" title="Get the time." alt="" coords="249,513,423,555"/>
+<area shape="rect" id="node19" href="$structadore_1_1env_1_1VectorIdentifier.html#aa8b59805e30c4a089b3f3661a0fd6b6a" title=" " alt="" coords="247,579,425,620"/>
+<area shape="rect" id="node20" href="$classadore_1_1mad_1_1AFeed.html#a2a96e59a3364f8fadb08624e38f7c40b" title=" " alt="" coords="265,644,407,685"/>
+<area shape="rect" id="node21" href="$namespaceadore_1_1mad_1_1funop.html#a85ee119f752305b6413ea70a7f61d48b" title=" " alt="" coords="269,709,403,751"/>
+<area shape="rect" id="node22" href="$namespaceadore_1_1PLOT.html#ace7bb787808bead40f2faca321cc1d4a" title=" " alt="" coords="263,266,409,293"/>
+<area shape="rect" id="node24" href="$classDLR__TS_1_1PlotLab_1_1AFigureStub.html#ab53419d39443297fb8f0c9513956922a" title=" " alt="" coords="247,827,425,868"/>
+<area shape="rect" id="node25" href="$classadore_1_1apps_1_1PlotTrafficLights.html#a0482cdd2779ae28238f01a544212deab" title=" " alt="" coords="237,892,435,933"/>
+<area shape="rect" id="node3" href="$structadore_1_1env_1_1VehicleMotionState9d.html#a16d6d61f5dfa1028ca97d8f1a8b6e8cf" title="Get the x&#45;coordinate." alt="" coords="761,765,935,807"/>
+<area shape="rect" id="node4" href="$structadore_1_1env_1_1VehicleMotionState9d.html#a51e8eed0ef10d909592edcb933c1b802" title="Get the y&#45;coordinate." alt="" coords="761,831,935,872"/>
+<area shape="rect" id="node7" href="$classadore_1_1env_1_1BorderBased_1_1BorderSet.html#a3a3da6cfdee8aa6e003079f7f53186b6" title="get all borders at the given point" alt="" coords="492,71,695,112"/>
+<area shape="rect" id="node11" href="$classadore_1_1mad_1_1LLinearPiecewiseFunctionM.html#aa94d90c8643e2d6792f8594f3d666503" title=" " alt="" coords="495,136,692,177"/>
+<area shape="rect" id="node14" href="$classadore_1_1env_1_1BorderBased_1_1BorderSet.html#aaab8f67e5d8b624225085c44bbd58655" title="number of borders in this" alt="" coords="510,5,677,47"/>
+<area shape="rect" id="node8" href="$structadore_1_1env_1_1BorderBased_1_1itpair.html#a3746f6e3a03399eecb397f897f007562" title=" " alt="" coords="765,5,931,47"/>
+<area shape="rect" id="node9" href="$classadore_1_1env_1_1BorderBased_1_1BorderSet.html#a5b9a10acc8d477c1d27d5b39fb1f99f3" title="get all borders in this within region" alt="" coords="743,71,953,112"/>
+<area shape="rect" id="node10" href="$classadore_1_1env_1_1BorderBased_1_1BorderSet.html#a8af807fde181a20de55594592d752adc" title="Get left neighbor of a border." alt="" coords="754,136,942,177"/>
+<area shape="rect" id="node13" href="$namespaceadore_1_1mad.html#a37d645f2d2b0aa8f1c7015ba4e502617" title=" " alt="" coords="785,209,911,235"/>
+<area shape="rect" id="node23" href="$classDLR__TS_1_1PlotLab_1_1AFigureStub.html#accf20dccb771d2bad1fec053e187a327" title=" " alt="" coords="504,267,683,308"/>
+<area shape="rect" id="node26" href="$classDLR__TS_1_1PlotLab_1_1AFigureStub.html#ae5d9d5c708d325610574a002e53501c8" title=" " alt="" coords="504,892,683,933"/>
+</map>

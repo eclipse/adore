@@ -1,0 +1,7 @@
+digraph "adore::env::traffic::MovingBoxWithCovariance"
+{
+ // LATEX_PDF_SIZE
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  Node1 [label="{adore::env::traffic\l::MovingBoxWithCovariance\n|+ center_\l+ yaw_\l+ length_\l+ width_\l+ height_\l+ velocity_x_\l+ velocity_y_\l+ yawrate_\l+ acceleration_x_\l+ covariance_center_\l+ covariance_angle_\l+ covariance_length_width_\l+ covariance_velocity\l+ covariance_\l|}",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black",tooltip=" "];
+}

@@ -1,0 +1,7 @@
+digraph "adore::params::APEmergencyOperation"
+{
+ // LATEX_PDF_SIZE
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  Node1 [label="{adore::params::APEmergency\lOperation\n||+ getKy()\l+ getKpsi()\l+ getamin()\l+ getamax()\l+ getDeltaMax()\l+ getDeltaMin()\l+ getEmergencyManeuverAMin()\l+ getEmergencyManeuverAMax()\l+ getEmergencyManeuverAStall()\l+ getEmergencyManeuverTStall()\l+ getEmergencyManeuverJMin()\l}",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black",tooltip="abstract class containing parameters concerning emergency operation behaviour"];
+}

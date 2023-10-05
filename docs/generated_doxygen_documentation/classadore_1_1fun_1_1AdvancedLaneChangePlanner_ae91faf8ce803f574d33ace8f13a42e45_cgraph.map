@@ -1,0 +1,6 @@
+<map id="adore::fun::AdvancedLaneChangePlanner::setGap" name="adore::fun::AdvancedLaneChangePlanner::setGap">
+<area shape="rect" id="node1" title=" " alt="" coords="5,71,180,112"/>
+<area shape="rect" id="node2" href="$classadore_1_1fun_1_1LaneChangePhaseEstimator.html#a4690847020a962d109ec8c9de90ea5d7" title=" " alt="" coords="228,5,427,47"/>
+<area shape="rect" id="node3" href="$classadore_1_1fun_1_1AdvancedLateralOffsetConstraintLC.html#a829a3a30b60019730ac64252e2e76518" title=" " alt="" coords="235,71,420,112"/>
+<area shape="rect" id="node4" href="$classadore_1_1fun_1_1LaneChangeIntoGapReference.html#ac8b8c2b63a86ee308e3c4d960c4f2ace" title=" " alt="" coords="236,136,419,177"/>
+</map>

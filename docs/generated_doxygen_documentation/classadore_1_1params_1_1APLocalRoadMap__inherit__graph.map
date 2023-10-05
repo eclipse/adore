@@ -1,0 +1,5 @@
+<map id="adore::params::APLocalRoadMap" name="adore::params::APLocalRoadMap">
+<area shape="rect" id="node1" title="abstract class to configure the local view of the road map" alt="" coords="84,5,303,112"/>
+<area shape="rect" id="node2" href="$classadore_1_1if__ROS_1_1params_1_1PLocalRoadMap.html" title=" " alt="" coords="5,160,176,296"/>
+<area shape="rect" id="node3" href="$classadore_1_1params_1_1APLocalRoadMapDummy.html" title="a dummy implementation for testing purposes" alt="" coords="201,167,394,289"/>
+</map>

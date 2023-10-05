@@ -1,0 +1,7 @@
+digraph "adore::adore_if_carla::Objects2Adore"
+{
+ // LATEX_PDF_SIZE
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  Node1 [label="{adore::adore_if_carla\l::Objects2Adore\n|- subscriber_\l- publisher_\l- namespace_carla_\l- n_\l|+ Objects2Adore()\l+ init()\l+ run()\l- initSim()\l- getRosNodeHandle()\l- receiveClockTime()\l- initROSConnections()\l- receiveObjects()\l}",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black",tooltip=" "];
+}

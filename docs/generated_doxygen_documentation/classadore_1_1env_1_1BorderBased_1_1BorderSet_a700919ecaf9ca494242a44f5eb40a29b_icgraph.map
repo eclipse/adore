@@ -1,0 +1,13 @@
+<map id="adore::env::BorderBased::BorderSet::getLaneChangeTarget" name="adore::env::BorderBased::BorderSet::getLaneChangeTarget">
+<area shape="rect" id="node1" title="computes a pair of borders (left,right) suitable for lane&#45;changing from given source lane" alt="" coords="1280,93,1503,134"/>
+<area shape="rect" id="node2" href="$classadore_1_1env_1_1BorderBased_1_1LaneChangeBorders.html#af25deccd020d724b840e83fcc0cd77a9" title="computes the best gate entry point for a lane change Supply iterators for lists or vectors of Border*..." alt="" coords="1028,5,1232,61"/>
+<area shape="rect" id="node4" href="$classadore_1_1env_1_1BorderBased_1_1LaneChangeBorders.html#a00acf7067a9281d0694b63d41ad62b69" title="computes the gate region for a lane change Supply iterators for a list or vector of Border*,..." alt="" coords="1029,85,1231,141"/>
+<area shape="rect" id="node6" href="$classadore_1_1env_1_1BorderBased_1_1LaneChangeBorders.html#a324178919d6a3a2bea8dd4c04fc65cea" title="collects all borders relevant for lane change view in object&#45;variable vectors" alt="" coords="785,154,980,195"/>
+<area shape="rect" id="node3" href="$test__lanechangeborders_8cpp.html#a4cac2e00a6f9294d977c06327aadc19e" title=" " alt="" coords="833,20,933,47"/>
+<area shape="rect" id="node5" href="$test__lanechangeborders_8cpp.html#acc72572766b1f47f07a6b6222d0c432a" title=" " alt="" coords="833,100,933,127"/>
+<area shape="rect" id="node7" href="$test__independentlanechangegeometry_8cpp.html#aa56a0bce9f9e760f59ceea11ad085348" title=" " alt="" coords="572,128,672,155"/>
+<area shape="rect" id="node8" href="$classadore_1_1env_1_1BorderBased_1_1IndependentLaneChangeGeometry.html#a821bde3f11a80bca977616edaff33587" title="constructs a lane change geometry if a gate is available" alt="" coords="507,179,737,235"/>
+<area shape="rect" id="node9" href="$classadore_1_1apps_1_1LaneViewProvider.html#a10c08893d16421f195ad2a597bfea8f8" title="update data, views and recompute maneuver" alt="" coords="229,168,459,195"/>
+<area shape="rect" id="node11" href="$test__independentlanechangegeometry_8cpp.html#a48baafb16e67cf190c9ac4a4a55d1c79" title=" " alt="" coords="294,219,394,245"/>
+<area shape="rect" id="node10" href="$classadore_1_1if__ROS_1_1LVProviderNode.html#ad35fdbfdaef8f2f89279dc08758bef3a" title=" " alt="" coords="5,161,181,202"/>
+</map>

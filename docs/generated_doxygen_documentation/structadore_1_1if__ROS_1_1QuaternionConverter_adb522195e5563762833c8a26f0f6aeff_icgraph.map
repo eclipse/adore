@@ -1,0 +1,10 @@
+<map id="adore::if_ROS::QuaternionConverter::setHeading" name="adore::if_ROS::QuaternionConverter::setHeading">
+<area shape="rect" id="node1" title="set heading of a Pose message" alt="" coords="812,144,988,185"/>
+<area shape="rect" id="node2" href="$classadore_1_1if__ROS_1_1TrafficParticipantConverter.html#a46dafecb4b78f4d86efcf4929a174218" title=" " alt="" coords="536,111,764,152"/>
+<area shape="rect" id="node8" href="$classadore_1_1if__ROS_1_1MotionStateWriter.html#aec1b77bba9a9e9b6e616ce7e6a35a35c" title=" " alt="" coords="559,176,741,217"/>
+<area shape="rect" id="node3" href="$classadore_1_1if__ROS_1_1TrafficParticipantConverter.html#a195b8684e72de0ab65ecdfdaa8050db8" title=" " alt="" coords="260,30,488,86"/>
+<area shape="rect" id="node6" href="$classadore_1_1if__ROS_1_1TPSimulationConverter.html#aa5ec79d16c6d1798b727493778e6892e" title=" " alt="" coords="279,111,469,152"/>
+<area shape="rect" id="node7" href="$classadore_1_1if__ROS_1_1TPMessageConverter.html#ace305419bae96270d3d3255c7fc7c7e3" title=" " alt="" coords="283,176,465,217"/>
+<area shape="rect" id="node4" href="$classadore_1_1if__ROS_1_1TPDetectionConverter.html#a9abf83555199bcc752a69921dfdcf87d" title=" " alt="" coords="15,5,202,47"/>
+<area shape="rect" id="node5" href="$classadore_1_1if__ROS_1_1TPSetConverter.html#a3bea8628cf9abaf171f8a1040e95bcce" title=" " alt="" coords="5,71,212,112"/>
+</map>

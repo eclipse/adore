@@ -1,0 +1,27 @@
+var classadore_1_1fun_1_1VehicleMotionState9d =
+[
+    [ "VehicleMotionState9d", "classadore_1_1fun_1_1VehicleMotionState9d.html#a412b807b083b0cebb8ab78b9366e5dea", null ],
+    [ "copyFromPlanar", "classadore_1_1fun_1_1VehicleMotionState9d.html#a343938065309c18561ff11c1dd5f5cc5", null ],
+    [ "getAx", "classadore_1_1fun_1_1VehicleMotionState9d.html#ab750e65fb1ce7b8a794d4da0160a0846", null ],
+    [ "getDelta", "classadore_1_1fun_1_1VehicleMotionState9d.html#ad1a7392178f75b00364ead16ea315367", null ],
+    [ "getOmega", "classadore_1_1fun_1_1VehicleMotionState9d.html#ac072a1b5e47ce0dc375f557b2e022ba3", null ],
+    [ "getPSI", "classadore_1_1fun_1_1VehicleMotionState9d.html#aef86beac28dae02265925945484b0d44", null ],
+    [ "getTime", "classadore_1_1fun_1_1VehicleMotionState9d.html#a1c2f635183e6ad69af0af9dc414cf72f", null ],
+    [ "getvx", "classadore_1_1fun_1_1VehicleMotionState9d.html#acd4850e46a0097e7bb6f1be133db54e5", null ],
+    [ "getvy", "classadore_1_1fun_1_1VehicleMotionState9d.html#ac4b3edf16be364aaa3fa277c8a505d15", null ],
+    [ "getX", "classadore_1_1fun_1_1VehicleMotionState9d.html#a78abe2cae4711230fcfa630c56c8b308", null ],
+    [ "getY", "classadore_1_1fun_1_1VehicleMotionState9d.html#a09caee55dd60b4565a2be56c41ed1162", null ],
+    [ "getZ", "classadore_1_1fun_1_1VehicleMotionState9d.html#af475ee8ae93b809a8926ed55fa8e538c", null ],
+    [ "setAx", "classadore_1_1fun_1_1VehicleMotionState9d.html#a12fb0689545042415b7f42391e823143", null ],
+    [ "setDelta", "classadore_1_1fun_1_1VehicleMotionState9d.html#ae13867b3a4971a9dc8ce603d836b99ef", null ],
+    [ "setOmega", "classadore_1_1fun_1_1VehicleMotionState9d.html#ae0a9b322ea78abae2d06afc3d8bad009", null ],
+    [ "setPSI", "classadore_1_1fun_1_1VehicleMotionState9d.html#a2f2b14c5f8447ad7b02f17155b257f41", null ],
+    [ "setTime", "classadore_1_1fun_1_1VehicleMotionState9d.html#a16f9d1bc43f7417a750fe3723c5af2ee", null ],
+    [ "setvx", "classadore_1_1fun_1_1VehicleMotionState9d.html#aa97d96d265e08195099fbc2abc57e34a", null ],
+    [ "setvy", "classadore_1_1fun_1_1VehicleMotionState9d.html#a0e3b0cf8c61c023cb991a3e36d54ad2e", null ],
+    [ "setX", "classadore_1_1fun_1_1VehicleMotionState9d.html#a567bd1249719f9910ab065b5637d4f66", null ],
+    [ "setY", "classadore_1_1fun_1_1VehicleMotionState9d.html#a43f089fde6954d851da70de2562fe7c5", null ],
+    [ "setZ", "classadore_1_1fun_1_1VehicleMotionState9d.html#a7a52f89fbb70893ced3b160ca6d2fc0a", null ],
+    [ "data_", "classadore_1_1fun_1_1VehicleMotionState9d.html#a59c1ec3733a4f4685667e19d4ab5d6ad", null ],
+    [ "time_", "classadore_1_1fun_1_1VehicleMotionState9d.html#a0f650e4cca735ea6e32c4bd707b33c2e", null ]
+];

@@ -1,0 +1,4 @@
+<map id="adore::env::BorderBased::LanePositionedObjectSet::erase_objectsWithUnknownBordersOutsideRadius" name="adore::env::BorderBased::LanePositionedObjectSet::erase_objectsWithUnknownBordersOutsideRadius">
+<area shape="rect" id="node1" title="Erase objects that are positioned that are outside a specified circle." alt="" coords="5,5,244,76"/>
+<area shape="rect" id="node2" href="$classadore_1_1env_1_1BorderBased_1_1BorderSet.html#a7ff4cca867c7286fbf2d7e98f07a2da4" title="check whether a border exists in the set" alt="" coords="292,20,459,61"/>
+</map>

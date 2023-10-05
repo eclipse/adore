@@ -1,0 +1,10 @@
+<map id="adore::env::NavigationGoalObserver" name="adore::env::NavigationGoalObserver">
+<area shape="rect" id="node1" title=" " alt="" coords="512,476,723,803"/>
+<area shape="rect" id="node2" href="$classadore_1_1view_1_1ANavigationGoalView.html" title=" " alt="" coords="5,182,216,391"/>
+<area shape="rect" id="node3" href="$classadore_1_1mad_1_1AReader.html" title=" " alt="" coords="240,226,419,347"/>
+<area shape="rect" id="node4" href="$classadore_1_1view_1_1ALaneChangeView.html" title=" " alt="" coords="443,182,653,391"/>
+<area shape="rect" id="node5" href="$structadore_1_1fun_1_1NavigationGoal.html" title=" " alt="" coords="678,248,855,325"/>
+<area shape="rect" id="node6" href="$structadore_1_1mad_1_1GlobalPosition.html" title=" " alt="" coords="677,5,856,112"/>
+<area shape="rect" id="node7" href="$classadore_1_1view_1_1ALane.html" title=" " alt="" coords="879,175,1081,399"/>
+<area shape="rect" id="node8" href="$classadore_1_1params_1_1APNavigation.html" title="abstract class containing parameters which configure navigation behaviour" alt="" coords="1105,211,1329,362"/>
+</map>

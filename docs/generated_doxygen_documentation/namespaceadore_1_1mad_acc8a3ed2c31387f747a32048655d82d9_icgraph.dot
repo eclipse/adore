@@ -1,0 +1,20 @@
+digraph "adore::mad::overlaps"
+{
+ // LATEX_PDF_SIZE
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  rankdir="RL";
+  Node1 [label="adore::mad::overlaps",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black",tooltip=" "];
+  Node1 -> Node2 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node2 [label="adore::mad::getTunnelProjection",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$namespaceadore_1_1mad.html#a6530e320585b575645c2b48573ae43ba",tooltip=" "];
+  Node1 -> Node3 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node3 [label="adore::env::BorderBased\l::Border::hasBBOverlap",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$structadore_1_1env_1_1BorderBased_1_1Border.html#a79c4e276037630ab14288f30a9cd11e1",tooltip="Check whether the bounding boxes of two lane objects overlap."];
+  Node1 -> Node4 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node4 [label="adore::mad::OccupancyCylinder\l::intersects",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$structadore_1_1mad_1_1OccupancyCylinder.html#add62115dacc99a8b1efcb72341282441",tooltip=" "];
+  Node1 -> Node5 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node5 [label="adore::mad::OccupancyCylinder\lTree::XYIntrusionFunctor\l::operator()",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$structadore_1_1mad_1_1OccupancyCylinderTree_1_1XYIntrusionFunctor.html#a8ca5526a6ad6694d5bd39f2c8e86864d",tooltip=" "];
+  Node1 -> Node6 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node6 [label="adore::mad::OccupancyCylinder\lTree::EarliestOverlapFunctor\l::operator()",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$structadore_1_1mad_1_1OccupancyCylinderTree_1_1EarliestOverlapFunctor.html#a6535f19de24edc3d75798ac7f1e1a67f",tooltip=" "];
+  Node1 -> Node7 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node7 [label="adore::mad::OccupancyCylinder\lTree::TimeEncroachmentFunctor\l::operator()",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$structadore_1_1mad_1_1OccupancyCylinderTree_1_1TimeEncroachmentFunctor.html#a16eba25cae0bdc597f789fe8e6b24e28",tooltip=" "];
+}

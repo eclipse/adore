@@ -1,0 +1,4 @@
+<map id="adore::if_ROS::params::PLateralPlanner::getWeightJerk" name="adore::if_ROS::params::PLateralPlanner::getWeightJerk">
+<area shape="rect" id="node1" title="getWeightJerk returns cost function weight for quadratic jerk term" alt="" coords="5,5,219,47"/>
+<area shape="rect" id="node2" href="$classadore_1_1if__ROS_1_1ROSParam.html#adf480c94fa5b1368850b0a491791e4e6" title=" " alt="" coords="267,13,473,39"/>
+</map>

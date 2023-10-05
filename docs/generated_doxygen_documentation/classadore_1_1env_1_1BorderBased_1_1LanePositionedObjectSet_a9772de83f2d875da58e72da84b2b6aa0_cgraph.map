@@ -1,0 +1,4 @@
+<map id="adore::env::BorderBased::LanePositionedObjectSet::hasObjects" name="adore::env::BorderBased::LanePositionedObjectSet::hasObjects">
+<area shape="rect" id="node1" title="Check whether the set holds at least one object on a certain LanePosition." alt="" coords="5,5,183,61"/>
+<area shape="rect" id="node2" href="$classadore_1_1env_1_1BorderBased_1_1LanePositionedObjectSet.html#a4df9d1530e5806e34f5eaf450301ff25" title="Get the begin()&#45; and end()&#45;iterator for objects that are positioned on a certain border." alt="" coords="231,5,408,61"/>
+</map>

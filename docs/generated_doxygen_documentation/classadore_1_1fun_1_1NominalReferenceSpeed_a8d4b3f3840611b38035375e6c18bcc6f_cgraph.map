@@ -1,0 +1,10 @@
+<map id="adore::fun::NominalReferenceSpeed::update" name="adore::fun::NominalReferenceSpeed::update">
+<area shape="rect" id="node1" title=" " alt="" coords="5,71,201,112"/>
+<area shape="rect" id="node2" href="$classadore_1_1params_1_1APLongitudinalPlanner.html#a6cf09148c799ba24cd77043b705299db" title="getConstraintClearanceVel returns the offset of the reference from the velocity constraints" alt="" coords="249,5,480,47"/>
+<area shape="rect" id="node3" href="$classadore_1_1fun_1_1CurvatureSpeedLimit.html#a8c20f0b183aa9fea46c54637350ae706" title=" " alt="" coords="273,71,456,112"/>
+<area shape="rect" id="node6" href="$classadore_1_1fun_1_1LFVSpeedLimit.html#a3430553d0d85ee7fdb47034dfa3cdbb7" title=" " alt="" coords="276,136,453,177"/>
+<area shape="rect" id="node4" href="$classadore_1_1params_1_1APLongitudinalPlanner.html#a107c8d434c01a9944d8434b289781776" title="getAccLatUB returns the absolute lateral acceleration bound which has to be maintained by reducing sp..." alt="" coords="541,5,741,47"/>
+<area shape="rect" id="node5" href="$classadore_1_1params_1_1APLongitudinalPlanner.html#a436db3b2faf5aa2826d8ea0213c0ef6e" title="getAccLatUB_minVelocity returns the minimum velocity, which is always feasible despite getAccLatUB" alt="" coords="528,71,755,112"/>
+<area shape="rect" id="node7" href="$classadore_1_1params_1_1APLongitudinalPlanner.html#ac391000600a4fc20222d358eaa627021" title="getAccLB returns longitudinal acceleration lower bound" alt="" coords="541,136,741,177"/>
+<area shape="rect" id="node8" href="$classadore_1_1params_1_1APTacticalPlanner.html#a460ea5d1ffedca767a3644ec27fbb30d" title=" " alt="" coords="544,201,739,243"/>
+</map>

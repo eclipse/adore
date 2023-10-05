@@ -1,0 +1,32 @@
+digraph "adore::PLOT::plotBorderLine"
+{
+ // LATEX_PDF_SIZE
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  rankdir="RL";
+  Node1 [label="adore::PLOT::plotBorderLine",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black",tooltip=" "];
+  Node1 -> Node2 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node2 [label="adore::PLOT::plotBorder",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$namespaceadore_1_1PLOT.html#ac157afb98167a75b689e6ef5af6c2b71",tooltip=" "];
+  Node2 -> Node3 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node3 [label="adore::PLOT::plotBorder",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$namespaceadore_1_1PLOT.html#ae196038478ceb8c5d8063e0f4f9e5945",tooltip=" "];
+  Node2 -> Node4 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node4 [label="adore::PLOT::plotBorderNavigation",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$namespaceadore_1_1PLOT.html#a1a0ee92347b1b14f1cfa73a043c0188c",tooltip=" "];
+  Node4 -> Node5 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node5 [label="adore::apps::Navigation\l::plotGlobalNavigation",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classadore_1_1apps_1_1Navigation.html#a354c9db73fc2a15abe49fc68593b80ac",tooltip=" "];
+  Node5 -> Node6 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node6 [label="adore::apps::Navigation::run",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classadore_1_1apps_1_1Navigation.html#a4be14a35fd450f46452afc37e44d15a6",tooltip=" "];
+  Node2 -> Node7 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node7 [label="adore::PLOT::plotBorderSet",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$namespaceadore_1_1PLOT.html#a1a04f470365d4993dff7c6172fd181a5",tooltip=" "];
+  Node7 -> Node8 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node8 [label="adore::apps::MapProvider\l::MapProvider",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classadore_1_1apps_1_1MapProvider.html#a1d9aa34b5f68408f3d494a1fad7b62be",tooltip=" "];
+  Node7 -> Node9 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node9 [label="adore::apps::PlainXMLExporter::run",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classadore_1_1apps_1_1PlainXMLExporter.html#acd64af468d0194ac614c575d91df877e",tooltip=" "];
+  Node9 -> Node10 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node10 [label="main",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$plainxmlexporter_8cpp.html#a3c04138a5bfe5d72780bb7e82a18e627",tooltip=" "];
+  Node2 -> Node11 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node11 [label="adore::apps::PlotLanes::run",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classadore_1_1apps_1_1PlotLanes.html#af0a11cee35c011843c339aac760ca2db",tooltip=" "];
+  Node11 -> Node12 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node12 [label="adore::if_ROS::PlotLanes\lNode::init",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classadore_1_1if__ROS_1_1PlotLanesNode.html#a784126bbfb438fe1ac65e2a8b8e44d37",tooltip=" "];
+  Node12 -> Node13 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node13 [label="main",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$plot__lanes__node_8cpp.html#a3c04138a5bfe5d72780bb7e82a18e627",tooltip=" "];
+}

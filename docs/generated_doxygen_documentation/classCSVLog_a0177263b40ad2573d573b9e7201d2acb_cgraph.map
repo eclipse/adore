@@ -1,0 +1,9 @@
+<map id="CSVLog::logErrorConsole" name="CSVLog::logErrorConsole">
+<area shape="rect" id="node1" title="log on error level in console" alt="" coords="5,56,177,83"/>
+<area shape="rect" id="node2" href="$classCSVLog.html#a2334ba89101b21b6548d412643a22ec3" title="generate log entry in console" alt="" coords="225,56,369,83"/>
+<area shape="rect" id="node3" href="$classCSVLog.html#a668001de9868bbc7f605cd7252df9d2f" title="get time of day as string" alt="" coords="436,5,605,32"/>
+<area shape="rect" id="node4" href="$classCSVLog.html#ad6cab441e362a65b4c60aaf223811b42" title="get epoch as string" alt="" coords="417,56,624,83"/>
+<area shape="rect" id="node5" href="$classCSVLog.html#aaf9a8935942eaca9839f0392a2815535" title="general log generator for console" alt="" coords="425,107,616,133"/>
+<area shape="rect" id="node6" href="$classCSVLog.html#a18c9b756df7e7f4a95a117d7b29e4c5b" title="get console color from log level on linux" alt="" coords="672,70,857,111"/>
+<area shape="rect" id="node7" href="$classCSVLog.html#aac8cc94d98c714221aca42f9c4c14441" title="get string for log level" alt="" coords="695,136,835,163"/>
+</map>

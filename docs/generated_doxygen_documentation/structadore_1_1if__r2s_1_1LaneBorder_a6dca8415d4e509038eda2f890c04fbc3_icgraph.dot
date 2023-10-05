@@ -1,0 +1,10 @@
+digraph "adore::if_r2s::LaneBorder::getBorderPath"
+{
+ // LATEX_PDF_SIZE
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  rankdir="RL";
+  Node1 [label="adore::if_r2s::LaneBorder\l::getBorderPath",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black",tooltip=" "];
+  Node1 -> Node2 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node2 [label="adore::if_r2s::LaneBorder\l::getBorder",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$structadore_1_1if__r2s_1_1LaneBorder.html#a4d325110dd763597d0500d046b2def75",tooltip=" "];
+}

@@ -1,0 +1,53 @@
+<map id="Graphical Class Hierarchy" name="Graphical Class Hierarchy">
+<area shape="rect" id="node1" href="$classadore_1_1params_1_1APCheckpoints.html" title="abstract class containing parameters for checkpoint handling" alt="" coords="25,535,229,562"/>
+<area shape="rect" id="node2" href="$classadore_1_1if__ROS_1_1params_1_1PCheckpoints.html" title=" " alt="" coords="325,528,481,569"/>
+<area shape="rect" id="node3" href="$classadore_1_1params_1_1APCooperation.html" title="abstract class containing cooperative behaviour parameters" alt="" coords="26,601,227,627"/>
+<area shape="rect" id="node4" href="$classadore_1_1if__ROS_1_1params_1_1PCooperation.html" title=" " alt="" coords="325,593,481,635"/>
+<area shape="rect" id="node5" href="$classadore_1_1params_1_1APEmergencyOperation.html" title="abstract class containing parameters concerning emergency operation behaviour" alt="" coords="28,71,225,112"/>
+<area shape="rect" id="node6" href="$classadore_1_1if__ROS_1_1params_1_1PEmergencyOperation.html" title=" " alt="" coords="323,136,484,177"/>
+<area shape="rect" id="node7" href="$classadore_1_1params_1_1APEmergencyOperationDummy.html" title="a dummy implementation for testing purposes" alt="" coords="305,5,502,47"/>
+<area shape="rect" id="node8" href="$classadore_1_1params_1_1APFunctionManagement.html" title="abstract class containing parameters for function management configuration" alt="" coords="36,656,217,697"/>
+<area shape="rect" id="node9" href="$classadore_1_1if__ROS_1_1params_1_1PFunctionManagement.html" title=" " alt="" coords="321,659,485,700"/>
+<area shape="rect" id="node10" href="$classadore_1_1params_1_1APLaneChangeView.html" title="abstract class containing parameters for a lane change view" alt="" coords="10,173,243,199"/>
+<area shape="rect" id="node11" href="$classadore_1_1if__ROS_1_1params_1_1PLaneChangeView.html" title=" " alt="" coords="325,201,481,243"/>
+<area shape="rect" id="node12" href="$classadore_1_1params_1_1APLaneChangeViewDummy.html" title="a dummy implementation for testing purposes" alt="" coords="301,71,505,112"/>
+<area shape="rect" id="node13" href="$classadore_1_1params_1_1APLaneFollowingView.html" title="abstract class containing parameters for a lane following view" alt="" coords="5,339,248,366"/>
+<area shape="rect" id="node14" href="$classadore_1_1if__ROS_1_1params_1_1PLaneFollowingView.html" title=" " alt="" coords="325,397,481,439"/>
+<area shape="rect" id="node15" href="$classadore_1_1params_1_1APLaneFollowingViewDummy.html" title="a dummy implementation for testing purposes" alt="" coords="296,267,511,308"/>
+<area shape="rect" id="node16" href="$classadore_1_1params_1_1APLateralPlanner.html" title="abstract class containing parameters related to configuring the lateral planner" alt="" coords="41,427,212,468"/>
+<area shape="rect" id="node17" href="$classadore_1_1if__ROS_1_1params_1_1PLateralPlanner.html" title=" " alt="" coords="325,463,481,504"/>
+<area shape="rect" id="node18" href="$classadore_1_1params_1_1APLateralPlannerDummy.html" title="a dummy implementation for testing purposes" alt="" coords="318,332,489,373"/>
+<area shape="rect" id="node19" href="$classadore_1_1params_1_1APLocalizationModel.html" title="abstract class containing parameters which configure localization state estimation model" alt="" coords="27,721,227,763"/>
+<area shape="rect" id="node20" href="$classadore_1_1if__ROS_1_1params_1_1PLocalizationModel.html" title=" " alt="" coords="325,724,481,765"/>
+<area shape="rect" id="node21" href="$classadore_1_1params_1_1APLocalRoadMap.html" title="abstract class to configure the local view of the road map" alt="" coords="17,1254,236,1281"/>
+<area shape="rect" id="node22" href="$classadore_1_1if__ROS_1_1params_1_1PLocalRoadMap.html" title=" " alt="" coords="325,1181,481,1223"/>
+<area shape="rect" id="node23" href="$classadore_1_1params_1_1APLocalRoadMapDummy.html" title="a dummy implementation for testing purposes" alt="" coords="307,1312,500,1353"/>
+<area shape="rect" id="node24" href="$classadore_1_1params_1_1APLongitudinalPlanner.html" title="abstract class containing parameters related to configuring the longitudinal planner" alt="" coords="27,1341,227,1383"/>
+<area shape="rect" id="node25" href="$classadore_1_1if__ROS_1_1params_1_1PLongitudinalPlanner.html" title=" " alt="" coords="325,1247,481,1288"/>
+<area shape="rect" id="node26" href="$classadore_1_1params_1_1APLongitudinalPlannerDummy.html" title="a dummy implementation for testing purposes" alt="" coords="303,1377,503,1419"/>
+<area shape="rect" id="node27" href="$classadore_1_1params_1_1APMapProvider.html" title="abstract class containing parameters to configure aspects of the map provider" alt="" coords="25,1583,229,1610"/>
+<area shape="rect" id="node28" href="$classadore_1_1if__ROS_1_1params_1_1PMapProvider.html" title=" " alt="" coords="325,1443,481,1484"/>
+<area shape="rect" id="node29" href="$classadore_1_1params_1_1APMapProviderDummy.html" title="a dummy implementation for testing purposes" alt="" coords="301,1704,505,1745"/>
+<area shape="rect" id="node30" href="$classadore_1_1params_1_1APMissionControl.html" title="abstract class containing parameters for mission controller configuration" alt="" coords="39,787,215,828"/>
+<area shape="rect" id="node31" href="$classadore_1_1if__ROS_1_1params_1_1PMissionControl.html" title=" " alt="" coords="325,789,481,831"/>
+<area shape="rect" id="node32" href="$classadore_1_1params_1_1APNavigation.html" title="abstract class containing parameters which configure navigation behaviour" alt="" coords="30,853,223,879"/>
+<area shape="rect" id="node33" href="$classadore_1_1if__ROS_1_1params_1_1PNavigation.html" title=" " alt="" coords="325,855,481,896"/>
+<area shape="rect" id="node34" href="$classadore_1_1params_1_1APOdometryModel.html" title="abstract class containing parameters which configure odometry state estimation model" alt="" coords="33,955,221,996"/>
+<area shape="rect" id="node35" href="$classadore_1_1if__ROS_1_1params_1_1POdometryModel.html" title=" " alt="" coords="325,920,481,961"/>
+<area shape="rect" id="node36" href="$classadore_1_1params_1_1APPrediction.html" title="parameter interface for parameters related to prediction" alt="" coords="32,1021,221,1047"/>
+<area shape="rect" id="node37" href="$classadore_1_1if__ROS_1_1params_1_1PPrediction.html" title=" " alt="" coords="325,985,481,1027"/>
+<area shape="rect" id="node38" href="$classadore_1_1params_1_1APSensorModel.html" title="abstract class for vehicle sensor model parameters" alt="" coords="23,1071,230,1098"/>
+<area shape="rect" id="node39" href="$classadore_1_1if__ROS_1_1params_1_1PSensorModel.html" title=" " alt="" coords="325,1051,481,1092"/>
+<area shape="rect" id="node40" href="$classadore_1_1params_1_1APTacticalPlanner.html" title="abstract classs containing parameters to configure aspects and constraints of the tactical planner" alt="" coords="39,1123,215,1164"/>
+<area shape="rect" id="node41" href="$classadore_1_1if__ROS_1_1params_1_1PTacticalPlanner.html" title=" " alt="" coords="325,1116,481,1157"/>
+<area shape="rect" id="node42" href="$classadore_1_1params_1_1APTrajectoryGeneration.html" title="abstract class containing parameters to configure the behaviour of trajectory generation" alt="" coords="32,1637,221,1679"/>
+<area shape="rect" id="node43" href="$classadore_1_1if__ROS_1_1params_1_1PTrajectoryGeneration.html" title=" " alt="" coords="323,1508,483,1549"/>
+<area shape="rect" id="node44" href="$classadore_1_1params_1_1APTrajectoryGenerationDummy.html" title="a dummy implementation for testing purposes" alt="" coords="309,1769,498,1811"/>
+<area shape="rect" id="node45" href="$classadore_1_1params_1_1APTrajectoryTracking.html" title="abstract class containing parameters to configure the behaviour of the trajactory tracking controller" alt="" coords="32,1769,221,1811"/>
+<area shape="rect" id="node46" href="$classadore_1_1if__ROS_1_1params_1_1PTrajectoryTracking.html" title=" " alt="" coords="325,1573,481,1615"/>
+<area shape="rect" id="node47" href="$classadore_1_1params_1_1APTrajectoryTrackingDummy.html" title="a dummy implementation for testing purposes" alt="" coords="309,1835,498,1876"/>
+<area shape="rect" id="node48" href="$classadore_1_1params_1_1APVehicle.html" title="abstract class for vehicle configuration related paremeters" alt="" coords="39,1838,214,1865"/>
+<area shape="rect" id="node49" href="$classadore_1_1if__ROS_1_1params_1_1PVehicle.html" title=" " alt="" coords="325,1639,481,1680"/>
+<area shape="rect" id="node50" href="$classadore_1_1params_1_1APVehicleDummy.html" title="dummy implementation of an abstract vehicle parameter object for testing purposes" alt="" coords="316,1900,491,1941"/>
+<area shape="rect" id="node51" href="$classadore_1_1if__ROS_1_1ROSParam.html" title=" " alt="" coords="37,903,217,930"/>
+</map>

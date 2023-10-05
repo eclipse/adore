@@ -1,0 +1,4 @@
+<map id="adore::env::BorderBased::LanePositionedObjectSet::eraseObjectsBorderBased" name="adore::env::BorderBased::LanePositionedObjectSet::eraseObjectsBorderBased">
+<area shape="rect" id="node1" title="Erase Objects that are positioned on certain borders." alt="" coords="321,5,504,61"/>
+<area shape="rect" id="node2" href="$classadore_1_1env_1_1MapStopLineManagement.html#a611549203f6fa9c10d80d67551017687" title="receive newly visible or newly outdated stop lines based on new and outdated borders" alt="" coords="5,20,273,47"/>
+</map>

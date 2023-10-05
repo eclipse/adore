@@ -1,1 +1,0 @@
-technical_reference_manual/system_and_development/documentation.md

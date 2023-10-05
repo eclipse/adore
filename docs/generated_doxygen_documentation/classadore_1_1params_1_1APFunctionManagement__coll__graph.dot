@@ -1,0 +1,7 @@
+digraph "adore::params::APFunctionManagement"
+{
+ // LATEX_PDF_SIZE
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  Node1 [label="{adore::params::APFunction\lManagement\n||+ getRadioKillSwitchTimeout()\l}",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black",tooltip="abstract class containing parameters for function management configuration"];
+}

@@ -1,0 +1,4 @@
+<map id="adore::env::EmptyGap" name="adore::env::EmptyGap">
+<area shape="rect" id="node1" title="defines a gap for testing purposes, which never has lead or chase vehicles." alt="" coords="5,160,159,267"/>
+<area shape="rect" id="node2" href="$classadore_1_1view_1_1AGap.html" title="defines a gap in traffic, into which a merge may be planned" alt="" coords="7,5,157,112"/>
+</map>

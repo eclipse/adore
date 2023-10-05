@@ -1,0 +1,9 @@
+digraph "adore::if_ROS::IndicatorCommandWriter"
+{
+ // LATEX_PDF_SIZE
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  Node1 [label="{adore::if_ROS::Indicator\lCommandWriter\n|- leftPublisher_\l- rightPublisher_\l|+ IndicatorCommandWriter()\l+ canWriteMore()\l+ write()\l}",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black",tooltip=" "];
+  Node2 -> Node1 [dir="back",color="midnightblue",fontsize="10",style="solid",arrowtail="onormal",fontname="Helvetica"];
+  Node2 [label="{adore::mad::AWriter\l\< adore::fun::IndicatorCommand \>\n||+ canWriteMore()\l+ write()\l+ getDesc()\l+ getNumberOfSubscribers()\l}",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classadore_1_1mad_1_1AWriter.html",tooltip=" "];
+}

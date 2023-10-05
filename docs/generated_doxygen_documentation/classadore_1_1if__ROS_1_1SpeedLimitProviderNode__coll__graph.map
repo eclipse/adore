@@ -1,0 +1,12 @@
+<map id="adore::if_ROS::SpeedLimitProviderNode" name="adore::if_ROS::SpeedLimitProviderNode">
+<area shape="rect" id="node1" title=" " alt="" coords="233,1181,419,1288"/>
+<area shape="rect" id="node2" href="$classadore_1_1if__ROS_1_1FactoryCollection.html" title=" " alt="" coords="5,909,220,1031"/>
+<area shape="rect" id="node3" href="$classadore__if__ros__scheduling_1_1Baseapp.html" title=" " alt="" coords="245,821,407,1119"/>
+<area shape="rect" id="node4" href="$classadore__if__ros__scheduling_1_1SchedulerNotificationManager.html" title=" " alt="" coords="210,564,426,759"/>
+<area shape="rect" id="node5" href="$classadore__scheduling_1_1ASchedulerNotificationManager.html" title=" " alt="" coords="83,307,307,487"/>
+<area shape="rect" id="node6" href="$classadore__scheduling_1_1SchedulerNotification.html" title=" " alt="" coords="101,5,290,244"/>
+<area shape="rect" id="node7" href="$classadore__if__ros__scheduling_1_1SchedulerNotificationConversion.html" title=" " alt="" coords="332,343,552,450"/>
+<area shape="rect" id="node8" href="$classadore_1_1apps_1_1SpeedLimitProvider.html" title="A node to gather speed limit data and provide it e.g. for laneview computation." alt="" coords="434,917,645,1023"/>
+<area shape="rect" id="node9" href="$classadore_1_1mad_1_1AReader.html" title=" " alt="" coords="450,601,629,722"/>
+<area shape="rect" id="node10" href="$classadore_1_1mad_1_1AWriter.html" title=" " alt="" coords="653,601,842,722"/>
+</map>

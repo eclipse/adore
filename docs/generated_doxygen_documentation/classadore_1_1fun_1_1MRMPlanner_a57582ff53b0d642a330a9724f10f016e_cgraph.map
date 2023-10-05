@@ -1,0 +1,10 @@
+<map id="adore::fun::MRMPlanner::brake_params_trapezoidal" name="adore::fun::MRMPlanner::brake_params_trapezoidal">
+<area shape="rect" id="node1" title="general parameters" alt="" coords="5,123,188,164"/>
+<area shape="rect" id="node2" href="$classadore_1_1fun_1_1MRMPlanner.html#ace52d05e8518e6676ae9822b1607dc7d" title="minimum acceleration that can be achieved before inverting jerk to end with v=0 and a=0" alt="" coords="480,64,700,105"/>
+<area shape="rect" id="node3" href="$classadore_1_1fun_1_1MRMPlanner.html#ad84ee33d296d41c9a3f7f986242eca70" title=" " alt="" coords="251,188,417,229"/>
+<area shape="rect" id="node6" href="$classadore_1_1fun_1_1MRMPlanner.html#a7d4b8776654f4f69f7b89666844c17fe" title="times required for ramp down, constant and ramp up during long brake" alt="" coords="247,123,421,164"/>
+<area shape="rect" id="node7" href="$classadore_1_1fun_1_1MRMPlanner.html#a0cab3a7fd870896bb4dfaca1b5683eb0" title="times required for ramp down and ramp up during medium brake" alt="" coords="236,5,432,47"/>
+<area shape="rect" id="node8" href="$classadore_1_1fun_1_1MRMPlanner.html#a97b92b9317f724c7d758df4e5d640816" title="times required for ramp up during short brake" alt="" coords="245,253,423,295"/>
+<area shape="rect" id="node4" href="$namespaceadore_1_1mad.html#ab58ecb752f9bbfe27832e0a2c0e22c2b" title=" " alt="" coords="532,195,648,222"/>
+<area shape="rect" id="node5" href="$namespaceadore_1_1mad.html#ac61b79c007d1859f93a10c04272095a1" title=" " alt="" coords="748,195,864,222"/>
+</map>

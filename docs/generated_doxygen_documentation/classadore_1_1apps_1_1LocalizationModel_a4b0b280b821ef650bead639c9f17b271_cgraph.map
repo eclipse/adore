@@ -1,0 +1,28 @@
+<map id="adore::apps::LocalizationModel::update" name="adore::apps::LocalizationModel::update">
+<area shape="rect" id="node1" title="simulation step of the odometry estimate model" alt="" coords="5,678,172,719"/>
+<area shape="rect" id="node2" href="$namespaceadore_1_1mad.html#a927f4883d4edcec4dcfd9bb1f09d4f62" title=" " alt="" coords="635,36,765,62"/>
+<area shape="rect" id="node5" href="$namespaceadore_1_1mad.html#a70b9fe3efbb34c0f9621147e3456bfa8" title=" " alt="" coords="265,86,381,113"/>
+<area shape="rect" id="node6" href="$namespaceadore_1_1mad.html#acec540f9bf9b6eb0e027d332d3fe5577" title=" " alt="" coords="475,112,587,138"/>
+<area shape="rect" id="node9" href="$classadore_1_1params_1_1APLocalizationModel.html#aa2f5d16e84b52891e5ad3f3d2f3ac698" title=" " alt="" coords="223,188,423,230"/>
+<area shape="rect" id="node10" href="$classadore_1_1params_1_1APLocalizationModel.html#ae345ac334e027e130fbf216c5eff217d" title=" " alt="" coords="223,254,423,295"/>
+<area shape="rect" id="node11" href="$classadore_1_1params_1_1APLocalizationModel.html#ae8f2f1a608982e095ce668e0b55ed39d" title=" " alt="" coords="223,320,423,376"/>
+<area shape="rect" id="node12" href="$classadore_1_1params_1_1APLocalizationModel.html#a29896964d162e4631813cfe5fda63985" title=" " alt="" coords="221,400,426,442"/>
+<area shape="rect" id="node13" href="$classadore_1_1params_1_1APLocalizationModel.html#ab8939d6202625ada8779ca84b8138441" title=" " alt="" coords="223,466,423,522"/>
+<area shape="rect" id="node14" href="$classadore_1_1params_1_1APLocalizationModel.html#a24be2c5c368732c8441943f95a3c6aa1" title=" " alt="" coords="220,547,427,588"/>
+<area shape="rect" id="node15" href="$classadore_1_1mad_1_1AReader.html#a46ab7520d828d1a574365eaf8b483e29" title=" " alt="" coords="250,612,397,654"/>
+<area shape="rect" id="node16" href="$structadore_1_1env_1_1VehicleMotionState9d.html#a65ca6ea033cf05674de50b8996a586a3" title="Get the heading." alt="" coords="237,678,410,719"/>
+<area shape="rect" id="node17" href="$structadore_1_1env_1_1VehicleMotionState9d.html#ae7d75a3f7d52a946f075e669832caa17" title="Get the time." alt="" coords="237,743,410,784"/>
+<area shape="rect" id="node18" href="$structadore_1_1env_1_1VehicleMotionState9d.html#a16d6d61f5dfa1028ca97d8f1a8b6e8cf" title="Get the x&#45;coordinate." alt="" coords="237,808,410,850"/>
+<area shape="rect" id="node19" href="$structadore_1_1env_1_1VehicleMotionState9d.html#a51e8eed0ef10d909592edcb933c1b802" title="Get the y&#45;coordinate." alt="" coords="237,874,410,915"/>
+<area shape="rect" id="node20" href="$classadore_1_1mad_1_1AReader.html#a79b8efec6ede53587ff114ae00ca8419" title=" " alt="" coords="250,939,397,980"/>
+<area shape="rect" id="node21" href="$classadore_1_1apps_1_1LocalizationModel.html#a49250d567ca769633b3f99feffeedade" title=" " alt="" coords="240,1004,407,1046"/>
+<area shape="rect" id="node22" href="$classadore_1_1apps_1_1LocalizationModel.html#ab6b0921cbfb3a2046d43b237c189a28c" title=" " alt="" coords="240,1070,407,1111"/>
+<area shape="rect" id="node23" href="$structadore_1_1env_1_1VehicleMotionState9d.html#ab86b791bc6990e970e9fb6e0e5a4007b" title="set the heading" alt="" coords="237,1135,410,1176"/>
+<area shape="rect" id="node24" href="$structadore_1_1env_1_1VehicleMotionState9d.html#a9c0059501475287069f2c66f81bccbe0" title="Set the x&#45;coordinate." alt="" coords="237,1200,410,1242"/>
+<area shape="rect" id="node25" href="$structadore_1_1env_1_1VehicleMotionState9d.html#a14d7aaf7687a0d1d133fb1d0ff186a77" title="Set the y&#45;coordinate." alt="" coords="237,1266,410,1307"/>
+<area shape="rect" id="node26" href="$classadore_1_1mad_1_1AWriter.html#a1c22b1ccbd19c5f02f832831ca757f3b" title=" " alt="" coords="254,1331,393,1372"/>
+<area shape="rect" id="node3" href="$namespaceadore_1_1mad.html#a618a8842fed7b9375957b1e393c58492" title=" " alt="" coords="813,112,933,138"/>
+<area shape="rect" id="node4" href="$namespaceadore_1_1mad.html#ac61b79c007d1859f93a10c04272095a1" title=" " alt="" coords="815,49,931,76"/>
+<area shape="rect" id="node7" href="$namespaceadore_1_1mad.html#adea062854ef0b105a3fdca8cf2aca945" title=" " alt="" coords="640,137,760,164"/>
+<area shape="rect" id="node8" href="$namespaceadore_1_1mad.html#ab58ecb752f9bbfe27832e0a2c0e22c2b" title=" " alt="" coords="642,86,758,113"/>
+</map>

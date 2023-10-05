@@ -1,0 +1,6 @@
+<map id="adore::fun::InitialStateSelector::InitialStateSelector" name="adore::fun::InitialStateSelector::InitialStateSelector">
+<area shape="rect" id="node1" title=" " alt="" coords="5,35,193,76"/>
+<area shape="rect" id="node2" href="$classadore_1_1fun_1_1FunFactoryInstance.html#a3d8e318e1ad87251caef9bad22a99b40" title=" " alt="" coords="241,13,472,39"/>
+<area shape="rect" id="node4" href="$classadore_1_1env_1_1AFactory.html#a81f661c576816461f1914436620ac208" title=" " alt="" coords="255,64,458,105"/>
+<area shape="rect" id="node3" href="$classadore_1_1fun_1_1FunFactoryInstance.html#a0826e9a7ea3c70a3780115e6effbf746" title="Function to access singleton instance of the funFactory using magic static." alt="" coords="520,5,724,47"/>
+</map>

@@ -1,0 +1,4 @@
+<map id="adore::params::APLaneChangeViewDummy" name="adore::params::APLaneChangeViewDummy">
+<area shape="rect" id="node1" title="a dummy implementation for testing purposes" alt="" coords="20,175,224,296"/>
+<area shape="rect" id="node2" href="$classadore_1_1params_1_1APLaneChangeView.html" title="abstract class containing parameters for a lane change view" alt="" coords="5,5,239,127"/>
+</map>

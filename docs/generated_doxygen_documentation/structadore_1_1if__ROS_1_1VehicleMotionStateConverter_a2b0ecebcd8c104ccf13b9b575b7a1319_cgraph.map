@@ -1,0 +1,12 @@
+<map id="adore::if_ROS::VehicleMotionStateConverter::operator()" name="adore::if_ROS::VehicleMotionStateConverter::operator()">
+<area shape="rect" id="node1" title=" " alt="" coords="5,267,200,308"/>
+<area shape="rect" id="node2" href="$structadore_1_1if__ROS_1_1QuaternionConverter.html#ab4dba6ab02bc42e99cb6dac9effa1656" title="convert quaternion to heading" alt="" coords="248,5,457,47"/>
+<area shape="rect" id="node3" href="$structadore_1_1env_1_1VehicleMotionState9d.html#a88c3073bde99b03a8431e0ad0ddf110a" title="Set the yaw rate." alt="" coords="266,71,439,112"/>
+<area shape="rect" id="node4" href="$structadore_1_1env_1_1VehicleMotionState9d.html#ab86b791bc6990e970e9fb6e0e5a4007b" title="set the heading" alt="" coords="266,136,439,177"/>
+<area shape="rect" id="node5" href="$structadore_1_1env_1_1VehicleMotionState9d.html#ae567103c42e2b947fe4655e8bff22cfc" title="Set the time." alt="" coords="266,201,439,243"/>
+<area shape="rect" id="node6" href="$structadore_1_1env_1_1VehicleMotionState9d.html#a467c0270b93452680cc6c2cfdb78d2f0" title="set the longitudinal velocity" alt="" coords="266,267,439,308"/>
+<area shape="rect" id="node7" href="$structadore_1_1env_1_1VehicleMotionState9d.html#aba1577c93d3804f2271db465e8487007" title="set the lateral velocity" alt="" coords="266,332,439,373"/>
+<area shape="rect" id="node8" href="$structadore_1_1env_1_1VehicleMotionState9d.html#a9c0059501475287069f2c66f81bccbe0" title="Set the x&#45;coordinate." alt="" coords="266,397,439,439"/>
+<area shape="rect" id="node9" href="$structadore_1_1env_1_1VehicleMotionState9d.html#a14d7aaf7687a0d1d133fb1d0ff186a77" title="Set the y&#45;coordinate." alt="" coords="266,463,439,504"/>
+<area shape="rect" id="node10" href="$structadore_1_1env_1_1VehicleMotionState9d.html#a00563022c6911fc985e8fd60ac0ad946" title="Set the z&#45;coordinate." alt="" coords="266,528,439,569"/>
+</map>

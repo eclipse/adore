@@ -1,0 +1,12 @@
+<map id="adore::env::PrecedenceSet::readFile" name="adore::env::PrecedenceSet::readFile">
+<area shape="rect" id="node1" title="reads a set of precedence rules from a file" alt="" coords="5,79,185,121"/>
+<area shape="rect" id="node2" href="$classadore_1_1env_1_1PrecedenceSet.html#af4cedb571783adb978ab72b1a171a3e4" title="creates a precedence rule from string and adds it to container." alt="" coords="233,79,413,121"/>
+<area shape="rect" id="node3" href="$structadore_1_1env_1_1PrecedenceRule.html#acfb2539d435e02ade68044f01a42771f" title=" " alt="" coords="475,38,661,79"/>
+<area shape="rect" id="node9" href="$structadore_1_1env_1_1PrecedenceRule.html#a87b26793815d7b0a59286aa1b1ddae52" title="reads PrecedenceRule&#39;s two PriorityRoutes from the input string exemplary valid string &quot;0...." alt="" coords="461,116,675,143"/>
+<area shape="rect" id="node4" href="$structadore_1_1env_1_1PriorityRoute.html#ae283e45b1476bc42151905dc7aa35b95" title="returns a box in boost format, which encompasses start/end points" alt="" coords="736,25,903,66"/>
+<area shape="rect" id="node5" href="$namespaceadore_1_1mad.html#adea062854ef0b105a3fdca8cf2aca945" title=" " alt="" coords="964,5,1084,32"/>
+<area shape="rect" id="node7" href="$namespaceadore_1_1mad.html#ab58ecb752f9bbfe27832e0a2c0e22c2b" title=" " alt="" coords="966,60,1082,87"/>
+<area shape="rect" id="node6" href="$namespaceadore_1_1mad.html#a618a8842fed7b9375957b1e393c58492" title=" " alt="" coords="1132,5,1252,32"/>
+<area shape="rect" id="node8" href="$namespaceadore_1_1mad.html#ac61b79c007d1859f93a10c04272095a1" title=" " alt="" coords="1134,60,1250,87"/>
+<area shape="rect" id="node10" href="$structadore_1_1env_1_1PriorityRoute.html#ab66f766f35b752db80700ec310e333de" title="set the two coordinates" alt="" coords="723,141,916,168"/>
+</map>

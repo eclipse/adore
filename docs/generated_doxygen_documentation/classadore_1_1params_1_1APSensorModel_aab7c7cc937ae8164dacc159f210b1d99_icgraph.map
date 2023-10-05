@@ -1,0 +1,6 @@
+<map id="adore::params::APSensorModel::get_objectDiscardAge" name="adore::params::APSensorModel::get_objectDiscardAge">
+<area shape="rect" id="node1" title="time after which object detections are discarded" alt="" coords="599,5,805,47"/>
+<area shape="rect" id="node2" href="$classadore_1_1apps_1_1ObjectDetectionModel.html#a5f8c0581e1883754fa0a498e7e8b4280" title="publish updates on the detection of traffic participants" alt="" coords="359,5,551,47"/>
+<area shape="rect" id="node3" href="$classadore_1_1if__ROS_1_1ObjectDetectionModelNode.html#a39ae32803b33d5f7560be9df5df7d10c" title=" " alt="" coords="104,5,311,47"/>
+<area shape="rect" id="node4" href="$adore__objectdetectionmodel__node_8cpp.html#a3c04138a5bfe5d72780bb7e82a18e627" title=" " alt="" coords="5,13,56,39"/>
+</map>

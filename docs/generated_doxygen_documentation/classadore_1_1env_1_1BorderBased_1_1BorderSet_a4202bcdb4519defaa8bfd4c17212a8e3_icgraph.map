@@ -1,0 +1,4 @@
+<map id="adore::env::BorderBased::BorderSet::hasAllPredecessorsInSet" name="adore::env::BorderBased::BorderSet::hasAllPredecessorsInSet">
+<area shape="rect" id="node1" title="check whether all predecessors up to a certain number exist within the set" alt="" coords="275,13,517,54"/>
+<area shape="rect" id="node2" href="$classadore_1_1env_1_1BorderBased_1_1BorderSet.html#a250e4ae7154e1a8093d61d453242ad17" title="efficient pre&#45;search to determine candidates for border overlap" alt="" coords="5,5,227,61"/>
+</map>

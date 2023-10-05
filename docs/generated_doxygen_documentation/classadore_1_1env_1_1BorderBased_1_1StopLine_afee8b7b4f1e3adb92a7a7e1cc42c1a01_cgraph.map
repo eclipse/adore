@@ -1,0 +1,6 @@
+<map id="adore::env::BorderBased::StopLine::translate" name="adore::env::BorderBased::StopLine::translate">
+<area shape="rect" id="node1" title="Translate the stop line." alt="" coords="5,5,172,47"/>
+<area shape="rect" id="node2" href="$structadore_1_1env_1_1BorderBased_1_1LanePosition.html#a194134fad350172c895fbf96ca4a78af" title="Translate the LanePosition by translating the BorderID." alt="" coords="220,5,387,47"/>
+<area shape="rect" id="node3" href="$structadore_1_1env_1_1BorderBased_1_1BorderID.html#a9b2a0fab766b39977b547fc4fce8a3c1" title="Translate a border." alt="" coords="435,5,601,47"/>
+<area shape="rect" id="node4" href="$structadore_1_1env_1_1BorderBased_1_1Coordinate.html#a89c101904eb4d7a7a601fa5758dd5437" title="Translate a coordinate object." alt="" coords="649,5,816,47"/>
+</map>

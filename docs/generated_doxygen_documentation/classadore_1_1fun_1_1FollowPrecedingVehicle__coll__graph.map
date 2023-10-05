@@ -1,0 +1,8 @@
+<map id="adore::fun::FollowPrecedingVehicle" name="adore::fun::FollowPrecedingVehicle">
+<area shape="rect" id="node1" title=" " alt="" coords="472,307,656,501"/>
+<area shape="rect" id="node2" href="$classadore_1_1fun_1_1ANominalConstraint.html" title=" " alt="" coords="5,57,211,193"/>
+<area shape="rect" id="node3" href="$classadore_1_1params_1_1APTrajectoryGeneration.html" title="abstract class containing parameters to configure the behaviour of trajectory generation" alt="" coords="235,49,453,200"/>
+<area shape="rect" id="node4" href="$classadore_1_1params_1_1APVehicle.html" title="abstract class for vehicle configuration related paremeters" alt="" coords="477,13,651,237"/>
+<area shape="rect" id="node5" href="$classadore_1_1view_1_1ALane.html" title=" " alt="" coords="675,13,877,237"/>
+<area shape="rect" id="node6" href="$classadore_1_1params_1_1APTacticalPlanner.html" title="abstract classs containing parameters to configure aspects and constraints of the tactical planner" alt="" coords="901,5,1131,244"/>
+</map>

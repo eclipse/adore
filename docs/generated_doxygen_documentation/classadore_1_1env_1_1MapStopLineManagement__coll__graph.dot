@@ -1,0 +1,9 @@
+digraph "adore::env::MapStopLineManagement"
+{
+ // LATEX_PDF_SIZE
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  Node1 [label="{adore::env::MapStopLineManagement\n|- m_borderQueue\l|+ MapStopLineManagement()\l+ init()\l+ reset()\l+ run()\l}",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black",tooltip="manage new and outdated stop lines based on newly visible and no longer visible borders and the last ..."];
+  Node2 -> Node1 [color="grey25",fontsize="10",style="solid",label=" -m_globalSet\n-m_localSet" ,arrowhead="odiamond",fontname="Helvetica"];
+  Node2 [label="{adore::env::BorderBased\l::LanePositionedObjectSet\n|- borderId2Object\l- m_isOwner\l|+ LanePositionedObjectSet()\l+ ~LanePositionedObjectSet()\l+ setIsOwner()\l+ clear()\l+ discard_distant_objects()\l+ discard_distant_objects()\l+ insert_object()\l+ erase_object()\l+ eraseObjectsBorderBased()\l+ eraseObjectsBorderBased()\land 6 more...\l}",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classadore_1_1env_1_1BorderBased_1_1LanePositionedObjectSet.html",tooltip="This class represents a set of objects that are positioned by LanePosition."];
+}

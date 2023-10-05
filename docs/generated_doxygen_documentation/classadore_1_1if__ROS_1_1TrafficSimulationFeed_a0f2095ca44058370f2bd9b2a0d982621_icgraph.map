@@ -1,0 +1,4 @@
+<map id="adore::if_ROS::TrafficSimulationFeed::receive_single" name="adore::if_ROS::TrafficSimulationFeed::receive_single">
+<area shape="rect" id="node1" title="receives single message and puts data element in data_queue" alt="" coords="264,5,475,47"/>
+<area shape="rect" id="node2" href="$classadore_1_1if__ROS_1_1TrafficSimulationFeed.html#ad3dec27fe8db69cecb8c08eec77a2bd8" title=" " alt="" coords="5,5,216,47"/>
+</map>

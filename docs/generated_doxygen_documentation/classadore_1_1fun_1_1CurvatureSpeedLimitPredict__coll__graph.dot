@@ -1,0 +1,17 @@
+digraph "adore::fun::CurvatureSpeedLimitPredict"
+{
+ // LATEX_PDF_SIZE
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  Node1 [label="{adore::fun::CurvatureSpeed\lLimitPredict\n|- sstep_\l- smax_\l- s_curvature_lookahead_\l- a\l|+ CurvatureSpeedLimitPredict()\l+ getValue()\l+ update()\l+ getDirection()\l+ getDimension()\l+ getDerivative()\l}",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black",tooltip=" "];
+  Node2 -> Node1 [dir="back",color="midnightblue",fontsize="10",style="solid",arrowtail="onormal",fontname="Helvetica"];
+  Node2 [label="{adore::fun::ANominalConstraint\n||+ getValue()\l+ update()\l+ getDirection()\l+ getDimension()\l+ getDerivative()\l}",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classadore_1_1fun_1_1ANominalConstraint.html",tooltip=" "];
+  Node3 -> Node1 [color="grey25",fontsize="10",style="solid",label=" -csl_" ,arrowhead="odiamond",fontname="Helvetica"];
+  Node3 [label="{adore::fun::CurvatureSpeed\lLimit\n|- lon_ayub_\l- vmin_ay_\l|+ CurvatureSpeedLimit()\l+ getValue()\l+ update()\l+ getDirection()\l+ getDimension()\l+ getDerivative()\l}",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classadore_1_1fun_1_1CurvatureSpeedLimit.html",tooltip=" "];
+  Node2 -> Node3 [dir="back",color="midnightblue",fontsize="10",style="solid",arrowtail="onormal",fontname="Helvetica"];
+  Node4 -> Node3 [color="grey25",fontsize="10",style="solid",label=" -lfv_" ,arrowhead="odiamond",fontname="Helvetica"];
+  Node4 [label="{adore::view::ALane\n||+ isValid()\l+ getSMax()\l+ getSMin()\l+ inSRange()\l+ getProgressOfWidthOpen()\l+ getProgressOfWidthClosed()\l+ getOnLaneTraffic()\l+ getConflictSet()\l+ getSpeedLimit()\l+ getLeftIndicatorHint()\land 11 more...\l}",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classadore_1_1view_1_1ALane.html",tooltip=" "];
+  Node5 -> Node3 [color="grey25",fontsize="10",style="solid",label=" -plon_" ,arrowhead="odiamond",fontname="Helvetica"];
+  Node5 [label="{adore::params::APLongitudinal\lPlanner\n||+ getWeightPos()\l+ getWeightVel()\l+ getWeightAcc()\l+ getWeightJerk()\l+ getWeightEndPos()\l+ getWeightEndVel()\l+ getWeightEndAcc()\l+ getSlackPos()\l+ getSlackVel()\l+ getSlackAcc()\land 21 more...\l}",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classadore_1_1params_1_1APLongitudinalPlanner.html",tooltip="abstract class containing parameters related to configuring the longitudinal planner"];
+  Node5 -> Node1 [color="grey25",fontsize="10",style="solid",label=" -plon_" ,arrowhead="odiamond",fontname="Helvetica"];
+}

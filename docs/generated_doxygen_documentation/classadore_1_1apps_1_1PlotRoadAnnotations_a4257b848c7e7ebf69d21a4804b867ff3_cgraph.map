@@ -1,0 +1,7 @@
+<map id="adore::apps::PlotRoadAnnotations::PlotRoadAnnotations" name="adore::apps::PlotRoadAnnotations::PlotRoadAnnotations">
+<area shape="rect" id="node1" title=" " alt="" coords="5,64,227,105"/>
+<area shape="rect" id="node2" href="$classadore_1_1env_1_1EnvFactoryInstance.html#a069fadea20089ddf252a244864f305c1" title=" " alt="" coords="275,13,509,39"/>
+<area shape="rect" id="node4" href="$classadore_1_1env_1_1AFactory.html#a128843aad2881553e500c77f6d80fef7" title=" " alt="" coords="320,64,464,105"/>
+<area shape="rect" id="node5" href="$classadore_1_1env_1_1AFactory.html#a81f661c576816461f1914436620ac208" title=" " alt="" coords="291,129,493,171"/>
+<area shape="rect" id="node3" href="$classadore_1_1env_1_1EnvFactoryInstance.html#a14835a4420fb827ba3809b94a96a7660" title="Function to access singleton instance of the envFactory using magic static." alt="" coords="557,5,765,47"/>
+</map>

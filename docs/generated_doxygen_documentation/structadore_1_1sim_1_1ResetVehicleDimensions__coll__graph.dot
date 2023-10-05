@@ -1,0 +1,7 @@
+digraph "adore::sim::ResetVehicleDimensions"
+{
+ // LATEX_PDF_SIZE
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  Node1 [label="{adore::sim::ResetVehicle\lDimensions\n|- a_\l- b_\l- c_\l- d_\l- m_\l- bodyWidth_\l- a_valid_\l- b_valid_\l- c_valid_\l- d_valid_\l- m_valid_\l- bodyWidth_valid_\l|+ ResetVehicleDimensions()\l+ get_length()\l+ get_a()\l+ get_b()\l+ get_c()\l+ get_d()\l+ get_m()\l+ get_width()\l+ set_a()\l+ set_b()\land 10 more...\l}",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black",tooltip="provides encapsulation of values needed to reset the vehicle dimensions in a simulation"];
+}

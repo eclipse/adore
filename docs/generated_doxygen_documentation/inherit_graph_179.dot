@@ -1,0 +1,12 @@
+digraph "Graphical Class Hierarchy"
+{
+ // LATEX_PDF_SIZE
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  rankdir="LR";
+  Node653 [label="boost::statechart::\lstate_machine",height=0.2,width=0.4,color="grey75", fillcolor="white", style="filled",tooltip=" "];
+  Node653 -> Node0 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node0 [label="adore::fun::logic::\lDistanceStateMachine",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$structadore_1_1fun_1_1logic_1_1DistanceStateMachine.html",tooltip=" "];
+  Node653 -> Node655 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node655 [label="adore::fun::logic::\lPlatooningStateMachine",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$structadore_1_1fun_1_1logic_1_1PlatooningStateMachine.html",tooltip=" "];
+}

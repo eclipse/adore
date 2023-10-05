@@ -1,0 +1,12 @@
+digraph "adore::if_ROS::IndicatorCommandReader::receive_left"
+{
+ // LATEX_PDF_SIZE
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  rankdir="LR";
+  Node1 [label="adore::if_ROS::Indicator\lCommandReader::receive_left",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black",tooltip=" "];
+  Node1 -> Node2 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node2 [label="adore::fun::IndicatorCommand\l::getIndicatorLeftOn",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$structadore_1_1fun_1_1IndicatorCommand.html#a43acf7313d09a45930f676ab6b510919",tooltip=" "];
+  Node1 -> Node3 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node3 [label="adore::fun::IndicatorCommand\l::setIndicatorLeftOn",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$structadore_1_1fun_1_1IndicatorCommand.html#a50871adf4a7a4bf79a2cab1212535a5d",tooltip=" "];
+}

@@ -1,0 +1,7 @@
+<map id="adore::fun::StopAtNextGoalPoint" name="adore::fun::StopAtNextGoalPoint">
+<area shape="rect" id="node1" title=" " alt="" coords="362,292,545,457"/>
+<area shape="rect" id="node2" href="$classadore_1_1fun_1_1ANominalConstraint.html" title=" " alt="" coords="5,49,211,185"/>
+<area shape="rect" id="node3" href="$classadore_1_1params_1_1APTrajectoryGeneration.html" title="abstract class containing parameters to configure the behaviour of trajectory generation" alt="" coords="235,42,453,193"/>
+<area shape="rect" id="node4" href="$classadore_1_1params_1_1APVehicle.html" title="abstract class for vehicle configuration related paremeters" alt="" coords="477,5,651,229"/>
+<area shape="rect" id="node5" href="$classadore_1_1view_1_1ANavigationGoalView.html" title=" " alt="" coords="676,13,887,222"/>
+</map>

@@ -1,0 +1,35 @@
+<map id="adore::fun::LinearTrackingController::compute_control_input" name="adore::fun::LinearTrackingController::compute_control_input">
+<area shape="rect" id="node1" title=" " alt="" coords="5,830,223,871"/>
+<area shape="rect" id="node2" href="$namespaceadore_1_1mad.html#a37d645f2d2b0aa8f1c7015ba4e502617" title=" " alt="" coords="317,5,443,32"/>
+<area shape="rect" id="node3" href="$namespaceadore_1_1mad.html#a927f4883d4edcec4dcfd9bb1f09d4f62" title=" " alt="" coords="697,56,828,83"/>
+<area shape="rect" id="node6" href="$namespaceadore_1_1mad.html#a70b9fe3efbb34c0f9621147e3456bfa8" title=" " alt="" coords="322,157,438,184"/>
+<area shape="rect" id="node7" href="$namespaceadore_1_1mad.html#acec540f9bf9b6eb0e027d332d3fe5577" title=" " alt="" coords="537,132,649,159"/>
+<area shape="rect" id="node10" href="$classadore_1_1params_1_1APVehicle.html#a5cc38023fb9f3142348dc9ac22402288" title="rear axle to cog" alt="" coords="293,209,467,250"/>
+<area shape="rect" id="node11" href="$classadore_1_1params_1_1APVehicle.html#a6552ea57b0d3310a5437baa157538ba7" title=" " alt="" coords="271,274,489,315"/>
+<area shape="rect" id="node12" href="$structadore_1_1fun_1_1PlanarVehicleState10d.html#ad55dd30212ca0581ae920a466da42829" title=" " alt="" coords="296,339,464,381"/>
+<area shape="rect" id="node13" href="$classadore_1_1params_1_1APTrajectoryTracking.html#a503d2ff1549140594da3b5501fb31bf0" title="hard coded maximum longitudinal acceleration" alt="" coords="285,405,475,446"/>
+<area shape="rect" id="node14" href="$classadore_1_1params_1_1APTrajectoryTracking.html#ac4a7a9b66f091d81a2934a36edb32820" title="hard coded minimum longitudinal acceleration" alt="" coords="285,470,475,511"/>
+<area shape="rect" id="node15" href="$structadore_1_1fun_1_1PlanarVehicleState10d.html#a155bd17bc48523159a9db97899bf93b5" title=" " alt="" coords="296,535,464,577"/>
+<area shape="rect" id="node16" href="$classadore_1_1params_1_1APTrajectoryTracking.html#a700d5665554e0e42c4832552ffbcbe08" title="the maximum controllable steering angle" alt="" coords="285,601,475,642"/>
+<area shape="rect" id="node17" href="$classadore_1_1params_1_1APTrajectoryTracking.html#a1b465cf0df819c73af3b1b83947b71bb" title="the minimum controllable steering angle" alt="" coords="285,666,475,707"/>
+<area shape="rect" id="node18" href="$classadore_1_1params_1_1APTrajectoryTracking.html#adddbca549f05f237a565f3097b71de33" title="static trajectory tracking offset in longitudinal direction, which should be compensated by tracking ..." alt="" coords="285,731,475,773"/>
+<area shape="rect" id="node19" href="$classadore_1_1params_1_1APTrajectoryTracking.html#a2efdc612daeeac48fe22d78866edeccb" title="static trajectory tracking offset in lateral direction, which should be compensated by tracking contr..." alt="" coords="285,797,475,838"/>
+<area shape="rect" id="node20" href="$classadore_1_1params_1_1APTrajectoryTracking.html#a5299733556343187bac0e8fbdf30195a" title="returns P control gain for longitudinal direction" alt="" coords="285,862,475,903"/>
+<area shape="rect" id="node21" href="$classadore_1_1params_1_1APTrajectoryTracking.html#a8b1e80bfad203c55985f29c1b7a376ce" title="returns D control gain for longitudinal direction" alt="" coords="285,927,475,969"/>
+<area shape="rect" id="node22" href="$classadore_1_1params_1_1APTrajectoryTracking.html#ad070404a7d760aaa8899937baf03a30d" title="lateral control gain for yaw rate error eomega" alt="" coords="285,993,475,1034"/>
+<area shape="rect" id="node23" href="$classadore_1_1params_1_1APTrajectoryTracking.html#a36245e5f586bb87122d0dcab0dac04b0" title="lateral control gain for yaw angle error epsi" alt="" coords="285,1058,475,1099"/>
+<area shape="rect" id="node24" href="$classadore_1_1params_1_1APTrajectoryTracking.html#ab3bb0748b63f09449058f5782ef11f9e" title="lateral control gain for lateral error ey" alt="" coords="285,1123,475,1165"/>
+<area shape="rect" id="node25" href="$classadore_1_1params_1_1APTrajectoryTracking.html#ac8016379f98ca36763217bcf8df40e97" title="returns I control gain for longitudinal direction" alt="" coords="285,1189,475,1230"/>
+<area shape="rect" id="node26" href="$classadore_1_1params_1_1APTrajectoryTracking.html#aee3f9fd49d3f5407900cfacd4ce3131a" title="returns I control gain for lateral direction" alt="" coords="285,1254,475,1295"/>
+<area shape="rect" id="node27" href="$structadore_1_1fun_1_1PlanarVehicleState10d.html#a80382473710b306857f373525e8f752f" title=" " alt="" coords="296,1319,464,1361"/>
+<area shape="rect" id="node28" href="$structadore_1_1fun_1_1PlanarVehicleState10d.html#a30935f2ed6f97cfc0cd2c565bb5c980c" title=" " alt="" coords="296,1385,464,1426"/>
+<area shape="rect" id="node29" href="$structadore_1_1fun_1_1PlanarVehicleState10d.html#a025278bb96195126dc8c41e66c201436" title=" " alt="" coords="296,1450,464,1491"/>
+<area shape="rect" id="node30" href="$structadore_1_1fun_1_1PlanarVehicleState10d.html#a08c0ad6a3099e8926451647fa8e54e95" title=" " alt="" coords="296,1515,464,1557"/>
+<area shape="rect" id="node31" href="$structadore_1_1fun_1_1PlanarVehicleState10d.html#a9b04d30fbf6b957e8141d93c06383849" title=" " alt="" coords="296,1581,464,1622"/>
+<area shape="rect" id="node32" href="$classadore_1_1fun_1_1MotionCommand.html#a742aa8521acc5c1647be671e58775e3d" title=" " alt="" coords="287,1646,473,1687"/>
+<area shape="rect" id="node33" href="$classadore_1_1fun_1_1MotionCommand.html#ad9e80cc45a694051399325f358da810a" title=" " alt="" coords="287,1711,473,1753"/>
+<area shape="rect" id="node4" href="$namespaceadore_1_1mad.html#a618a8842fed7b9375957b1e393c58492" title=" " alt="" coords="876,132,996,159"/>
+<area shape="rect" id="node5" href="$namespaceadore_1_1mad.html#ac61b79c007d1859f93a10c04272095a1" title=" " alt="" coords="878,69,994,96"/>
+<area shape="rect" id="node8" href="$namespaceadore_1_1mad.html#adea062854ef0b105a3fdca8cf2aca945" title=" " alt="" coords="703,157,823,184"/>
+<area shape="rect" id="node9" href="$namespaceadore_1_1mad.html#ab58ecb752f9bbfe27832e0a2c0e22c2b" title=" " alt="" coords="705,107,821,133"/>
+</map>

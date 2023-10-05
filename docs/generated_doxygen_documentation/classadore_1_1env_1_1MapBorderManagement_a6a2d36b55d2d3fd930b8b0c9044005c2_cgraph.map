@@ -1,0 +1,4 @@
+<map id="adore::env::MapBorderManagement::changeBorderType" name="adore::env::MapBorderManagement::changeBorderType">
+<area shape="rect" id="node1" title="change border type of borders in region to given type" alt="" coords="5,5,235,47"/>
+<area shape="rect" id="node2" href="$classadore_1_1env_1_1BorderBased_1_1BorderSet.html#a5b9a10acc8d477c1d27d5b39fb1f99f3" title="get all borders in this within region" alt="" coords="283,5,493,47"/>
+</map>

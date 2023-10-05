@@ -1,0 +1,7 @@
+digraph "adore::view::TrafficObject"
+{
+ // LATEX_PDF_SIZE
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  Node1 [label="{adore::view::TrafficObject\n|- trackingID_\l- v2xStationID_\l- observationTime_\l- currentProgress_\l- currentSpeed_\l- currentAcceleration_\l- entranceProgress_\l- entranceSpeed_\l- entranceTime_\l- exitTime_\l- exitProgress_\l- length_\l|+ getTrackingID()\l+ getV2XStationID()\l+ getCurrentProgress()\l+ getCurrentSpeed()\l+ getCurrentAcceleration()\l+ getEntranceProgress()\l+ getEntranceSpeed()\l+ getEntranceTime()\l+ getExitTime()\l+ getExitProgress()\land 14 more...\l}",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black",tooltip=" "];
+}

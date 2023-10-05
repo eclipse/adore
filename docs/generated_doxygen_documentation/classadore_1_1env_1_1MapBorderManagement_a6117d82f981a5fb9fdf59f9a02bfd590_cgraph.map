@@ -1,0 +1,4 @@
+<map id="adore::env::MapBorderManagement::getBorder" name="adore::env::MapBorderManagement::getBorder">
+<area shape="rect" id="node1" title="Direct access to border in global map for auxiliary uses like plotting." alt="" coords="5,5,235,47"/>
+<area shape="rect" id="node2" href="$classadore_1_1env_1_1BorderBased_1_1BorderSet.html#a69802bccdc7cf3fa598283509808edc2" title="retrieve a border by ID" alt="" coords="283,5,449,47"/>
+</map>

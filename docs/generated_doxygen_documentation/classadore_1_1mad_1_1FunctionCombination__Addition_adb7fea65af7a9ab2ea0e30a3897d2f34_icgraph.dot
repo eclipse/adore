@@ -1,0 +1,12 @@
+digraph "adore::mad::FunctionCombination_Addition::FunctionCombination_Addition"
+{
+ // LATEX_PDF_SIZE
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  rankdir="RL";
+  Node1 [label="adore::mad::FunctionCombination\l_Addition::FunctionCombination\l_Addition",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black",tooltip=" "];
+  Node1 -> Node2 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node2 [label="adore::mad::FunctionCombination\l_Addition::clone",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classadore_1_1mad_1_1FunctionCombination__Addition.html#a1b35ab952ff044b27b63fbf25477cdf3",tooltip=" "];
+  Node1 -> Node3 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node3 [label="adore::mad::FunctionCombination\l_Addition::create_derivative",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classadore_1_1mad_1_1FunctionCombination__Addition.html#acd27b7d4540b363ea07e0ad7003372c3",tooltip=" "];
+}

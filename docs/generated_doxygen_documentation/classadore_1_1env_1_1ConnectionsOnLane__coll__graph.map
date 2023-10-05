@@ -1,0 +1,9 @@
+<map id="adore::env::ConnectionsOnLane" name="adore::env::ConnectionsOnLane">
+<area shape="rect" id="node1" title=" " alt="" coords="200,719,409,840"/>
+<area shape="rect" id="node2" href="$classadore_1_1view_1_1ALimitLineEnRoute.html" title=" " alt="" coords="5,491,180,597"/>
+<area shape="rect" id="node3" href="$classadore_1_1view_1_1ALane.html" title=" " alt="" coords="204,432,405,656"/>
+<area shape="rect" id="node4" href="$classadore_1_1env_1_1ControlledConnectionSet.html" title=" " alt="" coords="429,461,665,627"/>
+<area shape="rect" id="node5" href="$classadore_1_1env_1_1LocalBoxSet.html" title=" " alt="" coords="452,160,643,369"/>
+<area shape="rect" id="node6" href="$structadore_1_1env_1_1ControlledConnectionSet_1_1Comparator.html" title=" " alt="" coords="319,5,535,97"/>
+<area shape="rect" id="node7" href="$structadore_1_1env_1_1ControlledConnectionSet_1_1BoxGen.html" title=" " alt="" coords="559,5,775,97"/>
+</map>

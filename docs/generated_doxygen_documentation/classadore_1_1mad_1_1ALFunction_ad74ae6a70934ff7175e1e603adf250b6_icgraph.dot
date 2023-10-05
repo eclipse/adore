@@ -1,0 +1,38 @@
+digraph "adore::mad::ALFunction::create_derivative"
+{
+ // LATEX_PDF_SIZE
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  rankdir="RL";
+  Node1 [label="adore::mad::ALFunction\l::create_derivative",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black",tooltip=" "];
+  Node1 -> Node2 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node2 [label="adore::mad::FunctionModification\l_ReciprocalScalar::create_derivative",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classadore_1_1mad_1_1FunctionModification__ReciprocalScalar.html#aba7f0ad38a2957803251ef0dd2714da2",tooltip=" "];
+  Node1 -> Node3 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node3 [label="adore::mad::FunctionCombination\l_Multiplication::create_derivative",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classadore_1_1mad_1_1FunctionCombination__Multiplication.html#a5698b019242cce600bf11676c5aa22f1",tooltip=" "];
+  Node1 -> Node4 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node4 [label="adore::mad::FunctionCombination\l_Multiplication_Matrix::create\l_derivative",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classadore_1_1mad_1_1FunctionCombination__Multiplication__Matrix.html#a0b7028ace043788e6ffaf32aec2c63b1",tooltip=" "];
+  Node1 -> Node5 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node5 [label="adore::mad::FunctionCombination\l_MultiplicationConst::create\l_derivative",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classadore_1_1mad_1_1FunctionCombination__MultiplicationConst.html#a5675c10fa2d636b157c253b911cb4119",tooltip=" "];
+  Node1 -> Node6 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node6 [label="adore::mad::FunctionCombination\l_Chain::create_derivative",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classadore_1_1mad_1_1FunctionCombination__Chain.html#a8a64a7f03f2b113f7b791030bd13d043",tooltip=" "];
+  Node1 -> Node7 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node7 [label="adore::mad::FunctionCombination\l_Stack::create_derivative",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classadore_1_1mad_1_1FunctionCombination__Stack.html#a3960070bfe058b6a81a4c0e12e8238b6",tooltip=" "];
+  Node1 -> Node8 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node8 [label="adore::mad::FunctionCombination\l_StackScalar::create_derivative",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classadore_1_1mad_1_1FunctionCombination__StackScalar.html#a62d3b7929544fe80050500b108bf1806",tooltip=" "];
+  Node1 -> Node9 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node9 [label="adore::mad::LHeading\l::create_derivative",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classadore_1_1mad_1_1LHeading.html#a8f9a59e6cc92d22a4f71c8eec7d86b7d",tooltip=" "];
+  Node1 -> Node10 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node10 [label="adore::mad::RotationFunction\l::RotationFunctionPD::create\l_derivative",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classadore_1_1mad_1_1RotationFunction_1_1RotationFunctionPD.html#af2ec74a70faa2a9842cecdd4914ad047",tooltip=" "];
+  Node1 -> Node11 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node11 [label="adore::mad::RotationFunction\l::create_derivative",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classadore_1_1mad_1_1RotationFunction.html#a5a5a8994c8c51b7d62b1c02fc33a4a61",tooltip=" "];
+  Node1 -> Node12 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node12 [label="adore::mad::Curvature2d\l::Curvature2d",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classadore_1_1mad_1_1Curvature2d.html#a87f8f387ef7d8a323d52e3072634d6a3",tooltip=" "];
+  Node1 -> Node13 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node13 [label="adore::mad::PartialCurvature\lDerivative2d::PartialCurvatureDerivative2d",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classadore_1_1mad_1_1PartialCurvatureDerivative2d.html#acae46366e77b6424035ca4392313e2e6",tooltip=" "];
+  Node1 -> Node14 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node14 [label="adore::mad::path_distance",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$namespaceadore_1_1mad.html#a51021beba4a17247f335c13e2c6a5f36",tooltip=" "];
+  Node14 -> Node15 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node15 [label="adore::mad::create\l_trueDistancePath",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$namespaceadore_1_1mad.html#a6b25f18816a88d57d53634215fd760ec",tooltip=" "];
+  Node1 -> Node16 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node16 [label="adore::mad::sample\l_curvature",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$namespaceadore_1_1mad.html#a7b48e5b731ee808d41e06512fa5d8ab0",tooltip=" "];
+}

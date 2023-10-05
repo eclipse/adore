@@ -1,0 +1,5 @@
+<map id="adore::apps::TrajectoryPlannerLF::setStopPoint" name="adore::apps::TrajectoryPlannerLF::setStopPoint">
+<area shape="rect" id="node1" title=" " alt="" coords="5,5,205,47"/>
+<area shape="rect" id="node2" href="$classadore_1_1fun_1_1BasicLaneFollowingPlanner.html#aa95d3dc0ab41d1c437fccc263df3437d" title=" " alt="" coords="253,5,457,47"/>
+<area shape="rect" id="node3" href="$classadore_1_1fun_1_1StopAtNextConflictPoint.html#a4c0b0b864e2e7180a7f12e16d8864214" title=" " alt="" coords="505,5,707,47"/>
+</map>

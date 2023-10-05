@@ -1,0 +1,10 @@
+digraph "adore::if_ROS::TrafficSimulationFeed::receive_multi"
+{
+ // LATEX_PDF_SIZE
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  rankdir="RL";
+  Node1 [label="adore::if_ROS::TrafficSimulation\lFeed::receive_multi",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black",tooltip="receives aggregates and unpacks into data_ queue"];
+  Node1 -> Node2 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node2 [label="adore::if_ROS::TrafficSimulation\lFeed::TrafficSimulationFeed",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classadore_1_1if__ROS_1_1TrafficSimulationFeed.html#ad3dec27fe8db69cecb8c08eec77a2bd8",tooltip=" "];
+}

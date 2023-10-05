@@ -1,0 +1,52 @@
+<map id="adore::if_ROS::TacticalPlannerNode::init" name="adore::if_ROS::TacticalPlannerNode::init">
+<area shape="rect" id="node1" title=" " alt="" coords="5,219,208,260"/>
+<area shape="rect" id="node2" href="$classadore_1_1fun_1_1EvaluatorWeightedSum.html#ae1b1713de470127398ca20413f887d39" title=" " alt="" coords="265,23,462,64"/>
+<area shape="rect" id="node3" href="$classadore_1_1apps_1_1TacticalPlanner.html#a4565101fad8a9a7d111ea78d48f84262" title=" " alt="" coords="270,88,457,129"/>
+<area shape="rect" id="node4" href="$classadore__if__ros__scheduling_1_1Baseapp.html#a7792ee4aa6fd5c5c03d5f54b4c1f213a" title=" " alt="" coords="262,153,465,195"/>
+<area shape="rect" id="node5" href="$classadore_1_1if__ROS_1_1FactoryCollection.html#a07e53e57a417cf66c5d539a5e1bd590a" title=" " alt="" coords="256,219,471,260"/>
+<area shape="rect" id="node15" href="$namespaceadore_1_1mad.html#ab58ecb752f9bbfe27832e0a2c0e22c2b" title=" " alt="" coords="305,317,421,343"/>
+<area shape="rect" id="node17" href="$classadore_1_1apps_1_1TacticalPlanner.html#a7c32674c68cce6d855e93561e6accd8e" title="retrieve planning results, dispatch and formulate new planning request" alt="" coords="257,1206,470,1233"/>
+<area shape="rect" id="node50" href="$classadore_1_1if__ROS_1_1TacticalPlannerNode.html#a24f25bebae5dccae0283e533e9ef31dd" title=" " alt="" coords="262,1257,465,1299"/>
+<area shape="rect" id="node6" href="$classadore_1_1if__ROS_1_1FactoryCollection.html#ac102972d5592de7cdc76b059017628f9" title=" " alt="" coords="561,267,775,308"/>
+<area shape="rect" id="node7" href="$classadore_1_1env_1_1EnvFactoryInstance.html#ab67767fc777387664b696bd78d2536ef" title="Initialize private members of AllFactory." alt="" coords="564,5,772,47"/>
+<area shape="rect" id="node9" href="$classadore_1_1fun_1_1FunFactoryInstance.html#a291c4c983548f85c633ae6409c7b5233" title="Initialize private members of funFactory." alt="" coords="566,71,770,112"/>
+<area shape="rect" id="node11" href="$classadore_1_1params_1_1ParamsFactoryInstance.html#ac6759c774ade5a97e47c056d1a136253" title="Initialize private members of AllFactory." alt="" coords="567,136,769,177"/>
+<area shape="rect" id="node13" href="$classadore_1_1sim_1_1SimFactoryInstance.html#ac891850728d65e5398216b2bb92f82f6" title="Initialize private members of AllFactory." alt="" coords="564,201,772,243"/>
+<area shape="rect" id="node8" href="$classadore_1_1env_1_1EnvFactoryInstance.html#a14835a4420fb827ba3809b94a96a7660" title="Function to access singleton instance of the envFactory using magic static." alt="" coords="865,5,1073,47"/>
+<area shape="rect" id="node10" href="$classadore_1_1fun_1_1FunFactoryInstance.html#a0826e9a7ea3c70a3780115e6effbf746" title="Function to access singleton instance of the funFactory using magic static." alt="" coords="867,71,1071,112"/>
+<area shape="rect" id="node12" href="$classadore_1_1params_1_1ParamsFactoryInstance.html#a59eae0e003d40b03f9db2d814ec2a3bf" title="Function to access singleton instance of the AllFactory using magic static." alt="" coords="868,136,1071,177"/>
+<area shape="rect" id="node14" href="$classadore_1_1sim_1_1SimFactoryInstance.html#a177ce78bb1c9675c9dd0370e5f31f749" title="Function to access singleton instance of the AllFactory using magic static." alt="" coords="865,201,1073,243"/>
+<area shape="rect" id="node16" href="$namespaceadore_1_1mad.html#ac61b79c007d1859f93a10c04272095a1" title=" " alt="" coords="610,333,726,359"/>
+<area shape="rect" id="node18" href="$classadore_1_1fun_1_1SetPointRequestDispatcher.html#ae0a7ceca76f19e608c9b9744b95ec943" title="dispatch SetPointRequests computed in localization coordinates The combined trajectory will be conver..." alt="" coords="575,1621,761,1663"/>
+<area shape="rect" id="node23" href="$classadore_1_1mad_1_1AWriter.html#a1c22b1ccbd19c5f02f832831ca757f3b" title=" " alt="" coords="900,1721,1039,1763"/>
+<area shape="rect" id="node24" href="$classadore_1_1fun_1_1EvaluatorWeightedSum.html#abe24c1f6df8009b1958aff67efea97ad" title=" " alt="" coords="569,2024,767,2065"/>
+<area shape="rect" id="node26" href="$structadore_1_1fun_1_1PlanarVehicleState10d.html#ad55dd30212ca0581ae920a466da42829" title=" " alt="" coords="584,2089,752,2131"/>
+<area shape="rect" id="node27" href="$classadore_1_1fun_1_1EvaluatorWeightedSum.html#af1433ef2593b1d73d5e206689a55b252" title=" " alt="" coords="569,384,767,425"/>
+<area shape="rect" id="node28" href="$classadore_1_1mad_1_1AReader.html#a46ab7520d828d1a574365eaf8b483e29" title=" " alt="" coords="896,1787,1043,1828"/>
+<area shape="rect" id="node29" href="$classadore_1_1params_1_1APTrajectoryGeneration.html#a6abcbfc29c23e3eace34455dfb5aab6f" title="time after which emergency maneuver kicks in" alt="" coords="534,449,802,491"/>
+<area shape="rect" id="node30" href="$classadore_1_1params_1_1APTacticalPlanner.html#a6e51f2fda24f7dd9961984ac469ae92b" title=" " alt="" coords="519,515,817,556"/>
+<area shape="rect" id="node31" href="$classadore_1_1fun_1_1SetPointRequestDispatcher.html#aad7e60da52338893462cc0c5848e1546" title="compute and return initial state for next planning iteration The according initial state in odometry ..." alt="" coords="575,580,761,621"/>
+<area shape="rect" id="node32" href="$classadore_1_1params_1_1APNavigation.html#ab7121802ebbe3f2309d6cb262739e052" title=" " alt="" coords="571,645,765,687"/>
+<area shape="rect" id="node33" href="$classadore_1_1params_1_1APTacticalPlanner.html#a4f7cd83ef7e0eb8b9c34861fe5dee9db" title=" " alt="" coords="573,711,763,752"/>
+<area shape="rect" id="node34" href="$classadore_1_1mad_1_1AFeed.html#a07f96a9edf1ca4a1a9b0c84aa2631bd0" title=" " alt="" coords="597,776,739,817"/>
+<area shape="rect" id="node35" href="$structadore_1_1fun_1_1PlanningResult.html#a36a6fe94ff79083182756ac564459006" title=" " alt="" coords="580,841,756,883"/>
+<area shape="rect" id="node36" href="$classadore_1_1fun_1_1SetPointRequestDispatcher.html#a088b88292e7db4a0783ff2ce3396d6ac" title=" " alt="" coords="575,907,761,948"/>
+<area shape="rect" id="node37" href="$classadore_1_1params_1_1APTacticalPlanner.html#abb6dab9dca08bbd27db2f18c788bda3d" title=" " alt="" coords="551,973,785,1029"/>
+<area shape="rect" id="node38" href="$classadore_1_1params_1_1APTacticalPlanner.html#acc1194ce8a31ceba9e50cea299625356" title=" " alt="" coords="563,1053,773,1109"/>
+<area shape="rect" id="node39" href="$structadore_1_1fun_1_1PlanarVehicleState10d.html#a025278bb96195126dc8c41e66c201436" title=" " alt="" coords="584,1133,752,1175"/>
+<area shape="rect" id="node40" href="$classadore_1_1mad_1_1AReader.html#a79b8efec6ede53587ff114ae00ca8419" title=" " alt="" coords="896,1852,1043,1893"/>
+<area shape="rect" id="node41" href="$classadore_1_1mad_1_1AFeed.html#a2a96e59a3364f8fadb08624e38f7c40b" title=" " alt="" coords="597,1199,739,1240"/>
+<area shape="rect" id="node42" href="$classadore_1_1mad_1_1AReader.html#a7a8e6d43dcd1129c47d7231e828fb111" title=" " alt="" coords="896,1936,1043,1977"/>
+<area shape="rect" id="node43" href="$classadore_1_1fun_1_1TurnSignalObserver.html#a81641dba0799058457124c750e7fc7a1" title=" " alt="" coords="546,1265,790,1321"/>
+<area shape="rect" id="node44" href="$classadore_1_1fun_1_1TurnSignalObserver.html#a5223a8d3d07c59e0df30de13d461c10e" title=" " alt="" coords="543,1345,793,1401"/>
+<area shape="rect" id="node45" href="$structadore_1_1fun_1_1PlanarVehicleState10d.html#ae3b7b97999aad277023c9d4007c62612" title=" " alt="" coords="584,1425,752,1467"/>
+<area shape="rect" id="node46" href="$structadore_1_1fun_1_1PlanarVehicleState10d.html#a1c08fee846dedbf65d4b7c028763fc19" title=" " alt="" coords="584,1491,752,1532"/>
+<area shape="rect" id="node47" href="$structadore_1_1fun_1_1PlanarVehicleState10d.html#a0e5072015ba4d95e8240b5f293e2ec09" title=" " alt="" coords="584,1556,752,1597"/>
+<area shape="rect" id="node48" href="$classadore_1_1fun_1_1IndicatorDispatcher.html#a395fde77c4b12ecb67b3274dbf52e954" title=" " alt="" coords="567,1789,769,1831"/>
+<area shape="rect" id="node49" href="$classadore_1_1fun_1_1TurnSignalObserver.html#a5674621df21c0f3278eb89d05c3827b7" title=" " alt="" coords="567,1907,769,1948"/>
+<area shape="rect" id="node19" href="$structadore_1_1env_1_1VehicleMotionState9d.html#a65ca6ea033cf05674de50b8996a586a3" title="Get the heading." alt="" coords="883,1656,1056,1697"/>
+<area shape="rect" id="node20" href="$structadore_1_1env_1_1VehicleMotionState9d.html#a16d6d61f5dfa1028ca97d8f1a8b6e8cf" title="Get the x&#45;coordinate." alt="" coords="883,1460,1056,1501"/>
+<area shape="rect" id="node21" href="$structadore_1_1env_1_1VehicleMotionState9d.html#a51e8eed0ef10d909592edcb933c1b802" title="Get the y&#45;coordinate." alt="" coords="883,1525,1056,1567"/>
+<area shape="rect" id="node22" href="$classadore_1_1fun_1_1SetPointRequest.html#a3efce8dc04a62d599e0955ff9a006595" title=" " alt="" coords="876,1591,1063,1632"/>
+<area shape="rect" id="node25" href="$classadore_1_1fun_1_1EvaluatorWeightedSum.html#a6a449f4dbfe87316107bf3df0cbcaea5" title=" " alt="" coords="871,2024,1068,2065"/>
+</map>

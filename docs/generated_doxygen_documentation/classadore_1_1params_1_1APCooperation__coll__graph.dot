@@ -1,0 +1,7 @@
+digraph "adore::params::APCooperation"
+{
+ // LATEX_PDF_SIZE
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  Node1 [label="{adore::params::APCooperation\n||+ getCooperationMode()\l+ getAssumedChaseAcceleration()\l+ getNegotiationTime()\l+ getAbsTimeUncertaintyForLC()\l+ getAbsPositionUncertainty()\l+ getAbsVelocityUncertainty()\l+ getSendRepetitiveMessages()\l+ getUTMZone()\l}",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black",tooltip="abstract class containing cooperative behaviour parameters"];
+}

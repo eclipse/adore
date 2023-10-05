@@ -1,0 +1,48 @@
+<map id="adore::fun::SetPointRequestDispatcher::getInitialState" name="adore::fun::SetPointRequestDispatcher::getInitialState">
+<area shape="rect" id="node1" title="compute and return initial state for next planning iteration The according initial state in odometry ..." alt="" coords="5,785,192,827"/>
+<area shape="rect" id="node2" href="$classadore_1_1fun_1_1SetPointRequestDispatcher.html#abd04c9846a5b537934b3870e327d52fc" title=" " alt="" coords="697,785,923,827"/>
+<area shape="rect" id="node27" href="$classadore_1_1fun_1_1SetPointRequestDispatcher.html#a229ada665bee04006fe9d9264917dccb" title=" " alt="" coords="693,287,927,328"/>
+<area shape="rect" id="node37" href="$classadore_1_1fun_1_1SetPointRequestDispatcher.html#a9cab8ae388cfeb7c1fb5582805164b26" title=" " alt="" coords="240,1145,427,1187"/>
+<area shape="rect" id="node3" href="$namespaceadore_1_1mad.html#a37d645f2d2b0aa8f1c7015ba4e502617" title=" " alt="" coords="1032,1207,1159,1234"/>
+<area shape="rect" id="node4" href="$namespaceadore_1_1mad.html#a70b9fe3efbb34c0f9621147e3456bfa8" title=" " alt="" coords="1037,763,1153,790"/>
+<area shape="rect" id="node5" href="$namespaceadore_1_1mad.html#acec540f9bf9b6eb0e027d332d3fe5577" title=" " alt="" coords="1307,1077,1419,1103"/>
+<area shape="rect" id="node10" href="$structadore_1_1env_1_1VehicleMotionState9d.html#a65ca6ea033cf05674de50b8996a586a3" title="Get the heading." alt="" coords="1009,580,1182,621"/>
+<area shape="rect" id="node11" href="$structadore_1_1env_1_1VehicleMotionState9d.html#ae7d75a3f7d52a946f075e669832caa17" title="Get the time." alt="" coords="1009,319,1182,360"/>
+<area shape="rect" id="node12" href="$structadore_1_1env_1_1VehicleMotionState9d.html#a2547f79442e772d79fbf5051a2a08bfa" title="Get the longitudinal velocity." alt="" coords="1009,515,1182,556"/>
+<area shape="rect" id="node13" href="$structadore_1_1env_1_1VehicleMotionState9d.html#a16d6d61f5dfa1028ca97d8f1a8b6e8cf" title="Get the x&#45;coordinate." alt="" coords="1009,384,1182,425"/>
+<area shape="rect" id="node14" href="$structadore_1_1env_1_1VehicleMotionState9d.html#a51e8eed0ef10d909592edcb933c1b802" title="Get the y&#45;coordinate." alt="" coords="1009,449,1182,491"/>
+<area shape="rect" id="node15" href="$classadore_1_1fun_1_1SetPointRequest.html#a371359907f8292f309e8fdfcddc3bacd" title=" " alt="" coords="1002,253,1189,295"/>
+<area shape="rect" id="node18" href="$structadore_1_1env_1_1VehicleMotionState9d.html#a386b3340baca41b2837ce151d0723a34" title="Set the longitudinal acceleration." alt="" coords="1009,1259,1182,1300"/>
+<area shape="rect" id="node19" href="$structadore_1_1env_1_1VehicleMotionState9d.html#ac1ead2ba99a3e67f90d81a9de1f26dea" title="Set the steering angle." alt="" coords="1009,1324,1182,1365"/>
+<area shape="rect" id="node20" href="$structadore_1_1env_1_1VehicleMotionState9d.html#a88c3073bde99b03a8431e0ad0ddf110a" title="Set the yaw rate." alt="" coords="1009,697,1182,739"/>
+<area shape="rect" id="node21" href="$structadore_1_1env_1_1VehicleMotionState9d.html#ab86b791bc6990e970e9fb6e0e5a4007b" title="set the heading" alt="" coords="1009,815,1182,856"/>
+<area shape="rect" id="node22" href="$structadore_1_1env_1_1VehicleMotionState9d.html#ae567103c42e2b947fe4655e8bff22cfc" title="Set the time." alt="" coords="1009,880,1182,921"/>
+<area shape="rect" id="node23" href="$structadore_1_1env_1_1VehicleMotionState9d.html#a467c0270b93452680cc6c2cfdb78d2f0" title="set the longitudinal velocity" alt="" coords="1009,945,1182,987"/>
+<area shape="rect" id="node24" href="$structadore_1_1env_1_1VehicleMotionState9d.html#aba1577c93d3804f2271db465e8487007" title="set the lateral velocity" alt="" coords="1009,1011,1182,1052"/>
+<area shape="rect" id="node25" href="$structadore_1_1env_1_1VehicleMotionState9d.html#a9c0059501475287069f2c66f81bccbe0" title="Set the x&#45;coordinate." alt="" coords="1009,1076,1182,1117"/>
+<area shape="rect" id="node26" href="$structadore_1_1env_1_1VehicleMotionState9d.html#a14d7aaf7687a0d1d133fb1d0ff186a77" title="Set the y&#45;coordinate." alt="" coords="1009,1141,1182,1183"/>
+<area shape="rect" id="node6" href="$namespaceadore_1_1mad.html#adea062854ef0b105a3fdca8cf2aca945" title=" " alt="" coords="1584,1077,1704,1103"/>
+<area shape="rect" id="node8" href="$namespaceadore_1_1mad.html#ab58ecb752f9bbfe27832e0a2c0e22c2b" title=" " alt="" coords="1586,1193,1702,1219"/>
+<area shape="rect" id="node7" href="$namespaceadore_1_1mad.html#a618a8842fed7b9375957b1e393c58492" title=" " alt="" coords="1827,1077,1947,1103"/>
+<area shape="rect" id="node9" href="$namespaceadore_1_1mad.html#ac61b79c007d1859f93a10c04272095a1" title=" " alt="" coords="1829,1193,1945,1219"/>
+<area shape="rect" id="node16" href="$classadore_1_1mad_1_1OdeRK4.html#a0ef5c32b56701526980cfaaf4d18dd8d" title=" " alt="" coords="1290,253,1435,295"/>
+<area shape="rect" id="node17" href="$classadore_1_1mad_1_1AOdeModel.html#aa8962c6bea2fbc16f4b0e69122cc217f" title=" " alt="" coords="1557,261,1731,287"/>
+<area shape="rect" id="node28" href="$classadore_1_1params_1_1APTacticalPlanner.html#a1d672dc6bbf5f62fecce108689795605" title=" " alt="" coords="1007,188,1183,229"/>
+<area shape="rect" id="node29" href="$classadore_1_1fun_1_1SetPointRequest.html#ab04b016f3d4b7cafc8449542347f825a" title=" " alt="" coords="1002,57,1189,99"/>
+<area shape="rect" id="node30" href="$classadore_1_1fun_1_1ActivationStateObserver.html#ab014fb7db1e76650393a577a291f6682" title=" " alt="" coords="975,123,1216,164"/>
+<area shape="rect" id="node31" href="$classadore_1_1fun_1_1VehicleExtendedState.html#ad9744853f1e97e3f883121b4cb83e34e" title=" " alt="" coords="1518,46,1770,102"/>
+<area shape="rect" id="node32" href="$classadore_1_1fun_1_1VehicleExtendedState.html#a9234bb476f46ccfbaf7578b2a1bffdfe" title=" " alt="" coords="1264,123,1461,164"/>
+<area shape="rect" id="node35" href="$classadore_1_1mad_1_1AReader.html#a46ab7520d828d1a574365eaf8b483e29" title=" " alt="" coords="1289,188,1436,229"/>
+<area shape="rect" id="node36" href="$classadore_1_1mad_1_1AReader.html#a79b8efec6ede53587ff114ae00ca8419" title=" " alt="" coords="1289,5,1436,47"/>
+<area shape="rect" id="node33" href="$classadore_1_1fun_1_1VehicleExtendedState.html#a1630acbb00043937337d8f7bdfd20e44" title=" " alt="" coords="1509,192,1779,233"/>
+<area shape="rect" id="node34" href="$classadore_1_1fun_1_1VehicleExtendedState.html#ad6a0a81e0e00e8146ea2b02e4afa393f" title=" " alt="" coords="1521,127,1767,168"/>
+<area shape="rect" id="node38" href="$classadore_1_1fun_1_1VehicleMotionStateBuffer.html#a03b319c9e20a894449d98002fa028eb3" title=" " alt="" coords="475,1183,645,1224"/>
+<area shape="rect" id="node39" href="$classadore_1_1fun_1_1VehicleMotionStateBuffer.html#ad36fce39195af42282b6e1c4243090a9" title=" " alt="" coords="725,1212,895,1253"/>
+<area shape="rect" id="node40" href="$classadore_1_1fun_1_1VehicleMotionStateBuffer.html#abd7259daa762550a2d1c0f87fd210225" title="get the latest, if" alt="" coords="475,1102,645,1158"/>
+<area shape="rect" id="node44" href="$classadore_1_1fun_1_1VehicleMotionStateBuffer.html#a91fad3e59f0cfc1a1b526adef8ada594" title="call update to check for new data" alt="" coords="475,1036,645,1077"/>
+<area shape="rect" id="node41" href="$classadore_1_1fun_1_1VehicleMotionStateBuffer.html#aa1bd49db8e93f325d0da95bccdadfdb9" title="interpolate a value for time t, if t is in buffered time range" alt="" coords="725,1109,895,1151"/>
+<area shape="rect" id="node42" href="$classadore_1_1fun_1_1VehicleMotionStateBuffer.html#ad8d17bb907b47376a35dd63e47928b19" title=" " alt="" coords="1010,1441,1181,1483"/>
+<area shape="rect" id="node43" href="$structadore_1_1env_1_1VehicleMotionState9d.html#a00563022c6911fc985e8fd60ac0ad946" title="Set the z&#45;coordinate." alt="" coords="1009,1507,1182,1548"/>
+<area shape="rect" id="node45" href="$classadore_1_1mad_1_1AFeed.html#a07f96a9edf1ca4a1a9b0c84aa2631bd0" title=" " alt="" coords="739,975,881,1016"/>
+<area shape="rect" id="node46" href="$classadore_1_1mad_1_1AFeed.html#a2a96e59a3364f8fadb08624e38f7c40b" title=" " alt="" coords="739,1040,881,1081"/>
+</map>

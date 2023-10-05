@@ -1,0 +1,6 @@
+<map id="adore::env::BorderBased::LMSNearest::getBestMatch" name="adore::env::BorderBased::LMSNearest::getBestMatch">
+<area shape="rect" id="node1" title=" " alt="" coords="5,71,197,112"/>
+<area shape="rect" id="node2" href="$structadore_1_1env_1_1VehicleMotionState9d.html#a65ca6ea033cf05674de50b8996a586a3" title="Get the heading." alt="" coords="245,5,419,47"/>
+<area shape="rect" id="node3" href="$structadore_1_1env_1_1VehicleMotionState9d.html#a16d6d61f5dfa1028ca97d8f1a8b6e8cf" title="Get the x&#45;coordinate." alt="" coords="245,71,419,112"/>
+<area shape="rect" id="node4" href="$structadore_1_1env_1_1VehicleMotionState9d.html#a51e8eed0ef10d909592edcb933c1b802" title="Get the y&#45;coordinate." alt="" coords="245,136,419,177"/>
+</map>

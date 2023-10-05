@@ -1,0 +1,7 @@
+digraph "adore::env::ConnectionStateEvent"
+{
+ // LATEX_PDF_SIZE
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  Node1 [label="{adore::env::ConnectionState\lEvent\n|- minEndTime_\l- maxEndTime_\l- likelyTime_\l- maxEndTime_present_\l- likelyTime_present_\l- state_\l|+ ConnectionStateEvent()\l+ getMinEndTime()\l+ getMaxEndTime()\l+ getMaxOrMinEndTime()\l+ getLikelyTime()\l+ hasMaxEndTime()\l+ hasLikelyTime()\l+ getState()\l}",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black",tooltip=" "];
+}

@@ -1,0 +1,10 @@
+digraph "adore::apps::PlanningDetailsPlotter::~PlanningDetailsPlotter"
+{
+ // LATEX_PDF_SIZE
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  rankdir="LR";
+  Node1 [label="adore::apps::PlanningDetails\lPlotter::~PlanningDetailsPlotter",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black",tooltip=" "];
+  Node1 -> Node2 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node2 [label="adore::apps::PlanningDetails\lPlotter::terminate_plot",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classadore_1_1apps_1_1PlanningDetailsPlotter.html#af1799fc7293ab59794810a694c45a26d",tooltip=" "];
+}

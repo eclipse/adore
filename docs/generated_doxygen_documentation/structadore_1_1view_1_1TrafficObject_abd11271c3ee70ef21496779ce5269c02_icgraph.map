@@ -1,0 +1,6 @@
+<map id="adore::view::TrafficObject::getObservationTime" name="adore::view::TrafficObject::getObservationTime">
+<area shape="rect" id="node1" title=" " alt="" coords="700,5,872,47"/>
+<area shape="rect" id="node2" href="$classadore_1_1env_1_1LaneChangeGaps.html#add65c54915bf8c76c346fef8e68f14bc" title=" " alt="" coords="457,5,652,47"/>
+<area shape="rect" id="node3" href="$classadore_1_1apps_1_1GapProvider.html#a9473de599ded969161b0e8dc87b60a65" title=" " alt="" coords="239,5,409,47"/>
+<area shape="rect" id="node4" href="$classadore_1_1if__ROS_1_1GapProviderNode.html#a0401f80cea2b23b6e9dcd5a272116bae" title=" " alt="" coords="5,5,191,47"/>
+</map>

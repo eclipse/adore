@@ -1,0 +1,7 @@
+digraph "adore::params::APTacticalPlanner"
+{
+ // LATEX_PDF_SIZE
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  Node1 [label="{adore::params::APTactical\lPlanner\n||+ getGlobalSpeedLimit()\l+ getResetRadius()\l+ getAccLatUB()\l+ getAccLatUB_minVelocity()\l+ getAccLonUB()\l+ getAccLonLB()\l+ getFrontTimeGap()\l+ getRearTimeGap()\l+ getFrontSGap()\l+ getLowerBoundFrontSGapForLF()\land 20 more...\l}",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black",tooltip="abstract classs containing parameters to configure aspects and constraints of the tactical planner"];
+}

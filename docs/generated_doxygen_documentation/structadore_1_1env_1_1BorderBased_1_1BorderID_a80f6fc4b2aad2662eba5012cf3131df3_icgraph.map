@@ -1,0 +1,6 @@
+<map id="adore::env::BorderBased::BorderID::BorderID" name="adore::env::BorderBased::BorderID::BorderID">
+<area shape="rect" id="node1" title=" " alt="" coords="491,39,657,80"/>
+<area shape="rect" id="node2" href="$structadore_1_1env_1_1BorderBased_1_1BorderID.html#a4648f0e1fcc0ec3e673da9b40b328d62" title="Get a BorderID with the reverse direction of a given BorderID." alt="" coords="220,5,443,47"/>
+<area shape="rect" id="node3" href="$structadore_1_1env_1_1BorderBased_1_1BorderID.html#a1f453e5f4512137604adbac69102bd5a" title="returns the inverse of this" alt="" coords="248,71,415,112"/>
+<area shape="rect" id="node4" href="$structadore_1_1env_1_1BorderBased_1_1Border.html#add0197d58bceafdcbe0000873fa43e06" title="returns true if border has its own inverse as left neighbor" alt="" coords="5,71,172,112"/>
+</map>

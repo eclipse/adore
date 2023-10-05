@@ -1,0 +1,4 @@
+<map id="adore::env::BorderBased::LaneFollowingView::getOnLaneTraffic" name="adore::env::BorderBased::LaneFollowingView::getOnLaneTraffic">
+<area shape="rect" id="node1" title=" " alt="" coords="5,5,219,61"/>
+<area shape="rect" id="node2" href="$classadore_1_1env_1_1traffic_1_1EgoLaneTraffic.html#a4c9e9d40e75d06d2d3bcb2f98ccae44b" title="Get the traffic queue." alt="" coords="267,13,449,54"/>
+</map>

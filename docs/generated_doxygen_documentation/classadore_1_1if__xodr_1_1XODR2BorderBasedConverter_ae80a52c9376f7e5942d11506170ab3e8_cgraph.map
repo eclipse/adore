@@ -1,0 +1,7 @@
+<map id="adore::if_xodr::XODR2BorderBasedConverter::addMovementIdAndJunctionId" name="adore::if_xodr::XODR2BorderBasedConverter::addMovementIdAndJunctionId">
+<area shape="rect" id="node1" title="determine controller and junction id of traffic lights" alt="" coords="5,31,245,87"/>
+<area shape="rect" id="node2" href="$classadore_1_1env_1_1TCDSet.html#a6cd521ab33cb98dbc798bd9fbc67dcb1" title=" " alt="" coords="293,5,432,47"/>
+<area shape="rect" id="node4" href="$classadore_1_1env_1_1TCDSet.html#a11f13325173c449519d5ec0de2c198a3" title=" " alt="" coords="293,71,432,112"/>
+<area shape="rect" id="node3" href="$classadore_1_1env_1_1TCDTrafficLightSet.html#a022cdcca1ee0c657ea2e6d688e7f105d" title=" " alt="" coords="480,5,664,47"/>
+<area shape="rect" id="node5" href="$classadore_1_1env_1_1TCDTrafficLightSet.html#a1e3d9e3b5b5e30837691b2ae8f600010" title=" " alt="" coords="480,71,664,112"/>
+</map>

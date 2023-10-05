@@ -1,0 +1,11 @@
+digraph "adore::apps::IndicatorHintsProvider"
+{
+ // LATEX_PDF_SIZE
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  Node1 [label="{adore::apps::IndicatorHints\lProvider\n|- hints\l- file_watch_path_\l|+ IndicatorHintsProvider()\l+ run()\l}",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black",tooltip="A node to gather indicator hint data and provide it e.g. for laneview computation or tactical decisio..."];
+  Node2 -> Node1 [color="grey25",fontsize="10",style="solid",label=" -motion_state_reader_" ,arrowhead="odiamond",fontname="Helvetica"];
+  Node2 [label="{adore::mad::AReader\< T \>\n||+ hasData()\l+ hasUpdate()\l+ getData()\l+ getDesc()\l}",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classadore_1_1mad_1_1AReader.html",tooltip=" "];
+  Node3 -> Node1 [color="grey25",fontsize="10",style="solid",label=" -indicator_hint_writer_" ,arrowhead="odiamond",fontname="Helvetica"];
+  Node3 [label="{adore::mad::AWriter\< T \>\n||+ canWriteMore()\l+ write()\l+ getDesc()\l+ getNumberOfSubscribers()\l}",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classadore_1_1mad_1_1AWriter.html",tooltip=" "];
+}

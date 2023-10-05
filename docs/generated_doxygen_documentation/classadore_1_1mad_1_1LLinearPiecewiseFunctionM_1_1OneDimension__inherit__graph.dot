@@ -1,0 +1,9 @@
+digraph "adore::mad::LLinearPiecewiseFunctionM&lt; T, n &gt;::OneDimension"
+{
+ // LATEX_PDF_SIZE
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  Node1 [label="{adore::mad::LLinearPiecewise\lFunctionM\< T, n \>::OneDimension\n|- m_parent\l- m_row\l|+ OneDimension()\l+ OneDimension()\l+ f()\l+ limitHi()\l+ limitLo()\l+ setLimits()\l+ clone()\l+ create_derivative()\l+ bound()\l}",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black",tooltip=" "];
+  Node2 -> Node1 [dir="back",color="midnightblue",fontsize="10",style="solid",arrowtail="onormal",fontname="Helvetica"];
+  Node2 [label="{adore::mad::ALFunction\l\< DT, T \>\n|- cached_ymin\l- cached_ymax\l- cached_bounds_valid\l|+ setLimits()\l+ limitHi()\l+ limitLo()\l+ f()\l+ f()\l+ clone()\l+ create_derivative()\l+ bound()\l+ bound()\l+ ~ALFunction()\l+ ALFunction()\l+ operator()()\l+ isInDomain()\l+ f_bounded()\l+ invalidateCachedBounds()\l}",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classadore_1_1mad_1_1ALFunction.html",tooltip=" "];
+}

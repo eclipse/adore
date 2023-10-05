@@ -1,0 +1,16 @@
+digraph "Plotter::plotSPR"
+{
+ // LATEX_PDF_SIZE
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  rankdir="RL";
+  Node1 [label="Plotter::plotSPR",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black",tooltip=" "];
+  Node1 -> Node2 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node2 [label="Plotter::receive",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classPlotter.html#a479c53203c70eff92c12881e6682fb67",tooltip=" "];
+  Node1 -> Node3 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node3 [label="Plotter::receive_spr_odom",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classPlotter.html#a719bb67da360339b17cf9a2daaa92cbe",tooltip=" "];
+  Node1 -> Node4 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node4 [label="Plotter::receive_spr_utm",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classPlotter.html#afa70f8eec8993203db07c7140fe2379a",tooltip=" "];
+  Node4 -> Node5 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node5 [label="Plotter::Plotter",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classPlotter.html#aba3be32116013da27655868ed5e49af4",tooltip=" "];
+}

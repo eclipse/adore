@@ -1,0 +1,7 @@
+digraph "adore::fun::SetPointRequestSwath"
+{
+ // LATEX_PDF_SIZE
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  Node1 [label="{adore::fun::SetPointRequest\lSwath\n|- l_\l- w_\l- p_\l- lat_precision_\l- lat_error_\l- lon_error_\l- duration_\l- a_e_\l|+ setL()\l+ setW()\l+ setP()\l+ setLatPrecision()\l+ setLatError()\l+ setLonError()\l+ setDuration()\l+ setAccelerationErrorSlow()\l+ SetPointRequestSwath()\l+ append_cylinder_swath\l_linear()\l}",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black",tooltip=" "];
+}

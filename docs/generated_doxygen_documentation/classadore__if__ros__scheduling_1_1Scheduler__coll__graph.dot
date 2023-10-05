@@ -1,0 +1,11 @@
+digraph "adore_if_ros_scheduling::Scheduler&lt; RegistreeInfo, TimeKeyType &gt;"
+{
+ // LATEX_PDF_SIZE
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  Node1 [label="{adore_if_ros_scheduling\l::Scheduler\< RegistreeInfo,\l TimeKeyType \>\n|- m_notificationReader\l- m_clientNameReader\l- m_simulationTimeWriter\l- m_clockTimeWriter\l- m_pause\l- m_minRegisters\l- m_autostart\l- m_started\l- m_printIntervalS\l- m_limitSimulationSpeed\land 6 more...\l|+ init()\l+ updateClientUpperTimeLimit()\l+ setNewTime()\l+ togglePause()\l+ limitSimulationSpeed()\l+ write()\l+ getTimeDiff()\l+ printTime()\l+ saveClientName()\l+ printInfo()\l+ start()\l+ getInstance()\l- updateSchedule()\l- Scheduler()\l}",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black",tooltip="Scheduler is a class which provides functionality for stepped simulation."];
+  Node2 -> Node1 [color="grey25",fontsize="10",style="solid",label=" -m_schedulerNotification\lConversion" ,arrowhead="odiamond",fontname="Helvetica"];
+  Node2 [label="{adore_if_ros_scheduling\l::SchedulerNotificationConversion\n||+ operator()()\l+ operator()()\l}",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classadore__if__ros__scheduling_1_1SchedulerNotificationConversion.html",tooltip=" "];
+  Node3 -> Node1 [color="grey25",fontsize="10",style="solid",label=" -m_clockTimeConversion" ,arrowhead="odiamond",fontname="Helvetica"];
+  Node3 [label="{adore_if_ros_scheduling\l::ClockTimeConversion\n||+ operator()()\l+ operator()()\l+ operator()()\l}",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classadore__if__ros__scheduling_1_1ClockTimeConversion.html",tooltip=" "];
+}

@@ -1,0 +1,16 @@
+digraph "CSVLog::logConsole"
+{
+ // LATEX_PDF_SIZE
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  rankdir="RL";
+  Node1 [label="CSVLog::logConsole",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black",tooltip="generate log entry in console"];
+  Node1 -> Node2 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node2 [label="CSVLog::logErrorConsole",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classCSVLog.html#a0177263b40ad2573d573b9e7201d2acb",tooltip="log on error level in console"];
+  Node1 -> Node3 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node3 [label="CSVLog::logInfoConsole",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classCSVLog.html#adbdc18656cb435042e287ecb0765f9dd",tooltip="log on info level in console"];
+  Node1 -> Node4 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node4 [label="CSVLog::logTraceConsole",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classCSVLog.html#ab8505e316b64571c70ba95cfeca4ccb6",tooltip="log on trace level in console"];
+  Node1 -> Node5 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node5 [label="CSVLog::logWarningConsole",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classCSVLog.html#a38553a9f280cec76680df43316261885",tooltip="log on warning level in console"];
+}

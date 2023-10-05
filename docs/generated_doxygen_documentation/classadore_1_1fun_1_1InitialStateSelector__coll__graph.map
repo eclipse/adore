@@ -1,0 +1,9 @@
+<map id="adore::fun::InitialStateSelector" name="adore::fun::InitialStateSelector">
+<area shape="rect" id="node1" title="Helps to select initial state for motion planning. Considers previous plan, current vehicle state,..." alt="" coords="557,439,730,575"/>
+<area shape="rect" id="node2" href="$classadore_1_1mad_1_1AReader.html" title=" " alt="" coords="5,108,191,259"/>
+<area shape="rect" id="node3" href="$structadore_1_1env_1_1VehicleMotionState9d.html" title="This struct holds the motion state of the vehicle in 9d." alt="" coords="215,57,389,310"/>
+<area shape="rect" id="node4" href="$classadore_1_1params_1_1APTacticalPlanner.html" title="abstract classs containing parameters to configure aspects and constraints of the tactical planner" alt="" coords="413,64,642,303"/>
+<area shape="rect" id="node5" href="$classadore_1_1fun_1_1SetPointRequest.html" title=" " alt="" coords="666,64,853,303"/>
+<area shape="rect" id="node6" href="$classadore_1_1fun_1_1VehicleExtendedState.html" title=" " alt="" coords="877,5,1127,361"/>
+<area shape="rect" id="node7" href="$classadore_1_1mad_1_1AReader.html" title=" " alt="" coords="1152,108,1351,259"/>
+</map>

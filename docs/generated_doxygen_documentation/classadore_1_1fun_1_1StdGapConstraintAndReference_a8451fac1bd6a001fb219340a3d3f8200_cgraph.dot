@@ -1,0 +1,24 @@
+digraph "adore::fun::StdGapConstraintAndReference::getReferenceIfAvailable"
+{
+ // LATEX_PDF_SIZE
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  rankdir="LR";
+  Node1 [label="adore::fun::StdGapConstraint\lAndReference::getReferenceIfAvailable",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black",tooltip="getReferenceIfAvailable returns true if the reference for the dimension and derivative is available a..."];
+  Node1 -> Node2 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node2 [label="adore::params::APVehicle\l::get_bodyWidth",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classadore_1_1params_1_1APVehicle.html#a71c62e5ede07773108e7a291672bdd85",tooltip=" "];
+  Node1 -> Node3 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node3 [label="adore::fun::StdGapConstraint\lAndReference::getChaseBound",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classadore_1_1fun_1_1StdGapConstraintAndReference.html#a8aced3da6be013947a9645476ca15c8f",tooltip=" "];
+  Node1 -> Node4 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node4 [label="adore::fun::StdGapConstraint\lAndReference::getFrontBound",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classadore_1_1fun_1_1StdGapConstraintAndReference.html#a4568c1cd753494aa036cf5ebfdc18197",tooltip=" "];
+  Node1 -> Node5 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node5 [label="adore::fun::StdGapConstraint\lAndReference::getGapState",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classadore_1_1fun_1_1StdGapConstraintAndReference.html#aa88f1efd01a8f8bdc62518b231c58775",tooltip=" "];
+  Node5 -> Node3 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node5 -> Node4 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node1 -> Node6 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node6 [label="adore::fun::StdGapConstraint\lAndReference::getLeadBound",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classadore_1_1fun_1_1StdGapConstraintAndReference.html#ad8d3447f8dcea087949d289e2d77fd41",tooltip=" "];
+  Node1 -> Node7 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node7 [label="adore::view::ALaneChange\lView::getOffsetOfDestination\lOuterBorder",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classadore_1_1view_1_1ALaneChangeView.html#a69d39d9f90f30f433c7b810480e8d696",tooltip=" "];
+  Node1 -> Node8 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node8 [label="adore::view::ALaneChange\lView::getOffsetOfSeparatingBorder",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classadore_1_1view_1_1ALaneChangeView.html#aba6c97937219762de65d6c3556c888e6",tooltip=" "];
+}

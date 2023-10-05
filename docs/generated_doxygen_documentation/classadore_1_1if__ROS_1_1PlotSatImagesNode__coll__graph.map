@@ -1,0 +1,14 @@
+<map id="adore::if_ROS::PlotSatImagesNode" name="adore::if_ROS::PlotSatImagesNode">
+<area shape="rect" id="node1" title=" " alt="" coords="266,1255,497,1347"/>
+<area shape="rect" id="node2" href="$classadore_1_1if__ROS_1_1FactoryCollection.html" title=" " alt="" coords="61,983,275,1104"/>
+<area shape="rect" id="node3" href="$classadore__if__ros__scheduling_1_1Baseapp.html" title=" " alt="" coords="300,895,463,1192"/>
+<area shape="rect" id="node4" href="$classadore__if__ros__scheduling_1_1SchedulerNotificationManager.html" title=" " alt="" coords="132,593,348,788"/>
+<area shape="rect" id="node5" href="$classadore__scheduling_1_1ASchedulerNotificationManager.html" title=" " alt="" coords="5,307,229,487"/>
+<area shape="rect" id="node6" href="$classadore__scheduling_1_1SchedulerNotification.html" title=" " alt="" coords="23,5,212,244"/>
+<area shape="rect" id="node7" href="$classadore__if__ros__scheduling_1_1SchedulerNotificationConversion.html" title=" " alt="" coords="254,343,474,450"/>
+<area shape="rect" id="node8" href="$classadore_1_1apps_1_1PlotSatImages.html" title="a optimzed plotting application to display satellite images in the background" alt="" coords="596,902,780,1185"/>
+<area shape="rect" id="node9" href="$classDLR__TS_1_1PlotLab_1_1AFigureStub.html" title=" " alt="" coords="372,579,577,803"/>
+<area shape="rect" id="node10" href="$structadore_1_1env_1_1VehicleMotionState9d.html" title="This struct holds the motion state of the vehicle in 9d." alt="" coords="601,564,775,817"/>
+<area shape="rect" id="node11" href="$classadore_1_1mad_1_1AReader.html" title=" " alt="" coords="799,615,985,766"/>
+<area shape="rect" id="node12" href="$classadore_1_1PLOT_1_1GeoTiles.html" title="Class to help with handling of tile servers used for satellite image background tiles." alt="" coords="1009,564,1164,817"/>
+</map>

@@ -1,0 +1,5 @@
+<map id="adore::env::BorderBased::BorderSet::~BorderSet" name="adore::env::BorderBased::BorderSet::~BorderSet">
+<area shape="rect" id="node1" title="Destroy the Border Set object." alt="" coords="5,5,172,47"/>
+<area shape="rect" id="node2" href="$classadore_1_1env_1_1BorderBased_1_1BorderSet.html#a0a97ab737730be2bda5deb80c8aaf4dd" title="remove all borders from this, delete object if this is owner" alt="" coords="220,5,387,47"/>
+<area shape="rect" id="node3" href="$classadore_1_1env_1_1BorderBased_1_1BorderSet.html#a5dea05943e2c9a960ba7cabc59f7ebb7" title="get all borders in this" alt="" coords="435,5,609,47"/>
+</map>

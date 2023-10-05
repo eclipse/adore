@@ -1,0 +1,12 @@
+<map id="adore::env::BorderBased::BorderSet::getOverlappingBorderCandidates" name="adore::env::BorderBased::BorderSet::getOverlappingBorderCandidates">
+<area shape="rect" id="node1" title="efficient pre&#45;search to determine candidates for border overlap" alt="" coords="5,63,227,119"/>
+<area shape="rect" id="node2" href="$classadore_1_1env_1_1BorderBased_1_1BorderSet.html#a8af807fde181a20de55594592d752adc" title="Get left neighbor of a border." alt="" coords="302,5,490,47"/>
+<area shape="rect" id="node3" href="$classadore_1_1env_1_1BorderBased_1_1BorderSet.html#a49e8f6a0309cd0c2c2afa28412435f4f" title="get the right neighbor of a border" alt="" coords="297,71,495,112"/>
+<area shape="rect" id="node4" href="$classadore_1_1env_1_1BorderBased_1_1BorderSet.html#a4202bcdb4519defaa8bfd4c17212a8e3" title="check whether all predecessors up to a certain number exist within the set" alt="" coords="275,136,517,177"/>
+<area shape="rect" id="node5" href="$structadore_1_1env_1_1BorderBased_1_1Border.html#a522c4ebdb7a16e0aa89b507f554a4fa6" title="Get the length of the border." alt="" coords="579,71,746,112"/>
+<area shape="rect" id="node9" href="$classadore_1_1env_1_1BorderBased_1_1BorderSet.html#acc68b8957d3092bf9e53a75ffa433b6f" title="get an interator pair for all borders which lead to b" alt="" coords="565,136,760,177"/>
+<area shape="rect" id="node10" href="$namespaceadore_1_1mad.html#ac5aeccec5e3cf50a2bc9492d95a49779" title=" " alt="" coords="606,202,719,229"/>
+<area shape="rect" id="node6" href="$structadore_1_1env_1_1BorderBased_1_1BorderID.html#a21f63cc4e5239a964b37d089d54d2418" title=" " alt="" coords="823,5,990,47"/>
+<area shape="rect" id="node7" href="$classadore_1_1mad_1_1LLinearPiecewiseFunctionM.html#aaa496b8ceb3ed505f6450225c46a077a" title=" " alt="" coords="808,71,1005,112"/>
+<area shape="rect" id="node8" href="$classadore_1_1mad_1_1LLinearPiecewiseFunctionM.html#a682841e9bc82a0653745dce6f908bfa6" title=" " alt="" coords="808,136,1005,177"/>
+</map>

@@ -1,0 +1,6 @@
+<map id="adore::env::BorderBased::Border::isPointInsideLane" name="adore::env::BorderBased::Border::isPointInsideLane">
+<area shape="rect" id="node1" title="Check whether point is in lane." alt="" coords="5,39,184,80"/>
+<area shape="rect" id="node2" href="$structadore_1_1env_1_1BorderBased_1_1Border.html#a4673c950e7cbca452b3b763dcda9b02b" title="Get the direction of the left neighbor." alt="" coords="232,5,431,47"/>
+<area shape="rect" id="node3" href="$classadore_1_1mad_1_1LLinearPiecewiseFunctionM.html#a6ca674a9ae7b5a7eaf23b534c6c12d78" title=" " alt="" coords="233,71,430,112"/>
+<area shape="rect" id="node4" href="$classadore_1_1mad_1_1LLinearPiecewiseFunctionM.html#af1689fa288c7dc3e7f5056a67fec51c8" title=" " alt="" coords="479,71,741,112"/>
+</map>

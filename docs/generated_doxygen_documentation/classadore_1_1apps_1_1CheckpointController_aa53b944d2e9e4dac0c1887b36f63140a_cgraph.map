@@ -1,0 +1,12 @@
+<map id="adore::apps::CheckpointController::CheckpointController" name="adore::apps::CheckpointController::CheckpointController">
+<area shape="rect" id="node1" title=" " alt="" coords="5,163,225,204"/>
+<area shape="rect" id="node2" href="$classadore_1_1env_1_1EnvFactoryInstance.html#a069fadea20089ddf252a244864f305c1" title=" " alt="" coords="273,21,508,47"/>
+<area shape="rect" id="node4" href="$classadore_1_1fun_1_1FunFactoryInstance.html#a3d8e318e1ad87251caef9bad22a99b40" title=" " alt="" coords="275,78,506,105"/>
+<area shape="rect" id="node6" href="$classadore_1_1params_1_1ParamsFactoryInstance.html#ae4d79d6130cebb47d90a82b6edb7660d" title=" " alt="" coords="289,129,492,171"/>
+<area shape="rect" id="node8" href="$classadore_1_1params_1_1AFactory.html#ad86cdeca58c7e6536e30b7e5216042f2" title=" " alt="" coords="307,195,474,236"/>
+<area shape="rect" id="node9" href="$classadore_1_1env_1_1AFactory.html#a0b49e761797952e1fa61290e4a73e0a0" title=" " alt="" coords="315,260,466,301"/>
+<area shape="rect" id="node10" href="$classadore_1_1env_1_1AFactory.html#a81f661c576816461f1914436620ac208" title=" " alt="" coords="289,325,492,367"/>
+<area shape="rect" id="node3" href="$classadore_1_1env_1_1EnvFactoryInstance.html#a14835a4420fb827ba3809b94a96a7660" title="Function to access singleton instance of the envFactory using magic static." alt="" coords="556,5,764,47"/>
+<area shape="rect" id="node5" href="$classadore_1_1fun_1_1FunFactoryInstance.html#a0826e9a7ea3c70a3780115e6effbf746" title="Function to access singleton instance of the funFactory using magic static." alt="" coords="558,71,762,112"/>
+<area shape="rect" id="node7" href="$classadore_1_1params_1_1ParamsFactoryInstance.html#a59eae0e003d40b03f9db2d814ec2a3bf" title="Function to access singleton instance of the AllFactory using magic static." alt="" coords="559,136,761,177"/>
+</map>

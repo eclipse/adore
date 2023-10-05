@@ -1,0 +1,39 @@
+<map id="adore::apps::PlotTrafficLights::run" name="adore::apps::PlotTrafficLights::run">
+<area shape="rect" id="node1" title=" " alt="" coords="5,341,164,383"/>
+<area shape="rect" id="node2" href="$classadore_1_1mad_1_1AReader.html#a46ab7520d828d1a574365eaf8b483e29" title=" " alt="" coords="226,203,373,244"/>
+<area shape="rect" id="node3" href="$classadore_1_1mad_1_1AFeed.html#a07f96a9edf1ca4a1a9b0c84aa2631bd0" title=" " alt="" coords="472,5,613,47"/>
+<area shape="rect" id="node4" href="$classadore_1_1mad_1_1AFeed.html#a2a96e59a3364f8fadb08624e38f7c40b" title=" " alt="" coords="472,71,613,112"/>
+<area shape="rect" id="node5" href="$classadore_1_1mad_1_1AReader.html#a7a8e6d43dcd1129c47d7231e828fb111" title=" " alt="" coords="226,436,373,477"/>
+<area shape="rect" id="node6" href="$classadore_1_1env_1_1BorderBased_1_1BorderSet.html#a5730d3e4fc938c9bd1e1146a8a61deec" title="insert new border into this" alt="" coords="214,912,385,953"/>
+<area shape="rect" id="node14" href="$classadore_1_1apps_1_1PlotTrafficLights.html#a5a847f40f3b094984863dd28f1d49a79" title=" " alt="" coords="212,371,387,412"/>
+<area shape="rect" id="node7" href="$classadore_1_1env_1_1BorderBased_1_1BorderSet.html#afb523effcee573e774147446ecc756ab" title="check whether border type is in allowed types of set" alt="" coords="449,880,637,921"/>
+<area shape="rect" id="node8" href="$structadore_1_1env_1_1BorderBased_1_1Border.html#a4b1e646e2c3d98b03e75f286611e0cda" title="Get a bounding box for the implicit lane object." alt="" coords="459,945,626,987"/>
+<area shape="rect" id="node13" href="$structadore_1_1env_1_1BorderBased_1_1Coordinate.html#abb34f84413225a9464afe389cb4f71a7" title="Get a boost_point that has the same coordinates as the Coordinate object." alt="" coords="451,1011,634,1052"/>
+<area shape="rect" id="node9" href="$namespaceadore_1_1mad.html#adea062854ef0b105a3fdca8cf2aca945" title=" " alt="" coords="740,978,860,1005"/>
+<area shape="rect" id="node11" href="$namespaceadore_1_1mad.html#ab58ecb752f9bbfe27832e0a2c0e22c2b" title=" " alt="" coords="742,927,858,954"/>
+<area shape="rect" id="node10" href="$namespaceadore_1_1mad.html#a618a8842fed7b9375957b1e393c58492" title=" " alt="" coords="995,978,1115,1005"/>
+<area shape="rect" id="node12" href="$namespaceadore_1_1mad.html#ac61b79c007d1859f93a10c04272095a1" title=" " alt="" coords="997,927,1113,954"/>
+<area shape="rect" id="node15" href="$classadore_1_1apps_1_1PlotTrafficLights.html#aa70ee2af8959077917ccacbdddcb8fa1" title=" " alt="" coords="711,305,889,347"/>
+<area shape="rect" id="node18" href="$structadore_1_1env_1_1VectorIdentifier.html#a9fd66cfaa57a670b73c3e3f6540486f8" title=" " alt="" coords="453,436,632,477"/>
+<area shape="rect" id="node19" href="$classadore_1_1apps_1_1PlotTrafficLights.html#adfb485a3bea5ee43f6a59f6042d27809" title=" " alt="" coords="449,501,636,543"/>
+<area shape="rect" id="node25" href="$classadore_1_1apps_1_1PlotTrafficLights.html#ae0dde5536314102d0be3152608fdb0ff" title=" " alt="" coords="715,632,885,673"/>
+<area shape="rect" id="node28" href="$classadore_1_1env_1_1ControlledConnection.html#a5691ab0eff0709472460d73009b71923" title=" " alt="" coords="435,619,651,660"/>
+<area shape="rect" id="node29" href="$classadore_1_1env_1_1ControlledConnection.html#a9ddc7ad9dbb1485969406d232bf7c047" title=" " alt="" coords="435,684,651,725"/>
+<area shape="rect" id="node30" href="$structadore_1_1env_1_1VehicleMotionState9d.html#ae7d75a3f7d52a946f075e669832caa17" title="Get the time." alt="" coords="456,749,629,791"/>
+<area shape="rect" id="node31" href="$structadore_1_1env_1_1VectorIdentifier.html#aa8b59805e30c4a089b3f3661a0fd6b6a" title=" " alt="" coords="453,815,632,856"/>
+<area shape="rect" id="node32" href="$namespaceadore_1_1mad_1_1funop.html#a85ee119f752305b6413ea70a7f61d48b" title=" " alt="" coords="475,136,610,177"/>
+<area shape="rect" id="node33" href="$namespaceadore_1_1PLOT.html#ace7bb787808bead40f2faca321cc1d4a" title=" " alt="" coords="469,202,616,229"/>
+<area shape="rect" id="node35" href="$classDLR__TS_1_1PlotLab_1_1AFigureStub.html#ab53419d39443297fb8f0c9513956922a" title=" " alt="" coords="453,253,632,295"/>
+<area shape="rect" id="node36" href="$classadore_1_1apps_1_1PlotTrafficLights.html#a0482cdd2779ae28238f01a544212deab" title=" " alt="" coords="444,371,641,412"/>
+<area shape="rect" id="node16" href="$structadore_1_1env_1_1VehicleMotionState9d.html#a16d6d61f5dfa1028ca97d8f1a8b6e8cf" title="Get the x&#45;coordinate." alt="" coords="968,273,1141,315"/>
+<area shape="rect" id="node17" href="$structadore_1_1env_1_1VehicleMotionState9d.html#a51e8eed0ef10d909592edcb933c1b802" title="Get the y&#45;coordinate." alt="" coords="968,339,1141,380"/>
+<area shape="rect" id="node20" href="$classadore_1_1env_1_1BorderBased_1_1BorderSet.html#a3a3da6cfdee8aa6e003079f7f53186b6" title="get all borders at the given point" alt="" coords="699,567,901,608"/>
+<area shape="rect" id="node24" href="$classadore_1_1mad_1_1LLinearPiecewiseFunctionM.html#aa94d90c8643e2d6792f8594f3d666503" title=" " alt="" coords="701,436,899,477"/>
+<area shape="rect" id="node27" href="$classadore_1_1env_1_1BorderBased_1_1BorderSet.html#aaab8f67e5d8b624225085c44bbd58655" title="number of borders in this" alt="" coords="717,501,883,543"/>
+<area shape="rect" id="node21" href="$structadore_1_1env_1_1BorderBased_1_1itpair.html#a3746f6e3a03399eecb397f897f007562" title=" " alt="" coords="971,537,1138,579"/>
+<area shape="rect" id="node22" href="$classadore_1_1env_1_1BorderBased_1_1BorderSet.html#a5b9a10acc8d477c1d27d5b39fb1f99f3" title="get all borders in this within region" alt="" coords="949,603,1160,644"/>
+<area shape="rect" id="node23" href="$classadore_1_1env_1_1BorderBased_1_1BorderSet.html#a8af807fde181a20de55594592d752adc" title="Get left neighbor of a border." alt="" coords="961,472,1149,513"/>
+<area shape="rect" id="node26" href="$namespaceadore_1_1mad.html#a37d645f2d2b0aa8f1c7015ba4e502617" title=" " alt="" coords="991,669,1118,695"/>
+<area shape="rect" id="node34" href="$classDLR__TS_1_1PlotLab_1_1AFigureStub.html#accf20dccb771d2bad1fec053e187a327" title=" " alt="" coords="711,195,889,236"/>
+<area shape="rect" id="node37" href="$classDLR__TS_1_1PlotLab_1_1AFigureStub.html#ae5d9d5c708d325610574a002e53501c8" title=" " alt="" coords="711,371,889,412"/>
+</map>

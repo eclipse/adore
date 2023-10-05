@@ -1,0 +1,13 @@
+<map id="adore::if_xodr::XODR2BorderBasedConverter::addMovementIdAndJunctionId" name="adore::if_xodr::XODR2BorderBasedConverter::addMovementIdAndJunctionId">
+<area shape="rect" id="node1" title="determine controller and junction id of traffic lights" alt="" coords="984,129,1224,185"/>
+<area shape="rect" id="node2" href="$classadore_1_1if__xodr_1_1XODR2BorderBasedConverter.html#a6ca6d0c42c07f37d316e7003676fb297" title="Fills data sets of BorderBased map data representation with data from openDrive xml file." alt="" coords="743,136,936,177"/>
+<area shape="rect" id="node3" href="$classadore_1_1if__xodr_1_1XODR2BorderBasedConverter.html#afb43456b1cc2ee1c30ca4f5a8278f1ba" title="full conversion of OpenDRIVE map to object representations" alt="" coords="501,136,695,177"/>
+<area shape="rect" id="node4" href="$classadore_1_1if__xodr_1_1XODR2BorderBasedConverter.html#a97fecbc54c87b560db6f8a79fd44bda3" title="slightly reduced conversion without reference point of map" alt="" coords="242,5,435,47"/>
+<area shape="rect" id="node5" href="$classadore_1_1apps_1_1MapProvider.html#ad6e153760ff95bac2290d48594745c22" title=" " alt="" coords="253,71,424,112"/>
+<area shape="rect" id="node7" href="$classadore_1_1apps_1_1Navigation.html#a77e0f4a96b663ca6ec5287af1965822f" title=" " alt="" coords="259,136,419,177"/>
+<area shape="rect" id="node9" href="$classadore_1_1apps_1_1PlainXMLExporter.html#acd64af468d0194ac614c575d91df877e" title=" " alt="" coords="224,202,453,229"/>
+<area shape="rect" id="node11" href="$test__ocroadbasedprediction_8cpp.html#a8a83239243952bcc807580ed96244f28" title=" " alt="" coords="289,253,389,279"/>
+<area shape="rect" id="node6" href="$classadore_1_1apps_1_1MapProvider.html#a1d9aa34b5f68408f3d494a1fad7b62be" title=" " alt="" coords="5,71,176,112"/>
+<area shape="rect" id="node8" href="$classadore_1_1apps_1_1Navigation.html#a0f19b60c5090f48fdd06be105610c304" title=" " alt="" coords="11,136,171,177"/>
+<area shape="rect" id="node10" href="$plainxmlexporter_8cpp.html#a3c04138a5bfe5d72780bb7e82a18e627" title=" " alt="" coords="65,202,116,229"/>
+</map>

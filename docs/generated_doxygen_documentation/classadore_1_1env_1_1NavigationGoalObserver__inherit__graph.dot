@@ -1,0 +1,9 @@
+digraph "adore::env::NavigationGoalObserver"
+{
+ // LATEX_PDF_SIZE
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  Node1 [label="{adore::env::NavigationGoal\lObserver\n|- goalReader_\l- lfv_\l- lcl_\l- lcr_\l- initialized_\l- goal_\l- inview_\l- oncurrentlane_\l- onlaneleft_\l- onlaneright_\l- s_\l- n_\l- p_nav_\l|+ NavigationGoalObserver()\l+ update()\l+ isNextGoalPointFinal()\l+ isNextGoalPointInView()\l+ isNextGoalPointOnCurrent\lLane()\l+ isNextGoalPointOnLaneToThe\lLeft()\l+ isNextGoalPointOnLaneToThe\lRight()\l+ getProgress()\l}",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black",tooltip=" "];
+  Node2 -> Node1 [dir="back",color="midnightblue",fontsize="10",style="solid",arrowtail="onormal",fontname="Helvetica"];
+  Node2 [label="{adore::view::ANavigation\lGoalView\n||+ isNextGoalPointFinal()\l+ isNextGoalPointInView()\l+ isNextGoalPointOnCurrent\lLane()\l+ isNextGoalPointOnLaneToThe\lLeft()\l+ isNextGoalPointOnLaneToThe\lRight()\l+ getProgress()\l}",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classadore_1_1view_1_1ANavigationGoalView.html",tooltip=" "];
+}

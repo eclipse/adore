@@ -1,0 +1,11 @@
+<map id="adore::env::BorderBased::LaneChangeView::getOffsetOfStartOuterBorder" name="adore::env::BorderBased::LaneChangeView::getOffsetOfStartOuterBorder">
+<area shape="rect" id="node1" title=" " alt="" coords="5,101,213,157"/>
+<area shape="rect" id="node2" href="$classadore_1_1env_1_1BorderBased_1_1LaneFollowingView.html#a23368eae62e699c732097f8972b3a1f0" title=" " alt="" coords="262,5,487,47"/>
+<area shape="rect" id="node3" href="$classadore_1_1env_1_1BorderBased_1_1LaneChangeView.html#a0848e3c7b74e2b6c84a2da9d988f8963" title=" " alt="" coords="261,71,488,112"/>
+<area shape="rect" id="node5" href="$classadore_1_1env_1_1BorderBased_1_1LaneFollowingGeometry.html#a06948f564268fcc8839d8f68264dd21c" title="Get the offset of the left border at a certain position." alt="" coords="289,137,460,193"/>
+<area shape="rect" id="node9" href="$classadore_1_1env_1_1BorderBased_1_1LaneFollowingGeometry.html#a9a5eb2a8767f13365d0e62fa024bc6a5" title="Get the offset of the right border at a certain position." alt="" coords="289,217,460,273"/>
+<area shape="rect" id="node4" href="$classadore_1_1env_1_1BorderBased_1_1LaneChangeGeometry.html#a20110fcf613d5c9b080135a9331a4f04" title="Get the direction of the LaneChangeGeometry." alt="" coords="536,63,704,119"/>
+<area shape="rect" id="node6" href="$namespaceadore_1_1mad.html#a927f4883d4edcec4dcfd9bb1f09d4f62" title=" " alt="" coords="555,191,685,218"/>
+<area shape="rect" id="node7" href="$namespaceadore_1_1mad.html#a618a8842fed7b9375957b1e393c58492" title=" " alt="" coords="752,166,872,193"/>
+<area shape="rect" id="node8" href="$namespaceadore_1_1mad.html#ac61b79c007d1859f93a10c04272095a1" title=" " alt="" coords="754,217,870,243"/>
+</map>

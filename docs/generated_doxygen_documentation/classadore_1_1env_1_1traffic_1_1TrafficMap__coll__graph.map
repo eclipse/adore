@@ -1,0 +1,5 @@
+<map id="adore::env::traffic::TrafficMap" name="adore::env::traffic::TrafficMap">
+<area shape="rect" id="node1" title=" " alt="" coords="95,453,295,707"/>
+<area shape="rect" id="node2" href="$classadore_1_1mad_1_1AReader.html" title=" " alt="" coords="5,137,184,259"/>
+<area shape="rect" id="node3" href="$classadore_1_1env_1_1BorderBased_1_1BorderSet.html" title="efficiently store borders in boost R&#45;tree" alt="" coords="209,5,383,391"/>
+</map>

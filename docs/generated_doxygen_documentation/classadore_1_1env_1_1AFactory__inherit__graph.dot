@@ -1,0 +1,11 @@
+digraph "adore::env::AFactory"
+{
+ // LATEX_PDF_SIZE
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  Node1 [label="{adore::env::AFactory\n||+ getBorderWriter()\l+ getBorderFeed()\l+ getBorderTypeChangeProfile\lFeed()\l+ getBorderTypeChangeProfile\lWriter()\l+ getVehicleMotionStateReader()\l+ getTrafficParticipantSet\lReader()\l+ getNavigationGoalReader()\l+ getNavigationDataWriter()\l+ getNavigationDataFeed()\l+ getPrecedenceRuleWriter()\land 37 more...\l}",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black",tooltip="abstract factory for adore::env communication"];
+  Node1 -> Node2 [dir="back",color="midnightblue",fontsize="10",style="solid",arrowtail="onormal",fontname="Helvetica"];
+  Node2 [label="{adore::if_ROS::ENV\l_Factory\n|- n_\l|+ ENV_Factory()\l+ getBorderWriter()\l+ getVehicleMotionStateReader()\l+ getBorderFeed()\l+ getBorderTypeChangeProfile\lWriter()\l+ getBorderTypeChangeProfile\lFeed()\l+ getTrafficParticipantSet\lReader()\l+ getNavigationDataWriter()\l+ getNavigationGoalReader()\l+ getNavigationDataFeed()\land 38 more...\l}",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classadore_1_1if__ROS_1_1ENV__Factory.html",tooltip=" "];
+  Node1 -> Node3 [dir="back",color="midnightblue",fontsize="10",style="solid",arrowtail="onormal",fontname="Helvetica"];
+  Node3 [label="{adore::if_ROS::FUN\l_Factory\n|- n_\l|+ FUN_Factory()\l+ getNavigationGoalReader()\l+ getSetPointRequestReader()\l+ getSetPointRequestWriter()\l+ getNominalTrajectoryReader()\l+ getNominalTrajectoryWriter()\l+ getOdomSetPointRequestReader()\l+ getOdomSetPointRequestWriter()\l+ getTerminalRequestReader()\l+ getTerminalRequestWriter()\land 27 more...\l}",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classadore_1_1if__ROS_1_1FUN__Factory.html",tooltip=" "];
+}
