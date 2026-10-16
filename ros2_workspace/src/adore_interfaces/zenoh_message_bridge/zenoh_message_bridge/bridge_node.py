@@ -284,6 +284,7 @@ class ROS2ZenohBridge(Node):
                     return
                 try:
                     self._z2r_queue.put((p, deser(sample.payload.to_bytes())))
+                    self.get_logger().debug(f'Z2R received: {t}')
                 except Exception as e:
                     self.get_logger().error(f'Deser failed on {t}: {e}')
             self.zenoh_subs.append(self.zenoh_session.declare_subscriber(z_key, z_cb))
