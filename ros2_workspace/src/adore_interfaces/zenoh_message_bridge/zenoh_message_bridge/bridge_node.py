@@ -262,7 +262,7 @@ class ROS2ZenohBridge(Node):
                 attachment = _make_attachment(s[0], g)
                 s[0] += 1
                 p.put(ser(msg), attachment=attachment)
-                self.get_logger().info(f'R2Z sent: {k}')
+                self.get_logger().debug(f'R2Z sent: {k}')
             self.ros_subs.append(self.create_subscription(msg_type, ros_topic, cb, qos))
 
     def _setup_zenoh_to_ros2(self):
@@ -284,6 +284,7 @@ class ROS2ZenohBridge(Node):
                     return
                 try:
                     self._z2r_queue.put((p, deser(sample.payload.to_bytes())))
+                    self.get_logger().debug(f'Z2R received: {t}')
                 except Exception as e:
                     self.get_logger().error(f'Deser failed on {t}: {e}')
             self.zenoh_subs.append(self.zenoh_session.declare_subscriber(z_key, z_cb))

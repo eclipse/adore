@@ -15,9 +15,17 @@ if [ "${ZENOH_ROUTER_ENABLE:-false}" != "true" ]; then
     exit 0
 fi
 
-if [ -f "${PIDFILE}" ] && kill -0 "$(cat "${PIDFILE}")" 2>/dev/null; then
-    echo "✓ Zenoh router already running (pid $(cat "${PIDFILE}"))"
-    exit 0
+# pid can be an unrealted process
+if [ -f "${PIDFILE}" ]; then
+    ROUTER_PID="$(cat "${PIDFILE}")"
+    case "$(cat "/proc/${ROUTER_PID}/comm" 2>/dev/null)" in
+        zenohd|rmw_zenohd)
+            echo "✓ Zenoh router already running (pid ${ROUTER_PID})"
+            exit 0
+            ;;
+    esac
+    echo "Ignoring stale pid file ${PIDFILE}"
+    rm -f "${PIDFILE}"
 fi
 
 ROUTER_ARGS=""
